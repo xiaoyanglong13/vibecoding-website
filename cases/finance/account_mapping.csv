@@ -1,0 +1,96 @@
+account_number,model_line,sign
+10000,Cash,-1
+10010,Cash,-1
+10020,Cash,-1
+10050,Cash,-1
+10060,Cash,-1
+10100,AR,-1
+10101,AR,-1
+10102,AR,-1
+10110,AR,-1
+10120,AR,-1
+10200,Inventory,-1
+10210,Inventory,-1
+10220,Inventory,-1
+10300,Prepaid expenses,-1
+10310,Prepaid expenses,-1
+15010,PPE,-1
+15011,PPE,-1
+15015,PPE,-1
+15020,PPE,-1
+15030,PPE,-1
+15040,PPE,-1
+15500,PPE,-1
+17000,Intangibles,-1
+17100,Intangibles,-1
+17200,Intangibles,-1
+17300,Intangibles,-1
+17500,Intangibles,-1
+20000,AP,1
+20001,AP,1
+20002,AP,1
+20010,AP,1
+20100,AP,1
+21000,Accrued expenses,1
+21010,Accrued expenses,1
+21020,Accrued expenses,1
+21030,Accrued expenses,1
+21040,Accrued expenses,1
+22000,Accrued expenses,1
+23000,Lease liability - LT,1
+24000,Debt,1
+24010,Debt,1
+25000,Debt,1
+30000,Common stock,1
+31000,Common stock,1
+32000,Retained earnings - prior,1
+40000,Revenue,1
+40010,Revenue,1
+40020,Revenue,1
+40100,Revenue,1
+40110,Revenue,1
+40200,Revenue,1
+49000,Revenue,1
+49100,Revenue,1
+50000,COGS,1
+50100,COGS,1
+50200,COGS,1
+50300,COGS,1
+50400,COGS,1
+50500,COGS,1
+60100,SG&A,1
+60101,SG&A,1
+60102,SG&A,1
+60103,SG&A,1
+60110,SG&A,1
+60120,SG&A,1
+60130,SG&A,1
+60140,SG&A,1
+60200,SG&A,1
+60210,SG&A,1
+60300,SG&A,1
+60305,SG&A,1
+60310,SG&A,1
+60400,SG&A,1
+60500,SG&A,1
+60600,SG&A,1
+60601,SG&A,1
+60610,SG&A,1
+60700,SG&A,1
+60710,SG&A,1
+60720,SG&A,1
+60750,SG&A,1
+60800,SG&A,1
+60820,SG&A,1
+60830,SG&A,1
+60900,Depreciation,1
+60910,Depreciation,1
+65000,R&D,1
+65100,R&D,1
+65200,R&D,1
+65300,R&D,1
+70000,Interest expense,1
+70100,Interest income,1
+70200,Interest income,1
+70250,Interest expense,1
+75000,Tax expense,1

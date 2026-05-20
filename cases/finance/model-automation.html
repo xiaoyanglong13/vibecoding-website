@@ -52,16 +52,19 @@
     in fifteen minutes, with a short note explaining what changed.</p>
 
     <h2>2. Data available</h2>
-    <p>Three things are sitting in a folder on your laptop:</p>
+    <p>Three things are sitting in a folder on your laptop. Sample
+    versions of all three are linked below so you can follow along:</p>
     <ul>
-      <li><strong>trial_balance.csv</strong> — this month's TB exported
-      from the GL. About 280 rows.</li>
-      <li><strong>account_mapping.csv</strong> — maps each GL account
-      number to a line on the model (e.g. "Revenue", "COGS - materials",
-      "Accrued expenses").</li>
-      <li><strong>model.xlsx</strong> — the live three-statement model.
-      The "Inputs" tab is where pasted numbers go. The IS, BS, and CF
-      tabs all reference Inputs through named ranges.</li>
+      <li><a href="trial_balance.csv" download><strong>trial_balance.csv</strong></a>
+      — this month's TB exported from the GL. About 290 rows covering
+      three periods (2026-02, 2026-03, 2026-04).</li>
+      <li><a href="account_mapping.csv" download><strong>account_mapping.csv</strong></a>
+      — maps each GL account number to a line on the model (e.g.
+      "Revenue", "COGS", "Accrued expenses") and a sign multiplier.</li>
+      <li><a href="model.xlsx" download><strong>model.xlsx</strong></a>
+      — the live three-statement model. The "Inputs" tab is where pasted
+      numbers go. The IS, BS, and CF tabs all reference Inputs through
+      named ranges.</li>
     </ul>
     <p>The real-world messiness: a few accounts each month are
     <em>new</em> (e.g. a freshly opened legal entity), so the mapping
@@ -138,8 +141,10 @@ At the end, print:
     named range instead of cell coordinates, which was cleaner anyway.</p>
 
     <h3>Round 3 · Verify and refine</h3>
-    <p>The script printed five unmapped accounts and a balance sheet
-    that was off by $1,240. I asked:</p>
+    <p>The script printed five unmapped accounts (a new short-term
+    lease liability, a LATAM revenue pilot, an "Other income" line, and
+    two new EU expense accounts) and a balance sheet that was off by
+    $1,240. I asked:</p>
     <pre><code>BS is off by $1,240. Walk me through where that could come
 from given what the script did. Don't fix anything yet —
 just give me the two most likely causes ranked by
@@ -218,21 +223,21 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
       <tbody>
         <tr>
           <td>Revenue</td>
-          <td>$2.45M</td>
-          <td>+4.1%</td>
-          <td>EU shipments caught up after the March delay.</td>
+          <td>$2.73M</td>
+          <td>+1.7%</td>
+          <td>EU and APAC held steady; small LATAM pilot started.</td>
         </tr>
         <tr>
           <td>Net income</td>
-          <td>$318K</td>
-          <td>+11.2%</td>
-          <td>Materials cost down 60bps; headcount flat.</td>
+          <td>$320K</td>
+          <td>broadly flat</td>
+          <td>Cost structure stable; new EU office costs offset by pilot revenue.</td>
         </tr>
         <tr>
           <td>Balance sheet</td>
           <td>Balanced</td>
           <td>—</td>
-          <td>New lease-liability account added to mapping.</td>
+          <td>New short-term lease-liability account added to mapping.</td>
         </tr>
       </tbody>
     </table>
