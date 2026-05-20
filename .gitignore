@@ -1,0 +1,9 @@
+# Mac system files
+.DS_Store
+.DS_Store?
+**/.DS_Store
+._*
+
+# Editor temp files
+*.swp
+*.swo
