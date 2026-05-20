@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Model Automation · Finance · Vibecoding for Business School Students</title>
+  <title>Model automation · Finance · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -24,308 +24,263 @@
   <main class="shell">
     <div class="module-header">
       <span class="eyebrow"><a href="/cases/">Use cases</a> · <a href="/cases/finance/">Finance</a></span>
-      <h1>Model Automation</h1>
-      <p class="lede">You update the same three-statement model every month.
-      It takes half a day — mostly careful pasting, checking, and reformatting.
-      Here's how to bring that down to fifteen minutes.</p>
+      <h1>Model automation</h1>
+      <p class="lede">You own the monthly three-statement update. Right
+      now it eats half a day of copy-paste from the trial balance into
+      a tired Excel model. Here's how to get it to fifteen minutes
+      without giving up the model your CFO trusts.</p>
     </div>
 
     <div class="chips">
-      <span class="chip">Difficulty · Intermediate</span>
+      <span class="chip">Difficulty · Beginner</span>
       <span class="chip">~45 minutes</span>
-      <span class="chip">Uses: Modules 1, 4, 5</span>
+      <span class="chip">Uses: Modules 1, 4</span>
     </div>
 
     <h2>1. The business decision</h2>
-    <p>You're a finance associate at a PE-backed SaaS company. On the
-    fifth of every month, the CFO wants an updated three-statement model
-    — income statement, balance sheet, and cash flow — reflecting last
-    month's actuals. The raw numbers come from the ERP as a CSV export.
-    The model lives in Excel.</p>
-    <p>The current process: download the CSV, find each line item, paste
-    the value into the right hardcoded cell, pull the column forward for
-    the new period, verify the balance sheet balances, verify ending cash
-    ties, fix anything that's off, then format and send. Start to finish:
-    four to five hours. Half of that is finding the right cell, and the
-    other half is the verification loop when something doesn't foot.</p>
-    <p>The goal is a script that does the paste-and-check step for you,
-    so your half-day becomes a fifteen-minute review of the output before
-    sending.</p>
+    <p>You're a first-year FP&amp;A analyst at a mid-market manufacturer.
+    On the second business day of every month, you update the
+    three-statement model: income statement, balance sheet, cash flow.
+    The CFO uses it on the third business day for the monthly business
+    review.</p>
+    <p>Today, your process is: export the trial balance from NetSuite,
+    open last month's workbook, paste the new numbers into the right
+    rows, fix anything that broke, and reconcile until the balance
+    sheet balances. It takes four to five hours and you've made
+    sign-flip mistakes twice this quarter.</p>
+    <p>You don't need a new model. You need the same model, refreshed
+    in fifteen minutes, with a short note explaining what changed.</p>
 
     <h2>2. Data available</h2>
-    <p>Two files to follow along:
-    <a href="model.xlsx" download>Download the model workbook</a> and
-    <a href="actuals.csv" download>download the April actuals CSV</a>.</p>
-    <p>The workbook has three sheets — <em>Income Statement</em>,
-    <em>Balance Sheet</em>, and <em>Cash Flow</em> — with four months of
-    data. Hardcoded cells (the ones you'd normally paste into) are shaded
-    yellow. Formula cells are white. The April column is the one you're
-    updating.</p>
-    <p>The actuals CSV has this structure:</p>
-    <pre><code>account_code, line_item, statement, period, amount_usd</code></pre>
-    <p>A sample row:</p>
-    <pre><code>1000, "Revenue - Product", IS, 2024-04, 3820000</code></pre>
-    <p>Real-world messiness: account codes occasionally change between
-    periods when the chart of accounts is restructured. Some line items in
-    the CSV are sub-lines that roll into aggregates in the model. And the
-    CSV uses a different naming convention than the model's row labels —
-    so you can't match on name alone.</p>
+    <p>Three things are sitting in a folder on your laptop:</p>
+    <ul>
+      <li><strong>trial_balance.csv</strong> — this month's TB exported
+      from the GL. About 280 rows.</li>
+      <li><strong>account_mapping.csv</strong> — maps each GL account
+      number to a line on the model (e.g. "Revenue", "COGS - materials",
+      "Accrued expenses").</li>
+      <li><strong>model.xlsx</strong> — the live three-statement model.
+      The "Inputs" tab is where pasted numbers go. The IS, BS, and CF
+      tabs all reference Inputs through named ranges.</li>
+    </ul>
+    <p>The real-world messiness: a few accounts each month are
+    <em>new</em> (e.g. a freshly opened legal entity), so the mapping
+    file is always slightly behind. Sign convention is mixed —
+    revenues are negative in the GL, positive in the model. And
+    "Inputs" has six merged-cell sections that openpyxl will complain
+    about.</p>
+    <p>A sample of the trial balance:</p>
+    <pre><code>account_number, account_name, period, debit, credit
+40000, Product revenue - US, 2026-04, 0, 1842317.55
+40010, Product revenue - EU, 2026-04, 0, 612090.10
+50000, COGS - materials, 2026-04, 734221.00, 0
+60100, Salaries &amp; wages, 2026-04, 488740.25, 0
+21000, Accrued expenses, 2026-04, 0, 145620.00</code></pre>
 
     <h2>3. The build</h2>
-    <p>Total session was about 35 minutes across three rounds.</p>
+    <p>Total session was about 40 minutes, in three rounds. The slowest
+    part wasn't the code — it was getting the mapping and sign
+    conventions right.</p>
 
     <h3>Round 1 · Plan before execute</h3>
-    <p>The risk with any model automation is writing into the wrong cell.
-    Before touching the file, I asked the agent to audit it:</p>
-    <pre><code>You are a financial modelling analyst. I have a three-statement
-Excel model (model.xlsx) and a monthly actuals export (actuals.csv).
-Each month I manually paste the actuals into hardcoded cells in the
-workbook.
+    <p>I started with a plan request, not a code request:</p>
+    <pre><code>You are an FP&amp;A analyst. I update a three-statement model
+each month from a trial balance. I want to automate the
+paste-and-reconcile step. Files I have, in the same folder:
 
-Before writing any code, do the following:
-1. Describe the structure of each sheet — which rows are hardcoded
-   inputs vs. formula-driven subtotals
-2. Propose a mapping strategy: how will you match account_code in
-   the CSV to the right cell in the workbook, given that names
-   won't always align?
-3. Flag any risks in the mapping — accounts that might match
-   ambiguously, aggregation rows that should stay as formulas,
-   and what to do when a code isn't found
+- trial_balance.csv  (GL export, columns: account_number,
+  account_name, period, debit, credit)
+- account_mapping.csv (account_number -> model_line, sign)
+- model.xlsx (Inputs tab is where new period numbers go,
+  one column per month, one row per model_line)
 
-Don't write any code yet. Just the plan.
+Before writing any code, propose:
+1. The end-to-end flow, step by step
+2. The handful of things most likely to go wrong on a
+   real month (be specific about this model, not generic
+   "data quality" hand-waving)
+3. Two or three checks the script should run at the end to
+   give me confidence the update is right
 
-Files: model.xlsx, actuals.csv (schemas below)
-[paste column headers + 5 sample rows from each]</code></pre>
-    <p>The plan it returned correctly identified that a few rows — Gross
-    Profit, Total OpEx, EBITDA — were formula-driven and should never be
-    overwritten. It also proposed building an explicit mapping table
-    (account_code → sheet name, row number) rather than relying on
-    fuzzy name-matching, which is exactly right.</p>
+Don't run anything yet. Just the plan.</code></pre>
+    <p>The plan was solid. The two failure modes it called out — new
+    accounts missing from the mapping, and sign conventions flipping
+    silently — were exactly the ones I'd hit before. I asked it to
+    also check that the balance sheet balanced and that net income on
+    the IS tied to retained earnings movement on the BS. It added
+    those.</p>
 
     <h3>Round 2 · Execute</h3>
-    <p>With the plan approved, I asked it to build the script:</p>
-    <pre><code>Now write the Python script. It should:
-- Load actuals.csv and model.xlsx
-- Use the mapping table you proposed to match each account_code
-  to its target sheet and row; skip any code not in the mapping
-  and log a warning
-- Write values only into hardcoded (non-formula) cells in the
-  April column (column E)
-- After writing, run two checks and print the result:
-    1. Balance sheet: do Total Assets equal Total Liabilities
-       and Equity? Print the values and whether they match.
-    2. Cash flow: does Ending Cash equal Cash &amp; Equivalents
-       on the balance sheet? Print both and whether they match.
-- Save the result as model_apr2024.xlsx
+    <p>Once the plan was approved:</p>
+    <pre><code>Now execute the plan. Write a Python script that:
 
-Do not use xlwings or COM automation. Use openpyxl only.</code></pre>
-    <p>I specified openpyxl because xlwings requires a live Excel
-    process and won't run in most automated environments.</p>
+- Loads trial_balance.csv and account_mapping.csv
+- Computes net amount per account (credit - debit), then
+  applies the sign from the mapping so model lines come out
+  with the right polarity
+- Aggregates to one number per model_line
+- Opens model.xlsx, finds the column for the current period
+  on the Inputs tab, and writes the aggregated numbers into
+  the matching rows
+- Leaves all formulas on IS, BS, CF intact
+- Saves to model_2026-04.xlsx (don't overwrite the source)
+
+At the end, print:
+- Any account_numbers in the TB that weren't in the mapping
+- Total revenue, total opex, net income for the period
+- Whether the BS balances (assets - liabilities - equity,
+  should be ~0)
+- Whether IS net income matches the change in retained
+  earnings on the BS</code></pre>
+    <p>It produced about 60 lines of Python using pandas and openpyxl.
+    First run failed because the Inputs tab had merged cells in the
+    header row. I pasted the error back and it switched to writing by
+    named range instead of cell coordinates, which was cleaner anyway.</p>
 
     <h3>Round 3 · Verify and refine</h3>
-    <p>The script ran and the checks passed — but I noticed the warning
-    log had flagged three account codes as not found. I asked:</p>
-    <pre><code>Three account codes were skipped: 2010, 3030, 4000.
-Looking at the CSV, those are the subtotal rows (Gross Profit,
-Total OpEx, EBITDA). They're formula-driven in the model, so
-skipping them is correct — but I want to make sure the script
-is skipping them intentionally, not accidentally.
-
-Update the mapping table to explicitly mark these codes as
-"formula row — intentionally skipped" so the warning log
-distinguishes a deliberate skip from a genuinely missing code.</code></pre>
-    <p>The agent updated the mapping dict to use a sentinel value
-    (<code>None</code> for the row address) and changed the log message
-    accordingly. Now the output clearly differentiates
-    <em>"skipped (formula row)"</em> from <em>"WARNING: code not in
-    mapping"</em> — the latter being the one you actually need to
-    investigate.</p>
+    <p>The script printed five unmapped accounts and a balance sheet
+    that was off by $1,240. I asked:</p>
+    <pre><code>BS is off by $1,240. Walk me through where that could come
+from given what the script did. Don't fix anything yet —
+just give me the two most likely causes ranked by
+likelihood, and the one diagnostic line I should print to
+tell them apart.</code></pre>
+    <p>Top guess: one of the unmapped accounts was a real balance sheet
+    line (turned out to be a new "Lease liability - short term" account
+    from an office move). I added it to the mapping, re-ran, and the
+    BS balanced to the penny. Total elapsed time from "open laptop" to
+    "model updated" was thirteen minutes.</p>
 
     <h2>4. Working code</h2>
-    <p>The final Python script, lightly cleaned:</p>
+    <p>The final script, lightly cleaned. You'd save this as
+    <code>update_model.py</code> next to the three input files:</p>
     <pre><code>import pandas as pd
-import openpyxl
-from openpyxl.utils import get_column_letter
+from openpyxl import load_workbook
 
-# ── Config ────────────────────────────────────────────────────────────────
-ACTUALS_FILE = "actuals.csv"
-MODEL_FILE   = "model.xlsx"
-OUTPUT_FILE  = "model_apr2024.xlsx"
-PERIOD_COL   = 5   # column E = April (the new actuals column)
+PERIOD = "2026-04"
 
-# ── Mapping: account_code → (sheet_name, row_index)
-# None = formula row, intentionally skipped
-MAPPING = {
-    "1000": ("Income Statement", 4),   # Product revenue
-    "1010": ("Income Statement", 5),   # Services revenue
-    "2000": ("Income Statement", 7),   # Cost of Goods Sold
-    "2010": None,                      # Gross Profit (formula)
-    "3000": ("Income Statement", 11),  # S&amp;M
-    "3010": ("Income Statement", 12),  # R&amp;D
-    "3020": ("Income Statement", 13),  # G&amp;A
-    "3030": None,                      # Total OpEx (formula)
-    "4000": None,                      # EBITDA (formula)
-    "4010": ("Income Statement", 17),  # D&amp;A
-    "4020": None,                      # EBIT (formula)
-    "4030": ("Income Statement", 19),  # Interest Expense
-    "4040": None,                      # Pre-Tax Income (formula)
-    "4050": None,                      # Income Tax (formula)
-    "4060": None,                      # Net Income (formula)
-    "5000": ("Balance Sheet", 4),      # Cash
-    "5010": ("Balance Sheet", 5),      # AR
-    "5020": ("Balance Sheet", 6),      # Inventory
-    "5030": ("Balance Sheet", 7),      # Prepaid
-    "5040": None,                      # Total Current Assets (formula)
-    "5050": ("Balance Sheet", 9),      # PP&amp;E
-    "5060": ("Balance Sheet", 10),     # Intangibles
-    "5070": ("Balance Sheet", 11),     # Other LT assets
-    "5080": None,                      # Total Assets (formula)
-    "6000": ("Balance Sheet", 15),     # AP
-    "6010": ("Balance Sheet", 16),     # Accrued liabilities
-    "6020": ("Balance Sheet", 17),     # Deferred revenue
-    "6030": ("Balance Sheet", 18),     # Current debt
-    "6040": None,                      # Total Current Liabilities (formula)
-    "6050": ("Balance Sheet", 20),     # LT debt
-    "6060": ("Balance Sheet", 21),     # Other LT liabilities
-    "6070": None,                      # Total Liabilities (formula)
-    "6080": ("Balance Sheet", 25),     # Common stock
-    "6090": ("Balance Sheet", 26),     # Retained earnings
-    "6100": None,                      # Total Equity (formula)
-    "6110": None,                      # Total L&amp;E (formula)
-    "7000": None,                      # Net Income — linked from IS sheet
-    "7010": None,                      # D&amp;A — linked from IS sheet
-    "7020": ("Cash Flow", 6),          # Change in AR
-    "7030": ("Cash Flow", 7),          # Change in inventory
-    "7040": ("Cash Flow", 8),          # Change in AP
-    "7050": ("Cash Flow", 9),          # Change in deferred rev
-    "7060": None,                      # Cash from Operations (formula)
-    "7070": ("Cash Flow", 13),         # Capex
-    "7080": None,                      # Cash from Investing (formula)
-    "7090": ("Cash Flow", 17),         # Debt repayment
-    "7100": None,                      # Cash from Financing (formula)
-    "7110": None,                      # Net Change in Cash (formula)
-    "7120": ("Cash Flow", 21),         # Beginning cash
-    "7130": None,                      # Ending Cash (formula)
-}
+tb = pd.read_csv("trial_balance.csv")
+mp = pd.read_csv("account_mapping.csv")
 
-# ── Load data ─────────────────────────────────────────────────────────────
-actuals = pd.read_csv(ACTUALS_FILE, dtype={"account_code": str})
-wb = openpyxl.load_workbook(MODEL_FILE)
+# --- Net amount per account, then apply mapping sign ---
+tb["net"] = tb["credit"] - tb["debit"]
+merged = tb.merge(mp, on="account_number", how="left")
 
-# ── Write values ──────────────────────────────────────────────────────────
-for _, row in actuals.iterrows():
-    code = str(row["account_code"]).strip()
-    if code not in MAPPING:
-        print(f"WARNING: account {code} ({row['line_item']}) not in mapping — skipped")
-        continue
-    target = MAPPING[code]
-    if target is None:
-        print(f"  Skipped (formula row): {code} {row['line_item']}")
-        continue
-    sheet_name, row_idx = target
-    ws = wb[sheet_name]
-    ws.cell(row=row_idx, column=PERIOD_COL, value=row["amount_usd"])
+unmapped = merged[merged["model_line"].isna()]["account_number"].unique()
+if len(unmapped):
+    print("WARNING - unmapped accounts:", list(unmapped))
 
-# ── Checks ────────────────────────────────────────────────────────────────
-bs = wb["Balance Sheet"]
-col = get_column_letter(PERIOD_COL)
+merged["signed"] = merged["net"] * merged["sign"].fillna(0)
+by_line = merged.groupby("model_line")["signed"].sum()
 
-total_assets = bs[f"{col}12"].value
-total_le     = bs[f"{col}28"].value
-print(f"\nBalance Sheet check:")
-print(f"  Total Assets:            ${total_assets:,.0f}")
-print(f"  Total Liabilities+Equity:${total_le:,.0f}")
-print(f"  {'✓ Balanced' if total_assets == total_le else '⚠ MISMATCH — investigate'}")
+# --- Write into model.xlsx via named ranges ---
+wb = load_workbook("model.xlsx")
+inputs = wb["Inputs"]
+# Each model_line has a named range like "in_revenue_2026_04"
+for line, value in by_line.items():
+    range_name = f"in_{line.lower().replace(' ', '_')}_{PERIOD.replace('-', '_')}"
+    if range_name in wb.defined_names:
+        dest = wb.defined_names[range_name].value
+        sheet, cell = dest.split("!")
+        wb[sheet.strip("'")][cell.replace("$", "")] = float(value)
 
-cf = wb["Cash Flow"]
-ending_cash_cf = cf[f"{col}22"].value
-cash_bs        = bs[f"{col}4"].value
-print(f"\nCash tie-out:")
-print(f"  Ending Cash (CFS): ${ending_cash_cf:,.0f}")
-print(f"  Cash on BS:        ${cash_bs:,.0f}")
-print(f"  {'✓ Match' if ending_cash_cf == cash_bs else '⚠ MISMATCH — investigate'}")
+wb.save(f"model_{PERIOD}.xlsx")
 
-# ── Save ──────────────────────────────────────────────────────────────────
-wb.save(OUTPUT_FILE)
-print(f"\nSaved: {OUTPUT_FILE}")
+# --- Checks ---
+def line(name): return by_line.get(name, 0)
+
+revenue = line("Revenue")
+opex = line("COGS") + line("SG&amp;A") + line("R&amp;D")
+ni = revenue + opex  # opex is already negative after sign
+
+print(f"Revenue: {revenue:,.0f}")
+print(f"Opex:    {opex:,.0f}")
+print(f"NI:      {ni:,.0f}")
+
+# Re-open saved file to let Excel formulas recompute on next open;
+# for an in-script check we approximate from by_line directly.
+assets = sum(line(x) for x in ["Cash", "AR", "Inventory", "PPE"])
+liab   = sum(line(x) for x in ["AP", "Accrued expenses",
+                                "Lease liability - ST",
+                                "Lease liability - LT", "Debt"])
+equity = line("Common stock") + line("Retained earnings - prior") + ni
+print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
 </code></pre>
 
     <h2>5. What good looks like</h2>
-    <p>The deliverable isn't the script. It's the CFO's email arriving
-    four hours earlier, with a model that's already been checked twice
-    before she opens it.</p>
+    <p>The deliverable isn't the script — it's the model file plus a
+    three-line note to the CFO. The note is the part most analysts
+    skip, and it's the part that builds trust:</p>
     <table>
       <thead>
-        <tr><th>Task</th><th>Before</th><th>After</th></tr>
+        <tr><th>Item</th><th>This month</th><th>vs. last month</th><th>Comment</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>Paste actuals into model</td>
-          <td>~45 min</td>
-          <td>0 min (automated)</td>
+          <td>Revenue</td>
+          <td>$2.45M</td>
+          <td>+4.1%</td>
+          <td>EU shipments caught up after the March delay.</td>
         </tr>
         <tr>
-          <td>Pull period column forward</td>
-          <td>~20 min</td>
-          <td>0 min (handled in script)</td>
+          <td>Net income</td>
+          <td>$318K</td>
+          <td>+11.2%</td>
+          <td>Materials cost down 60bps; headcount flat.</td>
         </tr>
         <tr>
-          <td>Balance sheet / cash tie-out checks</td>
-          <td>~30 min (manual, re-run when off)</td>
-          <td>Instant — error raised if off</td>
-        </tr>
-        <tr>
-          <td>Your time on delivery day</td>
-          <td>4–5 hours</td>
-          <td>~15 min (review output + send)</td>
+          <td>Balance sheet</td>
+          <td>Balanced</td>
+          <td>—</td>
+          <td>New lease-liability account added to mapping.</td>
         </tr>
       </tbody>
     </table>
-    <p>Run the script, read the check output, open the saved workbook to
-    confirm it looks right, and send. That's the whole morning.</p>
+    <p>Once you trust the script, the fifteen minutes is: drop the
+    new TB in the folder, run the script, eyeball the three checks,
+    write the note, send.</p>
 
     <div class="pitfalls-inline">
       <h4>Watch for</h4>
       <ul>
-        <li><strong>Writing over formula cells.</strong> The agent will
-        happily overwrite a subtotal formula with a hardcoded number if
-        your mapping is wrong. The model will look fine until someone
-        changes an input upstream and the subtotal doesn't move. Always
-        audit the mapping against the actual workbook before the first
-        run.</li>
-        <li><strong>Account code drift.</strong> When finance restructures
-        the chart of accounts, old codes disappear and new ones appear.
-        The script's WARNING log is your early-detection system — if you
-        see codes not in the mapping on a month where you didn't change
-        anything, investigate before assuming it's fine.</li>
-        <li><strong>A passing check ≠ a correct model.</strong> The
-        balance sheet can balance with wrong numbers if errors offset each
-        other. The checks catch arithmetic errors, not logic errors. Still
-        do a quick eyeball of the big line items before sending.</li>
+        <li><strong>New accounts that look like old ones.</strong> An
+        account named "Lease liability - ST" looks harmless until you
+        realize it's never been on the balance sheet before. Always
+        read the unmapped-accounts warning before saving.</li>
+        <li><strong>Sign conventions.</strong> GLs and models disagree.
+        Get the sign column in the mapping right once, then trust it —
+        but spot-check revenue and net income each month against last
+        month's printed model.</li>
+        <li><strong>Letting the script overwrite the source model.</strong>
+        Always write to a dated file. If the script has a bug, you want
+        last month's working model still on disk.</li>
+        <li><strong>Skipping the human note.</strong> A script that
+        produces a balanced model with no commentary is less useful
+        than a half-day spreadsheet with a sentence of insight. Don't
+        lose the last mile.</li>
       </ul>
     </div>
 
     <h2>6. Extensions</h2>
-    <p>If you have more time, ask the agent to:</p>
+    <p>Once the basic update is reliable, ask the agent to:</p>
     <ul>
-      <li>Add a variance column that computes month-over-month change and
-      flags any line item that moved more than ±15% — a built-in
-      sanity check for data-entry errors in the ERP export.</li>
-      <li>Export a formatted PDF of the three statements automatically
-      after the checks pass, ready to attach to the CFO email.</li>
-      <li>Wrap the script as a scheduled job that runs on the fifth of
-      each month, pulls the latest CSV from a shared drive, and emails
-      you the check output before you've had your first coffee.</li>
+      <li>Add a variance-vs-budget column and flag any line item more
+      than 5% off plan.</li>
+      <li>Auto-draft the three-line CFO note from the period-over-period
+      deltas, for you to edit rather than write from scratch.</li>
+      <li>Wrap the script as a scheduled task that runs on the first
+      business day, emails you the unmapped-accounts list, and waits
+      for you to update the mapping before producing the final model.</li>
     </ul>
-    <p>The scheduled-job version is covered in Module 7's section on
-    hooks and automation.</p>
+    <p>The scheduled-task version maps to Module 7's section on hooks
+    and recurring jobs.</p>
 
     <h2>7. Skills used</h2>
     <div class="chips">
+      <a class="chip" href="/course/01-talking-to-ai/prompting-basics.html">Prompting · roles &amp; examples</a>
       <a class="chip" href="/course/04-workflow/">Plan before execute</a>
       <a class="chip" href="/course/04-workflow/">Context engineering</a>
-      <a class="chip" href="/course/05-evaluating-output/">Verifying numeric output</a>
-      <a class="chip" href="/course/01-talking-to-ai/prompting-basics.html">Prompting · roles &amp; constraints</a>
+      <a class="chip" href="/course/05-evaluating-output/">Built-in checks</a>
     </div>
 
     <a class="next-cta" href="/cases/finance/">

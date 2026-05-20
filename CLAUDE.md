@@ -1,0 +1,1 @@
+This folder contains material for a website that teaches vibecoding to undergraduate business students.
