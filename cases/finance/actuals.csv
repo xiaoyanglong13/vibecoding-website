@@ -1,0 +1,51 @@
+account_code,line_item,statement,period,amount_usd
+1000,Revenue - Product,IS,2024-04,3820000
+1010,Revenue - Services,IS,2024-04,610000
+2000,Cost of Goods Sold,IS,2024-04,1654000
+2010,Gross Profit,IS,2024-04,2776000
+3000,Sales & Marketing,IS,2024-04,542000
+3010,Research & Development,IS,2024-04,388000
+3020,General & Administrative,IS,2024-04,211000
+3030,Total Operating Expenses,IS,2024-04,1141000
+4000,EBITDA,IS,2024-04,1635000
+4010,Depreciation & Amortization,IS,2024-04,94000
+4020,EBIT,IS,2024-04,1541000
+4030,Interest Expense,IS,2024-04,87000
+4040,Pre-Tax Income,IS,2024-04,1454000
+4050,Income Tax Expense,IS,2024-04,320000
+4060,Net Income,IS,2024-04,1134000
+5000,Cash & Equivalents,BS,2024-04,4210000
+5010,Accounts Receivable,BS,2024-04,1870000
+5020,Inventory,BS,2024-04,430000
+5030,Prepaid & Other Current Assets,BS,2024-04,155000
+5040,Total Current Assets,BS,2024-04,6665000
+5050,PP&E (net),BS,2024-04,2140000
+5060,Intangibles & Goodwill,BS,2024-04,880000
+5070,Other Long-Term Assets,BS,2024-04,310000
+5080,Total Assets,BS,2024-04,9995000
+6000,Accounts Payable,BS,2024-04,640000
+6010,Accrued Liabilities,BS,2024-04,390000
+6020,Deferred Revenue,BS,2024-04,510000
+6030,Current Portion of Debt,BS,2024-04,200000
+6040,Total Current Liabilities,BS,2024-04,1740000
+6050,Long-Term Debt,BS,2024-04,2100000
+6060,Other Long-Term Liabilities,BS,2024-04,145000
+6070,Total Liabilities,BS,2024-04,3985000
+6080,Common Stock & APIC,BS,2024-04,3200000
+6090,Retained Earnings,BS,2024-04,2810000
+6100,Total Equity,BS,2024-04,6010000
+6110,Total Liabilities & Equity,BS,2024-04,9995000
+7000,Net Income,CFS,2024-04,1134000
+7010,Depreciation & Amortization,CFS,2024-04,94000
+7020,Change in Accounts Receivable,CFS,2024-04,-143000
+7030,Change in Inventory,CFS,2024-04,-28000
+7040,Change in Accounts Payable,CFS,2024-04,55000
+7050,Change in Deferred Revenue,CFS,2024-04,62000
+7060,Cash from Operations,CFS,2024-04,1174000
+7070,Capex,CFS,2024-04,-180000
+7080,Cash from Investing,CFS,2024-04,-180000
+7090,Debt Repayment,CFS,2024-04,-50000
+7100,Cash from Financing,CFS,2024-04,-50000
+7110,Net Change in Cash,CFS,2024-04,944000
+7120,Beginning Cash,CFS,2024-04,3266000
+7130,Ending Cash,CFS,2024-04,4210000
