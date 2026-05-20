@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pitfalls · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="module-header">
+      <span class="eyebrow">Pitfalls</span>
+      <h1>Common pitfalls</h1>
+      <p class="lede">A growing log of the most common mistakes — and
+      how to recognize and fix them. Each one is small enough to fix in
+      under five minutes once you spot it.</p>
+    </div>
+
+    <p>This page is designed to grow. Every time a student hits something
+    confusing, it becomes an entry. If you're stuck, scan this page
+    first — your problem is probably here.</p>
+
+    <h2>Starter entries</h2>
+    <ul>
+      <li><strong>Plausible-but-wrong numbers.</strong> The agent
+      confidently reports a metric that turns out to be calculated
+      against the wrong column. Always spot-check at least one number
+      against the raw data.</li>
+      <li><strong>Hallucinated functions.</strong> The agent writes code
+      calling <code>some_library.do_thing()</code> that doesn't exist.
+      Sign: the code crashes on first run with "no such function."
+      Fix: tell the agent which library you actually have, and to
+      verify the function exists before using it.</li>
+      <li><strong>Silent failures.</strong> The script runs, exits with
+      no error, and produces nothing. Sign: empty output file or a
+      success message with no detail. Fix: ask the agent to add a final
+      "verify" step that prints what was produced.</li>
+      <li><strong>Over-prompting on simple tasks.</strong> You wrote a
+      page-long prompt for a one-line task. Counterproductive — match
+      prompt length to task complexity.</li>
+      <li><strong>Treating prompts as one-shot.</strong> First output is
+      80% right and you start over instead of asking for the 20% fix.
+      Iterate, don't restart.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Coming soon</span>
+      <p>Each pitfall will get its own page with a fuller example and
+      the diagnostic question that helps you recognize it.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

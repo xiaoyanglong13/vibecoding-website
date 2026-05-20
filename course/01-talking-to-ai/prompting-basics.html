@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompting basics · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-vibecoding.html"><span class="module-num">1.</span>What is vibecoding?</a></li>
+        <li><a href="/course/01-talking-to-ai/prompting-basics.html"><span class="module-num">2.</span>Prompting basics</a></li>
+        <li><a href="/course/01-talking-to-ai/exercises.html"><span class="module-num">3.</span>Exercises</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Chat to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 2 of 3 · 20 minutes</span>
+        <h1>Prompting basics</h1>
+        <p class="lede">Four patterns that turn 80% of vague requests into
+        useful outputs. Each one comes with a before/after example.</p>
+      </div>
+
+      <h2>The four patterns</h2>
+      <p>You don't need to memorize a hundred "prompt engineering" tricks.
+      Four patterns cover most of what a Business School Student needs. Once they're
+      automatic, the rest is just practice.</p>
+
+      <h3>Pattern 1 · Give the AI a role</h3>
+      <p>The AI behaves differently depending on whose shoes you ask it
+      to step into. Start your prompt by telling it who it is for this
+      task.</p>
+
+      <p><strong>Before:</strong></p>
+      <pre><code>Look at this customer feedback and tell me what's wrong.</code></pre>
+
+      <p><strong>After:</strong></p>
+      <pre><code>You are a senior product manager at a B2B SaaS company.
+You are reviewing customer feedback to decide what to put on
+next quarter's roadmap. Read the feedback below and identify the
+three themes that affect the most enterprise customers. For each
+theme, estimate severity (low/medium/high) and suggest one
+follow-up question I should ask the affected accounts.</code></pre>
+
+      <p>The "before" version gives you a generic complaint summary. The
+      "after" version gives you something usable in a roadmap meeting.</p>
+
+      <h3>Pattern 2 · Show examples of what you want</h3>
+      <p>If you can describe the output format with an example, do it.
+      Examples beat descriptions almost every time.</p>
+
+      <p><strong>Before:</strong></p>
+      <pre><code>Summarize each of these meeting notes in a concise way.</code></pre>
+
+      <p><strong>After:</strong></p>
+      <pre><code>Summarize each of these meeting notes in the following format:
+
+  Meeting: [date] with [attendees]
+  Decision made: [1 sentence, or "none"]
+  Owner: [name, or "unassigned"]
+  Next check-in: [date, or "not scheduled"]
+
+If any field is missing from the notes, write "not specified".
+Do not invent information.</code></pre>
+
+      <p>The "after" version is enforceable — you can scan a hundred
+      summaries quickly because they all look the same. The "before"
+      version gives you a hundred slightly different paragraphs.</p>
+
+      <h3>Pattern 3 · State what you don't want</h3>
+      <p>AIs default to being helpful in ways that often aren't useful.
+      Tell it what to skip.</p>
+
+      <p><strong>Before:</strong></p>
+      <pre><code>Write a one-paragraph executive summary of this report.</code></pre>
+
+      <p><strong>After:</strong></p>
+      <pre><code>Write a one-paragraph executive summary of this report.
+Do not start with "This report..." or "In summary..."
+Do not include any caveats about needing more information.
+Do not use the words "leverage", "synergy", or "robust".
+If something is unclear in the source, ask me — don't guess.</code></pre>
+
+      <p>You've now eliminated four common failure modes in one pass.</p>
+
+      <h3>Pattern 4 · Ask the AI to think first, answer second</h3>
+      <p>For anything analytical, separate "thinking" from "output".</p>
+
+      <p><strong>Before:</strong></p>
+      <pre><code>Which of these three vendors should we pick?</code></pre>
+
+      <p><strong>After:</strong></p>
+      <pre><code>I need to choose one of three vendors (details below).
+First, list the criteria a reasonable buyer would weigh.
+Then score each vendor against each criterion (1-5).
+Then state your recommendation and the one criterion that
+matters most for this decision. If two vendors tie on the
+top criterion, name the tiebreaker.</code></pre>
+
+      <p>The "after" version is auditable. You can disagree with the
+      criteria, the scores, or the tiebreaker — and the disagreement
+      is concrete enough to act on.</p>
+
+      <h2>Put them together</h2>
+      <p>Most good prompts use two or three of these at once. Here's a
+      compound example:</p>
+      <pre><code>You are a marketing analyst preparing a board update. (role)
+
+Below is our last 12 months of pipeline data. For each quarter:
+
+  Quarter: Q1 2025
+  Pipeline created: $X
+  Pipeline closed: $Y
+  Top source: [channel]
+  Notable change vs prior quarter: [1 sentence]
+
+(format example)
+
+Use only the data provided. If a quarter has missing fields,
+write "not in source". Do not extrapolate or estimate. (what not to do)
+
+Before producing the table, list any data quality issues you
+notice. (think first)</code></pre>
+
+      <div class="callout">
+        <span class="callout-label">The shortcut</span>
+        <p>When in doubt, ask yourself: "If I gave this prompt to a smart
+        new hire on their first day, would they have enough to do the
+        job correctly?" If not, what's missing? That missing thing goes
+        in the prompt.</p>
+      </div>
+
+      <div class="pitfalls-inline">
+        <h4>Pitfalls at this stage</h4>
+        <ul>
+          <li><strong>Over-prompting.</strong> Don't write a three-page
+          prompt for a one-line task. Match prompt length to task
+          complexity.</li>
+          <li><strong>Treating prompts as one-shot.</strong> If the first
+          output is 80% right, follow up — don't start over.</li>
+          <li><strong>Politeness theatre.</strong> "Please" and "thank
+          you" don't help. Clear specifications do.</li>
+        </ul>
+      </div>
+
+      <a class="next-cta" href="/course/01-talking-to-ai/exercises.html">
+        <div>
+          <div class="next-cta-label">Next · Page 3 of 3</div>
+          <div class="next-cta-title">Exercises</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

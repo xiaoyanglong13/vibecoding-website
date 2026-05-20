@@ -1,0 +1,801 @@
+customer_id,company_name,industry,employee_count,plan_tier,mrr_usd,signup_date,last_login_days_ago,features_used_30d,support_tickets_90d,csm_assigned
+c_15694,Vertex Partners,freight logistics,3248,starter plan,237,2025-05-06,2,12,1,
+c_89943,Cascade Ventures,tech / software,,professional,1215,2024-10-04,13,2,0,Kevin H.
+c_42389,Helix LLC,health services,59,Starter,235,2024-08-25,7,2,1,
+c_37248,Acme Group,logistics/transportation,21,enterprise,2435,2023-11-04,8,6,2,James T.
+c_82278,Edge Advisors,manufacturing,7024,business,2266,2023-12-23,37,5,0,David C.
+c_59262,Vertex Technologies,Technology,113,starter,213,2025-04-08,3,9,1,Anna P.
+c_82723,Maple Labs,B2B Software,31,STARTER,195,2023-11-22,10,3,0,
+c_32290,Ionic Advisors,media,133,professional,1172,2024-07-07,0,1,0,Priya M.
+c_32349,Prime Services,HR tech,103,Business ,1600,2023-12-17,40,5,1,Rachel S.
+c_98844,Iron Corp,consulting,503,STARTER,364,2025-03-20,19,3,0,Priya M.
+c_30888,Stone Ventures,retail,44,professional,861,2025-01-23,31,7,0,David C.
+c_88854,Cedar Ventures,SaaS,49,BUSINESS,2401,2025-01-17,7,10,4,Priya M.
+c_39835,Cedar Co,HealthTech,68,business,1923,2025-01-10,47,5,0,Sophia B.
+c_48005,Zenith Consulting,SaaS,761,pro,691,2024-05-09,48,5,1,Sarah K.
+c_12842,Acme Systems,non-profit,33,starter plan,221,2024-07-07,9,4,0,
+c_45477,Forge Group,retail & ecommerce,865,pro,1178,2023-11-08,14,11,1,Carlos R.
+c_74814,Solid Services,Technology,397,Starter ,261,2024-10-05,51,4,1,
+c_88284,Noble Systems,legal services,1428,Pro ,499,2025-01-06,7,1,0,Kevin H.
+c_94415,Vertex LLC,FINANCE,283,starter plan,176,2024-01-05,51,0,1,Rachel S.
+c_91040,Blue Services,retail,10,Pro ,499,2023-10-05,25,0,5,James T.
+c_44099,Forge Ventures,logistics / 3pl,100,Pro ,500,2024-12-15,46,2,6,James T.
+c_68354,Kinetic Consulting,online retail,29,STARTER,331,2024-09-27,39,3,0,
+c_43768,Vertex Ventures,RETAIL,905,professional,1201,2024-04-06,10,13,2,Rachel S.
+c_28298,Stratum Co,retail & ecommerce,28,BUSINESS,2358,2024-02-21,18,10,5,Sophia B.
+c_72156,Vector Inc,software development,108,PRO,499,2023-08-20,8,6,0,Sophia B.
+c_54528,Trek Dynamics,SaaS / Tech,66,starter,306,2024-09-18,19,2,0,
+c_28567,Core Dynamics,enterprise software,281,PRO,525,2025-03-26,8,7,3,Carlos R.
+c_79843,Prime Group,TECH,586,starter,215,2024-06-07,7,7,0,James T.
+c_52079,Global Technologies,Software,151,Starter,297,2023-12-04,0,10,2,David C.
+c_60190,Topo Labs,wealth management,,Starter,309,2024-03-16,6,7,0,Priya M.
+c_12058,Ionic Co,Logistics,,STARTER,494,2024-04-27,5,7,1,
+c_93699,Jade Labs,non-profit,230,starter,205,2024-05-29,56,0,0,Kevin H.
+c_59848,Valor Technologies,SaaS,150,PRO,1043,2024-11-03,18,1,5,Sophia B.
+c_51002,Acme Labs,freight logistics,11,Starter,291,2023-11-02,59,6,1,
+c_45557,Apex Co,logistics / 3pl,6183,Starter,198,2023-11-07,24,6,0,
+c_22666,Stratum Advisors,enterprise software,1372,Pro,906,2023-08-23,27,3,6,Kevin H.
+c_55430,Solid Ventures,Retail,40,starter plan,250,2025-02-27,36,3,2,
+c_52060,Slate Systems,Finance,104,starter,240,2024-07-30,7,12,1,James T.
+c_17663,Verde Group,Software,2618,Business,2995,2025-01-28,37,3,5,David C.
+c_28200,Ardent Services,Logistics & 3PL,665,enterprise,1952,2022-12-19,12,12,2,Sophia B.
+c_66348,Forge Partners,logistics / 3pl,6,Pro ,1021,2024-01-17,37,6,5,Carlos R.
+c_12378,Quorum LLC,Retail / Ecommerce,325,STARTER,218,2025-01-02,36,2,2,
+c_64100,Nexus Corp,B2B Software,58,Pro ,499,2023-09-23,43,1,5,Carlos R.
+c_50300,Forge Corp,3pl / warehousing,29,starter,330,2023-10-10,7,6,0,Mei L.
+c_15938,Ridge Solutions,tech / software,60,Pro,926,2023-06-02,38,5,6,Kevin H.
+c_14304,Terra Partners,fintech,,Pro,965,2023-10-12,54,6,1,Sophia B.
+c_68186,Noble Technologies,Tech,15,Starter,50,2025-05-01,4,9,1,
+c_40316,Quorum Solutions,Tech,1533,Business,1838,2024-07-31,4,12,0,David C.
+c_66010,River Co,D2C ecommerce,,starter,287,2023-11-01,7,4,1,
+c_45505,Vector Technologies,ecommerce,437,starter plan,309,2024-05-25,7,8,2,James T.
+c_47111,Swift Advisors,software,,Pro,975,2024-03-10,12,12,4,Tom W.
+c_11104,Mesa Consulting,health services,1391,Pro,1402,2025-02-10,43,5,8,Mei L.
+c_60055,Valor Systems,FinTech,38,Pro,830,2024-05-28,43,9,1,Carlos R.
+c_89298,Harbor Co,LOGISTICS,113,enterprise,2297,2023-09-09,10,6,2,David C.
+c_46007,Prime Advisors,LOGISTICS,52,starter plan,397,2025-03-22,14,7,0,
+c_27714,Bright Co,Software,468,starter plan,177,2025-04-26,4,11,0,Kevin H.
+c_84048,Cedar Systems,SaaS / Tech,102,Pro ,852,2024-06-08,45,4,5,Tom W.
+c_85179,Cedar Corp,tech / software,4035,starter,188,2024-07-19,37,0,0,
+c_59936,Ionic Dynamics,wealth management,286,starter,196,2024-09-09,49,1,0,Tom W.
+c_54635,Maple Systems,non-profit,820,Pro,804,2024-11-02,1,10,2,Sophia B.
+c_68622,Core Ventures,Tech,152,starter plan,473,2024-01-25,49,10,0,
+c_80398,Jade Inc,RETAIL,855,BUSINESS,2702,2023-10-28,13,11,1,Carlos R.
+c_39990,Stone Dynamics,HEALTHCARE,974,STARTER,390,2024-11-13,3,6,0,
+c_25898,Harbor Consulting,energy,3803,Starter,293,2024-06-20,43,4,0,Tom W.
+c_37812,Valor Partners,B2B Software,98,Pro,867,2024-08-30,58,7,0,Kevin H.
+c_92643,Ridge Works,tech / software,293,starter plan,265,2024-02-29,6,10,1,Mei L.
+c_81294,Topo Systems,HR tech,1354,starter,189,2024-10-14,34,4,1,James T.
+c_92630,Titan Dynamics,Software,7,Starter,371,2024-11-04,17,9,2,Kevin H.
+c_44013,Titan LLC,education,363,BUSINESS,499,2022-12-03,2,7,5,Mei L.
+c_83011,Keystone Advisors,SaaS,445,business,2388,2024-05-08,48,1,0,James T.
+c_98439,Vault Group,Technology,135,PRO,1129,2024-07-07,27,4,2,Carlos R.
+c_27305,Verde Works,3pl / warehousing,,PRO,1216,2024-06-12,29,0,2,Mei L.
+c_38293,Vista Solutions,Technology,,business,2402,2023-10-30,5,0,3,James T.
+c_41944,Nexus Works,real estate,322,enterprise,1754,2023-09-18,47,1,7,Priya M.
+c_23299,Mesa LLC,wealth management,155,STARTER,308,2023-12-23,45,2,1,
+c_36023,Terra Consulting,Logistics & 3PL,33,STARTER,167,2025-04-18,11,9,1,
+c_88038,Mesa Partners,media,601,Pro ,1411,2024-02-07,46,2,1,Sophia B.
+c_73378,Maple LLC,logistics / 3pl,36,PRO,669,2025-01-16,0,6,4,Sarah K.
+c_69360,First Co,online retail,103,STARTER,280,2023-10-15,53,2,1,James T.
+c_13235,Echo Ventures,retail,6277,Starter,336,2023-11-17,19,0,2,David C.
+c_33976,Union Works,real estate,36,starter,265,2024-12-11,36,3,1,
+c_43691,Peak LLC,D2C ecommerce,,Business,1918,2023-08-30,42,5,3,Tom W.
+c_85393,Edge Works,SaaS / Tech,396,PRO,1021,2024-03-31,18,0,6,Sarah K.
+c_34236,Core Corp,banking & finance,318,starter,174,2023-10-14,48,4,0,
+c_44874,Core Labs,medical devices,329,PRO,920,2024-06-08,11,18,1,Anna P.
+c_73598,Rally Inc,education,80,Business ,499,2022-12-12,51,3,5,Sophia B.
+c_83110,Ultra Dynamics,supply chain logistics,403,professional,1144,2024-01-06,28,3,0,Priya M.
+c_95927,Terra Dynamics,retail,298,starter plan,363,2024-12-05,32,2,1,Carlos R.
+c_47434,First Advisors,logistics / 3pl,16,Starter,400,2023-12-19,27,7,0,
+c_36093,Wave Partners,media,,STARTER,364,2024-10-01,11,9,2,Carlos R.
+c_41789,Harbor Technologies,SaaS / Tech,35,starter plan,326,2024-08-22,7,7,0,Anna P.
+c_28512,Verde Corp,medical devices,125,PRO,1010,2023-06-17,24,3,3,Priya M.
+c_78359,Union Group,Retail,351,pro,898,2023-08-11,24,4,7,Rachel S.
+c_21837,Prime Consulting,health services,30,pro,1243,2024-10-17,43,2,1,Sarah K.
+c_73634,River Works,Retail / Ecommerce,140,Starter ,414,2023-11-04,3,3,0,Carlos R.
+c_62141,Apex Labs,Tech,220,Pro ,1061,2024-04-21,51,6,0,Tom W.
+c_27693,Blue Consulting,TECH,371,PRO,1098,2025-01-31,44,1,0,Sophia B.
+c_90933,Terra Ventures,Finance,835,business,2404,2024-03-22,5,7,2,James T.
+c_81219,Union Inc,food & beverage,442,starter plan,250,2025-01-01,45,1,0,Sophia B.
+c_69542,Rally Works,supply chain logistics,98,Starter,450,2024-05-26,54,1,2,Sarah K.
+c_69353,Solid Inc,legal services,22,starter plan,308,2024-02-15,15,2,1,Mei L.
+c_96773,Slate Co,Technology,784,Pro ,1136,2025-04-03,0,1,0,Kevin H.
+c_60952,Titan Solutions,B2B Software,100,BUSINESS,499,2023-04-06,8,0,5,Kevin H.
+c_80697,Ultra LLC,Software,,Business ,2048,2023-12-19,17,5,4,Priya M.
+c_21526,Jade Services,manufacturing,226,starter plan,233,2025-04-30,5,4,0,
+c_17970,Jade Advisors,tech / software,145,Pro,1189,2024-10-14,56,2,3,Rachel S.
+c_65085,Ionic Technologies,education,8,pro,941,2023-08-08,24,6,6,Mei L.
+c_44128,Global Services,logistics / 3pl,10,Starter ,241,2025-04-24,5,10,1,
+c_87865,Rally Systems,3pl / warehousing,311,business,2809,2023-09-03,35,5,5,Carlos R.
+c_38913,Iron Ventures,SaaS,1153,professional,500,2023-01-09,10,10,1,Sarah K.
+c_82187,Zeal Services,LOGISTICS,269,starter plan,211,2025-04-24,20,12,1,Anna P.
+c_39474,Harbor Services,freight logistics,75,Pro,790,2024-03-01,10,1,5,Rachel S.
+c_66124,Kinetic Services,enterprise software,443,Starter,301,2023-12-15,2,1,0,Mei L.
+c_11392,Ultra Ventures,TECH,179,STARTER,222,2024-02-19,17,6,0,Kevin H.
+c_93441,Lumen Advisors,3pl / warehousing,90,Pro ,1026,2023-06-21,30,5,4,Anna P.
+c_20789,Peak Corp,B2B Software,4551,Pro,1179,2024-05-09,18,6,1,Sophia B.
+c_53210,Stone Labs,e-commerce,3663,Starter,189,2025-02-20,6,11,2,Kevin H.
+c_53063,Vault Dynamics,energy,49,enterprise,1744,2024-12-19,23,6,6,Carlos R.
+c_87574,Union Services,education,76,Pro,994,2023-12-17,19,9,2,Carlos R.
+c_43040,First Works,financial services,65,enterprise,2543,2023-05-15,16,1,5,Sophia B.
+c_65374,Peak Ventures,legal services,102,Pro ,839,2024-01-24,31,9,0,Carlos R.
+c_72672,Iron Advisors,enterprise software,126,Starter ,276,2024-05-01,41,12,1,
+c_85937,Valor Ventures,retail,,pro,1453,2023-12-14,26,4,1,Sophia B.
+c_81453,Prime Corp,Healthcare,982,Pro ,1154,2024-04-18,10,13,2,Mei L.
+c_85006,Blue Works,health services,6,PRO,950,2024-03-31,20,3,2,Sarah K.
+c_79661,Blue Partners,energy,445,starter,292,2023-11-14,6,7,0,Tom W.
+c_34548,Core Services,e-commerce,1794,STARTER,226,2024-05-29,47,3,1,Carlos R.
+c_14075,Global LLC,health tech,,business,2754,2023-04-05,36,1,6,Sarah K.
+c_60518,Summit Co,Retail,4104,starter plan,168,2023-10-09,24,7,1,
+c_41343,Blue Systems,SaaS,40,Starter,387,2024-10-27,5,12,1,
+c_59737,Noble Works,Software,67,STARTER,205,2024-05-01,6,10,2,
+c_51489,Maple Consulting,non-profit,145,pro,1446,2024-09-04,70,1,7,Rachel S.
+c_35104,First Inc,Retail,74,Business ,2733,2024-12-22,5,8,5,Mei L.
+c_61688,Cedar Group,enterprise software,88,Starter,283,2024-03-20,58,9,2,
+c_62351,Orbit Consulting,HR tech,,starter,383,2024-04-26,6,12,0,
+c_95070,Topo Solutions,media,,Business,3178,2025-01-06,46,4,1,Tom W.
+c_92988,Cascade Consulting,software development,117,Starter,327,2025-02-11,50,8,0,
+c_36384,Slate Inc,logistics/transportation,64,Starter ,311,2023-09-29,33,2,0,
+c_81425,Wave Corp,freight logistics,1572,pro,1226,2024-02-24,6,14,2,Kevin H.
+c_92454,Forge Solutions,Tech,380,Starter ,400,2024-08-12,44,2,1,
+c_94313,Terra Group,D2C ecommerce,1105,Business,2687,2023-06-15,12,11,1,Mei L.
+c_79490,Orbit Labs,Software,,BUSINESS,2959,2023-03-30,44,6,5,Mei L.
+c_72298,Stratum Labs,healthcare,,Starter ,251,2023-10-29,6,4,1,Mei L.
+c_67022,Spark Dynamics,Retail / Ecommerce,1488,BUSINESS,2364,2023-12-23,4,14,2,Mei L.
+c_85171,Slate Group,financial tech,427,starter,454,2025-03-09,29,2,0,Anna P.
+c_16445,Swift Corp,HEALTHCARE,,pro,499,2023-11-14,27,2,5,James T.
+c_70017,Core Co,Logistics,80,Starter,280,2024-08-21,4,7,2,Carlos R.
+c_95558,Rally Technologies,food & beverage,16,professional,883,2023-09-05,56,1,6,Sarah K.
+c_83791,Quorum Group,HEALTHCARE,360,Pro ,1097,2023-11-18,3,5,4,David C.
+c_10190,Stone Services,ecommerce,401,Pro ,1439,2024-11-02,3,3,4,Kevin H.
+c_16093,Maple Partners,e-commerce,58,Pro ,1185,2024-04-14,4,6,4,Carlos R.
+c_36887,Slate Labs,fintech,254,starter,277,2025-04-25,41,3,2,
+c_84535,Noble LLC,freight logistics,456,PRO,699,2024-09-12,40,5,6,Anna P.
+c_62869,Maple Inc,media,,PRO,1288,2023-09-22,15,1,3,Mei L.
+c_88732,Zenith LLC,software,,Starter,282,2025-04-21,52,11,0,
+c_69836,Harbor LLC,health tech,7321,Pro,764,2024-02-02,44,5,6,Carlos R.
+c_91196,First Labs,real estate,39,PRO,499,2024-07-09,18,2,3,Sophia B.
+c_66764,Trek Services,SaaS,411,starter plan,290,2023-11-28,28,0,0,
+c_77104,Stratum Services,Technology,1191,BUSINESS,3853,2023-01-18,3,10,1,Carlos R.
+c_35250,Acme Services,freight logistics,112,Pro,822,2023-07-24,8,6,6,Carlos R.
+c_20811,Vault Technologies,Software,,business,2181,2024-12-15,15,4,0,Sophia B.
+c_58851,Zenith Dynamics,logistics / 3pl,391,STARTER,347,2024-04-07,51,9,1,Mei L.
+c_73969,Vault Services,tech / software,652,enterprise,1520,2023-02-07,9,10,1,David C.
+c_38250,Valor Co,freight logistics,113,Starter ,336,2025-02-19,2,5,2,
+c_55139,Pulse Corp,HR tech,79,professional,631,2024-08-04,18,3,3,Kevin H.
+c_57955,Blue Solutions,manufacturing,220,Pro ,796,2024-08-15,5,6,4,Tom W.
+c_90882,Trek Advisors,freight logistics,348,business,3350,2024-11-28,2,0,4,Kevin H.
+c_94625,Apex Group,education,64,Pro,1012,2023-09-24,41,12,0,Priya M.
+c_69018,Core Works,food & beverage,475,starter plan,319,2024-08-06,58,10,2,
+c_68399,Titan Labs,food & beverage,180,pro,1122,2024-08-10,10,6,0,Tom W.
+c_46035,Verde Systems,enterprise software,46,enterprise,2187,2024-07-22,37,7,2,James T.
+c_40708,Quorum Services,FINANCE,108,professional,1354,2023-08-21,2,4,4,Carlos R.
+c_20031,Stone Partners,food & beverage,135,Pro,1006,2024-11-12,51,6,2,Mei L.
+c_26074,River Solutions,energy,46,professional,499,2023-06-28,18,0,0,James T.
+c_93789,Jade Technologies,Retail / Ecommerce,177,PRO,1043,2024-11-04,11,9,2,Sarah K.
+c_54874,Vibe Works,Logistics,974,pro,1070,2024-08-20,73,6,4,Tom W.
+c_76898,Echo Systems,Finance,88,starter plan,409,2024-03-29,1,5,1,
+c_60608,Acme LLC,retail & ecommerce,28,BUSINESS,2221,2023-09-29,47,1,3,Rachel S.
+c_56219,Stratum Systems,software,607,Pro,587,2023-09-24,10,10,2,Sophia B.
+c_21383,Iron Partners,energy,465,Starter ,317,2025-04-27,39,6,2,
+c_84644,Maple Technologies,non-profit,233,Starter,187,2025-02-27,30,1,1,
+c_85576,Ultra Corp,legal services,189,Pro ,1345,2024-11-14,16,1,1,Anna P.
+c_35411,Swift Services,TECH,183,Pro,1177,2023-10-03,13,1,6,Mei L.
+c_80143,Pivot Inc,Tech,,Pro,775,2023-11-06,69,6,6,David C.
+c_36817,Echo Services,3pl / warehousing,138,STARTER,263,2024-12-03,3,0,2,
+c_63483,Rally Dynamics,Technology,182,starter,324,2024-10-06,7,5,1,Rachel S.
+c_61344,Zeal Co,software,1574,enterprise,1780,2024-01-18,11,9,0,Sophia B.
+c_94424,Nexus LLC,software,61,BUSINESS,2759,2023-10-16,59,6,6,Mei L.
+c_24417,Ultra Technologies,Tech,430,professional,499,2023-07-02,36,2,3,Priya M.
+c_86884,Kinetic Advisors,LOGISTICS,28,business,2013,2023-01-01,48,4,4,Anna P.
+c_58686,Cascade Systems,tech / software,3539,business,2173,2023-03-19,17,6,5,David C.
+c_95918,Zeal Group,SaaS / Tech,2243,professional,883,2024-09-07,1,4,0,James T.
+c_86878,Cedar Services,financial services,195,enterprise,3699,2023-08-26,10,7,0,David C.
+c_21907,Valor Inc,retail & ecommerce,199,professional,702,2025-04-12,53,4,1,Carlos R.
+c_90848,Zenith Inc,3PL,152,starter plan,181,2024-08-19,24,0,0,
+c_38402,Vibe Labs,education,490,STARTER,256,2025-02-17,1,12,1,
+c_19698,Pivot LLC,Logistics & 3PL,59,Starter,126,2025-02-03,10,8,0,Sarah K.
+c_87125,Delta Services,ecommerce,26,pro,499,2024-11-10,31,5,2,Anna P.
+c_68214,Zenith Group,3pl / warehousing,501,professional,1071,2025-04-18,6,7,1,Rachel S.
+c_45377,Mesa Ventures,banking & finance,37,pro,842,2025-03-22,28,8,2,Mei L.
+c_63009,Vertex Consulting,food & beverage,,business,2259,2023-02-06,51,1,0,Carlos R.
+c_51235,Atlas Co,banking & finance,419,Pro,499,2024-08-24,24,2,6,David C.
+c_67280,Vista Corp,SaaS / Tech,142,PRO,499,2024-10-24,58,6,3,Kevin H.
+c_24560,Pivot Labs,supply chain logistics,141,STARTER,248,2023-10-26,30,12,0,
+c_19464,Bright Inc,retail & ecommerce,187,PRO,1134,2024-01-13,5,2,2,Sarah K.
+c_69807,Verde Labs,health tech,,STARTER,136,2024-08-17,18,9,0,
+c_36560,Ridge Dynamics,Finance,87,Pro,499,2024-09-10,41,9,3,David C.
+c_38282,Delta Works,e-commerce,100,Starter ,296,2024-10-03,51,10,0,Kevin H.
+c_35063,Harbor Dynamics,legal services,363,Starter,336,2024-04-14,43,9,1,
+c_87000,Ultra Solutions,Retail,,PRO,1195,2024-10-29,68,1,6,Rachel S.
+c_60113,Pulse Ventures,logistics/transportation,1932,BUSINESS,2559,2024-03-29,21,1,8,Mei L.
+c_49843,Delta Partners,medical devices,8,pro,1283,2023-08-18,49,1,1,Mei L.
+c_47628,Stratum Consulting,banking & finance,253,starter,233,2024-01-12,27,5,1,Priya M.
+c_88721,Slate Corp,education,472,professional,883,2024-02-11,57,1,3,Sarah K.
+c_31780,Harbor Corp,supply chain logistics,421,business,2224,2023-03-07,2,0,4,Sophia B.
+c_57573,Prime Labs,Logistics & 3PL,3899,Business,499,2024-03-23,60,1,3,David C.
+c_84089,Zeal Works,enterprise software,387,Starter ,362,2024-08-24,54,9,2,Anna P.
+c_70381,Acme Inc,3pl / warehousing,1257,Starter,218,2024-11-17,13,1,0,
+c_78426,Lumen Labs,real estate,380,PRO,1217,2024-10-08,6,11,0,Mei L.
+c_94534,Global Works,energy,793,Pro ,1099,2024-01-26,55,3,8,Anna P.
+c_87862,Vault Ventures,online retail,178,BUSINESS,1943,2023-06-16,17,7,2,Mei L.
+c_24981,Stratum Technologies,consulting,,Pro ,1001,2023-09-10,1,0,0,Sophia B.
+c_63565,First Solutions,Software,96,Pro ,916,2024-01-12,12,3,1,James T.
+c_39078,Maple Corp,SaaS / Tech,5,professional,734,2023-10-02,6,0,5,Carlos R.
+c_19907,Summit Group,enterprise software,1729,pro,1216,2024-10-06,3,18,2,Kevin H.
+c_59195,River Group,freight logistics,1347,business,499,2024-03-07,5,4,3,Anna P.
+c_23194,Stone Consulting,energy,1485,starter,361,2024-07-10,46,2,2,Mei L.
+c_34753,Vista Technologies,ecommerce,292,Pro,830,2024-05-28,57,5,6,David C.
+c_76243,Blue Dynamics,LOGISTICS,52,PRO,631,2024-02-25,3,5,0,David C.
+c_36315,Core Group,enterprise software,125,Business,3121,2024-05-31,2,3,4,Tom W.
+c_33672,Ionic Works,Logistics & 3PL,460,Business ,499,2023-01-14,12,5,0,James T.
+c_33435,Vector Advisors,FinTech,6,PRO,953,2024-10-27,20,8,2,Priya M.
+c_88897,Swift Systems,health tech,486,Pro ,1371,2024-01-25,54,3,5,Anna P.
+c_88209,Lumen Inc,FinTech,251,starter plan,340,2024-02-01,18,1,0,
+c_99487,Terra Advisors,real estate,3866,Starter ,277,2023-10-24,34,0,0,Tom W.
+c_26527,Solid Advisors,real estate,73,business,1934,2023-02-22,50,0,1,Tom W.
+c_76852,Mesa Solutions,media,376,PRO,1029,2023-10-12,41,5,1,David C.
+c_68470,Quorum Inc,banking & finance,488,professional,973,2025-03-09,3,7,0,Rachel S.
+c_48313,Lumen Dynamics,financial tech,7204,STARTER,326,2024-09-20,9,0,0,
+c_21660,Keystone Technologies,B2B Software,711,enterprise,2334,2024-05-04,3,13,0,James T.
+c_31904,Peak Works,TECH,,BUSINESS,3102,2023-03-02,40,5,1,James T.
+c_12781,Orbit Co,3pl / warehousing,,starter,309,2025-02-18,23,2,2,
+c_47771,Verde Consulting,supply chain logistics,657,professional,1187,2023-12-12,8,4,0,Kevin H.
+c_53144,Cascade Co,software,81,PRO,716,2023-12-07,23,2,2,Sophia B.
+c_92135,Keystone Systems,software development,149,starter plan,216,2024-09-08,56,3,1,Sophia B.
+c_84419,Vault Partners,energy,112,BUSINESS,2889,2023-12-12,42,1,7,James T.
+c_66346,Stratum Dynamics,banking & finance,337,Pro ,1033,2025-04-05,31,5,3,James T.
+c_83621,Atlas Consulting,Software,1358,Starter,422,2024-04-26,60,10,0,Sophia B.
+c_94009,Delta Labs,e-commerce,99,pro,1574,2025-01-17,42,2,8,Priya M.
+c_27555,Vibe Inc,wealth management,330,business,2441,2023-07-01,36,6,5,Sophia B.
+c_90745,Zenith Systems,TECH,157,Starter,281,2024-02-10,3,9,2,
+c_58758,Nexus Services,3PL,33,Pro ,1203,2024-05-04,35,6,8,Rachel S.
+c_27495,Apex Consulting,software,1979,professional,816,2025-03-19,14,0,3,Rachel S.
+c_32406,Stone Systems,Tech,27,PRO,449,2024-02-09,52,0,5,Tom W.
+c_97219,Bright LLC,financial services,,business,377,2023-05-14,22,0,5,Anna P.
+c_63928,Vibe Advisors,supply chain logistics,1480,Business,1436,2024-01-18,2,11,2,Kevin H.
+c_32211,Forge Advisors,media,1714,business,2741,2023-12-17,6,12,1,Sarah K.
+c_36120,Ultra Partners,energy,207,Business,1821,2023-02-26,41,1,6,Priya M.
+c_44842,Slate Partners,e-commerce,152,PRO,921,2024-01-23,5,10,0,Priya M.
+c_86353,Summit Advisors,supply chain logistics,,PRO,790,2024-06-14,27,5,1,James T.
+c_44696,Cedar Inc,TECH,308,PRO,661,2023-11-04,14,12,1,David C.
+c_23167,Prime Partners,media,327,Starter,313,2023-12-01,1,8,0,
+c_76837,Nexus Technologies,manufacturing,178,BUSINESS,499,2023-03-27,58,1,2,James T.
+c_19849,Vista Works,FINANCE,303,Business ,2547,2023-04-07,70,1,6,Anna P.
+c_61144,Mesa Inc,media,45,Pro,916,2025-04-17,17,2,2,Tom W.
+c_84403,Keystone Dynamics,non-profit,938,Pro,958,2024-01-28,17,5,0,Tom W.
+c_58524,Helix Services,banking & finance,241,starter plan,275,2024-04-26,58,0,0,Kevin H.
+c_11500,Echo Labs,3pl / warehousing,158,STARTER,151,2023-12-27,54,1,2,Anna P.
+c_45715,Jade LLC,media,,Pro ,1060,2024-02-05,43,6,1,James T.
+c_40650,Topo Technologies,Software,6399,Starter ,245,2023-11-15,47,4,0,Priya M.
+c_50895,Prime LLC,SaaS / Tech,194,Business,3106,2025-02-06,18,3,1,Priya M.
+c_18548,Vector LLC,Technology,70,Starter,82,2023-12-13,37,1,0,
+c_58103,Maple Group,Tech,30,Starter,245,2025-02-19,47,4,1,
+c_77313,Vibe Consulting,legal services,469,Starter,145,2024-02-04,25,10,1,
+c_75422,Vista Systems,real estate,69,starter plan,255,2025-03-25,5,8,1,
+c_79812,Cascade Solutions,financial tech,28,BUSINESS,499,2023-12-20,41,2,4,Mei L.
+c_96972,Stone Group,software,422,Pro ,499,2023-06-08,15,5,0,Anna P.
+c_84402,Vector Corp,FINANCE,243,Pro,499,2024-03-22,55,7,2,James T.
+c_34527,Solid Corp,media,187,STARTER,361,2024-02-27,60,11,2,
+c_27675,Forge Inc,3PL,1135,professional,849,2024-04-04,13,14,0,Mei L.
+c_32081,Topo Services,Logistics,182,starter plan,316,2023-12-27,47,2,2,
+c_48130,Iron Co,Software,1076,pro,806,2023-07-23,14,13,2,David C.
+c_44585,Ridge LLC,fintech,832,BUSINESS,2435,2023-10-06,13,18,2,James T.
+c_45475,Iron Systems,HR tech,361,enterprise,2167,2023-04-28,17,3,0,Sophia B.
+c_96782,Blue Labs,Retail,183,Business,1838,2023-06-27,64,3,8,Priya M.
+c_59017,Helix Labs,banking & finance,,enterprise,3007,2024-05-19,17,9,3,Rachel S.
+c_52886,Union Co,SaaS,29,Starter ,217,2024-01-31,0,1,0,Priya M.
+c_67766,Spark Solutions,banking & finance,63,Business,1809,2025-02-17,10,5,1,Tom W.
+c_72233,Harbor Partners,TECH,309,professional,499,2025-03-27,25,4,2,Sarah K.
+c_18529,Stratum LLC,media,222,business,2742,2025-01-10,20,2,2,Priya M.
+c_77204,Topo Works,Software,1126,Starter,339,2024-05-29,0,10,2,
+c_21460,Titan Corp,FinTech,479,PRO,774,2024-02-21,23,4,8,Carlos R.
+c_97220,Cedar Advisors,non-profit,49,Pro,990,2024-08-28,17,8,3,Kevin H.
+c_23997,Jade Ventures,supply chain logistics,,business,2126,2025-01-11,70,6,8,Kevin H.
+c_85444,Mesa Services,HR tech,,STARTER,245,2024-04-28,3,4,1,Anna P.
+c_21289,Forge Co,ecommerce,1040,PRO,779,2023-11-06,55,5,6,Rachel S.
+c_60240,Cedar Partners,FINANCE,2987,Starter ,320,2024-11-08,30,2,0,Sophia B.
+c_97451,Ultra Works,pharma,93,Pro,852,2024-05-20,10,10,2,Kevin H.
+c_25621,Vibe Solutions,software,1103,STARTER,332,2023-11-30,0,12,2,Kevin H.
+c_14881,Atlas Corp,banking & finance,172,STARTER,255,2024-08-08,47,4,2,
+c_85763,Maple Services,HR tech,31,Pro ,683,2024-05-30,39,2,3,Rachel S.
+c_28179,Zeal Consulting,enterprise software,219,pro,768,2023-12-18,41,6,0,Sarah K.
+c_76992,Vibe Services,non-profit,439,starter plan,171,2024-07-22,3,5,0,James T.
+c_36052,Edge Systems,financial tech,237,Business ,499,2023-12-07,32,6,0,Priya M.
+c_70400,Mesa Group,energy,399,Starter ,163,2024-05-09,4,8,1,
+c_67136,Union Ventures,supply chain logistics,,starter,238,2024-12-03,35,6,0,
+c_39736,Swift Works,energy,189,Business ,2015,2023-07-14,12,6,2,Mei L.
+c_99039,Quorum Works,Tech,,STARTER,306,2025-04-14,41,11,0,Anna P.
+c_69326,Cascade Services,HEALTHCARE,23,PRO,960,2023-07-01,20,4,6,Sophia B.
+c_21274,Edge Ventures,financial tech,302,starter,225,2023-11-01,6,7,1,David C.
+c_94606,Ridge Consulting,food & beverage,,Pro ,890,2024-11-22,4,3,2,Anna P.
+c_13001,Trek LLC,tech / software,66,Starter,352,2024-07-22,5,9,0,
+c_33653,Vibe Technologies,Tech,49,Pro ,713,2024-05-03,52,2,0,Sophia B.
+c_28742,Keystone Works,medical devices,952,professional,1048,2024-01-31,7,10,2,David C.
+c_37033,Rally Consulting,FINANCE,18,Business ,2677,2024-10-22,54,5,4,Mei L.
+c_61955,Atlas Partners,Finance,15,Pro ,813,2024-12-28,49,6,7,Kevin H.
+c_61809,Stratum Corp,banking & finance,4648,STARTER,323,2025-01-29,33,4,2,Rachel S.
+c_32814,Apex Works,retail,902,Business,2037,2024-07-22,9,6,2,Tom W.
+c_39342,Iron Consulting,Logistics & 3PL,1571,Pro,737,2023-12-26,35,4,7,Carlos R.
+c_52609,Union Systems,HR tech,283,starter plan,231,2024-05-22,2,9,0,
+c_79182,Ridge Services,consulting,153,pro,1159,2023-07-17,64,6,4,Rachel S.
+c_77255,Zeal Solutions,e-commerce,37,starter,172,2024-02-23,4,11,2,David C.
+c_30111,Vertex Co,3PL,116,starter,228,2024-02-21,1,10,1,
+c_99891,Zeal Technologies,non-profit,148,Starter ,393,2024-06-02,23,11,0,
+c_29420,Swift Consulting,software,68,professional,785,2023-08-18,58,6,0,James T.
+c_57386,Echo Inc,non-profit,18,starter,187,2024-07-25,52,4,1,
+c_63509,Quorum Labs,financial services,,starter plan,268,2024-10-17,0,9,2,Mei L.
+c_78980,Solid Systems,energy,773,Business,2223,2023-10-14,13,18,1,Mei L.
+c_54007,Topo Inc,online retail,25,Starter ,277,2025-03-25,6,5,0,
+c_80318,Summit Labs,education,,pro,1225,2024-01-29,2,6,1,Sarah K.
+c_69798,Pivot Co,Tech,1974,Pro ,965,2023-10-22,54,7,0,James T.
+c_25925,Vista Group,Retail,705,Business ,2036,2024-08-16,6,6,2,Sophia B.
+c_41000,Orbit Corp,retail,131,starter,272,2024-10-04,14,4,1,Anna P.
+c_73341,Global Solutions,e-commerce,116,starter,251,2023-09-28,57,3,0,
+c_77531,Spark Advisors,HealthTech,40,Starter ,171,2024-10-08,1,5,0,
+c_17653,Pivot Solutions,RETAIL,156,professional,1053,2024-04-20,53,3,6,Sophia B.
+c_59768,Maple Ventures,enterprise software,4704,PRO,920,2025-04-10,33,4,0,Anna P.
+c_93096,Ultra Consulting,FinTech,284,Starter ,199,2023-11-05,21,1,0,Anna P.
+c_99759,Helix Consulting,retail & ecommerce,113,Pro ,381,2024-04-11,35,0,1,Carlos R.
+c_36389,Zenith Technologies,FINANCE,,Starter ,192,2024-03-13,34,6,1,David C.
+c_13831,Solar Services,Technology,,Starter ,326,2025-01-02,4,6,0,
+c_94614,Kinetic Corp,B2B Software,1448,pro,590,2024-08-29,15,4,4,Mei L.
+c_67860,Delta Consulting,Finance,991,BUSINESS,1750,2023-05-28,9,15,2,Rachel S.
+c_27587,Nexus Solutions,Software,125,Pro ,959,2023-06-28,16,9,1,Sophia B.
+c_95934,Rally Services,healthcare,43,Pro,897,2024-07-13,63,4,7,James T.
+c_16324,Slate Works,ecommerce,179,starter,309,2024-04-01,5,11,2,
+c_22912,Bright Corp,software,1728,starter,254,2024-07-17,42,6,1,Tom W.
+c_62950,Orbit Partners,FinTech,758,Starter ,158,2025-02-10,7,8,1,Kevin H.
+c_43412,Rally Group,financial services,181,pro,499,2025-01-16,43,4,5,Tom W.
+c_98123,Wave Ventures,fintech,48,starter plan,327,2025-01-19,0,1,0,Rachel S.
+c_93111,Spark Labs,real estate,100,starter plan,249,2025-03-03,32,2,0,Tom W.
+c_42372,Orbit Works,SaaS / Tech,24,Pro,1074,2024-01-10,44,6,5,Kevin H.
+c_28110,Noble Co,food & beverage,490,Business,2386,2022-12-25,7,10,2,Sarah K.
+c_55193,Lumen Works,HR tech,124,STARTER,241,2023-10-05,51,9,1,Carlos R.
+c_58070,Nexus Advisors,Tech,42,starter,362,2024-10-06,6,9,1,
+c_16549,Trek Ventures,software development,351,Starter,274,2024-05-25,6,7,2,
+c_33108,Atlas Technologies,e-commerce,271,Pro,1293,2024-06-14,7,3,2,Sarah K.
+c_90886,Topo LLC,RETAIL,3322,starter,277,2025-04-15,24,1,0,
+c_92291,Iron Labs,HEALTHCARE,1265,Business,3268,2023-10-29,13,8,0,James T.
+c_14316,Cedar Solutions,software development,21,Starter,224,2024-07-07,23,0,1,
+c_67662,Pivot Works,3pl / warehousing,,business,3218,2024-09-27,41,6,5,Kevin H.
+c_72115,Nexus Inc,Logistics,157,Pro,897,2024-09-05,2,0,6,Kevin H.
+c_58294,Solid Dynamics,wealth management,193,PRO,1149,2023-08-29,16,9,6,David C.
+c_12947,Cascade Labs,banking & finance,1136,BUSINESS,2180,2023-08-18,8,4,0,Anna P.
+c_78331,Union Corp,TECH,,starter plan,175,2025-02-11,49,7,0,Sarah K.
+c_11413,Kinetic Works,SaaS,96,Starter ,286,2023-12-03,11,1,0,
+c_69902,Ridge Partners,medical devices,84,starter plan,370,2025-04-06,44,9,0,
+c_52346,Delta Systems,SaaS,34,Business,2779,2025-01-11,58,6,1,Mei L.
+c_88314,River Corp,tech / software,931,Business ,2152,2024-09-07,5,15,2,Sarah K.
+c_45175,Stone Technologies,Software,94,Pro ,1023,2023-11-14,20,8,0,Tom W.
+c_54750,Iron Services,software development,221,Pro ,499,2024-04-27,19,1,0,Mei L.
+c_20593,Jade Systems,wealth management,324,Starter,231,2025-02-05,45,3,1,
+c_18896,Nexus Ventures,Technology,287,Business ,2463,2023-08-12,38,1,0,David C.
+c_34998,Iron Dynamics,online retail,1378,pro,682,2024-05-30,7,18,2,Sophia B.
+c_92597,Verde Ventures,FinTech,58,Pro ,1168,2024-12-20,6,0,5,Sarah K.
+c_42190,Blue Group,online retail,508,STARTER,249,2023-12-20,2,7,2,Sophia B.
+c_26008,Keystone Ventures,medical devices,112,Starter ,198,2024-01-17,26,3,0,
+c_30233,Echo Corp,SaaS,74,starter plan,359,2024-06-26,26,5,2,
+c_48110,Swift Dynamics,enterprise software,179,STARTER,259,2024-11-05,7,9,0,
+c_96895,Pulse Services,supply chain logistics,1385,professional,486,2024-08-21,35,7,2,Sarah K.
+c_65765,Global Corp,3pl / warehousing,37,professional,971,2023-12-21,62,6,8,Mei L.
+c_50214,Terra Systems,software development,21,starter,287,2025-04-24,4,12,2,
+c_35007,Keystone Services,pharma,89,Pro ,922,2023-07-20,13,6,2,Priya M.
+c_48584,Keystone Co,consulting,264,professional,942,2023-09-14,44,1,3,Sarah K.
+c_88502,Valor LLC,B2B Software,263,Business ,2695,2024-09-22,36,7,2,Anna P.
+c_52934,Pulse Works,retail,83,Pro,961,2023-08-23,32,2,6,David C.
+c_23085,Solar Co,retail & ecommerce,,BUSINESS,1225,2025-01-26,43,6,7,Sophia B.
+c_62694,Ridge Group,3PL,881,PRO,996,2024-02-26,10,11,0,Kevin H.
+c_80921,First Systems,logistics / 3pl,137,Pro,1028,2023-07-13,4,0,2,Mei L.
+c_49935,Solar Ventures,consulting,1318,starter plan,268,2024-09-18,34,2,1,Sarah K.
+c_81547,Stratum Inc,Software,6707,Pro ,687,2023-07-24,51,5,8,Sarah K.
+c_90435,Ionic Corp,HEALTHCARE,115,Starter ,375,2023-10-15,50,0,2,
+c_76200,Apex Corp,non-profit,485,starter plan,206,2024-08-29,44,0,2,Sophia B.
+c_24094,Ionic Partners,energy,1469,Starter,206,2024-08-24,46,6,1,Sophia B.
+c_49607,Atlas Services,FINANCE,67,Pro,1176,2024-11-10,14,6,0,Sophia B.
+c_46824,First Consulting,financial tech,6126,Pro,775,2023-10-07,47,5,8,James T.
+c_53368,Global Group,tech / software,1314,enterprise,2448,2023-04-17,11,11,1,Tom W.
+c_96600,Delta Inc,SaaS / Tech,84,starter plan,196,2024-11-16,23,12,1,Tom W.
+c_25493,Summit Dynamics,real estate,6979,STARTER,343,2024-05-07,20,0,1,David C.
+c_64684,Union Technologies,3PL,19,PRO,1103,2024-08-01,15,7,0,Sophia B.
+c_44615,Valor Dynamics,fintech,269,pro,817,2023-07-19,10,1,3,David C.
+c_99684,Vector Solutions,D2C ecommerce,106,STARTER,298,2024-06-01,46,8,2,
+c_96619,Quorum Ventures,software,1005,PRO,852,2023-07-30,14,10,2,David C.
+c_59996,Noble Dynamics,retail & ecommerce,72,business,3527,2023-12-15,30,2,1,Rachel S.
+c_60116,River Ventures,wealth management,12,professional,1021,2024-06-12,15,7,3,Sophia B.
+c_14164,Lumen Ventures,wealth management,415,Starter ,149,2024-06-29,11,1,2,
+c_70617,Vibe Ventures,software,211,pro,930,2023-11-04,10,9,2,Anna P.
+c_23804,Delta Solutions,legal services,470,professional,652,2024-11-02,51,4,1,Sophia B.
+c_17059,Mesa Systems,3PL,129,business,499,2023-07-07,6,6,3,Tom W.
+c_67896,Swift Solutions,media,,starter,216,2024-11-18,7,11,0,Sophia B.
+c_85887,Maple Advisors,Technology,,Pro ,1116,2023-12-25,61,4,5,Anna P.
+c_32570,Solid Works,Software,,BUSINESS,2176,2023-12-02,54,4,7,Kevin H.
+c_90506,Vector Group,real estate,189,enterprise,3198,2023-01-02,1,7,4,David C.
+c_77957,Ionic Ventures,retail,553,Pro,500,2024-03-24,56,2,6,Kevin H.
+c_70432,Trek Group,non-profit,292,enterprise,499,2023-10-19,58,6,0,Priya M.
+c_26871,Ardent Solutions,manufacturing,412,BUSINESS,2401,2024-04-14,12,5,4,James T.
+c_57929,Prime Co,Technology,113,enterprise,2192,2024-08-02,41,7,0,Anna P.
+c_40214,Verde Co,consulting,112,business,2568,2023-01-16,0,6,3,Kevin H.
+c_79365,Titan Works,pharma,58,starter plan,342,2025-04-05,50,7,0,
+c_77467,Ardent Works,financial services,97,Starter,248,2024-08-30,53,4,0,
+c_93254,Vertex Group,B2B Software,192,Pro ,499,2025-01-26,19,8,5,Tom W.
+c_22768,Quorum Consulting,legal services,,BUSINESS,1224,2023-12-11,15,4,1,Sophia B.
+c_55966,Nexus Labs,real estate,49,PRO,934,2024-05-01,10,2,0,Mei L.
+c_72491,First Services,Retail / Ecommerce,58,pro,727,2024-08-20,17,9,5,David C.
+c_23702,Bright Works,media,362,BUSINESS,2668,2023-05-07,15,7,4,Carlos R.
+c_84812,Orbit Inc,Logistics,451,STARTER,360,2024-11-29,16,2,0,
+c_70815,Vertex Corp,D2C ecommerce,53,Starter ,300,2024-02-21,5,5,2,
+c_11169,Cascade Partners,health services,371,enterprise,2059,2025-01-30,17,5,2,Anna P.
+c_38462,Vista Consulting,energy,429,Starter ,392,2025-05-02,53,4,0,
+c_75926,Peak Services,freight logistics,44,starter,342,2024-04-29,2,8,2,Carlos R.
+c_65180,Peak Co,Technology,99,starter,228,2025-04-12,0,11,0,
+c_35758,Noble Inc,legal services,857,PRO,499,2024-04-04,19,2,3,Anna P.
+c_55128,Global Systems,financial tech,85,pro,1214,2024-09-27,37,3,2,Rachel S.
+c_40406,Trek Consulting,Logistics,228,starter plan,269,2024-02-28,52,1,1,Sophia B.
+c_71968,Acme Solutions,Technology,344,Pro,1254,2023-12-29,23,3,2,Tom W.
+c_56447,Trek Corp,software development,96,starter plan,322,2024-09-17,2,2,1,
+c_75588,Lumen Co,food & beverage,,BUSINESS,4201,2024-08-07,32,2,2,Carlos R.
+c_97810,Forge Labs,D2C ecommerce,11,PRO,789,2024-05-09,56,5,2,Anna P.
+c_48923,Jade Consulting,Finance,176,pro,876,2025-01-22,13,11,4,Sarah K.
+c_64312,Slate Solutions,Logistics,12,Business ,2305,2023-01-10,9,1,2,Mei L.
+c_51608,Global Inc,education,600,STARTER,315,2024-11-08,51,6,1,
+c_23996,Pulse Group,consulting,148,pro,1391,2023-10-16,21,5,2,Kevin H.
+c_21653,Noble Advisors,supply chain logistics,6,professional,1068,2025-03-06,0,9,2,Anna P.
+c_42861,Ultra Group,freight logistics,7855,Business,1638,2023-06-06,11,1,4,Kevin H.
+c_28429,Prime Dynamics,health tech,243,PRO,1576,2024-02-01,13,0,0,Kevin H.
+c_37172,Atlas Dynamics,health tech,31,starter,246,2023-09-30,48,12,1,Kevin H.
+c_95764,Helix Ventures,supply chain logistics,1191,Starter,216,2025-02-19,7,11,1,
+c_30509,Iron Solutions,Technology,147,Pro ,954,2024-02-06,8,2,4,Carlos R.
+c_41919,Summit Technologies,health services,436,Pro ,481,2024-01-04,7,4,1,James T.
+c_64448,Peak Inc,fintech,300,enterprise,499,2023-11-18,8,7,6,David C.
+c_53494,Summit Works,Logistics,709,enterprise,2726,2024-08-06,63,6,3,Mei L.
+c_11711,Delta Technologies,Tech,6512,starter plan,332,2024-07-25,40,5,2,Carlos R.
+c_22840,Global Dynamics,HR tech,5516,professional,955,2024-08-05,3,7,1,Sarah K.
+c_37773,Helix Corp,medical devices,,STARTER,172,2023-12-05,46,3,1,James T.
+c_29650,Ultra Services,fintech,1323,PRO,1331,2022-12-03,6,10,0,Kevin H.
+c_61115,River Consulting,software development,,Pro ,1005,2023-09-13,7,8,5,Kevin H.
+c_19959,Rally Advisors,HealthTech,1168,STARTER,267,2025-03-24,56,12,0,
+c_73757,Vector Dynamics,manufacturing,136,pro,1034,2023-10-29,2,2,4,Sophia B.
+c_92598,Zeal Labs,Retail,180,business,2105,2023-03-19,31,10,0,Priya M.
+c_78176,Cedar Labs,logistics / 3pl,197,BUSINESS,2421,2023-11-18,14,10,0,David C.
+c_21278,Delta Corp,Logistics,132,Pro,882,2025-02-22,42,1,2,Anna P.
+c_93354,Orbit Services,LOGISTICS,39,Pro,649,2024-11-22,5,7,6,Sophia B.
+c_19546,Helix Group,SaaS / Tech,1287,Starter,163,2023-11-05,51,3,2,
+c_77723,Summit LLC,wealth management,137,Pro,1232,2023-10-19,6,9,0,Rachel S.
+c_56985,Peak Solutions,manufacturing,40,Starter ,153,2024-01-06,5,7,1,Kevin H.
+c_93151,Stone Works,health tech,437,starter,447,2024-11-19,56,0,1,Priya M.
+c_25955,Ardent Consulting,consulting,,starter plan,279,2024-09-29,4,5,1,Sarah K.
+c_90045,Ardent Advisors,Retail,113,Business,2629,2023-06-30,12,10,1,Tom W.
+c_67406,Wave Services,3pl / warehousing,15,Starter,383,2024-05-30,22,9,0,David C.
+c_26628,Rally Co,HR tech,4411,starter plan,245,2025-04-01,1,5,0,Sarah K.
+c_48833,Ionic Group,D2C ecommerce,180,Pro ,796,2023-08-14,20,0,2,Carlos R.
+c_15389,Acme Co,retail,1111,BUSINESS,2232,2023-05-13,30,4,3,Rachel S.
+c_45310,Spark Inc,Technology,436,starter plan,368,2025-03-21,5,7,0,Mei L.
+c_44401,Kinetic Group,non-profit,81,Pro ,531,2024-06-17,34,4,7,Sarah K.
+c_81984,Keystone LLC,banking & finance,220,Starter,251,2025-02-07,7,11,1,Priya M.
+c_26340,Pulse Systems,Logistics,454,BUSINESS,3250,2024-10-19,2,5,1,David C.
+c_90599,Solid LLC,software development,,starter plan,344,2023-10-10,47,8,0,Carlos R.
+c_56074,Core Partners,3PL,724,BUSINESS,2187,2023-02-24,9,13,2,David C.
+c_40171,Topo Advisors,wealth management,238,BUSINESS,2101,2024-11-26,12,6,5,James T.
+c_60615,Valor Consulting,media,450,STARTER,374,2024-03-10,12,4,0,
+c_36429,Wave Dynamics,education,341,PRO,499,2024-09-13,38,3,5,Carlos R.
+c_12600,Blue Co,financial tech,1174,starter plan,266,2024-06-18,3,8,2,James T.
+c_80003,Cascade Technologies,tech / software,331,Business,2523,2023-05-25,4,2,4,Kevin H.
+c_51186,Vibe LLC,financial services,182,professional,893,2024-12-13,31,1,0,Sarah K.
+c_85569,Noble Partners,3pl / warehousing,835,Pro,898,2024-05-10,12,9,1,Tom W.
+c_97056,Solar Technologies,Logistics,,starter plan,174,2024-07-01,29,3,1,Anna P.
+c_24356,Titan Consulting,media,120,BUSINESS,3547,2024-10-31,66,1,5,Priya M.
+c_62796,Vertex Dynamics,consulting,1961,Pro,788,2023-02-12,2,10,0,Tom W.
+c_80723,Acme Technologies,Tech,344,business,1428,2023-06-29,10,15,1,David C.
+c_93387,Pulse Co,Finance,44,starter plan,351,2024-02-10,60,1,1,James T.
+c_66330,First Group,healthcare,304,Business ,2457,2024-03-15,40,2,5,Sarah K.
+c_16951,Valor Advisors,software development,824,starter plan,400,2025-04-04,46,12,0,Sophia B.
+c_50464,Zenith Co,logistics/transportation,,starter,235,2024-10-17,1,10,1,Carlos R.
+c_22175,Trek Technologies,Logistics,,Starter,239,2024-09-21,19,2,1,
+c_60909,Global Co,manufacturing,,professional,662,2024-05-31,0,10,2,Tom W.
+c_84593,Vertex Systems,3PL,157,enterprise,3555,2024-07-03,54,10,0,Kevin H.
+c_25044,Summit Systems,software,1804,Business,2501,2023-11-14,2,13,2,Anna P.
+c_79559,Harbor Advisors,Tech,11,Starter,284,2024-12-29,22,2,0,
+c_67281,Solar Corp,SaaS,90,Pro,1031,2024-04-15,64,1,5,Priya M.
+c_55824,Atlas Systems,online retail,194,professional,851,2024-03-12,58,5,0,Rachel S.
+c_37258,Blue Ventures,medical devices,322,enterprise,2949,2023-12-16,13,16,2,Carlos R.
+c_59247,Solid Technologies,online retail,6996,STARTER,282,2025-03-28,9,4,2,Rachel S.
+c_12017,Pulse Solutions,financial tech,16,starter plan,214,2023-10-23,10,0,0,
+c_76165,Vault Co,Technology,1570,PRO,1123,2024-01-24,4,16,2,Carlos R.
+c_22620,Bright Technologies,non-profit,2797,STARTER,277,2025-03-02,4,12,1,
+c_94509,Wave Technologies,3pl / warehousing,5169,PRO,848,2025-03-31,39,1,7,David C.
+c_32439,Vibe Systems,freight logistics,193,professional,720,2024-02-13,15,9,5,James T.
+c_17776,Stratum Partners,HEALTHCARE,1164,Starter,267,2024-02-09,15,4,0,Carlos R.
+c_88892,Topo Consulting,Logistics,16,professional,815,2024-11-20,14,8,1,Rachel S.
+c_16848,Bright Partners,HEALTHCARE,6663,Starter ,337,2024-05-20,7,7,1,
+c_73587,Prime Technologies,LOGISTICS,,Pro,1255,2023-12-01,19,0,6,Rachel S.
+c_72811,Lumen Corp,education,648,enterprise,2681,2023-02-04,11,12,2,Anna P.
+c_35402,Cedar Dynamics,health tech,1435,Starter,275,2023-10-14,11,9,0,
+c_58752,Ultra Inc,RETAIL,119,Starter,317,2024-10-01,58,0,0,
+c_41359,Delta Ventures,3pl / warehousing,255,professional,1385,2024-09-12,37,3,7,James T.
+c_40368,Summit Partners,education,482,Pro,792,2023-06-25,3,2,0,Sarah K.
+c_64224,Echo Advisors,retail,28,Starter ,229,2025-04-29,14,10,0,
+c_11354,Ridge Corp,supply chain logistics,1123,professional,819,2023-08-21,6,12,1,Carlos R.
+c_34841,Stratum Group,Healthcare,1465,STARTER,189,2025-02-10,35,4,1,Anna P.
+c_10852,Iron Technologies,SaaS / Tech,544,Starter,259,2024-09-25,12,2,0,
+c_82776,Pivot Technologies,food & beverage,53,professional,855,2024-07-30,5,10,2,James T.
+c_93560,Vault Inc,FINANCE,1976,Business ,1796,2024-08-13,4,11,0,Carlos R.
+c_63744,Spark Works,healthcare,73,pro,787,2023-06-29,37,0,2,Tom W.
+c_64039,Slate Consulting,retail,37,pro,410,2024-03-26,36,0,1,David C.
+c_76877,Quorum Technologies,TECH,3603,BUSINESS,2774,2024-09-23,73,5,6,Priya M.
+c_31387,Mesa Technologies,banking & finance,563,Starter,263,2025-04-07,16,3,0,
+c_11667,Prime Ventures,software,290,Starter ,272,2025-01-25,4,7,1,
+c_54406,Orbit Group,media,181,Starter,408,2024-06-22,12,0,1,
+c_48113,Solid Partners,non-profit,908,Pro,1304,2023-01-05,1,11,2,Sophia B.
+c_92048,Spark Corp,SaaS / Tech,154,pro,1167,2025-01-29,53,6,0,Mei L.
+c_51174,Zenith Corp,legal services,71,pro,1313,2025-01-30,13,1,5,Anna P.
+c_64159,Core Technologies,e-commerce,47,enterprise,499,2023-09-04,12,2,2,Priya M.
+c_87360,Ardent Co,Healthcare,446,professional,1286,2024-10-01,6,5,3,Sarah K.
+c_72371,Bright Consulting,Logistics & 3PL,141,starter plan,280,2024-03-02,23,2,2,Sarah K.
+c_38933,Helix Systems,tech / software,65,starter,352,2024-07-04,21,3,0,
+c_19049,Peak Systems,D2C ecommerce,369,starter plan,183,2024-06-13,2,12,0,Mei L.
+c_11133,Ultra Labs,enterprise software,1503,Pro ,1249,2022-12-13,3,15,0,Kevin H.
+c_99213,Pulse Consulting,Tech,1044,Starter,352,2024-10-14,40,1,1,Kevin H.
+c_67207,Harbor Works,freight logistics,292,BUSINESS,3037,2023-09-04,60,0,0,Priya M.
+c_97469,Bright Dynamics,Retail / Ecommerce,28,enterprise,2247,2025-02-03,17,3,1,James T.
+c_69444,Ridge Ventures,Software,12,Pro,960,2024-01-09,37,7,2,Sophia B.
+c_11832,Cascade Works,Software,212,PRO,847,2023-09-11,3,16,2,Kevin H.
+c_66032,Vista Co,3PL,136,STARTER,352,2024-04-22,4,8,2,
+c_79591,Atlas Advisors,manufacturing,1336,Starter ,316,2025-04-29,53,2,0,Mei L.
+c_34388,Vault LLC,supply chain logistics,914,pro,1054,2024-06-04,25,3,5,James T.
+c_85095,Ultra Systems,software,6844,Starter ,292,2023-10-20,60,2,0,
+c_35737,Acme Dynamics,manufacturing,1061,Business,2237,2024-04-29,11,11,0,Sophia B.
+c_87789,Nexus Group,logistics / 3pl,,STARTER,378,2024-05-06,2,10,2,James T.
+c_62338,Zeal Ventures,Technology,162,Starter ,422,2025-02-07,41,1,2,
+c_96928,Wave Advisors,banking & finance,970,Business ,2020,2024-06-21,7,11,0,David C.
+c_52308,Harbor Systems,FINANCE,21,pro,1561,2024-11-29,43,6,7,Sarah K.
+c_52625,First Ventures,online retail,33,PRO,740,2024-08-09,34,10,0,Sarah K.
+c_77775,Atlas Works,tech / software,148,Starter ,290,2024-08-10,29,1,2,
+c_12997,Apex Systems,Tech,,Starter,218,2024-09-05,10,3,0,Carlos R.
+c_97287,Apex Services,LOGISTICS,90,Business ,2684,2024-07-11,32,6,2,Rachel S.
+c_65670,Valor Labs,financial services,137,STARTER,453,2024-08-14,6,7,2,Sophia B.
+c_38212,Vista Advisors,media,,professional,500,2023-06-27,75,6,7,Anna P.
+c_30266,Cascade LLC,D2C ecommerce,194,starter plan,228,2024-07-28,28,2,0,
+c_87844,Edge Services,enterprise software,454,Starter ,268,2024-01-25,9,2,0,James T.
+c_40931,Wave LLC,3pl / warehousing,,pro,857,2024-04-14,56,6,0,Carlos R.
+c_35323,Vector Works,energy,48,BUSINESS,2443,2023-04-04,16,8,1,Tom W.
+c_22509,Zenith Advisors,legal services,103,starter plan,338,2024-06-12,54,4,1,Tom W.
+c_54441,Slate Technologies,food & beverage,,Business,2327,2023-04-02,10,4,3,Mei L.
+c_85899,Stratum Works,pharma,1768,Business,2918,2023-01-26,13,8,2,James T.
+c_21649,Apex Dynamics,ecommerce,121,STARTER,224,2024-09-24,26,3,1,
+c_70454,Ardent LLC,FINANCE,401,Pro,721,2023-12-06,51,6,0,Anna P.
+c_27893,Ardent Systems,manufacturing,,Starter,303,2023-11-24,12,1,0,James T.
+c_16148,Prime Solutions,online retail,4404,Starter,236,2024-07-02,0,8,2,
+c_75632,Pulse Labs,Technology,31,Pro,930,2024-07-15,42,1,1,Carlos R.
+c_77599,Edge Partners,logistics/transportation,475,Starter,247,2023-10-31,22,6,0,Kevin H.
+c_17316,Echo Group,financial tech,23,Starter,213,2024-11-12,6,7,0,Tom W.
+c_99347,Trek Systems,financial services,,professional,854,2025-02-04,38,1,0,Kevin H.
+c_56844,Acme Corp,online retail,161,Pro ,1113,2024-08-27,13,7,1,Sarah K.
+c_86808,Pulse Technologies,financial tech,294,Starter,380,2025-03-12,37,3,0,
+c_86695,Solar Partners,software,193,STARTER,207,2023-11-23,49,0,2,Kevin H.
+c_16278,River Systems,tech / software,92,Pro,454,2024-11-16,2,6,3,Anna P.
+c_76427,Slate Advisors,media,5460,Business ,2351,2024-07-19,59,3,7,Mei L.
+c_69118,River Inc,Tech,45,Starter ,297,2023-10-28,7,9,2,
+c_80749,Vector Systems,retail & ecommerce,431,Starter,317,2024-08-03,10,3,1,
+c_94947,Topo Ventures,enterprise software,6151,starter plan,269,2023-10-07,54,1,0,Rachel S.
+c_10121,Jade Corp,real estate,5630,Pro ,1188,2025-04-05,65,5,3,Priya M.
+c_25660,Solar Group,enterprise software,5201,Starter ,337,2024-09-15,56,9,0,
+c_68883,Vector Ventures,software development,114,PRO,1149,2024-01-05,49,7,2,Priya M.
+c_51464,Lumen Consulting,education,225,Starter,290,2024-03-22,31,9,0,Sophia B.
+c_84285,Echo LLC,Retail,,starter,214,2024-03-08,60,2,0,
+c_23363,Peak Dynamics,media,14,Pro ,653,2023-05-30,13,8,6,David C.
+c_31634,Ridge Technologies,B2B Software,2910,professional,1153,2024-05-21,50,5,0,Sophia B.
+c_21033,Stone Co,D2C ecommerce,44,starter,310,2023-12-26,10,2,1,
+c_86088,Atlas LLC,Technology,494,STARTER,258,2024-10-26,1,11,1,Anna P.
+c_57045,Ridge Systems,freight logistics,,starter,234,2024-04-29,33,0,0,
+c_90139,Swift Technologies,non-profit,,enterprise,499,2022-12-18,26,10,6,James T.
+c_98669,Ridge Advisors,wealth management,6,STARTER,111,2023-11-11,1,10,0,Sarah K.
+c_96558,Solar Advisors,food & beverage,21,professional,1019,2023-11-01,27,10,2,Priya M.
+c_94074,Solar Works,Finance,2726,starter plan,260,2025-03-26,9,1,0,
+c_91039,River Services,HR tech,173,PRO,642,2024-02-27,17,6,3,Carlos R.
+c_61381,Vault Works,online retail,53,Starter,283,2024-12-04,26,11,1,James T.
+c_59060,Wave Inc,health tech,287,starter,357,2023-10-31,11,1,0,Kevin H.
+c_95895,Forge LLC,SaaS,439,PRO,499,2024-04-29,37,5,6,Sarah K.
+c_82461,Titan Technologies,banking & finance,,Business,1844,2024-04-25,3,8,2,Priya M.
+c_12700,Jade Partners,media,1245,professional,828,2024-08-16,0,6,0,Sophia B.
+c_17200,Union Solutions,LOGISTICS,123,enterprise,1412,2023-05-21,17,3,0,Sarah K.
+c_55318,River Technologies,Software,34,professional,906,2024-09-13,56,0,0,Kevin H.
+c_85135,Peak Consulting,food & beverage,766,Starter ,340,2024-02-24,20,3,0,
+c_57624,Vista LLC,banking & finance,,Pro ,600,2025-01-15,27,9,2,David C.
+c_79216,Verde Partners,manufacturing,23,Pro ,924,2023-07-28,13,2,2,Mei L.
+c_49756,Ridge Inc,retail,55,Starter,273,2023-11-18,3,9,1,
+c_96572,Maple Co,financial tech,,Starter,286,2024-08-03,41,2,0,James T.
+c_56263,Vector Partners,Technology,251,starter,281,2024-12-19,58,0,1,
+c_23805,Bright Services,FINANCE,129,PRO,802,2023-08-01,47,4,5,Sarah K.
+c_38325,Jade Works,real estate,437,PRO,499,2023-08-06,38,1,1,Kevin H.
+c_55822,Zeal Advisors,Logistics & 3PL,229,pro,1268,2023-10-02,65,1,7,Kevin H.
+c_11924,Kinetic Labs,financial tech,924,Pro ,1196,2024-01-27,74,2,7,Tom W.
+c_70330,Cascade Dynamics,food & beverage,1350,Pro,1006,2024-01-11,32,1,6,Sophia B.
+c_53435,Wave Group,enterprise software,,starter,336,2024-09-25,38,0,0,
+c_95374,Jade Dynamics,3pl / warehousing,1404,STARTER,259,2023-11-07,35,3,2,
+c_46384,Orbit Systems,software development,150,Pro ,940,2025-03-03,42,10,2,Sophia B.
+c_21841,Blue Advisors,HR tech,116,Pro,887,2024-09-06,25,1,0,Kevin H.
+c_16496,Pulse Partners,banking & finance,1327,Pro ,499,2024-03-07,20,0,0,James T.
+c_97332,Harbor Group,3PL,362,STARTER,244,2024-02-16,11,2,1,Kevin H.
+c_30665,First Dynamics,health tech,146,Pro ,473,2023-09-26,20,3,0,Tom W.
+c_26282,Swift Ventures,non-profit,47,Starter,117,2024-07-22,0,9,0,
+c_51166,Quorum Corp,3pl / warehousing,1485,PRO,861,2024-06-30,64,5,5,David C.
+c_91962,Global Advisors,tech / software,30,pro,1055,2024-05-11,60,1,6,Priya M.
+c_71668,Wave Solutions,Tech,227,starter plan,359,2024-09-27,30,4,1,Tom W.
+c_21665,Terra Corp,Software,61,Starter ,244,2023-11-04,5,8,1,
+c_98073,River Advisors,Logistics & 3PL,320,professional,499,2023-09-16,36,6,1,Carlos R.
+c_83238,Kinetic Ventures,Technology,103,starter plan,331,2025-05-04,60,10,1,Kevin H.
+c_59459,Verde Technologies,Tech,72,starter,198,2024-03-11,50,8,1,Sarah K.
+c_48408,Cascade Advisors,health tech,125,Starter ,337,2024-11-30,4,11,2,Kevin H.
+c_99355,Echo Technologies,fintech,361,STARTER,381,2024-02-13,43,12,1,
+c_42146,Global Partners,manufacturing,144,BUSINESS,2211,2024-08-24,15,4,3,James T.
+c_46109,Trek Labs,freight logistics,27,starter plan,385,2025-01-04,2,7,2,
+c_96633,Kinetic Inc,logistics / 3pl,372,pro,1179,2023-09-13,7,0,1,Priya M.
+c_35019,Trek Works,logistics / 3pl,155,Pro,816,2023-07-29,1,0,3,Rachel S.
+c_69874,Wave Co,software,180,starter,310,2024-04-30,15,1,0,Sarah K.
+c_91439,Bright Ventures,Software,49,enterprise,499,2024-08-25,37,3,4,Anna P.
+c_21066,Titan Services,B2B Software,185,Business,1800,2024-04-27,27,7,2,Carlos R.
+c_35951,Rally Ventures,RETAIL,6865,Starter ,185,2023-11-16,1,2,2,Anna P.
+c_25015,Edge Corp,banking & finance,22,pro,499,2023-11-17,52,8,5,Sarah K.
+c_59587,Stone Corp,SaaS,1627,PRO,1000,2023-07-07,2,13,1,Priya M.
+c_27783,Swift LLC,real estate,361,professional,851,2023-12-08,0,6,1,Mei L.
+c_14851,Summit Services,Software,61,professional,499,2023-12-28,30,8,0,Carlos R.
+c_85367,Apex LLC,enterprise software,109,Pro,952,2025-01-01,44,2,1,Tom W.
+c_29006,Zeal LLC,Logistics & 3PL,32,Pro ,771,2024-09-13,10,2,0,Tom W.
+c_27231,Vibe Dynamics,Logistics & 3PL,,pro,842,2025-03-01,46,2,3,Rachel S.
+c_25068,Slate LLC,education,168,pro,1111,2023-08-08,19,5,0,Carlos R.
+c_23492,Ardent Ventures,Software,655,Pro,951,2024-09-27,1,15,0,James T.
+c_93770,Trek Co,3pl / warehousing,1479,Pro,714,2024-05-05,4,6,1,Rachel S.
+c_50032,Rally Partners,FINANCE,80,starter,211,2024-07-22,31,12,2,Mei L.
+c_37300,Union LLC,3PL,,BUSINESS,2911,2025-02-10,41,6,4,Anna P.
+c_99807,Vista Partners,SaaS,109,Pro ,931,2024-05-24,7,8,0,Mei L.
+c_35415,Spark LLC,HealthTech,29,professional,892,2023-07-15,16,2,1,Sarah K.
+c_60732,Acme Ventures,retail,2484,PRO,716,2023-09-12,12,0,5,Anna P.
+c_16235,Mesa Works,Software,266,enterprise,2906,2023-07-14,42,5,4,Mei L.
+c_38658,Quorum Advisors,education,,starter,390,2024-08-07,6,5,0,
+c_79638,Verde Inc,food & beverage,6647,Pro,499,2024-06-08,9,4,1,Mei L.
+c_97396,Valor Services,Technology,141,STARTER,331,2024-11-18,4,11,2,Carlos R.
+c_72868,Terra Solutions,health tech,417,STARTER,283,2025-02-05,58,11,0,
+c_85522,Vector Consulting,software,338,business,2425,2024-12-20,4,2,3,Sophia B.
+c_38699,Helix Dynamics,Healthcare,140,pro,1050,2024-07-27,34,6,5,David C.
+c_77949,Vault Labs,financial tech,15,Business,3000,2023-07-15,0,6,2,Rachel S.
+c_71593,Prime Systems,Tech,,Business,2986,2024-02-14,59,7,0,Sophia B.
+c_79694,Ridge Labs,Retail / Ecommerce,22,STARTER,321,2023-11-13,46,0,0,David C.
+c_14275,Lumen LLC,FinTech,1461,Starter ,318,2024-12-24,4,10,2,Sarah K.
+c_94233,Bright Labs,e-commerce,136,starter,438,2025-03-26,9,3,0,
+c_17193,Titan Advisors,medical devices,197,professional,499,2024-07-01,12,2,5,Tom W.
+c_59333,Orbit Ventures,health services,311,pro,1270,2023-07-01,57,3,5,Kevin H.
+c_95207,Maple Dynamics,Software,94,Starter ,298,2024-10-25,18,1,1,
+c_78824,First Technologies,SaaS,403,Starter,356,2023-11-29,16,0,2,Anna P.
+c_84514,Ionic LLC,tech / software,188,Business,1797,2023-08-13,8,7,0,Anna P.
+c_10386,Terra Co,RETAIL,57,starter,292,2024-11-28,3,9,2,
+c_32291,Orbit Technologies,HEALTHCARE,81,STARTER,268,2024-03-23,32,1,0,
+c_82472,Mesa Dynamics,FINANCE,11,pro,1504,2024-08-22,21,3,7,Rachel S.
+c_67247,Pulse Advisors,Tech,1408,Starter ,276,2025-01-08,30,4,2,
+c_12744,Pulse Dynamics,food & beverage,233,Business ,3524,2024-05-09,58,3,3,Rachel S.
+c_10519,Verde Solutions,e-commerce,,PRO,1292,2024-09-25,10,9,0,Sophia B.
+c_78633,Spark Group,TECH,27,starter,326,2025-03-06,7,9,0,Sarah K.
+c_42128,Helix Co,real estate,143,professional,1325,2025-01-22,8,3,0,Rachel S.
+c_73450,Slate Dynamics,health services,583,Business ,2299,2023-03-09,2,10,1,Sarah K.
+c_87273,Vibe Co,e-commerce,203,pro,1122,2024-09-07,1,14,2,James T.
+c_55761,Keystone Labs,TECH,336,starter plan,319,2023-11-20,28,2,2,
+c_77223,Atlas Solutions,LOGISTICS,,enterprise,2484,2023-05-22,10,10,3,Mei L.
+c_58019,Vista Inc,consulting,117,Pro,1382,2024-04-11,61,6,7,Mei L.
+c_31913,Zeal Dynamics,Retail,4964,starter plan,381,2024-09-01,28,3,1,Kevin H.
+c_80654,Zeal Partners,HR tech,47,business,2097,2024-03-09,15,2,2,Mei L.
+c_11582,Mesa Advisors,online retail,171,Business,499,2023-02-10,26,10,3,Kevin H.
+c_79918,Cedar Consulting,Retail / Ecommerce,271,Pro,499,2025-02-27,20,2,2,Sophia B.
+c_40243,Helix Inc,logistics/transportation,35,Business ,1732,2023-05-09,55,6,2,Carlos R.
+c_76558,Harbor Labs,software,527,PRO,885,2024-10-03,54,3,8,Anna P.
+c_44357,Vibe Partners,online retail,352,Business,1207,2023-10-10,14,18,2,Kevin H.
+c_88155,Stone LLC,Finance,,business,2458,2023-04-10,3,9,0,Anna P.
+c_40952,Edge Dynamics,HEALTHCARE,332,STARTER,256,2024-09-04,56,12,1,
+c_62717,Ionic Systems,manufacturing,,Starter ,275,2024-10-20,54,4,0,
+c_44161,Delta Group,FINANCE,178,business,3243,2024-08-16,65,2,6,Sophia B.
+c_91807,Pulse LLC,manufacturing,,professional,518,2024-08-30,28,5,2,James T.
+c_82374,Solar Dynamics,3PL,273,PRO,1468,2024-08-19,22,6,4,Mei L.
+c_68870,Lumen Systems,software,66,STARTER,360,2024-11-30,45,2,1,
+c_24309,Peak Advisors,food & beverage,36,starter,203,2024-05-08,11,3,0,James T.
+c_74443,Pivot Services,Software,498,starter plan,320,2024-03-31,14,9,1,
+c_40140,Spark Ventures,B2B Software,,Starter ,323,2024-09-19,3,6,1,
+c_96194,Ionic Inc,logistics/transportation,301,starter,171,2024-12-26,35,9,2,Rachel S.
+c_41172,Cascade Inc,retail & ecommerce,204,pro,499,2025-01-29,36,7,4,Anna P.
+c_82109,Wave Systems,SaaS,34,Business,3130,2023-08-19,73,4,3,Rachel S.
+c_71681,Quorum Partners,software development,69,pro,1013,2024-01-21,72,4,8,Kevin H.
+c_46209,Peak Partners,HEALTHCARE,528,PRO,499,2024-08-17,34,3,3,Tom W.
+c_55111,Vista Services,FinTech,69,Starter ,247,2024-01-24,53,3,1,
+c_56488,Echo Solutions,food & beverage,16,Business ,1880,2023-06-05,69,4,4,Kevin H.
+c_78266,Kinetic Solutions,logistics/transportation,359,Pro,917,2024-10-15,12,4,2,James T.
+c_84647,Vector Labs,Healthcare,217,Pro,985,2024-11-02,52,3,1,Kevin H.
+c_70053,Swift Group,wealth management,787,pro,1185,2024-03-29,13,7,3,Tom W.
+c_79701,Stratum Ventures,Healthcare,198,STARTER,362,2023-09-30,18,12,2,
+c_45191,Topo Co,enterprise software,9,Pro,948,2025-04-01,63,6,5,Rachel S.
+c_33102,Terra Services,non-profit,1973,Pro ,1024,2023-12-19,11,17,0,Rachel S.
+c_15379,Jade Co,Logistics & 3PL,5669,Pro ,1217,2024-03-19,1,5,1,Carlos R.
+c_44053,First Corp,retail,16,STARTER,433,2024-11-06,6,7,0,Sarah K.
+c_27614,Titan Systems,HEALTHCARE,800,business,2257,2024-09-07,10,1,0,James T.
+c_54004,Titan Group,health services,7988,PRO,367,2025-02-04,23,7,4,David C.
+c_35031,Bright Advisors,TECH,92,STARTER,246,2023-11-03,46,9,0,Kevin H.
+c_18083,Spark Services,health services,132,Starter,346,2024-08-26,30,0,0,Sarah K.
+c_15467,Harbor Ventures,wealth management,,STARTER,179,2024-09-20,26,4,1,
+c_80384,Noble Ventures,financial services,17,professional,965,2024-05-02,36,5,8,Kevin H.
+c_33578,Vertex Solutions,Tech,205,Business ,3598,2023-12-15,18,1,5,James T.
+c_82947,Edge Co,tech / software,186,professional,953,2024-12-16,52,3,1,Tom W.
+c_58856,Echo Partners,ecommerce,21,pro,989,2024-09-11,1,5,0,Carlos R.
+c_38660,Forge Technologies,FINANCE,718,BUSINESS,2423,2024-03-26,8,17,1,Rachel S.
+c_35335,Atlas Labs,SaaS / Tech,1014,Business ,499,2024-10-30,43,7,0,Sophia B.
+c_43770,Zenith Labs,non-profit,8,starter plan,333,2024-06-11,29,1,1,Carlos R.
+c_98013,Bright Group,B2B Software,,Starter ,353,2024-10-16,47,7,0,
+c_57485,Trek Solutions,freight logistics,3749,professional,753,2025-02-20,19,7,5,Carlos R.
+c_80496,Core Inc,RETAIL,386,Pro,1219,2024-05-24,9,2,0,Carlos R.
+c_99542,Atlas Ventures,legal services,234,BUSINESS,1585,2024-08-22,61,3,7,Carlos R.
+c_23029,Stone Solutions,legal services,83,starter,274,2025-05-12,21,3,1,Priya M.
+c_10530,Stone Advisors,consulting,192,pro,664,2024-10-24,16,1,4,Carlos R.
+c_11244,Terra Technologies,LOGISTICS,,Starter,260,2025-03-13,19,7,0,Sarah K.
+c_41119,Vista Dynamics,3PL,24,Pro ,1074,2023-07-21,18,1,4,James T.
+c_72418,First LLC,healthcare,260,Starter,231,2024-05-11,14,3,2,
+c_13085,Noble Labs,consulting,572,Pro ,906,2024-03-13,5,5,6,Anna P.
+c_99322,Acme Consulting,financial tech,267,starter plan,415,2024-07-21,38,3,0,
+c_36206,Titan Inc,medical devices,16,PRO,1478,2023-09-13,23,0,1,Mei L.
+c_43536,Acme Works,tech / software,71,Starter,348,2024-08-05,40,4,0,
+c_63717,Acme Advisors,RETAIL,5596,PRO,1182,2024-11-06,39,5,2,Sophia B.
+c_49100,Valor Corp,Tech,193,Pro,1001,2024-08-20,6,4,5,David C.
+c_17170,Cascade Group,Tech,9,starter plan,208,2025-01-15,43,3,1,Priya M.
+c_89034,Apex Technologies,ecommerce,,professional,663,2025-01-13,37,5,1,Anna P.
+c_96454,Blue Technologies,financial tech,91,Pro ,783,2025-02-08,49,2,6,Kevin H.
+c_88274,Summit Inc,media,146,pro,826,2025-01-06,29,6,8,Rachel S.
+c_16105,Blue LLC,software,793,starter plan,387,2024-01-17,19,0,0,
+c_66486,Summit Corp,Healthcare,189,Pro,278,2023-10-28,3,4,1,Carlos R.
+c_55383,Ultra Co,HEALTHCARE,122,starter,330,2023-10-26,27,1,1,Priya M.
+c_60155,Forge Dynamics,D2C ecommerce,5856,Starter,232,2024-01-28,0,6,1,James T.
+c_98392,Apex Ventures,health services,3367,Starter,82,2023-11-23,6,5,0,
+c_35949,Zenith Ventures,HealthTech,,PRO,1052,2024-12-13,38,2,3,Kevin H.
+c_38064,Vector Co,healthcare,1791,Pro,1101,2023-08-26,5,16,1,James T.
+c_91654,Ardent Group,RETAIL,35,Starter ,194,2023-11-28,7,9,2,
+c_83505,Keystone Consulting,Retail,478,professional,1072,2024-12-03,34,6,3,Priya M.
+c_19429,Harbor Solutions,consulting,,pro,792,2024-08-30,14,2,1,Priya M.
+c_89095,River Labs,Healthcare,591,Pro,897,2023-10-21,14,13,0,Mei L.
+c_67592,Solar Labs,software,74,enterprise,1804,2024-12-28,23,4,6,Mei L.
+c_19414,Zenith Solutions,consulting,240,PRO,639,2025-01-04,63,2,8,James T.
+c_47001,First Partners,FINANCE,380,Starter ,289,2025-01-16,52,0,0,
+c_55138,Slate Services,retail & ecommerce,36,enterprise,2169,2024-03-11,40,4,3,Sarah K.
+c_71391,Delta LLC,D2C ecommerce,96,PRO,1049,2024-07-12,11,0,3,Sarah K.
+c_50602,Solid Group,software development,4022,Starter ,190,2024-03-18,35,1,0,
+c_46805,Edge Inc,enterprise software,199,Pro,964,2024-08-21,40,1,7,Anna P.
+c_68118,Ultra Advisors,ecommerce,8,pro,860,2023-05-31,2,9,1,Priya M.
+c_97871,Pivot Advisors,financial services,459,starter plan,327,2024-08-26,33,5,0,James T.
+c_90165,Acme Partners,education,724,pro,751,2024-02-14,12,14,0,David C.
+c_97654,Verde Advisors,logistics/transportation,442,PRO,795,2023-06-09,18,7,6,Kevin H.
+c_89387,Blue Corp,3PL,13,Pro ,542,2024-03-11,49,2,1,David C.
+c_88363,Delta Advisors,software,821,professional,962,2025-03-11,15,2,0,Sophia B.
+c_90606,Bright Systems,Finance,142,BUSINESS,1409,2024-10-02,69,1,4,James T.
+c_57447,Forge Consulting,education,156,pro,892,2024-06-13,13,1,2,Priya M.
+c_87320,Nexus Consulting,freight logistics,18,Starter,170,2024-11-11,30,2,0,
+c_24772,Core LLC,manufacturing,271,starter plan,242,2024-05-20,36,10,1,
+c_17353,Edge Technologies,FinTech,140,professional,921,2024-02-02,3,9,4,Kevin H.
+c_53192,Maple Works,Finance,,Starter,197,2024-03-15,50,11,1,
+c_22885,Trek Inc,e-commerce,,professional,499,2024-02-20,29,2,3,James T.
+c_99169,Echo Co,software,,Pro,1312,2023-10-17,13,4,1,Sophia B.
+c_97221,Noble Services,health tech,261,Starter,307,2024-03-08,41,1,1,Mei L.
+c_74271,Ardent Technologies,Software,185,Business,499,2024-01-30,34,9,5,Anna P.
+c_97129,Pivot Consulting,SaaS,309,PRO,499,2024-08-17,17,0,5,Kevin H.
+c_50448,Helix Technologies,enterprise software,919,business,499,2024-04-28,16,2,1,James T.
+c_73945,Prime Works,RETAIL,5414,Pro,1009,2024-11-12,66,1,7,Rachel S.
+c_95148,Global Ventures,Logistics,27,Pro ,499,2023-06-07,27,8,1,Rachel S.
+c_55807,Delta Dynamics,food & beverage,174,Starter,308,2023-11-13,56,3,0,
+c_25447,Zeal Corp,ecommerce,2887,Pro ,988,2023-10-17,45,1,3,Kevin H.
+c_38984,Nexus Systems,pharma,,Business ,3388,2024-09-11,60,7,0,Priya M.
+c_55346,Cedar Technologies,Healthcare,29,PRO,427,2023-12-15,57,4,1,Rachel S.
+c_55092,Spark Co,HEALTHCARE,990,starter plan,577,2024-05-27,18,0,2,
+c_60715,Zeal Systems,SaaS,168,PRO,988,2024-01-31,54,3,0,Mei L.
+c_13805,Spark Systems,logistics / 3pl,964,Business,2255,2023-12-25,59,4,8,James T.
+c_45409,Kinetic Dynamics,enterprise software,141,Starter ,346,2024-11-28,28,6,1,Sarah K.
+c_11775,Pivot Corp,logistics/transportation,194,Starter,267,2023-11-11,36,3,0,Rachel S.
+c_25121,Noble Consulting,3PL,244,Pro ,864,2024-04-07,3,0,3,David C.
+c_62739,Helix Solutions,manufacturing,147,enterprise,2087,2024-02-14,36,4,7,Tom W.
+c_50195,Global Consulting,supply chain logistics,,pro,1109,2023-11-30,11,0,1,Tom W.
+c_29167,Spark Consulting,financial tech,17,business,2935,2024-12-17,44,5,0,Sarah K.
+c_35038,Jade Group,fintech,4722,Business ,2478,2023-05-20,1,4,4,Mei L.
+c_42856,Lumen Solutions,e-commerce,594,Pro ,983,2023-09-06,5,8,2,Rachel S.
+c_60150,Iron Inc,SaaS,111,STARTER,170,2024-04-13,6,4,1,

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is vibecoding? · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-vibecoding.html"><span class="module-num">1.</span>What is vibecoding?</a></li>
+        <li><a href="/course/01-talking-to-ai/prompting-basics.html"><span class="module-num">2.</span>Prompting basics</a></li>
+        <li><a href="/course/01-talking-to-ai/exercises.html"><span class="module-num">3.</span>Exercises</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Chat to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 1 of 3 · 15 minutes</span>
+        <h1>What is vibecoding?</h1>
+        <p class="lede">A working definition, what makes it different from
+        regular ChatGPT use, and when it's the right tool for the job.</p>
+      </div>
+
+      <h2>A working definition</h2>
+      <p><strong>Vibecoding is using AI to build software by describing
+      what you want, in plain language, instead of writing the code
+      yourself.</strong></p>
+      <p>The term was popularized in early 2025 to describe a new way of
+      working: you have an idea, you describe it to an AI, the AI writes
+      and runs the code, you look at the result, you describe what to
+      change, the AI updates the code. You spend your time on the
+      <em>what</em> and the <em>why</em>; the AI handles the <em>how</em>.</p>
+
+      <h2>What it isn't</h2>
+      <p>Vibecoding is not the same as using ChatGPT to answer questions
+      or write text. The key difference is that vibecoding produces
+      <em>working software</em> — code that runs, files that exist on
+      your computer, tools your colleagues can actually use. The AI isn't
+      just describing what code <em>would</em> do; it's writing it,
+      running it, fixing it when it breaks, and handing you back a
+      finished artifact.</p>
+      <p>It's also not the same as traditional software engineering.
+      You're not learning syntax. You're not memorizing libraries. You're
+      not debugging line by line. You're operating at a higher level of
+      abstraction — closer to the level you already operate at when you
+      describe a project to a colleague or a contractor.</p>
+
+      <h2>The contractor analogy</h2>
+      <p>The most useful mental model: think of the AI as a contractor
+      you've hired to build something for you. The contractor is fast,
+      cheap, never sleeps, and has read everything ever written about
+      construction. But they've never seen your house, they don't know
+      your taste, and they'll happily build whatever you ask for —
+      including things that don't make sense.</p>
+      <p>Your job, like any client working with a contractor, is to:</p>
+      <ul>
+        <li><strong>Describe what you want clearly</strong>, including the
+        constraints (budget, style, what's already there).</li>
+        <li><strong>Show them examples</strong> of what good looks like.</li>
+        <li><strong>Check their work</strong> before signing off.</li>
+        <li><strong>Know when to ask for changes</strong> versus when to
+        rip it out and start over.</li>
+        <li><strong>Recognize when the job is too big</strong> for a
+        contractor and you need a real architect.</li>
+      </ul>
+      <p>If you can do those five things, you can vibecode. The rest of
+      this course is just practice.</p>
+
+      <h2>When is vibecoding the right tool?</h2>
+      <p>Vibecoding works well for:</p>
+      <ul>
+        <li><strong>One-off analyses</strong> on data you have.
+        ("Summarize sentiment in these 400 customer reviews.")</li>
+        <li><strong>Recurring reports</strong> that follow the same
+        pattern. ("Every Monday, pull these three reports and email me
+        the highlights.")</li>
+        <li><strong>Internal tools</strong> for you or a small team.
+        ("A page where I can paste a customer name and see their
+        last 5 support tickets.")</li>
+        <li><strong>Prototypes and validation</strong>. ("A clickable
+        mockup of the workflow so I can show it to 10 customers.")</li>
+        <li><strong>Document automation</strong>. ("Take this template
+        and fill it in with the data from that spreadsheet.")</li>
+      </ul>
+
+      <p>It works less well — and sometimes dangerously badly — for:</p>
+      <ul>
+        <li><strong>Anything customer-facing at scale</strong>. If 10,000
+        people will see the result, you need real engineering review.</li>
+        <li><strong>Anything that handles money or PII</strong>. Mistakes
+        get expensive and embarrassing.</li>
+        <li><strong>Anything you can't verify</strong>. If you don't know
+        what "correct" looks like, you can't tell when the AI is wrong.</li>
+        <li><strong>Anything that needs to survive long-term</strong>
+        without an engineer to maintain it.</li>
+      </ul>
+      <p>We'll come back to this in <a href="/course/06-limits-and-ethics/">Module 6</a>.
+      For now, just know that the question "should I vibecode this?" is
+      one you should always ask, not skip.</p>
+
+      <div class="pitfalls-inline">
+        <h4>Common confusion at this stage</h4>
+        <ul>
+          <li>"Isn't this just ChatGPT?" No — ChatGPT gives you text. A
+          vibecoding tool gives you working files on your computer that
+          you can run, share, and re-run.</li>
+          <li>"Don't I need to learn Python first?" No. You'll see Python
+          (and JavaScript, and SQL) in the outputs — but you don't need
+          to write any of it.</li>
+          <li>"What if it makes mistakes?" It will. Module 5 is dedicated
+          to catching them.</li>
+        </ul>
+      </div>
+
+      <h2>Try this thought experiment</h2>
+      <p>Before moving on, take 60 seconds and think of one task at work
+      or school you'd ideally automate but assumed required engineering
+      help. Hold onto it — by the end of Module 4 you'll know whether
+      it's a good vibecoding candidate, and by the end of the course
+      you'll probably have built it.</p>
+
+      <a class="next-cta" href="/course/01-talking-to-ai/prompting-basics.html">
+        <div>
+          <div class="next-cta-label">Next · Page 2 of 3</div>
+          <div class="next-cta-title">Prompting basics</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
