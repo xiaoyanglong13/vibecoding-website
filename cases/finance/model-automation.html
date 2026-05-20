@@ -56,16 +56,23 @@
     versions of all three are linked below so you can follow along:</p>
     <ul>
       <li><a href="trial_balance.csv" download><strong>trial_balance.csv</strong></a>
-      — this month's TB exported from the GL. About 290 rows covering
-      three periods (2026-02, 2026-03, 2026-04).</li>
+      — April's TB exported from the GL. About 100 rows, single period.
+      Each new month you re-export it.</li>
       <li><a href="account_mapping.csv" download><strong>account_mapping.csv</strong></a>
       — maps each GL account number to a line on the model (e.g.
-      "Revenue", "COGS", "Accrued expenses") and a sign multiplier.</li>
+      "Revenue", "COGS", "Accrued expenses") and a sign multiplier.
+      You maintain this file by hand as the chart of accounts grows.</li>
       <li><a href="model.xlsx" download><strong>model.xlsx</strong></a>
-      — the live three-statement model. The "Inputs" tab is where pasted
-      numbers go. The IS, BS, and CF tabs all reference Inputs through
-      named ranges.</li>
+      — the live three-statement model. The "Inputs" tab holds each
+      period's numbers, one column per month. January through March
+      are frozen historicals from prior monthly updates; the April
+      column is laid out and empty, ready for the script to fill.
+      The IS, BS, and CF tabs reference Inputs through named ranges,
+      so populating April lights up the whole model.</li>
     </ul>
+    <p>The "add one fresh column to Inputs each month" step is the one
+    bit of manual setup that survives the automation. It takes two
+    minutes; the script does the rest.</p>
     <p>The real-world messiness: a few accounts each month are
     <em>new</em> (e.g. a freshly opened legal entity), so the mapping
     file is always slightly behind. Sign convention is mixed —
@@ -171,46 +178,60 @@ mp = pd.read_csv("account_mapping.csv")
 tb["net"] = tb["credit"] - tb["debit"]
 merged = tb.merge(mp, on="account_number", how="left")
 
-unmapped = merged[merged["model_line"].isna()]["account_number"].unique()
+unmapped = merged[merged["model_line"].isna()]
 if len(unmapped):
-    print("WARNING - unmapped accounts:", list(unmapped))
+    print("WARNING - unmapped accounts:")
+    for _, r in unmapped.iterrows():
+        print(f"  {int(r['account_number'])}  {r['account_name']}")
 
 merged["signed"] = merged["net"] * merged["sign"].fillna(0)
 by_line = merged.groupby("model_line")["signed"].sum()
 
-# --- Write into model.xlsx via named ranges ---
+# --- Write into model.xlsx via defined names ---
+# Each model line has a defined name like "in_revenue_2026_04".
 wb = load_workbook("model.xlsx")
-inputs = wb["Inputs"]
-# Each model_line has a named range like "in_revenue_2026_04"
 for line, value in by_line.items():
-    range_name = f"in_{line.lower().replace(' ', '_')}_{PERIOD.replace('-', '_')}"
-    if range_name in wb.defined_names:
-        dest = wb.defined_names[range_name].value
+    slug = (line.lower()
+            .replace("&amp;", "and")
+            .replace(" ", "_")
+            .replace("-", "_"))
+    while "__" in slug:
+        slug = slug.replace("__", "_")
+    name = f"in_{slug.strip('_')}_{PERIOD.replace('-', '_')}"
+    if name in wb.defined_names:
+        dest = wb.defined_names[name].value
         sheet, cell = dest.split("!")
         wb[sheet.strip("'")][cell.replace("$", "")] = float(value)
 
 wb.save(f"model_{PERIOD}.xlsx")
 
 # --- Checks ---
-def line(name): return by_line.get(name, 0)
+def L(name): return by_line.get(name, 0)
 
-revenue = line("Revenue")
-opex = line("COGS") + line("SG&amp;A") + line("R&amp;D")
-ni = revenue + opex  # opex is already negative after sign
+revenue = L("Revenue")
+opex    = L("COGS") + L("SG&amp;A") + L("R&amp;D") + L("Depreciation")
+other   = L("Interest income") + L("Interest expense") + L("Tax expense")
+ni      = revenue + opex + other
 
-print(f"Revenue: {revenue:,.0f}")
-print(f"Opex:    {opex:,.0f}")
-print(f"NI:      {ni:,.0f}")
+print(f"Revenue:    {revenue:,.0f}")
+print(f"Opex:       {opex:,.0f}")
+print(f"Net income: {ni:,.0f}")
 
-# Re-open saved file to let Excel formulas recompute on next open;
-# for an in-script check we approximate from by_line directly.
-assets = sum(line(x) for x in ["Cash", "AR", "Inventory", "PPE"])
-liab   = sum(line(x) for x in ["AP", "Accrued expenses",
-                                "Lease liability - ST",
-                                "Lease liability - LT", "Debt"])
-equity = line("Common stock") + line("Retained earnings - prior") + ni
+assets = sum(L(x) for x in
+             ["Cash", "AR", "Inventory", "Prepaid expenses",
+              "PPE", "Intangibles"])
+liab   = sum(L(x) for x in
+             ["AP", "Accrued expenses",
+              "Lease liability ST", "Lease liability LT", "Debt"])
+equity = L("Common stock") + L("Retained earnings prior") + ni
 print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
 </code></pre>
+    <p>Model line names in the mapping file use spaces only (no dashes
+    or other punctuation) so the slug calculation produces names that
+    match the workbook's defined names exactly. The script's
+    <code>WARNING</code> block surfaces any TB account that didn't find
+    a mapping — that's how the lease-liability mismatch in Round 3
+    showed up.</p>
 
     <h2>5. What good looks like</h2>
     <p>The deliverable isn't the script — it's the model file plus a
@@ -223,15 +244,15 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
       <tbody>
         <tr>
           <td>Revenue</td>
-          <td>$2.73M</td>
-          <td>+1.7%</td>
-          <td>EU and APAC held steady; small LATAM pilot started.</td>
+          <td>$2.77M</td>
+          <td>+1.3%</td>
+          <td>EU and APAC held steady; small LATAM pilot launched.</td>
         </tr>
         <tr>
           <td>Net income</td>
-          <td>$320K</td>
-          <td>broadly flat</td>
-          <td>Cost structure stable; new EU office costs offset by pilot revenue.</td>
+          <td>$288K</td>
+          <td>-10%</td>
+          <td>Materials cost ran hot; new EU entity overhead just kicked in.</td>
         </tr>
         <tr>
           <td>Balance sheet</td>

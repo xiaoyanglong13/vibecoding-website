@@ -1,291 +1,101 @@
 account_number,account_name,period,debit,credit
-10000,Cash - operating account,2026-02,2672168.86,0.0
-10010,Cash - payroll account,2026-02,310880.21,0.0
-10020,Cash - money market,2026-02,769471.37,0.0
-10050,Cash - EU operating,2026-02,211429.42,0.0
-10060,Cash - APAC operating,2026-02,97362.07,0.0
-10100,AR - trade US,2026-02,990389.93,0.0
-10101,AR - trade EU,2026-02,419647.62,0.0
-10102,AR - trade APAC,2026-02,107273.8,0.0
-10110,AR - intercompany,2026-02,64695.5,0.0
-10120,Allowance for doubtful accts,2026-02,0.0,46645.82
-10200,Inventory - raw materials,2026-02,609533.33,0.0
-10210,Inventory - WIP,2026-02,340109.25,0.0
-10220,Inventory - finished goods,2026-02,835569.26,0.0
-10300,Prepaid expenses,2026-02,76590.56,0.0
-10310,Prepaid insurance,2026-02,42377.71,0.0
-15010,PPE - buildings,2026-02,3409168.06,0.0
-15011,PPE - leasehold improvements,2026-02,280219.53,0.0
-15015,PPE - office furniture,2026-02,142760.54,0.0
-15020,PPE - machinery,2026-02,3972406.73,0.0
-15030,PPE - computers,2026-02,465787.16,0.0
-15040,PPE - vehicles,2026-02,264770.78,0.0
-15500,Accumulated depreciation,2026-02,0.0,3116616.16
-17000,Intangibles - software,2026-02,415974.31,0.0
-17100,Intangibles - patents,2026-02,102829.52,0.0
-17200,Intangibles - trademarks,2026-02,43152.18,0.0
-17300,Customer relationships,2026-02,77235.26,0.0
-17500,Goodwill,2026-02,175601.66,0.0
-20000,AP - trade US,2026-02,0.0,507417.55
-20001,AP - trade EU,2026-02,0.0,183752.94
-20002,AP - trade APAC,2026-02,0.0,62385.86
-20010,AP - intercompany,2026-02,0.0,34626.54
-20100,Customer deposits,2026-02,0.0,28385.95
-21000,Accrued expenses,2026-02,0.0,148321.71
-21010,Accrued salaries,2026-02,0.0,135747.08
-21020,Accrued taxes,2026-02,0.0,60555.44
-21030,Accrued bonus,2026-02,0.0,44137.39
-21040,Accrued interest,2026-02,0.0,8668.0
-22000,Deferred revenue,2026-02,0.0,84597.34
-23000,Lease liability - LT,2026-02,0.0,1205608.85
-24000,Long-term debt,2026-02,0.0,2210210.48
-24010,Current portion LT debt,2026-02,0.0,303682.29
-25000,Other long-term liabilities,2026-02,0.0,60310.47
-30000,Common stock,2026-02,0.0,491836.95
-31000,Additional paid-in capital,2026-02,0.0,1481044.92
-32000,Retained earnings - prior,2026-02,0.0,6447689.18
-40000,Product revenue - US,2026-02,0.0,1774113.28
-40010,Product revenue - EU,2026-02,0.0,598252.21
-40020,Product revenue - APAC,2026-02,0.0,148361.13
-40100,Service revenue - support,2026-02,0.0,61174.06
-40110,Service revenue - implementation,2026-02,0.0,18146.54
-40200,Other revenue,2026-02,0.0,13886.46
-49000,Sales returns,2026-02,27781.9,0.0
-49100,Sales discounts,2026-02,18668.84,0.0
-50000,COGS - materials,2026-02,721765.67,0.0
-50100,COGS - direct labor,2026-02,398165.32,0.0
-50200,COGS - factory overhead,2026-02,215900.77,0.0
-50300,COGS - freight in,2026-02,96628.59,0.0
-50400,COGS - inventory adjustments,2026-02,13723.76,0.0
-50500,COGS - warranty,2026-02,9630.6,0.0
-60100,Salaries - sales,2026-02,85595.69,0.0
-60101,Salaries - finance,2026-02,37169.21,0.0
-60102,Salaries - marketing,2026-02,31045.84,0.0
-60103,Salaries - IT,2026-02,32510.82,0.0
-60110,Salaries - executive,2026-02,48003.47,0.0
-60120,Salaries - admin,2026-02,54679.04,0.0
-60130,Salaries - operations,2026-02,41394.36,0.0
-60140,Stock-based compensation,2026-02,23258.89,0.0
-60200,Benefits,2026-02,31715.87,0.0
-60210,Payroll taxes,2026-02,19205.26,0.0
-60300,Rent expense - HQ,2026-02,24683.62,0.0
-60305,Rent expense - warehouses,2026-02,12306.08,0.0
-60310,Utilities,2026-02,6131.79,0.0
-60400,Office supplies,2026-02,2402.18,0.0
-60500,Travel & entertainment,2026-02,11698.34,0.0
-60600,Marketing - digital,2026-02,17483.41,0.0
-60601,Marketing - PR,2026-02,7610.32,0.0
-60610,Marketing - events,2026-02,9301.39,0.0
-60700,Professional fees,2026-02,7461.07,0.0
-60710,Legal fees,2026-02,4927.8,0.0
-60720,Audit fees,2026-02,3844.98,0.0
-60750,Consulting fees,2026-02,5633.04,0.0
-60800,Insurance,2026-02,6002.02,0.0
-60820,Training & development,2026-02,3331.88,0.0
-60830,Software subscriptions,2026-02,9930.14,0.0
-60900,Depreciation expense,2026-02,53241.21,0.0
-60910,Amortization expense,2026-02,7951.71,0.0
-65000,R&D - salaries,2026-02,116012.79,0.0
-65100,R&D - prototyping,2026-02,35014.98,0.0
-65200,R&D - software & tools,2026-02,22012.57,0.0
-65300,R&D - external testing,2026-02,13656.36,0.0
-70000,Interest expense,2026-02,16051.65,0.0
-70100,Interest income,2026-02,0.0,3125.05
-70200,FX gain/loss,2026-02,0.0,1410.71
-70250,Bank fees,2026-02,2136.8,0.0
-75000,Income tax expense,2026-02,77635.71,0.0
-10000,Cash - operating account,2026-03,2593503.91,0.0
-10010,Cash - payroll account,2026-03,319315.73,0.0
-10020,Cash - money market,2026-03,807234.57,0.0
-10050,Cash - EU operating,2026-03,216452.45,0.0
-10060,Cash - APAC operating,2026-03,99206.98,0.0
-10100,AR - trade US,2026-03,1006219.92,0.0
-10101,AR - trade EU,2026-03,399972.35,0.0
-10102,AR - trade APAC,2026-03,112014.05,0.0
-10110,AR - intercompany,2026-03,66037.21,0.0
-10120,Allowance for doubtful accts,2026-03,0.0,48347.01
-10200,Inventory - raw materials,2026-03,614382.53,0.0
-10210,Inventory - WIP,2026-03,344590.0,0.0
-10220,Inventory - finished goods,2026-03,844155.87,0.0
-10300,Prepaid expenses,2026-03,78083.17,0.0
-10310,Prepaid insurance,2026-03,42092.8,0.0
-15010,PPE - buildings,2026-03,3510041.34,0.0
-15011,PPE - leasehold improvements,2026-03,292884.22,0.0
-15015,PPE - office furniture,2026-03,140684.0,0.0
-15020,PPE - machinery,2026-03,3919637.84,0.0
-15030,PPE - computers,2026-03,473098.9,0.0
-15040,PPE - vehicles,2026-03,267769.18,0.0
-15500,Accumulated depreciation,2026-03,0.0,3164214.19
-17000,Intangibles - software,2026-03,416995.41,0.0
-17100,Intangibles - patents,2026-03,106404.76,0.0
-17200,Intangibles - trademarks,2026-03,42485.98,0.0
-17300,Customer relationships,2026-03,76757.16,0.0
-17500,Goodwill,2026-03,183749.29,0.0
-20000,AP - trade US,2026-03,0.0,523834.77
-20001,AP - trade EU,2026-03,0.0,183924.21
-20002,AP - trade APAC,2026-03,0.0,62423.48
-20010,AP - intercompany,2026-03,0.0,33146.07
-20100,Customer deposits,2026-03,0.0,27843.11
-21000,Accrued expenses,2026-03,0.0,144451.62
-21010,Accrued salaries,2026-03,0.0,136075.45
-21020,Accrued taxes,2026-03,0.0,62698.05
-21030,Accrued bonus,2026-03,0.0,45099.97
-21040,Accrued interest,2026-03,0.0,8443.84
-22000,Deferred revenue,2026-03,0.0,82180.8
-23000,Lease liability - LT,2026-03,0.0,1212796.9
-24000,Long-term debt,2026-03,0.0,2270292.31
-24010,Current portion LT debt,2026-03,0.0,294004.47
-25000,Other long-term liabilities,2026-03,0.0,62257.62
-30000,Common stock,2026-03,0.0,489511.76
-31000,Additional paid-in capital,2026-03,0.0,1531071.47
-32000,Retained earnings - prior,2026-03,0.0,6271867.35
-40000,Product revenue - US,2026-03,0.0,1882311.64
-40010,Product revenue - EU,2026-03,0.0,605143.71
-40020,Product revenue - APAC,2026-03,0.0,154506.52
-40100,Service revenue - support,2026-03,0.0,63304.6
-40110,Service revenue - implementation,2026-03,0.0,18065.69
-40200,Other revenue,2026-03,0.0,14570.47
-49000,Sales returns,2026-03,28372.55,0.0
-49100,Sales discounts,2026-03,19007.54,0.0
-50000,COGS - materials,2026-03,746932.95,0.0
-50100,COGS - direct labor,2026-03,400433.15,0.0
-50200,COGS - factory overhead,2026-03,213945.71,0.0
-50300,COGS - freight in,2026-03,96623.96,0.0
-50400,COGS - inventory adjustments,2026-03,14675.41,0.0
-50500,COGS - warranty,2026-03,9757.97,0.0
-60100,Salaries - sales,2026-03,88602.19,0.0
-60101,Salaries - finance,2026-03,38154.11,0.0
-60102,Salaries - marketing,2026-03,30004.7,0.0
-60103,Salaries - IT,2026-03,32278.19,0.0
-60110,Salaries - executive,2026-03,48228.0,0.0
-60120,Salaries - admin,2026-03,55345.14,0.0
-60130,Salaries - operations,2026-03,40621.46,0.0
-60140,Stock-based compensation,2026-03,22900.84,0.0
-60200,Benefits,2026-03,31975.51,0.0
-60210,Payroll taxes,2026-03,20273.91,0.0
-60300,Rent expense - HQ,2026-03,24996.04,0.0
-60305,Rent expense - warehouses,2026-03,13013.68,0.0
-60310,Utilities,2026-03,6489.39,0.0
-60400,Office supplies,2026-03,2320.78,0.0
-60500,Travel & entertainment,2026-03,11462.85,0.0
-60600,Marketing - digital,2026-03,18180.72,0.0
-60601,Marketing - PR,2026-03,7544.11,0.0
-60610,Marketing - events,2026-03,9318.27,0.0
-60700,Professional fees,2026-03,7604.7,0.0
-60710,Legal fees,2026-03,5050.36,0.0
-60720,Audit fees,2026-03,3963.69,0.0
-60750,Consulting fees,2026-03,5922.4,0.0
-60800,Insurance,2026-03,6199.96,0.0
-60820,Training & development,2026-03,3376.93,0.0
-60830,Software subscriptions,2026-03,9814.6,0.0
-60900,Depreciation expense,2026-03,52717.01,0.0
-60910,Amortization expense,2026-03,8106.66,0.0
-65000,R&D - salaries,2026-03,119886.33,0.0
-65100,R&D - prototyping,2026-03,35087.73,0.0
-65200,R&D - software & tools,2026-03,22628.96,0.0
-65300,R&D - external testing,2026-03,14666.02,0.0
-70000,Interest expense,2026-03,16392.28,0.0
-70100,Interest income,2026-03,0.0,3238.57
-70200,FX gain/loss,2026-03,0.0,1411.46
-70250,Bank fees,2026-03,2184.19,0.0
-75000,Income tax expense,2026-03,78206.54,0.0
-10000,Cash - operating account,2026-04,2626750.65,0.0
-10010,Cash - payroll account,2026-04,322203.51,0.0
-10020,Cash - money market,2026-04,784107.5,0.0
-10050,Cash - EU operating,2026-04,214264.66,0.0
-10060,Cash - APAC operating,2026-04,95504.47,0.0
-10100,AR - trade US,2026-04,1014936.9,0.0
-10101,AR - trade EU,2026-04,412687.03,0.0
-10102,AR - trade APAC,2026-04,113508.75,0.0
-10110,AR - intercompany,2026-04,65848.23,0.0
-10120,Allowance for doubtful accts,2026-04,0.0,47172.75
-10200,Inventory - raw materials,2026-04,644959.04,0.0
-10210,Inventory - WIP,2026-04,350323.51,0.0
-10220,Inventory - finished goods,2026-04,893042.21,0.0
-10300,Prepaid expenses,2026-04,80795.35,0.0
-10310,Prepaid insurance,2026-04,43307.5,0.0
-15010,PPE - buildings,2026-04,3365246.74,0.0
-15011,PPE - leasehold improvements,2026-04,287602.01,0.0
-15015,PPE - office furniture,2026-04,140956.74,0.0
-15020,PPE - machinery,2026-04,3915611.86,0.0
-15030,PPE - computers,2026-04,471961.59,0.0
-15040,PPE - vehicles,2026-04,260693.1,0.0
-15500,Accumulated depreciation,2026-04,0.0,3201381.93
-17000,Intangibles - software,2026-04,418223.95,0.0
-17100,Intangibles - patents,2026-04,107857.54,0.0
-17200,Intangibles - trademarks,2026-04,42305.49,0.0
-17300,Customer relationships,2026-04,78416.07,0.0
-17500,Goodwill,2026-04,186788.42,0.0
-20000,AP - trade US,2026-04,0.0,540811.76
-20001,AP - trade EU,2026-04,0.0,182408.32
-20002,AP - trade APAC,2026-04,0.0,63440.6
-20010,AP - intercompany,2026-04,0.0,33628.74
-20100,Customer deposits,2026-04,0.0,27935.05
-21000,Accrued expenses,2026-04,0.0,153683.76
-21010,Accrued salaries,2026-04,0.0,133953.38
-21020,Accrued taxes,2026-04,0.0,61765.98
-21030,Accrued bonus,2026-04,0.0,45101.2
-21040,Accrued interest,2026-04,0.0,8356.9
-22000,Deferred revenue,2026-04,0.0,85268.5
-23000,Lease liability - LT,2026-04,0.0,1192003.83
+10000,Cash - operating account,2026-04,2711413.99,0.0
+10010,Cash - payroll account,2026-04,320200.52,0.0
+10020,Cash - money market,2026-04,791155.24,0.0
+10050,Cash - EU operating,2026-04,223532.27,0.0
+10060,Cash - APAC operating,2026-04,99463.46,0.0
+10100,AR - trade US,2026-04,970367.56,0.0
+10101,AR - trade EU,2026-04,414241.76,0.0
+10102,AR - trade APAC,2026-04,110153.98,0.0
+10110,AR - intercompany,2026-04,64009.79,0.0
+10120,Allowance for doubtful accts,2026-04,0.0,49512.54
+10200,Inventory - raw materials,2026-04,634477.13,0.0
+10210,Inventory - WIP,2026-04,340171.05,0.0
+10220,Inventory - finished goods,2026-04,885534.23,0.0
+10300,Prepaid expenses,2026-04,79415.49,0.0
+10310,Prepaid insurance,2026-04,42445.04,0.0
+15010,PPE - buildings,2026-04,3349472.21,0.0
+15011,PPE - leasehold improvements,2026-04,281902.72,0.0
+15015,PPE - office furniture,2026-04,147443.03,0.0
+15020,PPE - machinery,2026-04,4054437.08,0.0
+15030,PPE - computers,2026-04,488532.7,0.0
+15040,PPE - vehicles,2026-04,269197.98,0.0
+15500,Accumulated depreciation,2026-04,0.0,3141676.48
+17000,Intangibles - software,2026-04,417298.94,0.0
+17100,Intangibles - patents,2026-04,104192.7,0.0
+17200,Intangibles - trademarks,2026-04,42139.56,0.0
+17300,Customer relationships,2026-04,81065.24,0.0
+17500,Goodwill,2026-04,185946.09,0.0
+20000,AP - trade US,2026-04,0.0,539222.73
+20001,AP - trade EU,2026-04,0.0,187073.01
+20002,AP - trade APAC,2026-04,0.0,61835.31
+20010,AP - intercompany,2026-04,0.0,33991.38
+20100,Customer deposits,2026-04,0.0,27742.68
+21000,Accrued expenses,2026-04,0.0,152744.74
+21010,Accrued salaries,2026-04,0.0,137067.98
+21020,Accrued taxes,2026-04,0.0,61567.2
+21030,Accrued bonus,2026-04,0.0,44983.32
+21040,Accrued interest,2026-04,0.0,8448.68
+22000,Deferred revenue,2026-04,0.0,87459.1
+23000,Lease liability - LT,2026-04,0.0,1223901.29
 23100,Lease liability - ST (new),2026-04,0.0,1240.0
-24000,Long-term debt,2026-04,0.0,2269024.62
-24010,Current portion LT debt,2026-04,0.0,296772.13
-25000,Other long-term liabilities,2026-04,0.0,64351.24
-30000,Common stock,2026-04,0.0,492277.38
-31000,Additional paid-in capital,2026-04,0.0,1486441.49
-32000,Retained earnings - prior,2026-04,0.0,6231008.46
-40000,Product revenue - US,2026-04,0.0,1896271.44
-40010,Product revenue - EU,2026-04,0.0,636509.86
-40020,Product revenue - APAC,2026-04,0.0,154970.12
+24000,Long-term debt,2026-04,0.0,2296802.08
+24010,Current portion LT debt,2026-04,0.0,310177.8
+25000,Other long-term liabilities,2026-04,0.0,64370.15
+30000,Common stock,2026-04,0.0,493029.74
+31000,Additional paid-in capital,2026-04,0.0,1544110.16
+32000,Retained earnings - prior,2026-04,0.0,6353020.22
+40000,Product revenue - US,2026-04,0.0,1898965.08
+40010,Product revenue - EU,2026-04,0.0,657396.84
+40020,Product revenue - APAC,2026-04,0.0,163113.23
 40030,Product revenue - LATAM pilot,2026-04,0.0,1000.0
-40100,Service revenue - support,2026-04,0.0,62767.07
-40110,Service revenue - implementation,2026-04,0.0,19084.68
-40200,Other revenue,2026-04,0.0,14283.15
-49000,Sales returns,2026-04,29172.51,0.0
-49100,Sales discounts,2026-04,19824.99,0.0
-50000,COGS - materials,2026-04,754676.64,0.0
-50100,COGS - direct labor,2026-04,403986.01,0.0
-50200,COGS - factory overhead,2026-04,222007.06,0.0
-50300,COGS - freight in,2026-04,102050.05,0.0
-50400,COGS - inventory adjustments,2026-04,14246.63,0.0
-50500,COGS - warranty,2026-04,9969.67,0.0
-60100,Salaries - sales,2026-04,89085.95,0.0
-60101,Salaries - finance,2026-04,38545.31,0.0
-60102,Salaries - marketing,2026-04,31567.64,0.0
-60103,Salaries - IT,2026-04,32999.83,0.0
-60110,Salaries - executive,2026-04,49015.6,0.0
-60120,Salaries - admin,2026-04,56873.55,0.0
-60130,Salaries - operations,2026-04,40942.45,0.0
-60140,Stock-based compensation,2026-04,23644.35,0.0
-60200,Benefits,2026-04,34399.56,0.0
-60210,Payroll taxes,2026-04,21080.71,0.0
-60300,Rent expense - HQ,2026-04,25196.47,0.0
-60305,Rent expense - warehouses,2026-04,12706.76,0.0
-60310,Utilities,2026-04,6373.57,0.0
-60400,Office supplies,2026-04,2487.26,0.0
+40100,Service revenue - support,2026-04,0.0,66775.45
+40110,Service revenue - implementation,2026-04,0.0,19325.73
+40200,Other revenue,2026-04,0.0,14549.54
+49000,Sales returns,2026-04,30020.86,0.0
+49100,Sales discounts,2026-04,19555.1,0.0
+50000,COGS - materials,2026-04,788756.23,0.0
+50100,COGS - direct labor,2026-04,417750.85,0.0
+50200,COGS - factory overhead,2026-04,221799.6,0.0
+50300,COGS - freight in,2026-04,103106.01,0.0
+50400,COGS - inventory adjustments,2026-04,14720.85,0.0
+50500,COGS - warranty,2026-04,9895.96,0.0
+60100,Salaries - sales,2026-04,93709.12,0.0
+60101,Salaries - finance,2026-04,38816.79,0.0
+60102,Salaries - marketing,2026-04,30880.12,0.0
+60103,Salaries - IT,2026-04,33355.3,0.0
+60110,Salaries - executive,2026-04,49903.78,0.0
+60120,Salaries - admin,2026-04,58246.41,0.0
+60130,Salaries - operations,2026-04,43947.82,0.0
+60140,Stock-based compensation,2026-04,23795.93,0.0
+60200,Benefits,2026-04,34269.42,0.0
+60210,Payroll taxes,2026-04,20701.68,0.0
+60300,Rent expense - HQ,2026-04,27067.32,0.0
+60305,Rent expense - warehouses,2026-04,13182.5,0.0
+60310,Utilities,2026-04,6750.29,0.0
+60400,Office supplies,2026-04,2409.44,0.0
 60450,Office supplies - new EU entity,2026-04,800.0,0.0
-60500,Travel & entertainment,2026-04,12122.68,0.0
-60600,Marketing - digital,2026-04,18733.29,0.0
-60601,Marketing - PR,2026-04,7750.29,0.0
-60610,Marketing - events,2026-04,9497.83,0.0
-60700,Professional fees,2026-04,7693.11,0.0
-60710,Legal fees,2026-04,5180.34,0.0
-60720,Audit fees,2026-04,4067.47,0.0
-60750,Consulting fees,2026-04,6099.16,0.0
-60800,Insurance,2026-04,6252.52,0.0
+60500,Travel & entertainment,2026-04,12398.08,0.0
+60600,Marketing - digital,2026-04,18275.33,0.0
+60601,Marketing - PR,2026-04,8167.71,0.0
+60610,Marketing - events,2026-04,9726.61,0.0
+60700,Professional fees,2026-04,7492.83,0.0
+60710,Legal fees,2026-04,5186.32,0.0
+60720,Audit fees,2026-04,4166.97,0.0
+60750,Consulting fees,2026-04,5961.48,0.0
+60800,Insurance,2026-04,6343.09,0.0
 60810,Insurance - new EU policy,2026-04,700.0,0.0
-60820,Training & development,2026-04,3398.27,0.0
-60830,Software subscriptions,2026-04,10430.43,0.0
-60900,Depreciation expense,2026-04,53223.53,0.0
-60910,Amortization expense,2026-04,8369.25,0.0
-65000,R&D - salaries,2026-04,125467.5,0.0
-65100,R&D - prototyping,2026-04,34451.1,0.0
-65200,R&D - software & tools,2026-04,22266.09,0.0
-65300,R&D - external testing,2026-04,14162.03,0.0
-70000,Interest expense,2026-04,17148.59,0.0
-70100,Interest income,2026-04,0.0,3269.92
-70200,FX gain/loss,2026-04,0.0,1459.52
-70250,Bank fees,2026-04,2204.01,0.0
+60820,Training & development,2026-04,3564.96,0.0
+60830,Software subscriptions,2026-04,10341.79,0.0
+60900,Depreciation expense,2026-04,55059.86,0.0
+60910,Amortization expense,2026-04,8307.91,0.0
+65000,R&D - salaries,2026-04,125930.02,0.0
+65100,R&D - prototyping,2026-04,34764.56,0.0
+65200,R&D - software & tools,2026-04,23780.09,0.0
+65300,R&D - external testing,2026-04,14790.04,0.0
+70000,Interest expense,2026-04,17619.97,0.0
+70100,Interest income,2026-04,0.0,3421.76
+70200,FX gain/loss,2026-04,0.0,1490.71
+70250,Bank fees,2026-04,2195.37,0.0
 70300,Other income,2026-04,0.0,500.0
-75000,Income tax expense,2026-04,79370.9,0.0
+75000,Income tax expense,2026-04,80090.8,0.0

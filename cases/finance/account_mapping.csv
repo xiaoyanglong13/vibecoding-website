@@ -37,13 +37,13 @@ account_number,model_line,sign
 21030,Accrued expenses,1
 21040,Accrued expenses,1
 22000,Accrued expenses,1
-23000,Lease liability - LT,1
+23000,Lease liability LT,1
 24000,Debt,1
 24010,Debt,1
 25000,Debt,1
 30000,Common stock,1
 31000,Common stock,1
-32000,Retained earnings - prior,1
+32000,Retained earnings prior,1
 40000,Revenue,1
 40010,Revenue,1
 40020,Revenue,1
