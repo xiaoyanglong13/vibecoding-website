@@ -14,88 +14,70 @@ Persistent header on every page:
 | Start here | `/start` | The hook. Module 0 — why Business School Students should care. |
 | Course | `/course` | Linear curriculum, modules 1–9. |
 | Use cases | `/cases` | Business cases organized by function. |
+| Reference | `/reference` | Glossary, cheat sheets, atomic how-tos. (Stub — content planned.) |
+| Pitfalls | `/pitfalls` | Common mistakes and how to fix them. |
+| About | `/about` | Philosophy, how to use the site, contributing. |
 
-Persistent footer: search, version/last-updated, GitHub link (if open-sourced).
+Persistent footer: version/last-updated, About link.
 
 ---
 
 ## 2. Page tree
 
+Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or placeholders. Pages marked ❌ are planned but not yet created.
+
 ```
-/                                  Home (hero + three doors: Start, Course, Use cases)
-├── /start                         Module 0 — Why this matters for Business School Students
-│   ├── /start/demos               Demo reel (3 short videos)
-│   └── /start/case-vignettes      Three short stories (consultant, PM, founder)
+/                                  Home (hero + three doors: Start, Course, Use cases) ✅
+├── /start                         Module 0 — Why this matters for Business School Students ✅
 │
-├── /course                        Course landing (syllabus, prerequisites, time estimates)
-│   ├── /course/01-talking-to-ai
-│   │   ├── /course/01-talking-to-ai/what-is-vibecoding
-│   │   ├── /course/01-talking-to-ai/prompting-basics
-│   │   └── /course/01-talking-to-ai/exercises
+├── /course                        Course landing (syllabus, prerequisites, time estimates) ✅
+│   ├── /course/01-talking-to-ai                                                           ✅
+│   │   ├── /course/01-talking-to-ai/what-is-vibecoding                                   ✅
+│   │   ├── /course/01-talking-to-ai/prompting-basics                                     ✅
+│   │   └── /course/01-talking-to-ai/exercises                                            ✅
 │   │
-│   ├── /course/02-chat-to-agent
-│   │   ├── /course/02-chat-to-agent/agent-mental-model
-│   │   ├── /course/02-chat-to-agent/worked-example
-│   │   └── /course/02-chat-to-agent/when-an-agent-helps
-│   │
-│   ├── /course/03-setup
-│   │   ├── /course/03-setup/install-claude-code
-│   │   ├── /course/03-setup/first-run
-│   │   └── /course/03-setup/appendix-opencode
-│   │
-│   ├── /course/04-workflow
-│   │   ├── /course/04-workflow/plan-vs-execute
-│   │   ├── /course/04-workflow/information-environment
-│   │   ├── /course/04-workflow/context-engineering
-│   │   ├── /course/04-workflow/version-safety
-│   │   └── /course/04-workflow/iterating
-│   │
-│   ├── /course/05-evaluating-output
-│   │   ├── /course/05-evaluating-output/checking-correctness
-│   │   ├── /course/05-evaluating-output/spotting-hallucinations
-│   │   ├── /course/05-evaluating-output/debugging-when-it-fails
-│   │   └── /course/05-evaluating-output/when-to-stop-and-ask-an-engineer
-│   │
-│   ├── /course/06-limits-and-ethics
-│   │   ├── /course/06-limits-and-ethics/data-security
-│   │   ├── /course/06-limits-and-ethics/cost-awareness
-│   │   ├── /course/06-limits-and-ethics/academic-integrity
-│   │   └── /course/06-limits-and-ethics/when-not-to-vibecode
-│   │
-│   ├── /course/07-scaling
-│   │   ├── /course/07-scaling/skills
-│   │   ├── /course/07-scaling/subagents
-│   │   ├── /course/07-scaling/hooks
-│   │   └── /course/07-scaling/agent-teams
-│   │
-│   ├── /course/08-use-cases       (overview / index; deep dives live under /cases)
-│   │
-│   └── /course/09-capstone
-│       ├── /course/09-capstone/brief
-│       ├── /course/09-capstone/rubric
-│       └── /course/09-capstone/peer-review
+│   ├── /course/02-chat-to-agent                                                           🚧 index only
+│   ├── /course/03-setup                                                                   🚧 index only
+│   │   ├── /course/03-setup/install-claude-code                                          ❌ planned
+│   │   ├── /course/03-setup/which-model                                                  ❌ planned
+│   │   ├── /course/03-setup/first-run                                                    ❌ planned
+│   │   └── /course/03-setup/appendix-opencode                                            ❌ planned
+│   ├── /course/04-workflow                                                                🚧 index only
+│   ├── /course/05-evaluating-output                                                       🚧 index only
+│   ├── /course/06-limits-and-ethics                                                       🚧 index only
+│   ├── /course/07-scaling                                                                 🚧 index only
+│   │   (Module 8 is the /cases library; no separate /course/08 directory)
+│   └── /course/09-capstone                                                                🚧 index only
 │
-└── /cases                         Use case library (the "spine")
-    ├── /cases/marketing
-    │   ├── /cases/marketing/segmentation-from-csv
-    │   ├── /cases/marketing/content-pipeline
-    │   └── /cases/marketing/campaign-dashboard
-    ├── /cases/finance
-    │   ├── /cases/finance/model-automation
-    │   ├── /cases/finance/document-analysis-10k
-    │   └── /cases/finance/scenario-tool
-    ├── /cases/operations
-    │   ├── /cases/operations/process-automation
-    │   ├── /cases/operations/internal-tool
-    │   └── /cases/operations/data-cleanup
-    ├── /cases/sales
-    │   ├── /cases/sales/crm-enrichment
-    │   ├── /cases/sales/outreach-personalization
-    │   └── /cases/sales/support-triage
-    └── /cases/founder
-        ├── /cases/founder/landing-page-mvp
-        ├── /cases/founder/customer-interview-synthesis
-        └── /cases/founder/prototype-app
+├── /cases                         Use case library ✅
+│   ├── /cases/marketing                                                                   ✅
+│   │   ├── /cases/marketing/segmentation-from-csv    (fully written)                     ✅
+│   │   │   └── customers.csv  (sample data)
+│   │   ├── /cases/marketing/content-pipeline                                             ❌ coming soon
+│   │   └── /cases/marketing/campaign-dashboard                                           ❌ coming soon
+│   ├── /cases/finance                                                                     ✅
+│   │   ├── /cases/finance/model-automation           (fully written)                     ✅
+│   │   │   ├── trial_balance.csv  (sample data)
+│   │   │   ├── account_mapping.csv  (sample data)
+│   │   │   └── model.xlsx  (sample data)
+│   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
+│   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
+│   ├── /cases/operations                                                                  🚧 index only
+│   │   ├── /cases/operations/process-automation                                          ❌ coming soon
+│   │   ├── /cases/operations/internal-tool                                               ❌ coming soon
+│   │   └── /cases/operations/data-cleanup                                                ❌ coming soon
+│   ├── /cases/sales                                                                       🚧 index only
+│   │   ├── /cases/sales/crm-enrichment                                                   ❌ coming soon
+│   │   ├── /cases/sales/outreach-personalization                                         ❌ coming soon
+│   │   └── /cases/sales/support-triage                                                   ❌ coming soon
+│   └── /cases/founder                                                                     🚧 index only
+│       ├── /cases/founder/landing-page-mvp                                               ❌ coming soon
+│       ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
+│       └── /cases/founder/prototype-app                                                  ❌ coming soon
+│
+├── /reference                     Lookup content: glossary, cheat sheets, how-tos        🚧 stub
+├── /pitfalls                      Common mistakes log (5 starter entries)                ✅
+└── /about                         Philosophy, how to use, contributing, build status      ✅
 ```
 
 ---
@@ -126,34 +108,34 @@ Every **use case page** follows a parallel structure so students can compare acr
 ## 4. Module summaries
 
 ### Module 0 — Why Business School Students should care (`/start`)
-Demo reel + three case vignettes. Goal: convert skepticism into curiosity in under 10 minutes. No setup, no concepts.
+Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
 
 ### Module 1 — Talking to AI (`/course/01-talking-to-ai`)
-What vibecoding actually is and isn't. Prompting fundamentals. The difference between *chatting* and *building*. Ends with a small but real artifact (e.g., clean and summarize a messy CSV).
+Fully written. Sub-pages: what-is-vibecoding, prompting-basics, exercises. Ends with a small artifact exercise (clean and summarize a messy CSV).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
-The bridge. What changes when the AI can read your files, run code, and act in loops. Mental model: an agent is a junior analyst with desktop access. One fully-worked example before any installation.
+Index written. Sub-pages (agent-mental-model, worked-example, when-an-agent-helps) planned but not yet built.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
-Install Claude Code, account setup, first agent run. OpenCode lives in an appendix as the open-source alternative.
+Index written. Sub-pages (install-claude-code, which-model, first-run, appendix-opencode) planned but not yet built.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-The repeatable loop: plan before execute, set up your information environment (folders + CLAUDE.md), context engineering, version safety (git as save-points), and iterating when things go sideways.
+Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
 
 ### Module 5 — Knowing when to trust the output (`/course/05-evaluating-output`)
-The single most important module. Checking correctness, spotting hallucinated APIs and fake data, debugging silent failures, when to stop and call a real engineer.
+Index written. Sub-pages (checking-correctness, spotting-hallucinations, debugging-when-it-fails, when-to-stop-and-ask-an-engineer) planned but not yet built.
 
 ### Module 6 — Limits, risks, and responsibility (`/course/06-limits-and-ethics`)
-Data security, cost awareness, academic integrity and attribution, and an honest "when vibecoding is the wrong tool" page.
+Index written. Sub-pages (data-security, cost-awareness, academic-integrity, when-not-to-vibecode) planned but not yet built.
 
 ### Module 7 — Scaling up (`/course/07-scaling`)
-Skills, subagents, hooks, agent teams — each with a concrete business example, not a feature tour.
+Index written. Sub-pages (skills, subagents, hooks, agent-teams) planned but not yet built.
 
-### Module 8 — Business use cases (`/course/08-use-cases` → `/cases`)
-Index/landing for the case library. Organized by business function.
+### Module 8 — Business use cases (`/cases`)
+No separate `/course/08` directory. The `/cases` library serves this purpose directly and is linked from the course syllabus as Module 8.
 
 ### Module 9 — Capstone (`/course/09-capstone`)
-Real project of the student's choice. Brief, rubric, peer review, and a "ship it to someone who'll actually use it" requirement.
+Index written. Sub-pages (brief, rubric, peer-review) planned but not yet built.
 
 ---
 
@@ -175,6 +157,8 @@ Real project of the student's choice. Brief, rubric, peer review, and a "ship it
 
 **Downloadable artifacts.** Every use case page offers a downloadable starter pack (sample data + a `CLAUDE.md` + a README). Lower friction = more students actually try it.
 
+**Pitfalls log.** `/pitfalls` is a living page of common mistakes — each entry is short enough to scan in under a minute. Currently has 5 starter entries. Planned: individual sub-pages per pitfall with fuller examples.
+
 ---
 
 ## 7. URL conventions
@@ -183,6 +167,7 @@ Real project of the student's choice. Brief, rubric, peer review, and a "ship it
 - **Numeric prefixes on course modules only** (preserves order in URLs and file systems). Use cases are not numbered — they're meant to be entered laterally.
 - **Stable slugs.** Once published, never rename. If a topic moves, redirect.
 - **No dates in URLs.** Content is meant to evolve in place.
+- **Case pages use `.html` extension** when they are sub-pages within a section folder (e.g., `segmentation-from-csv.html`); section index pages use `/index.html` (served at the directory URL).
 
 ---
 
@@ -200,12 +185,25 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Suggested build order
+## 9. Build status (as of 2026-05-20)
 
-1. **Module 0 + one full use case.** This is the minimum viable site — enough to show a faculty sponsor or pilot with 2–3 students.
-2. **Modules 1–4 + three use cases.** First teachable unit.
-3. **Modules 5–6.** The trust/limits layer — don't ship the course to a real class without these.
-4. **Module 7 + remaining use cases.** Depth and breadth.
-5. **Module 9 capstone + final polish.** Ship.
+| Section | Status |
+|---|---|
+| Home `/` | ✅ Complete |
+| Start `/start` | ✅ Index written; demo and vignette sub-pages not yet built |
+| Course index `/course` | ✅ Complete |
+| Module 1 `/course/01-talking-to-ai` | ✅ Fully written (3 sub-pages + index) |
+| Modules 2–7, 9 | 🚧 Index pages written; sub-pages not yet built |
+| Cases index `/cases` | ✅ Complete |
+| Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
+| Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
+| Operations, Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
+| Reference `/reference` | 🚧 Stub with planned sections listed |
+| Pitfalls `/pitfalls` | ✅ Live with 5 starter entries |
+| About `/about` | ✅ Complete |
 
-Module 8's case library can grow continuously — treat it as a living section, not a fixed deliverable.
+**Suggested next build priorities:**
+1. Sub-pages for Module 2 and Module 3 (the setup path — highest student need).
+2. One additional case per function category to demonstrate breadth.
+3. Module 5 sub-pages (trust/evaluation — do not pilot without these).
+4. Fill in `/reference` glossary and cheat sheets.
