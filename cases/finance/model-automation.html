@@ -88,54 +88,45 @@
 21000, Accrued expenses, 2026-04, 0, 145620.00</code></pre>
 
     <h2>3. The build</h2>
-    <p>Total session was about 40 minutes, in three rounds. The slowest
+    <p>Total session was about an hour, in four rounds. The slowest
     part wasn't the code — it was getting the mapping and sign
     conventions right.</p>
 
     <h3>Round 1 · Plan before execute</h3>
-    <p>I started with a plan request, not a code request:</p>
-    <pre><code>You are an FP&amp;A analyst. I update a three-statement model
-each month from a trial balance. I want to automate the
-paste-and-reconcile step. Files I have, in the same folder:
+    <p>I started with a plan request, not a code request. I gave it
+    the role, the three files, and the exact steps I needed — including
+    constraints that matter in practice:</p>
+    <pre><code>You are a financial analyst. Every month you need to update
+the three-statement model based on this month's trial balance
+spreadsheet. You want to write Python code that automates the
+paste-and-reconcile step. There are three relevant files in
+the folder:
+- trial_balance.csv
+- account_mapping.csv
+- model.xlsx
 
-- trial_balance.csv  (GL export, columns: account_number,
-  account_name, period, debit, credit)
-- account_mapping.csv (account_number -> model_line, sign)
-- model.xlsx (Inputs tab is where new period numbers go,
-  one column per month, one row per model_line)
+The steps should be:
+1) For each row in the TB file, categorize its model_line
+   using the account_mapping. If no mapping exists, skip but
+   record in a separate file.
+2) For each row in the last column of the Input worksheet of
+   model.xlsx, sum up the corresponding debit-credit for that
+   model_line from the TB file. Fill the cell.
+3) All existing files are read-only. Create new files if needed.
+4) Save the updated model to model_2026-04.xlsx, do not
+   overwrite source.
+5) Leave all formula cells intact, do not change.
 
-Before writing any code, propose:
-1. The end-to-end flow, step by step
-2. The handful of things most likely to go wrong on a
-   real month (be specific about this model, not generic
-   "data quality" hand-waving)
-3. Two or three checks the script should run at the end to
-   give me confidence the update is right
-
-Don't run anything yet. Just the plan.</code></pre>
-    <p>The plan was solid. The two failure modes it called out — new
-    accounts missing from the mapping, and sign conventions flipping
-    silently — were exactly the ones I'd hit before. I asked it to
-    also check that the balance sheet balanced and that net income on
-    the IS tied to retained earnings movement on the BS. It added
-    those.</p>
+Before writing any code, first show me the complete plan.</code></pre>
+    <p>The plan it returned was solid: it laid out each step, called
+    out the four accounts that would land in the unmapped file, and
+    explained the sign convention it would apply. I approved it and
+    moved on.</p>
 
     <h3>Round 2 · Execute</h3>
-    <p>Once the plan was approved:</p>
-    <pre><code>Now execute the plan. Write a Python script that:
-
-- Loads trial_balance.csv and account_mapping.csv
-- Computes net amount per account (credit - debit), then
-  applies the sign from the mapping so model lines come out
-  with the right polarity
-- Aggregates to one number per model_line
-- Opens model.xlsx, finds the column for the current period
-  on the Inputs tab, and writes the aggregated numbers into
-  the matching rows
-- Leaves all formulas on IS, BS, CF intact
-- Saves to model_2026-04.xlsx (don't overwrite the source)
-
-At the end, print:
+    <p>Once the plan was approved, I gave the go-ahead and added the
+    four checks I wanted printed at the end — in the same message:</p>
+    <pre><code>Go ahead and write the code. At the end I want to print:
 - Any account_numbers in the TB that weren't in the mapping
 - Total revenue, total opex, net income for the period
 - Whether the BS balances (assets - liabilities - equity,
@@ -147,21 +138,37 @@ At the end, print:
     header row. I pasted the error back and it switched to writing by
     named range instead of cell coordinates, which was cleaner anyway.</p>
 
-    <h3>Round 3 · Verify and refine</h3>
-    <p>The script printed five unmapped accounts (a new short-term
-    lease liability, a LATAM revenue pilot, an "Other income" line, and
-    two new EU expense accounts) and a balance sheet that was off by
-    $1,240. I asked:</p>
-    <pre><code>BS is off by $1,240. Walk me through where that could come
-from given what the script did. Don't fix anything yet —
-just give me the two most likely causes ranked by
-likelihood, and the one diagnostic line I should print to
-tell them apart.</code></pre>
-    <p>Top guess: one of the unmapped accounts was a real balance sheet
-    line (turned out to be a new "Lease liability - short term" account
-    from an office move). I added it to the mapping, re-ran, and the
-    BS balanced to the penny. Total elapsed time from "open laptop" to
-    "model updated" was thirteen minutes.</p>
+    <h3>Round 3 · Challenge the summary</h3>
+    <p>The script printed five unmapped accounts and a balance sheet
+    off by $1,240. The model pointed to the new lease liability as the
+    culprit for the BS gap — which was right — but glossed over the
+    other four accounts because they happened to net to zero: the LATAM
+    revenue pilot (+$1,000) and an "Other income" line (+$500) were
+    exactly offset by two new EU expense accounts (−$800 and −$700).</p>
+    <p>I pushed back: even if net income doesn't move, individual IS
+    lines are still misstated — revenue is understated by $1,500 and
+    SG&amp;A is understated by $1,500. Coincidental netting isn't the
+    same as correct. I asked it to add all five accounts to the
+    mapping. After that re-run: zero unmapped accounts, BS residual
+    exactly $0.00, and a $167K retained-earnings mismatch that
+    remained — correctly, because that's a real open accounting
+    question (likely a dividend or equity adjustment) that no mapping
+    change can fix.</p>
+
+    <h3>Round 4 · Summary table</h3>
+    <p>With the model balancing cleanly, I asked the script to also
+    print a formatted summary table for the CFO note:</p>
+    <pre><code>I want my code to generate a summary table that lists:
+1. Revenue (value for this month, percentage change from
+   last month)
+2. Net income (value for this month, percentage change from
+   last month)
+3. Balance sheet (whether it is balanced, how many new
+   accounts added)</code></pre>
+    <p>It read the prior-period column from the source model to compute
+    the month-over-month changes and printed the table in markdown.
+    That output is what you see in section 5 below — the script
+    produces it automatically every run.</p>
 
     <h2>4. Working code</h2>
     <p>The final script, lightly cleaned. You'd save this as
@@ -235,7 +242,9 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
 
     <h2>5. What good looks like</h2>
     <p>The deliverable isn't the script — it's the model file plus a
-    three-line note to the CFO. The note is the part most analysts
+    three-line note to the CFO. The script prints this table
+    automatically at the end of every run; you paste it into the note
+    and add a sentence of context. The note is the part most analysts
     skip, and it's the part that builds trust:</p>
     <table>
       <thead>
