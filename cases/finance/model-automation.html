@@ -296,7 +296,64 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
       </ul>
     </div>
 
-    <h2>6. Extensions</h2>
+    <h2>6. Folder structure for a routine workflow</h2>
+    <p>There's a subtle friction in the setup above: the script reads
+    <code>model.xlsx</code> as its source, but it writes
+    <code>model_2026-04.xlsx</code> as its output. That means every month
+    you'd need to rename last month's output back to
+    <code>model.xlsx</code> before running again — which is exactly the
+    kind of manual step that causes mistakes and defeats the purpose of
+    automating the task.</p>
+
+    <p>The fix is a clean folder structure and one small change to the
+    script. Move the three input files into an <code>inputs/</code>
+    subfolder, and point all script output to an <code>outputs/</code>
+    subfolder:</p>
+
+    <pre><code>monthly-update/
+  inputs/
+    trial_balance.csv      ← replace this each month
+    account_mapping.csv    ← maintain as chart of accounts grows
+    model.xlsx             ← the original template; never touched again
+  outputs/
+    model_2026-01.xlsx
+    model_2026-02.xlsx
+    model_2026-03.xlsx
+    model_2026-04.xlsx     ← this month's run
+  update_model.py</code></pre>
+
+    <p>Then update the script to find its source automatically — the
+    most recent file in <code>outputs/</code>, falling back to the
+    template on the very first run:</p>
+
+    <pre><code>import glob, os
+
+existing = sorted(glob.glob("outputs/model_????-??.xlsx"))
+source = existing[-1] if existing else "inputs/model.xlsx"
+wb = load_workbook(source)
+
+# ... rest of the script unchanged ...
+
+wb.save(f"outputs/model_{PERIOD}.xlsx")</code></pre>
+
+    <p>Now the monthly routine is exactly three steps: drop the new
+    trial balance into <code>inputs/</code>, update <code>PERIOD</code>
+    at the top of the script, run it. The <code>outputs/</code> folder
+    also gives you a free audit trail — every prior month's model is
+    still on disk if you need to go back.</p>
+
+    <div class="pitfalls-inline">
+      <h4>Watch for</h4>
+      <ul>
+        <li><strong>A corrupted output becoming next month's source.</strong>
+        The glob picks the most recent file alphabetically, so a bad run
+        will propagate. Always eyeball the three checks before closing
+        the terminal — if anything looks wrong, delete the output and
+        fix the issue before the next run picks it up.</li>
+      </ul>
+    </div>
+
+    <h2>7. Extensions</h2>
     <p>Once the basic update is reliable, ask the agent to:</p>
     <ul>
       <li>Add a variance-vs-budget column and flag any line item more
@@ -310,7 +367,7 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
     <p>The scheduled-task version maps to Module 7's section on hooks
     and recurring jobs.</p>
 
-    <h2>7. Skills used</h2>
+    <h2>8. Skills used</h2>
     <div class="chips">
       <a class="chip" href="/course/01-talking-to-ai/prompting-basics.html">Prompting · roles &amp; examples</a>
       <a class="chip" href="/course/04-workflow/">Plan before execute</a>
