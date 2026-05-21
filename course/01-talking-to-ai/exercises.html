@@ -47,120 +47,231 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 1 · Page 3 of 3 · 10 minutes</span>
+        <span class="eyebrow">Module 1 · Page 3 of 3 · 20 minutes</span>
         <h1>Exercises</h1>
-        <p class="lede">Three exercises you can do right now in any
-        chatbot (ChatGPT, Claude.ai, Gemini — pick one). No setup
-        required. The third one produces a real artifact you can use.</p>
+        <p class="lede">Three exercises you can run right now in any
+        chatbot. Each one is designed to make you feel the difference
+        in output quality when you apply the principles — not just
+        understand them in the abstract.</p>
       </div>
 
       <h2>Before you start</h2>
-      <p>Open your chatbot of choice in another tab. Don't read ahead to
-      the answer keys — try each exercise first, then compare. The point
-      isn't to get the "right" answer; it's to feel the difference
-      between an underspecified prompt and a well-specified one.</p>
+      <p>Open your chatbot of choice in another tab (ChatGPT, Claude.ai,
+      or Gemini — any will do). No setup required. For each exercise,
+      try writing your own version first before expanding the sample
+      answer. The point isn't to match the example word for word; it's
+      to notice what information you left out, and what difference that
+      made to the output.</p>
 
-      <h2>Exercise 1 · Apply Pattern 1 (give it a role)</h2>
-      <p><strong>The vague request:</strong> "Help me decide whether to
-      take a summer internship at a startup or a big consulting firm."</p>
-      <p><strong>Your task:</strong> Rewrite this prompt to give the AI a
-      specific role and the constraints it needs to give you useful
-      output. Aim for 4–6 lines.</p>
+      <h2>Exercise 1 · Write a work brief
+        <span style="font-weight: normal; font-size: 0.85em; color: var(--color-text-muted);">
+          Principles 1 &amp; 2</span></h2>
+
+      <p>The following request is typical of how most people start with AI
+      — it reads like a Google search. Your task is to rewrite it as a
+      proper work brief: who the AI is, who you are and what's at stake,
+      what you actually want produced, the purpose behind the request, and
+      any constraints on the output.</p>
+
+      <p><strong>The vague request:</strong></p>
+      <pre><code>What should I focus on for my consulting interview prep?</code></pre>
+
+      <p><strong>Your task:</strong> Rewrite this as a full work brief
+      using Principles 1 and 2. Aim for 8–12 lines. When you run both
+      versions back-to-back in your chatbot, the gap in output quality
+      should be obvious.</p>
 
       <details>
         <summary style="cursor: pointer; color: var(--color-accent); margin: 12px 0;">Show one possible answer →</summary>
-        <pre><code>You are a career advisor who has counseled hundreds of Business School Student
-students. I am a first-year Business School Student deciding between two summer
-internships: (1) a Series B startup as a product manager, and
-(2) a top-tier strategy consulting firm in their tech practice.
-My long-term goal is to start a company in 5-7 years.
+        <pre><code>You are an experienced management consulting recruiter who has
+interviewed hundreds of candidates for strategy roles at McKinsey,
+BCG, and Bain.
 
-Ask me three questions whose answers would most change your
-recommendation. Don't give a recommendation yet.</code></pre>
+I'm a second-year MBA student with a background in marketing
+analytics. I have a first-round case interview at BCG in 10 days.
+I've done 15 practice cases. I'm consistently strong on structure
+and math, but my interviewers say my recommendations feel generic —
+I don't "so what" enough at the end.
+
+Given that specific weakness, build me a focused 10-day prep plan.
+Each day should have one targeted activity (30–60 min), a brief
+explanation of why that activity addresses the recommendation
+synthesis gap, and one observable signal that tells me I've done
+it well.
+
+Do not include general interview advice I already know. Everything
+should be targeted to the "generic conclusion" problem.</code></pre>
         <p style="font-size: 14px; color: var(--color-text-muted);">
-        The key moves: assigned role, concrete options, explicit
-        long-term goal, and asking for the most decision-relevant
-        questions rather than a premature recommendation.</p>
+        What this prompt does that the original doesn't: it establishes
+        the AI's expertise (Principle 1), gives the AI the context it
+        needs to make good judgment calls — MBA year, background, timeline,
+        specific weakness — and explains the purpose so the AI knows what
+        to optimize for (Principle 2). The last line cuts the AI's most
+        common failure mode on this task: padding with generic tips.</p>
       </details>
 
-      <h2>Exercise 2 · Apply Pattern 2 (show examples)</h2>
-      <p><strong>The vague request:</strong> "Summarize these five news
-      articles for me."</p>
-      <p><strong>Your task:</strong> Rewrite this prompt with an explicit
-      format example so all five summaries will be directly comparable.</p>
+      <h2>Exercise 2 · Make the analysis auditable
+        <span style="font-weight: normal; font-size: 0.85em; color: var(--color-text-muted);">
+          Principle 4</span></h2>
+
+      <p>You are a summer analyst helping your manager evaluate two
+      software vendors for a new project management contract. You've
+      gathered the specs below. If you just ask "which vendor should we
+      go with?", you get a conclusion — but not something you can
+      present or defend. Your task is to rewrite the prompt so the AI
+      walks through its reasoning first, producing an output you could
+      actually drop into a recommendation memo.</p>
+
+      <p><strong>Vendor specs:</strong></p>
+      <pre><code>Vendor A
+  Annual cost:       $45,000
+  Implementation:    6 weeks
+  CRM integration:   Partial — requires custom development work
+  User rating:       4.2 / 5  (800+ reviews)
+  References:        3 provided, all positive
+  Contract term:     1 year, renewable annually
+
+Vendor B
+  Annual cost:       $32,000
+  Implementation:    12 weeks
+  CRM integration:   Native (out of the box)
+  User rating:       3.9 / 5  (200 reviews)
+  References:        1 provided
+  Contract term:     2-year minimum commitment</code></pre>
+
+      <p><strong>The vague request:</strong></p>
+      <pre><code>Based on this, which vendor should we go with?</code></pre>
+
+      <p><strong>Your task:</strong> Rewrite this so the AI reasons
+      step by step before concluding. The output should be something
+      you could present to your manager — with logic they can
+      question — not just an answer you're passing along.</p>
 
       <details>
         <summary style="cursor: pointer; color: var(--color-accent); margin: 12px 0;">Show one possible answer →</summary>
-        <pre><code>Summarize each of the five articles below in this exact format:
+        <pre><code>I'm recommending a project management software vendor to my
+manager. Before giving a recommendation, work through the
+following:
 
-  Article: [headline]
-  Source: [publication]
-  Main claim (1 sentence): ...
-  Evidence cited: [bullet list of 1-3 items, or "none"]
-  Counter-perspective acknowledged: yes / no
-  My take in 1 sentence on whether the claim is well-supported: ...
+1. For a mid-size company with an existing CRM, what are the
+   three or four criteria that should drive this decision?
+   For each one, briefly explain why it matters in practice.
 
-If a field can't be filled from the article, write "not in
-source". Don't invent information.</code></pre>
+2. Evaluate each vendor against those criteria using the specs
+   below. If any spec is ambiguous or missing information you'd
+   want before being confident, flag it.
+
+3. Give a recommendation. Then name the single assumption
+   underlying it that, if wrong, would flip the answer.
+
+Vendor specs: [paste specs above]</code></pre>
+        <p style="font-size: 14px; color: var(--color-text-muted);">
+        Why this works in practice: step 1 surfaces the criteria
+        before any scoring happens, so you can push back if the AI
+        misses something your manager cares about (say, the cost of
+        the custom CRM work, or the risk of a 2-year lock-in). The
+        last line — "what assumption would flip this?" — is one of
+        the most useful things you can ask on any recommendation
+        task. It tells you exactly where to probe.</p>
       </details>
 
-      <h2>Exercise 3 · Produce a real artifact</h2>
-      <p>This one's different — you'll end this exercise with a file you
-      can use. Copy the messy data below into your chatbot, write a
-      prompt that uses at least two of the four patterns, and ask for the
-      output as a clean Markdown table.</p>
+      <h2>Exercise 3 · The follow-up loop
+        <span style="font-weight: normal; font-size: 0.85em; color: var(--color-text-muted);">
+          Principles 3 &amp; 5 · produces a real artifact</span></h2>
 
-      <p><strong>The messy data:</strong></p>
+      <p>This exercise has two parts. In Part A you'll run a deliberately
+      underspecified first prompt to get a rough output. In Part B you'll
+      write a targeted follow-up that turns it into something
+      professionally usable — without starting over.</p>
+
+      <p><strong>The raw data:</strong></p>
       <pre><code>customer feedback - dec
 - "loved the new dashboard - too slow tho" (acme corp, enterprise)
 - buyflow keeps breaking on mobile -- 3rd complaint this week (smb)
 - "support was great, fixed in 20 min, John helped" mid-market
-- the integration with salesforce STILL doesn't sync custom fields. priority?? (enterprise, $$$)
+- the integration with salesforce STILL doesn't sync custom fields.
+  priority?? (enterprise, $$$)
 - price too high vs competitors, considering switch (smb, 12mo contract)
 - new dashboard is gorgeous but where did the export button go (mid)
 - mobile is unusable. seriously. (multiple tickets)
 - love everything, no notes (enterprise, expansion opp)</code></pre>
 
-      <p><strong>What "good" looks like:</strong> a Markdown table with
-      columns for segment, theme, sentiment, and severity — sortable in
-      your head, easy to drop into a PM update or a board appendix.</p>
+      <p><strong>Part A — run this weak prompt first:</strong></p>
+      <pre><code>Analyze this customer feedback and tell me the main themes.</code></pre>
+
+      <p>You will get something back — a list of themes, some bullet
+      points, maybe a paragraph. It will be vaguely accurate and
+      professionally useless. Don't edit it or start over. Read it, note
+      specifically what's missing or wrong, and move to Part B.</p>
+
+      <p><strong>Part B — write a targeted follow-up:</strong></p>
+      <p>Without starting a new conversation, write a follow-up message
+      that fixes the specific weaknesses of what you got. Your follow-up
+      should name what worked, specify what needs to change, and give
+      the format you actually need. Aim for a Markdown table suitable
+      for a PM update or board appendix.</p>
 
       <details>
-        <summary style="cursor: pointer; color: var(--color-accent); margin: 12px 0;">Show a prompt that works →</summary>
-        <pre><code>You are a customer success analyst preparing a monthly themes
-report. Below is raw, informally-written feedback from December.
+        <summary style="cursor: pointer; color: var(--color-accent); margin: 12px 0;">Show one possible follow-up →</summary>
+        <pre><code>Good start on identifying the areas. A few targeted changes:
 
-For each piece of feedback, extract:
-  - Segment (enterprise / mid-market / smb / unknown)
-  - Theme (one of: performance, mobile, integrations, pricing,
-    UX, support, expansion). If none fit, write "other" and add a
-    short label.
-  - Sentiment (positive / negative / mixed)
-  - Severity (low / medium / high) based on revenue exposure and
-    frequency
+1. The themes are too broad to be actionable. Instead of "product
+   issues", break it into the specific problem areas that appear
+   in the data: performance, mobile, integrations, UX, pricing,
+   support, expansion.
 
-Output as a Markdown table with those four columns. After the
-table, list the top two themes by count and any single piece of
-feedback that names a specific dollar risk.
+2. Reorganize everything as a Markdown table with these columns:
+     Theme | Mentions | Sentiment | Severity | Example quote
+   For severity: high = revenue at risk or repeated complaint,
+   medium = friction but no stated switching intent,
+   low = minor or one-off.
 
-Do not invent information that isn't in the feedback. If
-segment or another field is missing, write "unknown".</code></pre>
+3. After the table, add two sentences: what is the single highest-
+   priority issue to address, and what's the cost of not fixing it?
+   Use only evidence from the feedback — no speculation.</code></pre>
+        <p style="font-size: 14px; color: var(--color-text-muted);">
+        Notice what this follow-up does: it names what the first output
+        got right ("good start on identifying the areas"), tells the AI
+        exactly what needs to change, shows the format (column names and
+        severity definitions), and adds a new deliverable at the end —
+        all without restarting. That last paragraph is the grounding
+        principle in action: asking for a conclusion anchored in the
+        evidence, not generated from thin air.</p>
       </details>
 
       <div class="callout">
         <span class="callout-label">What you should notice</span>
-        <p>By the end of Exercise 3 you have a real artifact — a themes
-        table — produced in less time than it would have taken to format
-        a spreadsheet by hand. That's the floor of vibecoding. Everything
-        in the rest of the course raises the ceiling.</p>
+        <p>The follow-up in Part B probably did more to improve the
+        output than any first-pass prompt could have — because you were
+        responding to what you actually got, not what you imagined. This
+        is the core skill. The first prompt opens the conversation; the
+        follow-up is where the real work happens.</p>
       </div>
 
+      <h2>Reflection questions</h2>
+      <p>After completing all three exercises, sit with these for a
+      minute before moving on.</p>
+      <ul>
+        <li>In Exercise 1, which element of the work brief had the
+        biggest impact on output quality — the role, the context,
+        the purpose, or the constraints? Would your answer change
+        for a different kind of task?</li>
+        <li>In Exercise 2, did the AI's criteria list match what you
+        would have chosen? Did it weight the CRM integration cost or
+        the 2-year lock-in the way you'd expect a manager to? If not,
+        how would you correct that in a follow-up?</li>
+        <li>In Exercise 3, how much better was the second output than
+        the first? What would have happened if you'd just rewritten
+        the original prompt instead of following up?</li>
+      </ul>
+
       <h2>What's next</h2>
-      <p>You've now seen what's possible inside a chatbot. The catch is
-      that everything you did was a one-off — close the tab and it's
-      gone. The next module shows what changes when the AI can read
-      files on your computer, run code, and operate on its own across
-      many steps. That's where the real leverage starts.</p>
+      <p>You've seen what's possible inside a chatbot. The limitation
+      is that everything you just did was one-off: close the tab and
+      it's gone. The next module shows what changes when the AI can
+      read files on your computer, run code, and operate across many
+      steps without you narrating each one. That's where the
+      leverage starts to compound.</p>
 
       <a class="next-cta" href="/course/02-chat-to-agent/">
         <div>
