@@ -47,56 +47,22 @@
     <code>CLAUDE.md</code> do all the work.</p>
 
     <h2>2. Data available</h2>
-    <p>Three files, each in its own folder:</p>
     <pre><code>recap-project/
   CLAUDE.md
   inputs/
-    competition-invite-fall-2024.docx
-    notes.txt
+    competition-invite-fall-2024.docx   ← reliable facts from the organizers
+    notes.txt                           ← messy colour and outcomes from the room
   outputs/
   references/
-    competition-recap-fall-2024.docx</code></pre>
+    competition-recap-fall-2024.docx    ← last approved recap; the format to match</code></pre>
 
-    <p><strong>inputs/competition-invite-fall-2024.docx</strong> — the
-    official invitation sent by the organizers before the event. It has
-    reliable facts: exact date, location, format, case topic, and judge
-    names. This is the AI's source of record for anything structural.
-    <a href="competition-invite-fall-2024.docx" download>Download the sample invite</a> to follow along.</p>
-
-    <p><strong>inputs/notes.txt</strong> — raw notes from whoever attended.
-    Expect partial sentences, names spelled inconsistently, and sections
-    that are either too thin or too detailed. The invite and the notes
-    complement each other: the invite supplies the facts the note-taker
-    didn't bother writing down; the notes supply the colour and outcomes
-    the invite couldn't predict. <a href="notes.txt" download>Download the sample notes</a> to follow along. A typical excerpt:</p>
-    <pre><code>case topic: retail supply chain disruption (didn't see this coming)
-marcus handled the financials Q&A really well, stayed calm
-2nd overall!! really happy
-1st on presentation score (didn't expect that)
-talked to james chen (mckinsey, alum from like 2018?)</code></pre>
-
-    <p><strong>references/competition-recap-fall-2024.docx</strong> — the
-    last approved recap. This is the format the AI needs to match. Every
-    section, every heading, the tone. <a href="competition-recap-fall-2024.docx" download>Download the sample reference file</a> to follow along.</p>
-
-    <p><strong>CLAUDE.md</strong> — the rules the reference file alone
-    can't communicate. More on this below.</p>
-
-    <div class="callout">
-      <span class="callout-label">Why each folder exists</span>
-      <p><code>inputs/</code> holds raw, messy source material that will
-      change every time you run this workflow. <code>references/</code>
-      holds stable examples the AI uses to understand what "correct" looks
-      like — you'd update it rarely, only when the format itself changes.
-      <code>outputs/</code> is where finished work lands, kept separate so
-      it's never confused with source material. <code>CLAUDE.md</code>
-      captures institutional knowledge that isn't visible in the files
-      themselves: who the audiences are, what's mandatory, what tone to
-      use. Without it, the AI has to guess.</p>
-    </div>
+    <p>Download the sample files to follow along:
+    <a href="competition-invite-fall-2024.docx" download>invite</a> ·
+    <a href="notes.txt" download>notes</a> ·
+    <a href="competition-recap-fall-2024.docx" download>reference recap</a>.</p>
 
     <h2>3. The build</h2>
-    <p>Three rounds, about 20 minutes total.</p>
+    <p>Two rounds, about 20 minutes total.</p>
 
     <h3>Round 1 · Write the CLAUDE.md together</h3>
     <p>Don't write the CLAUDE.md alone. Instead, ask the AI to interview
@@ -112,8 +78,10 @@ Ask one question at a time.</code></pre>
     <p>The AI will surface things you hadn't thought to specify: whether
     certain sections are mandatory even if nothing happened in that area,
     how to handle names, whether to flag anything for human review before
-    sending. Once you've answered its questions, ask it to draft the
-    CLAUDE.md from your answers and review it before saving.</p>
+    sending. Once you've answered, ask it to draft the CLAUDE.md and
+    review it before saving. Then ask it to summarise what it sees in
+    <code>references/</code> — a quick sanity check before anything gets
+    generated.</p>
 
     <p>A well-written CLAUDE.md for this project looks something like:</p>
     <pre><code># Event Recap Project
@@ -143,21 +111,7 @@ contain little or nothing for them:
 Save the finished document to outputs/ as
   recap-[event-name]-[YYYY-MM].docx</code></pre>
 
-    <h3>Round 2 · Check understanding before generating</h3>
-    <p>Before asking the AI to produce anything, ask it to tell you what
-    it learned from the reference file. This catches misreads early:</p>
-    <pre><code>Read the reference document in references/ and tell me:
-1. What sections does it contain, in order?
-2. What's the approximate length of each section?
-3. What tone does it use — formal, casual, somewhere in between?
-4. Anything in the format that seems like a deliberate choice
-   rather than a default?
-
-Don't generate the recap yet. Just describe what you see.</code></pre>
-    <p>If its description doesn't match what you know the format to be,
-    correct it here — before the document gets written.</p>
-
-    <h3>Round 3 · Generate and review</h3>
+    <h3>Round 2 · Generate and review</h3>
     <p>With the CLAUDE.md in place and the format confirmed:</p>
     <pre><code>Now generate the recap using both files in inputs/ and the
 reference document. Save the output to outputs/.</code></pre>
