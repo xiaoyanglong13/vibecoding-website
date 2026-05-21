@@ -67,7 +67,7 @@
       period's numbers, one column per month. January through March
       are frozen historicals from prior monthly updates; the April
       column is laid out and empty, ready for the script to fill.
-      The IS, BS, and CF tabs reference Inputs through named ranges,
+      The IS, BS, and CF tabs reference Inputs,
       so populating April lights up the whole model.</li>
     </ul>
     <p>The "add one fresh column to Inputs each month" step is the one
@@ -135,8 +135,7 @@ Before writing any code, first show me the complete plan.</code></pre>
   earnings on the BS</code></pre>
     <p>It produced about 60 lines of Python using pandas and openpyxl.
     First run failed because the Inputs tab had merged cells in the
-    header row. I pasted the error back and it switched to writing by
-    named range instead of cell coordinates, which was cleaner anyway.</p>
+    header row. I pasted the error back and it fixed the issue.</p>
 
     <h3>Round 3 · Challenge the summary</h3>
     <p>The script printed five unmapped accounts and a balance sheet
@@ -296,62 +295,32 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
       </ul>
     </div>
 
-    <h2>6. Folder structure for a routine workflow</h2>
-    <p>There's a subtle friction in the setup above: the script reads
-    <code>model.xlsx</code> as its source, but it writes
-    <code>model_2026-04.xlsx</code> as its output. That means every month
-    you'd need to rename last month's output back to
-    <code>model.xlsx</code> before running again — which is exactly the
-    kind of manual step that causes mistakes and defeats the purpose of
-    automating the task.</p>
-
-    <p>The fix is a clean folder structure and one small change to the
-    script. Move the three input files into an <code>inputs/</code>
-    subfolder, and point all script output to an <code>outputs/</code>
-    subfolder:</p>
-
-    <pre><code>monthly-update/
-  inputs/
-    trial_balance.csv      ← replace this each month
-    account_mapping.csv    ← maintain as chart of accounts grows
-    model.xlsx             ← the original template; never touched again
-  outputs/
-    model_2026-01.xlsx
-    model_2026-02.xlsx
-    model_2026-03.xlsx
-    model_2026-04.xlsx     ← this month's run
-  update_model.py</code></pre>
-
-    <p>Then update the script to find its source automatically — the
-    most recent file in <code>outputs/</code>, falling back to the
-    template on the very first run:</p>
-
-    <pre><code>import glob, os
-
-existing = sorted(glob.glob("outputs/model_????-??.xlsx"))
-source = existing[-1] if existing else "inputs/model.xlsx"
-wb = load_workbook(source)
-
-# ... rest of the script unchanged ...
-
-wb.save(f"outputs/model_{PERIOD}.xlsx")</code></pre>
-
-    <p>Now the monthly routine is exactly three steps: drop the new
-    trial balance into <code>inputs/</code>, update <code>PERIOD</code>
-    at the top of the script, run it. The <code>outputs/</code> folder
-    also gives you a free audit trail — every prior month's model is
-    still on disk if you need to go back.</p>
-
-    <div class="pitfalls-inline">
-      <h4>Watch for</h4>
-      <ul>
-        <li><strong>A corrupted output becoming next month's source.</strong>
-        The glob picks the most recent file alphabetically, so a bad run
-        will propagate. Always eyeball the three checks before closing
-        the terminal — if anything looks wrong, delete the output and
-        fix the issue before the next run picks it up.</li>
-      </ul>
-    </div>
+    <h2>6. What's still manual — and what could be automated next</h2>
+    <p>The script handles the paste-and-reconcile step, but a few things
+    still require human hands each month before you run it:</p>
+    <ul>
+      <li><strong>Export the trial balance.</strong> Log into NetSuite,
+      run the TB export for the new period, save it over
+      <code>trial_balance.csv</code>.</li>
+      <li><strong>Add a new column across all four worksheets.</strong> Open
+      <code>model.xlsx</code> and add a column for the new month in each
+      tab: Inputs, IS, BS, and CF. All four need the new period column
+      before the script will produce a complete model.</li>
+      <li><strong>Update <code>PERIOD</code> in the script.</strong>
+      Change the one line at the top from last month's value to this
+      month's.</li>
+      <li><strong>Rename the output for next month's run.</strong> The
+      script writes <code>model_2026-04.xlsx</code>, but next month it
+      will look for <code>model.xlsx</code> as its source — so you need
+      to rename or copy the output before the next run.</li>
+    </ul>
+    <p>None of these are hard, but each one is a place where a mistake
+    can quietly propagate into the model. As a thought exercise: which
+    of these four steps could the script handle itself? How would you
+    prompt an agent to extend the code to cover them? That's the
+    jump from "automation assist" to "fully routine workflow" — and it's
+    a good problem to work through before looking at the Extensions
+    section below.</p>
 
     <h2>7. Extensions</h2>
     <p>Once the basic update is reliable, ask the agent to:</p>
