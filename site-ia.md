@@ -39,9 +39,9 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   ├── /course/02-chat-to-agent                                                           🚧 index only
 │   ├── /course/03-setup                                                                   🚧 index only
 │   │   ├── /course/03-setup/install-claude-code                                          ❌ planned
-│   │   ├── /course/03-setup/which-model                                                  ❌ planned
 │   │   ├── /course/03-setup/first-run                                                    ❌ planned
-│   │   └── /course/03-setup/appendix-opencode                                            ❌ planned
+│   │   ├── /course/03-setup/appendix-opencode                                            ❌ planned
+│   │   └── /course/03-setup/which-model                                                  ❌ planned
 │   ├── /course/04-workflow                                                                🚧 index only
 │   ├── /course/05-evaluating-output                                                       🚧 index only
 │   ├── /course/06-limits-and-ethics                                                       🚧 index only
@@ -117,7 +117,7 @@ Fully written. Sub-pages: what-is-vibecoding, prompting-basics, exercises. Ends 
 Index written. Sub-pages (agent-mental-model, worked-example, when-an-agent-helps) planned but not yet built.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
-Index written. Sub-pages (install-claude-code, which-model, first-run, appendix-opencode) planned but not yet built.
+Index written. Sub-pages (install-claude-code, first-run, appendix-opencode, which-model) planned but not yet built.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
 Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
