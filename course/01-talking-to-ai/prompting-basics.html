@@ -47,43 +47,79 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 1 · Page 2 of 3 · 25 minutes</span>
+        <span class="eyebrow">Module 1 · Page 2 of 3 · 20 minutes</span>
         <h1>Prompting basics</h1>
-        <p class="lede">Five principles — drawn from Anthropic, OpenAI, and
-        peer-reviewed research — that separate outputs you can use from outputs
-        you have to fix. Each one changes how you think about AI, not just
-        what you type.</p>
+        <p class="lede">Five principles that separate outputs you can use
+        from outputs you have to fix.</p>
       </div>
 
-      <p>Most people prompt like they Google: a few words that gesture at what
-      they want. The AI responds, and what comes back is the average of
-      everything it knows about that vague request — technically accurate,
-      professionally useless.</p>
+      <p>Most people prompt like they Google — a few words that gesture at
+      what they want. The AI fills in the blanks with its best guess, which
+      rarely matches what you actually needed.</p>
 
-      <p>The gap between a weak prompt and a strong one isn't mystical. It is,
-      in essence, the gap between a vague assignment and a well-written work
-      brief. The five principles below address that gap systematically. They
-      are grounded in documented research, not folklore — chain-of-thought
-      prompting, for instance, has been shown to improve accuracy on complex
-      reasoning tasks by 20–50%. Master these and you'll spend less time
-      editing AI output and more time using it.</p>
+      <p>Strong prompting isn't mystical. It's the same skill as writing a
+      clear work brief: eliminate ambiguity, give context, specify what
+      "good" looks like. The five principles below show you how.</p>
 
       <h2>The five principles</h2>
 
       <h3>Principle 1 · Write a work brief, not a wish</h3>
 
-      <p>The most common prompting mistake is treating a prompt like a search
-      query. A search query works because a search engine finds documents that
-      match your keywords. A prompt works differently: you are handing off a
-      job to a capable but context-free contractor. Your goal is to eliminate
-      ambiguity about the task, the audience, the constraints, and what a good
-      output looks like.</p>
+      <p>Think of the AI as a capable contractor who just walked in the door
+      with zero context on your company, your project, or your preferences.
+      Everything they need to do the job well has to come from you.</p>
 
-      <p>Anthropic describes this as the <strong>brilliant new hire test</strong>:
-      imagine showing your prompt to a smart, motivated person on their first
-      day who has zero background on your company, your project, or your
-      preferences. Would they have everything they need to do the job well? If
-      not, what's missing? That missing information belongs in the prompt.</p>
+      <p>Anthropic calls this the <strong>brilliant new hire test</strong>:
+      would a smart first-day employee have everything they need from your
+      prompt? If not, what's missing? That missing information belongs in
+      the prompt.</p>
+
+      <p>A complete work brief covers these elements:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>What to include</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Role</strong></td>
+            <td>Who is the AI acting as?</td>
+            <td>"You are a strategy analyst…"</td>
+          </tr>
+          <tr>
+            <td><strong>Audience</strong></td>
+            <td>Who will read or use the output?</td>
+            <td>"…for non-technical executives"</td>
+          </tr>
+          <tr>
+            <td><strong>Task</strong></td>
+            <td>What exactly should it do?</td>
+            <td>"Identify the two most significant trends"</td>
+          </tr>
+          <tr>
+            <td><strong>Context</strong></td>
+            <td>What background does it need?</td>
+            <td>"12 months of churn data, split by segment"</td>
+          </tr>
+          <tr>
+            <td><strong>Format</strong></td>
+            <td>What should the output look like?</td>
+            <td>"Two paragraphs, no bullet points"</td>
+          </tr>
+          <tr>
+            <td><strong>Constraints</strong></td>
+            <td>Any limits on length, tone, or scope?</td>
+            <td>"Under 300 words"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>You don't need all six every time — but every element you leave out
+      is a place where the AI has to guess.</p>
 
       <p><strong>Before:</strong></p>
       <pre><code>Analyze our customer churn data.</code></pre>
@@ -102,26 +138,15 @@ Identify the two most significant trends. For each trend:
 Format: two paragraphs, no bullet points. The audience is
 non-technical executives.</code></pre>
 
-      <p>The "after" version specifies role, audience, task structure, and
-      output format. Every element you leave unspecified is a place where the
-      AI has to guess — and its guess is unlikely to match what you needed.</p>
-
       <h3>Principle 2 · Explain the why, not just the what</h3>
 
-      <p>Most prompts describe a task. The best prompts also explain
-      <em>why</em> the task matters — and this changes the output more than
-      most people expect.</p>
+      <p>The best prompts don't just describe a task — they explain
+      <em>why</em> it matters. When the AI understands the purpose, it can
+      make smart judgment calls you didn't think to specify: what to
+      emphasize, which risks to flag, what tone to use.</p>
 
-      <p>When the AI understands the purpose behind a request, it can make
-      intelligent judgment calls on things you didn't think to specify: what to
-      emphasize for this audience, which caveats to include, what's worth
-      flagging even if you didn't ask. Anthropic's own documentation puts it
-      plainly: "Providing context or motivation behind your instructions …
-      can help Claude better understand your goals and deliver more targeted
-      responses. Claude is smart enough to generalize from the explanation."</p>
-
-      <p>The practical implication: a sentence or two of purpose often does
-      more work than adding another paragraph of instructions.</p>
+      <p>A sentence of context often does more work than a whole extra
+      paragraph of instructions.</p>
 
       <p><strong>Before:</strong></p>
       <pre><code>Summarize this vendor contract.</code></pre>
@@ -134,26 +159,18 @@ in the next two hours whether to recommend signing.
 Flag any clauses that deviate from our standard terms or that
 carry material risk. Keep the summary under 300 words.</code></pre>
 
-      <p>The second prompt tells the AI what "good" looks like from the
-      reader's perspective. That changes what the AI includes, what it
-      emphasizes, and what it flags — often more than any additional
-      instruction would.</p>
+      <p>Telling the AI who the reader is and what decision they're making
+      changes what it includes, what it emphasizes, and what it flags.</p>
 
       <h3>Principle 3 · Show an example — don't describe the format</h3>
 
       <p>If you have a specific format in mind, show it. Don't describe it.</p>
 
-      <p>This is the single most reliable technique in the prompt engineering
-      literature. Academically, it is called <strong>few-shot prompting</strong>.
-      The intuition: examples are higher-bandwidth than descriptions. A single
-      well-chosen example eliminates an enormous amount of ambiguity that even
-      a careful paragraph of instructions cannot. Research consistently shows
-      that three to five good examples outperform elaborate format
-      specifications.</p>
-
-      <p>If you have prior outputs you're happy with — a memo you wrote, a
-      summary from a previous week — paste one in as your example. That is
-      almost always worth the effort.</p>
+      <p>This is called <strong>few-shot prompting</strong> in the research
+      literature, and it's consistently one of the highest-leverage techniques.
+      A single well-chosen example eliminates ambiguity that even a careful
+      paragraph of instructions can't. If you have a prior output you liked —
+      a memo, a weekly summary — paste it in as your example.</p>
 
       <p><strong>Before:</strong></p>
       <pre><code>Summarize each sales call in a structured way.</code></pre>
@@ -177,27 +194,18 @@ Example of a well-done summary:
   Risk flag: Yes — if specs aren't approved by March 28,
     deal likely slips past quarter-end.</code></pre>
 
-      <p>One concrete example does more work than two paragraphs of formatting
-      instructions. It also makes the output enforceable: you can scan a
-      hundred summaries quickly because they all look the same.</p>
-
       <h3>Principle 4 · Ask for reasoning, not just conclusions</h3>
 
-      <p>For any task that involves analysis, a recommendation, or a
-      decision, ask the AI to show its reasoning <em>before</em> it gives
-      you the answer.</p>
+      <p>For any analytical task, ask the AI to show its work
+      <em>before</em> giving you the answer. This is called
+      <strong>chain-of-thought prompting</strong>, and it improves accuracy
+      on complex tasks by 20–50% in published benchmarks.</p>
 
-      <p>This technique — <strong>chain-of-thought prompting</strong> in the
-      research — improves accuracy on complex analytical tasks by 20–50%,
-      according to published benchmarks. But accuracy is not the main reason
-      to use it in a business context.</p>
-
-      <p>The more important reason is <strong>auditability</strong>. When the
-      AI shows its work, you can evaluate the logic rather than just the
-      conclusion. You can challenge an assumption, notice a missing variable,
-      or catch a misread of the data. If the AI delivers only a conclusion, you
-      have no leverage to interrogate it. And when you are using AI output to
-      inform a real decision, the ability to interrogate it is not optional.</p>
+      <p>But the bigger payoff in a business context is
+      <strong>auditability</strong>. When the AI shows its reasoning, you
+      can spot a wrong assumption, challenge a misread, or push back on a
+      specific step. An answer with no reasoning behind it is an answer you
+      can't interrogate.</p>
 
       <p><strong>Before:</strong></p>
       <pre><code>Based on this market data, what should our pricing strategy be?</code></pre>
@@ -215,37 +223,22 @@ Before giving your recommendation, work through:
 Then give a recommendation. Finally, name the single assumption
 that, if wrong, would most change your answer.</code></pre>
 
-      <p>The AI's answer is now reviewable at every step. If you disagree with
-      how it read price sensitivity in the SMB segment, you can say so — and
-      get a substantive revision, not a reshuffled version of the same
-      conclusion.</p>
-
       <div class="callout">
-        <span class="callout-label">Why this matters beyond accuracy</span>
-        <p>In a professional setting, you are accountable for the decisions
-        you make with AI output — not the AI. Prompting for reasoning is how
-        you maintain that accountability. An output you can audit is an output
-        you can defend.</p>
+        <span class="callout-label">Remember: you're accountable</span>
+        <p>In a professional setting, you own the decisions you make with AI
+        output — not the AI. Prompting for reasoning is how you maintain that
+        accountability. An output you can audit is an output you can defend.</p>
       </div>
 
       <h3>Principle 5 · Follow up — don't start over</h3>
 
-      <p>The first output from a prompt is almost never the final answer. It
-      is a first draft.</p>
+      <p>The first output is a first draft. Don't rewrite the prompt from
+      scratch when something's off — give targeted feedback instead. The AI
+      keeps the full conversation context and can build on what's already
+      working. Think of it like coaching an analyst: you'd give notes on the
+      draft, not reassign the project.</p>
 
-      <p>Most people respond to an imperfect output by rewriting the prompt
-      from scratch. This is almost always the wrong move. A targeted follow-up
-      — redirecting a specific flaw, asking for more depth on one section,
-      telling the AI what worked and what didn't — is faster and typically
-      produces a better result. The AI retains the full context of the
-      conversation and can build on what's already working.</p>
-
-      <p>Think of it like working with an analyst: you wouldn't reassign
-      the project after every first draft. You'd give feedback. The same
-      instinct applies.</p>
-
-      <p>The most productive pattern: <em>generate → critique specifically
-      → redirect</em>.</p>
+      <p>The pattern that works: <em>generate → critique specifically → redirect</em>.</p>
 
       <p><strong>Weak follow-up (restarts the task):</strong></p>
       <pre><code>Write a better version of the financial analysis section.</code></pre>
@@ -257,18 +250,13 @@ from the Q3 report I pasted above (the revenue variance table
 on page 4 is especially relevant). Also cut the opening
 disclaimer paragraph; the reader doesn't need it.</code></pre>
 
-      <p>Specific critique outperforms vague instructions by a wide margin.
-      "Make it better" gives the AI no signal. "Here is what is wrong and
-      here is what you should do instead" gives it everything it needs.</p>
-
-      <p>The corollary: don't over-engineer the first prompt trying to get a
-      perfect result in one shot. A focused first response at 80% that you
-      can redirect in two follow-ups will almost always beat a three-paragraph
-      prompt that tries to anticipate everything.</p>
+      <p>One more note: don't over-engineer the first prompt. A focused
+      80% answer that you refine in two follow-ups usually beats a
+      three-paragraph prompt trying to anticipate everything.</p>
 
       <h2>Put them together</h2>
       <p>Most strong prompts use three or four of these principles at once.
-      Here is a compound example for a strategy task:</p>
+      Here's a compound example for a strategy task:</p>
 
       <pre><code>You are a strategy associate at a consulting firm. Your client
 is a mid-market SaaS company evaluating whether to expand into
@@ -295,48 +283,40 @@ Use this structure for each argument:
 
 [market data and internal metrics pasted below]</code></pre>
 
-      <p>After reviewing the output, a good follow-up might be: "The
-      competitive analysis in argument 2 is underdeveloped. Pull out the
-      pricing data from the enterprise benchmarks section and rebuild that
-      argument around the margin implications." That is Principle 5 in
-      action — targeted, specific, building forward.</p>
+      <p>A strong follow-up: "The competitive analysis in argument 2 is
+      underdeveloped — rebuild it around the margin implications in the
+      enterprise benchmarks table." That's Principle 5 in action.</p>
 
       <h2>A note on grounding</h2>
 
-      <p>All five principles above are about how you structure a request.
-      There is one more factor that deserves its own mention: what you give
-      the AI to work with.</p>
+      <p>These five principles are about how you structure a request. There's
+      one more factor worth calling out: what you give the AI to work with.</p>
 
-      <p>AI models perform significantly better when you supply the source
-      material rather than asking them to rely on general knowledge. Paste in
-      the actual contract, the actual meeting notes, the actual data. This is
-      called <strong>grounding</strong> — you are anchoring the AI's response
-      to specific information rather than letting it synthesize from training
-      data alone. It substantially reduces hallucination (confident-sounding
-      fabrication) and substantially increases relevance. When precision
-      matters, always give the AI the documents. Don't ask it to guess what
-      they say.</p>
+      <p>AI performs significantly better when you supply source material
+      rather than asking it to rely on general knowledge. Paste in the actual
+      contract, the actual meeting notes, the actual data. This is called
+      <strong>grounding</strong> — anchoring the AI's response to specific
+      information rather than training data. It reduces hallucination and
+      increases relevance. When precision matters, give the AI the documents.
+      Don't ask it to guess what they say.</p>
 
       <div class="pitfalls-inline">
         <h4>Pitfalls at this stage</h4>
         <ul>
           <li><strong>Describing format instead of showing it.</strong>
-          If you have a template, paste it. If you have a prior example,
-          use it. No amount of verbal description matches the clarity of
-          one well-chosen example.</li>
-          <li><strong>Accepting the first output.</strong> The first
-          response is a draft. Follow up with specific critique rather
-          than accepting a mediocre answer or starting over from scratch.</li>
-          <li><strong>Using AI conclusions without checking the reasoning.</strong>
-          For any decision that matters, ask for the reasoning first. An
-          output you cannot audit is an output you cannot responsibly act on.</li>
-          <li><strong>Omitting the why.</strong> Telling the AI the purpose
-          behind a task is not throat-clearing — it is one of the highest-
-          leverage things you can put in a prompt. Don't skip it.</li>
-          <li><strong>Over-prompting on simple tasks.</strong> These
-          principles scale with task complexity. A one-paragraph email
-          does not need a five-element brief. Match prompt depth to task
-          stakes.</li>
+          If you have a template or a prior example, paste it. One example
+          beats a paragraph of formatting instructions every time.</li>
+          <li><strong>Accepting the first output.</strong> It's a draft.
+          Follow up with specific critique instead of starting over.</li>
+          <li><strong>Using conclusions without checking the reasoning.</strong>
+          For any decision that matters, ask for the reasoning. If you can't
+          audit it, you can't responsibly act on it.</li>
+          <li><strong>Skipping the why.</strong> The purpose behind a task
+          is one of the highest-leverage things you can include. Don't
+          treat it as optional.</li>
+          <li><strong>Over-prompting simple tasks.</strong> These principles
+          scale with complexity. A short email doesn't need a full brief —
+          match effort to stakes.</li>
         </ul>
       </div>
 

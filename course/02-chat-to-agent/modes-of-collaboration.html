@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modes of human-AI collaboration · Module 2 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 2 · From prompt to agent</h4>
+      <ol>
+        <li><a href="/course/02-chat-to-agent/">Overview</a></li>
+        <li><a href="/course/02-chat-to-agent/modes-of-collaboration.html"><span class="module-num">1.</span>Modes of collaboration</a></li>
+        <li><a href="/course/02-chat-to-agent/agent-mental-model.html"><span class="module-num">2.</span>The agent mental model</a></li>
+        <li><a href="/course/02-chat-to-agent/worked-example.html"><span class="module-num">3.</span>A fully-worked example</a></li>
+        <li><a href="/course/02-chat-to-agent/when-to-use-agents.html"><span class="module-num">4.</span>When agents help</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 2 · Page 1 of 4 · 20 minutes</span>
+        <h1>Modes of human-AI collaboration</h1>
+        <p class="lede">Not every task deserves the same kind of AI involvement.
+        Understanding the three modes — and knowing which one to choose —
+        is the foundation for everything that follows in this module.</p>
+      </div>
+
+      <p>In Module 1 you learned how to communicate well with an AI in a
+      single conversation. That's a real skill, and it pays off immediately.
+      But it only covers one way of working with AI — the one where you're
+      steering every step in real time.</p>
+
+      <p>As AI tools become more capable, there are more options on the table.
+      The AI can draft before you arrive. It can run autonomously while you
+      do something else. It can execute a task end to end and hand you the
+      result. Each of these arrangements is a different <em>mode</em> of
+      collaboration, and each one carries different requirements, different
+      risks, and a different role for your judgment.</p>
+
+      <p>This page lays out a simple framework for thinking about those modes.
+      The rest of the module zooms into the most powerful one — the
+      agent — and shows you how it actually works.</p>
+
+      <h2>Three modes</h2>
+
+      <p>Most human-AI work today falls into one of three patterns. They differ
+      along a single axis: how much of the execution loop the AI controls
+      versus how much you do.</p>
+
+      <h3>Mode 1 · Co-pilot</h3>
+
+      <p>You are driving. The AI is in the passenger seat, assisting in real
+      time. You write a sentence, it suggests the next one. You ask a question
+      mid-task, it answers. You share half-formed thinking, it sharpens it.
+      The loop between you is tight and continuous — you never really hand
+      the wheel over.</p>
+
+      <p>This is how most people use a chatbot today. You're in a back-and-forth
+      conversation, and you're narrating each step. The AI is responsive but
+      not autonomous.</p>
+
+      <p><strong>When it fits:</strong> tasks where you need to think as you
+      go, where the destination isn't fully clear yet, or where the creative
+      or judgment-heavy work is inseparable from the execution. Writing a
+      difficult email, working through an ambiguous problem, preparing for a
+      negotiation.</p>
+
+      <p><strong>What it requires from you:</strong> active presence throughout.
+      You can't walk away. The quality of the output scales directly with the
+      quality of your real-time direction.</p>
+
+      <h3>Mode 2 · Reviewer</h3>
+
+      <p>You brief the AI, it produces a first pass, you evaluate and redirect.
+      You've handed off the drafting but you remain the judge. The loop between
+      you is slower — you're not in the room while it works, but you show up
+      at every checkpoint to decide what happens next.</p>
+
+      <p>This is the mode you practiced in Module 1, Exercise 3: run a first
+      prompt, read what you got, write a targeted follow-up. The AI does
+      the drafting; you do the evaluating and directing.</p>
+
+      <p><strong>When it fits:</strong> tasks with a clear enough shape that
+      you can specify a first pass, and a clear enough quality bar that you
+      can tell good from bad. Summarizing a document, producing a first-draft
+      analysis, generating options for you to choose among.</p>
+
+      <p><strong>What it requires from you:</strong> the ability to evaluate
+      the output. If you can't tell whether the AI's draft is good or not,
+      reviewer mode doesn't work — you're just rubber-stamping. This mode
+      only functions when you have enough domain knowledge to judge the
+      result.</p>
+
+      <h3>Mode 3 · Delegate</h3>
+
+      <p>You define the task upfront — in full — and the AI executes it
+      end to end. You're not in the loop during the work. You show up at
+      the end to review what it produced.</p>
+
+      <p>This is qualitatively different from the first two modes. The AI isn't
+      assisting you in a conversation; it's completing a workflow on your
+      behalf. To do that, it may need to read files, run calculations, search
+      for information, and make a series of intermediate decisions — all
+      without asking you. This is what an <strong>agent</strong> does, and
+      it's what the rest of this module covers.</p>
+
+      <p><strong>When it fits:</strong> tasks that are well-defined upfront,
+      involve multiple steps or data sources, are repeatable (so the setup
+      cost is worth it), and have outputs you can evaluate after the fact.
+      Weekly reporting, processing inbound requests, extracting structured
+      data from documents, running an analysis pipeline on a new dataset.</p>
+
+      <p><strong>What it requires from you:</strong> a complete, unambiguous
+      brief before execution begins, and reliable judgment about whether the
+      output is correct after it ends. Errors in delegate mode are more
+      expensive than in co-pilot mode because you weren't there to catch
+      them mid-task.</p>
+
+      <h2>The key variable: your ability to verify</h2>
+
+      <p>The single most important factor in choosing a mode isn't how
+      comfortable you are with the task or how much time you have. It's
+      <strong>whether you can verify the output at the end</strong>.</p>
+
+      <p>In co-pilot mode, verification is continuous — you're watching the
+      AI's suggestions and accepting or rejecting them as you go. Errors are
+      caught immediately. In reviewer mode, you verify at checkpoints —
+      you read the draft, spot the problems, and redirect. In delegate mode,
+      you verify once, at the end, after the work is done.</p>
+
+      <p>This creates a scaling requirement: the more autonomous the mode,
+      the more important it is that you can evaluate the finished product.
+      If you hand off a task in delegate mode but can't reliably tell good
+      output from bad output, you've created a blind spot. The AI may
+      produce something confident and polished that is subtly wrong, and
+      you have no mechanism to catch it.</p>
+
+      <p>This is related to a well-documented pattern called
+      <strong>automation bias</strong> — the tendency to over-trust
+      automated outputs, especially when they look authoritative. The
+      antidote is not to avoid delegation; it's to verify deliberately.
+      Module 5 covers the specific techniques for doing this with AI output.</p>
+
+      <div class="callout">
+        <span class="callout-label">The verification question</span>
+        <p>Before choosing a mode, ask: "If the AI got this wrong in a
+        non-obvious way, would I catch it?" If the answer is yes, you can
+        move toward delegation. If the answer is no, stay closer —
+        reviewer mode at minimum, co-pilot if the stakes are high.</p>
+      </div>
+
+      <h2>The same task, different modes</h2>
+
+      <p>Mode is not fixed by task type — it depends on context, stakes,
+      and where you are in the work. The same underlying task can reasonably
+      be handled in any of the three modes.</p>
+
+      <p>Take competitive research on a new market. Early in a project, when
+      you're still forming questions, co-pilot mode makes sense: you're
+      exploring with the AI, testing hypotheses in real time, following
+      threads you didn't anticipate. Once you know exactly what you're
+      looking for, reviewer mode is more efficient: you ask the AI to pull
+      together a structured summary of the five things you've decided matter,
+      you review what it produces, and you redirect where it missed. If
+      you're doing this every week for the same market, and the report format
+      is stable, delegate mode becomes the right call: you set up the
+      workflow once and review the output each cycle.</p>
+
+      <p>The practical implication: think of the three modes as tools in
+      a sequence, not categories you're locked into. Use co-pilot mode to
+      figure out what you want. Use reviewer mode to get a first cut.
+      Use delegate mode when the task is sufficiently understood to hand off
+      reliably.</p>
+
+      <h2>Where agents come in</h2>
+
+      <p>Delegate mode is only possible because AI tools have gained
+      capabilities beyond answering questions in a chat window. An agent —
+      the subject of the rest of this module — is an AI that can use tools:
+      read and write files, run code, search the web, interact with other
+      software. Those capabilities are what make sustained, autonomous
+      execution possible.</p>
+
+      <p>Without them, every task bottlenecks at the conversational interface:
+      you have to manually move information in and out, run any calculations
+      yourself, and string the steps together by hand. With them, a single
+      well-written brief can set a workflow in motion that produces a finished
+      artifact without you touching the keyboard again.</p>
+
+      <p>The next page explains how that works in concrete terms — the mental
+      model for what an agent actually is and what distinguishes it from the
+      chatbot you used in Module 1.</p>
+
+      <div class="pitfalls-inline">
+        <h4>Pitfalls at this stage</h4>
+        <ul>
+          <li><strong>Defaulting to co-pilot for everything.</strong>
+          Co-pilot mode is comfortable because you're always in control,
+          but it's also the most time-intensive. As your ability to
+          specify and verify tasks grows, delegate more.</li>
+          <li><strong>Delegating before you can verify.</strong> Moving
+          to delegate mode on a task you don't fully understand is how
+          AI errors get laundered into your work. Earn the right to
+          delegate by first doing the task in reviewer mode a few times.</li>
+          <li><strong>Treating mode as permanent.</strong> The right mode
+          for a task changes as the task matures. A new analysis type
+          starts in co-pilot; once it's understood and repeatable, it
+          can become a delegated workflow.</li>
+        </ul>
+      </div>
+
+      <a class="next-cta" href="/course/02-chat-to-agent/agent-mental-model.html">
+        <div>
+          <div class="next-cta-label">Next · Page 2 of 4</div>
+          <div class="next-cta-title">The agent mental model</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
