@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event recap generator · People &amp; org · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="module-header">
+      <span class="eyebrow"><a href="/cases/">Use cases</a> · <a href="/cases/people/">People &amp; org</a></span>
+      <h1>Event recap generator</h1>
+      <p class="lede">You just got back from a case competition. The club
+      president needs a polished debrief by Friday — in the same format
+      as always. Your raw material is one person's messy notes. Here's
+      how to do it in one session.</p>
+    </div>
+
+    <div class="chips">
+      <span class="chip">Difficulty · Beginner</span>
+      <span class="chip">~20 minutes</span>
+      <span class="chip">Uses: Modules 1, 4</span>
+    </div>
+
+    <h2>1. The business decision</h2>
+    <p>After every case competition, the club president sends a standard
+    debrief — same sections, same tone, same length, every time. The
+    problem: the person who takes notes is never the person who writes
+    the recap, and turning messy bullet points into the finished document
+    takes two to three hours. This workflow cuts that to one prompt.
+    There's no code involved — the folder structure and
+    <code>CLAUDE.md</code> do all the work.</p>
+
+    <h2>2. Data available</h2>
+    <p>Three files, each in its own folder:</p>
+    <pre><code>recap-project/
+  CLAUDE.md
+  inputs/
+    notes.txt
+  outputs/
+  references/
+    competition-recap-fall-2024.docx</code></pre>
+
+    <p><strong>inputs/notes.txt</strong> — raw notes from whoever attended.
+    Expect partial sentences, names spelled inconsistently, and sections
+    that are either too thin or too detailed. A typical excerpt:</p>
+    <pre><code>arrived 8:45, registration slow
+case: retail supply chain disruption - 20 min prep
+our team: maya, darius, priya + me
+judges were tough on financials - darius handled well
+placed 2nd overall, 1st on presentation score
+debrief w/ judge afterwards - said our market sizing was off
+but framework was strong
+dinner sponsored by alumni - talked to james chen (mckinsey)</code></pre>
+
+    <p><strong>references/competition-recap-fall-2024.docx</strong> — the
+    last approved recap. This is the format the AI needs to match. Every
+    section, every heading, the tone. <a href="competition-recap-fall-2024.docx" download>Download the sample reference file</a> to follow along.</p>
+
+    <p><strong>CLAUDE.md</strong> — the rules the reference file alone
+    can't communicate. More on this below.</p>
+
+    <div class="callout">
+      <span class="callout-label">Why each folder exists</span>
+      <p><code>inputs/</code> holds raw, messy source material that will
+      change every time you run this workflow. <code>references/</code>
+      holds stable examples the AI uses to understand what "correct" looks
+      like — you'd update it rarely, only when the format itself changes.
+      <code>outputs/</code> is where finished work lands, kept separate so
+      it's never confused with source material. <code>CLAUDE.md</code>
+      captures institutional knowledge that isn't visible in the files
+      themselves: who the audiences are, what's mandatory, what tone to
+      use. Without it, the AI has to guess.</p>
+    </div>
+
+    <h2>3. The build</h2>
+    <p>Three rounds, about 20 minutes total.</p>
+
+    <h3>Round 1 · Write the CLAUDE.md together</h3>
+    <p>Don't write the CLAUDE.md alone. Instead, ask the AI to interview
+    you:</p>
+    <pre><code>I'm setting up a folder for generating recurring event recap
+documents. I have a reference example and raw notes as inputs.
+
+Before we write anything, ask me the questions you'd need
+answered to write a good CLAUDE.md — the file that tells you
+the rules for this project every time you open it.
+
+Ask one question at a time.</code></pre>
+    <p>The AI will surface things you hadn't thought to specify: whether
+    certain sections are mandatory even if nothing happened in that area,
+    how to handle names, whether to flag anything for human review before
+    sending. Once you've answered its questions, ask it to draft the
+    CLAUDE.md from your answers and review it before saving.</p>
+
+    <p>A well-written CLAUDE.md for this project looks something like:</p>
+    <pre><code># Event Recap Project
+
+## Purpose
+Generate a polished event recap document from raw notes,
+matching the format in references/.
+
+## Mandatory sections
+The following sections must always appear, even if the notes
+contain little or nothing for them:
+- Event overview (date, location, format, team)
+- Results
+- Key learnings (minimum two)
+- What we'd do differently
+- Thank-yous (always include sponsors by name)
+
+## Format rules
+- Match the heading structure and approximate length of the
+  reference document exactly
+- Do not invent facts. If the notes are silent on something,
+  write "[to confirm]" rather than guessing
+- Names: use first name only for students, full name + affiliation
+  for external contacts
+
+## Output
+Save the finished document to outputs/ as
+  recap-[event-name]-[YYYY-MM].docx</code></pre>
+
+    <h3>Round 2 · Check understanding before generating</h3>
+    <p>Before asking the AI to produce anything, ask it to tell you what
+    it learned from the reference file. This catches misreads early:</p>
+    <pre><code>Read the reference document in references/ and tell me:
+1. What sections does it contain, in order?
+2. What's the approximate length of each section?
+3. What tone does it use — formal, casual, somewhere in between?
+4. Anything in the format that seems like a deliberate choice
+   rather than a default?
+
+Don't generate the recap yet. Just describe what you see.</code></pre>
+    <p>If its description doesn't match what you know the format to be,
+    correct it here — before the document gets written.</p>
+
+    <h3>Round 3 · Generate and review</h3>
+    <p>With the CLAUDE.md in place and the format confirmed:</p>
+    <pre><code>Now generate the recap. Use:
+- inputs/notes.txt as the source material
+- references/competition-recap-fall-2024.docx as the format
+- CLAUDE.md for all rules about audience, mandatory sections,
+  and tone
+
+Where the notes are thin, write [to confirm] rather than
+filling in details. Save the output to outputs/.</code></pre>
+    <p>Read the output and check two things: every mandatory section is
+    present, and any <code>[to confirm]</code> flags are things you can
+    actually fill in. If a mandatory section is missing, the most common
+    cause is a CLAUDE.md rule that was too vague — tighten it and re-run.</p>
+
+    <h2>4. Key prompts</h2>
+    <p>The prompts used across the three rounds, in order:</p>
+    <pre><code>-- Round 1: build the CLAUDE.md --
+
+I'm setting up a folder for generating recurring event recap
+documents. I have a reference example and raw notes as inputs.
+Before we write anything, ask me the questions you'd need
+answered to write a good CLAUDE.md. Ask one question at a time.
+
+-- Round 2: check understanding --
+
+Read the reference document in references/ and tell me what
+sections it contains, their approximate length, and the tone
+it uses. Don't generate the recap yet.
+
+-- Round 3: generate --
+
+Now generate the recap using inputs/notes.txt as source,
+references/ as the format guide, and CLAUDE.md for all rules.
+Where notes are thin, write [to confirm]. Save to outputs/.</code></pre>
+
+    <h2>5. What good looks like</h2>
+    <p>The most instructive thing you can do is run this workflow twice:
+    once with a minimal CLAUDE.md and once with the full version above,
+    using the same notes. The difference makes the case for why the
+    instructions file matters more than the prompt.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>With a thin CLAUDE.md</th>
+          <th>With a detailed CLAUDE.md</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sections appear in a different order than the reference</td>
+          <td>Section order matches the reference exactly</td>
+        </tr>
+        <tr>
+          <td>"Thank-yous" section is omitted because the notes don't mention it</td>
+          <td>"Thank-yous" appears with a [to confirm] flag, reminding you to add names</td>
+        </tr>
+        <tr>
+          <td>Invented a plausible-sounding judge quote that wasn't in the notes</td>
+          <td>Flagged the gap with [to confirm] instead of guessing</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>A good output lands in <code>outputs/</code>, matches the reference
+    on structure and length, and contains no invented facts — only
+    <code>[to confirm]</code> placeholders where the notes ran dry.</p>
+
+    <div class="pitfalls-inline">
+      <h4>Watch for</h4>
+      <ul>
+        <li><strong>No reference = invented structure.</strong> If you
+        skip the references/ folder and just describe the format in words,
+        the AI will produce something plausible but wrong. The reference
+        file is not optional — it's the ground truth.</li>
+        <li><strong>Missing mandatory sections.</strong> If a section
+        isn't in the notes, the AI will silently omit it unless CLAUDE.md
+        explicitly says it's required. Always list non-negotiable sections
+        by name.</li>
+        <li><strong>"It sounds right" isn't the same as "it matches."</strong>
+        Read the output against the reference side by side before signing
+        off. The AI is very good at writing polished prose that misses
+        structural details you haven't noticed yet.</li>
+      </ul>
+    </div>
+
+    <h2>6. Extensions</h2>
+    <p>Once the base workflow is running, try these to go further:</p>
+    <ul>
+      <li>Run the workflow for three events in a row with different
+      notes files. The folder stays the same — only <code>inputs/</code>
+      changes. This is the core payoff of the folder structure: the setup
+      cost is paid once.</li>
+      <li>Add a rule to CLAUDE.md asking the AI to flag any "lessons
+      learned" items that appear across multiple events, once you have
+      three or more recaps in <code>references/</code>. The folder becomes
+      institutional memory.</li>
+    </ul>
+    <p>The multi-audience version maps to Module 5's section on output
+    formatting; the cross-event pattern analysis is a good lead-in to
+    Module 7.</p>
+
+    <h2>7. Skills used</h2>
+    <div class="chips">
+      <a class="chip" href="/course/04-workflow/">Folder &amp; context management</a>
+      <a class="chip" href="/course/01-talking-to-ai/prompting-basics.html">Prompting · roles &amp; instructions</a>
+      <a class="chip" href="/course/04-workflow/">Plan before execute</a>
+      <a class="chip" href="/course/05-evaluating-output/">Evaluating output</a>
+    </div>
+
+    <a class="next-cta" href="/cases/people/">
+      <div>
+        <div class="next-cta-label">More like this</div>
+        <div class="next-cta-title">Other People &amp; org cases</div>
+      </div>
+      <div class="next-cta-arrow">→</div>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
