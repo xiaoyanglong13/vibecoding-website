@@ -5,6 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Model automation · Finance · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* Scoped polish for the CFO-note summary table only. */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.6em 0;
+      font-size: 15px;
+      font-variant-numeric: tabular-nums;
+      border-top: 2px solid var(--color-text);
+      border-bottom: 2px solid var(--color-text);
+    }
+    .summary-table thead th {
+      background: transparent;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--color-border-strong);
+    }
+    .summary-table tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: top;
+    }
+    .summary-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .summary-table .label {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .summary-table .num {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .summary-table .delta {
+      text-align: right;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    .summary-table .delta-pos { color: #1f7a3a; }
+    .summary-table .delta-neg { color: #a8312a; }
+    .summary-table .delta-flat { color: var(--color-text-faint); }
+    .summary-table .check { color: #1f7a3a; font-weight: 600; }
+    .summary-table .notes {
+      color: var(--color-text-muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -27,14 +79,14 @@
       <h1>Model automation</h1>
       <p class="lede">You own the monthly three-statement update. Right
       now it eats half a day of copy-paste from the trial balance into
-      a tired Excel model. Here's how to get it to fifteen minutes
+      a tired Excel model. Here's how to get to about ten minutes
       without giving up the model your CFO trusts.</p>
     </div>
 
     <div class="chips">
       <span class="chip">Difficulty · Beginner</span>
       <span class="chip">~45 minutes</span>
-      <span class="chip">Uses: Modules 1, 4</span>
+      <span class="chip">Uses: Modules 1, 4, 5</span>
     </div>
 
     <h2>1. The business decision</h2>
@@ -49,53 +101,57 @@
     sheet balances. It takes four to five hours and you've made
     sign-flip mistakes twice this quarter.</p>
     <p>You don't need a new model. You need the same model, refreshed
-    in fifteen minutes, with a short note explaining what changed.</p>
+    in about ten minutes, with a short note explaining what changed.</p>
 
     <h2>2. Data available</h2>
     <p>Three things are sitting in a folder on your laptop. Sample
     versions of all three are linked below so you can follow along:</p>
     <ul>
       <li><a href="trial_balance.csv" download><strong>trial_balance.csv</strong></a>
-      — April's TB exported from the GL. About 100 rows, single period.
-      Each new month you re-export it.</li>
+      &mdash; April's data exported from NetSuite. About 100 rows,
+      single period. Each new month you re-export it.</li>
       <li><a href="account_mapping.csv" download><strong>account_mapping.csv</strong></a>
-      — maps each GL account number to a line on the model (e.g.
+      &mdash; maps each GL account number to a line on the model (e.g.
       "Revenue", "COGS", "Accrued expenses") and a sign multiplier.
-      You maintain this file by hand as the chart of accounts grows.</li>
-      <li><a href="model.xlsx" download><strong>model.xlsx</strong></a>
-      — the live three-statement model. The "Inputs" tab holds each
-      period's numbers, one column per month. January through March
-      are frozen historicals from prior monthly updates; the April
-      column is laid out and empty, ready for the script to fill.
-      The IS, BS, and CF tabs reference Inputs,
-      so populating April lights up the whole model.</li>
+      You maintain this file by hand as the chart of accounts grows
+      &mdash; and the workflow below is built around that fact.</li>
+      <li><a href="model_2026-03.xlsx" download><strong>model_2026-03.xlsx</strong></a>
+      &mdash; last month's three-statement model. The "Inputs" tab
+      holds each period's numbers, one column per month, already laid
+      out for the full year. January through March are frozen
+      historicals from prior monthly updates; the April column is
+      empty, ready for the script to fill. The IS, BS, and CF tabs
+      reference Inputs, so populating April lights up the whole
+      model. Next month you'll start from
+      <code>model_2026-04.xlsx</code> &mdash; the previous run's
+      output becomes the next run's input.</li>
     </ul>
-    <p>The "add one fresh column to Inputs each month" step is the one
-    bit of manual setup that survives the automation. It takes two
-    minutes; the script does the rest.</p>
-    <p>The real-world messiness: a few accounts each month are
-    <em>new</em> (e.g. a freshly opened legal entity), so the mapping
-    file is always slightly behind. Sign convention is mixed —
-    revenues are negative in the GL, positive in the model. And
-    "Inputs" has six merged-cell sections that openpyxl will complain
-    about.</p>
+    <p>The real-world messiness is in the mapping file. A few accounts
+    each month are <em>new</em> &mdash; a freshly opened legal entity,
+    a pilot product line, a brand-new lease &mdash; so the mapping is
+    always slightly behind. And sign convention is mixed: revenues are
+    negative in the GL but positive in the model. The script handles
+    the sign mechanically; you handle the new-account decisions, on
+    purpose.</p>
     <p>A sample of the trial balance:</p>
     <pre><code>account_number, account_name, period, debit, credit
-40000, Product revenue - US, 2026-04, 0, 1842317.55
-40010, Product revenue - EU, 2026-04, 0, 612090.10
-50000, COGS - materials, 2026-04, 734221.00, 0
-60100, Salaries &amp; wages, 2026-04, 488740.25, 0
-21000, Accrued expenses, 2026-04, 0, 145620.00</code></pre>
+40000, Product revenue - US, 2026-04, 0, 1898965.08
+40010, Product revenue - EU, 2026-04, 0, 657396.84
+50000, COGS - materials, 2026-04, 788756.23, 0
+60100, Salaries - sales, 2026-04, 93709.12, 0
+21000, Accrued expenses, 2026-04, 0, 152744.74</code></pre>
 
     <h2>3. The build</h2>
-    <p>Total session was about an hour, in four rounds. The slowest
-    part wasn't the code — it was getting the mapping and sign
-    conventions right.</p>
+    <p>Total session was about an hour, in six steps. The arc: plan,
+    execute, evaluate, approve and re-run, ask for insight on the
+    numbers, then turn the whole thing into a reusable monthly
+    workflow &mdash; with a human checkpoint pinned over the one
+    file that should never be edited silently.</p>
 
-    <h3>Round 1 · Plan before execute</h3>
+    <h3>Step 1 &middot; Plan</h3>
     <p>I started with a plan request, not a code request. I gave it
-    the role, the three files, and the exact steps I needed — including
-    constraints that matter in practice:</p>
+    the role, the three files, and the exact steps I needed &mdash;
+    including constraints that matter in practice:</p>
     <pre><code>You are a financial analyst. Every month you need to update
 the three-statement model based on this month's trial balance
 spreadsheet. You want to write Python code that automates the
@@ -103,7 +159,7 @@ paste-and-reconcile step. There are three relevant files in
 the folder:
 - trial_balance.csv
 - account_mapping.csv
-- model.xlsx
+- model_2026-03.xlsx
 
 The steps should be:
 1) For each row in the TB file, categorize its model_line
@@ -113,235 +169,200 @@ The steps should be:
    model.xlsx, sum up the corresponding debit-credit for that
    model_line from the TB file. Fill the cell.
 3) All existing files are read-only. Create new files if needed.
-4) Save the updated model to model_2026-04.xlsx, do not
-   overwrite source.
+4) Save the updated model to a new file with month updated,
+   do not overwrite source.
 5) Leave all formula cells intact, do not change.
 
 Before writing any code, first show me the complete plan.</code></pre>
-    <p>The plan it returned was solid: it laid out each step, called
-    out the four accounts that would land in the unmapped file, and
-    explained the sign convention it would apply. I approved it and
-    moved on.</p>
+    <p>The plan it returned was solid: each step laid out, the four
+    formula sheets it would leave alone called out by name, and the
+    sign convention it would apply &mdash;
+    <code>(credit &minus; debit) &times; sign</code>, where
+    <code>sign = &minus;1</code> for debit-normal assets and
+    <code>sign = +1</code> for everything else.</p>
 
-    <h3>Round 2 · Execute</h3>
-    <p>Once the plan was approved, I gave the go-ahead and added the
-    four checks I wanted printed at the end — in the same message:</p>
-    <pre><code>Go ahead and write the code. At the end I want to print:
-- Any account_numbers in the TB that weren't in the mapping
-- Total revenue, total opex, net income for the period
-- Whether the BS balances (assets - liabilities - equity,
-  should be ~0)
-- Whether IS net income matches the change in retained
-  earnings on the BS</code></pre>
-    <p>It produced about 60 lines of Python using pandas and openpyxl.
-    First run failed because the Inputs tab had merged cells in the
-    header row. I pasted the error back and it fixed the issue.</p>
+    <h3>Step 2 &middot; Execute</h3>
+    <p>I approved the plan and told it to go ahead. It wrote about
+    sixty lines of Python using pandas and openpyxl, then ran the
+    script against the actual files. The first-pass output was
+    exactly the diagnostic I wanted: 20 of 21 model lines filled, 5
+    unmapped accounts written to a CSV, balance sheet off by exactly
+    $1,240. The script itself ran in about a second &mdash; the
+    informative part is what it couldn't categorize on its own.</p>
 
-    <h3>Round 3 · Challenge the summary</h3>
-    <p>The script printed five unmapped accounts and a balance sheet
-    off by $1,240. The model pointed to the new lease liability as the
-    culprit for the BS gap — which was right — but glossed over the
-    other four accounts because they happened to net to zero: the LATAM
-    revenue pilot (+$1,000) and an "Other income" line (+$500) were
-    exactly offset by two new EU expense accounts (−$800 and −$700).</p>
-    <p>I pushed back: even if net income doesn't move, individual IS
-    lines are still misstated — revenue is understated by $1,500 and
-    SG&amp;A is understated by $1,500. Coincidental netting isn't the
-    same as correct. I asked it to add all five accounts to the
-    mapping. After that re-run: zero unmapped accounts, BS residual
-    exactly $0.00, and a $167K retained-earnings mismatch that
-    remained — correctly, because that's a real open accounting
-    question (likely a dividend or equity adjustment) that no mapping
-    change can fix.</p>
+    <h3>Step 3 &middot; Evaluate</h3>
+    <p>Before letting anything touch the mapping file, I asked for a
+    recommendation table:</p>
+    <pre><code>Give me a table of the unmapped accounts, and what
+model_line I should add them to in the map and why.</code></pre>
+    <p>This is the heart of the workflow. The script can suggest, but
+    it doesn't get to silently edit the mapping file &mdash; that
+    file is part of the audit trail for the model. The table it came
+    back with looked like this:</p>
+    <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+      <img src="images/unmapped-recommendations.png"
+           alt="Claude's recommendation table for the five unmapped accounts: 23100 Lease liability ST, 40030 LATAM revenue, 60450 EU office supplies, 60810 EU insurance, 70300 Other income, each with a suggested model line, sign, and reason."
+           style="display: block; width: 100%; height: auto;">
+    </figure>
+    <p>Four of these were obvious sub-accounts. The fifth &mdash;
+    "Other income" routed to Interest income &mdash; was a judgement
+    call I needed to make, not a default the agent should make for
+    me. The recommendation was reasonable; I accepted it for this
+    month and noted to revisit if "Other income" grows.</p>
 
-    <h3>Round 4 · Summary table</h3>
-    <p>With the model balancing cleanly, I asked the script to also
-    print a formatted summary table for the CFO note:</p>
-    <pre><code>I want my code to generate a summary table that lists:
+    <h3>Step 4 &middot; Approval and re-run</h3>
+    <p>I accepted the recommendations and told it to apply them:</p>
+    <pre><code>Looks good, add them to account_mapping.csv as
+suggested. Then re-run the script with the updated mapping.</code></pre>
+
+    <h3>Step 5 &middot; Summary and insights</h3>
+    <p>With the model balancing cleanly, I asked for the table that
+    goes into the CFO note &mdash; with possible reasons, not just
+    numbers:</p>
+    <pre><code>Now generate a summary table that lists:
 1. Revenue (value for this month, percentage change from
-   last month)
+   last month, possible reasons)
 2. Net income (value for this month, percentage change from
-   last month)
-3. Balance sheet (whether it is balanced, how many new
-   accounts added)</code></pre>
-    <p>It read the prior-period column from the source model to compute
-    the month-over-month changes and printed the table in markdown.
-    That output is what you see in section 5 below — the script
-    produces it automatically every run.</p>
+   last month, possible reasons)
+3. Balance sheet (whether it is balanced)
+4. The new accounts that were added to the map</code></pre>
+    <p>The table it generated looked like this:</p>
+    <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+      <img src="images/summary-table.png"
+           alt="Claude's summary table showing Revenue, Net income, Balance sheet, and the five new mappings, with 2026-03 and 2026-04 columns, deltas, and a notes column explaining the drivers."
+           style="display: block; width: 100%; height: auto;">
+    </figure>
+    <p>The "possible reasons" clause is what turns this from a
+    reconciliation report into something the CFO can actually read.
+    I ask to save this table as
+    <a href="summary_2026-04.xlsx" download><code>summary_2026-04.xlsx</code></a>
+    for future reference.</p>
 
-    <h2>4. Working code</h2>
-    <p>The final script, lightly cleaned. You'd save this as
-    <code>update_model.py</code> next to the three input files:</p>
-    <pre><code>import pandas as pd
-from openpyxl import load_workbook
+    <h3>Step 6 &middot; Automate, then pin the checkpoint</h3>
+    <p>The whole point of doing this once was so I wouldn't have to
+    do it as a fresh prompt sequence every month. So I asked:</p>
+    <pre><code>Can you summarize my workflow in this session so I
+can do this again next month?</code></pre>
+    <p>What came back was more than a summary &mdash; it was a fully
+    automated end-to-end workflow: drop in the new TB, the script
+    detects unmapped accounts, proposes mappings, <em>writes them to
+    <code>account_mapping.csv</code></em>, re-runs, and produces the
+    summary file. Hands-off. That's exactly the step I didn't want
+    automated. So one more prompt:</p>
+    <pre><code>I need to check and approve the unmapped accounts
+before adding them to the map. Make this a human
+checkpoint.</code></pre>
+    <p>It updated the workflow so any proposed change to
+    <code>account_mapping.csv</code> stops and prints the suggested
+    rows for me to approve before writing &mdash; a literal "type
+    'approve' to continue" gate. The script keeps the autonomy to
+    read, summarize, and recommend; it loses the autonomy to edit
+    the one file that defines how the business reports itself.</p>
+    <p>The final workflow document I saved for next month:
+    <a href="workflow.md" download><code>workflow.md</code></a>.</p>
 
-PERIOD = "2026-04"
-
-tb = pd.read_csv("trial_balance.csv")
-mp = pd.read_csv("account_mapping.csv")
-
-# --- Net amount per account, then apply mapping sign ---
-tb["net"] = tb["credit"] - tb["debit"]
-merged = tb.merge(mp, on="account_number", how="left")
-
-unmapped = merged[merged["model_line"].isna()]
-if len(unmapped):
-    print("WARNING - unmapped accounts:")
-    for _, r in unmapped.iterrows():
-        print(f"  {int(r['account_number'])}  {r['account_name']}")
-
-merged["signed"] = merged["net"] * merged["sign"].fillna(0)
-by_line = merged.groupby("model_line")["signed"].sum()
-
-# --- Write into model.xlsx via defined names ---
-# Each model line has a defined name like "in_revenue_2026_04".
-wb = load_workbook("model.xlsx")
-for line, value in by_line.items():
-    slug = (line.lower()
-            .replace("&amp;", "and")
-            .replace(" ", "_")
-            .replace("-", "_"))
-    while "__" in slug:
-        slug = slug.replace("__", "_")
-    name = f"in_{slug.strip('_')}_{PERIOD.replace('-', '_')}"
-    if name in wb.defined_names:
-        dest = wb.defined_names[name].value
-        sheet, cell = dest.split("!")
-        wb[sheet.strip("'")][cell.replace("$", "")] = float(value)
-
-wb.save(f"model_{PERIOD}.xlsx")
-
-# --- Checks ---
-def L(name): return by_line.get(name, 0)
-
-revenue = L("Revenue")
-opex    = L("COGS") + L("SG&amp;A") + L("R&amp;D") + L("Depreciation")
-other   = L("Interest income") + L("Interest expense") + L("Tax expense")
-ni      = revenue + opex + other
-
-print(f"Revenue:    {revenue:,.0f}")
-print(f"Opex:       {opex:,.0f}")
-print(f"Net income: {ni:,.0f}")
-
-assets = sum(L(x) for x in
-             ["Cash", "AR", "Inventory", "Prepaid expenses",
-              "PPE", "Intangibles"])
-liab   = sum(L(x) for x in
-             ["AP", "Accrued expenses",
-              "Lease liability ST", "Lease liability LT", "Debt"])
-equity = L("Common stock") + L("Retained earnings prior") + ni
-print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
-</code></pre>
-    <p>Model line names in the mapping file use spaces only (no dashes
-    or other punctuation) so the slug calculation produces names that
-    match the workbook's defined names exactly. The script's
-    <code>WARNING</code> block surfaces any TB account that didn't find
-    a mapping — that's how the lease-liability mismatch in Round 3
-    showed up.</p>
-
-    <h2>5. What good looks like</h2>
-    <p>The deliverable isn't the script — it's the model file plus a
-    three-line note to the CFO. The script prints this table
-    automatically at the end of every run; you paste it into the note
-    and add a sentence of context. The note is the part most analysts
-    skip, and it's the part that builds trust:</p>
-    <table>
+    <h2>4. What good looks like</h2>
+    <p>The deliverable isn't the script &mdash; it's the model file
+    plus a three-line note to the CFO. The raw
+    <a href="summary_2026-04.xlsx" download><code>summary_2026-04.xlsx</code></a>
+    the script produces is the starting point, not the finished
+    product: condense it with human judgment &mdash; drop the rows
+    your CFO doesn't need (the new-mappings list belongs in your
+    records, not in the note), trim each comment to one crisp line,
+    and let the numbers do the talking. The note is the part most
+    analysts skip, and it's the part that builds trust:</p>
+    <table class="summary-table">
       <thead>
-        <tr><th>Item</th><th>This month</th><th>vs. last month</th><th>Comment</th></tr>
+        <tr>
+          <th>Category</th>
+          <th class="num">2026-03</th>
+          <th class="num">2026-04</th>
+          <th class="delta">&Delta;</th>
+          <th>Notes</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Revenue</td>
-          <td>$2.77M</td>
-          <td>+1.3%</td>
-          <td>EU and APAC held steady; small LATAM pilot launched.</td>
+          <td class="label">Revenue</td>
+          <td class="num">2,734,889</td>
+          <td class="num">2,771,550</td>
+          <td class="delta delta-pos">+1.3%</td>
+          <td class="notes">Broad growth across regions; LATAM pilot
+          launched.</td>
         </tr>
         <tr>
-          <td>Net income</td>
-          <td>$288K</td>
-          <td>-10%</td>
-          <td>Materials cost ran hot; new EU entity overhead just kicked in.</td>
+          <td class="label">Net income</td>
+          <td class="num">319,075</td>
+          <td class="num">288,233</td>
+          <td class="delta delta-neg">&minus;9.9%</td>
+          <td class="notes">Gross margin compressed 44.9% &rarr;
+          43.9%; new EU entity lifted SG&amp;A.</td>
         </tr>
         <tr>
-          <td>Balance sheet</td>
-          <td>Balanced</td>
-          <td>—</td>
-          <td>New short-term lease-liability account added to mapping.</td>
+          <td class="label">Balance sheet</td>
+          <td class="num delta-flat">&mdash;</td>
+          <td class="num"><span class="check">Balanced &check;</span></td>
+          <td class="delta delta-flat">&mdash;</td>
+          <td class="notes">Five new accounts added to mapping this
+          month.</td>
         </tr>
       </tbody>
     </table>
-    <p>Once you trust the script, the fifteen minutes is: drop the
-    new TB in the folder, run the script, eyeball the three checks,
-    write the note, send.</p>
+    <p>Once you trust the script, the ten minutes is: drop the new TB
+    in the folder, run the script, review the unmapped table,
+    approve, re-run, eyeball the three checks, write the note, send.</p>
 
     <div class="pitfalls-inline">
       <h4>Watch for</h4>
       <ul>
-        <li><strong>New accounts that look like old ones.</strong> An
-        account named "Lease liability - ST" looks harmless until you
-        realize it's never been on the balance sheet before. Always
-        read the unmapped-accounts warning before saving.</li>
-        <li><strong>Sign conventions.</strong> GLs and models disagree.
-        Get the sign column in the mapping right once, then trust it —
-        but spot-check revenue and net income each month against last
-        month's printed model.</li>
-        <li><strong>Letting the script overwrite the source model.</strong>
-        Always write to a dated file. If the script has a bug, you want
-        last month's working model still on disk.</li>
+        <li><strong>Letting the agent silently edit the mapping
+        file.</strong> The mapping is your audit trail. Anything that
+        changes it should pause and ask. Step 6's human checkpoint
+        exists for this reason &mdash; do not skip it.</li>
         <li><strong>Skipping the human note.</strong> A script that
         produces a balanced model with no commentary is less useful
-        than a half-day spreadsheet with a sentence of insight. Don't
-        lose the last mile.</li>
+        than a half-day spreadsheet with a sentence of insight.
+        Don't lose the last mile.</li>
       </ul>
     </div>
 
-    <h2>6. What's still manual — and what could be automated next</h2>
-    <p>The script handles the paste-and-reconcile step, but a few things
-    still require human hands each month before you run it:</p>
-    <ul>
-      <li><strong>Export the trial balance.</strong> Log into NetSuite,
-      run the TB export for the new period, save it over
-      <code>trial_balance.csv</code>.</li>
-      <li><strong>Add a new column across all four worksheets.</strong> Open
-      <code>model.xlsx</code> and add a column for the new month in each
-      tab: Inputs, IS, BS, and CF. All four need the new period column
-      before the script will produce a complete model.</li>
-      <li><strong>Update <code>PERIOD</code> in the script.</strong>
-      Change the one line at the top from last month's value to this
-      month's.</li>
-      <li><strong>Rename the output for next month's run.</strong> The
-      script writes <code>model_2026-04.xlsx</code>, but next month it
-      will look for <code>model.xlsx</code> as its source — so you need
-      to rename or copy the output before the next run.</li>
-    </ul>
-    <p>None of these are hard, but each one is a place where a mistake
-    can quietly propagate into the model. As a thought exercise: which
-    of these four steps could the script handle itself? How would you
-    prompt an agent to extend the code to cover them? That's the
-    jump from "automation assist" to "fully routine workflow" — and it's
-    a good problem to work through before looking at the Extensions
-    section below.</p>
+    <h2>5. How to do this again next month</h2>
+    <p>The payoff of having written <code>workflow.md</code> in Step
+    6 is that next month is one prompt, not seven. When May's data
+    landed, I exported the trial balance, dropped it into the folder
+    over the old <code>trial_balance.csv</code>, and wrote:</p>
+    <pre><code>I have updated new trial_balance data for May,
+repeat what I did last month following this workflow
+@workflow.md</code></pre>
+    <p>The agent picked up the workflow, ran the script, paused at
+    the unmapped-accounts checkpoint (none this month), generated
+    the summary, and handed me back <code>model_2026-05.xlsx</code>
+    and <code>summary_2026-05.xlsx</code>. My job was the same as
+    last month's last mile: condense the table, write the CFO note,
+    send.</p>
 
-    <h2>7. Extensions</h2>
+    <h2>6. Extensions</h2>
     <p>Once the basic update is reliable, ask the agent to:</p>
     <ul>
-      <li>Add a variance-vs-budget column and flag any line item more
-      than 5% off plan.</li>
-      <li>Auto-draft the three-line CFO note from the period-over-period
-      deltas, for you to edit rather than write from scratch.</li>
-      <li>Wrap the script as a scheduled task that runs on the first
-      business day, emails you the unmapped-accounts list, and waits
-      for you to update the mapping before producing the final model.</li>
+      <li>Add a variance-vs-budget column and flag any line item
+      more than 5% off plan.</li>
+      <li>Wrap the script as a scheduled task that runs on the
+      first business day, emails you the unmapped-accounts table,
+      and <em>pauses</em> until you reply with approvals before
+      producing the final model. The pause &mdash; not the schedule
+      &mdash; is the interesting part.</li>
     </ul>
     <p>The scheduled-task version maps to Module 7's section on hooks
-    and recurring jobs.</p>
+    and recurring jobs; the human-checkpoint design maps to Module
+    5's section on guardrails.</p>
 
-    <h2>8. Skills used</h2>
+    <h2>7. Skills used</h2>
     <div class="chips">
       <a class="chip" href="/course/01-talking-to-ai/prompting-basics.html">Prompting · roles &amp; examples</a>
       <a class="chip" href="/course/04-workflow/">Plan before execute</a>
       <a class="chip" href="/course/04-workflow/">Context engineering</a>
       <a class="chip" href="/course/05-evaluating-output/">Built-in checks</a>
+      <a class="chip" href="/course/05-evaluating-output/">Human checkpoints</a>
     </div>
 
     <a class="next-cta" href="/cases/finance/">
@@ -349,7 +370,7 @@ print(f"BS check (A - L - E): {assets - liab - equity:,.2f}")
         <div class="next-cta-label">More like this</div>
         <div class="next-cta-title">Other finance cases</div>
       </div>
-      <div class="next-cta-arrow">→</div>
+      <div class="next-cta-arrow">&rarr;</div>
     </a>
   </main>
 
