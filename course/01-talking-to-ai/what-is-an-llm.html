@@ -48,225 +48,219 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 1 · Page 1 of 4 · 12 minutes</span>
+        <span class="eyebrow">Module 1 · Page 1 of 4 · 15 minutes</span>
         <h1>What is an LLM?</h1>
-        <p class="lede">Before we talk about vibecoding, we should talk
-        about what makes vibecoding possible. A class of AI models called
-        large language models has crossed a threshold where you can ask
-        for software in plain English and get something that works. This
-        page is about what those models are, what they can do, and why
-        their existence rewrites the rules of who gets to build.</p>
+       <p class="lede">This page introduces large language models, the
+technology at the center of this course. It explains why LLMs change
+how humans direct computers, what capabilities make them useful, and
+how business students can use them both to think through problems and
+to build practical solutions.</p>
       </div>
 
-      <h2>The shift from <em>how</em> to <em>what</em></h2>
+<h2>A working definition</h2>
 
-      <p>For sixty years, working with a computer has been a one-way
-      street. You describe <em>how</em> to do something — every step,
-      every condition, in a language the machine understands — and the
-      machine runs it. If you can't write the steps, you can't get the
-      result. That barrier has kept "building software" in the hands of
-      people who write code.</p>
+<p>A <em>large language model</em> (LLM) is a statistical model
+trained on large quantities of text and code to predict the next
+<em>token</em> in a sequence. A token is a word, part of a word, or
+symbol. By learning patterns across books, websites, code
+repositories, articles, and other written material, the model
+becomes able to generate useful continuations: answers,
+explanations, summaries, plans, tables, and code.</p>
 
-      <p>LLMs change the rules. You describe <em>what</em> you want — the
-      outcome, the constraint, the desired shape of the answer — and the
-      model produces a result. The steps are still happening underneath;
-      you just stop being the one who has to write them.</p>
+<p>A useful analogy is that of a well-read generalist who has
+internalized patterns from many kinds of writing. Unlike a database,
+an LLM is not designed primarily to store and retrieve facts. It generates responses by using the input as context and producing
+text that fits the patterns it learned during training. For example,
+if asked to write a professional email, the model recognizes cues
+such as “professional,” “email,” and “reschedule” and generates a
+response that follows the conventions of business email. This explains both its power and its limits: it can produce
+fluent and useful answers, but it can also make mistakes, invent
+details, or sound confident when it is wrong.</p>
 
-      <p>This sounds incremental. The consequence runs deeper. The
-      barrier to building things with a computer has shifted from
-      <strong>syntax</strong> (do you know how to write the steps?) to
-      <strong>articulation</strong> (can you describe what you want?).
-      For most knowledge workers, articulation is a skill they already
-      have.</p>
+<div class="example">
+<p>For example, suppose you type:</p>
 
-      <h2>A working definition</h2>
+<pre><code>Write a short professional email asking a client to reschedule a meeting.</code></pre>
 
-      <p>A large language model is a system trained on enormous amounts
-      of text — books, websites, code, papers — with a deceptively
-      simple objective: predict the next word in a sequence. Repeat that
-      prediction billions of times, on a model with billions of
-      parameters, and something surprising happens. The model develops
-      abilities that were never explicitly trained.</p>
+<p>The LLM recognizes several patterns:</p>
 
-      <p>A useful mental picture: an LLM is a very capable generalist who
-      has read a substantial fraction of the public internet and held it
-      all in working memory. The generalist isn't a database — it
-      doesn't look things up — but it has internalized patterns from
-      everything it's seen, and it can apply those patterns to your
-      specific question.</p>
+<pre><code>"Write" → produce text
+"short" → keep it brief
+"professional email" → use a polite business tone
+"client" → be respectful and clear
+"reschedule a meeting" → include apology, new time options, and a closing</code></pre>
 
-      <h2>Four capabilities that matter</h2>
+<p>So it generates something like:</p>
 
-      <p>You'll lean on four capabilities of modern LLMs constantly.
-      They're worth knowing by name.</p>
+<pre><code>Hi Jordan,
 
-      <h3>1 · Broad knowledge</h3>
-      <p>Acquired through <em>pre-training</em> on a large fraction of
-      public text. An LLM can hold a passable conversation about
-      Renaissance painting, derivatives pricing, and the rules of
-      cricket — not because anyone programmed it to, but because all
-      of that material was in its training data. This is why you don't
-      have to teach an LLM what "discounted cash flow" means; you can
-      use the term and move on.</p>
+I'm sorry, but I need to reschedule our meeting originally planned for Thursday.
+Would either Friday morning or Monday afternoon work for you?
 
-      <h3>2 · Conversational interaction</h3>
-      <p>Trained models can hold a multi-turn conversation, track
-      context across turns, and respond to follow-up questions in plain
-      language. This is the capability that makes LLMs usable by anyone
-      who can type a sentence — no command line, no syntax, no
-      training course required.</p>
+Best,
+...</code></pre>
 
-      <h3>3 · In-context learning</h3>
-      <p>The most underrated capability on this list. You can paste an
-      example into a prompt — a short memo, a CSV row, a code snippet
-      — and the model will infer the pattern and apply it to new
-      material <em>without any retraining</em>. This is why showing the
-      model an example of the format you want works so well: the model
-      is learning from the example in real time. We'll lean on this
-      heavily on the next page.</p>
+<p>The model does not retrieve that exact email from memory. It generates a new response based on patterns it
+learned from many examples of professional emails, scheduling requests, apologies, and business
+communication.</p>
+</div>
 
-      <h3>4 · Reasoning</h3>
-      <p>Modern LLMs can break a problem into steps and work through
-      them sequentially. The technique called <em>chain-of-thought
-      prompting</em> — explicitly asking the model to show its work
-      — reliably improves accuracy on problems that involve more than
-      one inference step. This is the capability that makes LLMs useful
-      for analysis, not just retrieval.</p>
+<h2>LLM Capabilities</h2>
+<p>Training a sufficiently capable model on a sufficiently broad corpus
+can produce <em>emergent capabilities</em>: useful behaviors that were
+not explicitly programmed into the model or directly targeted by the
+training objective. As a result, modern LLMs are no longer just
+conversation partners. They can follow instructions, learn from
+examples, reason through multi-step problems, generate code, use tools,
+and transform information from one format to another.</p>
 
-      <h2>Two new kinds of work LLMs unlock</h2>
+      <table>
+  <thead>
+    <tr>
+      <th>Emergent capability</th>
+      <th>Simple meaning</th>
+      <th>Business example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>In-context learning</strong></td>
+      <td>Learning the pattern from examples in the prompt.</td>
+      <td>Show three labeled customer comments; the model labels the fourth.</td>
+    </tr>
+    <tr>
+      <td><strong>Instruction following</strong></td>
+      <td>Carrying out a task described in natural language.</td>
+      <td>Rewrite a memo for a CFO audience.</td>
+    </tr>
+    <tr>
+      <td><strong>Multi-step reasoning</strong></td>
+      <td>Breaking a problem into smaller steps.</td>
+      <td>Compare pricing options using costs, demand, margin, and customer segments.</td>
+    </tr>
+    <tr>
+      <td><strong>Code generation</strong></td>
+      <td>Producing code from a description of the desired outcome.</td>
+      <td>Create a script that cleans a CSV and produces a summary table.</td>
+    </tr>
+    <tr>
+      <td><strong>Tool use</strong></td>
+      <td>Choosing when and how to use external tools.</td>
+      <td>Run Python to analyze a spreadsheet instead of guessing from the prompt.</td>
+    </tr>
+    <tr>
+      <td><strong>Planning</strong></td>
+      <td>Sequencing actions toward a goal.</td>
+      <td>Create a project plan for validating a new business idea.</td>
+    </tr>
+  </tbody>
+</table>
 
-      <p>These four capabilities power two distinct things you can
-      now do — each one genuinely new under the sun. Both run through
-      this course.</p>
 
-      <h3>Thinking with AI</h3>
-      <p>Cognitive work that no software could do before. Reading
-      open-ended customer feedback and extracting the insight.
-      Drafting a fluent first version of a board memo. Structuring
-      an ambiguous strategy question. Synthesizing fifty pages of
-      user interviews into a coherent narrative. Brainstorming
-      pricing options with judgment, not just a list.</p>
+<h2>Two ways LLMs support business work</h2>
 
-      <p>Humans have written summaries and brainstormed ideas
-      forever. What's categorically new is that <em>something other
-      than a person</em> can now do this work — fast, on demand,
-      and at scale. No traditional algorithm can read qualitative
-      text and produce real insight. A script that tried would
-      either count keywords (and miss the point) or wrap a call to
-      an LLM (in which case it's doing the same cognitive work,
-      just programmatically).</p>
+<p>In this course, students use LLMs in two related but different
+ways. Sometimes an LLM helps create traditional software: scripts,
+dashboards, calculators, forms, and workflows that run the same way
+each time. Other times, an LLM performs work inside the workflow:
+interpreting language, summarizing evidence, comparing options,
+drafting recommendations, and reasoning through ambiguity.</p>
 
-      <p>You've probably already done some thinking with AI inside
-      a chatbot — asking ChatGPT to summarize an article,
-      brainstorm gift ideas, or rewrite an awkward email. That's
-      the family. Module 1 is largely about getting good at this
-      kind of work, since the same skills carry over to the next
-      family.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Use of LLMs</th>
+      <th>What the LLM does</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LLM as builder</strong></td>
+      <td>Creates reusable software or workflows.</td>
+      <td>Python scripts, dashboards, calculators, vendor scoring tools, data-cleaning workflows.</td>
+    </tr>
+    <tr>
+      <td><strong>LLM as thinker</strong></td>
+      <td>Performs language-heavy or judgment-heavy work directly.</td>
+      <td>Customer feedback themes, board memos, competitor comparisons, pricing options, interview synthesis.</td>
+    </tr>
+  </tbody>
+</table>
 
-      <h3>Vibecoding</h3>
-      <p>Using AI to build software. The model writes code from
-      your description; you describe what you want and what "done"
-      looks like; the AI handles the syntax. This is where the
-      leverage compounds — a working tool, once built, can be
-      re-run forever. From Module 2 onward we focus on this
-      family.</p>
+<p>The design question is not whether to use an LLM. The question is
+<em>how</em> to use it. Sometimes the LLM helps build the system.
+Other times, the LLM is one step inside the system.</p>
 
-      <p>Software has existed forever. What's categorically new is
-      <em>who can produce it</em>. A working tool used to require
-      an engineer; now it requires articulation. The barrier
-      moved.</p>
 
-      <p>The term <em>vibecoding</em> was coined by AI researcher
-      Andrej Karpathy in February 2025:</p>
 
-      <blockquote>
-        <p>"There's a new kind of coding I call 'vibe coding', where you
-        fully give in to the vibes, embrace exponentials, and forget
-        that the code even exists. … It's not really coding — I just
-        see stuff, say stuff, run stuff, and copy paste stuff, and it
-        mostly works."</p>
-        <cite>— Andrej Karpathy, <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener">@karpathy on X, February 2, 2025</a></cite>
-      </blockquote>
+      <h2>Exercises</h2>
 
-      <p>The exact phrase matters less than what it points at:
-      building working software without writing the code yourself.</p>
+<h3>Exercise 1: Same message, different tones</h3>
 
-      <h3>How the two compose</h3>
-      <p>Most real work uses both. You might think with AI to
-      synthesize three vendor proposals into a shortlist (text in,
-      insight out), then vibecode a small spreadsheet that scores
-      them against criteria you can adjust (description in, working
-      tool out). The model underneath is the same; the kind of work
-      it's doing for you is different.</p>
+<p>Open an LLM such as ChatGPT, Claude, or Gemini. Ask it to write an
+email for the scenario below in three different tones.</p>
 
-      <p>One pointer forward: in Module 2 you'll meet
-      <em>agents</em> — LLMs that can read your files, run code,
-      and act on the world rather than only respond to your
-      messages. Agents extend both families. They let you do
-      thinking with AI over your own documents instead of just
-      what fits in a chat window, and they make vibecoding
-      practical for real projects rather than toy scripts. For
-      now, hold both families in mind as chat-based; we'll lift
-      that constraint in Module 2.</p>
+<blockquote>
+  <p>You need to tell a teammate that their part of the project is late
+  and ask when they can send it.</p>
+</blockquote>
 
-      <h2>Why this is revolutionary</h2>
+<p>Try these three prompts:</p>
 
-      <p>Three things to keep in mind as the rest of the course
-      unfolds.</p>
+<pre><code>Write this email in a friendly tone.
 
-      <p><strong>The interface changed.</strong> The barrier to
-      working with a computer used to be language — you had to
-      learn the machine's. Now the machine speaks yours. Calling
-      this a usability upgrade understates the change; it shifts
-      the relationship into a different category.</p>
+Write this email in a firm but professional tone.
 
-      <p><strong>The cost of expert work collapsed.</strong>
-      Cognitive work that used to require a smart analyst and
-      several hours — a qualitative synthesis, a first-cut memo,
-      a structured breakdown of a fuzzy question — now takes
-      twenty minutes and a careful prompt. A piece of software
-      that used to require an engineer and two days of work costs
-      about the same. Things you would never have done because
-      they weren't worth the time become doable.</p>
+Write this email in a concise executive tone.</code></pre>
 
-      <p><strong>The target audience changed.</strong> Doing
-      analyst-grade synthesis used to require an analyst. Building
-      software used to require an engineer. Both are becoming
-      general activities — the way using a spreadsheet did in
-      the 1980s, or making a slide deck did in the 1990s. The
-      people who learn to work with LLMs while the rest of their
-      function is still catching up will compound an advantage
-      that lasts.</p>
+<p>Compare the outputs. What changed across the three versions? Look
+for differences in word choice, sentence length, directness,
+politeness, and implied relationship with the recipient.</p>
 
-      <div class="pitfalls-inline">
-        <h4>Common confusion at this stage</h4>
-        <ul>
-          <li><strong>"Isn't this just ChatGPT?"</strong> ChatGPT is one
-          product built on top of an LLM. The capabilities described
-          here are properties of the model itself, not of any
-          particular interface. Claude, Gemini, and other modern models
-          have similar capabilities.</li>
-          <li><strong>"Do I need to understand how LLMs work under the
-          hood?"</strong> No. You need a working mental model of what
-          they can and can't do. This page is enough for that — the
-          math is irrelevant to the skill.</li>
-          <li><strong>"Why does the model sometimes sound confidently
-          wrong?"</strong> Because it's predicting plausible text, and
-          plausible isn't the same as correct. Module 5 takes this
-          seriously.</li>
-        </ul>
-      </div>
+<h3>Exercise 2: Builder or thinker?</h3>
 
-      <h2>Try this thought experiment</h2>
-      <p>Before moving on, take 60 seconds and think of one task at work
-      or school you'd ideally automate but assumed required engineering
-      help. Hold onto it. By the end of Module 4 you'll know whether
-      it's a good vibecoding candidate, and by the end of the course
-      you'll probably have built it.</p>
+<p>For each task below, decide whether the LLM is being used primarily
+as a <em>builder</em> or as a <em>thinker</em>.</p>
 
-      <p>The next page is about the conversational layer — how you
-      actually talk to an LLM well, given that you're providing the
-      only context it has about your task.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>LLM as builder or thinker?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Generate a Python script that cleans a CSV file and creates a summary table.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Summarize open-ended customer feedback into three recurring themes.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Create a calculator that estimates break-even sales volume.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Draft a recommendation memo based on interview notes.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Build a dashboard that tracks weekly sales by region.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Compare two pricing strategies and explain the tradeoffs.</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There is not always a single correct answer. Many useful workflows
+combine both modes: the LLM may help build a tool, and the tool may
+then use the LLM to interpret language or generate a recommendation.</p>
 
       <a class="next-cta" href="/course/01-talking-to-ai/working-with-ai.html">
         <div>
