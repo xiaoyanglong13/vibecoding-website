@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Working with AI · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/exercises.html"><span class="module-num">4.</span>Exercises</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 2 of 4 · 15 minutes</span>
+        <h1>Working with AI</h1>
+        <p class="lede">LLMs are powerful, but they are not situated.
+        They do not automatically know your goal, your audience, your
+        data, your constraints, or your definition of success. Working
+        well with AI means supplying that missing context.</p>
+      </div>
+
+      <h2>The human supplies the situation</h2>
+
+      <p>An LLM may know a great deal in general, but it does not know
+      the specific situation unless you provide it. In most useful AI
+      work, the human contributes three things:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>What the human provides</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Goal</strong></td>
+            <td>“Help me decide which vendor to recommend.”</td>
+          </tr>
+          <tr>
+            <td><strong>Context</strong></td>
+            <td>“The buyer cares most about reliability, implementation time, and total cost.”</td>
+          </tr>
+          <tr>
+            <td><strong>Success criteria</strong></td>
+            <td>“Produce a one-page recommendation memo for a non-technical manager.”</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>This is why working with an LLM is not just asking a question.
+      It is giving the model enough of the situation to produce a useful
+      answer.</p>
+
+      <h2>Prompting is context design</h2>
+
+      <p>Common prompt-engineering advice is really advice about
+      context. “Give it a role,” “be specific,” “include examples,” and
+      “describe the output format” all help the model understand the
+      situation and produce something useful.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Prompting advice</th>
+            <th>What it provides</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Give it a role</td>
+            <td>Perspective</td>
+            <td>“Act as a marketing analyst.”</td>
+          </tr>
+          <tr>
+            <td>Be specific</td>
+            <td>Task boundaries</td>
+            <td>“Compare these vendors on cost, speed, and risk.”</td>
+          </tr>
+          <tr>
+            <td>Give examples</td>
+            <td>Pattern</td>
+            <td>“Use the format shown in this sample memo.”</td>
+          </tr>
+          <tr>
+            <td>Describe the output</td>
+            <td>Deliverable</td>
+            <td>“Return a table with recommendation, evidence, and caveats.”</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The context tradeoff</h2>
+
+      <p>Context is powerful, but providing the right amount of context is key.
+      Too little context causes the model to guess. Too much or poorly
+      organized context can cause the model to miss what matters. The
+      goal is to provide the right context at the right time.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>What happens</th>
+            <th>Better approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Too little context</strong></td>
+            <td>The model fills gaps with its own assumptions.</td>
+            <td>State the goal, audience, constraints, and desired output.</td>
+          </tr>
+          <tr>
+            <td><strong>Too much context</strong></td>
+            <td>The model may miss important details or drift toward the wrong task.</td>
+            <td>Provide the most relevant information and label it clearly.</td>
+          </tr>
+          <tr>
+            <td><strong>Poorly placed context</strong></td>
+            <td>The model may underweight key instructions buried in the middle.</td>
+            <td>Put the task and key constraints where they are easy to find.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Example: too little context versus useful context</h2>
+
+      <p>Too little context:</p>
+
+      <pre><code>Write a recommendation.</code></pre>
+
+      <p>Useful context:</p>
+
+      <pre><code>Act as a business analyst. I am comparing three vendors for a
+student-run food delivery project. The decision criteria are cost,
+reliability, implementation speed, and ease of use. Write a one-page
+recommendation for a non-technical manager. Start with the recommended
+vendor, then give three reasons and two risks.</code></pre>
+
+      <p>The second prompt is better because it gives the model the
+      goal, role, decision criteria, audience, format, and success
+      criteria.</p>
+
+   <h2>Context Format: Providing Examples</h2>
+
+  <p>Due to LLM's unique ability to recognize patterns, providing examples can be more effective than describing your requirements.</p>
+
+<div class="example">
+        <p>Suppose
+  you want the model to summarize customer feedback in a specific
+  format. A less useful prompt might be:</p>
+
+  <pre><code>Summarize this customer feedback clearly and include the main point,
+evidence, and business implication.</code></pre>
+
+  <p>A more useful prompt shows the model the pattern:</p>
+
+  <pre><code>Summarize each customer comment using this format:
+
+Theme: Delivery reliability
+Evidence: "My order arrived 40 minutes late, and no one updated me."
+Business implication: Customers may tolerate occasional delays, but
+lack of communication makes the experience feel worse.
+
+Now use the same format for the comments below.</code></pre>
+
+  <p>The second prompt works better because it gives the model an
+  example of the desired structure, level of detail, and style. Instead
+  of only describing the requirement, the human shows the model what a
+  successful answer looks like.</p>
+</div>
+
+
+
+      <h2>A Note on Context Window</h2>
+
+<p><p>An LLM can only use information that fits inside its <em>context
+window</em>: the amount of text the model can consider at one time,
+including the user’s prompt, prior conversation, uploaded material,
+and the model’s own response. The size of this window depends on the
+model. For example, many Claude models support roughly 200,000 tokens, while some newer long-context models from Anthropic and OpenAI support
+up to about one million tokens.</p>
+
+<p>A larger context window does not mean every detail is used equally
+well. Research on long-context language models finds that models can
+be less reliable when the relevant information is buried in the middle
+of a long prompt. This pattern is often called being <em>lost in the
+middle</em>.</p>
+
+
+
+      <h2>Exercise</h2>
+
+      <p>Choose a simple business task, such as drafting a customer
+      email, comparing two products, or recommending a vendor. Write two
+      prompts for the same task:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Prompt version</th>
+            <th>What to include</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Version 1</strong></td>
+            <td>A short prompt with very little context.</td>
+          </tr>
+          <tr>
+            <td><strong>Version 2</strong></td>
+            <td>The same request with a goal, audience, constraints, and desired output format.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Run both prompts in an LLM. Compare the outputs. What did the
+      model assume when context was missing? What improved when context
+      was provided?</p>
+
+      <a class="next-cta" href="/course/01-talking-to-ai/modes-of-collaboration.html">
+        <div>
+          <div class="next-cta-label">Next · Page 3 of 4</div>
+          <div class="next-cta-title">Modes of collaboration</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

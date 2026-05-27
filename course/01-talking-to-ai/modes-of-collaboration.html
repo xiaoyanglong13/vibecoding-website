@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modes of Collaboration · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/exercises.html"><span class="module-num">4.</span>Exercises</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 3 of 4 · 15 minutes</span>
+        <h1>Modes of collaboration</h1>
+
+<p class="lede">Working with an LLM is not a one-shot command. It is a
+collaboration: the human defines the goal, supplies context, judges
+the result, and decides what happens next. The model helps generate
+drafts, ideas, summaries, code, and alternative approaches.</p>
+
+<h2>A simple operating model</h2>
+
+<p>Most useful AI work follows a simple loop:</p>
+
+<pre><code>1. Give context.
+2. Specify the task.
+3. Inspect the output.
+4. Revise the request.
+5. Verify the result.</code></pre>
+
+<p>This loop applies whether the LLM is drafting an email, summarizing
+customer feedback, comparing vendors, or generating a Python script.
+The first response is rarely the final answer. Treat it as something
+to inspect, improve, and test.</p>
+
+
+      <h2>Working with AI is iterative</h2>
+
+      <p>Even with good context, the first response is rarely the final
+      answer. Treat the model's output as a draft. Inspect it, identify
+      what is missing or wrong, then add more context.</p>
+
+      <div class="example">
+        <p>For example, a first prompt might produce a recommendation
+        that is too generic. A useful follow-up would not be:</p>
+
+        <pre><code>Make it better.</code></pre>
+
+        <p>A more useful follow-up would be:</p>
+
+        <pre><code>This is too generic. Revise it for a manager who cares mainly about
+implementation risk. Keep the recommendation the same, but add a short
+section explaining the two biggest risks and how to reduce them.</code></pre>
+
+        <p>The second follow-up works because it supplies new context:
+        what is wrong, what audience matters, what should stay the same,
+        and what should change.</p>
+      </div>
+
+      
+
+  
+
+
+
+
+    
+
+  
+
+      <h2>Exercise</h2>
+
+      <p>For each task, choose an AI role and a human oversight model.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Assist, augment, or automate?</th>
+            <th>Human role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Drafting a response to an unhappy customer.</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Cleaning a weekly sales CSV and updating a dashboard.</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Summarizing interview notes for a product team.</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Approving a loan application.</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Generating a first draft of a board memo.</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a class="next-cta" href="/course/01-talking-to-ai/exercises.html">
+        <div>
+          <div class="next-cta-label">Next · Page 4 of 4</div>
+          <div class="next-cta-title">Exercises</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
