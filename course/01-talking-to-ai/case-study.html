@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study: Customer Segmentation · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/case-study.html"><span class="module-num">4.</span>Case study: Customer Segmentation</a></li>
+        <li><a href="/course/01-talking-to-ai/case-study-investment-memo.html"><span class="module-num">5.</span>Case study: Investment Memo</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 4 of 5 · 30 minutes</span>
+        <h1>Case study: Segmentation from a CSV</h1>
+        <p class="lede">You inherited a flat customer list with 800 rows
+        and no segments. You need three actionable cohorts by tomorrow's
+        planning meeting. Here's the end-to-end build.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Difficulty · Beginner</span>
+        <span class="chip">~30 minutes</span>
+        <span class="chip">Uses: Modules 1, 4</span>
+      </div>
+
+      <h2>1. The business decision</h2>
+      <p>You're a growth marketer at a B2B SaaS company. The head of
+      marketing wants to spend Q3 on two targeted campaigns instead of
+      one generic one. She's asked you, by tomorrow, for three customer
+      cohorts with: (a) a name, (b) how many customers are in it, (c)
+      one specific message that would resonate, and (d) one channel
+      that's most likely to reach them.</p>
+      <p>The data she's given you is a single CSV with 800 rows and no
+      pre-built segments. You have an evening.</p>
+
+      <h2>2. Data available</h2>
+      <p>The CSV has these columns, with the usual data-quality
+      surprises. <a href="/cases/marketing/customers.csv" download>Download the sample dataset (800 rows)</a> to follow along.</p>
+      <pre><code>customer_id, company_name, industry, employee_count,
+plan_tier, mrr_usd, signup_date, last_login_days_ago,
+features_used_30d, support_tickets_90d, csm_assigned</code></pre>
+      <p>Real-world messiness: industry is free-text, plan_tier has
+      inconsistent capitalization, ~12% of rows have null employee_count.
+      A sample row:</p>
+      <pre><code>c_00271, Acme Logistics, "logistics / 3pl", 340,
+Pro, 1450, 2024-03-11, 4, 12, 2, "Sarah K."</code></pre>
+
+      <h2>3. The build</h2>
+      <p>Total session was about 25 minutes, broken into three rounds.</p>
+
+      <h3>Round 1 · Plan before execute</h3>
+      <p>I started by asking the agent to plan, not act:</p>
+      <pre><code>You are a growth marketing analyst. I have a customer CSV
+(schema below) and need to produce three actionable segments
+for next quarter's campaign planning.
+
+Before writing any code, propose:
+1. A segmentation approach (which dimensions to use and why)
+2. Three plausible segment definitions, with the business
+   rationale for each
+3. The data quality issues you anticipate based on the schema
+   and what to do about each
+
+Don't run anything yet. Just the plan.
+
+Schema:
+[paste the columns + 5 sample rows]</code></pre>
+      <p>The plan it came back with was good but proposed five segments.
+      I asked it to cut to three and prioritize segments where the
+      campaign action would be most concrete. It did.</p>
+
+      <h3>Round 2 · Execute</h3>
+      <p>Once the plan was approved:</p>
+      <pre><code>Now execute the plan. Write Python that:
+- Loads the CSV from ./customers.csv
+- Normalizes the messy fields (industry buckets, plan_tier
+  casing, handle null employee_count)
+- Applies the three segment definitions from your plan
+- Outputs three files: segment_growth.csv,
+  segment_atrisk.csv, segment_expansion.csv
+- Prints a summary table with count, avg MRR, and avg
+  tenure (months since signup) per segment
+
+After running, show me the summary table and the first 3 rows
+of each output file.</code></pre>
+
+      <h3>Round 3 · Verify and refine</h3>
+      <p>The summary looked plausible but I noticed the "at risk" segment
+      was suspiciously large. Asked:</p>
+      <pre><code>The at-risk segment is 31% of the base. That feels high.
+Walk me through the logic — what's the single threshold
+driving the most assignments? Show me the histogram of
+last_login_days_ago for at-risk vs not. Then propose a
+tighter definition.</code></pre>
+      <p>Turned out the threshold was 14 days, which swept in a lot of
+      weekly-active users. We moved it to 21 days, re-ran, and the segment
+      dropped to 14% — a number marketing could actually act on.</p>
+
+      <h2>4. Working code</h2>
+      <p>The final Python script the agent produced, lightly cleaned:</p>
+      <pre><code>import pandas as pd
+
+df = pd.read_csv("customers.csv")
+
+# --- Normalize messy fields ---
+df["plan_tier"] = df["plan_tier"].str.strip().str.title()
+df["industry_bucket"] = df["industry"].str.lower().map(
+    lambda x: "logistics" if "logistic" in str(x) or "3pl" in str(x)
+    else "tech" if "tech" in str(x) or "software" in str(x)
+    else "retail" if "retail" in str(x) or "ecommerce" in str(x)
+    else "other"
+)
+df["employee_count"] = df["employee_count"].fillna(
+    df.groupby("industry_bucket")["employee_count"].transform("median")
+)
+df["tenure_months"] = (
+    (pd.Timestamp("today") - pd.to_datetime(df["signup_date"]))
+    .dt.days / 30.4
+).round(1)
+
+# --- Segments ---
+growth = df[
+    (df["plan_tier"] == "Starter") &
+    (df["features_used_30d"] >= 5) &
+    (df["last_login_days_ago"] &lt;= 7)
+]
+atrisk = df[
+    (df["mrr_usd"] >= 500) &
+    (df["last_login_days_ago"] >= 21) &
+    (df["support_tickets_90d"] >= 3)
+]
+expansion = df[
+    (df["plan_tier"].isin(["Pro", "Business"])) &
+    (df["employee_count"] >= 200) &
+    (df["tenure_months"] >= 6) &
+    (df["features_used_30d"] >= 8)
+]
+
+growth.to_csv("segment_growth.csv", index=False)
+atrisk.to_csv("segment_atrisk.csv", index=False)
+expansion.to_csv("segment_expansion.csv", index=False)
+
+# --- Summary ---
+for name, seg in [("Growth", growth), ("At risk", atrisk), ("Expansion", expansion)]:
+    print(f"{name}: n={len(seg)}, "
+          f"avg MRR=${seg['mrr_usd'].mean():.0f}, "
+          f"avg tenure={seg['tenure_months'].mean():.1f}mo")
+</code></pre>
+
+      <h2>5. What good looks like</h2>
+      <p>The deliverable for the marketing meeting was not the script — it
+      was three rows in a one-pager:</p>
+      <table>
+        <thead>
+          <tr><th>Segment</th><th>Count</th><th>Message</th><th>Channel</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Power-using Starters</td>
+            <td>87</td>
+            <td>"You're getting the most out of Starter — Pro unlocks 3 features you'd actually use."</td>
+            <td>In-app + CSM email</td>
+          </tr>
+          <tr>
+            <td>At-risk paying customers</td>
+            <td>112</td>
+            <td>"Haven't seen you in a while — quick 15 to make sure it's still working for you?"</td>
+            <td>CSM personal outreach</td>
+          </tr>
+          <tr>
+            <td>Tenured high-feature Pros</td>
+            <td>64</td>
+            <td>"You're using us deeply. Here's how three companies your size use Business."</td>
+            <td>Sales-led, case-study driven</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You'd run the segment counts past your analytics team before
+      sending real campaigns, but for a planning meeting tomorrow, this
+      is more than enough to make an informed decision.</p>
+
+      <div class="pitfalls-inline">
+        <h4>Watch for</h4>
+        <ul>
+          <li><strong>Plausible-but-wrong thresholds.</strong> Always
+          check the distribution behind any single number that drives a
+          big decision. If the agent picks "14 days" for "inactive", ask
+          why and what changes at 7 or 21.</li>
+          <li><strong>Free-text industry fields.</strong> The agent's
+          bucket logic will silently miss spellings you didn't sample.
+          Ask for the "other" bucket's contents before trusting the
+          normalization.</li>
+          <li><strong>Confusing the script with the deliverable.</strong>
+          Marketing doesn't want a script. They want three rows in a
+          one-pager. Don't lose the last mile.</li>
+        </ul>
+      </div>
+
+      <h2>6. Extensions</h2>
+      <p>If you have more time, ask the agent to:</p>
+      <ul>
+        <li>Add a fourth "untouched-by-CSM" cut across all three segments
+        to surface CSM coverage gaps.</li>
+        <li>Generate a per-segment slide with the count, the message, and
+        a chart of MRR distribution.</li>
+        <li>Wrap the script as a recurring job that re-runs weekly and
+        emails you the deltas.</li>
+      </ul>
+      <p>Each of these maps to a later module — the recurring-job version
+      is covered in Module 7's section on hooks.</p>
+
+      <h2>7. Skills used</h2>
+      <div class="chips">
+        <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Prompting · roles &amp; examples</a>
+        <a class="chip" href="/course/04-workflow/">Plan before execute</a>
+        <a class="chip" href="/course/04-workflow/">Context engineering</a>
+        <a class="chip" href="/course/05-evaluating-output/">Checking thresholds</a>
+      </div>
+      <a class="next-cta" href="/course/01-talking-to-ai/case-study-investment-memo.html">
+        <div>
+          <div class="next-cta-label">Next · Page 5 of 5</div>
+          <div class="next-cta-title">Case study: Investment Memo</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

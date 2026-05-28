@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study: Investment Memo · Module 1 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 1 · Talking to AI</h4>
+      <ol>
+        <li><a href="/course/01-talking-to-ai/">Overview</a></li>
+        <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/case-study.html"><span class="module-num">4.</span>Case study: Customer Segmentation</a></li>
+        <li><a href="/course/01-talking-to-ai/case-study-investment-memo.html"><span class="module-num">5.</span>Case study: Investment Memo</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 1 · Page 5 of 5 · 45 minutes</span>
+        <h1>Case study: Investment Memo</h1>
+        <p class="lede">A growth equity fund asks you to draft a Series B
+        investment memo by end of day. You have a financial model and a
+        one-pager. Here's how domain knowledge, iteration, and verification
+        turn a generic LLM response into a memo the partners will actually read.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Difficulty · Intermediate</span>
+        <span class="chip">~45 minutes</span>
+        <span class="chip">Uses: Module 1</span>
+      </div>
+
+      <h2>1. The business decision</h2>
+      <p>You are a first-year associate at a growth equity fund. A partner
+      drops a financial model and a company one-pager on your desk at 10am
+      and asks for a draft investment memo before the 4pm investment
+      committee meeting. The memo needs to give the partners enough to
+      decide whether to proceed to full diligence.</p>
+      <p>The company is Meridian, a B2B SaaS platform for supply chain
+      operations, raising a $25M Series B at a $110M post-money valuation.
+      You have never covered this space before.</p>
+
+      <h2>2. Data available</h2>
+      <p>You have two inputs. First, a company one-pager with the following
+      summary financials:</p>
+      <pre><code>Company: Meridian
+Founded: 2021 · HQ: Chicago · Employees: 84
+Product: Supply chain operations platform (demand forecasting,
+         supplier management, inventory optimization)
+Customers: 47 enterprise accounts · Avg ACV: $390K
+ARR: $18.4M (FY2024) · Prior year ARR: $11.0M (FY2023)
+YoY ARR growth: 67%
+Net Revenue Retention: 118%
+Gross margin: 74%
+Monthly burn: $1.2M · Runway: 14 months
+Raise: $25M Series B · Post-money: ~$110M (~6x ARR)</code></pre>
+      <p>Second, a financial model in Excel with three-year projections and
+      a monthly P&amp;L. You paste the summary tab into the prompt as plain text.</p>
+
+      <h2>3. The build</h2>
+      <p>Total session was about 40 minutes, broken into four rounds.</p>
+
+      <h3>Round 1 · The vague prompt</h3>
+      <p>The first attempt looked reasonable:</p>
+      <pre><code>Write an investment memo for Meridian, a B2B SaaS company
+raising a Series B.</code></pre>
+      <p>The LLM produced five paragraphs of fluent prose. But on inspection,
+      every sentence could apply to any SaaS company. The market sizing was
+      invented. The risks were generic ("competition," "execution risk,"
+      "macroeconomic headwinds"). There was no recommendation. The memo
+      would embarrass you in front of the partners.</p>
+      <p>This illustrates the core problem from page 2: when the model
+      receives no situation — no goal, no audience, no data, no success
+      criteria — it fills every gap with plausible-sounding assumptions.
+      Fluent output is not the same as useful output.</p>
+
+      <h3>Round 2 · Supplying the situation</h3>
+      <p>The second prompt supplied what was missing: role, structure,
+      audience, data, and a clear definition of success.</p>
+      <pre><code>You are a senior associate at a growth equity fund writing
+a first-draft investment memo for the investment committee.
+
+The company is Meridian, a B2B SaaS platform for supply
+chain operations (demand forecasting, supplier management,
+inventory optimization). They are raising a $25M Series B
+at a $110M post-money valuation (~6x ARR).
+
+Write the memo in these sections, in this order:
+1. Executive summary (3–4 sentences: what Meridian does,
+   why the timing is compelling, and your recommendation)
+2. Market opportunity (why supply chain software is
+   attractive now; size the addressable market)
+3. Business model and unit economics (use the data below;
+   explain what the NRR and gross margin signal about the
+   business quality)
+4. Competitive positioning (2–3 specific differentiators
+   vs. legacy ERP and point solutions)
+5. Financial analysis (ARR trajectory, burn, path to
+   profitability, use of proceeds)
+6. Key risks and mitigants (3 risks specific to Meridian,
+   each with one concrete mitigant)
+7. Recommendation (proceed to full diligence / pass, and
+   the single most important open question)
+
+Audience: investment committee partners with 10 minutes.
+They care most about: (a) why this market, why now;
+(b) quality of unit economics; (c) whether the team can
+execute at this scale.
+
+Use only the data below. Flag any figure you cannot derive
+from this data rather than inventing it.
+
+[paste financials here]</code></pre>
+      <p>This prompt is longer, but each element does specific work. The
+      role ("senior associate") sets the register. The section structure
+      removes ambiguity about format. The audience description tells the
+      model what to prioritize. The instruction to flag missing data rather
+      than invent it is essential — without it, the model will fill gaps
+      silently.</p>
+      <p>The output was substantially better: company-specific analysis,
+      correct figures, a clear recommendation. But it was text only, and
+      the financial analysis section was thin.</p>
+
+      <h3>Round 3 · Iterating toward specific outputs</h3>
+      <p>The memo needed two things the partner would expect: a comparables
+      table and a revenue progression table. Rather than rewriting the
+      whole prompt, the next message built on what existed:</p>
+      <pre><code>Good. Now add two elements to the financial analysis section:
+
+1. A public-company comparables table. Pick three publicly
+   traded SaaS companies with similar ACV ($200K–$500K) and
+   NRR profiles (110–130%). For each, include:
+   — Company name and one-line description
+   — NRR
+   — Gross margin
+   — ARR growth (most recent fiscal year)
+   — EV / ARR multiple (current)
+   Then add a row for Meridian at the proposed valuation.
+
+2. A revenue progression table showing Meridian's ARR
+   trajectory across FY2023, FY2024, and the model's
+   FY2025 and FY2026 projections. Include: fiscal year,
+   ARR, YoY growth %, and net new ARR added.
+
+Format both as clean tables. Label the source for any
+comparable company figures you use.</code></pre>
+      <p>This is the iterative loop from page 3 in practice: inspect the
+      output, identify what is missing, then add context that addresses
+      the specific gap. A follow-up of "make the financials better" would
+      not have worked. The follow-up worked because it specified exactly
+      what to add, what columns to include, and how to format it.</p>
+
+      <h3>Round 4 · Verification and correction</h3>
+      <p>On reading the comparables table carefully, two problems appeared.
+      The LLM had used 124% NRR for Meridian in the table, not the 118%
+      from the source data. It had also cited an EV/ARR multiple for one
+      comparable that was clearly stale. Both errors were silent — the memo
+      read confidently regardless.</p>
+      <p>This is the verify step from page 3's operating model. Every number
+      in a memo that will go to an investment committee needs to be traced
+      back to a source. The correction was direct:</p>
+      <pre><code>Two corrections before we continue:
+
+1. You used 124% NRR for Meridian in the comparables table.
+   The correct figure is 118%. Please update all references
+   to Meridian's NRR throughout the memo.
+
+2. The EV/ARR multiple you cited for [Comparable Co] appears
+   to be outdated. Please flag this cell as "[verify: EV/ARR
+   as of current date]" rather than using a potentially
+   stale figure.
+
+After making these corrections, re-read the executive
+summary and confirm that all figures there are consistent
+with the corrected data.</code></pre>
+      <p>The LLM corrected the NRR, flagged the stale comparable, and
+      found one additional inconsistency in the executive summary on its
+      own. The final memo was accurate and internally consistent.</p>
+
+      <h2>4. What good looks like</h2>
+      <p>The finished memo had this structure, and fit in four pages:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th>Length</th>
+            <th>Key content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Executive summary</td>
+            <td>4 sentences</td>
+            <td>What Meridian does, why the timing matters (supply chain disruption driving urgency), recommendation to proceed</td>
+          </tr>
+          <tr>
+            <td>Market opportunity</td>
+            <td>1 paragraph</td>
+            <td>$18B addressable market in supply chain software, shift from ERP to purpose-built SaaS, post-pandemic urgency</td>
+          </tr>
+          <tr>
+            <td>Business model &amp; unit economics</td>
+            <td>1 paragraph + table</td>
+            <td>118% NRR interpreted as net expansion signal; 74% gross margin as foundation for eventual profitability; ACV of $390K implies enterprise-grade stickiness</td>
+          </tr>
+          <tr>
+            <td>Competitive positioning</td>
+            <td>3 bullet points</td>
+            <td>Specific differentiators vs. SAP, Oracle, and one VC-backed point solution</td>
+          </tr>
+          <tr>
+            <td>Financial analysis</td>
+            <td>1 paragraph + 2 tables</td>
+            <td>Revenue progression table; comparables table with flagged cells; 14-month runway as the key constraint</td>
+          </tr>
+          <tr>
+            <td>Key risks</td>
+            <td>3 rows</td>
+            <td>Sales cycle length, customer concentration (top 3 = 38% of ARR), burn rate relative to raise size — each with a specific mitigant</td>
+          </tr>
+          <tr>
+            <td>Recommendation</td>
+            <td>2 sentences</td>
+            <td>Proceed to full diligence; most important open question is reference calls on implementation timeline</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The memo reached the partner at 2:30pm. She marked it up but did
+      not rewrite it. That is the standard.</p>
+
+      <div class="pitfalls-inline">
+        <h4>Watch for</h4>
+        <ul>
+          <li><strong>Silent hallucination of figures.</strong> The model
+          will invent financial metrics, market sizes, and comparable
+          company data without signaling uncertainty. Every number in a
+          memo that will be acted on needs to be traced to a source.
+          The instruction "flag any figure you cannot derive from this
+          data rather than inventing it" helps, but it does not eliminate
+          the problem — always verify manually.</li>
+          <li><strong>Generic risks.</strong> Without domain context,
+          the model defaults to "competition," "execution risk," and
+          "macroeconomic headwinds." These are useless in an investment
+          memo. Name the specific risk: "Customer concentration — top 3
+          accounts represent 38% of ARR" forces the model to reason
+          about Meridian specifically.</li>
+          <li><strong>Fluency masking thin analysis.</strong> A memo
+          that reads well is not the same as a memo that is right. The
+          round 1 output was grammatically impeccable and analytically
+          empty. Inspect the reasoning, not just the prose.</li>
+        </ul>
+      </div>
+
+      <h2>5. Extensions</h2>
+      <p>If you have more time, try these variations:</p>
+      <ul>
+        <li>Ask the model to write a "bear case" version of the
+        recommendation, with the same data but a skeptical prior. Compare
+        the two memos side by side to find which risks it surfaces
+        differently.</li>
+        <li>Provide a second company's financials and ask the model to
+        compare the two investment opportunities in a single table, then
+        recommend which to prioritize for full diligence.</li>
+        <li>After completing the memo, ask the model to identify the three
+        questions a skeptical partner would most likely raise in the IC
+        meeting, and draft brief responses to each.</li>
+      </ul>
+
+      <h2>6. Skills used</h2>
+      <div class="chips">
+        <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Supplying the situation</a>
+        <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Prompting as context design</a>
+        <a class="chip" href="/course/01-talking-to-ai/modes-of-collaboration.html">Iterative refinement</a>
+        <a class="chip" href="/course/01-talking-to-ai/modes-of-collaboration.html">Verify the result</a>
+      </div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
