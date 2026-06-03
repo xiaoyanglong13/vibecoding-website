@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modes of Collaboration · Module 1 · Vibecoding for Business School Students</title>
+  <title>From prompt to output · Module 1 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -27,10 +27,9 @@
       <ol>
         <li><a href="/course/01-talking-to-ai/">Overview</a></li>
         <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
-        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
-        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Prompting as context design</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>From prompt to output</a></li>
         <li><a href="/course/01-talking-to-ai/case-study.html"><span class="module-num">4.</span>Case study: Customer Segmentation</a></li>
-        <li><a href="/course/01-talking-to-ai/case-study-investment-memo.html"><span class="module-num">5.</span>Case study: Investment Memo</a></li>
       </ol>
       <h4>All modules</h4>
       <ol>
@@ -49,8 +48,8 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 1 · Page 3 of 5 · 15 minutes</span>
-        <h1>Modes of collaboration</h1>
+        <span class="eyebrow">Module 1 · Page 3 of 4 · 15 minutes</span>
+        <h1>From prompt to output</h1>
 
 <p class="lede">Working with an LLM is not a one-shot command. It is a
 collaboration: the human defines the goal, supplies context, judges
@@ -98,7 +97,131 @@ section explaining the two biggest risks and how to reduce them.</code></pre>
 
       
 
-  
+  <h2>Two ways LLMs support business work</h2>
+
+<p>In this course, students use LLMs in two related but different
+ways. Sometimes an LLM helps create traditional software: scripts,
+dashboards, calculators, forms, and workflows that run the same way
+each time. Other times, an LLM performs work inside the workflow:
+interpreting language, summarizing evidence, comparing options,
+drafting recommendations, and reasoning through ambiguity.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use of LLMs</th>
+      <th>What the LLM does</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LLM as builder</strong></td>
+      <td>Creates reusable software or workflows.</td>
+      <td>Python scripts, dashboards, calculators, vendor scoring tools, data-cleaning workflows.</td>
+    </tr>
+    <tr>
+      <td><strong>LLM as thinker</strong></td>
+      <td>Performs language-heavy or judgment-heavy work directly.</td>
+      <td>Customer feedback themes, board memos, competitor comparisons, pricing options, interview synthesis.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The design question is not whether to use an LLM. The question is
+<em>how</em> to use it. Sometimes the LLM helps build the system.
+Other times, the LLM is one step inside the system.</p>
+
+<div class="example">
+  <p><strong>Example: Using LLMs to improve a campus coffee shop's loyalty program</strong></p>
+
+  <p>Imagine a student team is helping a campus coffee shop improve its loyalty program. The shop has three sources of information:</p>
+
+  <p>The team can use an LLM in two different ways.</p>
+
+  <p><strong>1. LLM as builder: creating a reusable loyalty calculator</strong></p>
+
+  <p>First, the team asks the LLM to help build a small calculator. The calculator lets the coffee shop test different loyalty offers, such as:</p>
+
+  <ul>
+    <li>"Buy 9 drinks, get the 10th free"</li>
+    <li>"10% off after five visits"</li>
+    <li>"Free pastry after spending $50"</li>
+    <li>"Double points on Mondays"</li>
+  </ul>
+
+  <p>The LLM helps the students write the Python code or spreadsheet formulas for the calculator. Once built, the calculator works the same way each time. The user enters assumptions such as average order value, gross margin, expected redemption rate, and number of repeat visits. The calculator then estimates the cost and possible revenue impact of each offer.</p>
+
+  <p>In this case, the LLM is helping build a tool. The final output is reusable software. The LLM is not making any business judgment; it helped create a structured system that students and managers can use repeatedly.</p>
+
+  <p><strong>2. LLM as thinker: interpreting customer comments and recommending options</strong></p>
+
+  <p>Next, the team uses the LLM to analyze open-ended customer survey comments such as:</p>
+
+  <ul>
+    <li>"I like the coffee, but the rewards take too long to earn."</li>
+    <li>"I would come more often if there were student discounts."</li>
+    <li>"The pastries are good, but I usually only buy coffee."</li>
+    <li>"Mondays are slow, but I would stop by if there were a deal."</li>
+  </ul>
+
+  <p>Here, the LLM is not just helping create code. It is performing language-heavy business work directly. The students ask it to identify themes, summarize customer frustrations, compare loyalty ideas, and draft a recommendation.</p>
+
+  <p>For example, the LLM might conclude:</p>
+
+  <blockquote>Customers want rewards that feel achievable, but the shop needs to protect margins. A good option may be a points-based program with a small Monday bonus, because it encourages visits during a slower day without discounting every transaction.</blockquote>
+
+  <p>In this case, the LLM is acting as a thinking step inside the workflow. It is interpreting ambiguous language, connecting evidence to business goals, and helping draft a recommendation.</p>
+</div>
+
+<p>Many useful workflows
+combine both modes: the LLM may help build a tool, and it may also help process the outputs of the tool and generate a recommendation. Understanding the distinction between these two types of LLM functions is important because it helps determine where to place human checkpoints in an AI-assisted workflow. When LLMs act as a builder,
+  the tools it produces should generate the exact same output as designed, every time. Therefore, once the initial debugging is done, these tools and their outputs only need to be
+  checked if initial assumptions change (e.g., the formulas behind the calculator change). By contrast, LLM as thinker creates probablistic output, which could be different every time. These outputs are more akin to judgement and hence involve much closer
+  attention from human supervisors before passing them on to the next step. 
+</p>
+
+<h2>Exercise: Builder or thinker?</h2>
+
+<p>For each task below, decide whether the LLM is being used primarily
+as a <em>builder</em> or as a <em>thinker</em>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>LLM as builder or thinker?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Generate a Python script that cleans a CSV file and creates a summary table.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Summarize open-ended customer feedback into three recurring themes.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Create a calculator that estimates break-even sales volume.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Draft a recommendation memo based on interview notes.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Build a dashboard that tracks weekly sales by region.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Compare two pricing strategies and explain the tradeoffs.</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 
 
@@ -109,7 +232,7 @@ section explaining the two biggest risks and how to reduce them.</code></pre>
 
       <a class="next-cta" href="/course/01-talking-to-ai/case-study.html">
         <div>
-          <div class="next-cta-label">Next · Page 4 of 5</div>
+          <div class="next-cta-label">Next · Page 4 of 4</div>
           <div class="next-cta-title">Case study</div>
         </div>
         <div class="next-cta-arrow">→</div>

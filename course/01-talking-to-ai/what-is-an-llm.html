@@ -27,10 +27,9 @@
       <ol>
         <li><a href="/course/01-talking-to-ai/">Overview</a></li>
         <li><a href="/course/01-talking-to-ai/what-is-an-llm.html"><span class="module-num">1.</span>What is an LLM?</a></li>
-        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Working with AI</a></li>
-        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>Modes of collaboration</a></li>
+        <li><a href="/course/01-talking-to-ai/working-with-ai.html"><span class="module-num">2.</span>Prompting as context design</a></li>
+        <li><a href="/course/01-talking-to-ai/modes-of-collaboration.html"><span class="module-num">3.</span>From prompt to output</a></li>
         <li><a href="/course/01-talking-to-ai/case-study.html"><span class="module-num">4.</span>Case study: Customer Segmentation</a></li>
-        <li><a href="/course/01-talking-to-ai/case-study-investment-memo.html"><span class="module-num">5.</span>Case study: Investment Memo</a></li>
       </ol>
       <h4>All modules</h4>
       <ol>
@@ -49,7 +48,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 1 · Page 1 of 5 · 15 minutes</span>
+        <span class="eyebrow">Module 1 · Page 1 of 4 · 15 minutes</span>
         <h1>What is an LLM?</h1>
        <p class="lede">This page introduces large language models, the
 technology at the center of this course. It explains why LLMs change
@@ -107,13 +106,19 @@ communication.</p>
 </div>
 
 <h2>LLM Capabilities</h2>
-<p>Training a sufficiently capable model on a sufficiently broad corpus
-can produce <em>emergent capabilities</em>: useful behaviors that were
+<p>
+  For many years, language models were mostly experienced as background technologies:
+  autocomplete, search suggestions, translation, grammar correction, and text classification.
+  They were useful, but they did not usually feel like flexible business collaborators.
+  That changed quickly in the early 2020s. In 2022, ChatGPT made instruction-following
+  LLMs visible to a broad public audience. In 2023, GPT-4 showed that these systems
+  could perform more complex work across writing, coding, analysis, and professional-style tasks.
+</p>
+
+<p>As models became larger, were trained on broader datasets, and were further adapted through instruction tuning and human feedback, they began to produce <em>emergent capabilities</em>: useful behaviors that were
 not explicitly programmed into the model or directly targeted by the
 training objective. As a result, modern LLMs are no longer just
-conversation partners. They can follow instructions, learn from
-examples, reason through multi-step problems, generate code, use tools,
-and transform information from one format to another.</p>
+conversation partners. Some of their emergent capabilities are listed below.</p>
 
       <table>
   <thead>
@@ -158,46 +163,11 @@ and transform information from one format to another.</p>
 </table>
 
 
-<h2>Two ways LLMs support business work</h2>
-
-<p>In this course, students use LLMs in two related but different
-ways. Sometimes an LLM helps create traditional software: scripts,
-dashboards, calculators, forms, and workflows that run the same way
-each time. Other times, an LLM performs work inside the workflow:
-interpreting language, summarizing evidence, comparing options,
-drafting recommendations, and reasoning through ambiguity.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Use of LLMs</th>
-      <th>What the LLM does</th>
-      <th>Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>LLM as builder</strong></td>
-      <td>Creates reusable software or workflows.</td>
-      <td>Python scripts, dashboards, calculators, vendor scoring tools, data-cleaning workflows.</td>
-    </tr>
-    <tr>
-      <td><strong>LLM as thinker</strong></td>
-      <td>Performs language-heavy or judgment-heavy work directly.</td>
-      <td>Customer feedback themes, board memos, competitor comparisons, pricing options, interview synthesis.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The design question is not whether to use an LLM. The question is
-<em>how</em> to use it. Sometimes the LLM helps build the system.
-Other times, the LLM is one step inside the system.</p>
 
 
 
-      <h2>Exercises</h2>
 
-<h3>Exercise 1: Same message, different tones</h3>
+<h2>Exercise: Same message, different tones</h2>
 
 <p>Open an LLM such as ChatGPT, Claude, or Gemini. Ask it to write an
 email for the scenario below in three different tones.</p>
@@ -219,54 +189,12 @@ Write this email in a concise executive tone.</code></pre>
 for differences in word choice, sentence length, directness,
 politeness, and implied relationship with the recipient.</p>
 
-<h3>Exercise 2: Builder or thinker?</h3>
 
-<p>For each task below, decide whether the LLM is being used primarily
-as a <em>builder</em> or as a <em>thinker</em>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Task</th>
-      <th>LLM as builder or thinker?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Generate a Python script that cleans a CSV file and creates a summary table.</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Summarize open-ended customer feedback into three recurring themes.</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Create a calculator that estimates break-even sales volume.</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Draft a recommendation memo based on interview notes.</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Build a dashboard that tracks weekly sales by region.</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Compare two pricing strategies and explain the tradeoffs.</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>There is not always a single correct answer. Many useful workflows
-combine both modes: the LLM may help build a tool, and the tool may
-then use the LLM to interpret language or generate a recommendation.</p>
 
       <a class="next-cta" href="/course/01-talking-to-ai/working-with-ai.html">
         <div>
           <div class="next-cta-label">Next · Page 2 of 4</div>
-          <div class="next-cta-title">Working with AI</div>
+          <div class="next-cta-title">Prompting as context design</div>
         </div>
         <div class="next-cta-arrow">→</div>
       </a>
