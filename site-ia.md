@@ -32,9 +32,10 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │
 ├── /course                        Course landing (syllabus, prerequisites, time estimates) ✅
 │   ├── /course/01-talking-to-ai                                                           ✅
-│   │   ├── /course/01-talking-to-ai/what-is-vibecoding                                   ✅
-│   │   ├── /course/01-talking-to-ai/prompting-basics                                     ✅
-│   │   └── /course/01-talking-to-ai/exercises                                            ✅
+│   │   ├── /course/01-talking-to-ai/what-is-an-llm                                       ✅
+│   │   ├── /course/01-talking-to-ai/working-with-ai                                      ✅
+│   │   ├── /course/01-talking-to-ai/modes-of-collaboration                               ✅
+│   │   └── /course/01-talking-to-ai/case-study                                           ✅
 │   │
 │   ├── /course/02-chat-to-agent                                                           🚧 index only
 │   ├── /course/03-setup                                                                   🚧 index only
@@ -59,7 +60,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /cases/finance/model-automation           (fully written)                     ✅
 │   │   │   ├── trial_balance.csv  (sample data)
 │   │   │   ├── account_mapping.csv  (sample data)
-│   │   │   └── model.xlsx  (sample data)
+│   │   │   ├── model_2026-03.xlsx  (sample data)
+│   │   │   └── summary_2026-04.xlsx  (sample data)
 │   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
 │   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
 │   ├── /cases/operations                                                                  🚧 index only
@@ -70,10 +72,12 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /cases/sales/crm-enrichment                                                   ❌ coming soon
 │   │   ├── /cases/sales/outreach-personalization                                         ❌ coming soon
 │   │   └── /cases/sales/support-triage                                                   ❌ coming soon
-│   └── /cases/founder                                                                     🚧 index only
-│       ├── /cases/founder/landing-page-mvp                                               ❌ coming soon
-│       ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
-│       └── /cases/founder/prototype-app                                                  ❌ coming soon
+│   ├── /cases/founder                                                                     🚧 index only
+│   │   ├── /cases/founder/landing-page-mvp                                               ❌ coming soon
+│   │   ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
+│   │   └── /cases/founder/prototype-app                                                  ❌ coming soon
+│   └── /cases/people                                                                      ✅
+│       └── /cases/people/event-recap-generator      (fully written)                      ✅
 │
 ├── /reference                     Lookup content: glossary, cheat sheets, how-tos        🚧 stub
 ├── /pitfalls                      Common mistakes log (5 starter entries)                ✅
@@ -111,7 +115,7 @@ Every **use case page** follows a parallel structure so students can compare acr
 Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
 
 ### Module 1 — Talking to AI (`/course/01-talking-to-ai`)
-Fully written. Sub-pages: what-is-vibecoding, prompting-basics, exercises. Ends with a small artifact exercise (clean and summarize a messy CSV).
+Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, case-study. Ends with a small artifact exercise (clean and summarize a messy CSV).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
 Index written. Sub-pages (agent-mental-model, worked-example, when-an-agent-helps) planned but not yet built.
@@ -185,18 +189,19 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-05-20)
+## 9. Build status (as of 2026-08-12)
 
 | Section | Status |
 |---|---|
 | Home `/` | ✅ Complete |
 | Start `/start` | ✅ Index written; demo and vignette sub-pages not yet built |
 | Course index `/course` | ✅ Complete |
-| Module 1 `/course/01-talking-to-ai` | ✅ Fully written (3 sub-pages + index) |
+| Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Modules 2–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
+| People cases | 🚧 1 of 3 cases fully written (`event-recap-generator`) |
 | Operations, Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
 | Pitfalls `/pitfalls` | ✅ Live with 5 starter entries |
