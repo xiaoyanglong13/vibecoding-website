@@ -57,15 +57,15 @@
 
       <h2>The intellectual evolution from chat to agent</h2>
 
-<p> Let us briefly review the intellectual history of how LLM technology evolved over time. <p>
+<p> Let us briefly review the intellectual history of how LLM technology evolved over time. </p>
 
- <h3>1. LLMs begin as “text generators”</h3>
+ <h3 style="color: var(--color-accent);">LLMs begin as “text generators”</h3>
 
 <p>Remember that early modern LLM use was essentially: <strong>Prompt &rarr; LLM &rarr; Response</strong>
   The model could explain, summarize, draft, and answer questions, but it could not independently interact with the outside world.
 </p>
 
-<h3>2. Reasoning improves</h3>
+<h3 style="color: var(--color-accent);">Reasoning improves</h3>
 
 <p>
   Researchers found that models often performed better on complex problems when they decomposed the problem into intermediate reasoning steps.
@@ -79,7 +79,7 @@
   But reasoning alone has a limitation: the model is still reasoning only from what it already knows. It cannot check a database, search the web, send an email, or inspect a live system.
 </p>
 
-<h3>3. Give the LLM tools</h3>
+<h3 style="color: var(--color-accent);">Give the LLM tools</h3>
 
 <p>The next important idea was to let the model call external functions:</p>
 
@@ -92,7 +92,7 @@
   But this raises a new question: <em>How does the model decide when to think versus when to use a tool?</em>
 </p>
 
-<h3>4. ReAct: Reason + Act</h3>
+<h3 style="color: var(--color-accent);">ReAct: Reason + Act</h3>
 
 <p>
   The 2022 <strong>ReAct</strong> paper, coauthored by researchers from Princeton University and Google Research, provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately.
@@ -123,7 +123,7 @@
   The important innovation is the <strong>feedback loop</strong>. An action produces new information, and the model uses that information to decide what to do next.
 </p>
 
-<h3>5. ReAct becomes the basic architecture of an agent</h3>
+<h3 style="color: var(--color-accent);">ReAct becomes the basic architecture of an agent</h3>
 
 <p>
   Once you have this loop, you are very close to what we now call an <strong>agent</strong>:
@@ -154,6 +154,8 @@
          alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;"
          style="display: block; width: 100%; height: auto;">
   </figure>
+
+<h2>A comparison of chat versus agent</h2>
 
 <p>Compressed into one comparison, the shift looks like this:</p>
 
@@ -198,6 +200,36 @@
     </tr>
   </tbody>
 </table>
+
+<h2>Agentic AI in modern products</h2>
+
+<p>
+  Modern AI products increasingly blur the line between <strong>chat</strong> and
+  <strong>agents</strong>. A chat interface may look like a simple
+  question-and-answer system, but behind the scenes the AI may be able to search
+  the web, read files, run code, call external tools, and complete multi-step
+  tasks. As a result, the same interface can support both ordinary chat
+  interactions and more agentic behavior. The difference is therefore becoming
+  less about what the product looks like and more about how much
+  <strong>autonomy</strong> the AI has. When the user directs each step, the
+  interaction is closer to traditional chat; when the AI can decide which tools
+  to use, what intermediate steps to take, and how to continue toward a broader
+  goal, the interaction becomes increasingly agentic.
+</p>
+
+<p>
+  This does not mean that effective agent design is simply a matter of giving AI
+  a vague, high-level goal and letting it figure everything out. Agents still
+  perform best when they are given clear objectives, relevant context,
+  appropriate constraints, and well-defined access to the information and tools
+  they need. As we will discuss in later sessions, a crucial part of designing
+  reliable agents is often <strong>breaking a larger goal into smaller,
+  achievable pieces</strong> and specifying how those pieces fit together. In
+  other words, greater autonomy does not eliminate the need for thoughtful human
+  design. It may free humans from providing detailed, step-by-step instructions,
+  but it places greater emphasis on clearly specifying objectives, requirements,
+  constraints, and context.
+</p>
 
 
       <h2>Exercise: Chat or agent?</h2>
