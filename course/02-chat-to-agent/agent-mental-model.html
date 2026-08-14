@@ -56,19 +56,35 @@
       </div>
 
       <h2>What changes when the AI can act</h2>
-      <p>Every interaction with an LLM so far in this course has followed the
-      same shape: you write a message, the model reads it, and it writes a
-      reply. Nothing happens between your turn and its turn except text
-      generation. That is <em>chat</em>.</p>
+ <p>
+    Remember that early large language models were primarily used as <strong>text generators</strong>:
+    a user provided a prompt, and the model produced a response. As models became more
+    capable, researchers found that they could often solve complex problems more effectively
+    by breaking them into intermediate reasoning steps. But reasoning alone had an important
+    limitation: the model could only work with the information available in its prompt and
+    internal knowledge.
+  </p>
 
-      <p>An <em>agent</em> is the same underlying model, given three
-      additional things: access to files, a set of tools it can call
-      (running code, searching the web, reading a spreadsheet), and
-      permission to repeat this cycle — read, act, check, act again — on its
-      own until the task looks done or it needs your input. The model does
-      not change. What changes is what it is allowed to touch and how many
-      times it is allowed to go around the loop before handing control back
-      to you.</p>
+  <p>
+    A major next step was to give LLMs access to <strong>tools</strong>, such as search engines,
+    calculators, databases, and software functions. This allowed models not only to reason
+    about a task, but also to take actions and obtain new information. In 2022, researches at Princeton University and Google introduced the influential
+    <strong>ReAct</strong> approach—short for <em>reasoning and acting</em>. ReAct formalized a simple
+    but powerful pattern: <strong>reason &rarr; act &rarr; observe &rarr; reason again</strong>.
+    Rather than producing an answer immediately, the model can decide on an action, inspect
+    the result, and use that new information to determine what to do next.
+  </p>
+
+  <p>
+    This iterative loop provides much of the conceptual foundation for modern
+    <strong>AI agents</strong>. Instead of requiring a human to specify every individual step,
+    an agent can be given a broader goal and determine a sequence of actions needed to pursue it.
+    Modern agents extend this basic idea with features such as planning, memory, multiple tools,
+    permissions, and guardrails. A useful way to think about the progression is:
+    <strong>LLM &rarr; reasoning &rarr; tool use &rarr; reason–act–observe loops &rarr; agents</strong>.
+    The key shift is from AI that primarily <strong>responds to instructions</strong> to AI that
+    can increasingly <strong>decide and execute the next steps toward a goal</strong>.
+  </p>
 
       <h2>A useful analogy: the junior analyst with desktop access</h2>
       <p>Think of plain chat as an analyst you can only talk to through a
