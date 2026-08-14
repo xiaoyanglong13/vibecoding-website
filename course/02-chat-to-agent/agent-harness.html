@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The agent harness · Module 2 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">
+        Vibecoding <span>for Business School Students</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+
+    <aside class="course-sidebar">
+      <h4>Module 2 · From prompt to agent</h4>
+      <ol>
+        <li>
+          <a href="/course/02-chat-to-agent/">Overview</a>
+        </li>
+        <li>
+          <a href="/course/02-chat-to-agent/agent-mental-model.html">
+            <span class="module-num">1.</span>The agent mental model
+          </a>
+        </li>
+        <li>
+          <a href="/course/02-chat-to-agent/what-agents-unlock.html">
+            <span class="module-num">2.</span>What agents unlock
+          </a>
+        </li>
+        <li>
+          <a href="/course/02-chat-to-agent/agent-harness.html">
+            <span class="module-num">3.</span>The agent harness
+          </a>
+        </li>
+      </ol>
+
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+
+      <div class="module-header">
+        <span class="eyebrow">Module 2 · Page 3 of 3 · 10 minutes</span>
+        <h1>The agent harness</h1>
+
+        <p class="lede">
+          So far, we have seen that agents can reason about a goal, use tools,
+          and carry out multiple steps on our behalf. But an AI model does not
+          automatically know what information it should use, what tools it can
+          access, or what rules it should follow. These things have to be provided
+          as part of the agent's <strong>working environment</strong>. This
+          environment is often called the <strong>agent harness</strong>.
+        </p>
+      </div>
+
+
+      <h2>Giving the agent what it needs to work</h2>
+
+      <p>
+        Earlier, we described an agent using a simple loop:
+        <strong>reason &rarr; act &rarr; observe &rarr; reason again</strong>.
+        For that loop to work, the AI needs more than a model. It needs to know
+        what it is trying to accomplish, what information it can use, what tools
+        are available, and what rules or limits it should follow.
+      </p>
+
+      <p>
+        Together, these elements form what is often called the
+        <strong>agent harness</strong>. You can think of the harness as the
+        <strong>working environment around the AI</strong>.
+      </p>
+
+      <blockquote>
+        <p>
+          <strong>Model = the intelligence</strong><br>
+          <strong>Harness = the instructions, information, tools, and boundaries
+          that let the model do a particular job</strong>
+        </p>
+      </blockquote>
+
+
+      <h2>What goes into an agent's harness?</h2>
+
+      <p>
+        The exact setup depends on the task, but most agent harnesses provide
+        four basic things:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Part of the harness</th>
+            <th>What it provides</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Instructions</strong></td>
+            <td>
+              What the agent is supposed to accomplish and how it should
+              approach the task
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Information and context</strong></td>
+            <td>
+              Files, policies, examples, business rules, or other information
+              relevant to the task
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Tools</strong></td>
+            <td>
+              Access to spreadsheets, Python, web search, databases, email,
+              or other applications
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Boundaries</strong></td>
+            <td>
+              Rules about what the agent may access, change, or do without
+              human approval
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Some of these pieces can be very simple. Instructions might be written
+        in ordinary language. Context might consist of a Word document explaining
+        company policy, a spreadsheet containing sales data, or several examples
+        of what a good output should look like. Other parts of the harness give
+        the agent access to tools, such as the ability to run calculations or
+        search a database.
+      </p>
+
+
+      <div class="example">
+        <p><strong>Example: Setting up a sales-analysis agent</strong></p>
+
+        <p>
+          Consider again the sales-analysis example from the previous page.
+          Suppose an intern wants an agent to analyze historical sales, identify
+          important patterns, forecast the next six months, and create figures.
+        </p>
+
+        <p>
+          Giving the agent a powerful AI model is not enough. The agent also needs
+          the right working environment for the task.
+        </p>
+
+        <p>
+          Its harness might include:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Instructions:</strong> Analyze sales by product, identify
+            important patterns, forecast the next six months, and explain unusual
+            results.
+          </li>
+          <li>
+            <strong>Context:</strong> Historical sales files, definitions of
+            important variables, and notes about promotions, holidays, or stockouts.
+          </li>
+          <li>
+            <strong>Tools:</strong> Access to the sales files, Python for analysis
+            and forecasting, and a tool for creating figures.
+          </li>
+          <li>
+            <strong>Boundaries:</strong> Do not modify the original data, clearly
+            state important assumptions, and ask for approval before sending results
+            to anyone.
+          </li>
+        </ul>
+
+        <p>
+          Together, these elements shape what the agent knows, what it can do,
+          and how it should behave.
+        </p>
+      </div>
+
+
+      <h2>How the harness supports the agent loop</h2>
+
+      <p>
+        Once the agent has the right instructions, information, tools, and
+        boundaries, it can begin working through the task:
+      </p>
+
+      <p>
+        <strong>Human provides a goal</strong><br>
+        &darr;<br>
+        <strong>Agent decides what to do next</strong><br>
+        &darr;<br>
+        <strong>Agent uses an available tool</strong><br>
+        &darr;<br>
+        <strong>Agent observes the result</strong><br>
+        &darr;<br>
+        <strong>Agent decides what to do next</strong><br>
+        &darr;<br>
+        repeat as needed
+      </p>
+
+      <p>
+        For example, the agent might first inspect the sales file. After seeing
+        the data, it may decide that several columns need to be cleaned. It can
+        then use Python to clean the data, inspect the result, move on to
+        forecasting, compare different approaches, and finally create figures.
+      </p>
+
+      <p>
+        The harness makes this possible by giving the agent the resources it
+        needs at each step. In this sense, the harness turns the conceptual
+        <strong>reason &rarr; act &rarr; observe</strong> loop into a working
+        environment for accomplishing a real task.
+      </p>
+
+
+      <h2>Where is the harness?</h2>
+
+      <p>
+        You may never see a harness as a single object or screen. It is better
+        to think of it as the collection of things surrounding the AI that make
+        the agent useful for a particular job.
+      </p>
+
+      <p>
+        Some parts may simply be files or written instructions. Other parts
+        may be settings that give the agent access to particular tools or
+        applications. For example, a company might give an agent access to
+        certain folders, spreadsheets, databases, or email accounts while
+        preventing it from accessing others.
+      </p>
+
+      <p>
+        <strong>Agent</strong><br>
+        <span style="font-size: 0.95em;">
+          model + working environment
+        </span><br>
+        &darr;<br>
+        <strong>Instructions &middot; Context &middot; Tools &middot; Boundaries</strong>
+      </p>
+
+
+      <h2>The same model can become very different agents</h2>
+
+      <p>
+        One important implication is that the AI model is only one part of
+        agent design. The same underlying model can perform very different jobs
+        depending on the harness around it.
+      </p>
+
+      <p>
+        A research agent might receive instructions about how to evaluate
+        sources and have access to web search and documents. A financial-analysis
+        agent might instead receive company reporting rules and have access to
+        spreadsheets, financial data, and Python. A customer-service agent might
+        be given company policies and access to customer records and an
+        order-management system.
+      </p>
+
+      <p>
+        The underlying model could be the same in each case. What changes is
+        <strong>the context it receives, the tools it can use, the rules it
+        follows, and the actions it is allowed to take</strong>.
+      </p>
+
+
+      <h2>Why harness design matters</h2>
+
+      <p>
+        This leads to an important lesson for anyone building with agents:
+        <strong>choosing a powerful AI model is only part of the design
+        problem</strong>. You also have to design the environment in which
+        that model will work.
+      </p>
+
+      <p>
+        For a business manager, this means answering questions such as:
+        What information should the agent receive? What examples or policies
+        should it follow? What tools should it be able to use? What actions
+        should require human approval? What should it do when it is uncertain?
+      </p>
+
+      <p>
+        These choices determine not only what the agent can accomplish, but also
+        how useful, reliable, and appropriate it will be for the business task.
+      </p>
+
+
+      <div style="
+        margin: 1.5em 0;
+        padding: 1.1em 1.25em;
+        border-left: 4px solid var(--color-accent);
+        background: var(--color-surface, #f7f7f7);
+      ">
+        <strong>Key takeaway:</strong><br>
+        The model provides the intelligence. The harness provides the
+        <strong>instructions, context, tools, and boundaries</strong> that allow
+        that intelligence to perform a particular job.
+      </div>
+
+
+      <h2>Exercise: Design the working environment</h2>
+
+      <p>
+        Return to the business task you considered on the previous page.
+        Suppose you wanted an agent to perform that task. What would you need
+        to give it?
+      </p>
+
+      <ol>
+        <li>What instructions would you give the agent?</li>
+        <li>What information or context would it need?</li>
+        <li>What tools would it need access to?</li>
+        <li>What rules or boundaries should it follow?</li>
+        <li>Which actions should still require human approval?</li>
+      </ol>
+
+      <p>
+        You do not need to know how to technically implement these pieces yet.
+        The goal is to begin thinking of an agent not as an AI model alone,
+        but as a <strong>model placed inside a deliberately designed working
+        environment</strong>.
+      </p>
+
+
+      <a class="next-cta" href="/course/03-setup/">
+        <div>
+          <div class="next-cta-label">Next · Module 3</div>
+          <div class="next-cta-title">Setting up your workspace</div>
+        </div>
+        <div class="next-cta-arrow">&rarr;</div>
+      </a>
+
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 ·
+    <a href="/about/">About this site</a>
+  </footer>
+
+  <script src="/assets/script.js"></script>
+</body>
+</html>
