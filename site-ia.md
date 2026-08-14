@@ -37,7 +37,10 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/01-talking-to-ai/modes-of-collaboration                               ✅
 │   │   └── /course/01-talking-to-ai/case-study                                           ✅
 │   │
-│   ├── /course/02-chat-to-agent                                                           🚧 index only
+│   ├── /course/02-chat-to-agent                                                           ✅
+│   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
+│   │   ├── /course/02-chat-to-agent/worked-example                                        ✅
+│   │   └── /course/02-chat-to-agent/when-an-agent-helps                                   ✅
 │   ├── /course/03-setup                                                                   🚧 index only
 │   │   ├── /course/03-setup/install-claude-code                                          ❌ planned
 │   │   ├── /course/03-setup/first-run                                                    ❌ planned
@@ -118,7 +121,7 @@ Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned
 Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, case-study. Ends with a small artifact exercise (clean and summarize a messy CSV).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
-Index written. Sub-pages (agent-mental-model, worked-example, when-an-agent-helps) planned but not yet built.
+Fully written. Sub-pages: agent-mental-model, worked-example, when-an-agent-helps.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
 Index written. Sub-pages (install-claude-code, first-run, appendix-opencode, which-model) planned but not yet built.
@@ -189,7 +192,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-12)
+## 9. Build status (as of 2026-08-14)
 
 | Section | Status |
 |---|---|
@@ -197,7 +200,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Start `/start` | ✅ Index written; demo and vignette sub-pages not yet built |
 | Course index `/course` | ✅ Complete |
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
-| Modules 2–7, 9 | 🚧 Index pages written; sub-pages not yet built |
+| Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
+| Modules 3–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
@@ -208,7 +212,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
-1. Sub-pages for Module 2 and Module 3 (the setup path — highest student need).
+1. Sub-pages for Module 3 (the setup path — highest remaining student need).
 2. One additional case per function category to demonstrate breadth.
 3. Module 5 sub-pages (trust/evaluation — do not pilot without these).
 4. Fill in `/reference` glossary and cheat sheets.

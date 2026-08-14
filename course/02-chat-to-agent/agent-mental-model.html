@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The agent mental model · Module 2 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 2 · From prompt to agent</h4>
+      <ol>
+        <li><a href="/course/02-chat-to-agent/">Overview</a></li>
+        <li><a href="/course/02-chat-to-agent/agent-mental-model.html"><span class="module-num">1.</span>The agent mental model</a></li>
+        <li><a href="/course/02-chat-to-agent/worked-example.html"><span class="module-num">2.</span>A fully-worked example</a></li>
+        <li><a href="/course/02-chat-to-agent/when-an-agent-helps.html"><span class="module-num">3.</span>When agents help</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 2 · Page 1 of 3 · 15 minutes</span>
+        <h1>The agent mental model</h1>
+        <p class="lede">A chatbot answers what you type into it. An agent can
+        look at your files, run commands, and keep working through several
+        steps toward a goal before reporting back. This page builds the
+        vocabulary you will use for the rest of the course.</p>
+      </div>
+
+      <h2>What changes when the AI can act</h2>
+      <p>Every interaction with an LLM so far in this course has followed the
+      same shape: you write a message, the model reads it, and it writes a
+      reply. Nothing happens between your turn and its turn except text
+      generation. That is <em>chat</em>.</p>
+
+      <p>An <em>agent</em> is the same underlying model, given three
+      additional things: access to files, a set of tools it can call
+      (running code, searching the web, reading a spreadsheet), and
+      permission to repeat this cycle — read, act, check, act again — on its
+      own until the task looks done or it needs your input. The model does
+      not change. What changes is what it is allowed to touch and how many
+      times it is allowed to go around the loop before handing control back
+      to you.</p>
+
+      <h2>A useful analogy: the junior analyst with desktop access</h2>
+      <p>Think of plain chat as an analyst you can only talk to through a
+      closed door. You describe the task out loud, they think for a moment,
+      and they shout an answer back — they cannot open your files, run a
+      calculation, or double-check a number against the source data. An
+      agent is the same analyst let into the room, with your laptop in front
+      of them. They can open the spreadsheet, write and run a script,
+      notice that a column does not add up, fix it, and only then come back
+      to you with a finished summary. The judgment is the same; the ability
+      to act on it is new.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Plain chat</th>
+            <th>Agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Reads your files</strong></td>
+            <td>No — only what you paste into the message</td>
+            <td>Yes — can open, search, and read files directly</td>
+          </tr>
+          <tr>
+            <td><strong>Runs code or commands</strong></td>
+            <td>No — can only describe what code would do</td>
+            <td>Yes — executes code and reads the actual output</td>
+          </tr>
+          <tr>
+            <td><strong>Works in multiple steps</strong></td>
+            <td>No — one message in, one message out</td>
+            <td>Yes — repeats read/act/check until the task is done</td>
+          </tr>
+          <tr>
+            <td><strong>Checks its own work</strong></td>
+            <td>No — cannot verify a claim against real data</td>
+            <td>Yes — can re-open a file or re-run code to confirm a result</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>The same request, two ways</h2>
+      <div class="example">
+        <p>Suppose you have a messy sales CSV and ask for a one-paragraph
+        summary of this quarter's performance.</p>
+
+        <p><strong>In chat</strong>, you would have to paste the numbers
+        yourself, and the model would summarize whatever you pasted — with
+        no way to check it against the full file:</p>
+        <pre><code>You: Here are our Q2 numbers: [pasted table]. Summarize in one paragraph.
+Model: Q2 revenue was $412K, up 9% from Q1, driven mainly by the
+Northeast region...</code></pre>
+
+        <p><strong>As an agent</strong>, you can simply point at the file.
+        It opens it, computes the totals itself, and can catch problems you
+        did not paste in — like a duplicate row inflating the total:</p>
+        <pre><code>You: Summarize this quarter's sales performance from sales_q2.csv.
+Agent: [opens sales_q2.csv]
+       [notices row 214 is a duplicate of row 213, excludes it]
+       [computes region totals and quarter-over-quarter change]
+       Q2 revenue was $398K, up 6% from Q1 after removing one
+       duplicate entry (row 214). Growth was concentrated in the
+       Northeast region (+18%)...</code></pre>
+      </div>
+
+      <h2>Exercise: Chat or agent?</h2>
+      <p>For each task below, decide whether it describes a plain chat
+      interaction or an agent interaction.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Chat or agent?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You paste three paragraphs and ask for a shorter version.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>You ask it to open every invoice PDF in a folder and total the amounts.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>You ask it to explain what a P/E ratio means.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>You ask it to find and fix a broken formula in a spreadsheet, then confirm the fix by recalculating.</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Check your work:</strong> rows 1 and 3 need nothing beyond
+      the text in the message, so plain chat is enough. Rows 2 and 4
+      require opening files and verifying a result against them — that
+      requires an agent.</p>
+
+      <a class="next-cta" href="/course/02-chat-to-agent/worked-example.html">
+        <div>
+          <div class="next-cta-label">Next · Page 2 of 3</div>
+          <div class="next-cta-title">A fully-worked example</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
