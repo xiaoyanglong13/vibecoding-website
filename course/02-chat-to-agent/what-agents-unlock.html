@@ -47,143 +47,239 @@
     <article>
       <div class="module-header">
         <span class="eyebrow">Module 2 · Page 2 of 2 · 20 minutes</span>
-        <h1>What agents unlock</h1>
-        <p class="lede">An agent is not just a faster chatbot. It changes
-        what kind of work you can hand off, and what your own job becomes
-        once you do. This page introduces vibecoding: the name for that
-        shift, where it came from, and how to do it well.</p>
+       <h1>What agents unlock</h1>
+        <p class="lede">
+          Agents change how humans work with computers. Instead of translating every
+          step of a business task into code or software commands, we can increasingly
+          describe what we want to accomplish in natural language and let an agent
+          carry out much of the technical work.
+        </p>
       </div>
 
-      <h2>What vibecoding is</h2>
-      <p><em>Vibecoding</em> is building software by describing what you
-      want and letting an AI agent write and run the code, rather than
-      writing the code yourself line by line. The term was coined by
-      Andrej Karpathy, a computer scientist and former Tesla and OpenAI
-      researcher, in a February 2025 post where he described giving in to
-      the flow of an agent's suggestions, "forgetting that the code even
-      exists," and focusing on describing problems instead of typing
-      syntax. The name stuck, and it spread quickly beyond professional
-      programmers to exactly the audience this course is for: people who
-      have a business problem worth solving and no formal training in
-      software engineering.</p>
+      <h2>From giving computers instructions to giving them objectives</h2>
 
-      <p>Vibecoding is possible because of the same shift Module 2 has
-      been building toward. A chat model can describe code; an agent can
-      write it to a file, run it, read the error message when it breaks,
-      and try again — the read/act/check loop from the previous page,
-      applied specifically to building software. That loop is what makes
-      it realistic to build a working tool without knowing how to code
-      yourself: you are not reading documentation and debugging syntax,
-      you are describing outcomes and reviewing results.</p>
+      <p>
+        For most of the history of computing, humans have had to tell computers
+        <em>how</em> to perform a task. A person first decides on the procedure and
+        then translates that procedure into instructions the computer can execute:
+        formulas in a spreadsheet, commands in a software package, or code written
+        in a programming language such as Python or R.
+      </p>
 
-      <h2>The job changes from implementing to directing</h2>
-      <p>Traditional software development puts most of the effort into
-      <em>implementation</em>: translating a decision that has already
-      been made ("customers should be grouped into three tiers") into
-      precise, syntactically correct code that does exactly that. Getting
-      good at this historically required years of training. Vibecoding
-      moves the effort earlier, into <em>specification</em>: deciding what
-      you actually want, describing it clearly enough that an agent can
-      act on it, and judging whether what comes back is right. The coding
-      itself is delegated.</p>
+      <p>
+        Agents change this relationship. Because an agent can reason about a goal,
+        use tools, observe the results, and decide what to do next, the human can
+        increasingly focus on describing <em>what should be accomplished</em> rather
+        than specifying every technical step required to accomplish it.
+      </p>
 
-      <div class="example">
-        <p>Suppose you want a tool that flags customers likely to churn.</p>
+      <h2>Example: forecasting product sales</h2>
 
-        <p><strong>The old job</strong> was mostly implementation: learn a
-        programming language, learn how to connect to your customer
-        database, learn a scoring technique, write and debug several
-        hundred lines of code to tie it together.</p>
+      <p>
+        Imagine that an intern is asked to analyze historical sales for a retailer's
+        products and produce forecasts for the next several months.
+      </p>
 
-        <p><strong>The vibecoding job</strong> is mostly specification: what
-        counts as "at risk" in your business, which data sources actually
-        contain the signal, what a false positive costs you versus a false
-        negative, and what "done" looks like. You hand that to an agent —
-        <em>"score every customer as high, medium, or low churn risk using
-        login frequency and support ticket volume, and explain each
-        score"</em> — and review what it builds, the same way you would
-        review a first draft from a junior analyst.</p>
-      </div>
+      <h3 style="color: var(--color-accent);">The traditional workflow</h3>
 
-      <p>The bar for what counts as skill moves with it. Being able to
-      write a for-loop matters less. Being able to state a business
-      requirement precisely, catch a wrong assumption in the output, and
-      know when a result is too good to be true — those matter more, not
-      less, than they did before.</p>
+      <p>
+        Traditionally, the intern would have to perform the technical workflow
+        themselves. They might begin by opening the data and figuring out what each
+        row and column represents. They would then identify missing values or data
+        errors, clean and transform the data, choose an appropriate forecasting
+        method, calculate forecasts, evaluate the results, and create figures to
+        communicate what they found.
+      </p>
 
-      <h2>Principles for vibecoding well</h2>
+      <p>
+        To make the computer perform these steps, the intern would also need to know
+        how to express them in a form the computer understands. They might write
+        Python or R code, construct formulas and charts in Excel, or learn the
+        commands of a specialized forecasting package. In other words, the intern
+        not only needs to understand the business problem; they also need to
+        translate the solution into detailed technical instructions.
+      </p>
 
-      <h3>Give the agent a harness, not just a prompt</h3>
-      <p>A <em>harness</em> is the software environment an agent runs
-      inside: what files it can see, which tools it is allowed to call, what
-      permissions it has, and what guardrails stop it from doing something
-      destructive. The same underlying model produces very different
-      results depending on its harness — a harness that can only read
-      files is safe but limited; one that can also run code and access the
-      internet is far more capable, but only useful if it also has
-      sensible permissions, so the agent asks before it deletes something
-      or spends money. Module 3 walks through installing and configuring
-      one. For now, the principle is: the harness is part of the design,
-      not an afterthought — a brilliant request into a badly configured
-      harness still produces a bad result.</p>
+      <h3 style="color: var(--color-accent);">The agentic workflow</h3>
 
-      <h3>Specify outcomes, not implementation steps</h3>
-      <p>The most common mistake new vibecoders make is directing the
-      agent the way they would direct a junior employee who cannot be
-      trusted to think: "open this file, then change this cell, then save
-      it as this name." That approach throws away the agent's main
-      advantage. State the outcome instead — "clean this file so every row
-      has a valid date and a positive amount, and tell me what you
-      changed" — and let the agent choose the steps.</p>
+      <p>
+        With an AI agent, the intern can begin at a higher level. For example, they
+        might provide the sales data and say:
+      </p>
 
-      <h3>Review output the way you'd review a report</h3>
-      <p>Vibecoding does not remove the need for judgment; it moves
-      judgment from "is this code correct" to "is this result correct."
-      You are still responsible for the answer, even though you did not
-      write the code that produced it. Module 5 covers this in depth, but
-      the habit starts here: treat every agent output as a first draft
-      from a capable but occasionally overconfident collaborator, not as a
-      finished, trustworthy answer.</p>
+      <blockquote>
+        <p>
+          <strong>Goal:</strong> Analyze historical sales by product, identify
+          important patterns, forecast sales for the next six months, evaluate the
+          forecasts, and create clear figures that I can use in a presentation.
+        </p>
+      </blockquote>
 
-      <h3>Keep changes small and reversible</h3>
-      <p>Because an agent can act quickly across many files at once, a bad
-      instruction can do a lot of damage quickly. Ask for one meaningful
-      change at a time, check the result, and only then ask for the next
-      one — the same discipline a careful analyst uses when editing a
-      shared spreadsheet, rather than rewriting the whole thing in one
-      pass.</p>
+      <p>
+        The agent can then carry out many of the intermediate steps itself. It can
+        inspect the dataset, write and run code to clean the data, select and apply
+        forecasting methods, examine the output, revise an analysis when necessary,
+        and generate figures. Rather than manually programming each operation, the
+        intern supervises a computer that can determine and execute many of the
+        steps needed to reach the objective.
+      </p>
 
-      <h2>Exercise: Implementation or specification?</h2>
-      <p>For each task below, decide whether it is written as an
-      implementation step (telling the agent exactly what to do
-      mechanically) or a specification (describing the outcome you want).</p>
       <table>
         <thead>
           <tr>
-            <th>Instruction</th>
-            <th>Implementation or specification?</th>
+            <th>Traditional approach</th>
+            <th>Agentic approach</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>"Open row 14 and change the value in column C to 400."</td>
-            <td></td>
+            <td>Human inspects the dataset</td>
+            <td>Agent can explore the dataset</td>
           </tr>
           <tr>
-            <td>"Flag any expense line that looks miscategorized, and explain why."</td>
-            <td></td>
+            <td>Human writes formulas or code to clean data</td>
+            <td>Agent can write and run data-cleaning code</td>
           </tr>
           <tr>
-            <td>"Build me a weekly digest of our top 10 accounts by usage, with a one-line summary of why each one moved."</td>
-            <td></td>
+            <td>Human implements forecasting methods</td>
+            <td>Agent can implement and compare forecasting methods</td>
+          </tr>
+          <tr>
+            <td>Human runs each analysis and interprets errors</td>
+            <td>Agent can run analyses, inspect results, and iterate</td>
+          </tr>
+          <tr>
+            <td>Human writes code or uses software to make figures</td>
+            <td>Agent can generate figures from the analysis</td>
           </tr>
         </tbody>
       </table>
-      <p><strong>Check your work:</strong> the first is an implementation
-      step — it tells the agent exactly which cell to touch, leaving no
-      room for judgment. The second and third are specifications — they
-      describe an outcome and leave the agent to decide how to get there,
-      which is the mode vibecoding is meant to run in.</p>
+
+      <h2>The human role shifts rather than disappears</h2>
+
+      <p>
+        The important change is not that the human no longer matters. It is that the
+        human's role moves <strong>up a level</strong>. Instead of spending most of
+        their effort translating each step into computer code, the human can focus
+        more attention on defining the objective, specifying what a good result
+        looks like, providing relevant business context, identifying important
+        constraints, and checking whether the final output makes sense.
+      </p>
+
+      <p>
+        In the forecasting example, the intern still needs to make consequential
+        decisions. What time horizon matters to the business? Should the forecast
+        optimize average accuracy or avoid large errors on high-revenue products?
+        Were promotions or stockouts responsible for unusual historical sales?
+        Which assumptions should be preserved in the forecast? An agent can perform
+        much of the technical work, but these questions require business context,
+        judgment, and oversight.
+      </p>
+
+      <div style="margin: 1.5em 0; padding: 1.1em 1.25em; border-left: 4px solid var(--color-accent); background: var(--color-surface, #f7f7f7);">
+        <strong>The shift:</strong><br>
+        Traditional computing: <strong>Human specifies the procedure &rarr; computer executes it.</strong><br>
+        Agentic computing: <strong>Human specifies the objective and requirements &rarr; agent helps determine and execute the procedure.</strong>
+      </div>
+
+      <h2>From programming languages to natural language</h2>
+
+      <p>
+        This shift also changes how humans communicate with computers. Traditional
+        software requires instructions written in languages designed for computers:
+        Python, R, SQL, spreadsheet formulas, menu commands, and other formal
+        interfaces. With AI agents, <strong>natural language itself becomes an
+        increasingly powerful way to specify work</strong>. A person can describe
+        requirements, provide examples, react to results, and request changes using
+        ordinary language while the agent translates those directions into the code
+        and tool calls required to carry them out.
+      </p>
+
+      <p>
+        This does not make technical knowledge irrelevant. Rather, it changes where
+        expertise is applied. Knowing exactly how to write a forecasting function
+        may become less important for many users, while knowing which forecast is
+        appropriate, what data should be trusted, what assumptions are reasonable,
+        and how to evaluate the result becomes more important.
+      </p>
+
+      <h2>“Vibe coding”</h2>
+
+      <p>
+        In February 2025, AI researcher Andrej Karpathy gave a memorable name to one
+        version of this new way of working: <strong>vibe coding</strong>. Describing
+        his experience building software with an AI coding system, he wrote that
+        there was a new kind of coding in which you could
+        <q>forget that the code even exists</q>. Instead of personally writing and
+        debugging every line, he described telling the AI what he wanted, running
+        what it produced, showing it errors, and continuing the conversation until
+        the software worked.
+      </p>
+
+      <p>
+        The phrase captured a larger change in human&ndash;computer interaction:
+        increasingly, you can describe an <strong>intent</strong> in natural
+        language and allow AI to translate that intent into executable code. The
+        human interacts with the behavior of the system while the agent handles
+        much of the underlying implementation.
+      </p>
+
+      <p>
+        Karpathy's original description was deliberately extreme: he joked about
+        accepting AI-generated code without closely reading it. That may be
+        acceptable for a throwaway experiment, but it is not a good model for
+        consequential business applications. Throughout this course, we will use
+        the broader idea&mdash;building by describing objectives and iterating with
+        AI&mdash;while emphasizing <strong>verification, clear requirements, and
+        human accountability</strong>.
+      </p>
+
+      <p>
+        <small>
+          Source: Andrej Karpathy, X post, February 2, 2025.
+          <a href="https://x.com/karpathy/status/1886192184808149383">View the original post</a>.
+        </small>
+      </p>
+
+      <h2>The broader opportunity</h2>
+
+      <p>
+        This shift matters well beyond software engineering. Many business tasks
+        combine judgment with technical execution: analyzing data, building
+        dashboards, preparing reports, researching markets, reconciling documents,
+        monitoring operations, or creating internal tools. Agents can lower the
+        technical barrier to performing this work by taking on more of the
+        execution layer.
+      </p>
+
+      <p>
+        The opportunity is therefore not simply to do the same programming faster.
+        It is to allow more people to <strong>build and automate business
+        solutions</strong> without first becoming expert programmers. The central
+        skill shifts from telling a computer exactly what to do at every step toward
+        clearly defining the problem, supplying the right context, designing an
+        effective workflow, and evaluating whether the result is good enough to use.
+      </p>
+
+      <h2>Exercise: What would you delegate?</h2>
+
+      <p>
+        Think of a repetitive analytical or operational task from a class,
+        internship, student organization, or job. Write down:
+      </p>
+
+      <ol>
+        <li>the business objective you are trying to achieve;</li>
+        <li>the information and tools an agent would need access to;</li>
+        <li>which steps you would allow the agent to determine on its own; and</li>
+        <li>which decisions or outputs should still require human review.</li>
+      </ol>
+
+      <p>
+        The goal is not to design the technical implementation yet. Instead, begin
+        practicing the shift from thinking about <em>commands</em> to thinking about
+        <em>objectives, context, constraints, and evaluation</em>.
+      </p>
 
       <a class="next-cta" href="/course/03-setup/">
         <div>
