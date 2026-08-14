@@ -55,14 +55,13 @@
         vocabulary you will use for the rest of the course.</p>
       </div>
 
-      <h2>The evolution from chat to agent</h2>
+      <h2>The intellectual evolution from chat to agent</h2>
+
+<h3> Let us briefly review the intellectual history of how LLM technology evolved over time. </h3>
+
  <h3>1. LLMs begin as “text generators”</h3>
 
-<p>Early modern LLM use was essentially:</p>
-
-<p><strong>Prompt &rarr; LLM &rarr; Response</strong></p>
-
-<p>
+<p>Remember that early modern LLM use was essentially: <strong>Prompt &rarr; LLM &rarr; Response</strong>
   The model could explain, summarize, draft, and answer questions, but it could not independently interact with the outside world.
 </p>
 
@@ -90,16 +89,13 @@
 
 <p>
   Now the model can <strong>act on the world</strong>, or at least retrieve information from it.
-</p>
-
-<p>
   But this raises a new question: <em>How does the model decide when to think versus when to use a tool?</em>
 </p>
 
 <h3>4. ReAct: Reason + Act</h3>
 
 <p>
-  The 2022 <strong>ReAct</strong> paper provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately.
+  The 2022 <strong>ReAct</strong> paper, coauthored by researchers from Princeton University and Google Research, provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately.
 </p>
 
 <p>The basic loop looks like:</p>
@@ -144,16 +140,16 @@
   &darr;<br>
   <strong>Decide what to do next</strong><br>
   &darr;<br>
-  repeat until goal is achieved
+  <strong></strong>repeat until goal is achieved</strong><br>
 </p>
 
 <p>
-  Modern agent systems add things around this basic loop&mdash;more sophisticated planning, memory, permissions, guardrails, multiple tools, and sometimes multiple agents. OpenAI's current agent guidance, for example, similarly describes agents around a model operating with instructions, tools, and guardrails to execute workflows.
+  Modern agent systems add things around this basic loop&mdash;more sophisticated planning, memory, permissions, guardrails, multiple tools, and sometimes multiple agents. OpenAI describes agents as systems in which a model operates with instructions, tools, and guardrails to execute workflows.
 </p>
 
-<p>The diagram below lays out that same five-stage climb:</p>
+<p>The diagram below lays out the evolution:</p>
 
-  <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+  <figure style="margin: 1.5em auto; max-width: 340px; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
     <img src="images/chat-to-agent-progression.jpg"
          alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;"
          style="display: block; width: 100%; height: auto;">
@@ -203,85 +199,6 @@
   </tbody>
 </table>
 
-<h2>A useful analogy: the junior analyst with desktop access</h2>
-<p>
-  That table is abstract. A more concrete way to hold onto the difference:
-  think of plain chat as a junior analyst you can talk to through a closed
-  door. You ask a question, and they give you an answer based on what you
-  have told or handed to them. If you want them to examine a spreadsheet,
-  check another source, or run a calculation, you have to
-  <strong>give them access to the relevant information and tell them what to
-  do next</strong>.
-</p>
-
-<p>
-  An agent is more like giving that same analyst a desk, a computer, and
-  access to the tools and information needed for the assignment. You can give
-  them a broader goal, such as “figure out why sales dropped last month.”
-  They might open the relevant files, run calculations, inspect the results,
-  notice an inconsistency, check another source, and continue until they have
-  enough evidence to report back. The key difference is not simply tool
-  access, but <strong>autonomy</strong>: the agent can decide when to use
-  those tools and what steps to take next in pursuit of the goal.
-</p>
-
-<p>That autonomy shows up in four concrete capabilities:</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Capability</th>
-            <th>Plain chat</th>
-            <th>Agent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Reads your files</strong></td>
-            <td>No — only what you paste into the message</td>
-            <td>Yes — can open, search, and read files directly</td>
-          </tr>
-          <tr>
-            <td><strong>Runs code or commands</strong></td>
-            <td>No — can only describe what code would do</td>
-            <td>Yes — executes code and reads the actual output</td>
-          </tr>
-          <tr>
-            <td><strong>Works in multiple steps</strong></td>
-            <td>No — one message in, one message out</td>
-            <td>Yes — repeats read/act/check until the task is done</td>
-          </tr>
-          <tr>
-            <td><strong>Checks its own work</strong></td>
-            <td>No — cannot verify a claim against real data</td>
-            <td>Yes — can re-open a file or re-run code to confirm a result</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>The same request, two ways</h2>
-      <div class="example">
-        <p>Suppose you have a messy sales CSV and ask for a one-paragraph
-        summary of this quarter's performance.</p>
-
-        <p><strong>In chat</strong>, you would have to paste the numbers
-        yourself, and the model would summarize whatever you pasted — with
-        no way to check it against the full file:</p>
-        <pre><code>You: Here are our Q2 numbers: [pasted table]. Summarize in one paragraph.
-Model: Q2 revenue was $412K, up 9% from Q1, driven mainly by the
-Northeast region...</code></pre>
-
-        <p><strong>As an agent</strong>, you can simply point at the file.
-        It opens it, computes the totals itself, and can catch problems you
-        did not paste in — like a duplicate row inflating the total:</p>
-        <pre><code>You: Summarize this quarter's sales performance from sales_q2.csv.
-Agent: [opens sales_q2.csv]
-       [notices row 214 is a duplicate of row 213, excludes it]
-       [computes region totals and quarter-over-quarter change]
-       Q2 revenue was $398K, up 6% from Q1 after removing one
-       duplicate entry (row 214). Growth was concentrated in the
-       Northeast region (+18%)...</code></pre>
-      </div>
 
       <h2>Exercise: Chat or agent?</h2>
       <p>For each task below, decide whether it describes a plain chat
