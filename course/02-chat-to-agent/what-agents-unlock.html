@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What agents unlock · Module 2 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 2 · From prompt to agent</h4>
+      <ol>
+        <li><a href="/course/02-chat-to-agent/">Overview</a></li>
+        <li><a href="/course/02-chat-to-agent/agent-mental-model.html"><span class="module-num">1.</span>The agent mental model</a></li>
+        <li><a href="/course/02-chat-to-agent/what-agents-unlock.html"><span class="module-num">2.</span>What agents unlock</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 2 · Page 2 of 2 · 20 minutes</span>
+        <h1>What agents unlock</h1>
+        <p class="lede">An agent is not just a faster chatbot. It changes
+        what kind of work you can hand off, and what your own job becomes
+        once you do. This page introduces vibecoding: the name for that
+        shift, where it came from, and how to do it well.</p>
+      </div>
+
+      <h2>What vibecoding is</h2>
+      <p><em>Vibecoding</em> is building software by describing what you
+      want and letting an AI agent write and run the code, rather than
+      writing the code yourself line by line. The term was coined by
+      Andrej Karpathy, a computer scientist and former Tesla and OpenAI
+      researcher, in a February 2025 post where he described giving in to
+      the flow of an agent's suggestions, "forgetting that the code even
+      exists," and focusing on describing problems instead of typing
+      syntax. The name stuck, and it spread quickly beyond professional
+      programmers to exactly the audience this course is for: people who
+      have a business problem worth solving and no formal training in
+      software engineering.</p>
+
+      <p>Vibecoding is possible because of the same shift Module 2 has
+      been building toward. A chat model can describe code; an agent can
+      write it to a file, run it, read the error message when it breaks,
+      and try again — the read/act/check loop from the previous page,
+      applied specifically to building software. That loop is what makes
+      it realistic to build a working tool without knowing how to code
+      yourself: you are not reading documentation and debugging syntax,
+      you are describing outcomes and reviewing results.</p>
+
+      <h2>The job changes from implementing to directing</h2>
+      <p>Traditional software development puts most of the effort into
+      <em>implementation</em>: translating a decision that has already
+      been made ("customers should be grouped into three tiers") into
+      precise, syntactically correct code that does exactly that. Getting
+      good at this historically required years of training. Vibecoding
+      moves the effort earlier, into <em>specification</em>: deciding what
+      you actually want, describing it clearly enough that an agent can
+      act on it, and judging whether what comes back is right. The coding
+      itself is delegated.</p>
+
+      <div class="example">
+        <p>Suppose you want a tool that flags customers likely to churn.</p>
+
+        <p><strong>The old job</strong> was mostly implementation: learn a
+        programming language, learn how to connect to your customer
+        database, learn a scoring technique, write and debug several
+        hundred lines of code to tie it together.</p>
+
+        <p><strong>The vibecoding job</strong> is mostly specification: what
+        counts as "at risk" in your business, which data sources actually
+        contain the signal, what a false positive costs you versus a false
+        negative, and what "done" looks like. You hand that to an agent —
+        <em>"score every customer as high, medium, or low churn risk using
+        login frequency and support ticket volume, and explain each
+        score"</em> — and review what it builds, the same way you would
+        review a first draft from a junior analyst.</p>
+      </div>
+
+      <p>The bar for what counts as skill moves with it. Being able to
+      write a for-loop matters less. Being able to state a business
+      requirement precisely, catch a wrong assumption in the output, and
+      know when a result is too good to be true — those matter more, not
+      less, than they did before.</p>
+
+      <h2>Principles for vibecoding well</h2>
+
+      <h3>Give the agent a harness, not just a prompt</h3>
+      <p>A <em>harness</em> is the software environment an agent runs
+      inside: what files it can see, which tools it is allowed to call, what
+      permissions it has, and what guardrails stop it from doing something
+      destructive. The same underlying model produces very different
+      results depending on its harness — a harness that can only read
+      files is safe but limited; one that can also run code and access the
+      internet is far more capable, but only useful if it also has
+      sensible permissions, so the agent asks before it deletes something
+      or spends money. Module 3 walks through installing and configuring
+      one. For now, the principle is: the harness is part of the design,
+      not an afterthought — a brilliant request into a badly configured
+      harness still produces a bad result.</p>
+
+      <h3>Specify outcomes, not implementation steps</h3>
+      <p>The most common mistake new vibecoders make is directing the
+      agent the way they would direct a junior employee who cannot be
+      trusted to think: "open this file, then change this cell, then save
+      it as this name." That approach throws away the agent's main
+      advantage. State the outcome instead — "clean this file so every row
+      has a valid date and a positive amount, and tell me what you
+      changed" — and let the agent choose the steps.</p>
+
+      <h3>Review output the way you'd review a report</h3>
+      <p>Vibecoding does not remove the need for judgment; it moves
+      judgment from "is this code correct" to "is this result correct."
+      You are still responsible for the answer, even though you did not
+      write the code that produced it. Module 5 covers this in depth, but
+      the habit starts here: treat every agent output as a first draft
+      from a capable but occasionally overconfident collaborator, not as a
+      finished, trustworthy answer.</p>
+
+      <h3>Keep changes small and reversible</h3>
+      <p>Because an agent can act quickly across many files at once, a bad
+      instruction can do a lot of damage quickly. Ask for one meaningful
+      change at a time, check the result, and only then ask for the next
+      one — the same discipline a careful analyst uses when editing a
+      shared spreadsheet, rather than rewriting the whole thing in one
+      pass.</p>
+
+      <h2>Exercise: Implementation or specification?</h2>
+      <p>For each task below, decide whether it is written as an
+      implementation step (telling the agent exactly what to do
+      mechanically) or a specification (describing the outcome you want).</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Instruction</th>
+            <th>Implementation or specification?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Open row 14 and change the value in column C to 400."</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"Flag any expense line that looks miscategorized, and explain why."</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"Build me a weekly digest of our top 10 accounts by usage, with a one-line summary of why each one moved."</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Check your work:</strong> the first is an implementation
+      step — it tells the agent exactly which cell to touch, leaving no
+      room for judgment. The second and third are specifications — they
+      describe an outcome and leave the agent to decide how to get there,
+      which is the mode vibecoding is meant to run in.</p>
+
+      <a class="next-cta" href="/course/03-setup/">
+        <div>
+          <div class="next-cta-label">Next · Module 3</div>
+          <div class="next-cta-title">Setting up your workspace</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

@@ -39,8 +39,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │
 │   ├── /course/02-chat-to-agent                                                           ✅
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
-│   │   ├── /course/02-chat-to-agent/worked-example                                        ✅
-│   │   └── /course/02-chat-to-agent/when-an-agent-helps                                   ✅
+│   │   └── /course/02-chat-to-agent/what-agents-unlock                                    ✅
 │   ├── /course/03-setup                                                                   🚧 index only
 │   │   ├── /course/03-setup/install-claude-code                                          ❌ planned
 │   │   ├── /course/03-setup/first-run                                                    ❌ planned
@@ -121,7 +120,10 @@ Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned
 Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, case-study. Ends with a small artifact exercise (clean and summarize a messy CSV).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
-Fully written. Sub-pages: agent-mental-model, worked-example, when-an-agent-helps.
+Fully written. Sub-pages: agent-mental-model, what-agents-unlock. The latter is an
+introduction to vibecoding (what it is, its history, the shift from implementing to
+directing, and principles like the "harness" concept) — replaces the earlier
+worked-example and when-an-agent-helps sub-pages.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
 Index written. Sub-pages (install-claude-code, first-run, appendix-opencode, which-model) planned but not yet built.
@@ -200,7 +202,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Start `/start` | ✅ Index written; demo and vignette sub-pages not yet built |
 | Course index `/course` | ✅ Complete |
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
-| Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
+| Module 2 `/course/02-chat-to-agent` | ✅ Fully written (2 sub-pages + index) |
 | Modules 3–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
