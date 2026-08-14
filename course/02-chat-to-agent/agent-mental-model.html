@@ -55,42 +55,111 @@
         vocabulary you will use for the rest of the course.</p>
       </div>
 
-      <h2>What changes when the AI can act</h2>
- <p>
-    Remember that early large language models were primarily used as <strong>text generators</strong>:
-    a user provided a prompt, and the model produced a response. As models became more
-    capable, researchers found that they could often solve complex problems more effectively
-    by breaking them into intermediate reasoning steps. But reasoning alone had an important
-    limitation: the model could only work with the information available in its prompt and
-    internal knowledge.
-  </p>
+      <h2>The evolution from chat to agent</h2>
+ <h3>1. LLMs begin as “text generators”</h3>
+
+<p>Early modern LLM use was essentially:</p>
+
+<p><strong>Prompt &rarr; LLM &rarr; Response</strong></p>
+
+<p>
+  The model could explain, summarize, draft, and answer questions, but it could not independently interact with the outside world.
+</p>
+
+<h3>2. Reasoning improves</h3>
+
+<p>
+  Researchers found that models often performed better on complex problems when they decomposed the problem into intermediate reasoning steps.
+</p>
+
+<p>Conceptually:</p>
+
+<p><strong>Question &rarr; Think &rarr; Think &rarr; Answer</strong></p>
+
+<p>
+  But reasoning alone has a limitation: the model is still reasoning only from what it already knows. It cannot check a database, search the web, send an email, or inspect a live system.
+</p>
+
+<h3>3. Give the LLM tools</h3>
+
+<p>The next important idea was to let the model call external functions:</p>
+
+<p><strong>LLM &rarr; search()</strong><br>
+<strong>LLM &rarr; calculator()</strong><br>
+<strong>LLM &rarr; database()</strong></p>
+
+<p>
+  Now the model can <strong>act on the world</strong>, or at least retrieve information from it.
+</p>
+
+<p>
+  But this raises a new question: <em>How does the model decide when to think versus when to use a tool?</em>
+</p>
+
+<h3>4. ReAct: Reason + Act</h3>
+
+<p>
+  The 2022 <strong>ReAct</strong> paper provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately.
+</p>
+
+<p>The basic loop looks like:</p>
+
+<p><strong>Reason &rarr; Act &rarr; Observe &rarr; Reason &rarr; Act &rarr; Observe &rarr; &hellip; &rarr; Answer</strong></p>
+
+<p>For example:</p>
+
+<blockquote>
+  <p><strong>Goal:</strong> Find the cheapest flight that satisfies my travel constraints.</p>
 
   <p>
-    A major next step was to give LLMs access to <strong>tools</strong>, such as search engines,
-    calculators, databases, and software functions. This allowed models not only to reason
-    about a task, but also to take actions and obtain new information. In 2022, researchers at Princeton University and Google introduced the influential
-    <strong>ReAct</strong> approach—short for <em>reasoning and acting</em>. ReAct formalized a simple
-    but powerful pattern: <strong>reason &rarr; act &rarr; observe &rarr; reason again</strong>.
-    Rather than producing an answer immediately, the model can decide on an action, inspect
-    the result, and use that new information to determine what to do next.
+    Reason: I need to know the dates and available flights.<br>
+    <strong>Act:</strong> Search flights.<br>
+    <strong>Observe:</strong> Here are the available flights.<br>
+    Reason: Two options satisfy the constraints; I should compare baggage fees.<br>
+    <strong>Act:</strong> Look up baggage policies.<br>
+    <strong>Observe:</strong> Airline A charges $70.<br>
+    Reason: Airline B is cheaper overall.<br>
+    <strong>Answer:</strong> Recommend Airline B.
   </p>
+</blockquote>
 
-  <p>
-    This iterative loop provides much of the conceptual foundation for modern
-    <strong>AI agents</strong>. Instead of requiring a human to specify every individual step,
-    an agent can be given a broader goal and determine a sequence of actions needed to pursue it.
-    Modern agents extend this basic idea with features such as planning, memory, multiple tools,
-    permissions, and guardrails. A useful way to think about the progression is:
-    <strong>LLM &rarr; reasoning &rarr; tool use &rarr; reason–act–observe loops &rarr; agents</strong>.
-    The key shift is from AI that primarily <strong>responds to instructions</strong> to AI that
-    can increasingly <strong>decide and execute the next steps toward a goal</strong>.
-  </p>
+<p>
+  The important innovation is the <strong>feedback loop</strong>. An action produces new information, and the model uses that information to decide what to do next.
+</p>
+
+<h3>5. ReAct becomes the basic architecture of an agent</h3>
+
+<p>
+  Once you have this loop, you are very close to what we now call an <strong>agent</strong>:
+</p>
+
+<p>
+  <strong>Goal</strong><br>
+  &darr;<br>
+  <strong>LLM decides next action</strong><br>
+  &darr;<br>
+  <strong>Use tool</strong><br>
+  &darr;<br>
+  <strong>Observe result</strong><br>
+  &darr;<br>
+  <strong>Decide what to do next</strong><br>
+  &darr;<br>
+  repeat until goal is achieved
+</p>
+
+<p>
+  Modern agent systems add things around this basic loop&mdash;more sophisticated planning, memory, permissions, guardrails, multiple tools, and sometimes multiple agents. OpenAI's current agent guidance, for example, similarly describes agents around a model operating with instructions, tools, and guardrails to execute workflows.
+</p>
+
+<p>The diagram below lays out that same five-stage climb:</p>
 
   <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
     <img src="images/chat-to-agent-progression.jpg"
          alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;"
          style="display: block; width: 100%; height: auto;">
   </figure>
+
+<p>Compressed into one comparison, the shift looks like this:</p>
 
   <table>
   <thead>
@@ -136,7 +205,8 @@
 
 <h2>A useful analogy: the junior analyst with desktop access</h2>
 <p>
-  Think of plain chat as a junior analyst you can talk to through a closed
+  That table is abstract. A more concrete way to hold onto the difference:
+  think of plain chat as a junior analyst you can talk to through a closed
   door. You ask a question, and they give you an answer based on what you
   have told or handed to them. If you want them to examine a spreadsheet,
   check another source, or run a calculation, you have to
@@ -154,6 +224,8 @@
   access, but <strong>autonomy</strong>: the agent can decide when to use
   those tools and what steps to take next in pursuit of the goal.
 </p>
+
+<p>That autonomy shows up in four concrete capabilities:</p>
 
       <table>
         <thead>
