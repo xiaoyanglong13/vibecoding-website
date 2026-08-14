@@ -86,16 +86,74 @@
     can increasingly <strong>decide and execute the next steps toward a goal</strong>.
   </p>
 
-      <h2>A useful analogy: the junior analyst with desktop access</h2>
-      <p>Think of plain chat as an analyst you can only talk to through a
-      closed door. You describe the task out loud, they think for a moment,
-      and they shout an answer back — they cannot open your files, run a
-      calculation, or double-check a number against the source data. An
-      agent is the same analyst let into the room, with your laptop in front
-      of them. They can open the spreadsheet, write and run a script,
-      notice that a column does not add up, fix it, and only then come back
-      to you with a finished summary. The judgment is the same; the ability
-      to act on it is new.</p>
+  <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+    <img src="images/chat-to-agent-progression.jpg"
+         alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;"
+         style="display: block; width: 100%; height: auto;">
+  </figure>
+
+  <table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Chat</th>
+      <th>Agent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>You provide</strong></td>
+      <td>A question or task</td>
+      <td>A goal</td>
+    </tr>
+    <tr>
+      <td><strong>AI mainly does</strong></td>
+      <td>Responds</td>
+      <td>Acts</td>
+    </tr>
+    <tr>
+      <td><strong>Who determines the next step?</strong></td>
+      <td>Usually the human</td>
+      <td>Often the AI</td>
+    </tr>
+    <tr>
+      <td><strong>Tool use</strong></td>
+      <td>Usually at your direction</td>
+      <td>Can choose and sequence tools itself</td>
+    </tr>
+    <tr>
+      <td><strong>Duration</strong></td>
+      <td>Usually one interaction</td>
+      <td>Can involve multiple steps</td>
+    </tr>
+    <tr>
+      <td><strong>Human role</strong></td>
+      <td>Direct each step</td>
+      <td>Set goals, constraints, and oversight</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>A useful analogy: the junior analyst with desktop access</h2>
+<p>
+  Think of plain chat as a junior analyst you can talk to through a closed
+  door. You ask a question, and they give you an answer based on what you
+  have told or handed to them. If you want them to examine a spreadsheet,
+  check another source, or run a calculation, you have to
+  <strong>give them access to the relevant information and tell them what to
+  do next</strong>.
+</p>
+
+<p>
+  An agent is more like giving that same analyst a desk, a computer, and
+  access to the tools and information needed for the assignment. You can give
+  them a broader goal, such as “figure out why sales dropped last month.”
+  They might open the relevant files, run calculations, inspect the results,
+  notice an inconsistency, check another source, and continue until they have
+  enough evidence to report back. The key difference is not simply tool
+  access, but <strong>autonomy</strong>: the agent can decide when to use
+  those tools and what steps to take next in pursuit of the goal.
+</p>
 
       <table>
         <thead>
