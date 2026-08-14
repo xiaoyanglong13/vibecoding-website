@@ -73,56 +73,58 @@
         than specifying every technical step required to accomplish it.
       </p>
 
-      <h2>Example: forecasting product sales</h2>
+      <div class="example">
+        <p><strong>Example: Forecasting product sales</strong></p>
 
-      <p>
-        Imagine that an intern is asked to analyze historical sales for a retailer's
-        products and produce forecasts for the next several months.
-      </p>
-
-      <h3 style="color: var(--color-accent);">The traditional workflow</h3>
-
-      <p>
-        Traditionally, the intern would have to perform the technical workflow
-        themselves. They might begin by opening the data and figuring out what each
-        row and column represents. They would then identify missing values or data
-        errors, clean and transform the data, choose an appropriate forecasting
-        method, calculate forecasts, evaluate the results, and create figures to
-        communicate what they found.
-      </p>
-
-      <p>
-        To make the computer perform these steps, the intern would also need to know
-        how to express them in a form the computer understands. They might write
-        Python or R code, construct formulas and charts in Excel, or learn the
-        commands of a specialized forecasting package. In other words, the intern
-        not only needs to understand the business problem; they also need to
-        translate the solution into detailed technical instructions.
-      </p>
-
-      <h3 style="color: var(--color-accent);">The agentic workflow</h3>
-
-      <p>
-        With an AI agent, the intern can begin at a higher level. For example, they
-        might provide the sales data and say:
-      </p>
-
-      <blockquote>
         <p>
-          <strong>Goal:</strong> Analyze historical sales by product, identify
-          important patterns, forecast sales for the next six months, evaluate the
-          forecasts, and create clear figures that I can use in a presentation.
+          Imagine that an intern is asked to analyze historical sales for a retailer's
+          products and produce forecasts for the next several months.
         </p>
-      </blockquote>
 
-      <p>
-        The agent can then carry out many of the intermediate steps itself. It can
-        inspect the dataset, write and run code to clean the data, select and apply
-        forecasting methods, examine the output, revise an analysis when necessary,
-        and generate figures. Rather than manually programming each operation, the
-        intern supervises a computer that can determine and execute many of the
-        steps needed to reach the objective.
-      </p>
+        <p><strong>The traditional workflow</strong></p>
+
+        <p>
+          Traditionally, the intern would have to perform the technical workflow
+          themselves. They might begin by opening the data and figuring out what each
+          row and column represents. They would then identify missing values or data
+          errors, clean and transform the data, choose an appropriate forecasting
+          method, calculate forecasts, evaluate the results, and create figures to
+          communicate what they found.
+        </p>
+
+        <p>
+          To make the computer perform these steps, the intern would also need to know
+          how to express them in a form the computer understands. They might write
+          Python or R code, construct formulas and charts in Excel, or learn the
+          commands of a specialized forecasting package. In other words, the intern
+          not only needs to understand the business problem; they also need to
+          translate the solution into detailed technical instructions.
+        </p>
+
+        <p><strong>The agentic workflow</strong></p>
+
+        <p>
+          With an AI agent, the intern can begin at a higher level. For example, they
+          might provide the sales data and say:
+        </p>
+
+        <blockquote>
+          <p>
+            <strong>Goal:</strong> Analyze historical sales by product, identify
+            important patterns, forecast sales for the next six months, evaluate the
+            forecasts, and create clear figures that I can use in a presentation.
+          </p>
+        </blockquote>
+
+        <p>
+          The agent can then carry out many of the intermediate steps itself. It can
+          inspect the dataset, write and run code to clean the data, select and apply
+          forecasting methods, examine the output, revise an analysis when necessary,
+          and generate figures. Rather than manually programming each operation, the
+          intern supervises a computer that can determine and execute many of the
+          steps needed to reach the objective.
+        </p>
+      </div>
 
       <table>
         <thead>
@@ -207,13 +209,27 @@
 
       <p>
         In February 2025, AI researcher Andrej Karpathy gave a memorable name to one
-        version of this new way of working: <strong>vibe coding</strong>. Describing
-        his experience building software with an AI coding system, he wrote that
-        there was a new kind of coding in which you could
-        <q>forget that the code even exists</q>. Instead of personally writing and
-        debugging every line, he described telling the AI what he wanted, running
-        what it produced, showing it errors, and continuing the conversation until
-        the software worked.
+        version of this new way of working: <strong>vibe coding</strong>. He opened
+        the post that coined the term like this:
+      </p>
+
+      <figure style="margin: 1.5em 0; padding: 1.4em 1.6em; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-bg-soft);">
+        <blockquote style="margin: 0; padding: 0; border: none; font-style: italic; font-size: 1.1em; line-height: 1.5; color: var(--color-text);">
+          There's a new kind of coding I call &ldquo;vibe coding&rdquo;, where you
+          fully give in to the vibes, embrace exponentials, and forget that the
+          code even exists.
+        </blockquote>
+        <figcaption style="margin-top: 0.9em; font-size: 0.85em; color: var(--color-text-muted);">
+          &mdash; Andrej Karpathy,
+          <a href="https://x.com/karpathy/status/1886192184808149383">X post</a>,
+          February 2, 2025
+        </figcaption>
+      </figure>
+
+      <p>
+        Instead of personally writing and debugging every line, he described
+        telling the AI what he wanted, running what it produced, showing it
+        errors, and continuing the conversation until the software worked.
       </p>
 
       <p>
@@ -232,13 +248,6 @@
         the broader idea&mdash;building by describing objectives and iterating with
         AI&mdash;while emphasizing <strong>verification, clear requirements, and
         human accountability</strong>.
-      </p>
-
-      <p>
-        <small>
-          Source: Andrej Karpathy, X post, February 2, 2025.
-          <a href="https://x.com/karpathy/status/1886192184808149383">View the original post</a>.
-        </small>
       </p>
 
       <h2>The broader opportunity</h2>
