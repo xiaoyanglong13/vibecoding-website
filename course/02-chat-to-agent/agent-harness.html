@@ -180,23 +180,81 @@
       <h2>Where is the harness?</h2>
 
       <p>
-        You may never see a harness as a single object or screen. It is better
-        to think of it as the collection of things surrounding the AI that make
-        the agent useful for a particular job.
+        You may never see a harness as a single object or screen. It is better to
+        think of it as the <strong>collection of capabilities, information, and rules
+        surrounding the AI</strong> that make it useful for a particular job.
+        Different parts of the harness can come from different places.
+      </p>
+
+      <h3 class="subhead-accent">Some tools are already built in</h3>
+
+      <p>
+        Modern AI products often come with useful tools already available. For
+        example, ChatGPT can work with uploaded files, search the web, and run
+        Python code for data analysis. Claude can also use tools such as web search
+        and, in some environments, interact with a computer. These built-in tools
+        expand what the AI can do beyond simply generating text.
       </p>
 
       <p>
-        Some parts may simply be files or written instructions. Other parts
-        may be settings that give the agent access to particular tools or
-        applications. For example, a company might give an agent access to
-        certain folders, spreadsheets, databases, or email accounts while
-        preventing it from accessing others.
+        Access to a tool may still depend on the product, account, or permission
+        settings. For example, an agent may need permission before it can access a
+        file, connect to an application, or take an action on your behalf.
       </p>
 
-      <pre><code>Agent
-  (model + working environment)
-    ↓
-Instructions · Context · Tools · Boundaries</code></pre>
+      <h3 class="subhead-accent">Other tools have to be connected</h3>
+
+      <p>
+        An agent may also need access to systems that are not built into the AI
+        product. For example, a company might want an agent to read information from
+        Salesforce, query an internal database, access Google Drive, or interact with
+        a project-management system.
+      </p>
+
+      <p>
+        One increasingly common way to make these connections is through
+        <strong>MCP, or Model Context Protocol</strong>. An MCP server acts as a
+        standardized connection between an AI application and an outside source of
+        data or tools. For example, an organization might connect an MCP server that
+        gives an agent controlled access to its database, documents, or internal
+        applications.
+      </p>
+
+      <h3 class="subhead-accent">Instructions and context can be simple documents</h3>
+
+      <p>
+        Other parts of the harness may be much simpler. Instructions, business rules,
+        policies, examples, and background information can often be provided as
+        ordinary text or data files. A company might give an agent a written travel
+        policy, a spreadsheet of sales data, examples of good reports, or a document
+        explaining how certain decisions should be made.
+      </p>
+
+      <p>
+        AI products also come with some instructions and boundaries already built in.
+        These help determine how the system behaves by default. When you design an
+        agent for a particular task, you add additional instructions and context that
+        are specific to your project, team, or organization.
+      </p>
+
+      <h3 class="subhead-accent">Context can also accumulate through memory</h3>
+
+      <p>
+        Not all useful context has to be supplied again for every task. Some AI
+        systems can retain or retrieve information from previous interactions. This
+        is often referred to as <strong>memory</strong>. For example, an agent might
+        remember your preferred reporting format, decisions made earlier in a project,
+        or recurring information about your team or organization.
+      </p>
+
+      <p>
+        Memory can take different forms. It might be information remembered about
+        you across conversations, notes associated with a particular project, or
+        files that an agent refers back to over time. We will discuss these different
+        forms of memory in later sessions. For now, the important idea is that
+        <strong>memory allows useful context to build over time instead of starting
+        from scratch with every interaction</strong>.
+      </p>
 
 
 
