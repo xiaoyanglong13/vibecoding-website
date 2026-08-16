@@ -246,10 +246,7 @@
       </p>
 
       <p>
-        It is important to know that memory is part of agent design and you can control what AI remembers. Memory can take different forms. It might be information remembered about
-        you across conversations, notes associated with a particular project, or
-        files that an agent refers back to over time. We will discuss these different
-        forms of memory in later sessions. For now, the important idea is that
+        It is important to know that memory is part of agent design and you can control what AI remembers. We will discuss these design methods in later sessions. For now, the important idea is that
         <strong>memory allows useful context to build over time instead of starting
         from scratch with every interaction</strong>.
       </p>
@@ -260,8 +257,8 @@
         <p><strong>Example: Setting up a price-tracking agent</strong></p>
 
         <p>
-          Suppose a student team wants an agent that checks a handful of
-          competitors' pricing pages each week and flags anything that changed.
+          Suppose a retail team wants an agent that checks a handful of
+          competitors' pricing pages and flags anything that changed.
         </p>
 
         <p>
@@ -276,7 +273,7 @@
         <p><strong>Instructions</strong> (with boundaries built in)</p>
 
         <p>
-          Instructions are often just a prompt — plain text describing the task,
+          Instructions are provided in a prompt — plain text describing the task,
           including the rules the agent should follow:
         </p>
 
@@ -295,7 +292,7 @@ before it is sent to the team.</code></pre>
         <p><strong>Context</strong></p>
 
         <p>
-          Context is often just files sitting in a folder the agent can read:
+          Context in this case is files sitting in a folder the agent can read:
         </p>
 
         <pre><code>price-tracking/
@@ -306,16 +303,10 @@ before it is sent to the team.</code></pre>
         <p><strong>Tools</strong></p>
 
         <ul>
-          <li>Web browsing, to check the pricing pages <span class="chip">Built in</span></li>
-          <li>Access to post in the team's Slack channel <span class="chip">Needs permission</span></li>
+          <li>Web browsing, to check the pricing pages </li>
+          <li>Access to the local folder containing the context</li>
+          <li>Access to post in the team's Slack channel </li>
         </ul>
-
-        <p>
-          Together, a prompt, a folder of files, and two tools are the entire
-          harness here — nothing requires custom software. It is the same
-          prompt, folder, and permissions a person could set up in a few
-          minutes.
-        </p>
       </div>
 
 
