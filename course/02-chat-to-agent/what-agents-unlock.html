@@ -75,7 +75,7 @@
       </p>
 
       <div class="example">
-        <p>A small example makes the difference concrete: summing the numbers 1 through 9.</p>
+        <p>A small example: summing the numbers 1 through 9.</p>
 
         <p><strong>Traditional: write the procedure in Python</strong></p>
 
@@ -96,95 +96,6 @@ print(total)</code></pre>
         </p>
       </div>
 
-      <div class="example">
-        <p><strong>Example: Forecasting product sales</strong></p>
-
-        <p>
-          Imagine that an intern is asked to analyze historical sales for a retailer's
-          products and produce forecasts for the next several months.
-        </p>
-
-        <p><strong>The traditional workflow</strong></p>
-
-        <p>
-          Traditionally, the intern would have to perform the technical workflow
-          themselves. They might begin by opening the data and figuring out what each
-          row and column represents. They would then identify missing values or data
-          errors, clean and transform the data, choose an appropriate forecasting
-          method, calculate forecasts, evaluate the results, and create figures to
-          communicate what they found.
-        </p>
-
-        <p>
-          To make the computer perform these steps, the intern would also need to know
-          how to express them in a form the computer understands. They might write
-          Python or R code, construct formulas and charts in Excel, or learn the
-          commands of a specialized forecasting package. In other words, the intern
-          not only needs to understand the business problem; they also need to
-          translate the solution into detailed technical instructions.
-        </p>
-
-        <p><strong>The agentic workflow</strong></p>
-
-        <p>
-          With an AI agent, the intern can begin at a higher level. For example, they
-          might provide the sales data and say:
-        </p>
-
-        <blockquote>
-          <p>
-            <strong>Goal:</strong> Analyze historical sales by product, identify
-            important patterns, forecast sales for the next six months, evaluate the
-            forecasts, and create clear figures that I can use in a presentation.
-          </p>
-        </blockquote>
-
-        <p>
-          The agent can then carry out many of the intermediate steps itself. It can
-          inspect the dataset, write and run code to clean the data, select and apply
-          forecasting methods, examine the output, revise an analysis when necessary,
-          and generate figures. Rather than manually programming each operation, the
-          intern supervises a computer that can determine and execute many of the
-          steps needed to reach the objective.
-        </p>
-      </div>
-
-      
-
-      <h2>The human role shifts rather than disappears</h2>
-
-      <p>
-        The important change is not that the human no longer matters. It is that the
-        human's role moves <strong>up a level</strong>. Instead of spending most of
-        their effort translating each step into computer code, the human can focus
-        more attention on defining the objective, specifying what a good result
-        looks like, providing relevant business context, identifying important
-        constraints, and checking whether the final output makes sense.
-      </p>
-
-      <p>
-        In the forecasting example, the intern still needs to make consequential
-        decisions. What time horizon matters to the business? Should the forecast
-        optimize average accuracy or avoid large errors on high-revenue products?
-        Were promotions or stockouts responsible for unusual historical sales?
-        Which assumptions should be preserved in the forecast? An agent can perform
-        much of the technical work, but these questions require business context,
-        judgment, and oversight.
-      </p>
-
-
-      <h2>From programming languages to natural language</h2>
-
-      <p>
-        This shift also changes how humans communicate with computers. Traditional
-        software requires instructions written in languages designed for computers:
-        Python, R, SQL, spreadsheet formulas, menu commands, and other formal
-        interfaces. With AI agents, <strong>natural language itself becomes an
-        increasingly powerful way to specify work</strong>. A person can describe
-        requirements, provide examples, react to results, and request changes using
-        ordinary language while the agent translates those directions into the code
-        and tool calls required to carry them out.
-      </p>
 
 
       <h2>“Vibe coding”</h2>
@@ -236,7 +147,80 @@ print(total)</code></pre>
         effective workflow, and evaluating whether the result is good enough to use.
       </p>
 
-      
+     
+      <div class="example">
+        <p><strong>Example: Forecasting product sales</strong></p>
+
+        <p>
+          Imagine that an intern is asked to analyze historical sales for a retailer's
+          products and produce forecasts for the next several months.
+        </p>
+
+        <p><strong>The traditional workflow</strong></p>
+
+        <p>
+          Traditionally, the intern would have to perform the technical workflow
+          themselves. They might begin by opening the data and figuring out what each
+          row and column represents. They would then identify missing values or data
+          errors, clean and transform the data, choose an appropriate forecasting
+          method, calculate forecasts, evaluate the results, and create figures to
+          communicate what they found.
+        </p>
+
+        <p>
+          To make the computer perform these steps, the intern would also need to know
+          how to express them in a form the computer understands. They might write
+          Python or R code, construct formulas and charts in Excel, or learn the
+          commands of a specialized forecasting package. In other words, the intern
+          not only needs to understand the business problem; they also need to
+          translate the solution into detailed technical instructions.
+        </p>
+
+        <p><strong>The agentic workflow</strong></p>
+
+        <p>
+          With an AI agent, the intern can begin at a higher level. For example, they
+          might provide the sales data and say:
+        </p>
+
+        <blockquote>
+          <p>
+            <strong>Goal:</strong> Analyze historical sales by product, identify
+            important patterns, forecast sales for the next six months, evaluate the
+            forecasts, and create clear figures that I can use in a presentation.
+          </p>
+        </blockquote>
+
+        <p>
+          The agent can then carry out many of the intermediate steps itself. It can
+          inspect the dataset, write and run code to clean the data, select and apply
+          forecasting methods, examine the output, revise an analysis when necessary,
+          and generate figures. Rather than manually programming each operation, the
+          intern supervises a computer that can determine and execute many of the
+          steps needed to reach the objective.
+        </p>
+      </div> 
+
+            <h2>The human role shifts rather than disappears</h2>
+
+      <p>
+        The important change is not that the human no longer matters. It is that the
+        human's role moves <strong>up a level</strong>. Instead of spending most of
+        their effort translating each step into computer code, the human can focus
+        more attention on defining the objective, specifying what a good result
+        looks like, providing relevant business context, identifying important
+        constraints, and checking whether the final output makes sense.
+      </p>
+
+      <p>
+        In the forecasting example, the intern still needs to make consequential
+        decisions. What time horizon matters to the business? Should the forecast
+        optimize average accuracy or avoid large errors on high-revenue products?
+        Were promotions or stockouts responsible for unusual historical sales?
+        Which assumptions should be preserved in the forecast? An agent can perform
+        much of the technical work, but these questions require business context,
+        judgment, and oversight.
+      </p>
 
       <a class="next-cta" href="/course/02-chat-to-agent/agent-harness.html">
         <div>
