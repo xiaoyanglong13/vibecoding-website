@@ -179,25 +179,45 @@ print(total)</code></pre>
         <p><strong>The agentic workflow</strong></p>
 
         <p>
-          With an AI agent, the intern can begin at a higher level. For example, they
-          might provide the sales data and say:
+          With an AI agent, the intern can begin at a higher level — but a good first
+          prompt still states what patterns to look for and what the output should
+          look like, not just the end goal:
         </p>
 
-        <blockquote>
-          <p>
-            <strong>Goal:</strong> Analyze historical sales by product, identify
-            important patterns, forecast sales for the next six months, evaluate the
-            forecasts, and create clear figures that I can use in a presentation.
-          </p>
-        </blockquote>
+        <pre><code>Goal: Analyze historical sales by product and forecast demand for
+the next six months.
+
+Look specifically for:
+- Seasonal patterns, such as holiday or back-to-school spikes
+- Periods where a promotion or a stockout may be distorting the
+  underlying trend — flag these rather than forecasting through them
+- Products trending up or down independent of season
+
+Forecast each product line separately rather than the total. Flag
+any product where the forecast is especially uncertain. Summarize
+the findings as one chart per product category plus a short
+paragraph of takeaways I can put directly into a slide.</code></pre>
 
         <p>
-          The agent can then carry out many of the intermediate steps itself. It can
-          inspect the dataset, write and run code to clean the data, select and apply
-          forecasting methods, examine the output, revise an analysis when necessary,
-          and generate figures. Rather than manually programming each operation, the
-          intern supervises a computer that can determine and execute many of the
-          steps needed to reach the objective.
+          The agent inspects the dataset, writes and runs the cleaning and forecasting
+          code, and returns a first pass — forecasts for every product, with a note
+          that it treated a large sales spike in late November as part of the
+          seasonal pattern. The intern recognizes a problem and follows up:
+        </p>
+
+        <pre><code>The November spike is Black Friday, a one-time promotion, not a
+seasonal pattern. Re-run the forecast treating it as a promotional
+effect instead. Also exclude the three weeks in March when the
+warehouse was closed for renovation — that was a stockout, not a
+drop in demand. Show me the forecast before and after these changes
+so I can see how much they matter.</code></pre>
+
+        <p>
+          The agent revises the analysis and returns updated forecasts along with the
+          comparison the intern asked for. Rather than manually programming each
+          operation, the intern supervises a computer that can determine and execute
+          many of the steps needed to reach the objective — while still catching and
+          correcting the assumptions that matter most to the business.
         </p>
       </div> 
 
