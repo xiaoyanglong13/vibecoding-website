@@ -180,9 +180,7 @@
       <h2>Where is the harness?</h2>
 
       <p>
-        You may never see a harness as a single object or screen. It is better to
-        think of it as the <strong>collection of capabilities, information, and rules
-        surrounding the AI</strong> that make it useful for a particular job.
+        You may never see a harness as a single object or screen. 
         Different parts of the harness can come from different places.
       </p>
 
@@ -240,7 +238,7 @@
       <h3 class="subhead-accent">Context can also accumulate through memory</h3>
 
       <p>
-        Not all useful context has to be supplied again for every task. Some AI
+        Not all useful context has to be supplied again every time you start a new conversation with the AI. Given the right setup, AI
         systems can retain or retrieve information from previous interactions. This
         is often referred to as <strong>memory</strong>. For example, an agent might
         remember your preferred reporting format, decisions made earlier in a project,
@@ -248,7 +246,7 @@
       </p>
 
       <p>
-        Memory can take different forms. It might be information remembered about
+        It is important to know that memory is part of agent design and you can control what AI remembers. Memory can take different forms. It might be information remembered about
         you across conversations, notes associated with a particular project, or
         files that an agent refers back to over time. We will discuss these different
         forms of memory in later sessions. For now, the important idea is that
@@ -273,33 +271,52 @@
         </p>
 
         <p>
-          Its harness might include:
+          Here is what each part of its harness could look like in practice.
         </p>
 
+        <p><strong>Instructions</strong> (with boundaries built in)</p>
+
+        <p>
+          Instructions are often just a prompt — plain text describing the task,
+          including the rules the agent should follow:
+        </p>
+
+        <div class="prompt-window">
+          <div class="prompt-window-header">Prompt</div>
+          <pre><code>Analyze sales by product, identify important patterns, and
+forecast the next six months. Explain any unusual results before
+including them in the forecast.
+
+Do not modify the original data files. State your key assumptions
+clearly. Ask for approval before sending results to anyone outside
+this project.</code></pre>
+        </div>
+
+        <p><strong>Context</strong></p>
+
+        <p>
+          Context is often just files sitting in a folder the agent can read:
+        </p>
+
+        <pre><code>sales-data/
+├── 2023_sales.csv
+├── 2024_sales.csv
+├── 2025_sales.csv
+├── product_categories.csv
+└── notes.md              (promotions, holidays, stockouts)</code></pre>
+
+        <p><strong>Tools</strong></p>
+
         <ul>
-          <li>
-            <strong>Instructions:</strong> Analyze sales by product, identify
-            important patterns, forecast the next six months, and explain unusual
-            results.
-          </li>
-          <li>
-            <strong>Context:</strong> Historical sales files, definitions of
-            important variables, and notes about promotions, holidays, or stockouts.
-          </li>
-          <li>
-            <strong>Tools:</strong> Access to the sales files, Python for analysis
-            and forecasting, and a tool for creating figures.
-          </li>
-          <li>
-            <strong>Boundaries:</strong> Do not modify the original data, clearly
-            state important assumptions, and ask for approval before sending results
-            to anyone.
-          </li>
+          <li>Python, for analysis and forecasting <span class="chip">Built in</span></li>
+          <li>Access to the <code>sales-data</code> folder on your computer <span class="chip">Needs permission</span></li>
         </ul>
 
         <p>
-          Together, these elements shape what the agent knows, what it can do,
-          and how it should behave.
+          Together, a prompt, a folder of files, and two tools are the entire
+          harness here — nothing requires custom software. It is the same
+          prompt, folder, and permissions a person could set up in a few
+          minutes.
         </p>
       </div>
 
