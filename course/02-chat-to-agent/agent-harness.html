@@ -257,12 +257,11 @@
 
 
       <div class="example">
-        <p><strong>Example: Setting up a sales-analysis agent</strong></p>
+        <p><strong>Example: Setting up a price-tracking agent</strong></p>
 
         <p>
-          Consider again the sales-analysis example from the previous page.
-          Suppose an intern wants an agent to analyze historical sales, identify
-          important patterns, forecast the next six months, and create figures.
+          Suppose a student team wants an agent that checks a handful of
+          competitors' pricing pages each week and flags anything that changed.
         </p>
 
         <p>
@@ -283,13 +282,14 @@
 
         <div class="prompt-window">
           <div class="prompt-window-header">Prompt</div>
-          <pre><code>Analyze sales by product, identify important patterns, and
-forecast the next six months. Explain any unusual results before
-including them in the forecast.
+          <pre><code>Check the pricing pages listed in competitors.txt. Compare today's
+prices to the last saved snapshot in price-history.csv and list any
+changes by product and competitor.
 
-Do not modify the original data files. State your key assumptions
-clearly. Ask for approval before sending results to anyone outside
-this project.</code></pre>
+Only use the official pricing pages listed — do not use prices from
+forums, reviews, or other unofficial sources. Do not add any product
+you do not recognize from our catalog. Flag the summary for review
+before it is sent to the team.</code></pre>
         </div>
 
         <p><strong>Context</strong></p>
@@ -298,18 +298,16 @@ this project.</code></pre>
           Context is often just files sitting in a folder the agent can read:
         </p>
 
-        <pre><code>sales-data/
-├── 2023_sales.csv
-├── 2024_sales.csv
-├── 2025_sales.csv
-├── product_categories.csv
-└── notes.md              (promotions, holidays, stockouts)</code></pre>
+        <pre><code>price-tracking/
+├── competitors.txt      (list of competitor pricing-page URLs)
+├── price-history.csv    (last known prices, by product)
+└── our-catalog.csv      (our product list, for matching)</code></pre>
 
         <p><strong>Tools</strong></p>
 
         <ul>
-          <li>Python, for analysis and forecasting <span class="chip">Built in</span></li>
-          <li>Access to the <code>sales-data</code> folder on your computer <span class="chip">Needs permission</span></li>
+          <li>Web browsing, to check the pricing pages <span class="chip">Built in</span></li>
+          <li>Access to post in the team's Slack channel <span class="chip">Needs permission</span></li>
         </ul>
 
         <p>
