@@ -57,91 +57,86 @@
 
       <h2>The intellectual evolution from chat to agent</h2>
 
-<p> Let us briefly review the intellectual history of how LLM technology evolved over time. </p>
+<p> Let us briefly review the history of how LLM technology evolved over time. </p>
 
- <h3 style="color: var(--color-accent);">LLMs begin as “text generators”</h3>
+ <h3 class="subhead-accent">LLMs begin as “text generators”</h3>
 
-<p>Remember that early modern LLM use was essentially: <strong>Prompt &rarr; LLM &rarr; Response</strong>
-  The model could explain, summarize, draft, and answer questions, but it could not independently interact with the outside world.
+<p>Remember that early modern LLM use was essentially:</p>
+
+<pre><code>Prompt → LLM → Response</code></pre>
+
+<p>The model could explain, summarize, draft, and answer questions, but it could not independently interact with the outside world.
 </p>
 
-<h3 style="color: var(--color-accent);">Reasoning improves</h3>
+<h3 class="subhead-accent">Reasoning improves</h3>
 
 <p>
-  Researchers found that models often performed better on complex problems when they decomposed the problem into intermediate reasoning steps.
+  Researchers found that models often performed better on complex problems when they decomposed the problem into intermediate reasoning steps. Conceptually:
 </p>
 
-<p>Conceptually:</p>
-
-<p><strong>Question &rarr; Think &rarr; Think &rarr; Answer</strong></p>
+<pre><code>Question → Think → Think → Answer</code></pre>
 
 <p>
   But reasoning alone has a limitation: the model is still reasoning only from what it already knows. It cannot check a database, search the web, send an email, or inspect a live system.
 </p>
 
-<h3 style="color: var(--color-accent);">Give the LLM tools</h3>
+<h3 class="subhead-accent">Give the LLM tools</h3>
 
 <p>The next important idea was to let the model call external functions:</p>
 
-<p><strong>LLM &rarr; search()</strong><br>
-<strong>LLM &rarr; calculator()</strong><br>
-<strong>LLM &rarr; database()</strong></p>
+<pre><code>LLM → search()
+LLM → calculator()
+LLM → database()</code></pre>
 
 <p>
   Now the model can <strong>act on the world</strong>, or at least retrieve information from it.
   But this raises a new question: <em>How does the model decide when to think versus when to use a tool?</em>
 </p>
 
-<h3 style="color: var(--color-accent);">ReAct: Reason + Act</h3>
+<h3 class="subhead-accent">ReAct: Reason + Act</h3>
 
 <p>
-  The 2022 <strong>ReAct</strong> paper, coauthored by researchers from Princeton University and Google Research, provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately.
+  In 2022, researchers from Princeton University and Google Research provided a very influential answer: interleave <strong>reasoning and actions</strong> rather than treating them separately. The basic loop looks like (ReAct):
 </p>
 
-<p>The basic loop looks like:</p>
+<pre><code>Reason → Act → Observe → Reason → Act → Observe → … → Answer</code></pre>
 
-<p><strong>Reason &rarr; Act &rarr; Observe &rarr; Reason &rarr; Act &rarr; Observe &rarr; &hellip; &rarr; Answer</strong></p>
+<div class="example">
+<p>For example, suppose the goal is to find the cheapest flight that satisfies a set of travel constraints:</p>
 
-<p>For example:</p>
+<pre><code>Goal: Find the cheapest flight that satisfies my travel constraints.
 
-<blockquote>
-  <p><strong>Goal:</strong> Find the cheapest flight that satisfies my travel constraints.</p>
-
-  <p>
-    Reason: I need to know the dates and available flights.<br>
-    <strong>Act:</strong> Search flights.<br>
-    <strong>Observe:</strong> Here are the available flights.<br>
-    Reason: Two options satisfy the constraints; I should compare baggage fees.<br>
-    <strong>Act:</strong> Look up baggage policies.<br>
-    <strong>Observe:</strong> Airline A charges $70.<br>
-    Reason: Airline B is cheaper overall.<br>
-    <strong>Answer:</strong> Recommend Airline B.
-  </p>
-</blockquote>
+Reason: I need to know the dates and available flights.
+Act: Search flights.
+Observe: Here are the available flights.
+Reason: Two options satisfy the constraints; I should compare baggage fees.
+Act: Look up baggage policies.
+Observe: Airline A charges $70.
+Reason: Airline B is cheaper overall.
+Answer: Recommend Airline B.</code></pre>
 
 <p>
   The important innovation is the <strong>feedback loop</strong>. An action produces new information, and the model uses that information to decide what to do next.
 </p>
+</div>
 
-<h3 style="color: var(--color-accent);">ReAct becomes the basic architecture of an agent</h3>
+<h3 class="subhead-accent">ReAct becomes the basic architecture of an agent</h3>
 
 <p>
   Once you have this loop, you are very close to what we now call an <strong>agent</strong>:
 </p>
 
-<p>
-  <strong>Goal</strong><br>
-  &darr;<br>
-  <strong>LLM decides next action</strong><br>
-  &darr;<br>
-  <strong>Use tool</strong><br>
-  &darr;<br>
-  <strong>Observe result</strong><br>
-  &darr;<br>
-  <strong>Decide what to do next</strong><br>
-  &darr;<br>
-  repeat until goal is achieved
-</p>
+<pre><code>Goal
+  ↓
+LLM decides next action
+  ↓
+Use tool
+  ↓
+Observe result
+  ↓
+Decide what to do next
+  ↓
+repeat until goal is achieved</code></pre>
 
 <p>
   Modern agent systems add things around this basic loop&mdash;more sophisticated planning, memory, permissions, guardrails, multiple tools, and sometimes multiple agents. OpenAI describes agents as systems in which a model operates with instructions, tools, and guardrails to execute workflows.
@@ -149,10 +144,9 @@
 
 <p>The diagram below lays out the evolution:</p>
 
-  <figure style="margin: 1.5em auto; max-width: 340px; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+  <figure class="figure-diagram">
     <img src="images/chat-to-agent-progression.jpg"
-         alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;"
-         style="display: block; width: 100%; height: auto;">
+         alt="Diagram of the progression from chat to agent, shown as five stacked, arrow-connected stages: Chat, &quot;Give me an answer&quot;; Reasoning, &quot;Think through how to answer&quot;; Tool use, &quot;Get information or perform an action&quot;; ReAct, &quot;Think, act, see what happened, think again&quot;; Agent, &quot;Keep doing this until the goal is accomplished.&quot;">
   </figure>
 
 <h2>A comparison of chat versus agent</h2>
@@ -200,36 +194,6 @@
     </tr>
   </tbody>
 </table>
-
-<h2>Agentic AI in modern products</h2>
-
-<p>
-  Modern AI products increasingly blur the line between <strong>chat</strong> and
-  <strong>agents</strong>. A chat interface may look like a simple
-  question-and-answer system, but behind the scenes the AI may be able to search
-  the web, read files, run code, call external tools, and complete multi-step
-  tasks. As a result, the same interface can support both ordinary chat
-  interactions and more agentic behavior. The difference is therefore becoming
-  less about what the product looks like and more about how much
-  <strong>autonomy</strong> the AI has. When the user directs each step, the
-  interaction is closer to traditional chat; when the AI can decide which tools
-  to use, what intermediate steps to take, and how to continue toward a broader
-  goal, the interaction becomes increasingly agentic.
-</p>
-
-<p>
-  This does not mean that effective agent design is simply a matter of giving AI
-  a vague, high-level goal and letting it figure everything out. Agents still
-  perform best when they are given clear objectives, relevant context,
-  appropriate constraints, and well-defined access to the information and tools
-  they need. As we will discuss in later sessions, a crucial part of designing
-  reliable agents is often <strong>breaking a larger goal into smaller,
-  achievable pieces</strong> and specifying how those pieces fit together. In
-  other words, greater autonomy does not eliminate the need for thoughtful human
-  design. It may free humans from providing detailed, step-by-step instructions,
-  but it places greater emphasis on clearly specifying objectives, requirements,
-  constraints, and context.
-</p>
 
 
       <h2>Exercise: Chat or agent?</h2>
