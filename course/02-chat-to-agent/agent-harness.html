@@ -97,13 +97,12 @@
         <strong>working environment around the AI</strong>.
       </p>
 
-      <blockquote>
-        <p>
-          <strong>Model = the brain</strong><br>
-          <strong>Harness = the instructions, information, tools, and boundaries
-          that let the model do a particular job</strong>
-        </p>
-      </blockquote>
+      <div class="callout">
+        <span class="callout-label">Key takeaway</span>
+        The model provides the intelligence. The harness provides the
+        <strong>instructions, context, tools, and boundaries</strong> that allow
+        that intelligence to perform a particular job.
+      </div>
 
 
       <h2>What goes into an agent's harness?</h2>
@@ -156,15 +155,6 @@
         </tbody>
       </table>
 
-      <p>
-        Some of these pieces can be very simple. Instructions might be written
-        in ordinary language. Context might consist of a Word document explaining
-        company policy, a spreadsheet containing sales data, or several examples
-        of what a good output should look like. Other parts of the harness give
-        the agent access to tools, such as the ability to run calculations or
-        search a database.
-      </p>
-
       <div class="example">
         <p><strong>Example: A meeting-scheduling agent</strong></p>
 
@@ -181,6 +171,33 @@
           <li><strong>Boundaries:</strong> Do not schedule outside working hours.</li>
         </ul>
       </div>
+
+
+
+
+
+
+      <h2>Where is the harness?</h2>
+
+      <p>
+        You may never see a harness as a single object or screen. It is better
+        to think of it as the collection of things surrounding the AI that make
+        the agent useful for a particular job.
+      </p>
+
+      <p>
+        Some parts may simply be files or written instructions. Other parts
+        may be settings that give the agent access to particular tools or
+        applications. For example, a company might give an agent access to
+        certain folders, spreadsheets, databases, or email accounts while
+        preventing it from accessing others.
+      </p>
+
+      <pre><code>Agent
+  (model + working environment)
+    ↓
+Instructions · Context · Tools · Boundaries</code></pre>
+
 
 
       <div class="example">
@@ -229,64 +246,6 @@
       </div>
 
 
-      <h2>How the harness supports the agent loop</h2>
-
-      <p>
-        Once the agent has the right instructions, information, tools, and
-        boundaries, it can begin working through the task:
-      </p>
-
-      <p>
-        <strong>Human provides a goal</strong><br>
-        &darr;<br>
-        <strong>Agent decides what to do next</strong><br>
-        &darr;<br>
-        <strong>Agent uses an available tool</strong><br>
-        &darr;<br>
-        <strong>Agent observes the result</strong><br>
-        &darr;<br>
-        <strong>Agent decides what to do next</strong><br>
-        &darr;<br>
-        repeat as needed
-      </p>
-
-      <p>
-        For example, the agent might first inspect the sales file. After seeing
-        the data, it may decide that several columns need to be cleaned. It can
-        then use Python to clean the data, inspect the result, move on to
-        forecasting, compare different approaches, and finally create figures.
-      </p>
-
-      <p>
-        The harness makes this possible by giving the agent the resources it
-        needs at each step. In this sense, the harness turns the conceptual
-        <strong>reason &rarr; act &rarr; observe</strong> loop into a working
-        environment for accomplishing a real task.
-      </p>
-
-
-      <h2>Where is the harness?</h2>
-
-      <p>
-        You may never see a harness as a single object or screen. It is better
-        to think of it as the collection of things surrounding the AI that make
-        the agent useful for a particular job.
-      </p>
-
-      <p>
-        Some parts may simply be files or written instructions. Other parts
-        may be settings that give the agent access to particular tools or
-        applications. For example, a company might give an agent access to
-        certain folders, spreadsheets, databases, or email accounts while
-        preventing it from accessing others.
-      </p>
-
-      <pre><code>Agent
-  (model + working environment)
-    ↓
-Instructions · Context · Tools · Boundaries</code></pre>
-
-
       <h2>The same model can become very different agents</h2>
 
       <p>
@@ -333,12 +292,7 @@ Instructions · Context · Tools · Boundaries</code></pre>
       </p>
 
 
-      <div class="callout">
-        <span class="callout-label">Key takeaway</span>
-        The model provides the intelligence. The harness provides the
-        <strong>instructions, context, tools, and boundaries</strong> that allow
-        that intelligence to perform a particular job.
-      </div>
+
 
       <a class="next-cta" href="/course/03-setup/">
         <div>
