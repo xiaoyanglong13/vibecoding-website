@@ -68,8 +68,7 @@
       <p>The first time you run it, Claude Code opens a browser window and asks
       you to log in — or create an account, if you don't have one — at
       claude.ai. Approve the request there, then return to your terminal; it's
-      now connected. (Already have Claude Code open? Run <code>/login</code>
-      instead of restarting it.)</p>
+      now connected.</p>
 
       <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
         <img src="images/login-success.png"
@@ -88,15 +87,67 @@
 
       <h3 class="subhead-accent">Option B: Use an API key instead</h3>
       <p>An API key bills per request instead of a flat subscription rate —
-      useful if you'd rather pay only for what you use. Create one at
-      <a href="https://console.anthropic.com">console.anthropic.com</a>, under
-      API Keys, then set it as an environment variable so Claude Code picks it
-      up automatically.</p>
-      <p>Mac (add this line to <code>~/.zshrc</code>, or run it once per
-      session):</p>
+      useful if you'd rather pay only for what you use.</p>
+
+      <p><strong>Get a key:</strong></p>
+      <ol>
+        <li>Go to <a href="https://console.anthropic.com">console.anthropic.com</a>
+        and sign in — or create an account, if you don't have one.</li>
+        <li>In the left sidebar, click <strong>API Keys</strong>.</li>
+        <li>Click <strong>Create Key</strong>, give it any name you'll
+        recognize later (e.g. "my laptop"), and confirm.</li>
+        <li>Copy the key it shows you. It starts with <code>sk-ant-</code> —
+        you won't be able to see it again after you leave this page, so copy
+        it now.</li>
+      </ol>
+
+      <p>Claude Code reads the key from an <strong>environment variable</strong>
+      — a value your terminal keeps in memory and hands to any program that
+      asks for it, including Claude Code. There are two ways to set it: for
+      just your current terminal window, or permanently, so it's there every
+      time you open a new one.</p>
+
+      <p><strong>Quick version (Mac or Windows, this window only):</strong>
+      Paste this into Terminal or PowerShell, with your real key in place of
+      the placeholder, and press Enter. It only lasts until you close the
+      window.</p>
+      <p>Mac (Terminal):</p>
       <pre><code>export ANTHROPIC_API_KEY="sk-ant-your-key-here"</code></pre>
       <p>Windows (PowerShell):</p>
       <pre><code>$env:ANTHROPIC_API_KEY="sk-ant-your-key-here"</code></pre>
+
+      <p><strong>Permanent version, Mac (recommended if you're using an API
+      key):</strong></p>
+      <ol>
+        <li>Open Terminal.</li>
+        <li><code>~/.zshrc</code> is a hidden configuration file in your home
+        folder that Terminal automatically runs every time you open a new
+        window — this is where permanent settings like this one live. You
+        don't need to find or open it yourself; the command below appends a
+        line to it for you. Copy the command exactly, replace
+        <code>sk-ant-your-key-here</code> with your real key, then paste it
+        into Terminal and press Enter:
+        <pre><code>echo 'export ANTHROPIC_API_KEY="sk-ant-your-key-here"' >> ~/.zshrc</code></pre></li>
+        <li>Close Terminal completely and reopen it — the file only gets read
+        when a new window starts.</li>
+        <li>Verify it worked:
+        <pre><code>echo $ANTHROPIC_API_KEY</code></pre>
+        It should print the key back to you.</li>
+      </ol>
+
+      <p><strong>Permanent version, Windows:</strong></p>
+      <ol>
+        <li>Open PowerShell.</li>
+        <li>Replace <code>sk-ant-your-key-here</code> with your real key,
+        then paste this into PowerShell and press Enter. This saves it as a
+        permanent setting on your account, similar to how the Mac version
+        writes to a config file:
+        <pre><code>[System.Environment]::SetEnvironmentVariable('ANTHROPIC_API_KEY', 'sk-ant-your-key-here', 'User')</code></pre></li>
+        <li>Close PowerShell completely and reopen it.</li>
+        <li>Verify it worked:
+        <pre><code>echo $env:ANTHROPIC_API_KEY</code></pre>
+        It should print the key back to you.</li>
+      </ol>
 
       <div class="callout warn">
         <span class="callout-label">Treat this like a password</span>
