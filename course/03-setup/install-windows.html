@@ -51,7 +51,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 3 · Page 3 of 7 · 20 minutes</span>
+        <span class="eyebrow">Module 3 · Page 3 of 7 · 30 minutes</span>
         <h1>Install on Windows</h1>
         <p class="lede">Every command on this page runs in PowerShell. Unlike
         Mac, there's no single package manager doing the work — each tool gets
@@ -59,19 +59,51 @@
         <a href="/course/03-setup/install-macos.html">macOS walkthrough</a> instead.)</p>
       </div>
 
-      <h2>What you'll be able to do</h2>
-      <p>Have all eight tools installed and configured on Windows, confirmed
-      with a full version-check.</p>
+      <h2>Installation instructions</h2>
+      <p>Follow the following steps in sequence. The installation process
+      should take 30-60 minutes.</p>
 
-      <h3 class="subhead-accent">Find PowerShell</h3>
+      <h3 class="subhead-accent">Step 1: Find PowerShell</h3>
       <p>Open the Start menu, type <strong>PowerShell</strong>, and press
-      Enter. (On Windows 11, this opens inside Windows Terminal — a modern
-      wrapper around the same thing.) The prompt looks like
+      Enter. The prompt looks like
       <code>PS C:\Users\yourname&gt;</code> — that's where you type.</p>
-      <p>Enter runs whatever you've typed, the up arrow recalls your last
-      command, and right-click pastes from the clipboard.</p>
 
-      <h3 class="subhead-accent">Allow scripts to run</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>To do this</th>
+            <th>Do this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Run a command</td>
+            <td>Type it, then press Enter</td>
+          </tr>
+          <tr>
+            <td>Cancel whatever is running</td>
+            <td>Ctrl + C</td>
+          </tr>
+          <tr>
+            <td>Recall your last command</td>
+            <td>Up arrow</td>
+          </tr>
+          <tr>
+            <td>Paste</td>
+            <td>Right-click anywhere in the window</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout tip">
+        <span class="callout-label">Tip</span>
+        Windows 11 comes with Windows Terminal pre-installed — a more modern
+        window with tabs. Windows 10 only has the classic PowerShell console.
+        Both run the exact same commands the exact same way; only the window
+        around them looks different, so don't worry about which one you see.
+      </div>
+
+      <h3 class="subhead-accent">Step 2: Allow scripts to run</h3>
       <p>Windows blocks unsigned scripts by default, which trips up several
       installers below. Loosen that, for your account only:</p>
       <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
@@ -82,7 +114,7 @@
       <pre><code>Get-ExecutionPolicy</code></pre>
       <p>It should print <code>RemoteSigned</code>.</p>
 
-      <h3 class="subhead-accent">Git</h3>
+      <h3 class="subhead-accent">Step 3: Git</h3>
       <p>Download the installer from
       <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>
       and run it. Accept the defaults, with one exception: on the PATH screen,
@@ -93,10 +125,23 @@
       <p>Then tell Git who you are:</p>
       <pre><code>git config --global user.name "Your Name"
 git config --global user.email "your@email.com"</code></pre>
+      <p>For example:</p>
+      <pre><code>git config --global user.name "Jamie Chen"
+git config --global user.email "jamie.chen@university.edu"</code></pre>
+
+      <div class="callout tip">
+        <span class="callout-label">Tip</span>
+        Use your school email address if you can. Later in the course, you'll
+        likely want to link a GitHub account to this same email — students
+        typically qualify for free GitHub perks (like GitHub Pro or Copilot)
+        through their school email, so starting with it now saves you from
+        redoing this step later.
+      </div>
+
       <p>Verify:</p>
       <pre><code>git config --global --list</code></pre>
 
-      <h3 class="subhead-accent">Node.js</h3>
+      <h3 class="subhead-accent">Step 4: Node.js</h3>
       <p>Download the LTS installer from
       <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>.
       Keep the default options, and make sure <strong>"Add to PATH"</strong> is
@@ -104,7 +149,7 @@ git config --global user.email "your@email.com"</code></pre>
       <pre><code>node --version
 npm --version</code></pre>
 
-      <h3 class="subhead-accent">Claude Code</h3>
+      <h3 class="subhead-accent">Step 5: Claude Code</h3>
       <p>Install it with:</p>
       <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
 
@@ -117,14 +162,14 @@ npm --version</code></pre>
       <p>Verify:</p>
       <pre><code>claude --version</code></pre>
 
-      <h3 class="subhead-accent">VS Code</h3>
+      <h3 class="subhead-accent">Step 6: VS Code</h3>
       <p>Download the installer from
       <a href="https://code.visualstudio.com">code.visualstudio.com</a>. Keep
       the defaults, and make sure <strong>"Add to PATH"</strong> is checked.
       Verify:</p>
       <pre><code>code --version</code></pre>
 
-      <h3 class="subhead-accent">Miniconda</h3>
+      <h3 class="subhead-accent">Step 7: Miniconda</h3>
       <p>Download the Windows installer from
       <a href="https://docs.anaconda.com/miniconda/">anaconda.com/miniconda</a>.
       On the Advanced Options screen, <strong>leave "Add Miniconda3 to PATH"
@@ -140,14 +185,14 @@ python --version</code></pre>
       <strong>"Anaconda Prompt (miniconda3)"</strong> from the Start menu
       instead of plain PowerShell.</p>
 
-      <h3 class="subhead-accent">Pandoc</h3>
+      <h3 class="subhead-accent">Step 8: Pandoc</h3>
       <p>Download the <code>.msi</code> installer from
       <a href="https://pandoc.org/installing.html">pandoc.org/installing.html</a>
       and run it — Pandoc adds itself to PATH automatically. In a new
       PowerShell window, verify:</p>
       <pre><code>pandoc --version</code></pre>
 
-      <h3 class="subhead-accent">Confirm everything</h3>
+      <h3 class="subhead-accent">Step 9: Confirm everything</h3>
       <p>In a fresh PowerShell window, run all of these. Each should print a
       version number — never "command not found":</p>
       <pre><code>git --version
@@ -159,19 +204,33 @@ conda --version
 python --version
 pandoc --version</code></pre>
 
-      <div class="callout warn">
-        <span class="callout-label">If something goes wrong</span>
-        <strong>"Command not recognized" right after installing something</strong>
-        — close and reopen PowerShell. Installers update PATH, but a window
-        that was already open won't see the change. If it still fails, check
-        whether that tool's "Add to PATH" option was actually selected during
-        setup.<br><br>
-        <strong>A script-execution error</strong> — re-run the
-        <code>Set-ExecutionPolicy</code> command above; it may not have taken
-        effect.<br><br>
-        <strong>An <code>npm install -g</code> times out</strong> — this is
-        usually a network hiccup. Wait and try again.
-      </div>
+      <h3 class="subhead-accent">Windows: frequently asked questions</h3>
+
+      <p><strong>A command says "not recognized" right after I installed
+      it.</strong><br>
+      Close PowerShell and reopen it. Installers update PATH, but a window
+      that was already open won't see the change. If it still fails, check
+      whether that tool's "Add to PATH" option was actually selected during
+      setup.</p>
+
+      <p><strong>I got a script-execution error.</strong><br>
+      Re-run the <code>Set-ExecutionPolicy</code> command from Step 2 — it may
+      not have taken effect yet.</p>
+
+      <p><strong>Commands don't seem to work no matter how I type them.</strong><br>
+      PowerShell commands are case-sensitive. Double-check you're typing
+      exactly what's shown, including capitalization.</p>
+
+      <p><strong><code>npm install -g</code> is taking forever, or times
+      out.</strong><br>
+      This is usually just a slow connection to GitHub. Let it run; if it
+      truly seems stuck, Ctrl+C to cancel and try again in a moment.</p>
+
+      <p><strong>Something says it needs administrator rights.</strong><br>
+      None of the steps on this page should require it — everything here
+      installs to your own account. If you do hit a permissions error
+      somewhere, right-click PowerShell in the Start menu and choose
+      "Run as administrator," then retry that one command.</p>
 
       <a class="next-cta" href="/course/03-setup/login.html">
         <div>
