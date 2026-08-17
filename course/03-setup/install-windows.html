@@ -64,9 +64,29 @@
       should take 30-60 minutes.</p>
 
       <h3 class="subhead-accent">Step 1: Find PowerShell</h3>
-      <p>Open the Start menu, type <strong>PowerShell</strong>, and press
-      Enter. The prompt looks like
-      <code>PS C:\Users\yourname&gt;</code> — that's where you type.</p>
+      <p>PowerShell is Windows' built-in command-line tool — a plain text
+      window where you type commands directly to your computer, instead of
+      clicking through menus and icons. It's Windows' equivalent to the
+      Terminal app on a Mac.</p>
+      <p>Two ways to open it:</p>
+      <ul>
+        <li>Open the Start menu, type <strong>PowerShell</strong>, and press
+        Enter.</li>
+        <li>Or right-click the Start button and choose
+        <strong>Windows PowerShell</strong> (or <strong>Terminal</strong> on
+        Windows 11) from the menu that appears.</li>
+      </ul>
+      <p>You'll see a window with a prompt that looks like this:</p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">PowerShell</div>
+        <pre><code>PS C:\Users\yourname&gt; </code></pre>
+      </div>
+
+      <p><code>PS</code> just marks this as a PowerShell prompt.
+      <code>C:\Users\yourname</code> shows where you currently are — your
+      user folder, by default. The <code>&gt;</code> marks the end of the
+      prompt — that's where you type.</p>
 
       <table>
         <thead>
@@ -104,25 +124,51 @@
       </div>
 
       <h3 class="subhead-accent">Step 2: Allow scripts to run</h3>
-      <p>Windows blocks unsigned scripts by default, which trips up several
-      installers below. Loosen that, for your account only:</p>
-      <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
-      <p><code>RemoteSigned</code> lets local scripts run freely while still
-      requiring downloaded scripts to be signed; <code>-Scope CurrentUser</code>
-      applies only to your account, so it doesn't need administrator rights.
-      Verify:</p>
+      <p>Windows blocks unsigned scripts from running by default. Several of
+      the installers below need to run one, so this step loosens that
+      restriction — for your account only, not the whole computer.</p>
+      <ol>
+        <li>In the PowerShell window you just opened, type (or copy and
+        paste) the following command exactly as shown:
+        <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre></li>
+        <li>Press Enter to run it.</li>
+        <li>If PowerShell asks you to confirm, type <code>Y</code> and press
+        Enter.</li>
+      </ol>
+      <p><code>RemoteSigned</code> lets scripts you write or run locally
+      execute freely, while still requiring anything downloaded from the
+      internet to carry a digital signature. <code>-Scope CurrentUser</code>
+      applies the change only to your own account, which is why this doesn't
+      need administrator rights.</p>
+      <p>Verify it took effect:</p>
       <pre><code>Get-ExecutionPolicy</code></pre>
       <p>It should print <code>RemoteSigned</code>.</p>
 
       <h3 class="subhead-accent">Step 3: Git</h3>
-      <p>Download the installer from
-      <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>
-      and run it. Accept the defaults, with one exception: on the PATH screen,
-      select <strong>"Git from the command line and also from 3rd-party
-      software."</strong> Without that, PowerShell won't find <code>git</code>.</p>
-      <p>Close PowerShell, reopen it, and verify:</p>
+      <p>Git tracks changes to files over time — every edit, who made it, and
+      when. Claude Code depends on Git to track the changes <em>it</em> makes
+      to your files: what changed, and how to roll a change back if it turns
+      out to be wrong. You won't use Git directly until Module 4, but it's
+      easiest to install once now rather than mid-course.</p>
+      <ol>
+        <li>Download the installer from
+        <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>.</li>
+        <li>Run the installer. Accept the defaults on every screen, with one
+        important exception: on the screen about adjusting your PATH, make
+        sure <strong>"Git from the command line and also from 3rd-party
+        software"</strong> is selected. Without this, PowerShell won't be
+        able to find <code>git</code> at all.</li>
+        <li>Finish the installer.</li>
+        <li>Close PowerShell completely and reopen it — this step won't take
+        effect in a window that was already open.</li>
+      </ol>
+      <p>Verify:</p>
       <pre><code>git --version</code></pre>
-      <p>Then tell Git who you are:</p>
+      <p>If it still says the command isn't recognized, double-check that
+      you closed and reopened PowerShell, and that you selected the PATH
+      option in step 2 above.</p>
+
+      <p>Now tell Git who you are, so it can label the changes it tracks:</p>
       <pre><code>git config --global user.name "Your Name"
 git config --global user.email "your@email.com"</code></pre>
       <p>For example:</p>
@@ -142,15 +188,26 @@ git config --global user.email "jamie.chen@university.edu"</code></pre>
       <pre><code>git config --global --list</code></pre>
 
       <h3 class="subhead-accent">Step 4: Node.js</h3>
-      <p>Download the LTS installer from
-      <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>.
-      Keep the default options, and make sure <strong>"Add to PATH"</strong> is
-      checked. In a new PowerShell window, verify:</p>
+      <p>Node.js is a JavaScript runtime, and npm is the package manager that
+      ships with it. Claude Code is distributed as an npm package, so
+      installing Node.js is a required step no matter what else ends up on
+      your laptop.</p>
+      <ol>
+        <li>Download the LTS installer from
+        <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>.</li>
+        <li>Run the installer, accepting the license agreement and the
+        default install location.</li>
+        <li>On the "Custom Setup" screen, make sure
+        <strong>"Add to PATH"</strong> is checked (it usually is, by
+        default).</li>
+        <li>Finish the installer.</li>
+      </ol>
+      <p>In a new PowerShell window, verify:</p>
       <pre><code>node --version
 npm --version</code></pre>
 
       <h3 class="subhead-accent">Step 5: Claude Code</h3>
-      <p>Install it with:</p>
+      <p>This is the agent itself. Install it with:</p>
       <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
 
       <div class="callout">
@@ -163,22 +220,45 @@ npm --version</code></pre>
       <pre><code>claude --version</code></pre>
 
       <h3 class="subhead-accent">Step 6: VS Code</h3>
-      <p>Download the installer from
-      <a href="https://code.visualstudio.com">code.visualstudio.com</a>. Keep
-      the defaults, and make sure <strong>"Add to PATH"</strong> is checked.
-      Verify:</p>
+      <p>VS Code is a code and text editor. Starting on page 5 of this
+      module, you'll use it to open the folders an agent is working in and
+      read the files it produces.</p>
+      <ol>
+        <li>Download the installer from
+        <a href="https://code.visualstudio.com">code.visualstudio.com</a>.</li>
+        <li>Run the installer, accepting the license agreement and the
+        default install location.</li>
+        <li>On the "Select Additional Tasks" screen, the defaults are fine —
+        these just add convenient right-click options like "Open with
+        Code."</li>
+        <li>Make sure <strong>"Add to PATH"</strong> is checked.</li>
+        <li>Finish the installer.</li>
+      </ol>
+      <p>Verify:</p>
       <pre><code>code --version</code></pre>
 
       <h3 class="subhead-accent">Step 7: Miniconda</h3>
-      <p>Download the Windows installer from
-      <a href="https://docs.anaconda.com/miniconda/">anaconda.com/miniconda</a>.
-      On the Advanced Options screen, <strong>leave "Add Miniconda3 to PATH"
-      unchecked</strong> — it's marked "not recommended" because it can
-      conflict with other Python tools. Instead, initialize it after
-      installing, from a new PowerShell window:</p>
+      <p>Later in the course, you'll ask an agent to write and run a Python
+      script against real files — for example, updating a financial model
+      from a trial balance. Miniconda installs Python along with
+      <strong>conda</strong>, a tool for keeping each project's Python setup
+      separate and consistent. Installing it now means every agent you run
+      has the same Python environment to work with.</p>
+      <ol>
+        <li>Download the Windows installer from
+        <a href="https://docs.anaconda.com/miniconda/">anaconda.com/miniconda</a>.</li>
+        <li>Run the installer, accepting the license agreement and the
+        default install location.</li>
+        <li>On the Advanced Options screen, <strong>leave "Add Miniconda3 to
+        PATH" unchecked</strong> — it's marked "not recommended" because it
+        can conflict with other Python tools.</li>
+        <li>Finish the installer.</li>
+      </ol>
+      <p>Instead of adding it to PATH during install, initialize it
+      afterward, from a new PowerShell window:</p>
       <pre><code>conda init powershell</code></pre>
       <p>Close and reopen PowerShell. Your prompt should now start with
-      <code>(base)</code>. Verify:</p>
+      <code>(base)</code> — that means conda is active. Verify:</p>
       <pre><code>conda --version
 python --version</code></pre>
       <p>If <code>conda</code> still isn't recognized, open
@@ -186,10 +266,18 @@ python --version</code></pre>
       instead of plain PowerShell.</p>
 
       <h3 class="subhead-accent">Step 8: Pandoc</h3>
-      <p>Download the <code>.msi</code> installer from
-      <a href="https://pandoc.org/installing.html">pandoc.org/installing.html</a>
-      and run it — Pandoc adds itself to PATH automatically. In a new
-      PowerShell window, verify:</p>
+      <p>Pandoc converts documents between formats — for example, turning a
+      plain-text draft into a Word document formatted to match one you
+      already have. One of this course's use cases asks an agent to produce a
+      recap document that matches an existing reference document's
+      formatting exactly; Pandoc is what makes that possible.</p>
+      <ol>
+        <li>Download the <code>.msi</code> installer from
+        <a href="https://pandoc.org/installing.html">pandoc.org/installing.html</a>.</li>
+        <li>Run the installer and accept the defaults — Pandoc adds itself to
+        PATH automatically, with no extra steps.</li>
+      </ol>
+      <p>In a new PowerShell window, verify:</p>
       <pre><code>pandoc --version</code></pre>
 
       <h3 class="subhead-accent">Step 9: Confirm everything</h3>
