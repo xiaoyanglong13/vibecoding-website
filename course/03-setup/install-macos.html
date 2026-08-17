@@ -197,12 +197,22 @@ code --version</code></pre>
       <h3 class="subhead-accent">Step 6: Finish Git and Python setup</h3>
       <p>Two tools need a one-time configuration step before they're ready to
       use.</p>
-      <p>Git needs to know who you are, so it can label the changes it tracks:</p>
+      <p>Git needs to know who you are, so it can label the changes it tracks. Enter the following command in your terminal (replace name and email with your own information):</p>
       <pre><code>git config --global user.name "Your Name"
 git config --global user.email "your@email.com"</code></pre>
       <p>For example:</p>
       <pre><code>git config --global user.name "Jamie Chen"
 git config --global user.email "jamie.chen@university.edu"</code></pre>
+
+      <div class="callout tip">
+        <span class="callout-label">Tip</span>
+        Use your school email address if you can. Later in the course, you'll
+        likely want to link a GitHub account to this same email — students
+        typically qualify for free GitHub perks (like GitHub Pro or Copilot)
+        through their school email, so starting with it now saves you from
+        redoing this step later.
+      </div>
+
       <p>Verify:</p>
       <pre><code>git config --global --list</code></pre>
       <p>Conda needs to hook itself into your shell:</p>
