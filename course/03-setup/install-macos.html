@@ -148,21 +148,22 @@
       <p>Open your terminal, copy and paste the following command, press enter:</p>
       <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
       <p>You will now be prompted to enter your computer password. Keep in mind that nothing will appear on the screen while you type---this is normal and a safety measure. Press enter when you are done.</p>
+      <p>Additional step for Apple Silicon Macs (M1 or later), Homebrew installs to
+      <code>/opt/homebrew</code>, which isn't on your PATH by default. Run
+      these two lines once, exactly as shown, to fix that:</p>
+      <pre><code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+source ~/.zprofile</code></pre>
+
       <div class="callout tip">
         <span class="callout-label">Tip</span>
         Not sure which chip your Mac has? Click the Apple menu in the
         top-left corner → <strong>About This Mac</strong>. Look for the line
         labeled "Chip" — if it says <strong>Apple M1</strong>,
         <strong>M2</strong>, <strong>M3</strong>, or similar, you're on Apple
-        Silicon and the step below applies to you. If it says
+        Silicon and the step above applies to you. If it says
         <strong>Intel</strong>, skip it.
       </div>
 
-      <p>Additional step for Apple Silicon Macs (M1 or later), Homebrew installs to
-      <code>/opt/homebrew</code>, which isn't on your PATH by default. Run
-      these two lines once, exactly as shown, to fix that:</p>
-      <pre><code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-source ~/.zprofile</code></pre>
       <p>Verify:</p>
       <pre><code>brew doctor
 brew --version</code></pre>
