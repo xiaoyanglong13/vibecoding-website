@@ -62,7 +62,7 @@
       <h2>Installation instructions</h2>
       <p>Follow the following step in sequence. The installation process should take 30-60 minutes.</p>
 
-      <h3 class="subhead-accent">Find Your Terminal</h3>
+      <h3 class="subhead-accent">Step 1: Find Your Terminal</h3>
       <p>A computer terminal is a plain text window where you type direct commands to your computer using a
          keyboard, instead of clicking pictures, buttons, or icons with a mouse. It is like a direct text-only
           chat room with the core of your machine.</p>
@@ -120,32 +120,48 @@
         </tbody>
       </table>
 
-      <h3 class="subhead-accent">Xcode Command Line Tools</h3>
-      <p>Homebrew, the next step, won't run without this. It installs a small
+      <h3 class="subhead-accent">Step 2: Xcode Command Line Tools</h3>
+      <p>This step installs a small
       set of developer utilities (about 740 MB) — not the full Xcode app
-      (10+ GB). You don't need Xcode itself for this course.</p>
+      (10+ GB). You don't need Xcode itself for this course. Copy and paste the following text into your terminal and click enter.</p>
       <pre><code>xcode-select --install</code></pre>
-      <p>A dialog box will walk you through the rest. Verify once it's done:</p>
+      <p>A dialog box will walk you through the rest. Verify once it's done by entering:</p>
       <pre><code>xcode-select -p</code></pre>
       <p>A file path means it's installed; an error means the install above
       hasn't finished yet.</p>
 
-      <h3 class="subhead-accent">Homebrew</h3>
-      <p>Run the official install script:</p>
+      <h3 class="subhead-accent">Step 3: Homebrew</h3>
+      <p>Homebrew is a very popular tool for downloading software packages on Mac. Once it is installed, you can install other packages like Git, Node.js, VS Code, etc., through a single terminal command, without having to go to their respective official websites. </p>
+      <p>The install command below also lives on Homebrew's own website,
+      <a href="https://brew.sh">brew.sh</a> — worth bookmarking, since that's
+      also where you'd go to check you have the current command if this page
+      ever falls out of date:</p>
+
+      <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+        <img src="images/homebrew-website.png"
+             alt="The Homebrew homepage at brew.sh, showing the tagline 'The Package Manager for Everywhere' and the install command in a terminal-style box: /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;"
+             style="display: block; width: 100%; height: auto;">
+        <figcaption style="padding: 10px 14px; font-size: 14px; color: var(--color-text-muted); border-top: 1px solid var(--color-border);">
+          Homebrew's homepage at brew.sh, with the same install command shown
+          below.
+        </figcaption>
+      </figure>
+
+      <p>Open your terminal, copy and paste the following command, press enter:</p>
       <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-      <p>On Apple Silicon Macs (M1 or later), Homebrew installs to
+      <p>You will now be prompted to enter your computer password. Keep in mind that nothing will appear on the screen while you type---this is normal and a safety measure. Press enter when you are done.</p>
+      <p>Additional step for Apple Silicon Macs (M1 or later), Homebrew installs to
       <code>/opt/homebrew</code>, which isn't on your PATH by default. Run
       these two lines once, exactly as shown, to fix that:</p>
       <pre><code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 source ~/.zprofile</code></pre>
-      <p>(The installer also prints these same two lines at the end of its own
-      output — either source works.) Verify:</p>
+      <p>Verify:</p>
       <pre><code>brew doctor
 brew --version</code></pre>
       <p><code>brew doctor</code> should say "Your system is ready to
       brew."</p>
 
-      <h3 class="subhead-accent">Node.js, Git, Pandoc, VS Code, and Miniconda — all at once</h3>
+      <h3 class="subhead-accent">Step 4: Node.js, Git, Pandoc, VS Code, and Miniconda — all at once</h3>
       <p>With Homebrew in place, most of the remaining list is one command.
       Command-line tools install plainly; applications with a window (VS Code,
       Miniconda) install as <code>--cask</code>:</p>
@@ -161,22 +177,17 @@ code --version</code></pre>
       it's initialized below — running it now, before that step, won't work
       yet.)</p>
 
-      <h3 class="subhead-accent">Claude Code</h3>
+      <h3 class="subhead-accent">Step 5: Claude Code</h3>
       <p>Install it with:</p>
       <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
 
-      <div class="callout">
-        <span class="callout-label">Key takeaway</span>
-        This install command is identical on Mac and Windows — unlike the
-        Homebrew-routed tools above it, there's no OS-specific branching here.
-      </div>
 
       <p>Verify:</p>
       <pre><code>claude --version</code></pre>
 
-      <h3 class="subhead-accent">Finish Git and Python setup</h3>
+      <h3 class="subhead-accent">Step 6: Finish Git and Python setup</h3>
       <p>Two tools need a one-time configuration step before they're ready to
-      use, even though they're already installed.</p>
+      use.</p>
       <p>Git needs to know who you are, so it can label the changes it tracks:</p>
       <pre><code>git config --global user.name "Your Name"
 git config --global user.email "your@email.com"</code></pre>
@@ -189,7 +200,7 @@ git config --global user.email "your@email.com"</code></pre>
       <pre><code>conda --version
 python --version</code></pre>
 
-      <h3 class="subhead-accent">Confirm everything</h3>
+      <h3 class="subhead-accent">Step 7: Confirm everything</h3>
       <p>In a fresh Terminal window, run all of these. Each should print a
       version number — never "command not found":</p>
       <pre><code>git --version
@@ -199,8 +210,7 @@ conda --version
 pandoc --version
 code --version
 claude --version</code></pre>
-      <p>(Xcode Command Line Tools, Homebrew, and Python were already confirmed
-      in their own steps above — no need to check them twice.)</p>
+
 
       <h3 class="subhead-accent">macOS: frequently asked questions</h3>
 
