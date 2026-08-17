@@ -124,9 +124,18 @@ Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboratio
 Fully written. Sub-pages: agent-mental-model, what-agents-unlock, agent-harness.
 what-agents-unlock is an introduction to vibecoding (what it is, its history, the
 shift from implementing to directing) — replaces the earlier worked-example and
-when-an-agent-helps sub-pages. agent-harness goes deeper on one principle it
-introduces: the harness (instructions, context, tools, and boundaries around a
-model).
+when-an-agent-helps sub-pages. Its forecasting walkthrough now shows a detailed,
+iterative agentic prompt (initial ask → agent misstep → corrected follow-up)
+rather than a one-shot goal, plus a small Python-vs-Claude-Code example
+contrasting a written procedure with a stated objective; it ends with "Exercise:
+What would you delegate?" agent-harness goes deeper on one principle
+what-agents-unlock introduces: the harness (instructions, context, tools, and
+boundaries around a model). It includes a minimal meeting-scheduling example, a
+"Where is the harness?" section covering built-in vs. connected tools (including
+MCP) and memory, and a concrete "setting up a price-tracking agent" example
+showing what each harness part looks like in practice (a mock prompt window, a
+folder/file tree, and a tool list); it no longer has its own closing exercise,
+since it was redundant with what-agents-unlock's.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
 Index written. Sub-pages (install-claude-code, first-run, appendix-opencode, which-model) planned but not yet built.
