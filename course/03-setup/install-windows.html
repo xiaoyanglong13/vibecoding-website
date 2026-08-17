@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install on Windows · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><span class="module-num">6.</span>Your first agent run</li>
+        <li><span class="module-num">7.</span>Appendix: OpenCode</li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 3 of 7 · 20 minutes</span>
+        <h1>Install on Windows</h1>
+        <p class="lede">Every command on this page runs in PowerShell. Unlike
+        Mac, there's no single package manager doing the work — each tool gets
+        its own installer. Follow it top to bottom. (On Mac? Skip to the
+        <a href="/course/03-setup/install-macos.html">macOS walkthrough</a> instead.)</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Have all eight tools installed and configured on Windows, confirmed
+      with a full version-check.</p>
+
+      <h3 class="subhead-accent">Find PowerShell</h3>
+      <p>Open the Start menu, type <strong>PowerShell</strong>, and press
+      Enter. (On Windows 11, this opens inside Windows Terminal — a modern
+      wrapper around the same thing.) The prompt looks like
+      <code>PS C:\Users\yourname&gt;</code> — that's where you type.</p>
+      <p>Enter runs whatever you've typed, the up arrow recalls your last
+      command, and right-click pastes from the clipboard.</p>
+
+      <h3 class="subhead-accent">Allow scripts to run</h3>
+      <p>Windows blocks unsigned scripts by default, which trips up several
+      installers below. Loosen that, for your account only:</p>
+      <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+      <p><code>RemoteSigned</code> lets local scripts run freely while still
+      requiring downloaded scripts to be signed; <code>-Scope CurrentUser</code>
+      applies only to your account, so it doesn't need administrator rights.
+      Verify:</p>
+      <pre><code>Get-ExecutionPolicy</code></pre>
+      <p>It should print <code>RemoteSigned</code>.</p>
+
+      <h3 class="subhead-accent">Git</h3>
+      <p>Download the installer from
+      <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>
+      and run it. Accept the defaults, with one exception: on the PATH screen,
+      select <strong>"Git from the command line and also from 3rd-party
+      software."</strong> Without that, PowerShell won't find <code>git</code>.</p>
+      <p>Close PowerShell, reopen it, and verify:</p>
+      <pre><code>git --version</code></pre>
+      <p>Then tell Git who you are:</p>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your@email.com"</code></pre>
+      <p>Verify:</p>
+      <pre><code>git config --global --list</code></pre>
+
+      <h3 class="subhead-accent">Node.js</h3>
+      <p>Download the LTS installer from
+      <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>.
+      Keep the default options, and make sure <strong>"Add to PATH"</strong> is
+      checked. In a new PowerShell window, verify:</p>
+      <pre><code>node --version
+npm --version</code></pre>
+
+      <h3 class="subhead-accent">Claude Code</h3>
+      <p>Install it with:</p>
+      <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+      <div class="callout">
+        <span class="callout-label">Key takeaway</span>
+        This install command is identical on Mac and Windows — unlike most of
+        the tools above it, there's no OS-specific branching here.
+      </div>
+
+      <p>Verify:</p>
+      <pre><code>claude --version</code></pre>
+
+      <h3 class="subhead-accent">VS Code</h3>
+      <p>Download the installer from
+      <a href="https://code.visualstudio.com">code.visualstudio.com</a>. Keep
+      the defaults, and make sure <strong>"Add to PATH"</strong> is checked.
+      Verify:</p>
+      <pre><code>code --version</code></pre>
+
+      <h3 class="subhead-accent">Miniconda</h3>
+      <p>Download the Windows installer from
+      <a href="https://docs.anaconda.com/miniconda/">anaconda.com/miniconda</a>.
+      On the Advanced Options screen, <strong>leave "Add Miniconda3 to PATH"
+      unchecked</strong> — it's marked "not recommended" because it can
+      conflict with other Python tools. Instead, initialize it after
+      installing, from a new PowerShell window:</p>
+      <pre><code>conda init powershell</code></pre>
+      <p>Close and reopen PowerShell. Your prompt should now start with
+      <code>(base)</code>. Verify:</p>
+      <pre><code>conda --version
+python --version</code></pre>
+      <p>If <code>conda</code> still isn't recognized, open
+      <strong>"Anaconda Prompt (miniconda3)"</strong> from the Start menu
+      instead of plain PowerShell.</p>
+
+      <h3 class="subhead-accent">Pandoc</h3>
+      <p>Download the <code>.msi</code> installer from
+      <a href="https://pandoc.org/installing.html">pandoc.org/installing.html</a>
+      and run it — Pandoc adds itself to PATH automatically. In a new
+      PowerShell window, verify:</p>
+      <pre><code>pandoc --version</code></pre>
+
+      <h3 class="subhead-accent">Confirm everything</h3>
+      <p>In a fresh PowerShell window, run all of these. Each should print a
+      version number — never "command not found":</p>
+      <pre><code>git --version
+node --version
+npm --version
+claude --version
+code --version
+conda --version
+python --version
+pandoc --version</code></pre>
+
+      <div class="callout warn">
+        <span class="callout-label">If something goes wrong</span>
+        <strong>"Command not recognized" right after installing something</strong>
+        — close and reopen PowerShell. Installers update PATH, but a window
+        that was already open won't see the change. If it still fails, check
+        whether that tool's "Add to PATH" option was actually selected during
+        setup.<br><br>
+        <strong>A script-execution error</strong> — re-run the
+        <code>Set-ExecutionPolicy</code> command above; it may not have taken
+        effect.<br><br>
+        <strong>An <code>npm install -g</code> times out</strong> — this is
+        usually a network hiccup. Wait and try again.
+      </div>
+
+      <a class="next-cta" href="/course/03-setup/login.html">
+        <div>
+          <div class="next-cta-label">Next · Page 4 of 7</div>
+          <div class="next-cta-title">Log in to Claude Code</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in to Claude Code · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><span class="module-num">6.</span>Your first agent run</li>
+        <li><span class="module-num">7.</span>Appendix: OpenCode</li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 4 of 7 · 5 minutes</span>
+        <h1>Log in to Claude Code</h1>
+        <p class="lede">Claude Code needs to know who you are before it will do
+        any work. Two ways to connect it: log in with a Claude account, or use
+        an API key billed by usage. Most students want the first one.</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Have Claude Code connected to an account, ready to run for real on the
+      next page.</p>
+
+      <h3 class="subhead-accent">Option A: Log in with a Claude account</h3>
+      <p>In Terminal (Mac) or PowerShell (Windows), run:</p>
+      <pre><code>claude</code></pre>
+      <p>The first time you run it, Claude Code opens a browser window and asks
+      you to log in — or create an account, if you don't have one — at
+      claude.ai. Approve the request there, then return to your terminal; it's
+      now connected.</p>
+      <p>This works with a Free, Pro, or Max plan. Free accounts have tight
+      usage limits that this course's exercises will run into quickly; a Pro
+      or Max plan is recommended if you're using this option.</p>
+
+      <h3 class="subhead-accent">Option B: Use an API key instead</h3>
+      <p>An API key bills per request instead of a flat subscription rate —
+      useful if you'd rather pay only for what you use. Create one at
+      <a href="https://console.anthropic.com">console.anthropic.com</a>, under
+      API Keys, then set it as an environment variable so Claude Code picks it
+      up automatically.</p>
+      <p>Mac (add this line to <code>~/.zshrc</code>, or run it once per
+      session):</p>
+      <pre><code>export ANTHROPIC_API_KEY="sk-ant-your-key-here"</code></pre>
+      <p>Windows (PowerShell):</p>
+      <pre><code>$env:ANTHROPIC_API_KEY="sk-ant-your-key-here"</code></pre>
+
+      <div class="callout warn">
+        <span class="callout-label">Treat this like a password</span>
+        Never share an API key or commit it to a file an agent might upload,
+        email, or push to GitHub. Anyone with the key can spend against your
+        account.
+      </div>
+
+      <h3 class="subhead-accent">Which should you use?</h3>
+      <p>For this course, Option A is simpler: a flat, predictable cost with no
+      billing setup. Option B suits students who specifically want usage-based
+      billing, or who plan to run Claude Code inside automated or scripted
+      workflows later in the course, where a subscription login doesn't apply.</p>
+
+      <a class="next-cta" href="/course/03-setup/using-vscode.html">
+        <div>
+          <div class="next-cta-label">Next · Page 5 of 7</div>
+          <div class="next-cta-title">Using Claude Code in VS Code</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

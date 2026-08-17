@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool overview · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><span class="module-num">6.</span>Your first agent run</li>
+        <li><span class="module-num">7.</span>Appendix: OpenCode</li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 1 of 7 · 8 minutes</span>
+        <h1>Tool overview</h1>
+        <p class="lede">Claude Code works best with a few supporting tools already
+        in place. This page is the checklist and the why; the next two pages walk
+        through actually installing everything, step by step, on Mac or Windows.</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Know what's being installed and why, before jumping into the Mac or
+      Windows walkthrough.</p>
+
+      <h2>The full install list</h2>
+      <p>Eight tools, installed once, so nothing shows up as a surprise
+      mid-course install later.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Mac</th>
+            <th>Windows</th>
+            <th>What it's for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Xcode Command Line Tools</strong></td>
+            <td>Built-in prompt</td>
+            <td>Not needed</td>
+            <td>Foundation dependency Homebrew needs to run</td>
+          </tr>
+          <tr>
+            <td><strong>Homebrew</strong></td>
+            <td>Install script</td>
+            <td>Not needed</td>
+            <td>Package manager used to install everything else below, on a Mac</td>
+          </tr>
+          <tr>
+            <td><strong>Node.js + npm</strong></td>
+            <td>via Homebrew</td>
+            <td>Official installer</td>
+            <td>Runs Claude Code, which is distributed as an npm package</td>
+          </tr>
+          <tr>
+            <td><strong>Git</strong></td>
+            <td>via Homebrew</td>
+            <td>Official installer</td>
+            <td>Tracks changes an agent makes to your files, so you can roll one back</td>
+          </tr>
+          <tr>
+            <td><strong>Miniconda</strong></td>
+            <td>via Homebrew</td>
+            <td>Official installer</td>
+            <td>Gives agent-written Python scripts a consistent environment to run in</td>
+          </tr>
+          <tr>
+            <td><strong>Pandoc</strong></td>
+            <td>via Homebrew</td>
+            <td>Official installer</td>
+            <td>Converts agent-drafted documents into Word, PDF, and other formats</td>
+          </tr>
+          <tr>
+            <td><strong>VS Code</strong></td>
+            <td>via Homebrew</td>
+            <td>Official installer</td>
+            <td>Editor you'll use to browse and read an agent's files</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Code</strong></td>
+            <td><code>npm install -g @anthropic-ai/claude-code</code></td>
+            <td>Same command</td>
+            <td>The agent itself</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What each tool does, and why it's here now</h2>
+
+      <h3 class="subhead-accent">Xcode Command Line Tools (Mac only)</h3>
+      <p>A small set of developer utilities Apple ships separately from the full
+      Xcode app. Homebrew, the next tool on this list, won't run without it.
+      Windows has no equivalent.</p>
+
+      <h3 class="subhead-accent">Homebrew (Mac only)</h3>
+      <p>The standard package manager for Mac — a single command-line tool for
+      installing, updating, and removing other software. Once it's in place,
+      most of the rest of this list becomes one short command each. Windows has
+      no equivalent; each tool there gets its own installer instead.</p>
+
+      <h3 class="subhead-accent">Node.js and npm</h3>
+      <p>Node.js is a JavaScript runtime, and npm is the package manager that
+      ships with it. Claude Code is distributed as an npm package, so installing
+      Node.js is a required step no matter what else ends up on your laptop.</p>
+
+      <h3 class="subhead-accent">Git</h3>
+      <p>Git tracks changes to files over time. You won't use it directly until
+      Module 4, when reviewing — and sometimes rolling back — an agent's edits
+      becomes part of the workflow. It's easiest to install once now rather than
+      mid-course.</p>
+
+      <h3 class="subhead-accent">Miniconda</h3>
+      <p>Later in the course, you'll ask an agent to write and run a Python
+      script against real files — for example, updating a financial model from a
+      trial balance. Miniconda installs Python along with <strong>conda</strong>,
+      a tool for keeping each project's Python setup separate and consistent.
+      Installing it now means every agent you run has the same Python
+      environment to work with.</p>
+
+      <h3 class="subhead-accent">Pandoc</h3>
+      <p>Pandoc converts documents between formats — for example, turning a
+      plain-text draft into a Word document formatted to match one you already
+      have. One of this course's use cases asks an agent to produce a recap
+      document that matches an existing reference document's formatting exactly;
+      Pandoc is what makes that possible.</p>
+
+      <h3 class="subhead-accent">VS Code</h3>
+      <p>A code and text editor. Starting on page 5 of this module, you'll use it
+      to open the folders an agent is working in, read the files it produces,
+      and run Claude Code from its built-in terminal.</p>
+
+      <h3 class="subhead-accent">Claude Code</h3>
+      <p>The agent itself.</p>
+
+      <div class="callout">
+        <span class="callout-label">Key takeaway</span>
+        Claude Code's own install command is identical on Mac and Windows —
+        unlike most of the tools above it, there's no OS-specific branching.
+      </div>
+
+      <h2>Choose your operating system</h2>
+      <p>The next page walks through installing all eight tools, in order. Pick
+      the one that matches your laptop.</p>
+
+      <div class="card-grid">
+        <a class="card" href="/course/03-setup/install-macos.html">
+          <div class="card-eyebrow">20 min · Walkthrough</div>
+          <h3>Install on macOS</h3>
+          <p>Terminal, Homebrew, and one command for most of the list.</p>
+        </a>
+        <a class="card" href="/course/03-setup/install-windows.html">
+          <div class="card-eyebrow">20 min · Walkthrough</div>
+          <h3>Install on Windows</h3>
+          <p>PowerShell and an installer for each tool.</p>
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

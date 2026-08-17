@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install on macOS · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><span class="module-num">6.</span>Your first agent run</li>
+        <li><span class="module-num">7.</span>Appendix: OpenCode</li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 2 of 7 · 20 minutes</span>
+        <h1>Install on macOS</h1>
+        <p class="lede">Every command on this page runs in Terminal, using
+        Homebrew to install most of the eight tools from the previous page.
+        Follow it top to bottom — some steps depend on the one before it
+        finishing first. (On Windows? Skip to the <a href="/course/03-setup/install-windows.html">Windows walkthrough</a> instead.)</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Have all eight tools installed and configured on your Mac, confirmed
+      with a full version-check.</p>
+
+      <h3 class="subhead-accent">Find Terminal</h3>
+      <p>Press <strong>Cmd + Space</strong> to open Spotlight, type
+      <strong>Terminal</strong>, and press Enter. You'll see a prompt ending in
+      <code>%</code> — that's where you type.</p>
+      <p>A few things worth knowing before you start: Enter runs whatever
+      you've typed, the up arrow recalls your last command, and
+      <strong>Ctrl + C</strong> cancels whatever is currently running.</p>
+
+      <h3 class="subhead-accent">Xcode Command Line Tools</h3>
+      <p>Homebrew, the next step, won't run without this. It installs a small
+      set of developer utilities (a few hundred MB) — not the full Xcode app
+      (several GB). You don't need Xcode itself for this course.</p>
+      <pre><code>xcode-select --install</code></pre>
+      <p>A dialog box will walk you through the rest. Verify once it's done:</p>
+      <pre><code>xcode-select -p</code></pre>
+      <p>A file path means it's installed; an error means the install above
+      hasn't finished yet.</p>
+
+      <h3 class="subhead-accent">Homebrew</h3>
+      <p>Run the official install script:</p>
+      <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+      <p>On Apple Silicon Macs, the installer prints two lines at the end
+      starting with <code>echo</code> and <code>source</code> — run those
+      exactly as printed to add Homebrew to your PATH. Verify:</p>
+      <pre><code>brew --version</code></pre>
+
+      <h3 class="subhead-accent">Node.js, Git, Pandoc, VS Code, and Miniconda — all at once</h3>
+      <p>With Homebrew in place, most of the remaining list is one command.
+      Command-line tools install plainly; applications with a window (VS Code,
+      Miniconda) install as <code>--cask</code>:</p>
+      <pre><code>brew install git node pandoc
+brew install --cask visual-studio-code miniconda</code></pre>
+      <p>This takes a few minutes. Verify each one:</p>
+      <pre><code>git --version
+node --version
+npm --version
+pandoc --version
+code --version
+conda --version</code></pre>
+
+      <h3 class="subhead-accent">Claude Code</h3>
+      <p>Install it with:</p>
+      <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+      <div class="callout">
+        <span class="callout-label">Key takeaway</span>
+        This install command is identical on Mac and Windows — unlike the
+        Homebrew-routed tools above it, there's no OS-specific branching here.
+      </div>
+
+      <p>Verify:</p>
+      <pre><code>claude --version</code></pre>
+
+      <h3 class="subhead-accent">Finish Git and Python setup</h3>
+      <p>Two tools need a one-time configuration step before they're ready to
+      use, even though they're already installed.</p>
+      <p>Git needs to know who you are, so it can label the changes it tracks:</p>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your@email.com"</code></pre>
+      <p>Verify:</p>
+      <pre><code>git config --global --list</code></pre>
+      <p>Conda needs to hook itself into your shell:</p>
+      <pre><code>conda init zsh</code></pre>
+      <p>Close Terminal and reopen it. Your prompt should now start with
+      <code>(base)</code> — that means conda is active.</p>
+
+      <h3 class="subhead-accent">Confirm everything</h3>
+      <p>In a fresh Terminal window, run all of these. Each should print a path
+      or a version number — never "command not found":</p>
+      <pre><code>xcode-select -p
+brew --version
+git --version
+node --version
+npm --version
+conda --version
+python --version
+pandoc --version
+code --version
+claude --version</code></pre>
+
+      <div class="callout warn">
+        <span class="callout-label">If something goes wrong</span>
+        <strong>"Command not found" right after installing something</strong> —
+        close and reopen Terminal. Installers update your PATH, but a Terminal
+        window that was already open won't see the change.<br><br>
+        <strong>macOS says an installer is from an "unidentified developer"</strong>
+        — go to System Settings → Privacy &amp; Security and click "Open
+        Anyway" next to the blocked item.<br><br>
+        <strong>Homebrew seems stuck</strong> — it's usually just a slow
+        download. Let it finish rather than restarting partway through.<br><br>
+        <strong>A permission error during <code>npm install -g</code></strong>
+        — don't run it with <code>sudo</code>. Restart Terminal and try again;
+        this is almost always the same PATH issue as above.
+      </div>
+
+      <a class="next-cta" href="/course/03-setup/login.html">
+        <div>
+          <div class="next-cta-label">Next · Page 4 of 7</div>
+          <div class="next-cta-title">Log in to Claude Code</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

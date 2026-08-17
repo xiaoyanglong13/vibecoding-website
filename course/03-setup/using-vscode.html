@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using Claude Code in VS Code · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><span class="module-num">6.</span>Your first agent run</li>
+        <li><span class="module-num">7.</span>Appendix: OpenCode</li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 5 of 7 · 15 minutes</span>
+        <h1>Using Claude Code in VS Code</h1>
+        <p class="lede">Claude Code runs in a terminal, and VS Code has one
+        built in. Running it there means seeing your files and the agent's
+        output in the same window, instead of switching between two apps.</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Open a project folder in VS Code, run Claude Code from its built-in
+      terminal, and confirm it can read your files.</p>
+
+      <h3 class="subhead-accent">Why work from inside VS Code</h3>
+      <p>You could run Claude Code from Terminal or PowerShell directly — the
+      previous pages already did. But once you're actually working on
+      something, you'll want to see the files an agent is reading and editing
+      at the same time you're talking to it. VS Code gives you both in one
+      window: the upper part for browsing and reading files, the lower part for
+      the conversation.</p>
+
+      <h3 class="subhead-accent">Get oriented</h3>
+      <p>VS Code's window is divided into a few regions. You'll mostly use
+      three of them: the sidebar, the editor, and the panel.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Where</th>
+            <th>What it's for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Activity bar</strong></td>
+            <td>Far left, a thin strip of icons</td>
+            <td>Switches what the sidebar shows (files, search, extensions)</td>
+          </tr>
+          <tr>
+            <td><strong>Sidebar</strong></td>
+            <td>Left</td>
+            <td>Browses the files in your open folder</td>
+          </tr>
+          <tr>
+            <td><strong>Editor</strong></td>
+            <td>Center, largest area</td>
+            <td>Shows the contents of whatever file you click</td>
+          </tr>
+          <tr>
+            <td><strong>Panel</strong></td>
+            <td>Bottom</td>
+            <td>Where the integrated terminal — and Claude Code — runs</td>
+          </tr>
+          <tr>
+            <td><strong>Status bar</strong></td>
+            <td>Bottom strip</td>
+            <td>Shows quick info about the current file and project</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="subhead-accent">A couple of useful extensions</h3>
+      <p>Open the Extensions view (<strong>Cmd+Shift+X</strong> on Mac,
+      <strong>Ctrl+Shift+X</strong> on Windows), search for each by name, and
+      click Install:</p>
+      <ul>
+        <li><strong>Office Viewer</strong> — preview <code>.docx</code> and
+        <code>.xlsx</code> files without leaving VS Code. Useful once an agent
+        starts producing spreadsheets and Word documents in later modules.</li>
+        <li><strong>Git Graph</strong> — a visual view of your commit history.
+        Useful starting in Module 4, once you're relying on Git to review and
+        roll back an agent's changes.</li>
+      </ul>
+
+      <h3 class="subhead-accent">Open your project folder</h3>
+      <p>Use <strong>File → Open...</strong> (Mac) or <strong>File → Open
+      Folder...</strong> (Windows), or drag a folder onto the VS Code icon. You
+      can also do it from a terminal:</p>
+      <pre><code>code ~/path/to/your/folder</code></pre>
+      <p>On a Mac, this requires installing the <code>code</code> command
+      first: open the Command Palette (<strong>Cmd+Shift+P</strong>), search
+      for <strong>"Shell Command: Install 'code' command in PATH,"</strong> and
+      select it. Windows doesn't need this extra step — the installer already
+      added it.</p>
+
+      <h3 class="subhead-accent">Open the integrated terminal</h3>
+      <p>Press <strong>Control + `</strong> (Mac) or <strong>Ctrl + `</strong>
+      (Windows) — the backtick key, just left of "1" and below Esc. Or use
+      <strong>Terminal → New Terminal</strong> from the menu. The panel at the
+      bottom of the window opens with a terminal already pointed at your
+      project folder.</p>
+
+      <h3 class="subhead-accent">Launch Claude Code and try it</h3>
+      <p>In that terminal, run:</p>
+      <pre><code>claude</code></pre>
+      <p>Once it loads, try a simple prompt that only works if it can actually
+      see your files:</p>
+      <pre><code>What files are in this folder?</code></pre>
+      <p>If it lists what's actually there, everything from this module is
+      working — Claude Code is installed, logged in, and reading real files
+      from inside VS Code.</p>
+
+      <a class="next-cta" href="/course/03-setup/">
+        <div>
+          <div class="next-cta-label">Back to overview</div>
+          <div class="next-cta-title">Module 3 · Setting up your workspace</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
