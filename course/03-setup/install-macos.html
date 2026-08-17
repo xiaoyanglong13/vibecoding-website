@@ -51,7 +51,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 3 · Page 2 of 7 · 20 minutes</span>
+        <span class="eyebrow">Module 3 · Page 2 of 7 · 30 minutes</span>
         <h1>Install on macOS</h1>
         <p class="lede">Every command on this page runs in Terminal, using
         Homebrew to install most of the eight tools from the previous page.
@@ -68,16 +68,49 @@
           chat room with the core of your machine.</p>
           
       <p>Press <strong>Cmd + Space</strong> to open Spotlight, type
-      <strong>Terminal</strong>, and press Enter. You'll see a prompt ending in
-      <code>%</code> — that's where you type.</p>
-      <p>A few things worth knowing before you start: Enter runs whatever
-      you've typed, the up arrow recalls your last command, and
-      <strong>Ctrl + C</strong> cancels whatever is currently running.</p>
+      <strong>Terminal</strong>, and press Enter. You'll see a prompt that
+      looks something like <code>yourname@MacBook ~ %</code>. <code>~</code>
+      is shorthand for your home folder — it shows where you currently are.
+      <code>%</code> marks the end of the prompt — that's where you type.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>To do this</th>
+            <th>Do this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Run a command</td>
+            <td>Type it, then press Enter</td>
+          </tr>
+          <tr>
+            <td>Cancel whatever is running</td>
+            <td>Ctrl + C</td>
+          </tr>
+          <tr>
+            <td>Copy</td>
+            <td>Cmd + C</td>
+          </tr>
+          <tr>
+            <td>Paste</td>
+            <td>Cmd + V</td>
+          </tr>
+          <tr>
+            <td>Clear the screen</td>
+            <td>Cmd + K</td>
+          </tr>
+          <tr>
+            <td>Recall your last command</td>
+            <td>Up arrow</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h3 class="subhead-accent">Xcode Command Line Tools</h3>
       <p>Homebrew, the next step, won't run without this. It installs a small
-      set of developer utilities (a few hundred MB) — not the full Xcode app
-      (several GB). You don't need Xcode itself for this course.</p>
+      set of developer utilities (about 740 MB) — not the full Xcode app
+      (10+ GB). You don't need Xcode itself for this course.</p>
       <pre><code>xcode-select --install</code></pre>
       <p>A dialog box will walk you through the rest. Verify once it's done:</p>
       <pre><code>xcode-select -p</code></pre>
@@ -87,10 +120,17 @@
       <h3 class="subhead-accent">Homebrew</h3>
       <p>Run the official install script:</p>
       <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-      <p>On Apple Silicon Macs, the installer prints two lines at the end
-      starting with <code>echo</code> and <code>source</code> — run those
-      exactly as printed to add Homebrew to your PATH. Verify:</p>
-      <pre><code>brew --version</code></pre>
+      <p>On Apple Silicon Macs (M1 or later), Homebrew installs to
+      <code>/opt/homebrew</code>, which isn't on your PATH by default. Run
+      these two lines once, exactly as shown, to fix that:</p>
+      <pre><code>echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+source ~/.zprofile</code></pre>
+      <p>(The installer also prints these same two lines at the end of its own
+      output — either source works.) Verify:</p>
+      <pre><code>brew doctor
+brew --version</code></pre>
+      <p><code>brew doctor</code> should say "Your system is ready to
+      brew."</p>
 
       <h3 class="subhead-accent">Node.js, Git, Pandoc, VS Code, and Miniconda — all at once</h3>
       <p>With Homebrew in place, most of the remaining list is one command.
@@ -103,8 +143,10 @@ brew install --cask visual-studio-code miniconda</code></pre>
 node --version
 npm --version
 pandoc --version
-code --version
-conda --version</code></pre>
+code --version</code></pre>
+      <p>(Miniconda's own <code>conda --version</code> check comes later, once
+      it's initialized below — running it now, before that step, won't work
+      yet.)</p>
 
       <h3 class="subhead-accent">Claude Code</h3>
       <p>Install it with:</p>
@@ -130,36 +172,44 @@ git config --global user.email "your@email.com"</code></pre>
       <p>Conda needs to hook itself into your shell:</p>
       <pre><code>conda init zsh</code></pre>
       <p>Close Terminal and reopen it. Your prompt should now start with
-      <code>(base)</code> — that means conda is active.</p>
+      <code>(base)</code> — that means conda is active. Verify:</p>
+      <pre><code>conda --version
+python --version</code></pre>
 
       <h3 class="subhead-accent">Confirm everything</h3>
-      <p>In a fresh Terminal window, run all of these. Each should print a path
-      or a version number — never "command not found":</p>
-      <pre><code>xcode-select -p
-brew --version
-git --version
+      <p>In a fresh Terminal window, run all of these. Each should print a
+      version number — never "command not found":</p>
+      <pre><code>git --version
 node --version
 npm --version
 conda --version
-python --version
 pandoc --version
 code --version
 claude --version</code></pre>
+      <p>(Xcode Command Line Tools, Homebrew, and Python were already confirmed
+      in their own steps above — no need to check them twice.)</p>
 
-      <div class="callout warn">
-        <span class="callout-label">If something goes wrong</span>
-        <strong>"Command not found" right after installing something</strong> —
-        close and reopen Terminal. Installers update your PATH, but a Terminal
-        window that was already open won't see the change.<br><br>
-        <strong>macOS says an installer is from an "unidentified developer"</strong>
-        — go to System Settings → Privacy &amp; Security and click "Open
-        Anyway" next to the blocked item.<br><br>
-        <strong>Homebrew seems stuck</strong> — it's usually just a slow
-        download. Let it finish rather than restarting partway through.<br><br>
-        <strong>A permission error during <code>npm install -g</code></strong>
-        — don't run it with <code>sudo</code>. Restart Terminal and try again;
-        this is almost always the same PATH issue as above.
-      </div>
+      <h3 class="subhead-accent">macOS: frequently asked questions</h3>
+
+      <p><strong>macOS says an installer is from an "unidentified
+      developer" — what do I do?</strong><br>
+      Go to System Settings → Privacy &amp; Security and click "Open Anyway"
+      next to the blocked item.</p>
+
+      <p><strong>Homebrew is installing very slowly.</strong><br>
+      This is usually just a slow connection to GitHub. Let it finish rather
+      than restarting partway through — restarting usually makes it slower,
+      not faster.</p>
+
+      <p><strong>Terminal asked for my Mac password during an install — is
+      that normal?</strong><br>
+      Yes. Several of these installers need permission to make system-level
+      changes, so a password prompt partway through is expected, not a sign
+      something went wrong.</p>
+
+      <p><strong>A command says "not found" right after I installed it.</strong><br>
+      Close Terminal and reopen it. Installers update your PATH, but a Terminal
+      window that was already open won't see the change.</p>
 
       <a class="next-cta" href="/course/03-setup/login.html">
         <div>
