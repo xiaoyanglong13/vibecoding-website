@@ -146,10 +146,8 @@
 
       <h3 class="subhead-accent">Step 3: Git</h3>
       <p>Git tracks changes to files over time — every edit, who made it, and
-      when. Claude Code depends on Git to track the changes <em>it</em> makes
-      to your files: what changed, and how to roll a change back if it turns
-      out to be wrong. You won't use Git directly until Module 4, but it's
-      easiest to install once now rather than mid-course.</p>
+      when. This allows you to roll a change back if it turns
+      out to be wrong, or collaborate with others to work on the same project without overwriting each other's work.</p>
       <ol>
         <li>Download the installer from
         <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a>.</li>
@@ -210,18 +208,12 @@ npm --version</code></pre>
       <p>This is the agent itself. Install it with:</p>
       <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
 
-      <div class="callout">
-        <span class="callout-label">Key takeaway</span>
-        This install command is identical on Mac and Windows — unlike most of
-        the tools above it, there's no OS-specific branching here.
-      </div>
 
       <p>Verify:</p>
       <pre><code>claude --version</code></pre>
 
       <h3 class="subhead-accent">Step 6: VS Code</h3>
-      <p>VS Code is a code and text editor. Starting on page 5 of this
-      module, you'll use it to open the folders an agent is working in and
+      <p>VS Code is a code and text editor. You'll use it to open the folders an agent is working in and
       read the files it produces.</p>
       <ol>
         <li>Download the installer from
@@ -242,8 +234,7 @@ npm --version</code></pre>
       script against real files — for example, updating a financial model
       from a trial balance. Miniconda installs Python along with
       <strong>conda</strong>, a tool for keeping each project's Python setup
-      separate and consistent. Installing it now means every agent you run
-      has the same Python environment to work with.</p>
+      separate and consistent. </p>
       <ol>
         <li>Download the Windows installer from
         <a href="https://docs.anaconda.com/miniconda/">anaconda.com/miniconda</a>.</li>
@@ -266,11 +257,7 @@ python --version</code></pre>
       instead of plain PowerShell.</p>
 
       <h3 class="subhead-accent">Step 8: Pandoc</h3>
-      <p>Pandoc converts documents between formats — for example, turning a
-      plain-text draft into a Word document formatted to match one you
-      already have. One of this course's use cases asks an agent to produce a
-      recap document that matches an existing reference document's
-      formatting exactly; Pandoc is what makes that possible.</p>
+      <p>Pandoc converts documents between formats.</p>
       <ol>
         <li>Download the <code>.msi</code> installer from
         <a href="https://pandoc.org/installing.html">pandoc.org/installing.html</a>.</li>
