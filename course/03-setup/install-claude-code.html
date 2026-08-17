@@ -58,13 +58,8 @@
         through actually installing everything, step by step, on Mac or Windows.</p>
       </div>
 
-      <h2>What you'll be able to do</h2>
-      <p>Know what's being installed and why, before jumping into the Mac or
-      Windows walkthrough.</p>
-
       <h2>The full install list</h2>
-      <p>Eight tools, installed once, so nothing shows up as a surprise
-      mid-course install later.</p>
+      <p>You will need to install at most 8 tools, depending on whether you are using a mac or a windows computer.</p>
 
       <table>
         <thead>
@@ -78,7 +73,7 @@
         <tbody>
           <tr>
             <td><strong>Xcode Command Line Tools</strong></td>
-            <td>Foundation dependency Homebrew needs to run</td>
+            <td>A suite of software development utilities for macOS. Needed to run Homebrew</td>
             <td>✓</td>
             <td>✗</td>
           </tr>
@@ -129,11 +124,6 @@
 
       <h2>What each tool does, and why it's here now</h2>
 
-      <h3 class="subhead-accent">Xcode Command Line Tools (Mac only)</h3>
-      <p>A small set of developer utilities Apple ships separately from the full
-      Xcode app. Homebrew, the next tool on this list, won't run without it.
-      Windows has no equivalent.</p>
-
       <h3 class="subhead-accent">Homebrew (Mac only)</h3>
       <p>The standard package manager for Mac — a single command-line tool for
       installing, updating, and removing other software. Once it's in place,
@@ -143,42 +133,27 @@
       <h3 class="subhead-accent">Node.js and npm</h3>
       <p>Node.js is a JavaScript runtime, and npm is the package manager that
       ships with it. Claude Code is distributed as an npm package, so installing
-      Node.js is a required step no matter what else ends up on your laptop.</p>
+      Node.js is a required step. This is also needed for adding MCP extensions.</p>
 
       <h3 class="subhead-accent">Git</h3>
-      <p>Git tracks changes to files over time. You won't use it directly until
-      Module 4, when reviewing — and sometimes rolling back — an agent's edits
-      becomes part of the workflow. It's easiest to install once now rather than
-      mid-course.</p>
+      <p>Git tracks changes to files over time. It allows you to roll back to an earlier version if needed. It also allows multiple developers to work 
+        on the same project simultaneously without overwriting each other's work.
+      </p>
 
       <h3 class="subhead-accent">Miniconda</h3>
-      <p>Later in the course, you'll ask an agent to write and run a Python
-      script against real files — for example, updating a financial model from a
-      trial balance. Miniconda installs Python along with <strong>conda</strong>,
-      a tool for keeping each project's Python setup separate and consistent.
-      Installing it now means every agent you run has the same Python
-      environment to work with.</p>
+      <p>Miniconda is a small, lightweight tool that helps you manage programming languages and software tools on your computer. Think of it as a bare-bones starter kit that gives you just the core engine (Python and the Conda manager) for coding.</p>
 
       <h3 class="subhead-accent">Pandoc</h3>
-      <p>Pandoc converts documents between formats — for example, turning a
-      plain-text draft into a Word document formatted to match one you already
-      have. One of this course's use cases asks an agent to produce a recap
-      document that matches an existing reference document's formatting exactly;
-      Pandoc is what makes that possible.</p>
+      <p>Pandoc is a free tool that acts like a universal translator for text files. It lets you convert a document from one format—like Markdown—into dozens of other formats, such as Word, PDF, HTML, or ePub.</p>
 
       <h3 class="subhead-accent">VS Code</h3>
-      <p>A code and text editor. Starting on page 5 of this module, you'll use it
+      <p>A code and text editor. YOu can use it
       to open the folders an agent is working in, read the files it produces,
       and run Claude Code from its built-in terminal.</p>
 
       <h3 class="subhead-accent">Claude Code</h3>
       <p>The agent itself.</p>
 
-      <div class="callout">
-        <span class="callout-label">Key takeaway</span>
-        Claude Code's own install command is identical on Mac and Windows —
-        unlike most of the tools above it, there's no OS-specific branching.
-      </div>
 
       <h2>Choose your operating system</h2>
       <p>The next page walks through installing all eight tools, in order. Pick
