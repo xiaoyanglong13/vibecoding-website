@@ -274,6 +274,10 @@ pre code {
   background: var(--color-warn-soft);
   border-left-color: var(--color-warn);
 }
+.callout.tip {
+  background: var(--color-accent-soft);
+  border-left-color: var(--color-accent);
+}
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
 .callout-label {
