@@ -133,7 +133,7 @@
       <p>Unlike Claude Code, OpenCode doesn't come wired to one company. You can choose which provider to talk
       to:</p>
       <pre><code>/connect</code></pre>
-      <p>You can also choose to work in the default option, which does not require logins or an API key.</p>
+    
 
 
       <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
@@ -145,13 +145,12 @@
           Anthropic is one option among several.
         </figcaption>
       </figure>
+        <p>You can also choose to work in the default option, which does not require logins or an API key.</p>
 
       <h3 class="subhead-accent">Step 4: Try a prompt</h3>
-      <p>Ask it something simple that forces it to go find an answer, rather
-      than recall one — for example:</p>
+      <p>Try starting a conversation by asking it something — for example:</p>
       <pre><code>what is the weather in Madison</code></pre>
-      <p>OpenCode reasons about the request, runs a web search, and reports
-      back with a real, current answer.</p>
+
 
       <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
         <img src="images/opencode-weather-prompt.png"
@@ -159,7 +158,7 @@
              style="display: block; width: 100%; height: auto;">
         <figcaption style="padding: 10px 14px; font-size: 14px; color: var(--color-text-muted); border-top: 1px solid var(--color-border);">
           A weather prompt in action — OpenCode searches the web and returns
-          a real forecast, not a guess.
+          a forecast.
         </figcaption>
       </figure>
 
@@ -213,16 +212,6 @@
           </tr>
         </tbody>
       </table>
-
-      <div class="callout warn">
-        <span class="callout-label">Good to know</span>
-        Two more shortcuts worth remembering: type <code>@</code> followed by
-        a filename to pull that file's contents into your prompt (for
-        example, <code>@report.md summarize this</code>), and prefix a line
-        with <code>!</code> to run it as a shell command and feed the output
-        back into the conversation (for example, <code>!git log --oneline
-        -5</code>).
-      </div>
 
 
       <a class="next-cta" href="/course/03-setup/">
