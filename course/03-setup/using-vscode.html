@@ -138,8 +138,7 @@
         with symbols instead of a toolbar: <code>#</code> for a heading,
         <code>**bold**</code> for bold, <code>-</code> for a bullet. No
         proprietary app is required to open one — any text editor works, and
-        VS Code renders it nicely. That combination — readable as plain text,
-        renders cleanly, tracks well in Git — is why agents like Claude Code
+        VS Code renders it nicely. AI agents like Claude Code
         default to Markdown for almost everything they write: project
         instructions (<code>CLAUDE.md</code>), plans, and summaries. Expect to
         see a lot of <code>.md</code> files once you start working with an
@@ -172,12 +171,18 @@
       options worth trying.</p>
 
       <h3 class="subhead-accent">Step 4: How to open your project folder</h3>
-      <p>You are strongly suggested to have a dedicated folder for each project. 
-        Once you have created such a folder, you can open it in VS code so you can see the contents of that folder 
-        and open the files directly. Claude Code will also know that this folder contains the relevant information for your project. 
-      There are three ways to open a folder that is already on your computer.</p>
+      <p>You are strongly suggested to have a dedicated folder for each project.
+        Once you have created such a folder, you can open it in VS code so you can see the contents of that folder
+        and open the files directly.
+      There are four ways to open a folder that is already on your computer.</p>
 
-      <p><strong>Method 1: Use the menu.</strong> On Mac, go to
+      <p><strong>Method 1: Use the Welcome tab.</strong> If VS Code opens with
+      no folder loaded, it shows a <strong>Welcome</strong> tab with an
+      <strong>Open...</strong> (Mac) or <strong>Open Folder...</strong>
+      (Windows) button right on it — click it, select your folder, and
+      confirm.</p>
+
+      <p><strong>Method 2: Use the menu.</strong> On Mac, go to
       <strong>File → Open...</strong>, select your folder, and click
       <strong>Open</strong>. On Windows, go to <strong>File → Open
       Folder...</strong>, select your folder, and click <strong>Select
@@ -190,11 +195,11 @@
         file.
       </div>
 
-      <p><strong>Method 2: Drag and drop.</strong> Drag the folder from
+      <p><strong>Method 3: Drag and drop.</strong> Drag the folder from
       Finder (Mac) or File Explorer (Windows) directly onto the VS Code
       window.</p>
 
-      <p><strong>Method 3: Use the terminal.</strong> Run:</p>
+      <p><strong>Method 4: Use the terminal.</strong> Run:</p>
       <pre><code>code ~/path/to/your/folder</code></pre>
       <p>For example:</p>
       <pre><code>code ~/Desktop/my-project</code></pre>
