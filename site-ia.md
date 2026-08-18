@@ -182,13 +182,19 @@ the initial build to add real screenshots, worked examples, and reference-level 
   integrated terminal open and ready was added before the final step, and Steps 4/6 got small
   wording tweaks. Its closing CTA now points forward to appendix-opencode instead of back to the
   module overview, since it's no longer the last page.
-- **appendix-opencode** — optional closing page, no reference equivalent (drafted using
-  `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs).
-  Frames OpenCode as a provider-agnostic alternative to Claude Code — install (Homebrew or npm),
-  launch from VS Code's terminal, `/connect` a model provider (OpenCode Zen or the same Anthropic
-  key from the login page), and the same "what files are in this folder?" smoke test — plus a
-  comparison table, a Build/Plan mode explainer, and command/shortcut reference tables. Closes with
-  "stick with Claude Code for this course" and a CTA back to the module overview.
+- **appendix-opencode** — optional closing page (10 min), no reference equivalent (drafted using
+  `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs,
+  then trimmed and revised by the user through several rounds of hands-on testing). Frames OpenCode
+  as a provider-agnostic, free-by-default alternative to Claude Code, via a comparison table (model
+  support, getting started, cost, project features) plus four steps: install (Homebrew or npm),
+  launch from a terminal (real screenshot of the launch screen), an **optional** `/connect` step to
+  add a model provider — OpenCode Zen or the same Anthropic key from the login page — noting the
+  default needs no login at all (real screenshot of the provider picker), and a "try a prompt" step
+  using a live weather query as the smoke test (real screenshot of OpenCode web-searching and
+  answering). Closes with a command-reference table and a CTA back to the module overview. Earlier
+  drafts had a Build/Plan-mode explainer, an `@`/`!` shortcuts callout, and a closing "which tool
+  should you use" wrap-up; the user cut all three during revision, so the page is now leaner than
+  the other Module 3 pages — don't re-add them without checking first.
 
 The planned **first-run** sub-page ("Your first agent run") was cut from the module rather than
 built — Module 3's smoke test already lives at the end of using-vscode, and a separate page for it
@@ -204,7 +210,8 @@ current pattern.
 
 **Picking this up next:** install-windows still has no real Windows screenshots (the user said skip
 for now — a prioritized shot list exists in this session's history if revisited). Module 3 itself is
-now fully built.
+now fully built and considered done as of 2026-08-18 — no open threads on it. Next build priorities
+are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
 Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
@@ -272,7 +279,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-17)
+## 9. Build status (as of 2026-08-18)
 
 | Section | Status |
 |---|---|
