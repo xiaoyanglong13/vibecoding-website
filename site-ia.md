@@ -141,27 +141,56 @@ folder/file tree, and a tool list); it no longer has its own closing exercise,
 since it was redundant with what-agents-unlock's.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
-Index written, ~90 minutes total. Restructured this session to mirror the page-by-page format of
-an external reference guide (Mac/Windows install guides split apart, rather than combined), adapted
-to Claude Code only — no Opencode. Five of seven sub-pages built:
-- **install-claude-code** — "Tool overview": the 8-item checklist (Xcode Command Line Tools,
-  Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) plus what each tool is and
-  why it's needed, OS-agnostic. Ends with two cards forking to the OS-specific walkthroughs. Git and
-  Miniconda in particular are installed ahead of when they're used (Module 4's version-safety page;
-  the finance case's pandas/openpyxl script) so nothing requires a mid-course install later.
-- **install-macos** — Mac-only step-by-step: Terminal orientation, Xcode CLT, Homebrew, one
-  combined `brew install` line for most of the list, Claude Code's npm install, Git config, `conda
-  init`, a full version-check, and an FAQ.
-- **install-windows** — Windows-only step-by-step: PowerShell orientation, execution policy, then
-  each tool's own installer in turn, a full version-check, and troubleshooting.
-- **login** — new page, no reference equivalent: Claude account login via the `claude` CLI, and an
-  Anthropic Console API key as an alternative for usage-based billing.
+Index written, ~90 minutes total. Restructured to mirror the page-by-page format of an external
+reference guide (a Chinese-language textbook, `ai.lingnan.top` chapter 3 — Mac and Windows install
+guides split into separate pages rather than combined), adapted to Claude Code only — no Opencode.
+Five of seven sub-pages built, all revised multiple times since the initial build to add real
+screenshots, worked examples, and reference-level step-by-step detail:
+- **install-claude-code** — "Tool overview": an 8-row checklist (Xcode Command Line Tools,
+  Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
+  it's for / Mac (✓/✗) / Windows (✓/✗), plus prose on what each tool is and why it's needed,
+  OS-agnostic. Ends with two cards forking to the OS-specific walkthroughs. Git and Miniconda in
+  particular are installed ahead of when they're used (Module 4's version-safety page; the finance
+  case's pandas/openpyxl script) so nothing requires a mid-course install later.
+- **install-macos** — Mac-only, numbered Step 1–9 walkthrough: what a Terminal is (with a real
+  screenshot) → operations table → Xcode CLT (exact size figures) → Homebrew (real
+  `echo`/`source` PATH commands, a screenshot of brew.sh, a "which chip do I have" tip, `brew
+  doctor`) → the combined `brew install` line for the rest → Claude Code → Git config (placeholder
+  + a concrete Jamie Chen example + a "use your school email" tip for later GitHub linking) →
+  Miniconda init → a trimmed final version-check list → an explicit Q&A-style FAQ (4 items,
+  matching the reference's own troubleshooting section; the reference's Tsinghua-mirror workaround
+  is deliberately dropped as China-specific and not relevant to this audience).
+- **install-windows** — Windows-only, numbered Step 1–9 walkthrough, brought to parity with the
+  macOS page's depth and reference 3.3's own granularity: what PowerShell is, shown in a mock
+  `.prompt-window` box (no real Windows screenshot exists yet — deliberately not fabricated;
+  candidates were listed for the user to capture later if wanted) → operations table (reference's
+  own 4-row version) → a "Windows 10 vs. 11 terminal" tip → execution policy as explicit numbered
+  sub-steps → each tool (Git, Node.js, Claude Code, VS Code, Miniconda, Pandoc) gets a "what it is
+  and why" paragraph before its own numbered install steps → the same Git config example + tip as
+  macOS → a 5-item Q&A FAQ (adds case-sensitivity and admin-rights items the macOS FAQ doesn't
+  need).
+- **login** — new page, no reference equivalent. Two options: Claude account login (a real
+  screenshot of a successful `/login`; explicitly notes Claude Code requires at least a Pro plan —
+  it does **not** work on the Free plan, and Pro rather than Max is what's recommended for this
+  course) and an Anthropic Console API key as a fully spelled-out alternative — numbered steps to
+  create a key, what an environment variable is, a session-only version, and a permanent version
+  for both Mac (`~/.zshrc`, explained plainly, with a copy-pasteable `echo >>` command) and Windows
+  (`SetEnvironmentVariable`), each with its own verify step.
 - **using-vscode** — orientation to VS Code's interface, two recommended extensions (Office Viewer,
   Git Graph), opening a project folder, opening the integrated terminal, and launching Claude Code
-  there as the module's real smoke test.
+  there as the module's real smoke test. Not revised since the initial build.
 
-Sub-pages first-run and appendix-opencode are still planned but not yet built, and now sit after
+Both `install-claude-code.html` and `assets/styles.css` gained a `.callout.tip` variant (light blue,
+distinct from the cream code blocks) — reusable sitewide for future "did you check X" reminders,
+not just Module 3.
+
+Sub-pages first-run and appendix-opencode are still planned but not yet built, and sit after
 login/using-vscode in the page order rather than immediately after install-claude-code.
+
+**Picking this up next:** install-windows still has no real Windows screenshots (the user said skip
+for now — a prioritized shot list exists in this session's history if revisited). first-run and
+appendix-opencode haven't been started. If either gets built, update this section and §2/§9 in the
+same change per CLAUDE.md.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
 Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
