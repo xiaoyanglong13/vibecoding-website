@@ -41,14 +41,13 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
 │   │   ├── /course/02-chat-to-agent/what-agents-unlock                                    ✅
 │   │   └── /course/02-chat-to-agent/agent-harness                                         ✅
-│   ├── /course/03-setup                                                                   🚧 5 of 7 sub-pages
+│   ├── /course/03-setup                                                                   ✅ all 6 sub-pages built
 │   │   ├── /course/03-setup/install-claude-code   (tool overview)                        ✅
 │   │   ├── /course/03-setup/install-macos                                                ✅
 │   │   ├── /course/03-setup/install-windows                                              ✅
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
-│   │   ├── /course/03-setup/first-run                                                    ❌ planned
-│   │   └── /course/03-setup/appendix-opencode                                            ❌ planned
+│   │   └── /course/03-setup/appendix-opencode                                            ✅
 │   ├── /course/04-workflow                                                                🚧 index only
 │   ├── /course/05-evaluating-output                                                       🚧 index only
 │   ├── /course/06-limits-and-ethics                                                       🚧 index only
@@ -143,9 +142,10 @@ since it was redundant with what-agents-unlock's.
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
 Index written, ~90 minutes total. Restructured to mirror the page-by-page format of an external
 reference guide (a Chinese-language textbook, `ai.lingnan.top` chapter 3 — Mac and Windows install
-guides split into separate pages rather than combined), adapted to Claude Code only — no Opencode.
-Five of seven sub-pages built, all revised multiple times since the initial build to add real
-screenshots, worked examples, and reference-level step-by-step detail:
+guides split into separate pages rather than combined), with the main walkthrough adapted to Claude
+Code only; the reference's own OpenCode content was held back for a closing appendix instead
+(see appendix-opencode below). All six sub-pages are now built, most revised multiple times since
+the initial build to add real screenshots, worked examples, and reference-level step-by-step detail:
 - **install-claude-code** — "Tool overview": an 8-row checklist (Xcode Command Line Tools,
   Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
   it's for / Mac (✓/✗) / Windows (✓/✗), plus prose on what each tool is and why it's needed,
@@ -178,19 +178,33 @@ screenshots, worked examples, and reference-level step-by-step detail:
   (`SetEnvironmentVariable`), each with its own verify step.
 - **using-vscode** — orientation to VS Code's interface, two recommended extensions (Office Viewer,
   Git Graph), opening a project folder, opening the integrated terminal, and launching Claude Code
-  there as the module's real smoke test. Not revised since the initial build.
+  there as the module's real smoke test. Revised since the initial build: a screenshot of the
+  integrated terminal open and ready was added before the final step, and Steps 4/6 got small
+  wording tweaks. Its closing CTA now points forward to appendix-opencode instead of back to the
+  module overview, since it's no longer the last page.
+- **appendix-opencode** — optional closing page, no reference equivalent (drafted using
+  `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs).
+  Frames OpenCode as a provider-agnostic alternative to Claude Code — install (Homebrew or npm),
+  launch from VS Code's terminal, `/connect` a model provider (OpenCode Zen or the same Anthropic
+  key from the login page), and the same "what files are in this folder?" smoke test — plus a
+  comparison table, a Build/Plan mode explainer, and command/shortcut reference tables. Closes with
+  "stick with Claude Code for this course" and a CTA back to the module overview.
+
+The planned **first-run** sub-page ("Your first agent run") was cut from the module rather than
+built — Module 3's smoke test already lives at the end of using-vscode, and a separate page for it
+was judged redundant. Module 3 is now a complete 6-page sequence (appendix-opencode renumbered from
+7 to 6 to fill the gap); every sidebar, index card, and next-cta across the module was updated to
+match.
 
 Both `install-claude-code.html` and `assets/styles.css` gained a `.callout.tip` variant (light blue,
 distinct from the cream code blocks) — reusable sitewide for future "did you check X" reminders,
-not just Module 3.
-
-Sub-pages first-run and appendix-opencode are still planned but not yet built, and sit after
-login/using-vscode in the page order rather than immediately after install-claude-code.
+not just Module 3. In practice, new tip/knowledge callouts on this site use `.callout.warn`
+(light-yellow) instead, per user preference — see login.html's `/model`-switching tip for the
+current pattern.
 
 **Picking this up next:** install-windows still has no real Windows screenshots (the user said skip
-for now — a prioritized shot list exists in this session's history if revisited). first-run and
-appendix-opencode haven't been started. If either gets built, update this section and §2/§9 in the
-same change per CLAUDE.md.
+for now — a prioritized shot list exists in this session's history if revisited). Module 3 itself is
+now fully built.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
 Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
@@ -267,7 +281,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Course index `/course` | ✅ Complete |
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
-| Module 3 `/course/03-setup` | 🚧 5 of 7 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`); `first-run` and `appendix-opencode` still planned |
+| Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Modules 4–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
@@ -279,7 +293,6 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
-1. Remaining Module 3 sub-pages (`first-run`, `appendix-opencode`).
-2. One additional case per function category to demonstrate breadth.
-3. Module 5 sub-pages (trust/evaluation — do not pilot without these).
-4. Fill in `/reference` glossary and cheat sheets.
+1. One additional case per function category to demonstrate breadth.
+2. Module 5 sub-pages (trust/evaluation — do not pilot without these).
+3. Fill in `/reference` glossary and cheat sheets.

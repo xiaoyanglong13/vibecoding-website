@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appendix: OpenCode · Module 3 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">1.</span>Tool overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">2.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">3.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">4.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">5.</span>Using Claude Code in VS Code</a></li>
+        <li><a href="/course/03-setup/appendix-opencode.html"><span class="module-num">6.</span>Appendix: OpenCode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 3 · Page 6 of 6 · 10 minutes</span>
+        <h1>Appendix: OpenCode</h1>
+        <p class="lede">Claude Code is this course's tool of choice, but it isn't
+        the only agent that runs in a terminal. OpenCode is a free,
+        open-source alternative worth knowing about. This page is optional —
+        read it if you're curious how another tool compares, or skip ahead to
+        <a href="/course/04-workflow/">Module 4</a>.</p>
+      </div>
+
+      <h2>What you'll be able to do</h2>
+      <p>Install OpenCode, launch it from VS Code's integrated terminal,
+      connect it to a model provider, and know how it differs from Claude
+      Code.</p>
+
+      <h2>Why this is an appendix, not a fork in the road</h2>
+      <p>OpenCode and Claude Code solve the same basic problem — an AI agent
+      that reads and edits files from a terminal — but they're built with
+      different priorities. OpenCode is provider-agnostic: it can connect to
+      Anthropic's models, but also OpenAI's, Google's, or a dozen others,
+      which makes it a low-cost way to try several providers before
+      committing to one. Claude Code is built by Anthropic specifically for
+      Claude, and trades that flexibility for deeper project features —
+      Skills, sub-agents, and hooks among them — that this course leans on
+      from Module 4 onward.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>OpenCode</th>
+            <th>Claude Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Model support</strong></td>
+            <td>Many providers — Anthropic, OpenAI, Google, and others</td>
+            <td>Anthropic's models only, tightly integrated</td>
+          </tr>
+          <tr>
+            <td><strong>Getting started</strong></td>
+            <td>Lower — pick a provider and go</td>
+            <td>One account, one login, more built-in structure</td>
+          </tr>
+          <tr>
+            <td><strong>Project features</strong></td>
+            <td>File, command, and web access</td>
+            <td>Adds Skills, sub-agents, hooks, and other collaboration tools</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>For this course, stick with Claude Code — the rest of the modules
+      are written around it, and switching mid-course adds friction for no
+      real benefit. Treat OpenCode as something to know exists, and maybe
+      revisit later if you want to compare providers or shop around on
+      price.</p>
+
+      <h3 class="subhead-accent">Step 1: Install OpenCode</h3>
+      <p>You already have Node.js installed from earlier in this module, so
+      either command below will work regardless of OS. Mac users can also use
+      Homebrew.</p>
+      <p><strong>macOS (Homebrew):</strong></p>
+      <pre><code>brew install anomalyco/tap/opencode</code></pre>
+      <p><strong>macOS or Windows (npm):</strong></p>
+      <pre><code>npm install -g opencode-ai</code></pre>
+      <p>Verify:</p>
+      <pre><code>opencode --version</code></pre>
+
+      <h3 class="subhead-accent">Step 2: Launch it from VS Code</h3>
+      <p>Open the integrated terminal the same way you did in the
+      <a href="/course/03-setup/using-vscode.html">previous page</a>, then
+      run:</p>
+      <pre><code>opencode</code></pre>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Terminal — opencode</div>
+        <pre><code>&gt; opencode
+
+  OpenCode
+  Run /connect to add a model provider.
+
+  Build mode                                          &gt; </code></pre>
+      </div>
+
+      <p>This opens a text-based interface, not a browser window — the
+      conversation runs in the same pane, with an input box at the bottom.</p>
+
+      <h3 class="subhead-accent">Step 3: Connect a model provider</h3>
+      <p>Unlike Claude Code, OpenCode doesn't come wired to one company. The
+      first time you run it, you'll need to tell it which provider to talk
+      to:</p>
+      <pre><code>/connect</code></pre>
+      <p>You'll be given a choice. Two reasonable options:</p>
+      <ul>
+        <li><strong>OpenCode Zen</strong> — a curated list of models OpenCode
+        recommends for beginners. Sign in at <code>opencode.ai/auth</code>,
+        add billing, and paste the API key it gives you back into the
+        terminal when prompted.</li>
+        <li><strong>Anthropic</strong> — reuse the same API key you may have
+        created in <a href="/course/03-setup/login.html">Option B of the
+        login page</a>, if you'd rather talk to Claude specifically.</li>
+      </ul>
+
+      <h3 class="subhead-accent">Step 4: Try a prompt</h3>
+      <p>Same smoke test as the previous page — a prompt that only works if
+      the agent can actually see your files:</p>
+      <pre><code>What files are in this folder?</code></pre>
+      <p>If it lists what's actually there, OpenCode is installed, connected,
+      and reading real files — the same bar Claude Code had to clear.</p>
+
+      <h2>Two modes: Build and Plan</h2>
+      <p>Press <code>Tab</code> to switch between them:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>What it can do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Build</strong> (default)</td>
+            <td>Reads, writes, and edits files, and runs commands</td>
+          </tr>
+          <tr>
+            <td><strong>Plan</strong></td>
+            <td>Read-only — analyzes and proposes, but changes nothing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        On an unfamiliar project, switch to Plan mode first and let the agent
+        read the code and propose an approach. Once you've looked over the
+        plan, switch back to Build mode to actually let it make the changes.
+        This costs a few extra seconds and saves you from an agent
+        confidently editing the wrong file.
+      </div>
+
+      <h2>Useful commands</h2>
+      <p>Type <code>/</code> in the input box to see the full list with
+      autocomplete. The ones you'll reach for most:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>What it does</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/connect</code></td>
+            <td>Add or switch a model provider</td>
+          </tr>
+          <tr>
+            <td><code>/models</code></td>
+            <td>View and switch which model you're talking to</td>
+          </tr>
+          <tr>
+            <td><code>/new</code></td>
+            <td>Start a fresh conversation, no prior context</td>
+          </tr>
+          <tr>
+            <td><code>/compact</code></td>
+            <td>Compress a long conversation once it's eating too many tokens</td>
+          </tr>
+          <tr>
+            <td><code>/sessions</code></td>
+            <td>Browse past conversations</td>
+          </tr>
+          <tr>
+            <td><code>/undo</code> / <code>/redo</code></td>
+            <td>Revert or restore file changes (needs Git)</td>
+          </tr>
+          <tr>
+            <td><code>/init</code></td>
+            <td>Generate a project instructions file, similar to Claude Code's <code>CLAUDE.md</code></td>
+          </tr>
+          <tr>
+            <td><code>/help</code></td>
+            <td>Show the full command list</td>
+          </tr>
+          <tr>
+            <td><code>/exit</code></td>
+            <td>Quit OpenCode</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warn">
+        <span class="callout-label">Good to know</span>
+        Two more shortcuts worth remembering: type <code>@</code> followed by
+        a filename to pull that file's contents into your prompt (for
+        example, <code>@report.md summarize this</code>), and prefix a line
+        with <code>!</code> to run it as a shell command and feed the output
+        back into the conversation (for example, <code>!git log --oneline
+        -5</code>).
+      </div>
+
+      <h2>Which one should you use?</h2>
+      <p>For this course, Claude Code — everything from Module 4 forward
+      assumes it. OpenCode is worth having installed if you want to compare
+      how a prompt performs across providers, or if cost pushes you toward a
+      cheaper model later on. Knowing both means you're never locked into one
+      vendor's pricing or roadmap.</p>
+
+      <a class="next-cta" href="/course/03-setup/">
+        <div>
+          <div class="next-cta-label">Back to overview</div>
+          <div class="next-cta-title">Module 3 · Setting up your workspace</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
