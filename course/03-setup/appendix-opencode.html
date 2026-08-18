@@ -64,7 +64,7 @@
       connect it to a model provider, and know how it differs from Claude
       Code.</p>
 
-      <h2>Why this is an appendix, not a fork in the road</h2>
+      <h2>OpenCode vs Claude Code</h2>
       <p>OpenCode and Claude Code solve the same basic problem — an AI agent
       that reads and edits files from a terminal — but they're built with
       different priorities. OpenCode is provider-agnostic: it can connect to
@@ -72,8 +72,7 @@
       which makes it a low-cost way to try several providers before
       committing to one. Claude Code is built by Anthropic specifically for
       Claude, and trades that flexibility for deeper project features —
-      Skills, sub-agents, and hooks among them — that this course leans on
-      from Module 4 onward.</p>
+      Skills, sub-agents, and hooks among them.</p>
 
       <table>
         <thead>
@@ -91,7 +90,7 @@
           </tr>
           <tr>
             <td><strong>Getting started</strong></td>
-            <td>Lower — pick a provider and go</td>
+            <td>Pick a provider and go</td>
             <td>One account, one login, more built-in structure</td>
           </tr>
           <tr>
@@ -101,12 +100,6 @@
           </tr>
         </tbody>
       </table>
-
-      <p>For this course, stick with Claude Code — the rest of the modules
-      are written around it, and switching mid-course adds friction for no
-      real benefit. Treat OpenCode as something to know exists, and maybe
-      revisit later if you want to compare providers or shop around on
-      price.</p>
 
       <h3 class="subhead-accent">Step 1: Install OpenCode</h3>
       <p>You already have Node.js installed from earlier in this module, so
@@ -119,28 +112,19 @@
       <p>Verify:</p>
       <pre><code>opencode --version</code></pre>
 
-      <h3 class="subhead-accent">Step 2: Launch it from VS Code</h3>
-      <p>Open the integrated terminal the same way you did in the
-      <a href="/course/03-setup/using-vscode.html">previous page</a>, then
+      <h3 class="subhead-accent">Step 2: Launch it from a terminal</h3>
+      <p>Open a terminal (such as your computer's default terminal or the VS Code one), then
       run:</p>
       <pre><code>opencode</code></pre>
 
-      <div class="prompt-window">
-        <div class="prompt-window-header">Terminal — opencode</div>
-        <pre><code>&gt; opencode
+ <p>The interface will look like this:
+</p>
 
-  OpenCode
-  Run /connect to add a model provider.
+The default one is free. You can run /connect to add a model provider.
 
-  Build mode                                          &gt; </code></pre>
-      </div>
-
-      <p>This opens a text-based interface, not a browser window — the
-      conversation runs in the same pane, with an input box at the bottom.</p>
 
       <h3 class="subhead-accent">Step 3: Connect a model provider</h3>
-      <p>Unlike Claude Code, OpenCode doesn't come wired to one company. The
-      first time you run it, you'll need to tell it which provider to talk
+      <p>Unlike Claude Code, OpenCode doesn't come wired to one company. You can choose which provider to talk
       to:</p>
       <pre><code>/connect</code></pre>
       <p>You'll be given a choice. Two reasonable options:</p>
@@ -154,42 +138,6 @@
         login page</a>, if you'd rather talk to Claude specifically.</li>
       </ul>
 
-      <h3 class="subhead-accent">Step 4: Try a prompt</h3>
-      <p>Same smoke test as the previous page — a prompt that only works if
-      the agent can actually see your files:</p>
-      <pre><code>What files are in this folder?</code></pre>
-      <p>If it lists what's actually there, OpenCode is installed, connected,
-      and reading real files — the same bar Claude Code had to clear.</p>
-
-      <h2>Two modes: Build and Plan</h2>
-      <p>Press <code>Tab</code> to switch between them:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Mode</th>
-            <th>What it can do</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Build</strong> (default)</td>
-            <td>Reads, writes, and edits files, and runs commands</td>
-          </tr>
-          <tr>
-            <td><strong>Plan</strong></td>
-            <td>Read-only — analyzes and proposes, but changes nothing</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        On an unfamiliar project, switch to Plan mode first and let the agent
-        read the code and propose an approach. Once you've looked over the
-        plan, switch back to Build mode to actually let it make the changes.
-        This costs a few extra seconds and saves you from an agent
-        confidently editing the wrong file.
-      </div>
 
       <h2>Useful commands</h2>
       <p>Type <code>/</code> in the input box to see the full list with
@@ -252,12 +200,6 @@
         -5</code>).
       </div>
 
-      <h2>Which one should you use?</h2>
-      <p>For this course, Claude Code — everything from Module 4 forward
-      assumes it. OpenCode is worth having installed if you want to compare
-      how a prompt performs across providers, or if cost pushes you toward a
-      cheaper model later on. Knowing both means you're never locked into one
-      vendor's pricing or roadmap.</p>
 
       <a class="next-cta" href="/course/03-setup/">
         <div>
