@@ -48,10 +48,11 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
 │   │   └── /course/03-setup/appendix-opencode                                            ✅
-│   ├── /course/04-workflow                                                                ✅ all 6 sub-pages built
+│   ├── /course/04-workflow                                                                ✅ all 7 sub-pages built
 │   │   ├── /course/04-workflow/planning                                                  ✅
 │   │   ├── /course/04-workflow/information-environment                                   ✅
 │   │   ├── /course/04-workflow/specifying-the-task                                       ✅
+│   │   ├── /course/04-workflow/verify-before-you-trust                                   ✅
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
 │   │   └── /course/04-workflow/case-study-model-automation                               ✅
@@ -220,11 +221,17 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~150 min total), replacing
+Fully written and built 2026-08-19, all 7 sub-pages (~175 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list.
+A 7th page, **verify-before-you-trust**, was inserted between specifying-the-task
+and memory on 2026-08-19 (see below) — it covers checking output correctness,
+which topically overlaps with Module 5's planned checking-correctness/
+spotting-hallucinations sub-pages (still index-only, not yet built). That's the
+user's explicit call, not an oversight; if Module 5 gets built out later, check
+for duplication with this page rather than assuming it's needed there too.
 Sub-pages, in order:
 - **planning** — "Plan before you build" (renamed from "Plan before you
   execute" on 2026-08-19, replacing a shorter original draft with a longer,
@@ -275,7 +282,27 @@ Sub-pages, in order:
   checkpoint diagram, plus a 4-row "use a checkpoint when" table) → a closing
   8-step iterative-process diagram. Ends with a 5-part task-writing exercise.
   Time bumped from 20 to 25 min given the larger structure (module total now
-  150 min).
+  175 min). Its own next-cta was repointed from memory.html to the new
+  verify-before-you-trust.html as part of the insertion below.
+- **verify-before-you-trust** — new page inserted 2026-08-19 between
+  specifying-the-task and memory (module renumbered from 6 to 7 pages; every
+  sidebar, index card, and next-cta across all seven pages was updated to
+  match). Distinguishes inspecting output ("does it look right?") from
+  verifying it ("does it actually work?") with a 2-row table, a
+  misunderstood-business-rule `.example` (gross vs. net revenue), a 4-question
+  framework (look right? / work? / correct? / what could break it?) as a
+  `<pre><code>` loop with four plain `<h3>` subsections underneath (matching
+  the case-study pages' "Step N" convention, not `subhead-accent`), a worked
+  commission-calculator `.example` answering all four questions, a "known
+  cases" table, an edges-not-just-happy-path section (a boundary-value
+  `.example`: -9.9%/-10.0%/-10.1%), a 7-row verification-method-by-output-type
+  table, asking the agent to test its own work (with a caution that the same
+  agent that misunderstood a requirement may also write tests based on that
+  misunderstanding), investigate-before-patching, feeding lessons back into
+  memory (forward-references the next page), a closing
+  Build→Verify→Correct→Save→Build-again `<pre><code>` loop, and a blockquote
+  key idea ("You don't need to know how to write the code to evaluate whether
+  the system is doing the right thing"). ~25 min.
 - **memory** — "Build project memory" (renamed from "Memory across sessions"
   on 2026-08-19, same user-supplied-page swap as the first three pages;
   cascaded to the sidebar/index/next-cta/skill-chip references on all other
@@ -294,7 +321,7 @@ Sub-pages, in order:
   content is a full explanation, not a short aside), a "memory helps but isn't
   enforcement" section with a blockquote rule of thumb, and a closing
   Project-files→CLAUDE.md flow diagram. Time bumped from 15 to 20 min given
-  the larger structure (module total now 150 min).
+  the larger structure (module total now 175 min).
 - **case-study-event-recap** — the full `/cases/people/event-recap-generator`
   case, transplanted verbatim into the course-page chrome (sidebar,
   module-header, eyebrow) exactly the way Module 1's own `case-study.html`
@@ -302,9 +329,10 @@ Sub-pages, in order:
   sections (business decision → data available → the build → what good looks
   like → extensions → skills used), same prompts, same download links
   (rewritten to absolute `/cases/people/...` paths since the file now lives in
-  a different folder). Ends with in-module nav to page 6, not a link back to
-  the `/cases` original — there isn't one; this page *is* the case, like
-  Module 1's. Runs first as the shorter, lower-stakes case (~20 min).
+  a different folder). Ends with in-module nav to page 7 (was page 6 before
+  the verify-before-you-trust insertion), not a link back to the `/cases`
+  original — there isn't one; this page *is* the case, like Module 1's. Runs
+  first as the shorter, lower-stakes case (~20 min).
 - **case-study-model-automation** — same treatment for
   `/cases/finance/model-automation`: full seven-section content (adds "how to
   do this again next month"), the scoped `<style>` block for its CFO summary
@@ -398,7 +426,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Module 4 `/course/04-workflow` | ✅ All 6 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
+| Module 4 `/course/04-workflow` | ✅ All 7 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
 | Modules 5–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
