@@ -220,7 +220,7 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~140 min total), replacing
+Fully written and built 2026-08-19, all 6 sub-pages (~145 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -256,17 +256,26 @@ Sub-pages, in order:
   information available at the right time — not to give the agent access to
   everything") to avoid the "X is not this, it's that" echo construction
   CLAUDE.md disallows.
-- **specifying-the-task** — objective + company-specific rules, plan mode,
-  brainstorming, spotting missing data. "How specific should you be?" contrasts
-  an over-specified prompt (spelling out a nested-loop churn calculation) against
-  one that states the objective and definition instead, then contrasts
-  under-specifying (a "big hammer for a small nail") — resolved in both
-  directions by stating *intention*, not just instruction, each with its own
-  `.prompt-window` example. "Breaking down a complicated task" centers on
-  locating the human checkpoint, recalling Module 1's builder-vs-thinker
-  distinction, and points forward to the model-automation case study's Step 6
-  checkpoint. Closes with an exercise: break a 4-step vendor-contract task into
-  builder/thinker steps and mark checkpoints.
+- **specifying-the-task** — "Specify the task" (renamed from "Specifying the
+  task" on 2026-08-19, same user-supplied-page swap as planning and
+  information-environment). Content fully replaced with the user's draft, which
+  does **not** carry over the earlier builder-vs-thinker framing or the forward
+  reference to the model-automation case's Step 6 — don't reintroduce either
+  without checking first; case-study-model-automation.html was already updated
+  separately and has no dependency on this page's old wording. New structure,
+  9 h2 sections: objective/requirements table → using plan mode to refine a
+  task (iterative back-and-forth example) → exploring before you can specify
+  (brainstorming example) → the task revealing missing data → "How specific
+  should you be?" (a too-prescriptive vs. states-the-outcome `.prompt-window`
+  pair) → "But don't be too vague" (the same "big hammer on a small nail"
+  example as before, kept) → a too-vague/useful/too-prescriptive 3-column table
+  with a blockquote rule ("Be specific about the outcome and constraints; be
+  flexible about the implementation") → breaking down a task around "where do
+  I want a human checkpoint?" (a 4-step dashboard example with an arrow-based
+  checkpoint diagram, plus a 4-row "use a checkpoint when" table) → a closing
+  8-step iterative-process diagram. Ends with a 5-part task-writing exercise.
+  Time bumped from 20 to 25 min given the larger structure (module total now
+  145 min).
 - **memory** — why memory must be actively maintained (the agent doesn't recall
   prior sessions on its own), a 3-row table of memory types (prompt docs, rule
   docs, running logs) with the outline's own example prompts, "update it after
