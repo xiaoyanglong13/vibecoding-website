@@ -383,7 +383,16 @@ part of this build, and the course-page copies carry the same updated chips.
 ### Module 5 — Limits, risks, and responsibility (`/course/05-limits-and-ethics`)
 Fully written and built 2026-08-19 (renumbered from Module 6 earlier the same
 day — see the renumbering note at the top of §4), all 4 sub-pages (~90 min
-total). Index page uses the card-grid pattern like Modules 1/2/4. Replaces the
+total). Index page uses the card-grid pattern like Modules 1/2/4 and was
+rewritten again on 2026-08-19 from a second user-supplied draft (a "better
+intro") — adds a "four questions" preview table (what can it see / do / what
+happens if wrong / who's responsible) that foreshadows the framework
+`when-not-to-vibecode.html` uses later, and a closing "Your work is still
+your responsibility" section that bookends the module before the card grid
+hands off to page 1. That second draft also used stale pre-renumber numbering
+("Module 6", `/course/06-limits-and-ethics/`, a hardcoded `class="active"`
+the site never uses elsewhere) and was translated the same way as everything
+else this session. Replaces the
 originally planned outline (data-security, cost-awareness, academic-integrity,
 when-not-to-vibecode) with the user's own four pages — **academic integrity
 and attribution is no longer covered by this module**; if that topic is still
