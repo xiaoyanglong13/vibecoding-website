@@ -224,7 +224,9 @@ the initial build to add real screenshots, worked examples, and reference-level 
   add a model provider — OpenCode Zen or the same Anthropic key from the login page — noting the
   default needs no login at all (real screenshot of the provider picker), and a "try a prompt" step
   using a live weather query as the smoke test (real screenshot of OpenCode web-searching and
-  answering). Closes with a command-reference table and a CTA back to the module overview. Earlier
+  answering). Closes with a command-reference table and a next-cta forward to Module 4 (changed
+  2026-08-19 from a "back to overview" link, at the user's request — it's the module's last page,
+  so it should hand off like every other module's closing page does). Earlier
   drafts had a Build/Plan-mode explainer, an `@`/`!` shortcuts callout, and a closing "which tool
   should you use" wrap-up; the user cut all three during revision, so the page is now leaner than
   the other Module 3 pages — don't re-add them without checking first.
