@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Specifying the task · Module 4 · Vibecoding for Business School Students</title>
+  <title>Specify the task · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
         <li><a href="/course/04-workflow/">Overview</a></li>
         <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you build</a></li>
         <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
-        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
         <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
         <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">5.</span>Case study: event recap</a></li>
         <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">6.</span>Case study: model automation</a></li>
@@ -50,128 +50,299 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 4 · Page 3 of 6 · 20 minutes</span>
-        <h1>Specifying the task</h1>
-        <p class="lede">With context in place, you can state what you
-        actually want. This page covers what to include, how specific to
-        be, and how to break a complicated task into steps without losing
-        control of it.</p>
+        <span class="eyebrow">Module 4 · Page 3 of 6 · 25 minutes</span>
+        <h1>Specify the task</h1>
+        <p class="lede">Once the agent has the right context, the next
+        step is to tell it what you want done. A good task description
+        is clear about the objective and important requirements, without
+        trying to micromanage every technical step.</p>
       </div>
 
-      <h2>What to include</h2>
-      <p>Once the agent has the context, a good task specification
-      usually has three parts: the <strong>objective</strong> (what
-      you're trying to accomplish, not just the next action), any
-      <strong>company- or project-specific rules</strong> the agent needs
-      to follow (a policy, a format, a constraint that isn't obvious from
-      the data alone), and, for anything non-trivial, a request to
-      <strong>plan first</strong> in plan mode before doing anything (see
-      the previous page).</p>
-      <p>Expect this to take more than one pass. Sometimes it helps to
-      brainstorm out loud with the agent before settling on an approach
-      &mdash; ask it to lay out two or three ways to tackle the problem
-      and their tradeoffs, rather than assuming the first framing is
-      right. And often the act of specifying a task is what surfaces that
-      a piece of data is missing entirely; treat that as useful
-      information arriving early, not as a setback.</p>
+      <h2>From context to task</h2>
+      <p>After you've provided the relevant context, you can specify the
+      task you want the agent to perform. This usually includes two
+      things:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Part of the task</th>
+            <th>What it means</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Objective</strong></td>
+            <td>What you want the agent to accomplish.</td>
+            <td>&ldquo;Build a dashboard that helps managers compare
+            store performance.&rdquo;</td>
+          </tr>
+          <tr>
+            <td><strong>Requirements</strong></td>
+            <td>Company-specific rules, constraints, preferences, or
+            information the agent should follow.</td>
+            <td>&ldquo;Use our existing sales data, keep the current
+            branding, and don't expose customer-level
+            information.&rdquo;</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You don't need to know exactly how the task should be
+      implemented. Your job is to make the goal and important
+      constraints clear enough for the agent to propose a sensible
+      approach.</p>
+
+      <h2>Use planning as part of task specification</h2>
+      <p>For a non-trivial task, it's often useful to stay in
+      <strong>plan mode</strong> while you refine the request. Instead
+      of giving one giant prompt and immediately asking the agent to
+      build, you can work through the task in several iterations.</p>
+
+      <div class="example">
+        <p><strong>Example: refining a task in plan mode</strong></p>
+        <pre><code>I want to add a feature to our sales dashboard that helps
+regional managers identify stores that may need attention.
+
+Before building anything, explore the current project and
+propose a plan. Tell me what information you would use and
+what the user would see.</code></pre>
+        <p>The agent might respond with a proposed approach, after
+        which you could refine it:</p>
+        <pre><code>That's close, but don't rank stores only by sales decline.
+Also consider customer complaints and missed sales targets.
+
+Revise the plan, but don't implement yet.</code></pre>
+      </div>
+
+      <p>This back-and-forth is useful because the first version of your
+      task may not capture everything that matters. You may realize
+      that the goal needs to change, that a business rule is missing,
+      or that the agent needs additional context.</p>
+
+      <h2>Sometimes you need to explore before you can specify the task</h2>
+      <p>You won't always know exactly what to ask for at the
+      beginning. In business problems, the task itself may need to be
+      discovered through a little exploration or brainstorming.</p>
+
+      <div class="example">
+        <p>Suppose your goal is:</p>
+        <pre><code>I want managers to understand why customer satisfaction has
+fallen.</code></pre>
+        <p>That's a useful starting point, but it isn't yet a complete
+        build request. You might first ask the agent:</p>
+        <pre><code>Look at the available survey, complaint, and sales data.
+What kinds of analyses or views could help managers understand
+why customer satisfaction has fallen?
+
+Don't build anything yet. Give me several options and explain
+what information each would require.</code></pre>
+      </div>
+
+      <p>The result may help you decide whether the right solution is a
+      dashboard, a diagnostic report, a set of charts, a
+      customer-segmentation analysis, or something else.</p>
+
+      <h2>The task may reveal missing information</h2>
+      <p>Planning can also expose gaps in the information environment.
+      The agent may discover that it can't complete the task well with
+      the data currently available.</p>
+
+      <div class="example">
+        <p>For example, the agent might tell you:</p>
+        <pre><code>I can compare satisfaction across stores, but I can't
+determine whether wait times are contributing to the decline
+because the project doesn't contain any wait-time data.</code></pre>
+      </div>
+
+      <p>That's useful. Planning isn't only about producing a plan
+      &mdash; it's also a chance to discover what's missing before you
+      spend time implementing the wrong solution.</p>
 
       <h2>How specific should you be?</h2>
-      <p>New users tend to make one of two opposite mistakes.</p>
-
-      <h3 class="subhead-accent">Too specific: writing the solution instead of stating the problem</h3>
-      <p>Suppose you need the monthly churn rate from a subscriber table.
-      It's tempting to spell out exactly how the code should work:</p>
+      <p>A common mistake is to assume that a good task description
+      must tell the agent exactly how to write the code. Usually, it
+      shouldn't.</p>
       <div class="prompt-window">
-        <div class="prompt-window-header">Prompt &mdash; over-specified</div>
-        <pre><code>Write a Python function called calc_churn(df). Inside it,
-create an empty list. Loop over each unique month using a for
-loop. For each month, use a nested loop to count how many
-customer IDs from the previous month are missing in the
-current month. Divide that count by last month's total and
-append the result to the list. Return the list at the end.</code></pre>
+        <div class="prompt-window-header">Prompt &mdash; too prescriptive</div>
+        <pre><code>Use Python to write a function that loops through each row,
+calculates the percentage change, stores it in a new dataframe,
+then uses Plotly to create a bar chart...</code></pre>
       </div>
-      <p>This over-specifies the <em>implementation</em> and under-specifies
-      the <em>goal</em>. It locks in a slow, nested-loop approach the
-      agent would never choose on its own, and it never actually states
-      what churn means &mdash; so if the loop logic is subtly wrong, there's
-      no definition to check it against. A prompt that states the
-      objective and the definition, and leaves the implementation to the
-      agent, does better:</p>
+      <p>If those implementation details aren't important to the
+      business objective, let the agent decide how to handle them. You
+      can instead specify the outcome:</p>
       <div class="prompt-window">
-        <div class="prompt-window-header">Prompt &mdash; states the objective</div>
-        <pre><code>I need the monthly churn rate from this subscriber table.
-Churn rate = (customers active last month who are gone this
-month) / (customers active last month).
-
-Write a script that outputs this as a table, one row per
-month, and flags any month where the customer count looks
-implausible (e.g. drops to zero, or jumps more than 50%).</code></pre>
+        <div class="prompt-window-header">Prompt &mdash; states the outcome</div>
+        <pre><code>Add a view that lets managers compare each store's sales this
+month with last month. Show the percentage change clearly and
+make stores with large declines easy to identify.</code></pre>
       </div>
-      <p>This version tells the agent what "correct" means and lets it
-      pick an efficient, idiomatic way to compute it &mdash; which is
-      exactly the kind of judgment agents are good at, and exactly the
-      kind of work you don't need to do yourself.</p>
+      <p>The first prompt tells the agent <em>how to code</em>. The
+      second tells it <em>what the solution should accomplish</em>. For
+      vibecoding, the second is usually more useful.</p>
 
-      <h3 class="subhead-accent">Too vague: a big hammer for a small nail</h3>
-      <p>The opposite failure is staying so vague that the agent reaches
-      for a disproportionate solution. Ask for "a way to track our
-      customer data" and you may get a proposal for a database schema,
-      an ingestion pipeline, and a set of tables &mdash; when what you
-      actually needed was one column added to an existing spreadsheet.
-      Losing control of scope is as real a risk as over-specifying.</p>
-      <p>The fix for both failure modes is the same: state your
-      <strong>intention</strong>, not just an instruction or a bare
-      request. One added sentence of intent changes the outcome:</p>
-      <div class="prompt-window">
-        <div class="prompt-window-header">Prompt &mdash; adds intent</div>
-        <pre><code>I need a way to track our customer data. This is for a single
-slide in tomorrow's meeting &mdash; I just need this quarter's
-signups by region as a table I can paste in. This is not a
-system we'll maintain going forward, so keep it as simple as
-possible.</code></pre>
+      <h2>But don't be too vague</h2>
+      <p>Giving the agent freedom doesn't mean giving it no direction.
+      If a request is too vague, the agent may misunderstand the goal
+      or use a much more complicated solution than the problem
+      requires.</p>
+
+      <div class="example">
+        <p><strong>Example: using a big hammer on a small nail</strong></p>
+        <p>Suppose you ask:</p>
+        <pre><code>Make it easier for users to find customers.</code></pre>
+        <p>The agent might interpret this as a major feature and build
+        an advanced search system with multiple filters, fuzzy
+        matching, saved searches, and a new database index.</p>
+        <p>But perhaps all you wanted was:</p>
+        <pre><code>Add a search box above the customer table that filters the
+existing rows by customer name or email address.</code></pre>
+        <p>The agent wasn't incapable &mdash; the task was
+        underspecified, so it had to make assumptions about the size of
+        the solution.</p>
       </div>
-      <p>Naming the intention &mdash; a one-off slide, not a permanent
-      system &mdash; tells the agent how much infrastructure the problem
-      actually warrants. State the objective and the constraints, explain
-      why you want it, and let the agent propose the approach; step in
-      when the proposal is either more elaborate or less careful than the
-      situation calls for.</p>
 
-      <h2>Breaking down a complicated task</h2>
-      <p>For anything with more than a couple of steps, the plan should
-      break the work into stages &mdash; and the most important design
-      decision is figuring out where the human checkpoint belongs.</p>
-      <p>Recall the builder-vs-thinker distinction from Module 1: when
-      the agent is acting as a <strong>builder</strong>, producing
-      reusable logic that should behave the same way every time, that
-      step can usually run unattended and only needs checking once, when
-      you first verify it works. When the agent is acting as a
-      <strong>thinker</strong>, making a judgment call or interpreting
-      something ambiguous, that step's output is exactly where a human
-      checkpoint belongs &mdash; a pause before its result gets used by
-      anything downstream.</p>
-      <div class="callout">
-        <span class="callout-label">Principle</span>
-        When you break a task into steps, ask of each one: is this a
-        builder step or a thinker step? Builder steps can chain together
-        automatically. Thinker steps need a pause for your review before
-        the next step runs.
+      <h2>A useful level of specificity</h2>
+      <p>A good task description usually focuses on the business
+      outcome, important constraints, and what a successful result
+      should look like.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Too vague</th>
+            <th>Useful specificity</th>
+            <th>Too prescriptive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&ldquo;Improve the dashboard.&rdquo;</td>
+            <td>&ldquo;Make it easier for managers to see which regions
+            are missing their monthly sales targets.&rdquo;</td>
+            <td>&ldquo;Create a Python function called
+            <code>flag_regions()</code>, then use...&rdquo;</td>
+          </tr>
+          <tr>
+            <td>Agent must guess the goal.</td>
+            <td>Agent understands the desired outcome and can choose an
+            implementation.</td>
+            <td>You're making technical decisions the agent could make
+            for you.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>A useful rule is:</p>
+      <blockquote>
+        <strong>Be specific about the outcome and constraints; be
+        flexible about the implementation.</strong>
+      </blockquote>
+
+      <h2>How should you break down a complicated task?</h2>
+      <p>A large task can often be divided into smaller pieces, but
+      there's no universal rule for where to split it. A useful way to
+      think about the problem is to ask:</p>
+      <p><strong>Where do I want a human checkpoint?</strong></p>
+      <p>A checkpoint is a place where you want to inspect the result,
+      make a decision, or provide additional information before the
+      agent continues.</p>
+
+      <div class="example">
+        <p><strong>Example: building a customer analytics dashboard</strong></p>
+        <p>You could ask the agent to do everything in one task:</p>
+        <pre><code>Clean the customer data, analyze it, decide which metrics
+matter, build a dashboard, and write recommendations.</code></pre>
+        <p>But this combines several important decisions. You may want
+        checkpoints between them:</p>
+        <pre><code>Step 1: Inspect and clean the data.
+  &darr;
+Human checkpoint: Do the cleaning decisions make sense?
+
+Step 2: Analyze the data and propose useful metrics.
+  &darr;
+Human checkpoint: Are these the metrics managers care about?
+
+Step 3: Plan the dashboard.
+  &darr;
+Human checkpoint: Does the proposed design answer the business question?
+
+Step 4: Build and test the dashboard.</code></pre>
       </div>
-      <p>The monthly-close case study later in this module makes this
-      concrete: the script that fills in known accounts is a builder
-      step and runs on its own, but the moment it hits an account it
-      can't classify, that's a thinker step &mdash; and the workflow is
-      deliberately built to stop and wait for a human decision there
-      before writing anything.</p>
 
-      <h2>Exercise: Steps and checkpoints</h2>
-      <p>Your team lead asks you to: merge three vendor spreadsheets into
-      one master list, flag any vendor whose contract renews in the next
-      30 days, draft a short renewal-negotiation memo for each flagged
-      vendor, and send the memos to the relevant account managers.</p>
-      <p>Break this into steps. For each step, decide whether it's a
-      builder step or a thinker step, and mark where you would place a
-      human checkpoint before letting the workflow continue.</p>
+      <p>In other situations, you may trust the agent to complete
+      several steps together. The right level of decomposition depends
+      less on how many technical steps are involved and more on
+      <strong>where human judgment is valuable</strong>.</p>
+
+      <h2>Human checkpoints are decision points</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Use a checkpoint when&hellip;</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The agent is making an important business assumption.</td>
+            <td>Deciding which customers count as &ldquo;high
+            value.&rdquo;</td>
+          </tr>
+          <tr>
+            <td>There are several reasonable directions.</td>
+            <td>Choosing between a dashboard, report, or alert system.</td>
+          </tr>
+          <tr>
+            <td>A mistake would affect everything that follows.</td>
+            <td>Cleaning or merging data before analysis.</td>
+          </tr>
+          <tr>
+            <td>You need to evaluate an intermediate result.</td>
+            <td>Reviewing proposed KPIs before the dashboard is built.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>This gives you a practical way to break down complex work:
+      <strong>let the agent run between points where human judgment
+      matters.</strong></p>
+
+      <h2>Putting it together</h2>
+      <p>Specifying a task isn't about writing the perfect prompt once.
+      For more complex work, it's often an iterative process:</p>
+      <pre><code>State the objective
+  &darr;
+Add important requirements and constraints
+  &darr;
+Explore or brainstorm if the solution is unclear
+  &darr;
+Use plan mode to inspect the proposed approach
+  &darr;
+Identify missing information
+  &darr;
+Revise the task
+  &darr;
+Choose where human checkpoints should occur
+  &darr;
+Implement</code></pre>
+      <p>The goal is to give the agent enough direction to solve the
+      right problem, while still letting it handle the technical
+      details you don't need to specify yourself.</p>
+
+      <h2>Exercise</h2>
+      <p>Imagine you have customer transaction data and want to build
+      something that helps a marketing manager identify customers who
+      may be at risk of leaving.</p>
+      <p>Write a task request that includes:</p>
+      <ol>
+        <li>The business objective.</li>
+        <li>Important requirements or constraints.</li>
+        <li>A request for the agent to plan before implementing.</li>
+        <li>At least one question you want the agent to explore before
+        deciding on the solution.</li>
+        <li>One place where you would insert a human checkpoint.</li>
+      </ol>
+      <p>Then compare your request with a very short version such as
+      <code>Build a churn dashboard.</code> What assumptions would the
+      agent have to make in the shorter version?</p>
 
       <a class="next-cta" href="/course/04-workflow/memory.html">
         <div>
