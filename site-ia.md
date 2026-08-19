@@ -48,7 +48,13 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
 │   │   └── /course/03-setup/appendix-opencode                                            ✅
-│   ├── /course/04-workflow                                                                🚧 index only
+│   ├── /course/04-workflow                                                                ✅ all 6 sub-pages built
+│   │   ├── /course/04-workflow/planning                                                  ✅
+│   │   ├── /course/04-workflow/information-environment                                   ✅
+│   │   ├── /course/04-workflow/specifying-the-task                                       ✅
+│   │   ├── /course/04-workflow/memory                                                    ✅
+│   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
+│   │   └── /course/04-workflow/case-study-model-automation                               ✅
 │   ├── /course/05-evaluating-output                                                       🚧 index only
 │   ├── /course/06-limits-and-ethics                                                       🚧 index only
 │   ├── /course/07-scaling                                                                 🚧 index only
@@ -214,7 +220,61 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Index written. Sub-pages (plan-vs-execute, information-environment, context-engineering, version-safety, iterating) planned but not yet built.
+Fully written and built 2026-08-19, all 6 sub-pages (~100 min total), replacing
+the earlier planned list (plan-vs-execute, information-environment,
+context-engineering, version-safety, iterating) — version-safety and iterating
+were dropped from the module entirely rather than deferred elsewhere. Index page
+now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list.
+Sub-pages, in order:
+- **planning** — "Plan before you execute." Opens with a real quote (Boris
+  Cherny, @bcherny, creator of Claude Code: "Start every complex task in plan
+  mode. Pour your energy into the plan so Claude can 1-shot the
+  implementation.") in a `.pull-quote` figure, a table of how to enter plan mode
+  in Claude Code (Shift+Tab twice, or `/plan`), OpenCode (Tab), and Codex CLI
+  (`/plan` or Shift+Tab) — confirmed via web search rather than assumed — with a
+  `.callout.warn` tip that keybindings drift and to check each tool's own help
+  if the table goes stale, and a mode-switching exercise.
+- **information-environment** — a `.callout` recap of the give-context/
+  specify-task/inspect/revise/verify loop already taught in Module 1's
+  modes-of-collaboration, project folder setup (an inputs/references/outputs
+  pattern), two prompt-window examples (tell Claude what's in the folder vs.
+  ask it to explore), and the guideline-document trick for complex multi-folder
+  projects with drag-and-drop as the `.callout.warn` lightweight alternative.
+- **specifying-the-task** — objective + company-specific rules, plan mode,
+  brainstorming, spotting missing data. "How specific should you be?" contrasts
+  an over-specified prompt (spelling out a nested-loop churn calculation) against
+  one that states the objective and definition instead, then contrasts
+  under-specifying (a "big hammer for a small nail") — resolved in both
+  directions by stating *intention*, not just instruction, each with its own
+  `.prompt-window` example. "Breaking down a complicated task" centers on
+  locating the human checkpoint, recalling Module 1's builder-vs-thinker
+  distinction, and points forward to the model-automation case study's Step 6
+  checkpoint. Closes with an exercise: break a 4-step vendor-contract task into
+  builder/thinker steps and mark checkpoints.
+- **memory** — why memory must be actively maintained (the agent doesn't recall
+  prior sessions on its own), a 3-row table of memory types (prompt docs, rule
+  docs, running logs) with the outline's own example prompts, "update it after
+  every session," the agent-drafts/user-edits practice, a `.callout.warn` tip on
+  CLAUDE.md/AGENTS.md (always read, not always obeyed), and an exercise turning
+  a naming-convention correction into a rule-doc addition.
+- **case-study-event-recap** — stripped-down retelling of
+  `/cases/people/event-recap-generator` through the module's four skills
+  (plan the CLAUDE.md interview → inputs/references/outputs → write the
+  CLAUDE.md together → the folder becomes memory for next semester); runs first
+  as the shorter, lower-stakes warm-up case; links out to the full case.
+- **case-study-model-automation** — stripped-down retelling of
+  `/cases/finance/model-automation`, emphasizing its plan-first prompt, the
+  Step 6 human checkpoint over `account_mapping.csv`, and `workflow.md` as the
+  memory doc that makes next month one prompt instead of seven; runs second as
+  the longer, more procedural case; closing next-cta points to Module 5 since
+  it's the module's last page; links out to the full case.
+
+Both mini-cases reuse existing `/cases` pages rather than introducing new sample
+data — consistent with §6's note that Modules 1, 4, and 7 each close with a
+mini-case, except Module 4 now gets two instead of one. Both case pages'
+"Skills used" chips were repointed from generic `/course/04-workflow/` links to
+the specific new sub-pages (`planning.html`, `information-environment.html`,
+`specifying-the-task.html`, `memory.html`) as part of this build.
 
 ### Module 5 — Knowing when to trust the output (`/course/05-evaluating-output`)
 Index written. Sub-pages (checking-correctness, spotting-hallucinations, debugging-when-it-fails, when-to-stop-and-ask-an-engineer) planned but not yet built.
@@ -237,7 +297,7 @@ Index written. Sub-pages (brief, rubric, peer-review) planned but not yet built.
 
 **Linear course mode.** A persistent left rail on `/course/*` pages shows the syllabus with progress indicators (visited / in-progress / completed via localStorage). Every page ends with a single "Next" CTA. No decision fatigue.
 
-**Reference mode.** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. Cross-links are dense: a `/cases/finance/model-automation` page links back to the specific `/course/04-workflow/context-engineering` section it depends on.
+**Reference mode.** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. Cross-links are dense: a `/cases/finance/model-automation` page links back to the specific `/course/04-workflow/specifying-the-task` section it depends on.
 
 ---
 
@@ -279,7 +339,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-18)
+## 9. Build status (as of 2026-08-19)
 
 | Section | Status |
 |---|---|
@@ -289,7 +349,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Modules 4–7, 9 | 🚧 Index pages written; sub-pages not yet built |
+| Module 4 `/course/04-workflow` | ✅ All 6 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
+| Modules 5–7, 9 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
