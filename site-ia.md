@@ -220,7 +220,7 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~145 min total), replacing
+Fully written and built 2026-08-19, all 6 sub-pages (~150 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -275,13 +275,26 @@ Sub-pages, in order:
   checkpoint diagram, plus a 4-row "use a checkpoint when" table) → a closing
   8-step iterative-process diagram. Ends with a 5-part task-writing exercise.
   Time bumped from 20 to 25 min given the larger structure (module total now
-  145 min).
-- **memory** — why memory must be actively maintained (the agent doesn't recall
-  prior sessions on its own), a 3-row table of memory types (prompt docs, rule
-  docs, running logs) with the outline's own example prompts, "update it after
-  every session," the agent-drafts/user-edits practice, a `.callout.warn` tip on
-  CLAUDE.md/AGENTS.md (always read, not always obeyed), and an exercise turning
-  a naming-convention correction into a rule-doc addition.
+  150 min).
+- **memory** — "Build project memory" (renamed from "Memory across sessions"
+  on 2026-08-19, same user-supplied-page swap as the first three pages;
+  cascaded to the sidebar/index/next-cta/skill-chip references on all other
+  Module 4 pages *and* to the matching "Memory across sessions" skill chip in
+  the two `/cases` originals — `cases/people/event-recap-generator.html` and
+  `cases/finance/model-automation.html` — since those chips were added with
+  that exact wording during this same build). Content fully replaced: don't
+  rely on the conversation to remember everything, a 4-row "what should memory
+  preserve" table (workflow/rules/corrections/progress), three numbered h2
+  sections mirroring the `/cases` page numbering convention (1. Prompt docs,
+  2. Rule docs, 3. Running logs), each with an `.example` "Ask the agent"
+  prompt plus a sample output file, letting the agent maintain the memory, a
+  4-row "no single correct system" filename table, a full section on
+  CLAUDE.md/AGENTS.md as the agent's "front door to the project" (fuller than
+  the old `.callout.warn` tip it replaces — no callout used here since the
+  content is a full explanation, not a short aside), a "memory helps but isn't
+  enforcement" section with a blockquote rule of thumb, and a closing
+  Project-files→CLAUDE.md flow diagram. Time bumped from 15 to 20 min given
+  the larger structure (module total now 150 min).
 - **case-study-event-recap** — the full `/cases/people/event-recap-generator`
   case, transplanted verbatim into the course-page chrome (sidebar,
   module-header, eyebrow) exactly the way Module 1's own `case-study.html`
