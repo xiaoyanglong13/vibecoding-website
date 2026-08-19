@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Specifying the task · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you execute</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">5.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">6.</span>Case study: monthly close</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 3 of 6 · 20 minutes</span>
+        <h1>Specifying the task</h1>
+        <p class="lede">With context in place, you can state what you
+        actually want. This page covers what to include, how specific to
+        be, and how to break a complicated task into steps without losing
+        control of it.</p>
+      </div>
+
+      <h2>What to include</h2>
+      <p>Once the agent has the context, a good task specification
+      usually has three parts: the <strong>objective</strong> (what
+      you're trying to accomplish, not just the next action), any
+      <strong>company- or project-specific rules</strong> the agent needs
+      to follow (a policy, a format, a constraint that isn't obvious from
+      the data alone), and, for anything non-trivial, a request to
+      <strong>plan first</strong> in plan mode before doing anything (see
+      the previous page).</p>
+      <p>Expect this to take more than one pass. Sometimes it helps to
+      brainstorm out loud with the agent before settling on an approach
+      &mdash; ask it to lay out two or three ways to tackle the problem
+      and their tradeoffs, rather than assuming the first framing is
+      right. And often the act of specifying a task is what surfaces that
+      a piece of data is missing entirely; treat that as useful
+      information arriving early, not as a setback.</p>
+
+      <h2>How specific should you be?</h2>
+      <p>New users tend to make one of two opposite mistakes.</p>
+
+      <h3 class="subhead-accent">Too specific: writing the solution instead of stating the problem</h3>
+      <p>Suppose you need the monthly churn rate from a subscriber table.
+      It's tempting to spell out exactly how the code should work:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt &mdash; over-specified</div>
+        <pre><code>Write a Python function called calc_churn(df). Inside it,
+create an empty list. Loop over each unique month using a for
+loop. For each month, use a nested loop to count how many
+customer IDs from the previous month are missing in the
+current month. Divide that count by last month's total and
+append the result to the list. Return the list at the end.</code></pre>
+      </div>
+      <p>This over-specifies the <em>implementation</em> and under-specifies
+      the <em>goal</em>. It locks in a slow, nested-loop approach the
+      agent would never choose on its own, and it never actually states
+      what churn means &mdash; so if the loop logic is subtly wrong, there's
+      no definition to check it against. A prompt that states the
+      objective and the definition, and leaves the implementation to the
+      agent, does better:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt &mdash; states the objective</div>
+        <pre><code>I need the monthly churn rate from this subscriber table.
+Churn rate = (customers active last month who are gone this
+month) / (customers active last month).
+
+Write a script that outputs this as a table, one row per
+month, and flags any month where the customer count looks
+implausible (e.g. drops to zero, or jumps more than 50%).</code></pre>
+      </div>
+      <p>This version tells the agent what "correct" means and lets it
+      pick an efficient, idiomatic way to compute it &mdash; which is
+      exactly the kind of judgment agents are good at, and exactly the
+      kind of work you don't need to do yourself.</p>
+
+      <h3 class="subhead-accent">Too vague: a big hammer for a small nail</h3>
+      <p>The opposite failure is staying so vague that the agent reaches
+      for a disproportionate solution. Ask for "a way to track our
+      customer data" and you may get a proposal for a database schema,
+      an ingestion pipeline, and a set of tables &mdash; when what you
+      actually needed was one column added to an existing spreadsheet.
+      Losing control of scope is as real a risk as over-specifying.</p>
+      <p>The fix for both failure modes is the same: state your
+      <strong>intention</strong>, not just an instruction or a bare
+      request. One added sentence of intent changes the outcome:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt &mdash; adds intent</div>
+        <pre><code>I need a way to track our customer data. This is for a single
+slide in tomorrow's meeting &mdash; I just need this quarter's
+signups by region as a table I can paste in. This is not a
+system we'll maintain going forward, so keep it as simple as
+possible.</code></pre>
+      </div>
+      <p>Naming the intention &mdash; a one-off slide, not a permanent
+      system &mdash; tells the agent how much infrastructure the problem
+      actually warrants. State the objective and the constraints, explain
+      why you want it, and let the agent propose the approach; step in
+      when the proposal is either more elaborate or less careful than the
+      situation calls for.</p>
+
+      <h2>Breaking down a complicated task</h2>
+      <p>For anything with more than a couple of steps, the plan should
+      break the work into stages &mdash; and the most important design
+      decision is figuring out where the human checkpoint belongs.</p>
+      <p>Recall the builder-vs-thinker distinction from Module 1: when
+      the agent is acting as a <strong>builder</strong>, producing
+      reusable logic that should behave the same way every time, that
+      step can usually run unattended and only needs checking once, when
+      you first verify it works. When the agent is acting as a
+      <strong>thinker</strong>, making a judgment call or interpreting
+      something ambiguous, that step's output is exactly where a human
+      checkpoint belongs &mdash; a pause before its result gets used by
+      anything downstream.</p>
+      <div class="callout">
+        <span class="callout-label">Principle</span>
+        When you break a task into steps, ask of each one: is this a
+        builder step or a thinker step? Builder steps can chain together
+        automatically. Thinker steps need a pause for your review before
+        the next step runs.
+      </div>
+      <p>The monthly-close case study later in this module makes this
+      concrete: the script that fills in known accounts is a builder
+      step and runs on its own, but the moment it hits an account it
+      can't classify, that's a thinker step &mdash; and the workflow is
+      deliberately built to stop and wait for a human decision there
+      before writing anything.</p>
+
+      <h2>Exercise: Steps and checkpoints</h2>
+      <p>Your team lead asks you to: merge three vendor spreadsheets into
+      one master list, flag any vendor whose contract renews in the next
+      30 days, draft a short renewal-negotiation memo for each flagged
+      vendor, and send the memos to the relevant account managers.</p>
+      <p>Break this into steps. For each step, decide whether it's a
+      builder step or a thinker step, and mark where you would place a
+      human checkpoint before letting the workflow continue.</p>
+
+      <a class="next-cta" href="/course/04-workflow/memory.html">
+        <div>
+          <div class="next-cta-label">Next · Page 4 of 6</div>
+          <div class="next-cta-title">Memory across sessions</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

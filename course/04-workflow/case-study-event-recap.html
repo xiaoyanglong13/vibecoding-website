@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case study: the event recap, revisited · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you execute</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">5.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">6.</span>Case study: monthly close</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 5 of 6 · 15 minutes</span>
+        <h1>Case study: the event recap, revisited</h1>
+        <p class="lede">A fast, low-stakes task &mdash; a good place to see
+        planning, an information environment, task specification, and
+        memory work together before the more procedural case that
+        follows.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Difficulty · Beginner</span>
+        <span class="chip">~20 minutes</span>
+        <span class="chip">Full case: /cases/people</span>
+      </div>
+
+      <h2>The scenario</h2>
+      <p>Every case competition ends with a debrief to the club president
+      &mdash; same sections, same tone, same length. The raw material is
+      one teammate's messy notes; the finished document takes two or
+      three hours to write by hand. The goal is to get that down to one
+      session, without losing the parts that make it feel written by a
+      person who was there.</p>
+
+      <h2>Stage 1 · Plan</h2>
+      <p>Rather than asking the agent to guess at a format, the plan here
+      is a plan for how to <em>learn</em> the format: interview the user
+      one question at a time about what a good recap needs, before
+      writing anything.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I'm setting up a folder for generating recurring event recap
+documents. Before we write anything, ask me the questions
+you'd need answered to write a good CLAUDE.md &mdash; the file
+that tells you the rules for this project every time you open
+it. Ask one question at a time.</code></pre>
+      </div>
+      <p>This surfaces things a first-pass CLAUDE.md would have missed:
+      whether certain sections are mandatory even when the notes are
+      silent on them, how to handle names, what should be flagged for
+      human review before anything goes out.</p>
+
+      <h2>Stage 2 · Set up the information environment</h2>
+      <p>The folder separates what changes each time from what stays
+      fixed:</p>
+      <pre><code>event-recap/
+├── inputs/        (this event's raw notes)
+├── references/    (last semester's approved recap &mdash; the format to match)
+└── outputs/       (finished recap goes here)</code></pre>
+      <p>The <code>references/</code> folder is doing the real work.
+      Describing the format in words and letting the agent invent the
+      structure produces something plausible but wrong; a real example
+      to match against does not.</p>
+
+      <h2>Stage 3 · Specify the task</h2>
+      <p>With the interview answered, the CLAUDE.md gets written
+      together &mdash; not handed down as a fully-specified spec, and
+      not left so vague that the agent has to guess at mandatory
+      sections. It states the objective and the constraints that matter:</p>
+      <pre><code>## Mandatory sections
+Event overview, Results, Key learnings (min. two), What we'd
+do differently, Thank-yous (always name sponsors).
+
+## Format rules
+Match references/ on structure and length. Do not invent facts
+&mdash; write "[to confirm]" where the notes are silent.</code></pre>
+      <p>Generating the recap is then a single prompt against that file
+      and the two input documents &mdash; the task specification did the
+      work, not a longer prompt.</p>
+
+      <h2>Stage 4 · Memory</h2>
+      <p>The payoff shows up next semester. The folder itself is the
+      memory: <code>references/</code> now includes this event's recap
+      alongside last semester's, and the CLAUDE.md already encodes the
+      rules that took a full interview to work out the first time. Next
+      time, the same request runs against a folder that already knows
+      what a good recap looks like &mdash; no re-explaining required.</p>
+
+      <a class="next-cta" href="/cases/people/event-recap-generator.html">
+        <div>
+          <div class="next-cta-label">Read the full case</div>
+          <div class="next-cta-title">Event recap generator</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+
+      <a class="next-cta" href="/course/04-workflow/case-study-model-automation.html">
+        <div>
+          <div class="next-cta-label">Next · Page 6 of 6</div>
+          <div class="next-cta-title">Case study: the monthly close, revisited</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

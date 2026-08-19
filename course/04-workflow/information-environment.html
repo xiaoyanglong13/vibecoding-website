@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setting up your information environment · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you execute</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">5.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">6.</span>Case study: monthly close</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 2 of 6 · 20 minutes</span>
+        <h1>Setting up your information environment</h1>
+        <p class="lede">An agent is only as good as what it can see. Before
+        you ask for anything, spend a few minutes making sure the right
+        files exist, are named clearly, and are explained &mdash; so the
+        agent starts every session already oriented.</p>
+      </div>
+
+      <h2>Recall the workflow</h2>
+      <p>Module 1 introduced the loop behind most useful AI work:</p>
+      <pre><code>1. Give context.
+2. Specify the task.
+3. Inspect the output.
+4. Revise the request.
+5. Verify the result.</code></pre>
+      <div class="callout">
+        <span class="callout-label">Where this page fits</span>
+        This page is entirely about step 1 &mdash; <strong>give
+        context</strong> &mdash; for projects where the context isn't a
+        paragraph you can type, but a folder of files. The better that
+        folder is organized, the less of your prompt has to do the work.
+      </div>
+
+      <h2>Start with the project folder</h2>
+      <p>The first step to setting up your information environment is
+      setting up your project folder. Put every file the task depends on
+      inside it &mdash; and only those files. If the folder is doing
+      more than one job, split it into subfolders with names a stranger
+      could guess the contents of without opening them:</p>
+      <pre><code>monthly-close/
+├── inputs/          (this month's raw exports)
+├── references/       (last month's approved output, style examples)
+└── outputs/          (what the agent produces)</code></pre>
+      <p><code>inputs</code>, <code>references</code>, and
+      <code>outputs</code> is a pattern worth reusing across projects:
+      it separates what changes each time you run the task from what
+      stays fixed, and from what the agent hands back to you.</p>
+
+      <h2>Tell Claude what each file is</h2>
+      <p>Once the folder exists, the agent still doesn't know what's in
+      it or why. You have two ways to close that gap.</p>
+
+      <h3 class="subhead-accent">Example 1: Tell it directly</h3>
+      <p>If you already know what each file is, say so up front. This is
+      faster and leaves less room for the agent to guess wrong:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>This folder has three subfolders. inputs/ has this month's raw
+data exports &mdash; treat these as read-only. references/ has
+last month's approved output, which is the format to match.
+outputs/ is empty; that's where finished work should go.
+
+Read through inputs/ and references/ and summarize what you see
+before we start.</code></pre>
+      </div>
+
+      <h3 class="subhead-accent">Example 2: Ask it to explore</h3>
+      <p>If you inherited the folder, or aren't sure what's in it
+      yourself, ask the agent to look and report back instead of
+      guessing at the structure yourself:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>Explore this folder and its subfolders. For each file, tell me
+what it appears to contain and how it might relate to the other
+files. Flag anything that looks like it might be sensitive or
+that you're not sure how to interpret.</code></pre>
+      </div>
+      <p>Either way, do this before you ask for the real task. A short
+      summary you can correct &mdash; &ldquo;actually, ignore the 2024
+      files, we only care about this year&rdquo; &mdash; is much cheaper
+      than an agent that misreads the folder and builds on top of that
+      misreading.</p>
+
+      <h2>When the folder gets complicated</h2>
+      <p>As your projects get more complicated, they can involve many
+      folders and subfolders with many different pieces that aren't
+      always relevant to the current task. If you ask the agent to parse
+      all of that by itself every time, it has to read every file and
+      re-derive the context from scratch in every new session &mdash;
+      which burns tokens and time unnecessarily, and it's easy for it to
+      miss something buried three folders deep.</p>
+      <p>The fix is a short <strong>guideline document</strong> &mdash;
+      often just <code>CLAUDE.md</code> or a <code>README</code> sitting
+      at the top of the folder &mdash; that records the structure of the
+      project: what each subfolder is for, where to find the file that
+      matters for a given kind of task, and anything that's read-only.
+      The agent reads that one short document first, and goes straight
+      to the relevant files instead of exploring the whole tree cold.</p>
+      <pre><code># Project guide
+
+## Folders
+- inputs/       This month's raw exports. Read-only.
+- references/   Prior approved outputs. The format to match.
+- outputs/      Finished work goes here.
+
+## Where to look
+- For formatting questions, see references/.
+- For this month's numbers, see inputs/.
+- Never edit files in inputs/ or references/ directly.</code></pre>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Not every task needs a standing guideline document. For a
+        one-off file that's only relevant to the current conversation,
+        it's often faster to just drag and drop it into the chat instead
+        of explaining where it lives. Save the guideline document for
+        folders you'll come back to more than once.
+      </div>
+
+      <a class="next-cta" href="/course/04-workflow/specifying-the-task.html">
+        <div>
+          <div class="next-cta-label">Next · Page 3 of 6</div>
+          <div class="next-cta-title">Specifying the task</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

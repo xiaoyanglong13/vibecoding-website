@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan before you execute · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you execute</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">5.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">6.</span>Case study: monthly close</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 1 of 6 · 15 minutes</span>
+        <h1>Plan before you execute</h1>
+        <p class="lede">The single highest-leverage habit in this course:
+        before a complicated task, ask the agent to plan first, read the
+        plan, and only then let it build. This page covers why that order
+        matters and how to switch into plan mode wherever you work.</p>
+      </div>
+
+      <h2>Why plan first</h2>
+      <p>An agent that starts writing code, or drafting a document, or
+      restructuring a spreadsheet before it has told you its approach is
+      easy to trust in the moment and expensive to fix later. A wrong
+      assumption made in the first thirty seconds of execution can produce
+      an hour of output built on that assumption. Reading a plan takes two
+      minutes. Reading a plan is also much easier than reading a diff, a
+      finished draft, or five hundred lines of code — a plan is written in
+      plain language, at the level of a project outline, so you can catch
+      a wrong assumption before it becomes a wrong deliverable.</p>
+
+      <figure class="pull-quote">
+        <blockquote>&ldquo;Start every complex task in plan mode. Pour your
+        energy into the plan so Claude can 1-shot the implementation.&rdquo;</blockquote>
+        <figcaption>&mdash; Boris Cherny (<a href="https://twitter.com/bcherny">@bcherny</a>),
+        creator of Claude Code at Anthropic</figcaption>
+      </figure>
+
+      <p>&ldquo;1-shot&rdquo; means getting a correct result on the first
+      try, without a round of fixes afterward. That is the payoff: the
+      time you spend reviewing a plan is time you get back, many times
+      over, by not having to unwind a wrong build.</p>
+
+      <h2>How to toggle between modes</h2>
+      <p>Most agent tools now separate <strong>planning</strong> from
+      <strong>execution</strong> as two distinct modes, and let you switch
+      between them mid-conversation. In plan mode, the agent can read
+      files and think, but it cannot edit, run code, or otherwise change
+      anything — it can only propose. Once you approve the plan, you
+      switch to execute mode and it carries the plan out.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>How to enter plan mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Claude Code</td>
+            <td>Press <code>Shift+Tab</code> twice to cycle to plan mode,
+            or type <code>/plan</code></td>
+          </tr>
+          <tr>
+            <td>OpenCode</td>
+            <td>Press <code>Tab</code> to switch between Build and Plan
+            modes</td>
+          </tr>
+          <tr>
+            <td>Codex CLI</td>
+            <td>Type <code>/plan</code> followed by a description, or
+            press <code>Shift+Tab</code> to cycle modes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        The exact keybinding changes as these tools update — if the table
+        above stops matching what you see, check <code>/help</code> (or
+        the equivalent) inside the tool itself. What stays constant across
+        all three is the underlying idea: a read-only mode for thinking,
+        and a separate mode for doing.
+      </div>
+
+      <p>A good rhythm: start every non-trivial task in plan mode. Read
+      the plan the way you'd read a one-page memo before a meeting — does
+      the approach make sense, is anything missing, did it misread your
+      intent anywhere? Push back if something's off; the agent will
+      revise the plan, not the (nonexistent) work. Only once the plan
+      looks right do you switch to execute mode and let it run.</p>
+
+      <h2>Exercise: Plan first, on purpose</h2>
+      <p>Pick a task you'd normally just ask an agent to do directly —
+      cleaning a small dataset, drafting an email, writing a short script.
+      This time, open in plan mode and ask for a plan before any work
+      starts. Read the plan and answer:</p>
+      <ul>
+        <li>Did it correctly understand what you actually wanted?</li>
+        <li>Is there a step you would have had to correct after the fact,
+        if it had just gone ahead?</li>
+        <li>Is anything in the plan more (or less) work than the task
+        needed?</li>
+      </ul>
+      <p>Then switch to execute mode and let it build. Compare how this
+      felt to a task you've run without planning first.</p>
+
+      <a class="next-cta" href="/course/04-workflow/information-environment.html">
+        <div>
+          <div class="next-cta-label">Next · Page 2 of 6</div>
+          <div class="next-cta-title">Setting up your information environment</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
