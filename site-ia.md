@@ -220,7 +220,7 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~90 min total), replacing
+Fully written and built 2026-08-19, all 6 sub-pages (~135 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -257,27 +257,35 @@ Sub-pages, in order:
   every session," the agent-drafts/user-edits practice, a `.callout.warn` tip on
   CLAUDE.md/AGENTS.md (always read, not always obeyed), and an exercise turning
   a naming-convention correction into a rule-doc addition.
-- **case-study-event-recap** — short (not a retelling): a 4-bullet list mapping
-  each module skill to its moment in `/cases/people/event-recap-generator`
-  (plan the CLAUDE.md interview → inputs/references/outputs → write the
-  CLAUDE.md together → the folder becomes memory for next semester), then a
-  `next-cta` straight to the full case, followed by in-module nav to page 6.
-  Runs first as the shorter, lower-stakes case.
-- **case-study-model-automation** — same short format, mapping the module's
-  four skills to their moments in `/cases/finance/model-automation` (the
-  plan-first prompt, the Step 6 human checkpoint over `account_mapping.csv`,
-  `workflow.md` as the memory doc), then a `next-cta` to the full case followed
-  by the module's closing CTA to Module 5. Runs second as the longer, more
-  procedural case. (An earlier draft of both pages retold each case stage by
-  stage with its own prompt-window excerpts; the user asked to drop that and
-  just link out instead — don't re-add the retelling.)
+- **case-study-event-recap** — the full `/cases/people/event-recap-generator`
+  case, transplanted verbatim into the course-page chrome (sidebar,
+  module-header, eyebrow) exactly the way Module 1's own `case-study.html`
+  duplicates `/cases/marketing/segmentation-from-csv` — same seven-ish
+  sections (business decision → data available → the build → what good looks
+  like → extensions → skills used), same prompts, same download links
+  (rewritten to absolute `/cases/people/...` paths since the file now lives in
+  a different folder). Ends with in-module nav to page 6, not a link back to
+  the `/cases` original — there isn't one; this page *is* the case, like
+  Module 1's. Runs first as the shorter, lower-stakes case (~20 min).
+- **case-study-model-automation** — same treatment for
+  `/cases/finance/model-automation`: full seven-section content (adds "how to
+  do this again next month"), the scoped `<style>` block for its CFO summary
+  table copied into the page's own `<head>`, download/image paths rewritten to
+  `/cases/finance/...`. Ends with the module's closing CTA to Module 5. Runs
+  second as the longer, more procedural case (~45 min). (Two earlier drafts of
+  these pages existed first: a stage-by-stage retelling with its own excerpted
+  prompts, then a short stub that just linked out to the `/cases` original. The
+  user rejected both in favor of matching Module 1's pattern exactly — full
+  verbatim content, no separate "intro" page. Don't reintroduce either earlier
+  version.)
 
-Both mini-cases reuse existing `/cases` pages rather than introducing new sample
-data — consistent with §6's note that Modules 1, 4, and 7 each close with a
-mini-case, except Module 4 now gets two instead of one. Both case pages'
-"Skills used" chips were repointed from generic `/course/04-workflow/` links to
-the specific new sub-pages (`planning.html`, `information-environment.html`,
-`specifying-the-task.html`, `memory.html`) as part of this build.
+Both mini-cases duplicate existing `/cases` pages rather than introducing new
+sample data — consistent with §6's note that Modules 1, 4, and 7 each close
+with a mini-case, except Module 4 now gets two instead of one. Both case
+pages' own "Skills used" chips (in `/cases`) were repointed from generic
+`/course/04-workflow/` links to the specific new sub-pages (`planning.html`,
+`information-environment.html`, `specifying-the-task.html`, `memory.html`) as
+part of this build, and the course-page copies carry the same updated chips.
 
 ### Module 5 — Knowing when to trust the output (`/course/05-evaluating-output`)
 Index written. Sub-pages (checking-correctness, spotting-hallucinations, debugging-when-it-fails, when-to-stop-and-ask-an-engineer) planned but not yet built.
