@@ -220,7 +220,7 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~100 min total), replacing
+Fully written and built 2026-08-19, all 6 sub-pages (~90 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -257,17 +257,20 @@ Sub-pages, in order:
   every session," the agent-drafts/user-edits practice, a `.callout.warn` tip on
   CLAUDE.md/AGENTS.md (always read, not always obeyed), and an exercise turning
   a naming-convention correction into a rule-doc addition.
-- **case-study-event-recap** — stripped-down retelling of
-  `/cases/people/event-recap-generator` through the module's four skills
+- **case-study-event-recap** — short (not a retelling): a 4-bullet list mapping
+  each module skill to its moment in `/cases/people/event-recap-generator`
   (plan the CLAUDE.md interview → inputs/references/outputs → write the
-  CLAUDE.md together → the folder becomes memory for next semester); runs first
-  as the shorter, lower-stakes warm-up case; links out to the full case.
-- **case-study-model-automation** — stripped-down retelling of
-  `/cases/finance/model-automation`, emphasizing its plan-first prompt, the
-  Step 6 human checkpoint over `account_mapping.csv`, and `workflow.md` as the
-  memory doc that makes next month one prompt instead of seven; runs second as
-  the longer, more procedural case; closing next-cta points to Module 5 since
-  it's the module's last page; links out to the full case.
+  CLAUDE.md together → the folder becomes memory for next semester), then a
+  `next-cta` straight to the full case, followed by in-module nav to page 6.
+  Runs first as the shorter, lower-stakes case.
+- **case-study-model-automation** — same short format, mapping the module's
+  four skills to their moments in `/cases/finance/model-automation` (the
+  plan-first prompt, the Step 6 human checkpoint over `account_mapping.csv`,
+  `workflow.md` as the memory doc), then a `next-cta` to the full case followed
+  by the module's closing CTA to Module 5. Runs second as the longer, more
+  procedural case. (An earlier draft of both pages retold each case stage by
+  stage with its own prompt-window excerpts; the user asked to drop that and
+  just link out instead — don't re-add the retelling.)
 
 Both mini-cases reuse existing `/cases` pages rather than introducing new sample
 data — consistent with §6's note that Modules 1, 4, and 7 each close with a
