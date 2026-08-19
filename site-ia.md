@@ -56,7 +56,11 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
 │   │   └── /course/04-workflow/case-study-model-automation                               ✅
-│   ├── /course/05-limits-and-ethics                                                       🚧 index only
+│   ├── /course/05-limits-and-ethics                                                       ✅ all 4 sub-pages built
+│   │   ├── /course/05-limits-and-ethics/protect-the-information                          ✅
+│   │   ├── /course/05-limits-and-ethics/control-agent-actions                            ✅
+│   │   ├── /course/05-limits-and-ethics/real-cost                                        ✅
+│   │   └── /course/05-limits-and-ethics/when-not-to-vibecode                             ✅
 │   ├── /course/06-scaling                                                                 🚧 index only
 │   │   (Module 7 is the /cases library; no separate /course/07 directory)
 │   └── /course/08-capstone                                                                🚧 index only
@@ -140,8 +144,10 @@ Every **use case page** follows a parallel structure so students can compare acr
 > forward-references that pointed at the old Module 5 with no replacement
 > topic (e.g. "the multi-audience version" in the event-recap case) were
 > dropped rather than redirected, since nothing in the new numbering covers
-> that specific idea. Total course time dropped from ~12 to ~11 hours; module
-> count from 9 to 8.
+> that specific idea. Total course time dropped from ~12 to ~11 hours at this
+> point; module count from 9 to 8 (permanent — see below, this stayed 8 even
+> after Module 5 got built out later the same day and time crept back to
+> ~12 hours).
 
 ### Module 0 — Why Business School Students should care (`/start`)
 Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
@@ -373,9 +379,58 @@ pages' own "Skills used" chips (in `/cases`) were repointed from generic
 part of this build, and the course-page copies carry the same updated chips.
 
 ### Module 5 — Limits, risks, and responsibility (`/course/05-limits-and-ethics`)
-Index written (renumbered from Module 6 on 2026-08-19 — see the renumbering
-note at the top of §4). Sub-pages (data-security, cost-awareness,
-academic-integrity, when-not-to-vibecode) planned but not yet built.
+Fully written and built 2026-08-19 (renumbered from Module 6 earlier the same
+day — see the renumbering note at the top of §4), all 4 sub-pages (~90 min
+total). Index page uses the card-grid pattern like Modules 1/2/4. Replaces the
+originally planned outline (data-security, cost-awareness, academic-integrity,
+when-not-to-vibecode) with the user's own four pages — **academic integrity
+and attribution is no longer covered by this module**; if that topic is still
+wanted, it needs its own page later, not assumed to exist here. All four pages
+were supplied already using the module's *new* numbering (Module 5,
+`/course/05-limits-and-ethics/...`) and the current 8-module sidebar, so this
+build was mostly straight content-plus-style-conversion, not a renumbering
+job. Sub-pages, in order:
+- **protect-the-information** (20 min) — access as a decision ("what does the
+  agent need to see?"), minimum-necessary-information / least-privilege
+  framing with an HR-data `.example`, a 4-question "before sharing data"
+  table, the several ways data can reach an agent (uploads, folders, drives,
+  APIs/MCP, search tools), a useful-vs-sensitive-fields `.example`, a
+  4-row "instead of / consider" safer-alternatives table, company policy,
+  and a blockquote rule of thumb.
+- **control-agent-actions** (20 min) — read/draft/modify/update/communicate/
+  transact as a risk ladder (6-row table), a lower-risk-vs-higher-risk
+  300-email `.example`, a "before the agent / you might require" checkpoint
+  table, a reversible-actions `.example` (delete vs. propose-and-review),
+  permission prompts as part of the workflow (not obstacles to click through),
+  minimum-necessary-tools applied to permissions, and a blockquote rule of
+  thumb. Explicitly calls back to Module 4's human-checkpoint concept
+  ("Earlier in the course, we used human checkpoints to break down
+  complicated tasks").
+- **real-cost** (20 min) — working vs. economical, a competitor-monitoring
+  scale-up `.example`, a 4-row cost-types table (model usage, tools/services,
+  human oversight, maintenance), token-usage drivers, a small-inefficiencies-
+  at-scale `.example`, a human-review-is-a-cost `.example` (1,000 emails × 2
+  min = 30+ hours), maintenance/ownership ("who will own this after the
+  prototype works?"), a 5-row cost-estimation-question table, and a blockquote
+  rule of thumb.
+- **when-not-to-vibecode** (30 min) — capability vs. suitability, a
+  high-consequence-situations checklist, a reasonable-vs.-very-different
+  project `.example` (staffing prototype vs. production payroll), verification
+  ability ("if you don't understand the domain well enough to recognize a
+  dangerous mistake, you need someone who does"), a prototype-vs-production-risk
+  table, a 4-row "four-question framework" recap table (what can it see / do /
+  what happens if wrong / who's responsible), personal responsibility, a
+  blockquote rule of thumb, and a 5-row decision exercise. Closing next-cta
+  points to Module 6 (Scaling up) since it's the module's last page.
+
+Style conversions applied uniformly across all four pages, matching Module 4's
+conventions: unicode em dashes (`—`) converted to `&mdash;`; formal "do not"/
+"does not" prose converted to contractions throughout (no doc-content
+exceptions were needed here — none of these pages quote a rule-doc or
+CLAUDE.md-style file the way Module 4's information-environment/memory pages
+do); `.example` boxes and blockquote "useful rule" callouts already matched
+site convention as supplied, so those were kept as-is. No banned "it is not X,
+it is Y" constructions were found in the source content.
 
 ### Module 6 — Scaling up (`/course/06-scaling`)
 Index written (renumbered from Module 7 on 2026-08-19). Sub-pages (skills,
@@ -449,7 +504,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 7 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
-| Modules 5, 6, 8 | 🚧 Index pages written; sub-pages not yet built |
+| Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
+| Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
@@ -461,8 +517,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 **Suggested next build priorities:**
 1. One additional case per function category to demonstrate breadth.
-2. Module 5 (Limits, risks, and responsibility) sub-pages — data security,
-   cost awareness, academic integrity, when not to vibecode. (The old
-   trust/evaluation priority this slot used to name is done — that content
-   shipped as part of Module 4's verify-before-you-trust page instead.)
+2. Module 6 (Scaling up) sub-pages — skills, subagents, hooks, agent teams.
 3. Fill in `/reference` glossary and cheat sheets.
+4. If academic integrity/attribution is still wanted somewhere, it needs a
+   new home — Module 5 dropped it when the user's own four pages replaced
+   the originally planned outline (see Module 5's summary above).

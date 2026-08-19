@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Understand the real cost · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Limits &amp; ethics</h4>
+      <ol>
+        <li><a href="/course/05-limits-and-ethics/">Overview</a></li>
+        <li><a href="/course/05-limits-and-ethics/protect-the-information.html"><span class="module-num">1.</span>Protect the information</a></li>
+        <li><a href="/course/05-limits-and-ethics/control-agent-actions.html"><span class="module-num">2.</span>Control what the agent can do</a></li>
+        <li><a href="/course/05-limits-and-ethics/real-cost.html"><span class="module-num">3.</span>Understand the real cost</a></li>
+        <li><a href="/course/05-limits-and-ethics/when-not-to-vibecode.html"><span class="module-num">4.</span>Know when not to vibecode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-limits-and-ethics/"><span class="module-num">5.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/06-scaling/"><span class="module-num">6.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+        <li><a href="/course/08-capstone/"><span class="module-num">8.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 3 of 4 · 20 minutes</span>
+        <h1>Understand the real cost</h1>
+        <p class="lede">A prototype can work perfectly and still be a
+        bad business system. Before scaling an AI workflow, understand
+        what it will cost to run, monitor, and maintain.</p>
+      </div>
+
+      <h2>Working is not the same as economical</h2>
+      <p>Vibecoding makes it easy to get something working quickly. But
+      the cost of a prototype may look very different from the cost of
+      running the same workflow every day across thousands of users or
+      records.</p>
+      <div class="example">
+        <p>Suppose you build a competitor-monitoring agent that
+        searches the web and summarizes updates for five companies once
+        per day.</p>
+        <p>That may be inexpensive. But if the same system monitors
+        2,000 companies every hour, the number of searches, model
+        calls, and generated tokens increases dramatically.</p>
+      </div>
+      <p>The system still &ldquo;works.&rdquo; The business question is
+      whether it's worth operating at that scale.</p>
+
+      <h2>AI systems have several kinds of cost</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cost</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Model usage</strong></td>
+            <td>Tokens, API calls, or subscription usage</td>
+          </tr>
+          <tr>
+            <td><strong>Tools and services</strong></td>
+            <td>Search APIs, databases, cloud storage, external
+            software</td>
+          </tr>
+          <tr>
+            <td><strong>Human oversight</strong></td>
+            <td>Reviewing outputs, approving actions, handling errors</td>
+          </tr>
+          <tr>
+            <td><strong>Maintenance</strong></td>
+            <td>Updating prompts, workflows, integrations, and rules</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The cheapest model isn't necessarily the cheapest system. If a
+      lower-cost model requires much more human review, the total cost
+      may be higher.</p>
+
+      <h2>Model usage adds up</h2>
+      <p>Many AI services charge based on usage. A common unit is the
+      <strong>token</strong>: a small piece of text processed by the
+      model.</p>
+      <p>A single task may involve much more than your final prompt and
+      answer. An agent may also read project files, inspect previous
+      tool results, search for information, revise its approach, and
+      generate intermediate outputs.</p>
+      <p>That means cost often depends on:</p>
+      <ul>
+        <li>how often the workflow runs,</li>
+        <li>how much context it reads,</li>
+        <li>which model it uses,</li>
+        <li>how many tool calls it makes, and</li>
+        <li>how many users or records it handles.</li>
+      </ul>
+
+      <h2>Small inefficiencies become large at scale</h2>
+      <div class="example">
+        <p>Imagine an agent that analyzes one customer complaint by
+        reading ten large files first. For one complaint, the extra
+        work may barely matter.</p>
+        <p>If the system processes 100,000 complaints per month,
+        repeatedly reading those same files can become slow and
+        expensive.</p>
+      </div>
+      <p>This connects back to project organization and memory: give
+      the agent the context it needs, but avoid making it rediscover
+      unnecessary information on every run.</p>
+
+      <h2>Human review is also a cost</h2>
+      <p>Some workflows look cheap because the AI usage is inexpensive,
+      but they require substantial human checking.</p>
+      <div class="example">
+        <p>Suppose an agent drafts 1,000 customer emails each week. If
+        every email requires two minutes of human review, that's more
+        than 30 hours of review time.</p>
+      </div>
+      <p>Human oversight may be necessary and valuable. The point is to
+      include it when judging whether the workflow saves time or
+      money.</p>
+
+      <h2>Maintenance is part of the system</h2>
+      <p>AI workflows don't remain correct forever. Business rules
+      change. Data formats change. APIs change. Models change. The
+      organization may adopt new policies.</p>
+      <p>Someone needs to notice those changes and update the
+      workflow.</p>
+      <p>A useful question is:</p>
+      <blockquote>
+        <strong>Who will own this after the prototype works?</strong>
+      </blockquote>
+      <p>If nobody is responsible for monitoring and maintaining the
+      system, a useful prototype can quietly become unreliable.</p>
+
+      <h2>Estimate before you scale</h2>
+      <p>You don't need a perfect financial model. A rough estimate is
+      often enough to reveal whether a design makes sense.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Ask</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How often will it run?</td>
+            <td>Once a month or every hour?</td>
+          </tr>
+          <tr>
+            <td>How much work happens each run?</td>
+            <td>One document or 10,000 records?</td>
+          </tr>
+          <tr>
+            <td>What paid services are used?</td>
+            <td>Model, search, database, or API fees?</td>
+          </tr>
+          <tr>
+            <td>How much human review is needed?</td>
+            <td>Spot-checking or reviewing every result?</td>
+          </tr>
+          <tr>
+            <td>Who maintains it?</td>
+            <td>Who updates the workflow when something changes?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>A useful rule</h2>
+      <blockquote>
+        <strong>A prototype that works is not necessarily a system that
+        is economical to operate.</strong>
+      </blockquote>
+      <p>Before scaling, estimate the cost of the entire workflow
+      &mdash; not just the AI model.</p>
+
+      <h2>Exercise</h2>
+      <p>Imagine you built an agent that reads incoming customer
+      reviews, classifies the issue, summarizes the complaint, and
+      suggests a response.</p>
+      <p>Now imagine the company wants to use it for 50,000 reviews per
+      month. Identify:</p>
+      <ol>
+        <li>What model or tool costs might increase?</li>
+        <li>How much human review would still be needed?</li>
+        <li>What parts of the workflow would require maintenance?</li>
+        <li>What could you change to make the system cheaper or more
+        efficient?</li>
+      </ol>
+
+      <a class="next-cta" href="/course/05-limits-and-ethics/when-not-to-vibecode.html">
+        <div>
+          <div class="next-cta-label">Next · Page 4 of 4</div>
+          <div class="next-cta-title">Know when not to vibecode</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

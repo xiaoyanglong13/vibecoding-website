@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protect the information · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Limits &amp; ethics</h4>
+      <ol>
+        <li><a href="/course/05-limits-and-ethics/">Overview</a></li>
+        <li><a href="/course/05-limits-and-ethics/protect-the-information.html"><span class="module-num">1.</span>Protect the information</a></li>
+        <li><a href="/course/05-limits-and-ethics/control-agent-actions.html"><span class="module-num">2.</span>Control what the agent can do</a></li>
+        <li><a href="/course/05-limits-and-ethics/real-cost.html"><span class="module-num">3.</span>Understand the real cost</a></li>
+        <li><a href="/course/05-limits-and-ethics/when-not-to-vibecode.html"><span class="module-num">4.</span>Know when not to vibecode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-limits-and-ethics/"><span class="module-num">5.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/06-scaling/"><span class="module-num">6.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+        <li><a href="/course/08-capstone/"><span class="module-num">8.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 1 of 4 · 20 minutes</span>
+        <h1>Protect the information</h1>
+        <p class="lede">Giving an agent context also means giving it
+        access to information. Before you upload, connect, or expose
+        data, decide what the agent actually needs to see.</p>
+      </div>
+
+      <h2>Access is a decision</h2>
+      <p>In earlier modules, we emphasized giving the agent enough
+      context to do the job well. But more context isn't always better.
+      Some information may be confidential, sensitive, regulated, or
+      simply irrelevant to the task.</p>
+      <p>The key question is:</p>
+      <blockquote>
+        <strong>What does the agent need to see to complete this task?</strong>
+      </blockquote>
+      <p>Treat access the same way you would with a human teammate: give
+      the agent what it needs, not everything you have.</p>
+
+      <h2>Use the minimum necessary information</h2>
+      <p>Suppose you're analyzing employee turnover and have a
+      spreadsheet with:</p>
+      <ul>
+        <li>employee names,</li>
+        <li>salaries,</li>
+        <li>performance ratings,</li>
+        <li>department,</li>
+        <li>medical-leave information, and</li>
+        <li>reasons for resignation.</li>
+      </ul>
+      <p>If your task is to compare turnover rates across departments,
+      the agent probably doesn't need every field.</p>
+      <div class="example">
+        <p><strong>Instead of uploading everything:</strong></p>
+        <pre><code>Give the agent only the fields needed for the analysis,
+such as department, employment status, and resignation date.
+
+Remove names, IDs, medical information, and other fields
+that aren't necessary for the task.</code></pre>
+      </div>
+      <p>This principle is sometimes called <strong>least
+      privilege</strong> or <strong>minimum necessary access</strong>:
+      give the system only the information and permissions required for
+      the job.</p>
+
+      <h2>Ask four questions before sharing data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Is this information sensitive?</strong></td>
+            <td>It may contain personal, confidential, financial, or
+            proprietary information.</td>
+          </tr>
+          <tr>
+            <td><strong>Does the agent need it?</strong></td>
+            <td>Irrelevant fields increase exposure without helping the
+            task.</td>
+          </tr>
+          <tr>
+            <td><strong>Can I reduce or redact it?</strong></td>
+            <td>You may be able to remove names, identifiers, or
+            unnecessary detail.</td>
+          </tr>
+          <tr>
+            <td><strong>Am I allowed to use this tool?</strong></td>
+            <td>Your organization or class may have rules about where
+            certain information can be used.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Data can enter the agent in several ways</h2>
+      <p>Information exposure isn't limited to copy-and-pasting text
+      into a chat. An agent may gain access through:</p>
+      <ul>
+        <li>files you upload,</li>
+        <li>folders in your project,</li>
+        <li>connected drives or databases,</li>
+        <li>APIs and MCP servers, or</li>
+        <li>tools that search internal systems.</li>
+      </ul>
+      <p>The same question applies in every case: <strong>does the
+      agent need this access for the current task?</strong></p>
+
+      <h2>Separate what is useful from what is sensitive</h2>
+      <div class="example">
+        <p>Imagine you're building a customer retention dashboard from
+        a customer database.</p>
+        <p>You may need:</p>
+        <pre><code>- purchase history
+- customer segment
+- tenure
+- cancellation status</code></pre>
+        <p>You may not need:</p>
+        <pre><code>- full name
+- home address
+- phone number
+- payment information</code></pre>
+        <p>If those fields don't help answer the business question,
+        leave them out.</p>
+      </div>
+
+      <h2>Use safer versions when possible</h2>
+      <p>Sometimes you need the structure of real data without needing
+      the real identities behind it. In those cases, you can often
+      reduce risk by changing what you provide.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Instead of&hellip;</th>
+            <th>Consider&hellip;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Full customer records</td>
+            <td>Removing names and direct identifiers</td>
+          </tr>
+          <tr>
+            <td>Production database access</td>
+            <td>A smaller read-only extract</td>
+          </tr>
+          <tr>
+            <td>All company documents</td>
+            <td>Only the files relevant to the task</td>
+          </tr>
+          <tr>
+            <td>Real sensitive data for early prototyping</td>
+            <td>Synthetic or sample data</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Company policy comes first</h2>
+      <p>Even if a tool is technically capable of handling a file, that
+      doesn't mean you're allowed to use it. Organizations may restrict
+      which AI tools can be used with internal or confidential data.</p>
+      <p>Before using company information, check the rules that apply
+      to your environment. If you're unsure whether a dataset can be
+      used with a particular tool, ask rather than assume.</p>
+
+      <h2>A useful rule</h2>
+      <blockquote>
+        <strong>Give the agent enough information to do the job, but no
+        more than it needs.</strong>
+      </blockquote>
+      <p>Good context design isn't only about helping the agent perform
+      better. It's also about limiting unnecessary access.</p>
+
+      <h2>Exercise</h2>
+      <p>Imagine you're asked to build a dashboard showing patterns in
+      employee turnover. Your source file contains names, employee IDs,
+      salaries, departments, performance scores, leave history, hire
+      dates, and resignation dates.</p>
+      <p>Before giving the data to an agent, decide:</p>
+      <ol>
+        <li>Which fields are necessary for the task?</li>
+        <li>Which fields should be removed or redacted?</li>
+        <li>Could you use a smaller or safer version of the dataset?</li>
+        <li>What organizational rules would you want to check first?</li>
+      </ol>
+
+      <a class="next-cta" href="/course/05-limits-and-ethics/control-agent-actions.html">
+        <div>
+          <div class="next-cta-label">Next · Page 2 of 4</div>
+          <div class="next-cta-title">Control what the agent can do</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
