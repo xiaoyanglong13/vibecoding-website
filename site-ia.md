@@ -241,12 +241,21 @@ Sub-pages, in order:
   7-row "should you plan first?" exercise table. Sidebar label and all
   cross-page references updated from "execute" to "build" wording across the
   other five Module 4 pages and the module index.
-- **information-environment** — a `.callout` recap of the give-context/
-  specify-task/inspect/revise/verify loop already taught in Module 1's
-  modes-of-collaboration, project folder setup (an inputs/references/outputs
-  pattern), two prompt-window examples (tell Claude what's in the folder vs.
-  ask it to explore), and the guideline-document trick for complex multi-folder
-  projects with drag-and-drop as the `.callout.warn` lightweight alternative.
+- **information-environment** — "Set up your information environment"
+  (renamed from "Setting up..." on 2026-08-19, same user-supplied-page swap as
+  planning; title updated in the module index card and planning.html's
+  next-cta to match). Recaps the give-context/specify-task/inspect/revise/
+  verify loop as a plain `<pre><code>` block (matching Module 1's own
+  presentation of it, not a table), a market-research project-folder example,
+  two `subhead-accent`/`.prompt-window` examples (explain the files directly
+  vs. ask the agent to explore), a project-guide.md example for larger
+  projects (a generic guide-file pattern, deliberately not tied to the
+  CLAUDE.md-specific convention Module 4's memory page teaches later), a
+  drag-and-drop-for-one-off-files section, a 3-row "practical rule" table, and
+  an exercise. One sentence was reworded ("The goal is to make the right
+  information available at the right time — not to give the agent access to
+  everything") to avoid the "X is not this, it's that" echo construction
+  CLAUDE.md disallows.
 - **specifying-the-task** — objective + company-specific rules, plan mode,
   brainstorming, spotting missing data. "How specific should you be?" contrasts
   an over-specified prompt (spelling out a nested-loop churn calculation) against
