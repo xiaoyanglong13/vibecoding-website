@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control what the agent can do · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Limits &amp; ethics</h4>
+      <ol>
+        <li><a href="/course/05-limits-and-ethics/">Overview</a></li>
+        <li><a href="/course/05-limits-and-ethics/protect-the-information.html"><span class="module-num">1.</span>Protect the information</a></li>
+        <li><a href="/course/05-limits-and-ethics/control-agent-actions.html"><span class="module-num">2.</span>Control what the agent can do</a></li>
+        <li><a href="/course/05-limits-and-ethics/real-cost.html"><span class="module-num">3.</span>Understand the real cost</a></li>
+        <li><a href="/course/05-limits-and-ethics/when-not-to-vibecode.html"><span class="module-num">4.</span>Know when not to vibecode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-limits-and-ethics/"><span class="module-num">5.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/06-scaling/"><span class="module-num">6.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+        <li><a href="/course/08-capstone/"><span class="module-num">8.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 2 of 4 · 20 minutes</span>
+        <h1>Control what the agent can do</h1>
+        <p class="lede">Giving an agent a tool is different from giving
+        it information. Once an agent can modify files, send messages,
+        update systems, or spend money, you need to think carefully
+        about permissions and human approval.</p>
+      </div>
+
+      <h2>From access to action</h2>
+      <p>On the previous page, we asked: <strong>What can the agent
+      see?</strong> The next question is: <strong>What can the agent
+      do?</strong></p>
+      <p>A chat model that only reads information and produces a
+      response has limited ability to affect the outside world. An
+      agent connected to tools can do much more: edit files, update
+      records, send messages, call APIs, or trigger workflows.</p>
+      <p>That extra capability is useful &mdash; but it also increases
+      the consequences of a mistake.</p>
+
+      <h2>Not all actions carry the same risk</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Agent action</th>
+            <th>Example</th>
+            <th>Typical concern</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Read</strong></td>
+            <td>Analyze a spreadsheet</td>
+            <td>Data access and privacy</td>
+          </tr>
+          <tr>
+            <td><strong>Draft</strong></td>
+            <td>Write a customer email</td>
+            <td>Quality and correctness</td>
+          </tr>
+          <tr>
+            <td><strong>Modify</strong></td>
+            <td>Edit a shared file</td>
+            <td>Accidental changes</td>
+          </tr>
+          <tr>
+            <td><strong>Update</strong></td>
+            <td>Change records in a database</td>
+            <td>Data integrity</td>
+          </tr>
+          <tr>
+            <td><strong>Communicate</strong></td>
+            <td>Send an email or post a message</td>
+            <td>External consequences</td>
+          </tr>
+          <tr>
+            <td><strong>Transact</strong></td>
+            <td>Place an order or spend money</td>
+            <td>Financial or irreversible impact</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The more consequential or difficult an action is to undo, the
+      more important it is to place a human checkpoint before the
+      action happens.</p>
+
+      <h2>Drafting and doing are different</h2>
+      <div class="example">
+        <p>Suppose you want to contact 300 customers whose contracts
+        are about to expire.</p>
+        <p>A lower-risk workflow might be:</p>
+        <pre><code>1. Agent identifies the customers
+2. Agent drafts personalized emails
+3. Human reviews the logic and a sample of messages
+4. Human approves sending</code></pre>
+        <p>A much higher-risk workflow is:</p>
+        <pre><code>1. Agent identifies the customers
+2. Agent immediately sends all 300 emails</code></pre>
+      </div>
+      <p>In both cases, the agent is capable of doing the work. The
+      difference is where the human checkpoint sits.</p>
+
+      <h2>Put checkpoints before consequential actions</h2>
+      <p>Earlier in the course, we used human checkpoints to break down
+      complicated tasks. The same idea is useful for controlling risk.</p>
+      <p>A good checkpoint comes <strong>before</strong> an action that
+      would be costly, public, difficult to reverse, or harmful if the
+      agent misunderstood the task.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Before the agent&hellip;</th>
+            <th>You might require&hellip;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deletes files</td>
+            <td>Explicit approval</td>
+          </tr>
+          <tr>
+            <td>Overwrites a shared report</td>
+            <td>Preview or backup</td>
+          </tr>
+          <tr>
+            <td>Sends external messages</td>
+            <td>Review before sending</td>
+          </tr>
+          <tr>
+            <td>Changes important records</td>
+            <td>Confirmation of the proposed changes</td>
+          </tr>
+          <tr>
+            <td>Spends money</td>
+            <td>Human authorization</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Prefer reversible actions when possible</h2>
+      <p>A useful design principle is to make the agent's actions easy
+      to inspect and undo.</p>
+      <div class="example">
+        <p><strong>Instead of:</strong></p>
+        <pre><code>Delete all duplicate customer records.</code></pre>
+        <p><strong>Prefer:</strong></p>
+        <pre><code>Identify the records you believe are duplicates and create a
+report showing which records you would remove. Don't delete
+anything yet.</code></pre>
+      </div>
+      <p>Similarly, an agent can save a new version of a file instead
+      of overwriting the original, prepare a draft instead of sending
+      it, or propose database changes before applying them.</p>
+
+      <h2>Permissions are part of the workflow</h2>
+      <p>Agent tools often ask for permission before certain actions.
+      Don't treat these prompts as obstacles to click through
+      automatically.</p>
+      <p>Before granting permission, ask:</p>
+      <ul>
+        <li>What is the agent trying to do?</li>
+        <li>Does this action make sense for the task?</li>
+        <li>What could be changed or exposed?</li>
+        <li>Can I review the proposed action first?</li>
+      </ul>
+      <p>Permission settings are one of the mechanisms that keep the
+      human in control of the agent.</p>
+
+      <h2>Give the agent only the tools it needs</h2>
+      <p>The same minimum-access principle from the previous page
+      applies to tools. If an agent only needs to read a database, it
+      may not need permission to modify it. If it only needs to draft
+      an email, it may not need permission to send one.</p>
+      <div class="example">
+        <p>Suppose you're using an agent to analyze customer support
+        tickets.</p>
+        <p>It may need access to <strong>read</strong> the tickets, but
+        it probably doesn't need permission to close tickets, issue
+        refunds, or email customers unless those actions are part of
+        the task.</p>
+      </div>
+
+      <h2>A useful rule</h2>
+      <blockquote>
+        <strong>Give the agent enough authority to do the job &mdash;
+        but no more than it needs.</strong>
+      </blockquote>
+      <p>As the potential impact of an action increases, move the human
+      checkpoint closer to the action.</p>
+
+      <h2>Exercise</h2>
+      <p>Imagine you're building an agent to help manage customer
+      support. It can potentially:</p>
+      <ul>
+        <li>read support tickets,</li>
+        <li>draft replies,</li>
+        <li>send replies,</li>
+        <li>close tickets, and</li>
+        <li>issue refunds.</li>
+      </ul>
+      <p>Decide which actions you would allow automatically and which
+      should require human approval. For each one, consider:</p>
+      <ol>
+        <li>How costly would a mistake be?</li>
+        <li>How easy would the action be to undo?</li>
+        <li>Would a human need to review the agent's judgment first?</li>
+      </ol>
+
+      <a class="next-cta" href="/course/05-limits-and-ethics/real-cost.html">
+        <div>
+          <div class="next-cta-label">Next · Page 3 of 4</div>
+          <div class="next-cta-title">Understand the real cost</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

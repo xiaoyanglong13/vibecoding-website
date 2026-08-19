@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Know when not to vibecode · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Limits &amp; ethics</h4>
+      <ol>
+        <li><a href="/course/05-limits-and-ethics/">Overview</a></li>
+        <li><a href="/course/05-limits-and-ethics/protect-the-information.html"><span class="module-num">1.</span>Protect the information</a></li>
+        <li><a href="/course/05-limits-and-ethics/control-agent-actions.html"><span class="module-num">2.</span>Control what the agent can do</a></li>
+        <li><a href="/course/05-limits-and-ethics/real-cost.html"><span class="module-num">3.</span>Understand the real cost</a></li>
+        <li><a href="/course/05-limits-and-ethics/when-not-to-vibecode.html"><span class="module-num">4.</span>Know when not to vibecode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-limits-and-ethics/"><span class="module-num">5.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/06-scaling/"><span class="module-num">6.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+        <li><a href="/course/08-capstone/"><span class="module-num">8.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 4 of 4 · 30 minutes</span>
+        <h1>Know when not to vibecode</h1>
+        <p class="lede">The question is not only whether AI can build
+        something. You also need to decide whether vibecoding is an
+        appropriate way to build it.</p>
+      </div>
+
+      <h2>Capability is not the same as suitability</h2>
+      <p>AI agents can help build surprisingly sophisticated systems.
+      But a system can be technically possible to build and still be a
+      poor candidate for vibecoding.</p>
+      <p>A useful question is:</p>
+      <blockquote>
+        <strong>What happens if this system is wrong?</strong>
+      </blockquote>
+      <p>The greater the consequences of failure, the more important it
+      is to add expert review, stronger safeguards, formal testing, or
+      a different development process.</p>
+
+      <h2>Watch for high-consequence situations</h2>
+      <p>Be especially cautious when:</p>
+      <ul>
+        <li>errors could seriously harm people or the organization,</li>
+        <li>the system makes important decisions about people,</li>
+        <li>sensitive or regulated data is involved,</li>
+        <li>security requirements are significant,</li>
+        <li>the system controls money or important transactions,</li>
+        <li>failures would be difficult to detect,</li>
+        <li>very high reliability is required, or</li>
+        <li>the system will become critical organizational
+        infrastructure.</li>
+      </ul>
+      <p>These situations don't necessarily mean &ldquo;never use
+      AI.&rdquo; They mean that vibecoding alone is probably not
+      enough.</p>
+
+      <h2>Bring in missing expertise</h2>
+      <div class="example">
+        <p><strong>Reasonable vibecoding project:</strong></p>
+        <pre><code>Build an internal prototype that helps a manager explore
+staffing patterns and compare scheduling options.</code></pre>
+        <p><strong>Very different project:</strong></p>
+        <pre><code>Build and deploy the production payroll system that
+calculates employees' pay and automatically sends payments.</code></pre>
+      </div>
+      <p>The second system involves financial consequences, legal
+      requirements, security, and reliability expectations. An agent
+      may still help, but you'd want people with the relevant
+      engineering, security, legal, payroll, and domain expertise
+      involved.</p>
+      <p>&ldquo;Don't vibecode this alone&rdquo; is often a better rule
+      than &ldquo;don't use AI.&rdquo;</p>
+
+      <h2>Your ability to verify matters</h2>
+      <p>Vibecoding works best when you understand the business problem
+      well enough to judge whether the result makes sense.</p>
+      <p>If you don't understand the domain well enough to recognize a
+      dangerous mistake, you need someone who does.</p>
+      <div class="example">
+        <p>You might be able to build a financial forecasting dashboard
+        without being a software engineer because you understand the
+        metrics and can verify the calculations.</p>
+        <p>Building a system that interprets complex tax rules is
+        different if nobody on the team understands the tax rules well
+        enough to evaluate the result.</p>
+      </div>
+
+      <h2>Prototype risk and production risk are different</h2>
+      <p>A useful prototype can tolerate conditions that would be
+      unacceptable in a production system.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prototype</th>
+            <th>Production system</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Used by a few people</td>
+            <td>Used across the organization</td>
+          </tr>
+          <tr>
+            <td>Mistakes can be noticed manually</td>
+            <td>Mistakes may happen at scale</td>
+          </tr>
+          <tr>
+            <td>Outputs are reviewed</td>
+            <td>Actions may happen automatically</td>
+          </tr>
+          <tr>
+            <td>Failure is inconvenient</td>
+            <td>Failure may be costly or harmful</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Moving from prototype to production usually requires stronger
+      testing, monitoring, security, documentation, and ownership.</p>
+
+      <h2>Use the four-question framework</h2>
+      <p>Before deciding whether a project is appropriate for
+      vibecoding, return to the questions from the beginning of this
+      module:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Warning sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What can it see?</strong></td>
+            <td>The system requires highly sensitive or regulated
+            information.</td>
+          </tr>
+          <tr>
+            <td><strong>What can it do?</strong></td>
+            <td>The agent can take actions that are costly, public, or
+            hard to reverse.</td>
+          </tr>
+          <tr>
+            <td><strong>What happens if it is wrong?</strong></td>
+            <td>An error could cause serious financial, legal, safety,
+            or reputational harm.</td>
+          </tr>
+          <tr>
+            <td><strong>Who is responsible?</strong></td>
+            <td>No one has the expertise or ownership needed to verify
+            and maintain the system.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Your work is still your responsibility</h2>
+      <p>An AI agent is a tool, not a party you can transfer
+      responsibility to. If you approve, submit, send, or deploy its
+      work, you're responsible for deciding whether that use is
+      appropriate.</p>
+      <p>This includes following company rules on data, security,
+      intellectual property, and AI use. In class, it also means
+      following your instructor's policy on AI assistance and
+      disclosure.</p>
+
+      <h2>A useful rule</h2>
+      <blockquote>
+        <strong>The higher the stakes, the less you should rely on
+        vibecoding alone.</strong>
+      </blockquote>
+      <p>Use agents where they increase your capability, but bring in
+      stronger processes and additional expertise when the consequences
+      demand it.</p>
+
+      <h2>Exercise</h2>
+      <p>For each project below, decide whether you would:</p>
+      <ol>
+        <li>vibecode it yourself,</li>
+        <li>vibecode a prototype but involve experts before deployment,
+        or</li>
+        <li>use a more formal development process from the beginning.</li>
+      </ol>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Your decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>An internal dashboard for tracking marketing campaign
+            performance</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A tool that recommends which job applicants should
+            receive interviews</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A prototype that summarizes customer feedback for a
+            product manager</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A system that automatically approves customer refunds</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>A production payroll application</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>For each choice, use the four questions: what can it see, what
+      can it do, what happens if it's wrong, and who is responsible?</p>
+
+      <a class="next-cta" href="/course/06-scaling/">
+        <div>
+          <div class="next-cta-label">Next · Module 6</div>
+          <div class="next-cta-title">Scaling up</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
