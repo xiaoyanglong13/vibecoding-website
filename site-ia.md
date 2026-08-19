@@ -254,14 +254,17 @@ the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list,
-and was revised again 2026-08-19 from a user-supplied draft: a sharper lede,
-two framing paragraphs ("we move one level up: how to manage the work
-itself" / small tasks vs. larger projects needing more structure), and a
+and was revised again 2026-08-19 from a user-supplied draft: a sharper lede
+and two framing paragraphs ("we move one level up: how to manage the work
+itself" / small tasks vs. larger projects needing more structure) before
+"What you'll be able to do" — no other course index page has paragraphs
+ahead of that heading, but it's a legitimate one-off enhancement, not a
+mistake, so don't "fix" it to match Modules 1/2's bare module-header→
+What-you'll-be-able-to-do structure. (The draft also included a
 Plan→Set up context→Specify→Build→Verify→Update memory→Repeat `<pre><code>`
-loop before "What you'll be able to do" — no other course index page has
-paragraphs ahead of that heading, but it's a legitimate one-off enhancement,
-not a mistake, so don't "fix" it to match Modules 1/2's bare module-header→
-What-you'll-be-able-to-do structure. The draft's own first sentence ("Good
+loop between the two framing paragraphs and the heading; the user removed it
+by hand in a follow-up edit, so it's gone again — don't re-add it.) The
+draft's own first sentence ("Good
 vibecoding is not about finding the perfect prompt. It is about managing...")
 was rewritten into one em-dash-joined sentence to avoid the "X is not this,
 it's that" construction CLAUDE.md disallows; the draft also carried stale
