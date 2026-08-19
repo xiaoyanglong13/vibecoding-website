@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify before you trust · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you build</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
+        <li><a href="/course/04-workflow/verify-before-you-trust.html"><span class="module-num">4.</span>Verify before you trust</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Build project memory</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">6.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">7.</span>Case study: model automation</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-evaluating-output/"><span class="module-num">5.</span>Trust the output</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/07-scaling/"><span class="module-num">7.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">8.</span>Use cases</a></li>
+        <li><a href="/course/09-capstone/"><span class="module-num">9.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 4 of 7 · 25 minutes</span>
+        <h1>Verify before you trust</h1>
+        <p class="lede">An agent can produce something that looks
+        polished and still be wrong. Verification means checking not
+        only whether the output looks right, but whether it actually
+        works, is correct, and holds up under realistic cases.</p>
+      </div>
+
+      <h2>Inspection is not the same as verification</h2>
+      <p>When an agent finishes a task, your first instinct may be to
+      look at the result and ask: <em>Does this look like what I
+      wanted?</em></p>
+      <p>That's useful, but it's only the beginning. A dashboard can
+      look professional while calculating a metric incorrectly. A form
+      can work for the example you tried but fail when a field is
+      blank. A classification tool can run successfully while using the
+      wrong business rule.</p>
+      <p>It helps to distinguish two activities:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Question</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Inspect</strong></td>
+            <td>Does the output look like what I asked for?</td>
+            <td>The dashboard has the right charts and seems easy to
+            use.</td>
+          </tr>
+          <tr>
+            <td><strong>Verify</strong></td>
+            <td>Does it actually behave correctly?</td>
+            <td>The totals match the source data and the filters work
+            as intended.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>In vibecoding, verification is one of the main ways the human
+      stays in control of the work.</p>
+
+      <h2>Why verification matters</h2>
+      <p>An agent can produce the wrong result for many different
+      reasons. It might:</p>
+      <ul>
+        <li>misunderstand your task,</li>
+        <li>misunderstand the context or business rules,</li>
+        <li>make an incorrect assumption about the data,</li>
+        <li>write code with a bug, or</li>
+        <li>build something that works for one case but fails for
+        others.</li>
+      </ul>
+      <p>Importantly, the problem isn't always that the AI &ldquo;made
+      something up.&rdquo; Sometimes the code is perfectly valid
+      &mdash; it simply implements the wrong rule.</p>
+      <div class="example">
+        <p>Suppose you asked an agent to calculate customer lifetime
+        value and your company defines revenue as <strong>net revenue
+        after returns</strong>.</p>
+        <p>The agent could write flawless code that uses gross sales
+        instead. The program runs. The numbers look plausible. But the
+        answer is still wrong because the agent misunderstood the
+        business definition.</p>
+      </div>
+
+      <h2>A simple verification framework</h2>
+      <p>When reviewing something the agent built, work through four
+      questions:</p>
+      <pre><code>Does it look right?
+  &darr;
+Does it work?
+  &darr;
+Is it correct?
+  &darr;
+What could break it?</code></pre>
+
+      <h3>1. Does it look right?</h3>
+      <p>Start as a user. Is the output organized the way you expected?
+      Are important elements missing? Does the interface make sense?
+      Does the result seem to address the original business problem?</p>
+
+      <h3>2. Does it work?</h3>
+      <p>Actually use the thing that was built. Click the buttons.
+      Change the filters. Submit the form. Upload the file. Run the
+      workflow from beginning to end.</p>
+
+      <h3>3. Is it correct?</h3>
+      <p>Check some outputs against answers you already know or can
+      calculate independently. A system that runs without errors isn't
+      necessarily producing the right answer.</p>
+
+      <h3>4. What could break it?</h3>
+      <p>Try cases that are unusual, incomplete, or near important
+      boundaries. Don't test only the example most likely to work.</p>
+
+      <h2>Example: verifying a commission calculator</h2>
+      <p>Suppose you ask an agent to build a simple sales commission
+      calculator. The rule is that salespeople earn 5% commission on
+      sales up to $100,000 and 7% on sales above $100,000.</p>
+      <div class="example">
+        <p><strong>Does it look right?</strong></p>
+        <p>The page has a place to enter sales and clearly displays the
+        calculated commission.</p>
+        <p><strong>Does it work?</strong></p>
+        <p>You enter a sales amount, click Calculate, and the app
+        returns a result.</p>
+        <p><strong>Is it correct?</strong></p>
+        <p>Enter a value where you know the answer. For example, at
+        $50,000 in sales, the commission should be $2,500.</p>
+        <p><strong>What could break it?</strong></p>
+        <p>What happens with $0 in sales? A blank input? A negative
+        number? Exactly $100,000? $100,001? A very large value?</p>
+      </div>
+      <p>Notice that you don't need to understand the underlying code
+      to perform these checks. You only need to understand what the
+      system is supposed to do.</p>
+
+      <h2>Test cases where you know the answer</h2>
+      <p>One of the most useful verification techniques is to create
+      <strong>known cases</strong>: inputs for which you already know
+      what the correct output should be. For example:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>What the agent built</th>
+            <th>Known case you could test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Commission calculator</td>
+            <td>Enter a sales amount where you can calculate the
+            commission by hand.</td>
+          </tr>
+          <tr>
+            <td>Sales dashboard</td>
+            <td>Compare one region's total with the original
+            spreadsheet.</td>
+          </tr>
+          <tr>
+            <td>Customer segmentation</td>
+            <td>Check several customers whose category you can
+            determine yourself.</td>
+          </tr>
+          <tr>
+            <td>Expense form</td>
+            <td>Try one case you know should be accepted and one that
+            should be rejected.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>If the system can't pass simple cases with known answers,
+      there's little reason to trust it on cases where the answer is
+      unknown.</p>
+
+      <h2>Test the edges, not just the happy path</h2>
+      <p>Agents often demonstrate that something works using a clean,
+      normal example. Real business data and real users are rarely
+      that cooperative. Think about cases such as:</p>
+      <ul>
+        <li>missing values,</li>
+        <li>zero or negative numbers,</li>
+        <li>very large values,</li>
+        <li>duplicate records,</li>
+        <li>unexpected text,</li>
+        <li>empty forms,</li>
+        <li>dates at important cutoffs, and</li>
+        <li>values exactly at a rule or threshold.</li>
+      </ul>
+      <div class="example">
+        <p>Suppose a dashboard highlights stores whose sales declined
+        by <strong>more than 10%</strong>. You should test:</p>
+        <pre><code>-9.9%
+-10.0%
+-10.1%</code></pre>
+        <p>These cases help you determine whether the agent interpreted
+        the rule correctly.</p>
+      </div>
+
+      <h2>Match the verification method to the output</h2>
+      <p>Different kinds of outputs require different checks.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>What the agent built</th>
+            <th>How you might verify it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calculator</td>
+            <td>Check several cases by hand or in Excel.</td>
+          </tr>
+          <tr>
+            <td>Dashboard</td>
+            <td>Compare totals and metrics with the source data.</td>
+          </tr>
+          <tr>
+            <td>Classification</td>
+            <td>Inspect examples assigned to each category.</td>
+          </tr>
+          <tr>
+            <td>Form</td>
+            <td>Try valid, invalid, missing, and unusual inputs.</td>
+          </tr>
+          <tr>
+            <td>Data analysis</td>
+            <td>Reproduce a few important numbers independently.</td>
+          </tr>
+          <tr>
+            <td>Document summary</td>
+            <td>Trace important conclusions back to the source.</td>
+          </tr>
+          <tr>
+            <td>Workflow</td>
+            <td>Run it end-to-end on a realistic case.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Ask the agent to help test its own work</h2>
+      <p>You don't need to invent every test yourself. Agents can be
+      very helpful at identifying possible failure cases and running
+      checks.</p>
+      <div class="example">
+        <p><strong>For example:</strong></p>
+        <pre><code>Before we consider this finished, identify the most important
+ways this could fail.
+
+Create test cases for them, run the tests, and tell me what
+you found.</code></pre>
+      </div>
+      <p>You can also ask the agent to focus on the business rules:</p>
+      <pre><code>Review the implementation against the requirements we agreed
+on.
+
+For each important rule, explain how you verified that the
+system handles it correctly.</code></pre>
+      <p>This is extremely useful &mdash; but it shouldn't be your only
+      form of verification. The same agent that misunderstood a
+      requirement may also write tests based on that same
+      misunderstanding. Human judgment is still needed to decide
+      whether the tests themselves make sense.</p>
+
+      <h2>When something is wrong, investigate before patching</h2>
+      <p>When you find an incorrect result, resist the temptation to
+      immediately tell the agent exactly how to change the code.
+      Instead, give it the evidence and ask it to determine the cause.</p>
+      <div class="example">
+        <p><strong>For example:</strong></p>
+        <pre><code>The total for Region West should be $184,320, but the
+dashboard shows $201,450.
+
+Investigate the discrepancy and explain the cause before
+changing anything.</code></pre>
+      </div>
+      <p>Once the cause is understood, ask the agent to fix the
+      underlying problem and then check whether the same issue appears
+      elsewhere:</p>
+      <pre><code>Fix the underlying issue, then test whether the same problem
+could affect any other regions or metrics.</code></pre>
+      <p>This is better than patching one visible symptom while
+      leaving the broader problem in place.</p>
+
+      <h2>Verification should feed back into memory</h2>
+      <p>Verification often reveals durable information about the
+      project:</p>
+      <ul>
+        <li>a business rule was misunderstood,</li>
+        <li>a data field has a special meaning,</li>
+        <li>a source file sometimes contains duplicates,</li>
+        <li>a boundary case needs special treatment, or</li>
+        <li>a particular check should always be performed before
+        finishing.</li>
+      </ul>
+      <p>If that lesson will matter again, don't leave it only in the
+      conversation. Add it to the project's rules, workflow, or memory
+      so the agent can use it next time.</p>
+      <div class="example">
+        <p><strong>For example:</strong></p>
+        <pre><code>We discovered that blank region values should be labeled
+"Unknown" rather than assigned to a region.
+
+Add this to the project rules so the same mistake isn't
+repeated in future analyses.</code></pre>
+      </div>
+
+      <h2>A useful feedback loop</h2>
+      <p>Verification isn't only the last step of a task. It improves
+      the next round of work.</p>
+      <pre><code>Build
+  &darr;
+Verify
+  &darr;
+Correct
+  &darr;
+Save the learning
+  &darr;
+Build again</code></pre>
+      <p>Over time, this loop makes both the project and the agent's
+      working context more reliable.</p>
+
+      <h2>The key idea</h2>
+      <blockquote>
+        <strong>You don't need to know how to write the code to
+        evaluate whether the system is doing the right thing.</strong>
+      </blockquote>
+      <p>Vibecoding changes the human's role. Instead of checking every
+      line of implementation, you increasingly define what correct
+      behavior means, create meaningful tests, inspect the results, and
+      decide whether the output is good enough to trust.</p>
+
+      <h2>Exercise</h2>
+      <p>Choose something you've already built with an agent. Create a
+      short verification plan using the four questions from this page:</p>
+      <ol>
+        <li><strong>Does it look right?</strong> What will you inspect?</li>
+        <li><strong>Does it work?</strong> What actions will you try?</li>
+        <li><strong>Is it correct?</strong> What known cases can you
+        check?</li>
+        <li><strong>What could break it?</strong> What unusual or
+        boundary cases will you test?</li>
+      </ol>
+      <p>Then ask the agent to propose additional tests. Compare its
+      suggestions with your own. Did the agent identify risks you
+      missed? Did you identify any business rules the agent overlooked?</p>
+
+      <a class="next-cta" href="/course/04-workflow/memory.html">
+        <div>
+          <div class="next-cta-label">Next · Page 5 of 7</div>
+          <div class="next-cta-title">Build project memory</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
