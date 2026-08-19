@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Setting up your information environment · Module 4 · Vibecoding for Business School Students</title>
+  <title>Set up your information environment · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -51,11 +51,11 @@
     <article>
       <div class="module-header">
         <span class="eyebrow">Module 4 · Page 2 of 6 · 20 minutes</span>
-        <h1>Setting up your information environment</h1>
-        <p class="lede">An agent is only as good as what it can see. Before
-        you ask for anything, spend a few minutes making sure the right
-        files exist, are named clearly, and are explained &mdash; so the
-        agent starts every session already oriented.</p>
+        <h1>Set up your information environment</h1>
+        <p class="lede">Agents work better when the information they need
+        is organized and easy to find. A good project folder gives the
+        agent consistent context and reduces the amount of searching and
+        re-reading it has to do.</p>
       </div>
 
       <h2>Recall the workflow</h2>
@@ -65,99 +65,176 @@
 3. Inspect the output.
 4. Revise the request.
 5. Verify the result.</code></pre>
-      <div class="callout">
-        <span class="callout-label">Where this page fits</span>
-        This page is entirely about step 1 &mdash; <strong>give
-        context</strong> &mdash; for projects where the context isn't a
-        paragraph you can type, but a folder of files. The better that
-        folder is organized, the less of your prompt has to do the work.
+      <p>When you work with an agent on a larger project, the first step
+      &mdash; <strong>giving context</strong> &mdash; becomes especially
+      important. Instead of repeatedly explaining the same project from
+      scratch, you can organize the information so the agent can find
+      and reuse it.</p>
+
+      <h2>Start with a project folder</h2>
+      <p>A simple way to create a stable information environment is to
+      give each project its own folder. Put the files that belong to
+      that project together, and use clear folder and file names.</p>
+
+      <div class="example">
+        <p>For example, a market research project might look like this:</p>
+        <pre><code>market-research-project/
+├── data/
+│   ├── customer-survey.csv
+│   └── sales-by-region.xlsx
+├── research/
+│   ├── competitor-notes.pdf
+│   └── industry-report.pdf
+├── outputs/
+└── project-guide.md</code></pre>
+        <p>The exact structure doesn't matter. What matters is that a
+        human &mdash; and the agent &mdash; can quickly understand where
+        different kinds of information live.</p>
       </div>
 
-      <h2>Start with the project folder</h2>
-      <p>The first step to setting up your information environment is
-      setting up your project folder. Put every file the task depends on
-      inside it &mdash; and only those files. If the folder is doing
-      more than one job, split it into subfolders with names a stranger
-      could guess the contents of without opening them:</p>
-      <pre><code>monthly-close/
-├── inputs/          (this month's raw exports)
-├── references/       (last month's approved output, style examples)
-└── outputs/          (what the agent produces)</code></pre>
-      <p><code>inputs</code>, <code>references</code>, and
-      <code>outputs</code> is a pattern worth reusing across projects:
-      it separates what changes each time you run the task from what
-      stays fixed, and from what the agent hands back to you.</p>
+      <h2>Tell the agent what the files are</h2>
+      <p>Once the files are organized, you can tell the agent what each
+      file contains and which ones are relevant to the current task.</p>
 
-      <h2>Tell Claude what each file is</h2>
-      <p>Once the folder exists, the agent still doesn't know what's in
-      it or why. You have two ways to close that gap.</p>
-
-      <h3 class="subhead-accent">Example 1: Tell it directly</h3>
-      <p>If you already know what each file is, say so up front. This is
-      faster and leaves less room for the agent to guess wrong:</p>
+      <h3 class="subhead-accent">Example 1: Explain the files directly</h3>
       <div class="prompt-window">
         <div class="prompt-window-header">Prompt</div>
-        <pre><code>This folder has three subfolders. inputs/ has this month's raw
-data exports &mdash; treat these as read-only. references/ has
-last month's approved output, which is the format to match.
-outputs/ is empty; that's where finished work should go.
+        <pre><code>We are working on a market research project.
 
-Read through inputs/ and references/ and summarize what you see
-before we start.</code></pre>
+The data folder contains:
+- customer-survey.csv: responses from our customer survey
+- sales-by-region.xlsx: quarterly sales by geographic region
+
+The research folder contains:
+- competitor-notes.pdf: notes on three major competitors
+- industry-report.pdf: an external report on industry trends
+
+For this task, focus on customer-survey.csv and
+competitor-notes.pdf. I want to identify the three most
+important customer complaints and see whether competitors
+appear to address them better than we do.</code></pre>
       </div>
+      <p>This approach is useful when you already know what the files
+      contain and can quickly point the agent to the most relevant
+      information.</p>
 
-      <h3 class="subhead-accent">Example 2: Ask it to explore</h3>
-      <p>If you inherited the folder, or aren't sure what's in it
-      yourself, ask the agent to look and report back instead of
-      guessing at the structure yourself:</p>
+      <h3 class="subhead-accent">Example 2: Ask the agent to explore first</h3>
+      <p>You don't always need to describe every file yourself. If the
+      project folder is reasonably organized, you can ask the agent to
+      inspect it and explain what it finds before starting the task.</p>
       <div class="prompt-window">
         <div class="prompt-window-header">Prompt</div>
-        <pre><code>Explore this folder and its subfolders. For each file, tell me
-what it appears to contain and how it might relate to the other
-files. Flag anything that looks like it might be sensitive or
-that you're not sure how to interpret.</code></pre>
+        <pre><code>Before doing any analysis, explore this project folder.
+
+Tell me:
+1. What files and folders are here
+2. What each one appears to contain
+3. Which files are likely to be relevant for analyzing
+   customer complaints
+
+Don't change any files yet.</code></pre>
       </div>
-      <p>Either way, do this before you ask for the real task. A short
-      summary you can correct &mdash; &ldquo;actually, ignore the 2024
-      files, we only care about this year&rdquo; &mdash; is much cheaper
-      than an agent that misreads the folder and builds on top of that
-      misreading.</p>
+      <p>This is often a good first step when you're opening an
+      unfamiliar project, returning to an old one, or working with files
+      someone else created.</p>
 
-      <h2>When the folder gets complicated</h2>
-      <p>As your projects get more complicated, they can involve many
-      folders and subfolders with many different pieces that aren't
-      always relevant to the current task. If you ask the agent to parse
-      all of that by itself every time, it has to read every file and
-      re-derive the context from scratch in every new session &mdash;
-      which burns tokens and time unnecessarily, and it's easy for it to
-      miss something buried three folders deep.</p>
-      <p>The fix is a short <strong>guideline document</strong> &mdash;
-      often just <code>CLAUDE.md</code> or a <code>README</code> sitting
-      at the top of the folder &mdash; that records the structure of the
-      project: what each subfolder is for, where to find the file that
-      matters for a given kind of task, and anything that's read-only.
-      The agent reads that one short document first, and goes straight
-      to the relevant files instead of exploring the whole tree cold.</p>
-      <pre><code># Project guide
+      <h2>As projects grow, create a guide to the project</h2>
+      <p>Small projects may only contain a few files. Larger projects
+      can contain many folders, datasets, documents, scripts, and
+      outputs. At that point, asking the agent to rediscover the entire
+      project every time can be slow and wasteful.</p>
+      <p>If the agent has to open many files and reconstruct the project
+      context in every new session, it uses extra time and
+      context-window space just to figure out where things are.</p>
+      <p>A useful solution is to create a short <strong>project
+      guide</strong>: a document that explains the structure of the
+      project and tells the agent where to look for different kinds of
+      information.</p>
 
-## Folders
-- inputs/       This month's raw exports. Read-only.
-- references/   Prior approved outputs. The format to match.
-- outputs/      Finished work goes here.
+      <div class="example">
+        <p><strong>Example: project-guide.md</strong></p>
+        <pre><code># Project guide
 
-## Where to look
-- For formatting questions, see references/.
-- For this month's numbers, see inputs/.
-- Never edit files in inputs/ or references/ directly.</code></pre>
+Goal:
+Analyze customer feedback and develop recommendations for
+improving the customer experience.
 
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        Not every task needs a standing guideline document. For a
-        one-off file that's only relevant to the current conversation,
-        it's often faster to just drag and drop it into the chat instead
-        of explaining where it lives. Save the guideline document for
-        folders you'll come back to more than once.
+Key folders:
+- /data: raw survey and sales data
+- /research: competitor and industry research
+- /outputs: reports and charts created for the project
+
+Important files:
+- /data/customer-survey.csv: main source for customer feedback
+- /data/sales-by-region.xlsx: use when comparing feedback with sales
+- /research/competitor-notes.pdf: use for competitor comparisons
+
+Notes:
+- Do not modify files in /data
+- Save new analysis outputs in /outputs</code></pre>
       </div>
+
+      <p>Now, instead of asking the agent to inspect the entire project
+      from scratch, you can tell it:</p>
+      <pre><code>Read project-guide.md first. Then use it to find the files
+relevant to this task.</code></pre>
+      <p>The guide acts like a map. The agent can understand the project
+      structure first, then open only the files it actually needs.</p>
+
+      <h2>For one-off tasks, attach the relevant file directly</h2>
+      <p>Not every task needs a carefully organized project folder. If
+      you only need the agent to work with one or two files, you can
+      often drag those files directly into the conversation and explain
+      what you want done.</p>
+      <p>The general principle is the same: <strong>make the relevant
+      context easy to find.</strong> For a small task, that may mean
+      attaching a file. For a large project, it may mean organizing
+      folders and maintaining a project guide.</p>
+
+      <h2>A practical rule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Good approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>One or two relevant files</td>
+            <td>Attach them directly or point the agent to them.</td>
+          </tr>
+          <tr>
+            <td>A small, organized project</td>
+            <td>Ask the agent to explore the folder and identify
+            relevant files.</td>
+          </tr>
+          <tr>
+            <td>A large or long-running project</td>
+            <td>Create a project guide that explains the folder
+            structure and key files.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The goal is to make the <strong>right information available at
+      the right time</strong> &mdash; not to give the agent access to
+      everything.</p>
+
+      <h2>Exercise</h2>
+      <p>Create a project folder for a simple business task. For
+      example, you might use a sales analysis, customer research, event
+      planning, or marketing project. Then:</p>
+      <ol>
+        <li>Put two or three relevant files into clearly named folders.</li>
+        <li>Ask the agent to explore the project and explain what it finds.</li>
+        <li>Create a short <code>project-guide.md</code> that explains
+        the project structure.</li>
+        <li>Start a new conversation and ask the agent to read the
+        guide before completing a task.</li>
+      </ol>
+      <p>Compare the experience. Does the agent find the right
+      information more quickly when the project structure is clearly
+      documented?</p>
 
       <a class="next-cta" href="/course/04-workflow/specifying-the-task.html">
         <div>
