@@ -220,20 +220,27 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 6 sub-pages (~135 min total), replacing
+Fully written and built 2026-08-19, all 6 sub-pages (~140 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list.
 Sub-pages, in order:
-- **planning** — "Plan before you execute." Opens with a real quote (Boris
-  Cherny, @bcherny, creator of Claude Code: "Start every complex task in plan
+- **planning** — "Plan before you build" (renamed from "Plan before you
+  execute" on 2026-08-19, replacing a shorter original draft with a longer,
+  user-supplied page — see below). Opens with the Understand→Plan→Build→Test
+  loop, a worked feedback-page planning example, why planning matters (the
+  same Boris Cherny `.pull-quote` as before: "Start every complex task in plan
   mode. Pour your energy into the plan so Claude can 1-shot the
-  implementation.") in a `.pull-quote` figure, a table of how to enter plan mode
-  in Claude Code (Shift+Tab twice, or `/plan`), OpenCode (Tab), and Codex CLI
-  (`/plan` or Shift+Tab) — confirmed via web search rather than assumed — with a
-  `.callout.warn` tip that keybindings drift and to check each tool's own help
-  if the table goes stale, and a mode-switching exercise.
+  implementation."), a build-immediately-vs-plan-first `.example` pair, three
+  `subhead-accent` subsections on turning on plan mode (Claude Code —
+  Shift+Tab or `claude --permission-mode plan`; OpenCode — Tab; Codex —
+  `/plan` or Shift+Tab, all verified via web search), a `.callout.warn` tip on
+  not memorizing shortcuts, a second loop diagram (goal → investigate →
+  propose → inspect/revise → implement → verify), more example prompts, and a
+  7-row "should you plan first?" exercise table. Sidebar label and all
+  cross-page references updated from "execute" to "build" wording across the
+  other five Module 4 pages and the module index.
 - **information-environment** — a `.callout` recap of the give-context/
   specify-task/inspect/revise/verify loop already taught in Module 1's
   modes-of-collaboration, project folder setup (an inputs/references/outputs
