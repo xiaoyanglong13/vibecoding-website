@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plan before you execute · Module 4 · Vibecoding for Business School Students</title>
+  <title>Plan before you build · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
       <h4>Module 4 · The vibecoding workflow</h4>
       <ol>
         <li><a href="/course/04-workflow/">Overview</a></li>
-        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you execute</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you build</a></li>
         <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
         <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specifying the task</a></li>
         <li><a href="/course/04-workflow/memory.html"><span class="module-num">4.</span>Memory across sessions</a></li>
@@ -50,101 +50,282 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 4 · Page 1 of 6 · 15 minutes</span>
-        <h1>Plan before you execute</h1>
-        <p class="lede">The single highest-leverage habit in this course:
-        before a complicated task, ask the agent to plan first, read the
-        plan, and only then let it build. This page covers why that order
-        matters and how to switch into plan mode wherever you work.</p>
+        <span class="eyebrow">Module 4 · Page 1 of 6 · 20 minutes</span>
+        <h1>Plan before you build</h1>
+        <p class="lede">For a complex task, don't rush straight from an
+        idea to implementation. Plan mode gives you a checkpoint: the
+        agent investigates the project, proposes an approach, and lets
+        you review it before it starts making changes.</p>
       </div>
 
-      <h2>Why plan first</h2>
-      <p>An agent that starts writing code, or drafting a document, or
-      restructuring a spreadsheet before it has told you its approach is
-      easy to trust in the moment and expensive to fix later. A wrong
-      assumption made in the first thirty seconds of execution can produce
-      an hour of output built on that assumption. Reading a plan takes two
-      minutes. Reading a plan is also much easier than reading a diff, a
-      finished draft, or five hundred lines of code — a plan is written in
-      plain language, at the level of a project outline, so you can catch
-      a wrong assumption before it becomes a wrong deliverable.</p>
+      <h2>What is plan mode?</h2>
+      <p>When you ask an AI coding agent to build something, it can
+      often start changing files immediately. For a very small task,
+      that may be fine. But for a larger task, it's usually better to
+      ask the agent to <strong>plan first</strong>.</p>
+      <p>In plan mode, the agent examines the task, looks through the
+      relevant files, and proposes an approach <strong>before it starts
+      making changes</strong>.</p>
+
+      <pre><code>Understand &rarr; Plan &rarr; Build &rarr; Test
+
+rather than
+
+Prompt &rarr; Start changing things right away</code></pre>
+
+      <h2>What happens during planning?</h2>
+      <p>Suppose you tell an agent:</p>
+      <pre><code>Add a page to my website where managers can review customer
+feedback.</code></pre>
+      <p>There are many decisions hidden inside that request. The agent
+      may need to figure out:</p>
+      <ul>
+        <li>Which files control the website</li>
+        <li>How pages are currently organized</li>
+        <li>Whether a table or dashboard component already exists</li>
+        <li>What feedback information is available</li>
+        <li>How managers should filter or sort the feedback</li>
+        <li>Whether any existing code can be reused</li>
+        <li>Which files will need to change</li>
+        <li>How the result should be tested</li>
+      </ul>
+      <p>In plan mode, the agent investigates these questions first and
+      explains what it intends to do.</p>
+
+      <div class="example">
+        <p><strong>Example: what the agent might propose</strong></p>
+        <pre><code>I found that the site uses React and already has a reusable
+table component. I propose adding a new /feedback page that
+displays customer comments, ratings, dates, and product
+categories. I will reuse the existing table styling and add
+filters for rating and product category. I expect to modify
+two existing files and create one new component.</code></pre>
+        <p>You can inspect this plan before letting the agent continue.</p>
+      </div>
+
+      <h2>Why planning matters</h2>
+      <p>When you're vibecoding, you often know <strong>what you want
+      the finished product to do</strong> without knowing exactly how
+      the code should change. That's what makes planning especially
+      valuable.</p>
+      <p>A good plan gives you a checkpoint where you can ask:</p>
+      <p><strong>Does the agent understand what I'm trying to build?</strong></p>
+      <p>It's much easier to correct a mistaken plan than to undo dozens
+      of changes after the agent has already implemented the wrong
+      idea.</p>
+      <p>Planning can also reveal assumptions that were hidden in your
+      original request. For example, the agent might plan to:</p>
+      <pre><code>Show all customer feedback in one long table.</code></pre>
+      <p>But you intended:</p>
+      <pre><code>Let managers first see a summary of common issues, then drill
+down into individual comments.</code></pre>
+      <p>Seeing the plan lets you catch the difference before any code
+      gets written.</p>
 
       <figure class="pull-quote">
-        <blockquote>&ldquo;Start every complex task in plan mode. Pour your
-        energy into the plan so Claude can 1-shot the implementation.&rdquo;</blockquote>
+        <blockquote>&ldquo;Start every complex task in plan mode. Pour
+        your energy into the plan so Claude can 1-shot the
+        implementation.&rdquo;</blockquote>
         <figcaption>&mdash; Boris Cherny (<a href="https://twitter.com/bcherny">@bcherny</a>),
-        creator of Claude Code at Anthropic</figcaption>
+        creator and Head of Claude Code at Anthropic</figcaption>
       </figure>
+      <p>In practice, few real projects get built in a single pass on
+      the first try. The value is that time spent improving the plan
+      reduces the costly back-and-forth that otherwise follows during
+      implementation.</p>
 
-      <p>&ldquo;1-shot&rdquo; means getting a correct result on the first
-      try, without a round of fixes afterward. That is the payoff: the
-      time you spend reviewing a plan is time you get back, many times
-      over, by not having to unwind a wrong build.</p>
+      <h2>Planning is not just a technical blueprint</h2>
+      <p>You don't need to understand every technical detail in the
+      plan.</p>
+      <p>As the person directing the project, focus first on the parts
+      you <strong>can evaluate</strong>:</p>
+      <ul>
+        <li>Does the plan solve the right problem?</li>
+        <li>Is anything important missing?</li>
+        <li>Is the agent making assumptions I didn't intend?</li>
+        <li>Is it changing parts of the project that should stay
+        untouched?</li>
+        <li>Does the proposed user experience make sense?</li>
+      </ul>
+      <p>You can ask questions or revise the plan before implementation
+      begins.</p>
+      <pre><code>Keep the existing homepage unchanged. Also, managers should be
+able to filter feedback by product category and rating. Update
+the plan before you build anything.</code></pre>
+      <p>The agent can then revise its approach.</p>
 
-      <h2>How to toggle between modes</h2>
-      <p>Most agent tools now separate <strong>planning</strong> from
-      <strong>execution</strong> as two distinct modes, and let you switch
-      between them mid-conversation. In plan mode, the agent can read
-      files and think, but it cannot edit, run code, or otherwise change
-      anything — it can only propose. Once you approve the plan, you
-      switch to execute mode and it carries the plan out.</p>
+      <h2>Example: build immediately versus plan first</h2>
+      <p>Imagine you've already built a simple sales dashboard and ask:</p>
+      <pre><code>Add a way for managers to compare this month with last month.</code></pre>
 
+      <div class="example">
+        <p><strong>Without planning</strong></p>
+        <p>The agent may immediately add a second chart, modify the
+        data-processing code, and change the page layout.</p>
+        <p>You inspect the result and realize you wanted a simple
+        percentage-change indicator next to each metric &mdash; not
+        another chart. The implementation may work perfectly, but the
+        agent solved the wrong problem.</p>
+      </div>
+
+      <div class="example">
+        <p><strong>With planning</strong></p>
+        <p>You first ask:</p>
+        <pre><code>Plan how you would add a way for managers to compare this
+month with last month. Don't make any changes yet.</code></pre>
+        <p>The agent might propose:</p>
+        <pre><code>I will add last month's value next to each KPI and calculate
+the percentage change. I will display an up or down indicator
+beside the current value. The existing charts will remain
+unchanged.</code></pre>
+        <p>Now you can respond:</p>
+        <pre><code>Good, but don't use arrows. Show the percentage change as
+text underneath each KPI.</code></pre>
+        <p>Only after the plan looks right do you ask the agent to
+        implement it.</p>
+      </div>
+
+      <p>Planning doesn't guarantee perfect code &mdash; it gives you a
+      chance to align on the solution before investing effort in
+      building it.</p>
+
+      <h2>How to turn on plan mode</h2>
+      <p>The exact control depends on the coding agent you're using.
+      The underlying idea is the same: switch the agent into a mode
+      where it can inspect and reason about the project without
+      immediately editing it.</p>
+
+      <h3 class="subhead-accent">Claude Code</h3>
+      <p>During a Claude Code session, press <code>Shift+Tab</code>
+      until the status bar shows <strong>plan mode on</strong>. Claude
+      can then read files and propose a plan, but it won't edit files
+      until you approve the plan. You can also start Claude Code
+      directly in plan mode from the terminal:</p>
+      <pre><code>claude --permission-mode plan</code></pre>
+
+      <h3 class="subhead-accent">OpenCode</h3>
+      <p>Press <code>Tab</code> to switch from Build mode to Plan mode.
+      OpenCode shows the current mode in the lower-right corner. When
+      the plan looks right, press <code>Tab</code> again to return to
+      Build mode and ask it to implement the plan.</p>
+
+      <h3 class="subhead-accent">Codex</h3>
+      <p>Use <code>/plan</code> or press <code>Shift+Tab</code> to enter
+      Plan mode. Codex can gather context, ask clarifying questions, and
+      develop a plan before implementation.</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Don't worry about memorizing every shortcut. Interfaces change,
+        and different agents use different names. Look for a
+        <em>Plan</em>, <em>Planning</em>, or <em>Read-only</em> mode
+        &mdash; or simply tell the agent: <code>Don't make any changes
+        yet. Inspect the project and propose a plan first.</code>
+      </div>
+
+      <h2>When should you use plan mode?</h2>
+      <p>You don't need a formal plan for every change.</p>
+      <p>For something tiny and obvious&mdash;</p>
+      <pre><code>Change the button text from "Submit" to "Send Request."</code></pre>
+      <p>&mdash;planning would probably add unnecessary overhead.</p>
+      <p>Planning becomes more useful when the task:</p>
+      <ul>
+        <li>affects several parts of a project,</li>
+        <li>has multiple possible solutions,</li>
+        <li>requires understanding existing code,</li>
+        <li>contains important business rules,</li>
+        <li>could accidentally break existing functionality, or</li>
+        <li>is still somewhat vague in your own mind.</li>
+      </ul>
+      <p>A useful rule of thumb is:</p>
+      <p><strong>The more expensive a wrong implementation would be, the
+      more valuable it is to plan first.</strong></p>
+
+      <h2>Planning is part of working with an agent</h2>
+      <p>Planning doesn't mean you need to design the entire solution
+      yourself.</p>
+      <p>One advantage of an AI agent is that it can inspect the project
+      and help determine <strong>how</strong> your goal should be
+      implemented.</p>
+      <p>Your role is increasingly to define the goal, provide important
+      context, evaluate the proposed approach, and verify the result.</p>
+
+      <pre><code>1. You define the goal.
+2. The agent investigates.
+3. The agent proposes a plan.
+4. You inspect or revise the plan.
+5. The agent implements.
+6. You test and verify.</code></pre>
+
+      <p>This is an important shift in vibecoding. Instead of directing
+      every line of code, you're increasingly directing
+      <strong>the work</strong>.</p>
+
+      <h2>Example prompts</h2>
+      <p>When you want an agent to plan before coding, you can say:</p>
+      <pre><code>Examine the project and propose a plan for adding customer
+login. Don't change any files yet.</code></pre>
+      <p>Or:</p>
+      <pre><code>Before implementing this feature, inspect the existing code
+and explain what you would change, what files would be
+affected, and how you would test it.</code></pre>
+      <p>Or, when your goal is still vague:</p>
+      <pre><code>I want managers to be able to spot unusual sales patterns
+more easily. Explore the current dashboard and propose two or
+three ways we could add this capability. Don't implement
+anything yet.</code></pre>
+      <p>Notice that the last example uses planning for more than
+      implementation. The agent is also helping you think through
+      <strong>what should be built</strong>.</p>
+
+      <h2>Exercise: should you plan first?</h2>
+      <p>For each request below, decide whether you would ask the agent
+      to plan first or let it implement immediately.</p>
       <table>
         <thead>
           <tr>
-            <th>Tool</th>
-            <th>How to enter plan mode</th>
+            <th>Request</th>
+            <th>Plan first?</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Claude Code</td>
-            <td>Press <code>Shift+Tab</code> twice to cycle to plan mode,
-            or type <code>/plan</code></td>
+            <td>Change the heading from &ldquo;Sales Report&rdquo; to
+            &ldquo;Weekly Sales Report.&rdquo;</td>
+            <td></td>
           </tr>
           <tr>
-            <td>OpenCode</td>
-            <td>Press <code>Tab</code> to switch between Build and Plan
-            modes</td>
+            <td>Add user authentication to an existing web app.</td>
+            <td></td>
           </tr>
           <tr>
-            <td>Codex CLI</td>
-            <td>Type <code>/plan</code> followed by a description, or
-            press <code>Shift+Tab</code> to cycle modes</td>
+            <td>Change the background color of one button.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Add a customer feedback page with filters and summary
+            metrics.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Redesign a dashboard so executives can compare
+            performance across regions.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Fix a typo in a navigation menu.</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Import data from a new external source and incorporate
+            it into an existing analysis.</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
-
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        The exact keybinding changes as these tools update — if the table
-        above stops matching what you see, check <code>/help</code> (or
-        the equivalent) inside the tool itself. What stays constant across
-        all three is the underlying idea: a read-only mode for thinking,
-        and a separate mode for doing.
-      </div>
-
-      <p>A good rhythm: start every non-trivial task in plan mode. Read
-      the plan the way you'd read a one-page memo before a meeting — does
-      the approach make sense, is anything missing, did it misread your
-      intent anywhere? Push back if something's off; the agent will
-      revise the plan, not the (nonexistent) work. Only once the plan
-      looks right do you switch to execute mode and let it run.</p>
-
-      <h2>Exercise: Plan first, on purpose</h2>
-      <p>Pick a task you'd normally just ask an agent to do directly —
-      cleaning a small dataset, drafting an email, writing a short script.
-      This time, open in plan mode and ask for a plan before any work
-      starts. Read the plan and answer:</p>
-      <ul>
-        <li>Did it correctly understand what you actually wanted?</li>
-        <li>Is there a step you would have had to correct after the fact,
-        if it had just gone ahead?</li>
-        <li>Is anything in the plan more (or less) work than the task
-        needed?</li>
-      </ul>
-      <p>Then switch to execute mode and let it build. Compare how this
-      felt to a task you've run without planning first.</p>
+      <p>There isn't always one correct answer. The goal is to recognize
+      when <strong>understanding and agreeing on the approach is
+      valuable before implementation begins</strong>.</p>
 
       <a class="next-cta" href="/course/04-workflow/information-environment.html">
         <div>
