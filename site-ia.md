@@ -56,11 +56,10 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
 │   │   └── /course/04-workflow/case-study-model-automation                               ✅
-│   ├── /course/05-evaluating-output                                                       🚧 index only
-│   ├── /course/06-limits-and-ethics                                                       🚧 index only
-│   ├── /course/07-scaling                                                                 🚧 index only
-│   │   (Module 8 is the /cases library; no separate /course/08 directory)
-│   └── /course/09-capstone                                                                🚧 index only
+│   ├── /course/05-limits-and-ethics                                                       🚧 index only
+│   ├── /course/06-scaling                                                                 🚧 index only
+│   │   (Module 7 is the /cases library; no separate /course/07 directory)
+│   └── /course/08-capstone                                                                🚧 index only
 │
 ├── /cases                         Use case library ✅
 │   ├── /cases/marketing                                                                   ✅
@@ -122,6 +121,27 @@ Every **use case page** follows a parallel structure so students can compare acr
 ---
 
 ## 4. Module summaries
+
+> **2026-08-19 renumbering:** the old Module 5, "Knowing when to trust the
+> output" (`/course/05-evaluating-output`, index-only, never built), was
+> dropped from the course entirely — its planned territory (checking
+> correctness, spotting hallucinations) is now covered by Module 4's
+> verify-before-you-trust page instead, so nothing was lost, just relocated.
+> Modules 6–9 shifted down to fill the gap: old Module 6 (Limits, risks, and
+> responsibility) → new Module 5; old Module 7 (Scaling up) → new Module 6;
+> old Module 8 (Use cases / `/cases`, no directory) → new Module 7; old
+> Module 9 (Capstone) → new Module 8. Directories were renamed to match
+> (`06-limits-and-ethics` → `05-limits-and-ethics`, `07-scaling` →
+> `06-scaling`, `09-capstone` → `08-capstone`) since none of those four had
+> any sub-pages built yet — only their stub `index.html` moved. Every
+> sidebar "All modules" list, `course/index.html`'s syllabus table, the home
+> page's module count, and every prose cross-reference to a module by number
+> sitewide were updated in the same pass; a couple of dangling case-page
+> forward-references that pointed at the old Module 5 with no replacement
+> topic (e.g. "the multi-audience version" in the event-recap case) were
+> dropped rather than redirected, since nothing in the new numbering covers
+> that specific idea. Total course time dropped from ~12 to ~11 hours; module
+> count from 9 to 8.
 
 ### Module 0 — Why Business School Students should care (`/start`)
 Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
@@ -227,11 +247,10 @@ context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list.
 A 7th page, **verify-before-you-trust**, was inserted between specifying-the-task
-and memory on 2026-08-19 (see below) — it covers checking output correctness,
-which topically overlaps with Module 5's planned checking-correctness/
-spotting-hallucinations sub-pages (still index-only, not yet built). That's the
-user's explicit call, not an oversight; if Module 5 gets built out later, check
-for duplication with this page rather than assuming it's needed there too.
+and memory on 2026-08-19 — it covers checking output correctness, and is now
+the *only* place that content lives: the old Module 5 it originally
+overlapped with was dropped from the course later the same day (see the
+renumbering note at the top of this section).
 Sub-pages, in order:
 - **planning** — "Plan before you build" (renamed from "Plan before you
   execute" on 2026-08-19, replacing a shorter original draft with a longer,
@@ -346,27 +365,30 @@ Sub-pages, in order:
   version.)
 
 Both mini-cases duplicate existing `/cases` pages rather than introducing new
-sample data — consistent with §6's note that Modules 1, 4, and 7 each close
+sample data — consistent with §6's note that Modules 1, 4, and 6 each close
 with a mini-case, except Module 4 now gets two instead of one. Both case
 pages' own "Skills used" chips (in `/cases`) were repointed from generic
 `/course/04-workflow/` links to the specific new sub-pages (`planning.html`,
 `information-environment.html`, `specifying-the-task.html`, `memory.html`) as
 part of this build, and the course-page copies carry the same updated chips.
 
-### Module 5 — Knowing when to trust the output (`/course/05-evaluating-output`)
-Index written. Sub-pages (checking-correctness, spotting-hallucinations, debugging-when-it-fails, when-to-stop-and-ask-an-engineer) planned but not yet built.
+### Module 5 — Limits, risks, and responsibility (`/course/05-limits-and-ethics`)
+Index written (renumbered from Module 6 on 2026-08-19 — see the renumbering
+note at the top of §4). Sub-pages (data-security, cost-awareness,
+academic-integrity, when-not-to-vibecode) planned but not yet built.
 
-### Module 6 — Limits, risks, and responsibility (`/course/06-limits-and-ethics`)
-Index written. Sub-pages (data-security, cost-awareness, academic-integrity, when-not-to-vibecode) planned but not yet built.
+### Module 6 — Scaling up (`/course/06-scaling`)
+Index written (renumbered from Module 7 on 2026-08-19). Sub-pages (skills,
+subagents, hooks, agent-teams) planned but not yet built.
 
-### Module 7 — Scaling up (`/course/07-scaling`)
-Index written. Sub-pages (skills, subagents, hooks, agent-teams) planned but not yet built.
+### Module 7 — Business use cases (`/cases`)
+No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
+The `/cases` library serves this purpose directly and is linked from the
+course syllabus as Module 7.
 
-### Module 8 — Business use cases (`/cases`)
-No separate `/course/08` directory. The `/cases` library serves this purpose directly and is linked from the course syllabus as Module 8.
-
-### Module 9 — Capstone (`/course/09-capstone`)
-Index written. Sub-pages (brief, rubric, peer-review) planned but not yet built.
+### Module 8 — Capstone (`/course/08-capstone`)
+Index written (renumbered from Module 9 on 2026-08-19). Sub-pages (brief,
+rubric, peer-review) planned but not yet built.
 
 ---
 
@@ -380,7 +402,7 @@ Index written. Sub-pages (brief, rubric, peer-review) planned but not yet built.
 
 ## 6. Cross-cutting elements
 
-**Mini-cases threaded through the course.** Modules 1, 4, and 7 each end with a mini-case (a stripped-down version of a `/cases` page) so the application thread runs through the whole curriculum, not just the end.
+**Mini-cases threaded through the course.** Modules 1, 4, and 6 each end with a mini-case (a stripped-down version of a `/cases` page) so the application thread runs through the whole curriculum, not just the end.
 
 **"Skill chips" on every page.** Each page is tagged with the underlying skills it teaches or uses (e.g., `context-engineering`, `subagents`, `data-cleanup`). Clicking a chip lands on a filtered index of every page touching that skill — this is what makes reference mode actually work.
 
@@ -394,7 +416,7 @@ Index written. Sub-pages (brief, rubric, peer-review) planned but not yet built.
 
 ## 7. URL conventions
 
-- **Lowercase, hyphenated** (`/course/05-evaluating-output`, not `/course/Module5`).
+- **Lowercase, hyphenated** (`/course/06-scaling`, not `/course/Module6`).
 - **Numeric prefixes on course modules only** (preserves order in URLs and file systems). Use cases are not numbered — they're meant to be entered laterally.
 - **Stable slugs.** Once published, never rename. If a topic moves, redirect.
 - **No dates in URLs.** Content is meant to evolve in place.
@@ -427,7 +449,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 7 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
-| Modules 5–7, 9 | 🚧 Index pages written; sub-pages not yet built |
+| Modules 5, 6, 8 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
@@ -439,5 +461,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 **Suggested next build priorities:**
 1. One additional case per function category to demonstrate breadth.
-2. Module 5 sub-pages (trust/evaluation — do not pilot without these).
+2. Module 5 (Limits, risks, and responsibility) sub-pages — data security,
+   cost awareness, academic integrity, when not to vibecode. (The old
+   trust/evaluation priority this slot used to name is done — that content
+   shipped as part of Module 4's verify-before-you-trust page instead.)
 3. Fill in `/reference` glossary and cheat sheets.
