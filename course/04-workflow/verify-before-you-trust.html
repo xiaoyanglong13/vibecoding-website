@@ -295,47 +295,17 @@ and whether it passed.</code></pre>
         </tbody>
       </table>
 
-      <h2>When manual testing is not enough</h2>
-      <p>The techniques above work well for small projects: try known
-      cases, test unusual inputs, and check whether the result matches
-      the business rules. As a project grows, developers often turn
-      these checks into <strong>repeatable automated tests</strong>, so
-      the computer reruns them automatically instead of someone
-      checking the same things by hand after every change.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Technique</th>
-            <th>What it adds</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Unit tests</strong></td>
-            <td>Automatically check small pieces of logic.</td>
-          </tr>
-          <tr>
-            <td><strong>Integration tests</strong></td>
-            <td>Check that different parts of the system still work
-            together.</td>
-          </tr>
-          <tr>
-            <td><strong>Regression tests</strong></td>
-            <td>Re-run previous tests after changes to make sure old
-            behavior didn't break.</td>
-          </tr>
-          <tr>
-            <td><strong>Load tests</strong></td>
-            <td>Check whether the system still performs well at
-            larger scale.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>You don't need to write these tests yourself. An agent can
-      often help create and run them. The important idea is that
-      <strong>as a project becomes more important, testing should
-      become more repeatable and less dependent on someone remembering
-      what to check manually.</strong></p>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        The techniques above work well for small projects. As a
+        project grows, developers often turn these checks into
+        <strong>repeatable automated tests</strong> &mdash; unit,
+        integration, regression, and load tests &mdash; so the
+        computer reruns them automatically instead of someone checking
+        the same things by hand after every change. You don't need to
+        write these tests yourself; an agent can often help create and
+        run them.
+      </div>
 
       <a class="next-cta" href="/course/04-workflow/memory.html">
         <div>

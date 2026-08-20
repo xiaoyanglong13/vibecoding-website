@@ -361,12 +361,15 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   verification-method-by-output-type table. The old "Ask the agent to help
   test its own work," "When something is wrong, investigate before
   patching," and "Verification should feed back into memory" sections were
-  all removed and replaced by a single new "When manual testing is not
-  enough" section (a 4-row table: unit/integration/regression/load tests).
-  The old closing "A useful feedback loop" diagram and "The key idea"
-  blockquote were removed with no replacement. The closing "Exercise"
-  (4-question verification plan) was removed 2026-08-20 — the page now ends
-  right after the manual-testing table/paragraph. Still ~25 min.
+  all removed and replaced by a "When manual testing is not enough" `<h2>`
+  section (prose + a 4-row table: unit/integration/regression/load tests) —
+  itself condensed 2026-08-20 into a closing `.callout.warn` tip (no more
+  heading or table), matching how memory.html's "no single correct memory
+  system" section was condensed the same way. The old closing "A useful
+  feedback loop" diagram and "The key idea" blockquote were removed with no
+  replacement. The closing "Exercise" (4-question verification plan) was
+  removed 2026-08-20 — the page now ends right after that tip. Still
+  ~25 min.
 - **memory** — "Build project memory" (renamed from "Memory across sessions"
   on 2026-08-19). Don't-rely-on-the-conversation intro (reworded, same
   point), 4-row "what should memory preserve" table, the three numbered
