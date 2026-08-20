@@ -137,7 +137,9 @@ Tell me:
       <p>Small projects may only contain a few files. Larger projects
       can contain many folders, datasets, documents, scripts, and
       outputs. At that point, asking the agent to rediscover the entire
-      project every time can be slow and wasteful.</p>
+      project every time can be slow and wasteful. It can also reduce performance: when too much 
+      irrelevant information fills the agent's context window, important instructions or details 
+      can become harder for the model to identify and use reliably. </p>
 
       <p>A useful solution is to create a short <strong>project
       guide</strong>: a document that explains the structure of the
@@ -176,49 +178,16 @@ relevant to this task.</code></pre>
 
       <div class="callout warn">
         <span class="callout-label">Tip</span>
-        Not every task needs a carefully organized project folder. If
+        If
         you only need the agent to work with one or two files, you can
         often drag those files directly into the conversation and
         explain what you want done. The general principle is the same:
-        <strong>make the relevant context easy to find.</strong> For a
-        small task, that may mean attaching a file. For a large
-        project, it may mean organizing folders and maintaining a
-        project guide.
+        <strong>make the relevant context easy to find.</strong> 
       </div>
 
-      <h2>A practical rule</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Situation</th>
-            <th>Good approach</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>One or two relevant files</td>
-            <td>Attach them directly or point the agent to them.</td>
-          </tr>
-          <tr>
-            <td>A small, organized project</td>
-            <td>Ask the agent to explore the folder and identify
-            relevant files.</td>
-          </tr>
-          <tr>
-            <td>A large or long-running project</td>
-            <td>Create a project guide that explains the folder
-            structure and key files.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>The goal is to make the <strong>right information available at
-      the right time</strong> &mdash; not to give the agent access to
-      everything.</p>
 
       <h2>Exercise</h2>
-      <p>Create a project folder for a simple business task. For
-      example, you might use a sales analysis, customer research, event
-      planning, or marketing project. Then:</p>
+      <p>Create a project folder for a simple task (such as a homework assignment, or an extracurricular project). Then:</p>
       <ol>
         <li>Put two or three relevant files into clearly named folders.</li>
         <li>Ask the agent to explore the project and explain what it finds.</li>
