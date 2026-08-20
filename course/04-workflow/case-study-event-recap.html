@@ -265,14 +265,10 @@ and overall formatting. Then fix those inconsistencies.</code></pre>
             For example: <em>&ldquo;we left points on the table&rdquo;</em> and
             <em>&ldquo;the question exposed that our number was not as well supported as the rest of the recommendation.&rdquo;</em>
           </li>
-          <li>
-            <strong>It still treated details from the notes as material for the recap unless told otherwise.</strong>
-            Planning improved how Claude executed the task, but it did not tell Claude which content choices were appropriate.
-          </li>
         </ul>
       </div>
 
-      <h3>Attempt 3 · Project rules + Plan mode + iteration</h3>
+      <h3>Attempt 3 · Project folder + Project rules + Plan mode + iteration</h3>
 
       <p>
         The third attempt used the same project-folder setup, but before generating the recap, Claude was asked to
@@ -309,10 +305,36 @@ this project every time you open it.</code></pre>
 
       <p>
         After answering the questions, the generated <code>CLAUDE.md</code>
-        (<a href="/cases/people/CLAUDE.md" download>download it</a>) was
-        reviewed and approved. Claude then planned and generated the recap
-        using both the source files and the project rules.
+        was reviewed and approved. Claude then planned and generated the
+        recap using both the source files and the project rules.
       </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">cases/people/CLAUDE.md (excerpt)</div>
+        <pre><code># Event Recap Generator
+
+This project turns raw notes from a case competition into a polished
+recap document, matching the style of the club's past recaps. It
+runs once per event/semester.
+
+## Rules
+
+**Structure fidelity.** Every section above appears every time,
+regardless of how much material that event's notes provide. Never
+delete a section for lack of content.
+
+**Missing facts.** Never invent, infer, or silently placeholder a
+fact the format needs but the source material doesn't contain. The
+moment such a gap is found, stop and ask the user directly, before
+continuing to draft.
+
+**Naming &amp; tone.** Never attach criticism to a named individual or a
+named competing team in the output. Summarize such moments neutrally
+and constructively — reserve names for positive mentions.
+
+[&hellip;continues with output format and a 4-step workflow &mdash;
+<a href="/cases/people/CLAUDE.md" download>download the full file</a>]</code></pre>
+      </div>
 
       <p>
         Here is <a href="/cases/people/event-recap-attempt-3-final.docx" download>the output</a>. It was substantially better. It maintained a more professional tone, matched the reference more closely,
