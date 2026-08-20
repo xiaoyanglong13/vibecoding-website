@@ -430,27 +430,48 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   completeness, format, tone, content judgment, unsupported/missing info)
   sits between the task setup and the three attempts. Ends with in-module nav
   to page 7. Runs first, now ~30 min (was ~20).
-- **case-study-model-automation** — same treatment for
-  `/cases/finance/model-automation`: full seven-section content (adds "how to
-  do this again next month"), the scoped `<style>` block for its CFO summary
-  table copied into the page's own `<head>`, download/image paths rewritten to
-  `/cases/finance/...`. Ends with the module's closing CTA to Module 5. Runs
-  second as the longer, more procedural case (~45 min). (Two earlier drafts of
-  these pages existed first: a stage-by-stage retelling with its own excerpted
-  prompts, then a short stub that just linked out to the `/cases` original. The
-  user rejected both in favor of matching Module 1's pattern exactly — full
-  verbatim content, no separate "intro" page. Don't reintroduce either earlier
-  version.)
+- **case-study-model-automation** — originally the same treatment as
+  case-study-event-recap: a verbatim transplant of
+  `/cases/finance/model-automation`'s seven-section content, the scoped
+  `<style>` block for its CFO summary table copied into the page's own
+  `<head>`, download/image paths rewritten to `/cases/finance/...`. (Two
+  earlier drafts existed first: a stage-by-stage retelling with its own
+  excerpted prompts, then a short stub linking out to the `/cases`
+  original. The user rejected both in favor of matching Module 1's pattern
+  exactly. Don't reintroduce either earlier version.) Restructured
+  2026-08-20 to match case-study-event-recap's later "try it yourself"
+  pattern — no longer a verbatim transplant; `/cases/finance/model-
+  automation` is unchanged and still runs the old 7-section structure.
+  Section 1 renamed "The business task" (from "The business decision").
+  Section 2 (Data available) unchanged. Section 3 becomes "Try it
+  yourself" — a short prompt to explore the three source files, then
+  automate the April update with whatever workflow you're comfortable
+  with, matching the same output requirements the "one possible solution"
+  below satisfies (preserve the model, update it, flag where human
+  judgment is needed, produce a management summary). New section 4,
+  "Verify the output" — a 9-row checklist table (source protection,
+  account mapping, unmapped accounts, workbook integrity, known totals,
+  balance check, human judgment, management insights, repeatability) plus
+  a closing note to investigate discrepancies before patching. New section
+  5, "One possible solution" — reframes the old "The build" walkthrough
+  (same six-step plan/execute/evaluate/approve-and-rerun/summarize/save-
+  workflow arc, same content below) as one worked example to compare
+  against, not the only correct approach. Old sections 4-7 (What good
+  looks like, How to do this again next month, Extensions, Skills used)
+  are unchanged content, renumbered 6-9. Still ends with the module's
+  closing CTA to Module 5, still ~45 min. Runs second as the longer, more
+  procedural case.
 
 Both mini-cases reuse existing `/cases` sample data rather than introducing
 new files — consistent with §6's note that Modules 1, 4, and 6 each close
-with a mini-case, except Module 4 now gets two instead of one.
-case-study-model-automation is still a verbatim transplant of its `/cases`
-original; case-study-event-recap has since diverged into its own three-attempt
-narrative built on the same sample files (see above) — the `/cases/people`
-original is unchanged. Both case pages' own "Skills used" chips (in `/cases`)
-were repointed from generic `/course/04-workflow/` links to the specific new
-sub-pages (`planning.html`, `information-environment.html`,
+with a mini-case, except Module 4 now gets two instead of one. Both course
+pages have now diverged from their `/cases` originals into their own
+try-it-yourself-then-compare structure (event-recap: three attempts;
+model-automation: one worked solution) — the `/cases/people` and
+`/cases/finance` originals are both unchanged, still following Module 1's
+verbatim-transplant pattern. Both case pages' own "Skills used" chips (in
+`/cases`) were repointed from generic `/course/04-workflow/` links to the
+specific new sub-pages (`planning.html`, `information-environment.html`,
 `specifying-the-task.html`, `memory.html`) as part of this build, and the
 course-page copies carry the same updated chips.
 

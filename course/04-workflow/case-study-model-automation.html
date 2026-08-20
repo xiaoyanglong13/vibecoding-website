@@ -105,10 +105,9 @@
       <div class="module-header">
         <span class="eyebrow">Module 4 · Page 8 of 8 · 45 minutes</span>
         <h1>Case study: Model automation</h1>
-        <p class="lede">You own the monthly three-statement update. Right
-        now it eats half a day of copy-paste from the trial balance into
-        a tired Excel model. Here's how to get to about ten minutes
-        without giving up the model your CFO trusts.</p>
+        <p class="lede">You own the monthly three-statement update. First,
+        try to automate it yourself using the workflow from this module.
+        Then verify your output before comparing it with one possible solution.</p>
       </div>
 
       <div class="chips">
@@ -117,7 +116,7 @@
         <span class="chip">Uses: Modules 1, 4</span>
       </div>
 
-      <h2>1. The business decision</h2>
+      <h2>1. The business task</h2>
       <p>You're a first-year FP&amp;A analyst at a mid-market manufacturer.
       On the second business day of every month, you update the
       three-statement model: income statement, balance sheet, cash flow.
@@ -169,12 +168,98 @@
 60100, Salaries - sales, 2026-04, 93709.12, 0
 21000, Accrued expenses, 2026-04, 0, 152744.74</code></pre>
 
-      <h2>3. The build</h2>
-      <p>Total session was about an hour, in six steps. The arc: plan,
-      execute, evaluate, approve and re-run, ask for insight on the
-      numbers, then turn the whole thing into a reusable monthly
-      workflow &mdash; with a human checkpoint pinned over the one
-      file that should never be edited silently.</p>
+      <h2>3. Try it yourself</h2>
+
+      <p>
+        Start by exploring the three source files so you understand how the trial balance,
+        account mapping, and existing Excel model fit together.
+      </p>
+
+      <p>
+        Then automate the April update using whatever workflow you are comfortable with.
+        Do the best job you can. Your output should preserve the existing model, update it
+        with the April trial balance, make it clear when human judgment is still needed,
+        and generate a short management summary of what changed this month, why it changed,
+        and any notable trends or issues to watch.
+      </p>
+
+      <p>
+        When you're finished, keep your files and notes. In the next step, you'll verify
+        whether the automation actually worked.
+      </p>
+
+      <h2>4. Verify the output</h2>
+
+      <p>
+        Do not judge the result only by whether the script ran without an error.
+        Check the updated workbook and the workflow against the source files.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Check</th>
+            <th>Questions to ask</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Source protection</strong></td>
+            <td>Did the workflow leave the original workbook and source files unchanged and create a new output file?</td>
+          </tr>
+          <tr>
+            <td><strong>Account mapping</strong></td>
+            <td>Were mapped accounts assigned to the correct model lines with the correct sign convention?</td>
+          </tr>
+          <tr>
+            <td><strong>Unmapped accounts</strong></td>
+            <td>Did the workflow identify accounts that are missing from the mapping instead of silently guessing where they belong?</td>
+          </tr>
+          <tr>
+            <td><strong>Workbook integrity</strong></td>
+            <td>Were the existing formulas and prior-month historical values left intact?</td>
+          </tr>
+          <tr>
+            <td><strong>Known totals</strong></td>
+            <td>Do selected line items in the updated model match totals you can independently calculate from the trial balance?</td>
+          </tr>
+          <tr>
+            <td><strong>Balance check</strong></td>
+            <td>Does the updated balance sheet balance? If not, does the workflow help you identify why?</td>
+          </tr>
+          <tr>
+            <td><strong>Human judgment</strong></td>
+            <td>Does the workflow pause before making decisions that should require your approval, such as changing the account mapping?</td>
+          </tr>
+          <tr>
+            <td><strong>Management insights</strong></td>
+            <td>Does the output explain the most important changes this month, likely drivers, notable trends, and anything a manager should pay attention to?</td>
+          </tr>
+          <tr>
+            <td><strong>Repeatability</strong></td>
+            <td>Could you use the workflow again next month without rebuilding it from scratch?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        If something does not match, investigate the discrepancy before asking the agent to
+        patch the output. The goal is to understand whether the problem comes from the source
+        data, the mapping, the workbook, or the automation itself.
+      </p>
+
+      <h2>5. One possible solution</h2>
+
+      <p>
+        Now compare your approach with the workflow I used. This is not the only correct way
+        to solve the problem. Pay attention to where I let the agent act on its own, where I
+        stopped to inspect the result, and where I kept a human approval checkpoint.
+      </p>
+
+      <p>
+        My session took about an hour and followed six steps: plan, execute, evaluate,
+        approve and re-run, summarize the results, and then save the workflow for next month.
+      </p>
 
       <h3>Step 1 &middot; Plan</h3>
       <p>I started with a plan request, not a code request. I gave it
@@ -289,7 +374,7 @@ checkpoint.</code></pre>
       <p>The final workflow document I saved for next month:
       <a href="/cases/finance/workflow.md" download><code>workflow.md</code></a>.</p>
 
-      <h2>4. What good looks like</h2>
+      <h2>6. What good looks like</h2>
       <p>The deliverable isn't the script &mdash; it's the model file
       plus a three-line note to the CFO. The raw
       <a href="/cases/finance/summary_2026-04.xlsx" download><code>summary_2026-04.xlsx</code></a>
@@ -354,7 +439,7 @@ checkpoint.</code></pre>
         </ul>
       </div>
 
-      <h2>5. How to do this again next month</h2>
+      <h2>7. How to do this again next month</h2>
       <p>The payoff of having written <code>workflow.md</code> in Step
       6 is that next month is one prompt, not seven. When May's data
       landed, I exported the trial balance, dropped it into the folder
@@ -369,7 +454,7 @@ repeat what I did last month following this workflow
       last month's last mile: condense the table, write the CFO note,
       send.</p>
 
-      <h2>6. Extensions</h2>
+      <h2>8. Extensions</h2>
       <p>Once the basic update is reliable, ask the agent to:</p>
       <ul>
         <li>Add a variance-vs-budget column and flag any line item
@@ -384,7 +469,7 @@ repeat what I did last month following this workflow
       and recurring jobs; the human-checkpoint design is the same
       principle from this module's page on specifying the task.</p>
 
-      <h2>7. Skills used</h2>
+      <h2>9. Skills used</h2>
       <div class="chips">
         <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Prompting · roles &amp; examples</a>
         <a class="chip" href="/course/04-workflow/planning.html">Plan before execute</a>
