@@ -346,16 +346,19 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   cases where you know the answer" (4-row table — "Sales dashboard" is now
   "Inventory dashboard" — followed by a `.callout.warn` tip on having the
   agent self-generate test cases, or building them independently in a
-  separate conversation or with a different dataset, then — added
-  2026-08-20, reworded same day after checking Anthropic's
-  common-workflows doc's "Work with tests" recipe — a `.prompt-window`
-  example prompt making that concrete: "Generate test cases with known
-  correct answers... Be specific about the behavior each one checks..."),
-  "Test the edges, not just the happy path" (tightened prose, same
-  -9.9%/-10.0%/-10.1% `.example`, followed by a second `.prompt-window`,
-  also reworded to match the same doc's edge-case framing: "Identify edge
-  cases I might have missed... boundary values, missing data, and other
-  unexpected inputs..."), and the 7-row
+  separate conversation or with a different dataset, then an "Example
+  prompt" `.example` box (own box, not merged into the Tip) with a
+  4-step show-input/state-expected/run/mark-pass-fail prompt — added
+  2026-08-20, went through two reworks the same day (first to match
+  Anthropic's common-workflows doc's "Work with tests" framing, then
+  restyled from `.prompt-window` to `.example` per the user's request to
+  keep the whole page's "Example" treatment blue and consistent). "Test
+  the edges, not just the happy path" (tightened prose, same
+  -9.9%/-10.0%/-10.1% walkthrough) — its own edge-case "Example prompt"
+  ("Identify edge cases I might have missed...") was merged into the
+  *same* `.example` box as the walkthrough (not a separate box like the
+  section above), bridged by one added sentence ("You can also ask the
+  agent to find edge cases you might have missed:"). And the 7-row
   verification-method-by-output-type table. The old "Ask the agent to help
   test its own work," "When something is wrong, investigate before
   patching," and "Verification should feed back into memory" sections were
