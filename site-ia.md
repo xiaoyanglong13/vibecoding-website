@@ -439,28 +439,35 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   excerpted prompts, then a short stub linking out to the `/cases`
   original. The user rejected both in favor of matching Module 1's pattern
   exactly. Don't reintroduce either earlier version.) Restructured
-  2026-08-20 to match case-study-event-recap's later "try it yourself"
-  pattern — no longer a verbatim transplant; `/cases/finance/model-
-  automation` is unchanged and still runs the old 7-section structure.
-  Section 1 renamed "The business task" (from "The business decision").
-  Section 2 (Data available) unchanged. Section 3 becomes "Try it
-  yourself" — a short prompt to explore the three source files, then
-  automate the April update with whatever workflow you're comfortable
-  with, matching the same output requirements the "one possible solution"
-  below satisfies (preserve the model, update it, flag where human
-  judgment is needed, produce a management summary). New section 4,
-  "Verify the output" — a 9-row checklist table (source protection,
-  account mapping, unmapped accounts, workbook integrity, known totals,
-  balance check, human judgment, management insights, repeatability) plus
-  a closing note to investigate discrepancies before patching. New section
-  5, "One possible solution" — reframes the old "The build" walkthrough
-  (same six-step plan/execute/evaluate/approve-and-rerun/summarize/save-
-  workflow arc, same content below) as one worked example to compare
-  against, not the only correct approach. Old sections 4-7 (What good
-  looks like, How to do this again next month, Extensions, Skills used)
-  are unchanged content, renumbered 6-9. Still ends with the module's
-  closing CTA to Module 5, still ~45 min. Runs second as the longer, more
-  procedural case.
+  2026-08-20 to match case-study-event-recap's "try it yourself" pattern —
+  no longer a verbatim transplant; `/cases/finance/model-automation` is
+  unchanged and still runs the old 7-section structure. Sections 1-4
+  unchanged since that restructure: "The business task," "Data available,"
+  "Try it yourself" (explore the source files, then automate the April
+  update to the same output requirements section 5 satisfies), "Verify
+  the output" (9-row checklist table).
+  Section 5, **"One possible solution,"** replaced with a shorter,
+  plainer-language draft the same day (still same day as the restructure)
+  — six steps (Plan before building → Run the first update → Review the
+  unmapped accounts → Approve and re-run → Generate management insights →
+  Save the workflow for next month), each just a sentence or two plus its
+  prompt, no extended narrative asides. The unmapped-accounts step briefly
+  had its screenshot (`unmapped-recommendations.png`) converted to a real
+  `<table>` per the user's request, but that table was **lost** when this
+  shorter draft replaced the section — Step 3 is back to the screenshot
+  image. If the table is still wanted, it needs to be reapplied on top of
+  this draft, not assumed to still be there. Section 6 "What good looks
+  like" keeps its real `<table class="summary-table">` (Revenue/Net
+  income/Balance sheet, unaffected by any of this — this is a different,
+  already-rendered table, not the Step 3 screenshot). Section 7 renamed
+  back to **"Reuse the workflow next month"** (was "How to do this again
+  next month") and shortened — drops the May walk-through narrative
+  (`model_2026-05.xlsx` etc.) for a single generic `@workflow.md` prompt.
+  "Watch for" bullets shortened to three generic items (silent mapping
+  changes, unexplained balanced model, unsupported explanations) instead
+  of the longer checkpoint-specific pair. Sections 8-9 (Extensions, Skills
+  used) unchanged. Still ends with the module's closing CTA to Module 5,
+  still ~45 min. Runs second as the longer, more procedural case.
 
 Both mini-cases reuse existing `/cases` sample data rather than introducing
 new files — consistent with §6's note that Modules 1, 4, and 6 each close

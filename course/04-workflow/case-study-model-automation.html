@@ -191,7 +191,8 @@
       <h2>4. Verify the output</h2>
 
       <p>
-        Now verify your output against the following checklist.
+        Do not judge the result only by whether the script ran without an error.
+        Check the updated workbook and the workflow against the source files.
       </p>
 
       <table>
@@ -242,27 +243,26 @@
       </table>
 
       <p>
-        Did you pass the checklist? Are you confident in your output and able to defend it in front of the manager? If a test failed, try
-        to dig around to understand why.
+        If something does not match, investigate the discrepancy before asking the agent to
+        patch the output. The goal is to understand whether the problem comes from the source
+        data, the mapping, the workbook, or the automation itself.
       </p>
 
       <h2>5. One possible solution</h2>
 
       <p>
-        Now compare your approach with the workflow I used. This is not the only correct way
-        to solve the problem. Pay attention to where I let the agent act on its own, where I
-        stopped to inspect the result, and where I kept a human approval checkpoint.
+        Here is one way to approach the task. The important part is not the exact prompts,
+        but the workflow: plan first, inspect the output, keep judgment-heavy decisions
+        with the human, and save what works for next month.
       </p>
 
+      <h3>Step 1 &middot; Plan before building</h3>
       <p>
-        My session took about an hour and followed six steps: plan, execute, evaluate,
-        approve and re-run, summarize the results, and then save the workflow for next month.
+        I first asked Claude to inspect the three files and propose a plan before changing anything.
+        I also made the key constraints explicit: do not overwrite source files, preserve formulas,
+        use the account mapping, and flag unmapped accounts instead of guessing.
       </p>
 
-      <h3>Step 1 &middot; Plan</h3>
-      <p>I started with a plan request, not a code request. I gave it
-      the role, the three files, and the exact steps I needed &mdash;
-      including constraints that matter in practice:</p>
       <pre><code>You are a financial analyst. Every month you need to update
 the three-statement model based on this month's trial balance
 spreadsheet. You want to write Python code that automates the
@@ -285,110 +285,51 @@ The steps should be:
 5) Leave all formula cells intact, do not change.
 
 Before writing any code, first show me the complete plan.</code></pre>
-      <p>The plan it returned was solid: each step laid out, the four
-      formula sheets it would leave alone called out by name, and the
-      sign convention it would apply &mdash;
-      <code>(credit &minus; debit) &times; sign</code>, where
-      <code>sign = &minus;1</code> for debit-normal assets and
-      <code>sign = +1</code> for everything else.</p>
 
-      <h3>Step 2 &middot; Execute</h3>
-      <p>I approved the plan and told it to go ahead. It wrote about
-      sixty lines of Python using pandas and openpyxl, then ran the
-      script against the actual files. The first-pass output was
-      exactly the diagnostic I wanted: 20 of 21 model lines filled, 5
-      unmapped accounts written to a CSV, balance sheet off by exactly
-      $1,240. The script itself ran in about a second &mdash; the
-      informative part is what it couldn't categorize on its own.</p>
+      <h3>Step 2 &middot; Run the first update</h3>
+      <p>
+        After reviewing the plan, I let Claude build and run the automation. The first run
+        filled most model lines, identified five unmapped accounts, and showed that the
+        balance sheet was still off by $1,240. That was useful: the workflow surfaced the
+        remaining problem instead of hiding it.
+      </p>
 
-      <h3>Step 3 &middot; Evaluate</h3>
-      <p>Before letting anything touch the mapping file, I asked for a
-      recommendation table:</p>
+      <h3>Step 3 &middot; Review the unmapped accounts</h3>
+      <p>
+        Before changing the mapping file, I asked Claude to recommend where each new account
+        should go and explain why.
+      </p>
+
       <pre><code>Give me a table of the unmapped accounts, and what
 model_line I should add them to in the map and why.</code></pre>
-      <p>This is the heart of the workflow. The script can suggest, but
-      it doesn't get to silently edit the mapping file &mdash; that
-      file is part of the audit trail for the model. The table it came
-      back with looked like this:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Account</th>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Recommended model_line</th>
-            <th>Sign</th>
-            <th>Reason</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>23100</td>
-            <td>Lease liability &ndash; ST (new)</td>
-            <td>Cr 1,240</td>
-            <td><code>Lease liability ST</code></td>
-            <td>1</td>
-            <td>Short-term portion of a new lease &mdash; the model already
-            has this line (currently blank). Mirrors how 23000 maps to
-            Lease liability LT.</td>
-          </tr>
-          <tr>
-            <td>40030</td>
-            <td>Product revenue &ndash; LATAM pilot</td>
-            <td>Cr 1,000</td>
-            <td><code>Revenue</code></td>
-            <td>1</td>
-            <td>Product revenue regardless of region. All other geographic
-            revenue accounts (40000, 40010, 40020) map to Revenue.</td>
-          </tr>
-          <tr>
-            <td>60450</td>
-            <td>Office supplies &ndash; new EU entity</td>
-            <td>Dr 800</td>
-            <td><code>SG&amp;A</code></td>
-            <td>1</td>
-            <td>Operating expense, same nature as 60400 (Office supplies)
-            which already maps to SG&amp;A. Just a new entity
-            sub-account.</td>
-          </tr>
-          <tr>
-            <td>60810</td>
-            <td>Insurance &ndash; new EU policy</td>
-            <td>Dr 700</td>
-            <td><code>SG&amp;A</code></td>
-            <td>1</td>
-            <td>Same nature as 60800 (Insurance) which already maps to
-            SG&amp;A. New policy, not a new expense category.</td>
-          </tr>
-          <tr>
-            <td>70300</td>
-            <td>Other income</td>
-            <td>Cr 500</td>
-            <td><code>Interest income</code></td>
-            <td>1</td>
-            <td>No dedicated &ldquo;Other income&rdquo; model line exists.
-            Non-operating income items below the operating line (FX gain
-            70200, bank fees 70250) appear to roll into the interest
-            income / interest expense bucket &mdash; this is the closest
-            existing home. Flag if you want a separate line.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Four of these were obvious sub-accounts. The fifth &mdash;
-      "Other income" routed to Interest income &mdash; was a judgement
-      call I needed to make, not a default the agent should make for
-      me. The recommendation was reasonable; I accepted it for this
-      month and noted to revisit if "Other income" grows.</p>
 
-      <h3>Step 4 &middot; Approval and re-run</h3>
-      <p>I accepted the recommendations and told it to apply them:</p>
+      <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
+        <img src="/cases/finance/images/unmapped-recommendations.png"
+             alt="Claude's recommendation table for the five unmapped accounts: 23100 Lease liability ST, 40030 LATAM revenue, 60450 EU office supplies, 60810 EU insurance, 70300 Other income, each with a suggested model line, sign, and reason."
+             style="display: block; width: 100%; height: auto;">
+      </figure>
+
+      <p>
+        Most recommendations were straightforward, but at least one required judgment.
+        That is exactly where a human checkpoint belongs: Claude can recommend, but it
+        should not silently decide how the business reports a new account.
+      </p>
+
+      <h3>Step 4 &middot; Approve and re-run</h3>
+      <p>
+        After reviewing the recommendations, I approved the mapping changes and asked Claude
+        to run the update again.
+      </p>
+
       <pre><code>Looks good, add them to account_mapping.csv as
 suggested. Then re-run the script with the updated mapping.</code></pre>
 
-      <h3>Step 5 &middot; Summary and insights</h3>
-      <p>With the model balancing cleanly, I asked for the table that
-      goes into the CFO note &mdash; with possible reasons, not just
-      numbers:</p>
+      <h3>Step 5 &middot; Generate management insights</h3>
+      <p>
+        Once the model balanced, I asked Claude to summarize the results for a manager:
+        what changed, how much it changed, and possible reasons.
+      </p>
+
       <pre><code>Now generate a summary table that lists:
 1. Revenue (value for this month, percentage change from
    last month, possible reasons)
@@ -396,51 +337,49 @@ suggested. Then re-run the script with the updated mapping.</code></pre>
    last month, possible reasons)
 3. Balance sheet (whether it is balanced)
 4. The new accounts that were added to the map</code></pre>
-      <p>The table it generated looked like this:</p>
+
       <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
         <img src="/cases/finance/images/summary-table.png"
              alt="Claude's summary table showing Revenue, Net income, Balance sheet, and the five new mappings, with 2026-03 and 2026-04 columns, deltas, and a notes column explaining the drivers."
              style="display: block; width: 100%; height: auto;">
       </figure>
-      <p>The "possible reasons" clause is what turns this from a
-      reconciliation report into something the CFO can actually read.
-      I ask to save this table as
-      <a href="/cases/finance/summary_2026-04.xlsx" download><code>summary_2026-04.xlsx</code></a>
-      for future reference.</p>
 
-      <h3>Step 6 &middot; Automate, then pin the checkpoint</h3>
-      <p>The whole point of doing this once was so I wouldn't have to
-      do it as a fresh prompt sequence every month. So I asked:</p>
+      <p>
+        This step matters because a technically correct model is only part of the job.
+        The manager also needs to understand what changed and what deserves attention.
+      </p>
+
+      <h3>Step 6 &middot; Save the workflow for next month</h3>
+      <p>
+        Finally, I asked Claude to summarize the process into a reusable workflow.
+      </p>
+
       <pre><code>Can you summarize my workflow in this session so I
 can do this again next month?</code></pre>
-      <p>What came back was more than a summary &mdash; it was a fully
-      automated end-to-end workflow: drop in the new TB, the script
-      detects unmapped accounts, proposes mappings, <em>writes them to
-      <code>account_mapping.csv</code></em>, re-runs, and produces the
-      summary file. Hands-off. That's exactly the step I didn't want
-      automated. So one more prompt:</p>
+
+      <p>
+        Claude initially made the process too automatic: it proposed updating the mapping file
+        without stopping for approval. I corrected that and made the approval step explicit.
+      </p>
+
       <pre><code>I need to check and approve the unmapped accounts
 before adding them to the map. Make this a human
 checkpoint.</code></pre>
-      <p>It updated the workflow so any proposed change to
-      <code>account_mapping.csv</code> stops and prints the suggested
-      rows for me to approve before writing &mdash; a literal "type
-      'approve' to continue" gate. The script keeps the autonomy to
-      read, summarize, and recommend; it loses the autonomy to edit
-      the one file that defines how the business reports itself.</p>
-      <p>The final workflow document I saved for next month:
-      <a href="/cases/finance/workflow.md" download><code>workflow.md</code></a>.</p>
+
+      <p>
+        The final workflow was saved as
+        <a href="/cases/finance/workflow.md" download><code>workflow.md</code></a>
+        so the same process could be reused next month.
+      </p>
 
       <h2>6. What good looks like</h2>
-      <p>The deliverable isn't the script &mdash; it's the model file
-      plus a three-line note to the CFO. The raw
-      <a href="/cases/finance/summary_2026-04.xlsx" download><code>summary_2026-04.xlsx</code></a>
-      the script produces is the starting point, not the finished
-      product: condense it with human judgment &mdash; drop the rows
-      your CFO doesn't need (the new-mappings list belongs in your
-      records, not in the note), trim each comment to one crisp line,
-      and let the numbers do the talking. The note is the part most
-      analysts skip, and it's the part that builds trust:</p>
+
+      <p>
+        A good result is more than a script that runs. It should produce an updated model
+        you can trust, surface anything that needs human review, and give the manager a short
+        explanation of the month's most important changes.
+      </p>
+
       <table class="summary-table">
         <thead>
           <tr>
@@ -478,38 +417,37 @@ checkpoint.</code></pre>
           </tr>
         </tbody>
       </table>
-      <p>Once you trust the script, the ten minutes is: drop the new TB
-      in the folder, run the script, review the unmapped table,
-      approve, re-run, eyeball the three checks, write the note, send.</p>
+
+      <p>
+        The summary should be concise and useful to a manager. Keep the detailed mapping
+        decisions in your working files; highlight only the changes, drivers, and risks that
+        matter for the monthly review.
+      </p>
 
       <div class="pitfalls-inline">
         <h4>Watch for</h4>
         <ul>
-          <li><strong>Letting the agent silently edit the mapping
-          file.</strong> The mapping is your audit trail. Anything that
-          changes it should pause and ask. Step 6's human checkpoint
-          exists for this reason &mdash; do not skip it.</li>
-          <li><strong>Skipping the human note.</strong> A script that
-          produces a balanced model with no commentary is less useful
-          than a half-day spreadsheet with a sentence of insight.
-          Don't lose the last mile.</li>
+          <li><strong>Silent mapping changes.</strong> New-account classifications should be reviewed before they become part of the model.</li>
+          <li><strong>A balanced model with no explanation.</strong> Correct numbers still need a short management interpretation.</li>
+          <li><strong>Unsupported explanations.</strong> If Claude suggests a reason for a change, make sure the available data actually supports it.</li>
         </ul>
       </div>
 
-      <h2>7. How to do this again next month</h2>
-      <p>The payoff of having written <code>workflow.md</code> in Step
-      6 is that next month is one prompt, not seven. When May's data
-      landed, I exported the trial balance, dropped it into the folder
-      over the old <code>trial_balance.csv</code>, and wrote:</p>
-      <pre><code>I have updated new trial_balance data for May,
-repeat what I did last month following this workflow
-@workflow.md</code></pre>
-      <p>The agent picked up the workflow, ran the script, paused at
-      the unmapped-accounts checkpoint (none this month), generated
-      the summary, and handed me back <code>model_2026-05.xlsx</code>
-      and <code>summary_2026-05.xlsx</code>. My job was the same as
-      last month's last mile: condense the table, write the CFO note,
-      send.</p>
+      <h2>7. Reuse the workflow next month</h2>
+
+      <p>
+        Once the process is working, the goal is not to repeat the whole conversation.
+        Save the workflow and reuse it with the next month's files.
+      </p>
+
+      <pre><code>I have updated the trial balance data for May.
+Repeat last month's process using @workflow.md.</code></pre>
+
+      <p>
+        Claude can then follow the same sequence: update the model, surface unmapped accounts,
+        pause for approval when needed, re-run the checks, and generate the management summary.
+        You still review the final model and the explanation before using them.
+      </p>
 
       <h2>8. Extensions</h2>
       <p>Once the basic update is reliable, ask the agent to:</p>
