@@ -209,27 +209,18 @@ What could break it?</code></pre>
       unknown.</p>
 
       <h2>Test the edges, not just the happy path</h2>
-      <p>Agents often demonstrate that something works using a clean,
-      normal example. Real business data and real users are rarely
-      that cooperative. Think about cases such as:</p>
-      <ul>
-        <li>missing values,</li>
-        <li>zero or negative numbers,</li>
-        <li>very large values,</li>
-        <li>duplicate records,</li>
-        <li>unexpected text,</li>
-        <li>empty forms,</li>
-        <li>dates at important cutoffs, and</li>
-        <li>values exactly at a rule or threshold.</li>
-      </ul>
+      <p>Agents often test the clean, normal case. You should also try
+      inputs that are unusual or near important boundaries, such as
+      missing values, zeros, duplicates, or values exactly at a cutoff.</p>
+
       <div class="example">
-        <p>Suppose a dashboard highlights stores whose sales declined
-        by <strong>more than 10%</strong>. You should test:</p>
+        <p>For example, if a dashboard flags sales declines of
+        <strong>more than 10%</strong>, test:</p>
         <pre><code>-9.9%
 -10.0%
 -10.1%</code></pre>
-        <p>These cases help you determine whether the agent interpreted
-        the rule correctly.</p>
+        <p>These edge cases help reveal whether the rule was implemented
+        correctly.</p>
       </div>
 
       <h2>Match the verification method to the output</h2>
@@ -272,50 +263,6 @@ What could break it?</code></pre>
           </tr>
         </tbody>
       </table>
-
-      <h2>Ask the agent to help test its own work</h2>
-      <p>You don't need to invent every test yourself. Agents can be
-      very helpful at identifying possible failure cases and running
-      checks.</p>
-      <div class="example">
-        <p><strong>For example:</strong></p>
-        <pre><code>Before we consider this finished, identify the most important
-ways this could fail.
-
-Create test cases for them, run the tests, and tell me what
-you found.</code></pre>
-      </div>
-      <p>You can also ask the agent to focus on the business rules:</p>
-      <pre><code>Review the implementation against the requirements we agreed
-on.
-
-For each important rule, explain how you verified that the
-system handles it correctly.</code></pre>
-      <p>This is extremely useful &mdash; but it shouldn't be your only
-      form of verification. The same agent that misunderstood a
-      requirement may also write tests based on that same
-      misunderstanding. Human judgment is still needed to decide
-      whether the tests themselves make sense.</p>
-
-      <h2>When something is wrong, investigate before patching</h2>
-      <p>When you find an incorrect result, resist the temptation to
-      immediately tell the agent exactly how to change the code.
-      Instead, give it the evidence and ask it to determine the cause.</p>
-      <div class="example">
-        <p><strong>For example:</strong></p>
-        <pre><code>The total for Region West should be $184,320, but the
-dashboard shows $201,450.
-
-Investigate the discrepancy and explain the cause before
-changing anything.</code></pre>
-      </div>
-      <p>Once the cause is understood, ask the agent to fix the
-      underlying problem and then check whether the same issue appears
-      elsewhere:</p>
-      <pre><code>Fix the underlying issue, then test whether the same problem
-could affect any other regions or metrics.</code></pre>
-      <p>This is better than patching one visible symptom while
-      leaving the broader problem in place.</p>
 
       <h2>Verification should feed back into memory</h2>
       <p>Verification often reveals durable information about the
