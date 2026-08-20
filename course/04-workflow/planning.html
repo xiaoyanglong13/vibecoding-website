@@ -52,8 +52,7 @@
       <div class="module-header">
         <span class="eyebrow">Module 4 · Page 1 of 7 · 20 minutes</span>
         <h1>Plan before you build</h1>
-        <p class="lede">For a complex task, don't rush straight from an
-        idea to implementation. Plan mode gives you a checkpoint: the
+        <p class="lede">Plan mode gives you a checkpoint: the
         agent investigates the project, proposes an approach, and lets
         you review it before it starts making changes.</p>
       </div>
@@ -61,17 +60,47 @@
       <h2>What is plan mode?</h2>
       <p>When you ask an AI coding agent to build something, it can
       often start changing files immediately. For a very small task,
-      that may be fine. But for a larger task, it's usually better to
+      that may be fine. But it's usually better to
       ask the agent to <strong>plan first</strong>.</p>
       <p>In plan mode, the agent examines the task, looks through the
       relevant files, and proposes an approach <strong>before it starts
       making changes</strong>.</p>
 
-      <pre><code>Understand &rarr; Plan &rarr; Build &rarr; Test
 
-rather than
+      <h2>How to turn on plan mode</h2>
+      <p>The exact control depends on the coding agent you're using.
+      The underlying idea is the same: switch the agent into a mode
+      where it can inspect and reason about the project without
+      immediately editing it.</p>
 
-Prompt &rarr; Start changing things right away</code></pre>
+      <h3 class="subhead-accent">Claude Code</h3>
+      <p>During a Claude Code session, press <code>Shift+Tab</code>
+      until the status bar shows <strong>plan mode on</strong>. Claude
+      can then read files and propose a plan, but it won't edit files
+      until you approve the plan. You can also start Claude Code
+      directly in plan mode from the terminal:</p>
+      <pre><code>claude --permission-mode plan</code></pre>
+
+      <h3 class="subhead-accent">OpenCode</h3>
+      <p>Press <code>Tab</code> to switch from Build mode to Plan mode.
+      OpenCode shows the current mode in the lower-right corner. When
+      the plan looks right, press <code>Tab</code> again to return to
+      Build mode and ask it to implement the plan.</p>
+
+      <h3 class="subhead-accent">Codex</h3>
+      <p>Use <code>/plan</code> or press <code>Shift+Tab</code> to enter
+      Plan mode. Codex can gather context, ask clarifying questions, and
+      develop a plan before implementation.</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Don't worry about memorizing every shortcut. Interfaces change,
+        and different agents use different names. Look for a
+        <em>Plan</em>, <em>Planning</em>, or <em>Read-only</em> mode
+        &mdash; or simply tell the agent: <code>Don't make any changes
+        yet. Inspect the project and propose a plan first.</code>
+      </div>
+
 
       <h2>What happens during planning?</h2>
       <p>Suppose you tell an agent:</p>
@@ -189,39 +218,6 @@ text underneath each KPI.</code></pre>
       chance to align on the solution before investing effort in
       building it.</p>
 
-      <h2>How to turn on plan mode</h2>
-      <p>The exact control depends on the coding agent you're using.
-      The underlying idea is the same: switch the agent into a mode
-      where it can inspect and reason about the project without
-      immediately editing it.</p>
-
-      <h3 class="subhead-accent">Claude Code</h3>
-      <p>During a Claude Code session, press <code>Shift+Tab</code>
-      until the status bar shows <strong>plan mode on</strong>. Claude
-      can then read files and propose a plan, but it won't edit files
-      until you approve the plan. You can also start Claude Code
-      directly in plan mode from the terminal:</p>
-      <pre><code>claude --permission-mode plan</code></pre>
-
-      <h3 class="subhead-accent">OpenCode</h3>
-      <p>Press <code>Tab</code> to switch from Build mode to Plan mode.
-      OpenCode shows the current mode in the lower-right corner. When
-      the plan looks right, press <code>Tab</code> again to return to
-      Build mode and ask it to implement the plan.</p>
-
-      <h3 class="subhead-accent">Codex</h3>
-      <p>Use <code>/plan</code> or press <code>Shift+Tab</code> to enter
-      Plan mode. Codex can gather context, ask clarifying questions, and
-      develop a plan before implementation.</p>
-
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        Don't worry about memorizing every shortcut. Interfaces change,
-        and different agents use different names. Look for a
-        <em>Plan</em>, <em>Planning</em>, or <em>Read-only</em> mode
-        &mdash; or simply tell the agent: <code>Don't make any changes
-        yet. Inspect the project and propose a plan first.</code>
-      </div>
 
       <h2>When should you use plan mode?</h2>
       <p>You don't need a formal plan for every change.</p>
