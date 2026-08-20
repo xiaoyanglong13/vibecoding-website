@@ -114,14 +114,12 @@ competitor-notes.pdf. I want to identify the three most
 important customer complaints and see whether competitors
 appear to address them better than we do.</code></pre>
       </div>
-      <p>This approach is useful when you already know what the files
-      contain and can quickly point the agent to the most relevant
-      information.</p>
+
 
       <h3 class="subhead-accent">Example 2: Ask the agent to explore first</h3>
       <p>You don't always need to describe every file yourself. If the
       project folder is reasonably organized, you can ask the agent to
-      inspect it and explain what it finds before starting the task.</p>
+      inspect it in plan mode and explain what it finds before starting the task.</p>
       <div class="prompt-window">
         <div class="prompt-window-header">Prompt</div>
         <pre><code>Before doing any analysis, explore this project folder.
@@ -131,21 +129,16 @@ Tell me:
 2. What each one appears to contain
 3. Which files are likely to be relevant for analyzing
    customer complaints
-
-Don't change any files yet.</code></pre>
+</code></pre>
       </div>
-      <p>This is often a good first step when you're opening an
-      unfamiliar project, returning to an old one, or working with files
-      someone else created.</p>
+
 
       <h2>As projects grow, create a guide to the project</h2>
       <p>Small projects may only contain a few files. Larger projects
       can contain many folders, datasets, documents, scripts, and
       outputs. At that point, asking the agent to rediscover the entire
       project every time can be slow and wasteful.</p>
-      <p>If the agent has to open many files and reconstruct the project
-      context in every new session, it uses extra time and
-      context-window space just to figure out where things are.</p>
+
       <p>A useful solution is to create a short <strong>project
       guide</strong>: a document that explains the structure of the
       project and tells the agent where to look for different kinds of
@@ -181,15 +174,17 @@ relevant to this task.</code></pre>
       <p>The guide acts like a map. The agent can understand the project
       structure first, then open only the files it actually needs.</p>
 
-      <h2>For one-off tasks, attach the relevant file directly</h2>
-      <p>Not every task needs a carefully organized project folder. If
-      you only need the agent to work with one or two files, you can
-      often drag those files directly into the conversation and explain
-      what you want done.</p>
-      <p>The general principle is the same: <strong>make the relevant
-      context easy to find.</strong> For a small task, that may mean
-      attaching a file. For a large project, it may mean organizing
-      folders and maintaining a project guide.</p>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Not every task needs a carefully organized project folder. If
+        you only need the agent to work with one or two files, you can
+        often drag those files directly into the conversation and
+        explain what you want done. The general principle is the same:
+        <strong>make the relevant context easy to find.</strong> For a
+        small task, that may mean attaching a file. For a large
+        project, it may mean organizing folders and maintaining a
+        project guide.
+      </div>
 
       <h2>A practical rule</h2>
       <table>
