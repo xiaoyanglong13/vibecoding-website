@@ -6,19 +6,22 @@
   <title>Case study: event recap generator · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    /* Scoped: warm accent on the embedded CLAUDE.md preview so it reads as
-       the pivotal artifact of Attempt 3, not just another gray code block. */
+    /* Scoped: give the embedded CLAUDE.md preview its own accent so it reads
+       as the pivotal artifact of Attempt 3, distinct from the yellow used by
+       the "what went wrong" pitfalls-inline boxes. */
     .claude-md-preview {
-      border-color: var(--color-warn);
-      background: var(--color-warn-soft);
+      --color-claude-md: #2f6b4f;
+      --color-claude-md-soft: #eaf4ee;
+      border-color: var(--color-claude-md);
+      background: var(--color-claude-md-soft);
     }
     .claude-md-preview .prompt-window-header {
-      background: var(--color-warn);
+      background: var(--color-claude-md);
       color: #fff;
-      border-bottom-color: var(--color-warn);
+      border-bottom-color: var(--color-claude-md);
     }
     .claude-md-preview pre {
-      background: var(--color-warn-soft);
+      background: var(--color-claude-md-soft);
     }
   </style>
 </head>
