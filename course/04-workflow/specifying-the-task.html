@@ -119,67 +119,38 @@ Revise the plan, but don't implement yet.</code></pre>
       that the goal needs to change, that a business rule is missing,
       or that the agent needs additional context.</p>
 
-      <h2>Sometimes you need to explore before you can specify the task</h2>
-      <p>You won't always know exactly what to ask for at the
-      beginning. In business problems, the task itself may need to be
-      discovered through a little exploration or brainstorming.</p>
-
-      <div class="example">
-        <p>Suppose your goal is:</p>
-        <pre><code>I want managers to understand why customer satisfaction has
-fallen.</code></pre>
-        <p>That's a useful starting point, but it isn't yet a complete
-        build request. You might first ask the agent:</p>
-        <pre><code>Look at the available survey, complaint, and sales data.
-What kinds of analyses or views could help managers understand
-why customer satisfaction has fallen?
-
-Don't build anything yet. Give me several options and explain
-what information each would require.</code></pre>
-      </div>
-
-      <p>The result may help you decide whether the right solution is a
-      dashboard, a diagnostic report, a set of charts, a
-      customer-segmentation analysis, or something else.</p>
-
-      <h2>The task may reveal missing information</h2>
-      <p>Planning can also expose gaps in the information environment.
-      The agent may discover that it can't complete the task well with
-      the data currently available.</p>
-
-      <div class="example">
-        <p>For example, the agent might tell you:</p>
-        <pre><code>I can compare satisfaction across stores, but I can't
-determine whether wait times are contributing to the decline
-because the project doesn't contain any wait-time data.</code></pre>
-      </div>
-
-      <p>That's useful. Planning isn't only about producing a plan
-      &mdash; it's also a chance to discover what's missing before you
-      spend time implementing the wrong solution.</p>
-
       <h2>How specific should you be?</h2>
-      <p>A common mistake is to assume that a good task description
-      must tell the agent exactly how to write the code. Usually, it
-      shouldn't.</p>
+      <p>More detail is not always better. A good task description gives
+      the agent enough information to understand the goal and important
+      constraints, without overwhelming it with unnecessary instructions.</p>
+
       <div class="prompt-window">
-        <div class="prompt-window-header">Prompt &mdash; too prescriptive</div>
-        <pre><code>Use Python to write a function that loops through each row,
-calculates the percentage change, stores it in a new dataframe,
-then uses Plotly to create a bar chart...</code></pre>
+        <div class="prompt-window-header">Prompt &mdash; too much detail</div>
+        <pre><code>Add a new comparison section to the dashboard. Put it below the
+existing charts. Show this month and last month side by side for
+every store. Use a bar chart, sort stores from largest decline to
+largest increase, label every bar with the percentage change, use
+red for declines and green for increases, add a dropdown for region,
+and include a summary box at the top showing the average change.</code></pre>
       </div>
-      <p>If those implementation details aren't important to the
-      business objective, let the agent decide how to handle them. You
-      can instead specify the outcome:</p>
+
+      <p>Some of those details may be useful, but others may unnecessarily
+      constrain the solution. If your real goal is simply to help managers
+      spot declining stores, you can focus on the outcome instead:</p>
+
       <div class="prompt-window">
-        <div class="prompt-window-header">Prompt &mdash; states the outcome</div>
-        <pre><code>Add a view that lets managers compare each store's sales this
-month with last month. Show the percentage change clearly and
-make stores with large declines easy to identify.</code></pre>
+        <div class="prompt-window-header">Prompt &mdash; focuses on the outcome</div>
+        <pre><code>Add a view that helps managers compare each store's sales this
+month with last month. Make large declines easy to identify.</code></pre>
       </div>
-      <p>The first prompt tells the agent <em>how to code</em>. The
-      second tells it <em>what the solution should accomplish</em>. For
-      vibecoding, the second is usually more useful.</p>
+
+      <p>The second prompt still gives the agent a clear goal, but leaves
+      room for it to propose an appropriate design. You can then review the
+      plan and add constraints that actually matter.</p>
+      <blockquote>
+        <strong>Be specific about the outcome and important constraints,
+        not every detail you can think of.</strong>
+      </blockquote>
 
       <h2>But don't be too vague</h2>
       <p>Giving the agent freedom doesn't mean giving it no direction.
