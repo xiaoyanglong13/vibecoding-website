@@ -298,9 +298,11 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   (checkpoint framing + hidden-assumptions example), and a build-immediately-
   vs-plan-first `.example` pair, closing with a `.callout.warn` tip on using a
   browser chatbot to brainstorm and draft a brief before handing it to the
-  terminal agent. The old "should you plan first?" exercise table and the
-  "Example prompts" section were both removed entirely — the page now ends
-  right after the browser-tip callout. Still 20 min.
+  terminal agent, then the "Exercise: should you plan first?" table (7 task
+  requests, decide plan-first-or-not for each) — removed 2026-08-20, restored
+  2026-08-20 per the user's request; don't remove it again. The "Example
+  prompts" section, removed the same day, stays removed — only the exercise
+  came back. Still 20 min.
 - **information-environment** — "Set up your information environment"
   (renamed from "Setting up..." on 2026-08-19). Recaps the give-context/
   specify-task/inspect/revise/verify loop as a plain `<pre><code>` block, a
