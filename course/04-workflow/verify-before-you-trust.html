@@ -273,28 +273,47 @@ What could break it?</code></pre>
         </tbody>
       </table>
 
-      <h2>Verification should feed back into memory</h2>
-      <p>Verification often reveals durable information about the
-      project:</p>
-      <ul>
-        <li>a business rule was misunderstood,</li>
-        <li>a data field has a special meaning,</li>
-        <li>a source file sometimes contains duplicates,</li>
-        <li>a boundary case needs special treatment, or</li>
-        <li>a particular check should always be performed before
-        finishing.</li>
-      </ul>
-      <p>If that lesson will matter again, don't leave it only in the
-      conversation. Add it to the project's rules, workflow, or memory
-      so the agent can use it next time.</p>
-      <div class="example">
-        <p><strong>For example:</strong></p>
-        <pre><code>We discovered that blank region values should be labeled
-"Unknown" rather than assigned to a region.
-
-Add this to the project rules so the same mistake isn't
-repeated in future analyses.</code></pre>
-      </div>
+      <h2>When manual testing is not enough</h2>
+      <p>The techniques above work well for small projects: try known
+      cases, test unusual inputs, and check whether the result matches
+      the business rules. As a project grows, developers often turn
+      these checks into <strong>repeatable automated tests</strong>, so
+      the computer reruns them automatically instead of someone
+      checking the same things by hand after every change.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Technique</th>
+            <th>What it adds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Unit tests</strong></td>
+            <td>Automatically check small pieces of logic.</td>
+          </tr>
+          <tr>
+            <td><strong>Integration tests</strong></td>
+            <td>Check that different parts of the system still work
+            together.</td>
+          </tr>
+          <tr>
+            <td><strong>Regression tests</strong></td>
+            <td>Re-run previous tests after changes to make sure old
+            behavior didn't break.</td>
+          </tr>
+          <tr>
+            <td><strong>Load tests</strong></td>
+            <td>Check whether the system still performs well at
+            larger scale.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You don't need to write these tests yourself. An agent can
+      often help create and run them. The important idea is that
+      <strong>as a project becomes more important, testing should
+      become more repeatable and less dependent on someone remembering
+      what to check manually.</strong></p>
 
       <h2>Exercise</h2>
       <p>Choose something you've already built with an agent. Create a
