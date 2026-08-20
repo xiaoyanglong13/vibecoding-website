@@ -310,11 +310,70 @@ model_line I should add them to in the map and why.</code></pre>
       it doesn't get to silently edit the mapping file &mdash; that
       file is part of the audit trail for the model. The table it came
       back with looked like this:</p>
-      <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
-        <img src="/cases/finance/images/unmapped-recommendations.png"
-             alt="Claude's recommendation table for the five unmapped accounts: 23100 Lease liability ST, 40030 LATAM revenue, 60450 EU office supplies, 60810 EU insurance, 70300 Other income, each with a suggested model line, sign, and reason."
-             style="display: block; width: 100%; height: auto;">
-      </figure>
+      <table>
+        <thead>
+          <tr>
+            <th>Account</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Recommended model_line</th>
+            <th>Sign</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>23100</td>
+            <td>Lease liability &ndash; ST (new)</td>
+            <td>Cr 1,240</td>
+            <td><code>Lease liability ST</code></td>
+            <td>1</td>
+            <td>Short-term portion of a new lease &mdash; the model already
+            has this line (currently blank). Mirrors how 23000 maps to
+            Lease liability LT.</td>
+          </tr>
+          <tr>
+            <td>40030</td>
+            <td>Product revenue &ndash; LATAM pilot</td>
+            <td>Cr 1,000</td>
+            <td><code>Revenue</code></td>
+            <td>1</td>
+            <td>Product revenue regardless of region. All other geographic
+            revenue accounts (40000, 40010, 40020) map to Revenue.</td>
+          </tr>
+          <tr>
+            <td>60450</td>
+            <td>Office supplies &ndash; new EU entity</td>
+            <td>Dr 800</td>
+            <td><code>SG&amp;A</code></td>
+            <td>1</td>
+            <td>Operating expense, same nature as 60400 (Office supplies)
+            which already maps to SG&amp;A. Just a new entity
+            sub-account.</td>
+          </tr>
+          <tr>
+            <td>60810</td>
+            <td>Insurance &ndash; new EU policy</td>
+            <td>Dr 700</td>
+            <td><code>SG&amp;A</code></td>
+            <td>1</td>
+            <td>Same nature as 60800 (Insurance) which already maps to
+            SG&amp;A. New policy, not a new expense category.</td>
+          </tr>
+          <tr>
+            <td>70300</td>
+            <td>Other income</td>
+            <td>Cr 500</td>
+            <td><code>Interest income</code></td>
+            <td>1</td>
+            <td>No dedicated &ldquo;Other income&rdquo; model line exists.
+            Non-operating income items below the operating line (FX gain
+            70200, bank fees 70250) appear to roll into the interest
+            income / interest expense bucket &mdash; this is the closest
+            existing home. Flag if you want a separate line.</td>
+          </tr>
+        </tbody>
+      </table>
       <p>Four of these were obvious sub-accounts. The fifth &mdash;
       "Other income" routed to Interest income &mdash; was a judgement
       call I needed to make, not a default the agent should make for
