@@ -248,36 +248,52 @@ memory.</code></pre>
       one giant instruction file can make the important guidance harder
       to find.</p>
 
+      <h2>From memory files to a reusable system</h2>
+      <p>As a project grows, memory can become more structured. A few
+      Markdown files may be enough at first, but recurring work can
+      eventually become more reusable and easier for the agent to
+      navigate.</p>
+      <ul>
+        <li>A workflow you repeat often can become a
+        <strong>skill</strong>: a packaged set of instructions, tools,
+        and steps the agent can reuse. We'll cover skills in a later
+        module.</li>
+        <li>Project rules can be split into focused files instead of
+        growing into one very long instruction document.</li>
+        <li>Running logs can be summarized periodically so old details
+        don't fill the context window unnecessarily.</li>
+        <li>Larger projects may use tools that retrieve only the
+        memory relevant to the current task instead of loading
+        everything at once.</li>
+      </ul>
+      <p>The goal isn't to make the memory system complicated. It's to
+      help the agent find the <strong>right context at the right
+      time</strong>.</p>
+
       <div class="callout warn">
         <span class="callout-label">Tip</span>
-        Memory helps, but it isn't enforcement. An instruction written
-        in a memory file is still an instruction to an LLM &mdash; the
-        agent can misunderstand it, overlook it, or fail to follow it
-        perfectly. Use memory to make good behavior <strong>more
-        consistent</strong>, not to guarantee it; important
-        requirements should still be verified, and truly critical
-        safeguards shouldn't depend only on a sentence in a Markdown
-        file.
+        Different agents use different files for persistent project
+        instructions. Claude Code uses <code>CLAUDE.md</code>, Codex
+        and OpenCode commonly use <code>AGENTS.md</code>, and Gemini
+        CLI uses <code>GEMINI.md</code>. Think of this file as the
+        <strong>front door to the project</strong>: keep high-level
+        instructions there, and point the agent to more detailed
+        workflow, rule, or memory files when needed.
       </div>
 
-      <h2>Putting it together</h2>
-      <p>Over time, your project can develop a small information
-      system around the agent:</p>
-      <pre><code>Project files
+      <p>A more advanced memory system might look like this:</p>
+      <pre><code>CLAUDE.md / AGENTS.md
   &darr;
-Project guide: Where is everything?
+High-level project instructions
   &darr;
-Workflow docs: How do we repeat common tasks?
+Relevant rules, guides, and logs
   &darr;
-Rule docs: What have we learned?
+Reusable workflows
   &darr;
-Running log: Where did we leave off?
-  &darr;
-CLAUDE.md / AGENTS.md: What should the agent know when it starts?</code></pre>
-      <p>This is one way an agent becomes more useful over time. The
-      model itself doesn't need to permanently learn your project.
-      Instead, you maintain a set of external memory files that give it
-      the right information when it needs it.</p>
+Skills and other automated context tools</code></pre>
+      <p>Over time, the project can move from simply preserving past
+      context to building a reusable system for how the agent should
+      work.</p>
 
       <h2>Exercise</h2>
       <p>Return to the project you used on the previous pages. Ask the
