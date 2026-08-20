@@ -272,31 +272,6 @@ memory.</code></pre>
 
       <div class="callout warn">
         <span class="callout-label">Tip</span>
-        Different agents use different files for persistent project
-        instructions. Claude Code uses <code>CLAUDE.md</code>, Codex
-        and OpenCode commonly use <code>AGENTS.md</code>, and Gemini
-        CLI uses <code>GEMINI.md</code>. Think of this file as the
-        <strong>front door to the project</strong>: keep high-level
-        instructions there, and point the agent to more detailed
-        workflow, rule, or memory files when needed.
-      </div>
-
-      <p>A more advanced memory system might look like this:</p>
-      <pre><code>CLAUDE.md / AGENTS.md
-  &darr;
-High-level project instructions
-  &darr;
-Relevant rules, guides, and logs
-  &darr;
-Reusable workflows
-  &darr;
-Skills and other automated context tools</code></pre>
-      <p>Over time, the project can move from simply preserving past
-      context to building a reusable system for how the agent should
-      work.</p>
-
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
         Memory helps, but it isn't enforcement. An instruction written
         in a memory file is still an instruction to an LLM &mdash; the
         agent can misunderstand it, overlook it, or fail to follow it
