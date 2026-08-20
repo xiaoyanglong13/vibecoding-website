@@ -336,25 +336,31 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   points" `<h2>` and its closing paragraph were removed). The old
   "Sometimes you need to explore before you can specify the task" and "The
   task may reveal missing information" sections, and the closing "Putting it
-  together" iterative-process diagram, were all removed. Ends with the same
-  5-part task-writing exercise. Still 25 min.
+  together" iterative-process diagram, were all removed. The closing
+  "Exercise" (5-part churn-risk task-writing prompt) was removed 2026-08-20
+  — the page now ends right after the checkpoint-use table. Still 25 min.
 - **verify-before-you-trust** — inserted 2026-08-19 between specifying-the-
   task and memory. Inspect-vs-verify 2-row table, why verification matters
   (list + gross/net revenue `.example`), the 4-question framework loop with
   four `<h3>` subsections, a worked commission-calculator `.example`, "Test
   cases where you know the answer" (4-row table — "Sales dashboard" is now
-  "Inventory dashboard" — followed by a new `.callout.warn` tip on having the
+  "Inventory dashboard" — followed by a `.callout.warn` tip on having the
   agent self-generate test cases, or building them independently in a
-  separate conversation or with a different dataset), "Test the edges, not
-  just the happy path" (tightened prose, same -9.9%/-10.0%/-10.1% `.example`),
-  and the 7-row verification-method-by-output-type table. The old "Ask the
-  agent to help test its own work," "When something is wrong, investigate
-  before patching," and "Verification should feed back into memory" sections
-  were all removed and replaced by a single new "When manual testing is not
+  separate conversation or with a different dataset, then — added
+  2026-08-20 — a `.prompt-window` example prompt making that concrete: "Generate
+  five test cases with known correct answers..."), "Test the edges, not
+  just the happy path" (tightened prose, same -9.9%/-10.0%/-10.1% `.example`,
+  followed by a second new `.prompt-window` asking the agent to generate
+  boundary/edge-case tests for that same decline-alert rule), and the 7-row
+  verification-method-by-output-type table. The old "Ask the agent to help
+  test its own work," "When something is wrong, investigate before
+  patching," and "Verification should feed back into memory" sections were
+  all removed and replaced by a single new "When manual testing is not
   enough" section (a 4-row table: unit/integration/regression/load tests).
   The old closing "A useful feedback loop" diagram and "The key idea"
-  blockquote were removed with no replacement. Exercise unchanged (4-question
-  verification plan). Still ~25 min.
+  blockquote were removed with no replacement. The closing "Exercise"
+  (4-question verification plan) was removed 2026-08-20 — the page now ends
+  right after the manual-testing table/paragraph. Still ~25 min.
 - **memory** — "Build project memory" (renamed from "Memory across sessions"
   on 2026-08-19). Don't-rely-on-the-conversation intro (reworded, same
   point), 4-row "what should memory preserve" table, the three numbered

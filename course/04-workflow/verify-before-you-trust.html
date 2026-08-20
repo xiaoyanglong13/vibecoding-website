@@ -218,6 +218,13 @@ What could break it?</code></pre>
         the same assumptions that produced the original work.
       </div>
 
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>Generate five test cases with known correct answers for the
+feature you just built. For each one, show the input and the
+expected output so I can verify your answer independently.</code></pre>
+      </div>
+
       <h2>Test the edges, not just the happy path</h2>
       <p>Agents often test the clean, normal case. You should also try
       inputs that are unusual or near important boundaries, such as
@@ -231,6 +238,14 @@ What could break it?</code></pre>
 -10.1%</code></pre>
         <p>These edge cases help reveal whether the rule was implemented
         correctly.</p>
+      </div>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>This dashboard flags sales declines of more than 10%. Create
+test inputs for the boundary of that rule, plus other edge
+cases like missing values, zeros, and duplicates. Show the
+expected result for each one.</code></pre>
       </div>
 
       <h2>Match the verification method to the output</h2>
@@ -315,21 +330,6 @@ What could break it?</code></pre>
       <strong>as a project becomes more important, testing should
       become more repeatable and less dependent on someone remembering
       what to check manually.</strong></p>
-
-      <h2>Exercise</h2>
-      <p>Choose something you've already built with an agent. Create a
-      short verification plan using the four questions from this page:</p>
-      <ol>
-        <li><strong>Does it look right?</strong> What will you inspect?</li>
-        <li><strong>Does it work?</strong> What actions will you try?</li>
-        <li><strong>Is it correct?</strong> What known cases can you
-        check?</li>
-        <li><strong>What could break it?</strong> What unusual or
-        boundary cases will you test?</li>
-      </ol>
-      <p>Then ask the agent to propose additional tests. Compare its
-      suggestions with your own. Did the agent identify risks you
-      missed? Did you identify any business rules the agent overlooked?</p>
 
       <a class="next-cta" href="/course/04-workflow/memory.html">
         <div>
