@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helpful tips for working with Claude Code · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/pitfalls/">Pitfalls</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you build</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
+        <li><a href="/course/04-workflow/verify-before-you-trust.html"><span class="module-num">4.</span>Verify before you trust</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Build project memory</a></li>
+        <li><a class="active" href="/course/04-workflow/helpful-tips.html"><span class="module-num">6.</span>Helpful tips</a></li>
+        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">7.</span>Case study: event recap</a></li>
+        <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">8.</span>Case study: model automation</a></li>
+      </ol>
+
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-limits-and-ethics/"><span class="module-num">5.</span>Limits &amp; ethics</a></li>
+        <li><a href="/course/06-scaling/"><span class="module-num">6.</span>Scaling up</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+        <li><a href="/course/08-capstone/"><span class="module-num">8.</span>Capstone</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 6 of 8 · 15 minutes</span>
+        <h1>Helpful tips for working with Claude Code</h1>
+        <p class="lede">
+          Claude Code works best when you give it the right evidence, keep the task focused,
+          and reset when the conversation becomes cluttered.
+        </p>
+      </div>
+
+      <p>
+        You do not need to master every advanced feature in Claude Code. The tips below are the ones
+        most useful for the kinds of projects you are building now.
+      </p>
+
+      <h2>Protect the context window</h2>
+
+      <p>
+        Claude's context window contains the conversation, the files it reads, and the output from
+        commands and tools. It can fill up surprisingly quickly. As the context becomes crowded,
+        Claude may lose track of earlier instructions or make more mistakes.
+      </p>
+
+      <blockquote>
+        <strong>Keep each session focused. More context is not always better context.</strong>
+      </blockquote>
+
+      <p>
+        Avoid a <strong>kitchen-sink session</strong>: one long conversation containing exploration,
+        failed attempts, repeated corrections, unrelated questions, and then a completely new task.
+      </p>
+
+      <div class="example">
+        <p><strong>If Claude keeps going down the wrong path:</strong></p>
+        <p>
+          Correct it once or twice. If the same problem keeps returning, use <code>/clear</code>
+          and start fresh with a cleaner prompt that incorporates what you learned.
+        </p>
+      </div>
+
+      <p>
+        A fresh session is often better than continuing to add corrections on top of failed approaches.
+      </p>
+
+      <h2>Show Claude what you mean</h2>
+
+      <p>
+        Sometimes an example communicates your goal more clearly than a long description.
+      </p>
+
+      <h3>Use screenshots</h3>
+
+      <p>
+        You can copy and paste an image into Claude Code or drag and drop it into the prompt.
+        Screenshots are especially useful for visual work.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Instead of</div>
+        <pre><code>Make the dashboard look better.</code></pre>
+      </div>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Try</div>
+        <pre><code>[paste screenshot]
+
+Make my dashboard look like this. When you're done, take a
+screenshot of the result, compare the two, and fix the remaining
+differences.</code></pre>
+      </div>
+
+      <h3>Reference existing patterns</h3>
+
+      <p>
+        If your project already contains something similar to what you want, point Claude to it.
+        That is often better than describing the design from scratch.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>Look at the summary cards already used on the homepage.
+Follow the same layout and styling when adding a card for
+operating margin.</code></pre>
+      </div>
+
+      <h3>Point directly to the source</h3>
+
+      <p>
+        If a specific file contains the rule or information Claude needs, tell it where to look
+        rather than asking it to search broadly.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>Use @pricing-policy.md to determine which discount rules
+should apply.</code></pre>
+      </div>
+
+      <p>
+        In Claude Code, <code>@</code> is a convenient way to reference a file directly.
+      </p>
+
+      <h2>Describe the symptom, not the fix</h2>
+
+      <p>
+        When something is broken, you do not need to know which line of code should change.
+        Tell Claude what happened, what you expected, and what a successful fix should look like.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>When I select "West" from the region filter, the revenue chart
+becomes blank even though the source data contains West-region
+records.
+
+Find the cause, fix it, and verify that the filter works for
+every region.</code></pre>
+      </div>
+
+      <blockquote>
+        <strong>Tell Claude what happened, what you expected, and how you will know it is fixed.</strong>
+      </blockquote>
+
+      <h2>Explore → Plan → Execute</h2>
+
+      <p>
+        For larger or uncertain tasks, separate understanding the problem from changing the project.
+      </p>
+
+      <pre><code>Explore
+  ↓
+Understand the project and relevant information
+  ↓
+Plan
+  ↓
+Decide what should change
+  ↓
+Execute
+  ↓
+Build and verify</code></pre>
+
+      <p>
+        You do not need this overhead for every tiny change. Use it when the task is unclear,
+        touches several parts of the project, or could easily go in the wrong direction.
+      </p>
+
+      <h2>Let Claude interview you</h2>
+
+      <p>
+        Sometimes you know what you want at a high level but do not yet know all the requirements.
+        Instead of guessing what details to include, ask Claude to interview you.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>I want to automate this monthly report. Before building anything,
+interview me about the workflow, exceptions, output requirements,
+and anything else you need to know.</code></pre>
+      </div>
+
+      <p>
+        This can surface missing decisions and business rules before the agent starts building.
+      </p>
+
+      <h2>Interrupt bad work early</h2>
+
+      <h3>Press Esc</h3>
+
+      <p>
+        If Claude starts moving in the wrong direction, press <code>Esc</code>. You do not need
+        to wait for it to finish. The conversation remains, so you can immediately redirect it.
+      </p>
+
+      <h3>Use /clear when the session has gone bad</h3>
+
+      <p>
+        If you have corrected the same issue several times and Claude still returns to the wrong approach,
+        stop trying to rescue the conversation. Use <code>/clear</code> and restart with a better description
+        of the task.
+      </p>
+
+      <blockquote>
+        <strong>Do not correct forever. Sometimes the best correction is a fresh session.</strong>
+      </blockquote>
+
+      <h2>Do not explore forever</h2>
+
+      <p>
+        Exploration is useful, but it also consumes time and context. Give Claude boundaries when the
+        project is large.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example</div>
+        <pre><code>Inspect the files related to inventory forecasting and identify
+the three most relevant ones. Do not explore unrelated folders.</code></pre>
+      </div>
+
+      <p>
+        Explore enough to make a good decision—not everything that could possibly be relevant.
+      </p>
+
+      <h2>Quick reference</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>If you want to...</th>
+            <th>Try this</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Show Claude the design you want</td>
+            <td>Paste or drag in a screenshot</td>
+          </tr>
+          <tr>
+            <td>Reuse an existing style</td>
+            <td>Point to a similar feature or file</td>
+          </tr>
+          <tr>
+            <td>Give Claude the right evidence</td>
+            <td>Point directly to the source</td>
+          </tr>
+          <tr>
+            <td>Reference a file quickly</td>
+            <td>Use <code>@filename</code></td>
+          </tr>
+          <tr>
+            <td>Handle a larger task</td>
+            <td>Explore → Plan → Execute</td>
+          </tr>
+          <tr>
+            <td>Discover missing requirements</td>
+            <td>Ask Claude to interview you</td>
+          </tr>
+          <tr>
+            <td>Stop a bad direction</td>
+            <td>Press <code>Esc</code></td>
+          </tr>
+          <tr>
+            <td>Recover from repeated failed corrections</td>
+            <td>Use <code>/clear</code> and start fresh</td>
+          </tr>
+          <tr>
+            <td>Prevent endless exploration</td>
+            <td>Explicitly scope what Claude should inspect</td>
+          </tr>
+          <tr>
+            <td>Keep performance strong</td>
+            <td>Keep sessions focused and context clean</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        These are habits, not rigid rules. As you use Claude Code more, you will develop a feel for
+        when to give it freedom and when to narrow the task.
+      </p>
+
+      <a class="next-cta" href="/course/04-workflow/case-study-event-recap.html">
+        <div>
+          <div class="next-cta-label">Next · Page 7 of 8</div>
+          <div class="next-cta-title">Case study: event recap</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · v0.1 · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

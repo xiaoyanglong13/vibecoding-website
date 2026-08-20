@@ -48,12 +48,13 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
 │   │   └── /course/03-setup/appendix-opencode                                            ✅
-│   ├── /course/04-workflow                                                                ✅ all 7 sub-pages built
+│   ├── /course/04-workflow                                                                ✅ all 8 sub-pages built
 │   │   ├── /course/04-workflow/planning                                                  ✅
 │   │   ├── /course/04-workflow/information-environment                                   ✅
 │   │   ├── /course/04-workflow/specifying-the-task                                       ✅
 │   │   ├── /course/04-workflow/verify-before-you-trust                                   ✅
 │   │   ├── /course/04-workflow/memory                                                    ✅
+│   │   ├── /course/04-workflow/helpful-tips                                              ✅
 │   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
 │   │   └── /course/04-workflow/case-study-model-automation                               ✅
 │   ├── /course/05-limits-and-ethics                                                       ✅ all 4 sub-pages built
@@ -249,7 +250,7 @@ now fully built and considered done as of 2026-08-18 — no open threads on it. 
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 7 sub-pages (~175 min total), replacing
+Fully written and built 2026-08-19, all 8 sub-pages (~200 min total), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -369,6 +370,21 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   explicit request, after it had briefly been dropped in an intermediate
   edit. The page's closing Exercise section was removed entirely — the page
   now ends right after that final tip. Still 20 min.
+- **helpful-tips** — inserted 2026-08-20 between memory and
+  case-study-event-recap (pushing the two case studies from pages 6/7 to
+  7/8 of 8; module total rose from ~175 to ~200 min). "Helpful tips for
+  working with Claude Code" — a grab-bag of session habits, not tied to a
+  single concept: protect the context window (kitchen-sink-session warning,
+  `.example` on using `/clear` after repeated corrections), show Claude what
+  you mean (three `subhead-accent` subsections — screenshots, referencing
+  existing patterns, pointing directly to the source with `@file`), describe
+  the symptom not the fix (broken-filter `.prompt-window` example), an
+  Explore → Plan → Execute `<pre><code>` diagram for larger/uncertain tasks,
+  let Claude interview you, interrupt bad work early (`Esc` vs. `/clear`
+  subsections), and don't explore forever (scoped-exploration example).
+  Closes with a 10-row "quick reference" table (if-you-want-to / try-this)
+  instead of an exercise. No chips row (matches the other non-case-study
+  sub-pages). 15 min — the shortest page in the module.
 - **case-study-event-recap** — no longer a verbatim duplicate of
   `/cases/people/event-recap-generator` (that page is unchanged and still
   follows Module 1's pattern). The course-page version instead walks through
@@ -546,7 +562,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Module 4 `/course/04-workflow` | ✅ All 7 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `case-study-event-recap`, `case-study-model-automation`) |
+| Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `case-study-event-recap`, `case-study-model-automation`) |
 | Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
