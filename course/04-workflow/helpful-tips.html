@@ -97,17 +97,6 @@
         <a href="https://code.claude.com/docs/en/best-practices">Claude Code best practices</a> guide.
       </p>
 
-      <div class="chips">
-        <a class="chip" href="#protect-context">Protect the context window</a>
-        <a class="chip" href="#show-dont-tell">Show Claude what you mean</a>
-        <a class="chip" href="#describe-the-symptom">Describe the symptom, not the fix</a>
-        <a class="chip" href="#explore-plan-execute">Explore → Plan → Execute</a>
-        <a class="chip" href="#let-claude-interview-you">Let Claude interview you</a>
-        <a class="chip" href="#interrupt-bad-work">Interrupt bad work early</a>
-        <a class="chip" href="#dont-explore-forever">Do not explore forever</a>
-        <a class="chip" href="#quick-reference">Quick reference</a>
-      </div>
-
       <h2 id="protect-context">Protect the context window</h2>
 
       <p>
@@ -128,7 +117,7 @@
       <div class="callout warn">
         <span class="callout-label">Tip</span>
         If Claude keeps going down the wrong path, correct it once or twice.
-        If the same problem keeps returning, use <span class="kbd">/clear</span> and
+        If the same problem keeps returning, use <span class="kbd">/clear</span> or simply start a new session, and
         start fresh with a cleaner prompt that incorporates what you learned.
       </div>
 
@@ -265,7 +254,7 @@ and anything else you need to know.</code></pre>
         to wait for it to finish. The conversation remains, so you can immediately redirect it.
       </p>
 
-      <h3>Use /clear when the session has gone bad</h3>
+      <h3>Use /clear or simply start a new session when the current session has gone bad</h3>
 
       <p>
         If you have corrected the same issue several times and Claude still returns to the wrong approach,
