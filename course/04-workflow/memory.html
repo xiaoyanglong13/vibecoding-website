@@ -63,7 +63,7 @@
       deal of shared context. You clarify what you want, correct
       mistakes, explain company rules, make decisions, and discover
       better ways to complete the work.</p>
-      <p>When you start a new session, the agent doesn't automatically
+      <p>But when you start a new session, the agent doesn't automatically
       remember what happened in previous conversations. If something
       matters for future work &mdash; such as a rule, correction,
       workflow, or decision &mdash; you should <strong>write it down in
@@ -128,13 +128,7 @@
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize the workflow we used for this analysis so I can
 repeat the same process when next month's data comes in.
-
-Create a Markdown file that includes:
-- which input files to use
-- the steps of the analysis
-- the important assumptions
-- the outputs to create
-- the checks to perform before considering the work complete</code></pre>
+</code></pre>
       </div>
       <p>The resulting file might look something like this:</p>
       <pre><code># Monthly sales analysis
@@ -160,10 +154,7 @@ Create a Markdown file that includes:
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize the important rules and corrections that emerged
 during this session so they can be applied next time.
-
-Focus on durable information that will still matter in future
-analyses. Don't include temporary details that only apply
-today.</code></pre>
+</code></pre>
       </div>
       <p>For example:</p>
       <pre><code># Analysis rules
@@ -185,14 +176,7 @@ today.</code></pre>
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize what we accomplished today so I can resume the
 project in a future session.
-
-Include:
-- what we completed
-- important decisions we made
-- unresolved questions
-- what should happen next
-
-Save it to project-log.md.</code></pre>
+</code></pre>
       </div>
       <p>A running log might contain entries such as:</p>
       <pre><code># Project log
@@ -223,49 +207,19 @@ Next:
       <p>At the end of a work session, a simple instruction may be
       enough:</p>
       <pre><code>Before we finish, make the necessary updates to the project
-memory.
-
-Update the workflow, rules, or running log if anything
-important changed during this session. Don't add details that
-are temporary or unlikely to matter next time.</code></pre>
+memory.</code></pre>
       <p>This creates a useful habit: <strong>do the work, then preserve
       what the next session needs to know.</strong> If nothing
       meaningful changed, the memory files don't need to grow.</p>
 
-      <h2>There is no single correct memory system</h2>
-      <p>You don't need a complicated framework. One project might use a
-      single <code>project-guide.md</code>. Another might keep separate
-      files for workflows, rules, and progress. The right structure
-      depends on the project.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Need</th>
-            <th>Possible file</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Repeat a process</td>
-            <td><code>monthly-analysis.md</code></td>
-          </tr>
-          <tr>
-            <td>Preserve business rules and corrections</td>
-            <td><code>analysis-rules.md</code></td>
-          </tr>
-          <tr>
-            <td>Resume a long-running project</td>
-            <td><code>project-log.md</code></td>
-          </tr>
-          <tr>
-            <td>Explain the overall project</td>
-            <td><code>project-guide.md</code></td>
-          </tr>
-        </tbody>
-      </table>
-      <p>The names aren't important. What matters is that the
-      information is easy for both you and the agent to find and
-      maintain.</p>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        There's no single correct memory system. One project might use
+        a single <code>project-guide.md</code>; another might keep
+        separate files for workflows, rules, and progress. The names
+        aren't important &mdash; what matters is that the information
+        is easy for both you and the agent to find and maintain.
+      </div>
 
       <h2>A special case: CLAUDE.md and AGENTS.md</h2>
       <p>Some coding agents recognize a specially named instruction file
