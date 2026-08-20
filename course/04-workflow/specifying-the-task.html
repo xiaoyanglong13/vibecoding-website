@@ -147,10 +147,6 @@ month with last month. Make large declines easy to identify.</code></pre>
       <p>The second prompt still gives the agent a clear goal, but leaves
       room for it to propose an appropriate design. You can then review the
       plan and add constraints that actually matter.</p>
-      <blockquote>
-        <strong>Be specific about the outcome and important constraints,
-        not every detail you can think of.</strong>
-      </blockquote>
 
       <h2>But don't be too vague</h2>
       <p>Giving the agent freedom doesn't mean giving it no direction.
@@ -173,35 +169,6 @@ existing rows by customer name or email address.</code></pre>
         the solution.</p>
       </div>
 
-      <h2>A useful level of specificity</h2>
-      <p>A good task description usually focuses on the business
-      outcome, important constraints, and what a successful result
-      should look like.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Too vague</th>
-            <th>Useful specificity</th>
-            <th>Too prescriptive</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>&ldquo;Improve the dashboard.&rdquo;</td>
-            <td>&ldquo;Make it easier for managers to see which regions
-            are missing their monthly sales targets.&rdquo;</td>
-            <td>&ldquo;Create a Python function called
-            <code>flag_regions()</code>, then use...&rdquo;</td>
-          </tr>
-          <tr>
-            <td>Agent must guess the goal.</td>
-            <td>Agent understands the desired outcome and can choose an
-            implementation.</td>
-            <td>You're making technical decisions the agent could make
-            for you.</td>
-          </tr>
-        </tbody>
-      </table>
       <p>A useful rule is:</p>
       <blockquote>
         <strong>Be specific about the outcome and constraints; be
@@ -276,27 +243,6 @@ Step 4: Build and test the dashboard.</code></pre>
       <strong>let the agent run between points where human judgment
       matters.</strong></p>
 
-      <h2>Putting it together</h2>
-      <p>Specifying a task isn't about writing the perfect prompt once.
-      For more complex work, it's often an iterative process:</p>
-      <pre><code>State the objective
-  &darr;
-Add important requirements and constraints
-  &darr;
-Explore or brainstorm if the solution is unclear
-  &darr;
-Use plan mode to inspect the proposed approach
-  &darr;
-Identify missing information
-  &darr;
-Revise the task
-  &darr;
-Choose where human checkpoints should occur
-  &darr;
-Implement</code></pre>
-      <p>The goal is to give the agent enough direction to solve the
-      right problem, while still letting it handle the technical
-      details you don't need to specify yourself.</p>
 
       <h2>Exercise</h2>
       <p>Imagine you have customer transaction data and want to build
