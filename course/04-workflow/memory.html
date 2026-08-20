@@ -295,6 +295,18 @@ Skills and other automated context tools</code></pre>
       context to building a reusable system for how the agent should
       work.</p>
 
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Memory helps, but it isn't enforcement. An instruction written
+        in a memory file is still an instruction to an LLM &mdash; the
+        agent can misunderstand it, overlook it, or fail to follow it
+        perfectly. Use memory to make good behavior <strong>more
+        consistent</strong>, not to guarantee it; important
+        requirements should still be verified, and truly critical
+        safeguards shouldn't depend only on a sentence in a Markdown
+        file.
+      </div>
+
       <h2>Exercise</h2>
       <p>Return to the project you used on the previous pages. Ask the
       agent to create three short memory files:</p>
