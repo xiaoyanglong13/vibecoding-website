@@ -369,17 +369,25 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   explicit request, after it had briefly been dropped in an intermediate
   edit. The page's closing Exercise section was removed entirely — the page
   now ends right after that final tip. Still 20 min.
-- **case-study-event-recap** — the full `/cases/people/event-recap-generator`
-  case, transplanted verbatim into the course-page chrome (sidebar,
-  module-header, eyebrow) exactly the way Module 1's own `case-study.html`
-  duplicates `/cases/marketing/segmentation-from-csv` — same seven-ish
-  sections (business decision → data available → the build → what good looks
-  like → extensions → skills used), same prompts, same download links
-  (rewritten to absolute `/cases/people/...` paths since the file now lives in
-  a different folder). Ends with in-module nav to page 7 (was page 6 before
-  the verify-before-you-trust insertion), not a link back to the `/cases`
-  original — there isn't one; this page *is* the case, like Module 1's. Runs
-  first as the shorter, lower-stakes case (~20 min).
+- **case-study-event-recap** — no longer a verbatim duplicate of
+  `/cases/people/event-recap-generator` (that page is unchanged and still
+  follows Module 1's pattern). The course-page version instead walks through
+  three attempts at the same task on the same three input files
+  (`inputs/competition-invite-fall-2025.docx`, `inputs/notes.txt`,
+  `references/competition-recap-fall-2024.docx`): a single browser-chat
+  prompt with no project setup, the same prompt in Claude Code with Plan mode
+  and iteration, and finally Plan mode plus an explicit CLAUDE.md the agent
+  interviews the user to write. Each attempt gets a "what went wrong"
+  pitfalls-inline box quoting specific failures (naming judges/competing
+  teams, unsupported claims, tone, structure) and a download link to that
+  attempt's actual `.docx` output (`event-recap-attempt-1/2/3-final.docx`,
+  reused from the earlier card-grid version) — attempt 3 also links the
+  generated `cases/people/CLAUDE.md` — closing with a 4-column comparison
+  table and the "better results came from improving the workflow around the
+  prompt" thesis. A 7-row verification checklist (facts,
+  completeness, format, tone, content judgment, unsupported/missing info)
+  sits between the task setup and the three attempts. Ends with in-module nav
+  to page 7. Runs first, now ~30 min (was ~20).
 - **case-study-model-automation** — same treatment for
   `/cases/finance/model-automation`: full seven-section content (adds "how to
   do this again next month"), the scoped `<style>` block for its CFO summary
@@ -392,13 +400,17 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   verbatim content, no separate "intro" page. Don't reintroduce either earlier
   version.)
 
-Both mini-cases duplicate existing `/cases` pages rather than introducing new
-sample data — consistent with §6's note that Modules 1, 4, and 6 each close
-with a mini-case, except Module 4 now gets two instead of one. Both case
-pages' own "Skills used" chips (in `/cases`) were repointed from generic
-`/course/04-workflow/` links to the specific new sub-pages (`planning.html`,
-`information-environment.html`, `specifying-the-task.html`, `memory.html`) as
-part of this build, and the course-page copies carry the same updated chips.
+Both mini-cases reuse existing `/cases` sample data rather than introducing
+new files — consistent with §6's note that Modules 1, 4, and 6 each close
+with a mini-case, except Module 4 now gets two instead of one.
+case-study-model-automation is still a verbatim transplant of its `/cases`
+original; case-study-event-recap has since diverged into its own three-attempt
+narrative built on the same sample files (see above) — the `/cases/people`
+original is unchanged. Both case pages' own "Skills used" chips (in `/cases`)
+were repointed from generic `/course/04-workflow/` links to the specific new
+sub-pages (`planning.html`, `information-environment.html`,
+`specifying-the-task.html`, `memory.html`) as part of this build, and the
+course-page copies carry the same updated chips.
 
 ### Module 5 — Limits, risks, and responsibility (`/course/05-limits-and-ethics`)
 Fully written and built 2026-08-19 (renumbered from Module 6 earlier the same

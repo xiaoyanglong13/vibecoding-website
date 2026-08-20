@@ -31,9 +31,10 @@
         <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
         <li><a href="/course/04-workflow/verify-before-you-trust.html"><span class="module-num">4.</span>Verify before you trust</a></li>
         <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Build project memory</a></li>
-        <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">6.</span>Case study: event recap</a></li>
+        <li><a class="active" href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">6.</span>Case study: event recap</a></li>
         <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">7.</span>Case study: model automation</a></li>
       </ol>
+
       <h4>All modules</h4>
       <ol>
         <li><a href="/course/">Syllabus</a></li>
@@ -50,205 +51,394 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 4 · Page 6 of 7 · 20 minutes</span>
+        <span class="eyebrow">Module 4 · Page 6 of 7 · 30 minutes</span>
         <h1>Case study: Event recap generator</h1>
-        <p class="lede">You just got back from a case competition. The club
-        president needs a polished debrief by Friday — in the same format
-        as always. Your raw material is one person's messy notes. Here's
-        how to do it in one session.</p>
+        <p class="lede">
+          The same files and the same basic task can produce very different results depending on how you work with the agent.
+          In this case, you will try the task yourself, verify the output, and compare three different build processes.
+        </p>
       </div>
 
       <div class="chips">
         <span class="chip">Difficulty · Beginner</span>
-        <span class="chip">~20 minutes</span>
+        <span class="chip">~30 minutes</span>
         <span class="chip">Uses: Modules 1, 4</span>
       </div>
 
-      <h2>1. The business decision</h2>
+      <h2>1. The business task</h2>
+
       <p>After every case competition, the club president sends a standard
-      debrief — same sections, same tone, same length, every time. The
+      debrief &mdash; same sections, same tone, same length, every time. The
       problem: the person who takes notes is never the person who writes
       the recap, and turning messy bullet points into the finished document
-      takes two to three hours. This workflow cuts that to one prompt.
-      There's no code involved — the folder structure and
-      <code>CLAUDE.md</code> do all the work.</p>
+      takes two to three hours.</p>
+
+      <p>Your task is to use the available files to generate the Fall 2025
+      recap in the same style and format as the previous approved recap.</p>
 
       <h2>2. Data available</h2>
+
       <ul>
         <li><strong>inputs/competition-invite-fall-2025.docx</strong> — official invitation from the organizers. <a href="/cases/people/competition-invite-fall-2025.docx" download>Download</a></li>
-        <li><strong>inputs/notes.txt</strong> — raw notes from whoever attended. <a href="/cases/people/notes.txt" download>Download</a></li>
-        <li><strong>references/competition-recap-fall-2024.docx</strong> — last semester's approved recap, from a different competition. The format to match. <a href="/cases/people/competition-recap-fall-2024.docx" download>Download</a></li>
+        <li><strong>inputs/notes.txt</strong> — raw notes from the event. <a href="/cases/people/notes.txt" download>Download</a></li>
+        <li><strong>references/competition-recap-fall-2024.docx</strong> — last semester's approved recap. This is the reference for format and tone. <a href="/cases/people/competition-recap-fall-2024.docx" download>Download</a></li>
       </ul>
 
-      <h2>3. The build</h2>
-      <p>Two rounds, about 20 minutes total.</p>
+      <h2>3. Try it yourself</h2>
 
-      <h3>Round 1 · Write the CLAUDE.md together</h3>
-      <p>Don't write the CLAUDE.md alone. Instead, ask the AI to interview
-      you:</p>
-      <pre><code>I'm setting up a folder for generating recurring event recap
-documents. I have a reference example and raw notes as inputs.
+      <p>
+        Start by exploring the three source files so you understand what information
+        is available and have a rough sense of what the finished recap should look like.
+      </p>
 
-Before we write anything, ask me the questions you'd need
-answered to write a good CLAUDE.md — the file that tells you
-the rules for this project every time you open it.
+      <p>
+        Then generate the Fall 2025 recap using the workflow you've learned in this module.
+        Do the best job you can.
+      </p>
 
-Ask one question at a time.</code></pre>
-      <p>The AI will surface things you hadn't thought to specify: whether
-      certain sections are mandatory even if nothing happened in that area,
-      how to handle names, whether to flag anything for human review before
-      sending. Once you've answered, ask it to draft the CLAUDE.md and
-      review it before saving. Then ask it to summarise what it sees in
-      <code>references/</code> — a quick sanity check before anything gets
-      generated.</p>
+      <p>
+        When you're finished, keep your output. In the next step, you'll verify it against
+        a checklist.
+      </p>
 
-      <p>A well-written CLAUDE.md for this project looks something like:</p>
-      <pre><code># Event Recap Project
+      <h2>4. Verify the output</h2>
 
-## Purpose
-Generate a polished event recap document from raw notes,
-matching the format in references/.
+      <p>
+        Now compare your output against the reference and source files. Use the checklist below.
+      </p>
 
-## Mandatory sections
-The following sections must always appear, even if the notes
-contain little or nothing for them:
-- Event overview (date, location, format, team)
-- Results
-- Key learnings (minimum two)
-- What we'd do differently
-- Thank-yous (always include sponsors by name)
-
-## Format rules
-- Match the heading structure and approximate length of the
-  reference document exactly
-- Do not invent facts. If the notes are silent on something,
-  write "[to confirm]" rather than guessing
-- Names: use first name only for students, full name + affiliation
-  for external contacts
-
-## Output
-Save the finished document to outputs/ as
-  recap-[event-name]-[YYYY-MM].docx</code></pre>
-
-      <h3>Round 2 · Generate and review</h3>
-      <p>With the CLAUDE.md in place and the format confirmed:</p>
-      <pre><code>Now generate the recap using both files in inputs/ and the
-reference document. Save the output to outputs/.</code></pre>
-      <p>Read the output and check two things: every mandatory section is
-      present, and any <code>[to confirm]</code> flags are things you can
-      actually fill in. If a mandatory section is missing, the most common
-      cause is a CLAUDE.md rule that was too vague — tighten it and re-run.</p>
-
-      <h2>4. What good looks like</h2>
-      <p>The most instructive thing you can do is run this workflow twice:
-      once with a minimal CLAUDE.md and once with the full version above,
-      using the same notes. The difference makes the case for why the
-      instructions file matters more than the prompt.</p>
       <table>
         <thead>
           <tr>
-            <th>With a thin CLAUDE.md</th>
-            <th>With a detailed CLAUDE.md</th>
+            <th>Check</th>
+            <th>Questions to ask</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Sections appear in a different order than the reference</td>
-            <td>Section order matches the reference exactly</td>
+            <td><strong>Facts</strong></td>
+            <td>Are the date, location, team, results, and other key details correct?</td>
           </tr>
           <tr>
-            <td>"Thank-yous" section is omitted because the notes don't mention it</td>
-            <td>"Thank-yous" appears with a [to confirm] flag, reminding you to add names</td>
+            <td><strong>Completeness</strong></td>
+            <td>Are all expected sections present? Are there extra sections that do not belong?</td>
           </tr>
           <tr>
-            <td>Invented a plausible-sounding judge quote that wasn't in the notes</td>
-            <td>Flagged the gap with [to confirm] instead of guessing</td>
+            <td><strong>Format</strong></td>
+            <td>Do the headings, tables, spacing, and bullets match the reference?</td>
+          </tr>
+          <tr>
+            <td><strong>Tone</strong></td>
+            <td>Is the writing professional, positive, and consistent with the previous recap?</td>
+          </tr>
+          <tr>
+            <td><strong>Content judgment</strong></td>
+            <td>Did the AI include details that are true but unnecessary or inappropriate for the final recap?</td>
+          </tr>
+          <tr>
+            <td><strong>Unsupported information</strong></td>
+            <td>Did it guess, embellish, or add anything that is not supported by the files?</td>
+          </tr>
+          <tr>
+            <td><strong>Missing information</strong></td>
+            <td>When information is unavailable, does the document flag the gap or quietly work around it?</td>
           </tr>
         </tbody>
       </table>
-      <p>A good output lands in <code>outputs/</code>, matches the reference
-      on structure and length, and contains no invented facts — only
-      <code>[to confirm]</code> placeholders where the notes ran dry.</p>
 
-      <h3>See the difference for yourself</h3>
-      <p>These are three real attempts run against the same
-      <code>inputs/</code>, plus the <code>CLAUDE.md</code> that produced the
-      last one. Download them and compare against
-      <a href="/cases/people/competition-recap-fall-2024.docx" download>the
-      2024 reference</a> — the gaps are easier to spot in the actual
-      documents than in a description of them.</p>
-      <div class="card-grid">
-        <a class="card" href="/cases/people/event-recap-attempt-1.docx" download>
-          <div class="card-eyebrow">Attempt 1 · No CLAUDE.md</div>
-          <h3>First pass</h3>
-          <p>Reads well, but invents a section the reference doesn't have,
-          names the judge who pushed back in Q&amp;A, and calls out the
-          winning team by name — nothing is flagged for review.</p>
-        </a>
-        <a class="card" href="/cases/people/event-recap-attempt-2.docx" download>
-          <div class="card-eyebrow">Attempt 2 · Thin CLAUDE.md</div>
-          <h3>Second pass</h3>
-          <p>Section order now matches the reference, but the club name is a
-          guessed placeholder, two of the four scoring categories are
-          missing with no flag, and the same named Q&amp;A exchange is still
-          there.</p>
-        </a>
-        <a class="card" href="/cases/people/event-recap-attempt-3-final.docx" download>
-          <div class="card-eyebrow">Attempt 3 · Full CLAUDE.md</div>
-          <h3>Final version</h3>
-          <p>Matches the reference's structure exactly, asks before
-          guessing the club name, and flags the two scoring categories the
-          notes never mention instead of inventing them.</p>
-        </a>
-        <a class="card" href="/cases/people/CLAUDE.md" download>
-          <div class="card-eyebrow">The instructions file</div>
-          <h3>CLAUDE.md</h3>
-          <p>The rules behind attempt 3 — which sections are mandatory, how
-          names should be handled, and what to do when the notes run
-          dry.</p>
-        </a>
+      <p>
+        The important lesson is that a document can look polished while still failing several of these checks.
+      </p>
+
+      <h2>5. Three ways to build the same recap</h2>
+
+      <h3>Attempt 1 · Browser chat + one prompt</h3>
+
+      <p>
+        In the first attempt, I uploaded the three files to Claude in the browser and used a single prompt:
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt used</div>
+        <pre><code>I am generating a recap for the fall 2025 case competition.
+Here are the relevant notes, the invitation to the case competition
+(with details about date, location, etc.), and a reference recap
+from fall 2024.
+
+Generate the 2025 recap for me.</code></pre>
       </div>
 
+      <p>
+        The resulting <strong>v0</strong> looked plausible at first glance, but the verification checklist
+        exposed several problems.
+      </p>
+
       <div class="pitfalls-inline">
-        <h4>Watch for</h4>
+        <h4>What went wrong</h4>
         <ul>
-          <li><strong>No reference = invented structure.</strong> If you
-          skip the references/ folder and just describe the format in words,
-          the AI will produce something plausible but wrong. The reference
-          file is not optional — it's the ground truth.</li>
-          <li><strong>Missing mandatory sections.</strong> If a section
-          isn't in the notes, the AI will silently omit it unless CLAUDE.md
-          explicitly says it's required. Always list non-negotiable sections
-          by name.</li>
-          <li><strong>"It sounds right" isn't the same as "it matches."</strong>
-          Read the output against the reference side by side before signing
-          off. The AI is very good at writing polished prose that misses
-          structural details you haven't noticed yet.</li>
+          <li>
+            <strong>It included unnecessary details from the notes.</strong>
+            For example: <em>&ldquo;Phones were collected during the prep period.&rdquo;</em>
+            The fact is supported by the notes, but it does not belong in a polished club recap.
+          </li>
+          <li>
+            <strong>The tone could sound defensive.</strong>
+            The recap says the team <em>&ldquo;felt rushed at the end and didn't get a full run-through before presenting.&rdquo;</em>
+          </li>
+          <li>
+            <strong>It named people and competitors when that was not necessarily appropriate.</strong>
+            For example: <em>&ldquo;McKinsey judge Rebecca Cho pressed on the sourcing behind our $4.2B TAM figure&rdquo;</em>
+            and <em>&ldquo;The Michigan team won overall.&rdquo;</em>
+          </li>
+          <li>
+            <strong>Some language was more informal and evaluative than the reference.</strong>
+            For example: <em>&ldquo;we didn't, and it showed in how hard it was to read the judges&rdquo;</em>
+            and <em>&ldquo;Michigan's opening was noticeably sharper than ours.&rdquo;</em>
+          </li>
+          <li>
+            <strong>The structure and formatting did not fully match the reference.</strong>
+            It added a separate <em>&ldquo;The case&rdquo;</em> section and used different formatting choices.
+          </li>
         </ul>
       </div>
 
-      <h2>5. Extensions</h2>
-      <p>Once the base workflow is running, try these to go further:</p>
-      <ul>
-        <li>Run the workflow for three events in a row with different
-        notes files. The folder stays the same — only <code>inputs/</code>
-        changes. This is the core payoff of the folder structure: the setup
-        cost is paid once.</li>
-        <li>Add a rule to CLAUDE.md asking the AI to flag any "lessons
-        learned" items that appear across multiple events, once you have
-        three or more recaps in <code>references/</code>. The folder becomes
-        institutional memory.</li>
-      </ul>
-      <p>The cross-event pattern analysis is a good lead-in to Module 6.</p>
+      <p>
+        Claude had the source files, but many of the <strong>rules for a good recap were implicit</strong>.
+        It had to decide for itself what to include, how to frame weaker performance, whether to name people,
+        and how closely to imitate the reference.
+      </p>
 
-      <h2>6. Skills used</h2>
-      <div class="chips">
-        <a class="chip" href="/course/04-workflow/information-environment.html">Folder &amp; context management</a>
-        <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Prompting · roles &amp; instructions</a>
-        <a class="chip" href="/course/04-workflow/planning.html">Plan before execute</a>
-        <a class="chip" href="/course/04-workflow/memory.html">Build project memory</a>
-        <a class="chip" href="/course/04-workflow/verify-before-you-trust.html">Evaluating output</a>
+      <blockquote>
+        <strong>Lesson:</strong> Providing the right files is not the same as providing the rules for how to use them.
+      </blockquote>
+
+      <p><a href="/cases/people/event-recap-attempt-1.docx" download>Download the actual v0 output</a>
+      to see these problems in the finished document rather than just this description.</p>
+
+      <h3>Attempt 2 · Project folder + Plan mode + iteration</h3>
+
+      <p>
+        In the second attempt, I put the same files in a project folder and opened it in Claude Code.
+        I switched to <strong>Plan mode</strong> and gave Claude the same task:
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt used</div>
+        <pre><code>I am generating a recap for the fall 2025 case competition.
+Here are the relevant notes, the invitation to the case competition
+(with details about date, location, etc.), and a reference recap
+from fall 2024.
+
+Generate the 2025 recap for me.</code></pre>
       </div>
+
+      <p>
+        Because Claude could inspect the project before building, it asked clarifying questions during planning
+        &mdash; for example, what the consulting club should be called. I answered those questions, let it generate
+        a first draft, and then iterated on the result.
+      </p>
+
+      <div class="example">
+        <p><strong>For example, when the styling did not match the reference, I asked:</strong></p>
+        <pre><code>Compare the new recap with the reference document side by side.
+
+List every inconsistency in headings, tables, spacing, bullets,
+and overall formatting. Then fix those inconsistencies.</code></pre>
+      </div>
+
+      <p>
+        The resulting <strong>v1</strong> was much closer to the reference visually. But the deeper content and tone
+        problems were still there because I had never explicitly defined those rules.
+      </p>
+
+      <div class="pitfalls-inline">
+        <h4>What still went wrong</h4>
+        <ul>
+          <li>
+            <strong>It still named judges and competing teams.</strong>
+            For example: <em>&ldquo;Rebecca Cho pushed hard on the $4.2B TAM&rdquo;</em> and
+            <em>&ldquo;Michigan's team apparently practices Q&amp;A every session.&rdquo;</em>
+          </li>
+          <li>
+            <strong>It added unsupported or overly specific judgments.</strong>
+            The results table says: <em>&ldquo;Jordan opened strong; delivery was our clearest differentiator.&rdquo;</em>
+          </li>
+          <li>
+            <strong>It emphasized individual team members in ways that did not fit the desired institutional tone.</strong>
+            For example: <em>&ldquo;Marcus handled the financials calmly&rdquo;</em>.
+          </li>
+          <li>
+            <strong>The tone remained conversational and somewhat self-critical.</strong>
+            For example: <em>&ldquo;we left points on the table&rdquo;</em> and
+            <em>&ldquo;the question exposed that our number was not as well supported as the rest of the recommendation.&rdquo;</em>
+          </li>
+          <li>
+            <strong>It still treated details from the notes as material for the recap unless told otherwise.</strong>
+            Planning improved how Claude executed the task, but it did not tell Claude which content choices were appropriate.
+          </li>
+        </ul>
+      </div>
+
+      <blockquote>
+        <strong>Lesson:</strong> Planning and iteration improved the execution and formatting, but they did not supply the missing
+        editorial rules. Claude still had to infer tone, privacy, emphasis, and how to handle uncertain information.
+      </blockquote>
+
+      <p><a href="/cases/people/event-recap-attempt-2.docx" download>Download the actual v1 output</a>
+      to compare against v0 and the reference.</p>
+
+      <h3>Attempt 3 · Project rules + Plan mode + iteration</h3>
+
+      <p>
+        The third attempt used the same project-folder setup, but before generating the recap, Claude was asked to
+        <strong>interview the user and create the project's rules</strong>.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I am generating a recap for the fall 2025 case competition.
+The folder contains the relevant notes, the invitation to the case
+competition (with details about date, location, etc.), and a reference
+recap from fall 2024.
+
+I would like to generate a recap in the exact same style/format as
+the reference recap.
+
+Before we write anything, ask me the questions you'd need answered
+to write a good CLAUDE.md — the file that tells you the rules for
+this project every time you open it.</code></pre>
+      </div>
+
+      <p>
+        Claude's questions surfaced requirements that had never been made explicit. For example:
+      </p>
+
+      <ul>
+        <li>What should happen when important information is missing?</li>
+        <li>Should judges or competing teams be identified by name?</li>
+        <li>How closely should the output match the reference?</li>
+        <li>What tone should the recap use?</li>
+        <li>What output format is required?</li>
+        <li>Which details from the raw notes should be omitted?</li>
+      </ul>
+
+      <p>
+        After answering the questions, the generated <code>CLAUDE.md</code>
+        (<a href="/cases/people/CLAUDE.md" download>download it</a>) was
+        reviewed and approved. Claude then planned and generated the recap
+        using both the source files and the project rules.
+      </p>
+
+      <p>
+        The final version was substantially better. It maintained a more professional tone, matched the reference more closely,
+        and explicitly highlighted missing information instead of quietly guessing or filling the gap.
+      </p>
+
+      <blockquote>
+        <strong>Lesson:</strong> The biggest improvement came from making the hidden rules explicit before asking the agent to do the work.
+      </blockquote>
+
+      <p><a href="/cases/people/event-recap-attempt-3-final.docx" download>Download the final v2 output</a>
+      and compare it against <a href="/cases/people/competition-recap-fall-2024.docx" download>the 2024
+      reference</a> — this is the version that should hold up to the checklist above.</p>
+
+      <h2>6. Compare the three approaches</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Browser + prompt</th>
+            <th>Plan + iteration</th>
+            <th>Rules + plan + iteration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Uses the source files</strong></td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Inspects the project before building</strong></td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Clarifies missing context</strong></td>
+            <td>Limited</td>
+            <td>Better</td>
+            <td>Better</td>
+          </tr>
+          <tr>
+            <td><strong>Matches formatting closely</strong></td>
+            <td>Partial</td>
+            <td>Better</td>
+            <td>Better</td>
+          </tr>
+          <tr>
+            <td><strong>Knows the desired tone</strong></td>
+            <td>Inferred</td>
+            <td>Inferred</td>
+            <td><strong>Explicit</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Knows what information to omit</strong></td>
+            <td>Inferred</td>
+            <td>Inferred</td>
+            <td><strong>Explicit</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Knows how to handle missing information</strong></td>
+            <td>Inferred</td>
+            <td>Inferred</td>
+            <td><strong>Explicit</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Rules reusable next time</strong></td>
+            <td>No</td>
+            <td>No</td>
+            <td><strong>Yes</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        The key difference is not that the third attempt used a much longer task prompt. It created a better
+        <strong>workflow around the prompt</strong>.
+      </p>
+
+      <pre><code>Prompt
+  ↓
+Plan and iterate
+  ↓
+Make the rules explicit and reusable</code></pre>
+
+      <blockquote>
+        <strong>Better results did not come from writing a longer prompt.
+        They came from improving the workflow around the prompt.</strong>
+      </blockquote>
+
+      <h2>7. What this case brings together</h2>
+
+      <p>
+        This case uses nearly every part of the workflow from this module:
+      </p>
+
+      <div class="chips">
+        <a class="chip" href="/course/04-workflow/information-environment.html">Information environment</a>
+        <a class="chip" href="/course/04-workflow/planning.html">Plan before you build</a>
+        <a class="chip" href="/course/04-workflow/specifying-the-task.html">Specify the task</a>
+        <a class="chip" href="/course/04-workflow/verify-before-you-trust.html">Verify the output</a>
+        <a class="chip" href="/course/04-workflow/memory.html">Build project memory</a>
+      </div>
+
+      <p>
+        The final takeaway is simple: good agentic work is rarely about finding one perfect prompt.
+        It is about creating the context, checkpoints, rules, and verification process that help the agent do the right work consistently.
+      </p>
 
       <a class="next-cta" href="/course/04-workflow/case-study-model-automation.html">
         <div>
