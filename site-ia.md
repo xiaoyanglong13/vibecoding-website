@@ -276,96 +276,99 @@ and memory on 2026-08-19 — it covers checking output correctness, and is now
 the *only* place that content lives: the old Module 5 it originally
 overlapped with was dropped from the course later the same day (see the
 renumbering note at the top of this section).
-Sub-pages, in order:
+Sub-pages, in order (content revised again 2026-08-20 across all five
+non-case sub-pages, in a long series of small user-directed edits — the
+"renamed on 2026-08-19" provenance notes below still hold, but the structural
+descriptions now reflect the 2026-08-20 end state, not the original build):
 - **planning** — "Plan before you build" (renamed from "Plan before you
-  execute" on 2026-08-19, replacing a shorter original draft with a longer,
-  user-supplied page — see below). Opens with the Understand→Plan→Build→Test
-  loop, a worked feedback-page planning example, why planning matters (the
-  same Boris Cherny `.pull-quote` as before: "Start every complex task in plan
-  mode. Pour your energy into the plan so Claude can 1-shot the
-  implementation."), a build-immediately-vs-plan-first `.example` pair, three
-  `subhead-accent` subsections on turning on plan mode (Claude Code —
-  Shift+Tab or `claude --permission-mode plan`; OpenCode — Tab; Codex —
-  `/plan` or Shift+Tab, all verified via web search), a `.callout.warn` tip on
-  not memorizing shortcuts, a second loop diagram (goal → investigate →
-  propose → inspect/revise → implement → verify), more example prompts, and a
-  7-row "should you plan first?" exercise table. Sidebar label and all
-  cross-page references updated from "execute" to "build" wording across the
-  other five Module 4 pages and the module index.
+  execute" on 2026-08-19). "What is plan mode?" intro, then the Boris Cherny
+  `.pull-quote` ("Start every complex task in plan mode. Pour your energy
+  into the plan so Claude can 1-shot the implementation.") — note the
+  one-line intro sentence just above the pull-quote currently has two
+  uncorrected typos, "creater" and "Antropic", flagged to the user but not
+  yet fixed, don't assume they're intentional. "How to turn on plan mode" was
+  moved up to directly follow the pull-quote (used to sit lower on the page)
+  and now has three `subhead-accent` subsections — Claude Code (Shift+Tab or
+  `claude --permission-mode plan`, illustrated with a screenshot of the
+  status bar at `images/plan-mode-status-bar.png`), OpenCode (Tab), Codex
+  (`/plan` or Shift+Tab) — followed by a `.callout.warn` tip on not
+  memorizing shortcuts. Then "What happens during planning?" (decisions-
+  hidden checklist + agent-proposal `.example`), "Why planning matters"
+  (checkpoint framing + hidden-assumptions example), and a build-immediately-
+  vs-plan-first `.example` pair, closing with a `.callout.warn` tip on using a
+  browser chatbot to brainstorm and draft a brief before handing it to the
+  terminal agent. The old "should you plan first?" exercise table and the
+  "Example prompts" section were both removed entirely — the page now ends
+  right after the browser-tip callout. Still 20 min.
 - **information-environment** — "Set up your information environment"
-  (renamed from "Setting up..." on 2026-08-19, same user-supplied-page swap as
-  planning; title updated in the module index card and planning.html's
-  next-cta to match). Recaps the give-context/specify-task/inspect/revise/
-  verify loop as a plain `<pre><code>` block (matching Module 1's own
-  presentation of it, not a table), a market-research project-folder example,
-  two `subhead-accent`/`.prompt-window` examples (explain the files directly
-  vs. ask the agent to explore), a project-guide.md example for larger
-  projects (a generic guide-file pattern, deliberately not tied to the
-  CLAUDE.md-specific convention Module 4's memory page teaches later), a
-  drag-and-drop-for-one-off-files section, a 3-row "practical rule" table, and
-  an exercise. One sentence was reworded ("The goal is to make the right
-  information available at the right time — not to give the agent access to
-  everything") to avoid the "X is not this, it's that" echo construction
-  CLAUDE.md disallows.
+  (renamed from "Setting up..." on 2026-08-19). Recaps the give-context/
+  specify-task/inspect/revise/verify loop as a plain `<pre><code>` block, a
+  market-research project-folder example, two `subhead-accent`/
+  `.prompt-window` examples (explain the files directly vs. ask the agent to
+  explore — the latter now says "explore it in plan mode"), and "As projects
+  grow, create a guide to the project" (now also warns that irrelevant
+  context filling the window can make instructions harder for the model to
+  find) with a project-guide.md example. The old "For one-off tasks, attach
+  the relevant file directly" `<h2>` section was condensed into a
+  `.callout.warn` tip (per the user's standing preference for tip styling),
+  and the old "A practical rule" 3-row table was removed outright — the tip
+  now leads straight into the exercise, which was reworded to a generic
+  homework/extracurricular-project prompt (previously sales/customer/event/
+  marketing-specific) and drops its old closing comparison question.
 - **specifying-the-task** — "Specify the task" (renamed from "Specifying the
-  task" on 2026-08-19, same user-supplied-page swap as planning and
-  information-environment). Content fully replaced with the user's draft, which
-  does **not** carry over the earlier builder-vs-thinker framing or the forward
-  reference to the model-automation case's Step 6 — don't reintroduce either
-  without checking first; case-study-model-automation.html was already updated
-  separately and has no dependency on this page's old wording. New structure,
-  9 h2 sections: objective/requirements table → using plan mode to refine a
-  task (iterative back-and-forth example) → exploring before you can specify
-  (brainstorming example) → the task revealing missing data → "How specific
-  should you be?" (a too-prescriptive vs. states-the-outcome `.prompt-window`
-  pair) → "But don't be too vague" (the same "big hammer on a small nail"
-  example as before, kept) → a too-vague/useful/too-prescriptive 3-column table
-  with a blockquote rule ("Be specific about the outcome and constraints; be
-  flexible about the implementation") → breaking down a task around "where do
-  I want a human checkpoint?" (a 4-step dashboard example with an arrow-based
-  checkpoint diagram, plus a 4-row "use a checkpoint when" table) → a closing
-  8-step iterative-process diagram. Ends with a 5-part task-writing exercise.
-  Time bumped from 20 to 25 min given the larger structure (module total now
-  175 min). Its own next-cta was repointed from memory.html to the new
-  verify-before-you-trust.html as part of the insertion below.
-- **verify-before-you-trust** — new page inserted 2026-08-19 between
-  specifying-the-task and memory (module renumbered from 6 to 7 pages; every
-  sidebar, index card, and next-cta across all seven pages was updated to
-  match). Distinguishes inspecting output ("does it look right?") from
-  verifying it ("does it actually work?") with a 2-row table, a
-  misunderstood-business-rule `.example` (gross vs. net revenue), a 4-question
-  framework (look right? / work? / correct? / what could break it?) as a
-  `<pre><code>` loop with four plain `<h3>` subsections underneath (matching
-  the case-study pages' "Step N" convention, not `subhead-accent`), a worked
-  commission-calculator `.example` answering all four questions, a "known
-  cases" table, an edges-not-just-happy-path section (a boundary-value
-  `.example`: -9.9%/-10.0%/-10.1%), a 7-row verification-method-by-output-type
-  table, asking the agent to test its own work (with a caution that the same
-  agent that misunderstood a requirement may also write tests based on that
-  misunderstanding), investigate-before-patching, feeding lessons back into
-  memory (forward-references the next page), a closing
-  Build→Verify→Correct→Save→Build-again `<pre><code>` loop, and a blockquote
-  key idea ("You don't need to know how to write the code to evaluate whether
-  the system is doing the right thing"). ~25 min.
+  task" on 2026-08-19). Objective/requirements table → "Use planning as part
+  of task specification" (iterative plan-mode example, unchanged) → "How
+  specific should you be?" — fully reworked: the old too-prescriptive-code
+  vs. states-the-outcome pair was replaced with a too-much-detail vs.
+  focuses-on-the-outcome `.prompt-window` pair (a dashboard comparison
+  example), closing with a new blockquote rule ("Be specific about the
+  outcome and important constraints, not every detail you can think of") →
+  "But don't be too vague" (same "big hammer on a small nail" example, kept)
+  → the old "A useful level of specificity" 3-column table was removed; its
+  blockquote rule ("Be specific about the outcome and constraints; be
+  flexible about the implementation") now sits directly under the vague-
+  example instead → "How should you break down a complicated task?" (4-step
+  dashboard checkpoint diagram + the 4-row "use a checkpoint when" table,
+  now folded into the same section — the old "Human checkpoints are decision
+  points" `<h2>` and its closing paragraph were removed). The old
+  "Sometimes you need to explore before you can specify the task" and "The
+  task may reveal missing information" sections, and the closing "Putting it
+  together" iterative-process diagram, were all removed. Ends with the same
+  5-part task-writing exercise. Still 25 min.
+- **verify-before-you-trust** — inserted 2026-08-19 between specifying-the-
+  task and memory. Inspect-vs-verify 2-row table, why verification matters
+  (list + gross/net revenue `.example`), the 4-question framework loop with
+  four `<h3>` subsections, a worked commission-calculator `.example`, "Test
+  cases where you know the answer" (4-row table — "Sales dashboard" is now
+  "Inventory dashboard" — followed by a new `.callout.warn` tip on having the
+  agent self-generate test cases, or building them independently in a
+  separate conversation or with a different dataset), "Test the edges, not
+  just the happy path" (tightened prose, same -9.9%/-10.0%/-10.1% `.example`),
+  and the 7-row verification-method-by-output-type table. The old "Ask the
+  agent to help test its own work," "When something is wrong, investigate
+  before patching," and "Verification should feed back into memory" sections
+  were all removed and replaced by a single new "When manual testing is not
+  enough" section (a 4-row table: unit/integration/regression/load tests).
+  The old closing "A useful feedback loop" diagram and "The key idea"
+  blockquote were removed with no replacement. Exercise unchanged (4-question
+  verification plan). Still ~25 min.
 - **memory** — "Build project memory" (renamed from "Memory across sessions"
-  on 2026-08-19, same user-supplied-page swap as the first three pages;
-  cascaded to the sidebar/index/next-cta/skill-chip references on all other
-  Module 4 pages *and* to the matching "Memory across sessions" skill chip in
-  the two `/cases` originals — `cases/people/event-recap-generator.html` and
-  `cases/finance/model-automation.html` — since those chips were added with
-  that exact wording during this same build). Content fully replaced: don't
-  rely on the conversation to remember everything, a 4-row "what should memory
-  preserve" table (workflow/rules/corrections/progress), three numbered h2
-  sections mirroring the `/cases` page numbering convention (1. Prompt docs,
-  2. Rule docs, 3. Running logs), each with an `.example` "Ask the agent"
-  prompt plus a sample output file, letting the agent maintain the memory, a
-  4-row "no single correct system" filename table, a full section on
-  CLAUDE.md/AGENTS.md as the agent's "front door to the project" (fuller than
-  the old `.callout.warn` tip it replaces — no callout used here since the
-  content is a full explanation, not a short aside), a "memory helps but isn't
-  enforcement" section with a blockquote rule of thumb, and a closing
-  Project-files→CLAUDE.md flow diagram. Time bumped from 15 to 20 min given
-  the larger structure (module total now 175 min).
+  on 2026-08-19). Don't-rely-on-the-conversation intro (reworded, same
+  point), 4-row "what should memory preserve" table, the three numbered
+  `.example`-illustrated sections (1. Prompt docs, 2. Rule docs, 3. Running
+  logs), "Let the agent maintain the memory." The old "There is no single
+  correct memory system" `<h2>` section (with its 4-row filename table) was
+  condensed into a `.callout.warn` tip. "A special case: CLAUDE.md and
+  AGENTS.md" is unchanged (still a full section, not a callout). The old
+  closing "Memory helps, but it isn't enforcement" section and "Putting it
+  together" Project-files→CLAUDE.md diagram were replaced by a new "From
+  memory files to a reusable system" section (a 4-item list: skills, split
+  rule files, summarized logs, retrieval tooling), which itself closes with
+  the "Memory helps, but it isn't enforcement" tip — recovered verbatim and
+  moved to a `.callout.warn` at the very end of the section, per the user's
+  explicit request, after it had briefly been dropped in an intermediate
+  edit. The page's closing Exercise section was removed entirely — the page
+  now ends right after that final tip. Still 20 min.
 - **case-study-event-recap** — the full `/cases/people/event-recap-generator`
   case, transplanted verbatim into the course-page chrome (sidebar,
   module-header, eyebrow) exactly the way Module 1's own `case-study.html`
@@ -521,7 +524,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-19)
+## 9. Build status (as of 2026-08-20)
 
 | Section | Status |
 |---|---|
