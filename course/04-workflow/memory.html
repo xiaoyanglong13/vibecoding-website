@@ -248,20 +248,17 @@ memory.</code></pre>
       one giant instruction file can make the important guidance harder
       to find.</p>
 
-      <h2>Memory helps, but it isn't enforcement</h2>
-      <p>An instruction written in a memory file is still an
-      instruction to an LLM. The agent can misunderstand it, overlook
-      it, or fail to follow it perfectly.</p>
-      <p>For that reason, use memory files to make good behavior
-      <strong>more consistent</strong>, not to guarantee it. Important
-      requirements should still be verified, and truly critical
-      safeguards shouldn't depend only on a sentence in a Markdown
-      file.</p>
-      <p>A useful rule of thumb is:</p>
-      <blockquote>
-        <strong>Use memory to preserve context. Use verification and
-        safeguards for things that must be correct.</strong>
-      </blockquote>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Memory helps, but it isn't enforcement. An instruction written
+        in a memory file is still an instruction to an LLM &mdash; the
+        agent can misunderstand it, overlook it, or fail to follow it
+        perfectly. Use memory to make good behavior <strong>more
+        consistent</strong>, not to guarantee it; important
+        requirements should still be verified, and truly critical
+        safeguards shouldn't depend only on a sentence in a Markdown
+        file.
+      </div>
 
       <h2>Putting it together</h2>
       <p>Over time, your project can develop a small information
