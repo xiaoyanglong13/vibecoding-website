@@ -340,31 +340,6 @@ Add this to the project rules so the same mistake isn't
 repeated in future analyses.</code></pre>
       </div>
 
-      <h2>A useful feedback loop</h2>
-      <p>Verification isn't only the last step of a task. It improves
-      the next round of work.</p>
-      <pre><code>Build
-  &darr;
-Verify
-  &darr;
-Correct
-  &darr;
-Save the learning
-  &darr;
-Build again</code></pre>
-      <p>Over time, this loop makes both the project and the agent's
-      working context more reliable.</p>
-
-      <h2>The key idea</h2>
-      <blockquote>
-        <strong>You don't need to know how to write the code to
-        evaluate whether the system is doing the right thing.</strong>
-      </blockquote>
-      <p>Vibecoding changes the human's role. Instead of checking every
-      line of implementation, you increasingly define what correct
-      behavior means, create meaningful tests, inspect the results, and
-      decide whether the output is good enough to trust.</p>
-
       <h2>Exercise</h2>
       <p>Choose something you've already built with an agent. Create a
       short verification plan using the four questions from this page:</p>
