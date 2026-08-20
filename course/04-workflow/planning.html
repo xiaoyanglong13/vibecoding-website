@@ -66,6 +66,16 @@
       relevant files, and proposes an approach <strong>before it starts
       making changes</strong>.</p>
 
+      <p>As Boris Cherny, the creater and head of Claude Code at Antropic puts it when sharing tips about using Claude Code:</p>
+
+      <figure class="pull-quote">
+        <blockquote>&ldquo;Start every complex task in plan mode. Pour
+        your energy into the plan so Claude can 1-shot the
+        implementation.&rdquo;</blockquote>
+        <figcaption>&mdash; Boris Cherny (<a href="https://twitter.com/bcherny">@bcherny</a>),
+        creator and Head of Claude Code at Anthropic</figcaption>
+      </figure>
+
 
       <h2>How to turn on plan mode</h2>
       <p>The exact control depends on the coding agent you're using.
@@ -75,11 +85,7 @@
 
       <h3 class="subhead-accent">Claude Code</h3>
       <p>During a Claude Code session, press <code>Shift+Tab</code>
-      until the status bar shows <strong>plan mode on</strong>. Claude
-      can then read files and propose a plan, but it won't edit files
-      until you approve the plan. You can also start Claude Code
-      directly in plan mode from the terminal:</p>
-      <pre><code>claude --permission-mode plan</code></pre>
+      until the status bar shows <strong>plan mode on</strong>. 
 
       <figure style="margin: 1.5em 0; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden;">
         <img src="images/plan-mode-status-bar.png"
@@ -92,14 +98,11 @@
 
       <h3 class="subhead-accent">OpenCode</h3>
       <p>Press <code>Tab</code> to switch from Build mode to Plan mode.
-      OpenCode shows the current mode in the lower-right corner. When
-      the plan looks right, press <code>Tab</code> again to return to
-      Build mode and ask it to implement the plan.</p>
+      OpenCode shows the current mode in the lower-right corner. </p>
 
       <h3 class="subhead-accent">Codex</h3>
       <p>Use <code>/plan</code> or press <code>Shift+Tab</code> to enter
-      Plan mode. Codex can gather context, ask clarifying questions, and
-      develop a plan before implementation.</p>
+      Plan mode. </p>
 
       <div class="callout warn">
         <span class="callout-label">Tip</span>
@@ -160,37 +163,7 @@ down into individual comments.</code></pre>
       <p>Seeing the plan lets you catch the difference before any code
       gets written.</p>
 
-      <figure class="pull-quote">
-        <blockquote>&ldquo;Start every complex task in plan mode. Pour
-        your energy into the plan so Claude can 1-shot the
-        implementation.&rdquo;</blockquote>
-        <figcaption>&mdash; Boris Cherny (<a href="https://twitter.com/bcherny">@bcherny</a>),
-        creator and Head of Claude Code at Anthropic</figcaption>
-      </figure>
-      <p>In practice, few real projects get built in a single pass on
-      the first try. The value is that time spent improving the plan
-      reduces the costly back-and-forth that otherwise follows during
-      implementation.</p>
-
-      <h2>Planning is not just a technical blueprint</h2>
-      <p>You don't need to understand every technical detail in the
-      plan.</p>
-      <p>As the person directing the project, focus first on the parts
-      you <strong>can evaluate</strong>:</p>
-      <ul>
-        <li>Does the plan solve the right problem?</li>
-        <li>Is anything important missing?</li>
-        <li>Is the agent making assumptions I didn't intend?</li>
-        <li>Is it changing parts of the project that should stay
-        untouched?</li>
-        <li>Does the proposed user experience make sense?</li>
-      </ul>
-      <p>You can ask questions or revise the plan before implementation
-      begins.</p>
-      <pre><code>Keep the existing homepage unchanged. Also, managers should be
-able to filter feedback by product category and rating. Update
-the plan before you build anything.</code></pre>
-      <p>The agent can then revise its approach.</p>
+      
 
       <h2>Example: build immediately versus plan first</h2>
       <p>Imagine you've already built a simple sales dashboard and ask:</p>
@@ -223,48 +196,7 @@ text underneath each KPI.</code></pre>
         implement it.</p>
       </div>
 
-      <p>Planning doesn't guarantee perfect code &mdash; it gives you a
-      chance to align on the solution before investing effort in
-      building it.</p>
 
-
-      <h2>When should you use plan mode?</h2>
-      <p>You don't need a formal plan for every change.</p>
-      <p>For something tiny and obvious&mdash;</p>
-      <pre><code>Change the button text from "Submit" to "Send Request."</code></pre>
-      <p>&mdash;planning would probably add unnecessary overhead.</p>
-      <p>Planning becomes more useful when the task:</p>
-      <ul>
-        <li>affects several parts of a project,</li>
-        <li>has multiple possible solutions,</li>
-        <li>requires understanding existing code,</li>
-        <li>contains important business rules,</li>
-        <li>could accidentally break existing functionality, or</li>
-        <li>is still somewhat vague in your own mind.</li>
-      </ul>
-      <p>A useful rule of thumb is:</p>
-      <p><strong>The more expensive a wrong implementation would be, the
-      more valuable it is to plan first.</strong></p>
-
-      <h2>Planning is part of working with an agent</h2>
-      <p>Planning doesn't mean you need to design the entire solution
-      yourself.</p>
-      <p>One advantage of an AI agent is that it can inspect the project
-      and help determine <strong>how</strong> your goal should be
-      implemented.</p>
-      <p>Your role is increasingly to define the goal, provide important
-      context, evaluate the proposed approach, and verify the result.</p>
-
-      <pre><code>1. You define the goal.
-2. The agent investigates.
-3. The agent proposes a plan.
-4. You inspect or revise the plan.
-5. The agent implements.
-6. You test and verify.</code></pre>
-
-      <p>This is an important shift in vibecoding. Instead of directing
-      every line of code, you're increasingly directing
-      <strong>the work</strong>.</p>
 
       <h2>Example prompts</h2>
       <p>When you want an agent to plan before coding, you can say:</p>
@@ -282,6 +214,18 @@ anything yet.</code></pre>
       <p>Notice that the last example uses planning for more than
       implementation. The agent is also helping you think through
       <strong>what should be built</strong>.</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Use the browser when you are still figuring out what you want.
+        It's a low-friction place to brainstorm, compare options, refine
+        requirements, and work with documents or screenshots. You can
+        even ask the browser AI to summarize your discussion into a
+        clear brief or prompt, then hand that to the AI in the
+        terminal. Once the task is clearer, use the terminal agent to
+        inspect the actual project, plan the implementation, edit
+        files, and test the result.
+      </div>
 
       <h2>Exercise: should you plan first?</h2>
       <p>For each request below, decide whether you would ask the agent
