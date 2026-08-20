@@ -208,6 +208,15 @@ What could break it?</code></pre>
       there's little reason to trust it on cases where the answer is
       unknown.</p>
 
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        You don't have to come up with every known case yourself. You
+        can ask the agent to generate test cases with known answers, or
+        build them independently &mdash; in a separate conversation, or
+        using a different dataset &mdash; so the tests aren't shaped by
+        the same assumptions that produced the original work.
+      </div>
+
       <h2>Test the edges, not just the happy path</h2>
       <p>Agents often test the clean, normal case. You should also try
       inputs that are unusual or near important boundaries, such as
