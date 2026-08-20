@@ -390,16 +390,25 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   7/8 of 8; module total rose from ~175 to ~200 min). "Helpful tips for
   working with Claude Code" — a grab-bag of session habits, not tied to a
   single concept: protect the context window (kitchen-sink-session warning,
-  `.example` on using `/clear` after repeated corrections), show Claude what
-  you mean (three `subhead-accent` subsections — screenshots, referencing
-  existing patterns, pointing directly to the source with `@file`), describe
-  the symptom not the fix (broken-filter `.prompt-window` example), an
+  a `.callout.warn` tip on using `/clear` — or simply starting a new
+  session — after repeated corrections), show Claude what you mean (three
+  `subhead-accent` subsections — screenshots, referencing existing
+  patterns, pointing directly to the source with `@file`), describe the
+  symptom not the fix (broken-filter `.prompt-window` example), an
   Explore → Plan → Execute `<pre><code>` diagram for larger/uncertain tasks,
-  let Claude interview you, interrupt bad work early (`Esc` vs. `/clear`
-  subsections), and don't explore forever (scoped-exploration example).
-  Closes with a 10-row "quick reference" table (if-you-want-to / try-this)
-  instead of an exercise. No chips row (matches the other non-case-study
-  sub-pages). 15 min — the shortest page in the module.
+  let Claude interview you, interrupt bad work early (`Esc` vs.
+  `/clear`-or-new-session subsections), and don't explore forever
+  (scoped-exploration example). Closes with a 10-row "quick reference"
+  table (if-you-want-to / try-this) instead of an exercise. An attribution
+  line under the intro links Anthropic's Claude Code best-practices doc
+  ("extracted from," not "summarized from" — only a subset made it in).
+  Has its own scoped `<style>` block (unlike the rest of the module) giving
+  it a deliberately different "cheatsheet" look: h2/h3 headings recolored
+  to `--color-accent`, tighter heading spacing (no top border, smaller
+  margin), and a `.kbd` keyboard-key badge style applied to the `Esc`/
+  `/clear` mentions. A `.chips` jump-link mini index was added under the
+  intro, then removed the same day per the user's request — don't
+  re-add it. 15 min — the shortest page in the module.
 - **case-study-event-recap** — no longer a verbatim duplicate of
   `/cases/people/event-recap-generator` (that page is unchanged and still
   follows Module 1's pattern). The course-page version instead walks through
