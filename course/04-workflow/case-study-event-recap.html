@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Case study: event recap generator · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* Scoped: warm accent on the embedded CLAUDE.md preview so it reads as
+       the pivotal artifact of Attempt 3, not just another gray code block. */
+    .claude-md-preview {
+      border-color: var(--color-warn);
+      background: var(--color-warn-soft);
+    }
+    .claude-md-preview .prompt-window-header {
+      background: var(--color-warn);
+      color: #fff;
+      border-bottom-color: var(--color-warn);
+    }
+    .claude-md-preview pre {
+      background: var(--color-warn-soft);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -309,7 +325,7 @@ this project every time you open it.</code></pre>
         recap using both the source files and the project rules.
       </p>
 
-      <div class="prompt-window">
+      <div class="prompt-window claude-md-preview">
         <div class="prompt-window-header">cases/people/CLAUDE.md (excerpt)</div>
         <pre><code># Event Recap Generator
 
