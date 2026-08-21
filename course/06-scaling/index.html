@@ -46,31 +46,107 @@
       <div class="module-header">
         <span class="eyebrow">Module 6 · 90 minutes</span>
         <h1>Scaling up</h1>
-        <p class="lede">You've built things solo. Here's how to build
-        bigger — packaging your work, splitting tasks across multiple
-        agents, and automating the repeatable parts.</p>
+        <p class="lede">
+          So far, you have focused on getting an agent to help you build something
+          that works. The next step is turning that prototype into a solution that
+          is easier to maintain, reuse, share, and put into the hands of other people.
+        </p>
       </div>
 
+      <h2>From prototype to real solution</h2>
+
+      <p>
+        A project that works once on your laptop is a good start. But real business
+        solutions usually need more. You need to keep track of changes, preserve
+        workflows you will use again, connect AI directly to the product when it
+        adds value, and make the finished solution accessible to other people.
+      </p>
+
+      <pre><code>Build something that works
+  ↓
+Keep track of changes
+  ↓
+Make the workflow reusable
+  ↓
+Put AI inside the solution when useful
+  ↓
+Share and deploy it</code></pre>
+
+      <p>
+        This module introduces those next steps. You do not need to become a
+        professional software engineer. The goal is to understand the basic ideas
+        well enough to build solutions that are safer to change and easier for
+        other people to use.
+      </p>
+
       <h2>What you'll be able to do</h2>
-      <p>Package a workflow as a reusable skill, hand off sub-tasks to
-      specialized subagents, set up hooks that run automatically, and
-      coordinate small teams of agents working on different parts of the
-      same problem.</p>
+
+      <p>
+        By the end of this module, you should be able to use Git and GitHub to keep
+        a history of your work, turn a repeated workflow into something reusable,
+        understand how an app can call an AI model through an API, and deploy a
+        simple solution so someone else can actually use it.
+      </p>
 
       <h2>Planned sub-pages</h2>
-      <ul>
-        <li><strong>Skills.</strong> Turning a workflow you keep
-        repeating into a packaged "skill" you (or a colleague) can
-        invoke with one command.</li>
-        <li><strong>Subagents.</strong> When and how to spin up
-        specialized sub-agents — one researches, one drafts, one
-        critiques.</li>
-        <li><strong>Hooks.</strong> Automating the around-the-edges
-        steps: format every report your agent writes, run tests every
-        time it changes code.</li>
-        <li><strong>Agent teams.</strong> Coordinating multiple agents on
-        a larger problem. Where this works, where it doesn't (yet).</li>
-      </ul>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>1. Keep track of changes</h3>
+          <p>
+            Learn the basic idea behind version control and use Git and GitHub to
+            save checkpoints, inspect what changed, recover an earlier version, and
+            collaborate without passing around files named
+            <code>final_v7_really-final.xlsx</code>.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>2. Make your workflow reusable</h3>
+          <p>
+            Turn work you repeat into a reusable process. Package instructions,
+            rules, and steps so you&mdash;or someone else&mdash;can run the same workflow again
+            without rebuilding it from scratch. This is where we will introduce
+            ideas such as reusable skills.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>3. Put AI inside your solution</h3>
+          <p>
+            So far, you have mostly used AI to <em>build</em> things. Now learn how
+            AI can become part of the thing you build&mdash;for example, a website that
+            sends a user's input to an LLM and uses the response in the workflow.
+            We will introduce APIs, model calls, structured outputs, API keys,
+            cost, and basic safeguards.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>4. Share and deploy what you build</h3>
+          <p>
+            Move from &ldquo;it works on my computer&rdquo; to something another person can
+            actually use. Learn the basic ideas behind hosting, deployment,
+            environment variables, secrets, updates, and maintaining a solution
+            after it goes live.
+          </p>
+        </div>
+      </div>
+
+      <h2>What about subagents, hooks, and agent teams?</h2>
+
+      <p>
+        These are useful extensions, but they are not the starting point for
+        scaling up. Subagents can divide a larger task, hooks can automate actions
+        around an agent workflow, and agent teams can coordinate several agents at
+        once. We will treat these as optional or advanced patterns after the core
+        ideas above.
+      </p>
+
+      <blockquote>
+        <strong>Scaling up isn't about using more agents &mdash; it's about making
+        what you build easier to change, repeat, integrate, and share.</strong>
+      </blockquote>
 
       <a class="next-cta" href="/cases/">
         <div>
