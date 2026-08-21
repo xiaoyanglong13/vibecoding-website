@@ -438,22 +438,18 @@ Repeat last month's process using @workflow.md.</code></pre>
         You still review the final model and the explanation before using them.
       </p>
 
-      <h2>8. Extensions</h2>
-      <p>Once the basic update is reliable, ask the agent to:</p>
-      <ul>
-        <li>Add a variance-vs-budget column and flag any line item
-        more than 5% off plan.</li>
-        <li>Wrap the script as a scheduled task that runs on the
-        first business day, emails you the unmapped-accounts table,
-        and <em>pauses</em> until you reply with approvals before
-        producing the final model. The pause &mdash; not the schedule
-        &mdash; is the interesting part.</li>
-      </ul>
-      <p>The scheduled-task version maps to Module 6's section on hooks
-      and recurring jobs; the human-checkpoint design is the same
-      principle from this module's page on specifying the task.</p>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        Once the basic update is reliable, you could wrap the script as a scheduled task
+        that runs on the first business day, emails you the unmapped-accounts table, and
+        <em>pauses</em> until you reply with approvals before producing the final model.
+        The pause &mdash; not the schedule &mdash; is the interesting part, and it's the
+        same human-checkpoint principle from this module's page on specifying the task.
+        See <a href="/course/06-scaling/">Module 6, Scaling up</a> for how to set up hooks
+        and recurring jobs like this.
+      </div>
 
-      <h2>9. Skills used</h2>
+      <h2>8. Skills used</h2>
       <div class="chips">
         <a class="chip" href="/course/01-talking-to-ai/working-with-ai.html">Prompting · roles &amp; examples</a>
         <a class="chip" href="/course/04-workflow/planning.html">Plan before execute</a>
