@@ -43,7 +43,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   └── /course/02-chat-to-agent/agent-harness                                         ✅
 │   ├── /course/03-setup                                                                   ✅ all 7 sub-pages built
 │   │   ├── /course/03-setup/why-move-beyond-browser                                       ✅
-│   │   ├── /course/03-setup/install-claude-code   (tool overview)                        ✅
+│   │   ├── /course/03-setup/install-claude-code   (setup overview)                       ✅
 │   │   ├── /course/03-setup/install-macos                                                ✅
 │   │   ├── /course/03-setup/install-windows                                              ✅
 │   │   ├── /course/03-setup/login                                                        ✅
@@ -189,7 +189,7 @@ the initial build to add real screenshots, worked examples, and reference-level 
   work environment) — closing with this course's own choice (Claude Code inside VS Code, with the
   Claude desktop app as a fallback). No reference-guide equivalent. Every other sub-page's sidebar,
   eyebrow page count, and next-cta was renumbered from a 6-page to a 7-page sequence to fit it in.
-- **install-claude-code** — "Tool overview": an 8-row checklist (Xcode Command Line Tools,
+- **install-claude-code** — "Setup overview": an 8-row checklist (Xcode Command Line Tools,
   Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
   it's for / Mac (✓/✗) / Windows (✓/✗), plus prose on what each tool is and why it's needed,
   OS-agnostic. Ends with two cards forking to the OS-specific walkthroughs. Git and Miniconda in
