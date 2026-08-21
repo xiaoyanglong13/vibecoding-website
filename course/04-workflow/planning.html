@@ -51,7 +51,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 4 · Page 1 of 8 · 20 minutes</span>
+        <span class="eyebrow">Module 4 · Page 1 of 8 · 25 minutes</span>
         <h1>Plan before you build</h1>
         <p class="lede">Plan mode gives you a checkpoint: the
         agent investigates the project, proposes an approach, and lets
@@ -198,16 +198,67 @@ text underneath each KPI.</code></pre>
       </div>
 
 
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        Feel free to use the browser chatbot interface when you are still figuring out what you want.
-        It's a low-friction place to brainstorm, compare options, refine
-        requirements, and work with documents or screenshots. You can
-        even ask the browser AI to summarize your discussion into a
-        clear brief or prompt. Once the task is clearer, use the terminal agent to
-        inspect the actual project, plan the implementation, edit
-        files, and test the result.
+      <h2>Before planning, explore the problem</h2>
+
+      <p>
+        Planning works best when you already have a reasonably clear objective.
+        But many tasks start earlier than that: you may still be figuring out
+        what you want, comparing options, reviewing examples, or discovering
+        important requirements.
+      </p>
+
+      <p>
+        Think of this as an <strong>exploration phase</strong>. You can do it in
+        the browser, in Claude Code, or anywhere else you are comfortable working
+        with AI. The browser can be especially convenient because it is a
+        low-friction place to brainstorm, work with documents or screenshots,
+        and go back and forth on ideas.
+      </p>
+
+      <pre><code>Explore
+  ↓
+Clarify the objective, requirements, examples, and constraints
+  ↓
+Plan
+  ↓
+Decide how the project should be changed
+  ↓
+Implement
+  ↓
+Build and verify</code></pre>
+
+      <p>
+        One useful way to end the exploration phase is to ask the AI to summarize
+        what you have decided into a short brief: the final objective, important
+        requirements, constraints, examples, and any open questions. This gives you
+        a cleaner starting point for planning without carrying all of the exploratory
+        discussion forward.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example prompt</div>
+        <pre><code>Summarize our discussion into a short project brief.
+
+Include:
+- the final objective,
+- the important requirements,
+- key constraints,
+- examples or references we decided to follow,
+- any remaining open questions.
+
+Leave out abandoned ideas and unnecessary discussion.</code></pre>
       </div>
+
+      <p>
+        You can then bring that brief into the project and switch to Plan mode.
+        At that point, the agent can inspect the actual files, ask any remaining
+        questions, and turn the clarified requirements into a concrete implementation
+        plan.
+      </p>
+
+      <blockquote>
+        <strong>Explore to decide what you want. Plan to decide how to build it.</strong>
+      </blockquote>
 
       <h2>Exercise: should you plan first?</h2>
       <p>For each request below, decide whether you would ask the agent

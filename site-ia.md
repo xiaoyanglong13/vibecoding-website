@@ -260,7 +260,8 @@ fully built, now as a 7-page sequence as of 2026-08-21 — no open threads on it
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 8 sub-pages (~200 min total), replacing
+Fully written and built 2026-08-19, all 8 sub-pages (~205 min total as of the
+2026-08-21 planning.html expansion below), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
 were dropped from the module entirely rather than deferred elsewhere. Index page
@@ -306,9 +307,14 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   memorizing shortcuts. Then "What happens during planning?" (decisions-
   hidden checklist + agent-proposal `.example`), "Why planning matters"
   (checkpoint framing + hidden-assumptions example), and a build-immediately-
-  vs-plan-first `.example` pair, closing with a `.callout.warn` tip on using a
-  browser chatbot to brainstorm and draft a brief before handing it to the
-  terminal agent, then the "Exercise: should you plan first?" table (7 task
+  vs-plan-first `.example` pair. The closing `.callout.warn` tip on using a
+  browser chatbot to brainstorm was replaced 2026-08-21 with a full standalone
+  "Before planning, explore the problem" `<h2>` section — explore-phase framing,
+  a text-arrow Explore→Clarify→Plan→Decide→Implement→Build-and-verify pipeline,
+  a `.prompt-window` example for asking the AI to summarize the discussion into
+  a project brief, and a closing `<blockquote>` ("Explore to decide what you
+  want. Plan to decide how to build it.") — then the "Exercise: should you plan
+  first?" table (7 task
   requests, decide plan-first-or-not for each) — removed 2026-08-20, restored
   2026-08-20 per the user's request; don't remove it again. The "Example
   prompts" section, removed the same day, stays removed — only the exercise
