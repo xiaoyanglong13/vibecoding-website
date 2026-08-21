@@ -35,7 +35,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/01-talking-to-ai/what-is-an-llm                                       ✅
 │   │   ├── /course/01-talking-to-ai/working-with-ai                                      ✅
 │   │   ├── /course/01-talking-to-ai/modes-of-collaboration                               ✅
-│   │   └── /course/01-talking-to-ai/case-study                                           ✅
+│   │   └── /course/01-talking-to-ai/use-case                                             ✅
 │   │
 │   ├── /course/02-chat-to-agent                                                           ✅
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
@@ -56,8 +56,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/verify-before-you-trust                                   ✅
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/helpful-tips                                              ✅
-│   │   ├── /course/04-workflow/case-study-event-recap                                    ✅
-│   │   └── /course/04-workflow/case-study-model-automation                               ✅
+│   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
+│   │   └── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
 │   ├── /course/05-limits-and-ethics                                                       ✅ all 4 sub-pages built
 │   │   ├── /course/05-limits-and-ethics/protect-the-information                          ✅
 │   │   ├── /course/05-limits-and-ethics/control-agent-actions                            ✅
@@ -155,7 +155,7 @@ Every **use case page** follows a parallel structure so students can compare acr
 Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
 
 ### Module 1 — Talking to AI (`/course/01-talking-to-ai`)
-Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, case-study. Ends with a small artifact exercise (clean and summarize a messy CSV).
+Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, use-case (renamed from case-study 2026-08-21). Ends with a small artifact exercise (clean and summarize a messy CSV).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
 Fully written. Sub-pages: agent-mental-model, what-agents-unlock, agent-harness.
@@ -418,11 +418,11 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   de-emphasized framing). Still 20 min. The "Build project memory" wording was
   also swapped sitewide — every Module 4 sidebar, verify-before-you-trust's
   next-cta, the module index card (description also reworded off "Prompt
-  docs, rule docs..."), and the case-study chip links in
-  case-study-model-automation, cases/people/event-recap-generator, and
+  docs, rule docs..."), and the use-case chip links in
+  use-case-model-automation, cases/people/event-recap-generator, and
   cases/finance/model-automation.
 - **helpful-tips** — inserted 2026-08-20 between memory and
-  case-study-event-recap (pushing the two case studies from pages 6/7 to
+  use-case-event-recap (pushing the two case studies from pages 6/7 to
   7/8 of 8; module total rose from ~175 to ~200 min). "Helpful tips for
   working with Claude Code" — a grab-bag of session habits, not tied to a
   single concept: protect the context window (kitchen-sink-session warning,
@@ -445,7 +445,10 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   `/clear` mentions. A `.chips` jump-link mini index was added under the
   intro, then removed the same day per the user's request — don't
   re-add it. 15 min — the shortest page in the module.
-- **case-study-event-recap** — no longer a verbatim duplicate of
+- **use-case-event-recap** (renamed from case-study-event-recap 2026-08-21, along
+  with case-study-model-automation → use-case-model-automation and Module 1's
+  case-study → use-case; nav labels became "Use case I" / "Use case II" for
+  the two Module 4 pages) — no longer a verbatim duplicate of
   `/cases/people/event-recap-generator` (that page is unchanged and still
   follows Module 1's pattern). The course-page version instead walks through
   three attempts at the same task on the same three input files
@@ -464,8 +467,8 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   completeness, format, tone, content judgment, unsupported/missing info)
   sits between the task setup and the three attempts. Ends with in-module nav
   to page 7. Runs first, now ~30 min (was ~20).
-- **case-study-model-automation** — originally the same treatment as
-  case-study-event-recap: a verbatim transplant of
+- **use-case-model-automation** — originally the same treatment as
+  use-case-event-recap: a verbatim transplant of
   `/cases/finance/model-automation`'s seven-section content, the scoped
   `<style>` block for its CFO summary table copied into the page's own
   `<head>`, download/image paths rewritten to `/cases/finance/...`. (Two
@@ -473,7 +476,7 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   excerpted prompts, then a short stub linking out to the `/cases`
   original. The user rejected both in favor of matching Module 1's pattern
   exactly. Don't reintroduce either earlier version.) Restructured
-  2026-08-20 to match case-study-event-recap's "try it yourself" pattern —
+  2026-08-20 to match use-case-event-recap's "try it yourself" pattern —
   no longer a verbatim transplant; `/cases/finance/model-automation` is
   unchanged and still runs the old 7-section structure. Sections 1-4
   unchanged since that restructure: "The business task," "Data available,"
@@ -650,7 +653,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `case-study-event-recap`, `case-study-model-automation`) |
+| Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`) |
 | Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
