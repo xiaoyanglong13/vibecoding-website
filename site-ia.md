@@ -597,9 +597,12 @@ structured outputs, API keys, cost, safeguards), and sharing/deploying
 (hosting, environment variables, secrets, updates). Only subagents and agent
 teams are now framed as optional/advanced patterns in a closing "What about
 subagents and agent teams?" section (hooks moved out of that framing in v2,
-since it's now a planned sub-page topic). Closes with a plain `<blockquote>`
-pull statement (reworded from the drafts' "is not just about X. It is about
-Y" to an em-dash construction to satisfy CLAUDE.md).
+since it's now a planned sub-page topic). The closing `<blockquote>` pull
+statement from both drafts (reworded from "is not just about X. It is about
+Y" to an em-dash construction to satisfy CLAUDE.md) was removed by the user
+in a follow-up edit the same day — don't re-add it. The page now ends
+directly with the "What about subagents and agent teams?" section, then the
+next-cta to Module 7.
 
 ### Module 7 — Business use cases (`/cases`)
 No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
