@@ -296,7 +296,7 @@ and overall formatting. Then fix those inconsistencies.</code></pre>
   detailed self-reflection.
 </p>
 
-      <h3>Attempt 3 · Project folder + Project rules + Plan mode + iteration</h3>
+      <h3>Attempt 3 · Project folder + Project rules + iteration</h3>
 
       <p>
         The third attempt used the same project-folder setup, but before generating the recap, Claude was asked to
@@ -351,10 +351,6 @@ style of the club's past recaps. It runs once per event/semester.
   structure, tone, and formatting are what every new recap must match.
 - `outputs/` — finished recaps land here.
 
-**Technical note:** `.docx` files can't be read directly with the Read tool. Convert to text first
-with `textutil -convert txt -output &lt;scratch-path&gt;.txt &lt;source&gt;.docx` (macOS), writing the output to
-a scratch location — never overwrite or modify the original source `.docx`.
-
 ## Style source of truth
 
 Match the latest reference recap's structure exactly:
@@ -407,6 +403,8 @@ or alumni credits.
         using both the source files and the project rules. Here is <a href="/cases/people/event-recap-attempt-3-final.docx" download>the output</a>. It was substantially better. It maintained a more professional tone, matched the reference more closely,
         and explicitly highlighted missing information instead of quietly guessing or filling the gap.
       </p>
+
+      <p>By adding an intermediate step—creating a rule guide—you encourage the agent to think beyond the immediate task and identify the underlying rules, preferences, and assumptions that should govern the output.</p>
 
       <h2>6. Compare the three approaches</h2>
 
