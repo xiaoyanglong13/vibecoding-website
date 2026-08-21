@@ -308,12 +308,14 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   hidden checklist + agent-proposal `.example`), "Why planning matters"
   (checkpoint framing + hidden-assumptions example), and a build-immediately-
   vs-plan-first `.example` pair. The closing `.callout.warn` tip on using a
-  browser chatbot to brainstorm was replaced 2026-08-21 with a full standalone
-  "Before planning, explore the problem" `<h2>` section — explore-phase framing,
-  a text-arrow Explore→Clarify→Plan→Decide→Implement→Build-and-verify pipeline,
-  a `.prompt-window` example for asking the AI to summarize the discussion into
-  a project brief, and a closing `<blockquote>` ("Explore to decide what you
-  want. Plan to decide how to build it.") — then the "Exercise: should you plan
+  browser chatbot to brainstorm briefly grew (2026-08-21) into a full
+  standalone "Before planning, explore the problem" `<h2>` section, then that
+  same day was moved wholesale to specifying-the-task.html (see that page's
+  summary above — it's a natural fit there and used to cover similar ground
+  before an earlier revision removed it). In its place, planning.html now has
+  a short `.callout.warn` tip flagging that an earlier exploration stage may
+  come before planning, pointing to specifying-the-task.html (page 3) for more
+  — then the "Exercise: should you plan
   first?" table (7 task
   requests, decide plan-first-or-not for each) — removed 2026-08-20, restored
   2026-08-20 per the user's request; don't remove it again. The "Example
@@ -336,7 +338,14 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   marketing-specific) and drops its old closing comparison question.
 - **specifying-the-task** — "Specify the task" (renamed from "Specifying the
   task" on 2026-08-19). Objective/requirements table → "Use planning as part
-  of task specification" (iterative plan-mode example, unchanged) → "How
+  of task specification" (iterative plan-mode example, unchanged) → "Before
+  you plan, you may need to explore" — moved here from planning.html on
+  2026-08-21 (see that page's summary below for its short history there):
+  explore-phase framing, a `.prompt-window` example for asking the AI to
+  summarize a discussion into a project brief, and a closing `<blockquote>`
+  ("Explore to decide what you want. Plan to decide how to build it.") — a
+  natural fit here since this page already used to cover exploring before
+  specifying (see the removed sections noted below) → "How
   specific should you be?" — fully reworked: the old too-prescriptive-code
   vs. states-the-outcome pair was replaced with a too-much-detail vs.
   focuses-on-the-outcome `.prompt-window` pair (a dashboard comparison
@@ -354,7 +363,8 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   task may reveal missing information" sections, and the closing "Putting it
   together" iterative-process diagram, were all removed. The closing
   "Exercise" (5-part churn-risk task-writing prompt) was removed 2026-08-20
-  — the page now ends right after the checkpoint-use table. Still 25 min.
+  — the page now ends right after the checkpoint-use table. Now 30 min (was
+  25) after the 2026-08-21 explore-section addition.
 - **verify-before-you-trust** — inserted 2026-08-19 between specifying-the-
   task and memory. Inspect-vs-verify 2-row table, why verification matters
   (list + gross/net revenue `.example`), the 4-question framework loop with

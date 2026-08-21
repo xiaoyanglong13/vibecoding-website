@@ -51,7 +51,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 4 · Page 3 of 8 · 25 minutes</span>
+        <span class="eyebrow">Module 4 · Page 3 of 8 · 30 minutes</span>
         <h1>Specify the task</h1>
         <p class="lede">Once the agent has the right context, the next
         step is to tell it what you want done. A good task description
@@ -119,6 +119,53 @@ Revise the plan, but don't implement yet.</code></pre>
       task may not capture everything that matters. You may realize
       that the goal needs to change, that a business rule is missing,
       or that the agent needs additional context.</p>
+
+      <h2>Before you plan, you may need to explore</h2>
+
+      <p>
+        So far, we have framed the workflow as <strong>plan before you implement</strong>.
+        But in practice, there is often an even earlier step: <strong>exploration</strong>.
+        Before you can make a good plan, you may still be figuring out what you want,
+        comparing options, reviewing examples, or discovering requirements you had not
+        thought about yet.
+      </p>
+
+      <p>
+        You can explore anywhere: in the browser, in Claude Code, or even by trying
+        several different chatbots to get different perspectives. The browser can be
+        especially convenient because it is a low-friction place to brainstorm, work
+        with documents or screenshots, and go back and forth on ideas.
+      </p>
+
+      <p>
+        One useful way to wrap up the exploration phase is to ask the AI to summarize
+        what you have decided into a short brief.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Example prompt</div>
+        <pre><code>Summarize our discussion into a short project brief.
+
+Include:
+- the final objective,
+- the important requirements,
+- key constraints,
+- examples or references we decided to follow,
+- any remaining open questions.
+
+Leave out abandoned ideas and unnecessary discussion.</code></pre>
+      </div>
+
+      <p>
+        You can then bring that brief into the project and switch to Plan mode.
+        At that point, the agent can inspect the actual files, ask any remaining
+        questions, and turn the clarified requirements into a concrete implementation
+        plan.
+      </p>
+
+      <blockquote>
+        <strong>Explore to decide what you want. Plan to decide how to build it.</strong>
+      </blockquote>
 
       <h2>How specific should you be?</h2>
       <p>More detail is not always better. A good task description gives
