@@ -41,7 +41,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
 │   │   ├── /course/02-chat-to-agent/what-agents-unlock                                    ✅
 │   │   └── /course/02-chat-to-agent/agent-harness                                         ✅
-│   ├── /course/03-setup                                                                   ✅ all 6 sub-pages built
+│   ├── /course/03-setup                                                                   ✅ all 7 sub-pages built
+│   │   ├── /course/03-setup/why-move-beyond-browser                                       ✅
 │   │   ├── /course/03-setup/install-claude-code   (tool overview)                        ✅
 │   │   ├── /course/03-setup/install-macos                                                ✅
 │   │   ├── /course/03-setup/install-windows                                              ✅
@@ -174,12 +175,20 @@ folder/file tree, and a tool list); it no longer has its own closing exercise,
 since it was redundant with what-agents-unlock's.
 
 ### Module 3 — Setting up your workspace (`/course/03-setup`)
-Index written, ~90 minutes total. Restructured to mirror the page-by-page format of an external
+Index written, ~100 minutes total. Restructured to mirror the page-by-page format of an external
 reference guide (a Chinese-language textbook, `ai.lingnan.top` chapter 3 — Mac and Windows install
 guides split into separate pages rather than combined), with the main walkthrough adapted to Claude
 Code only; the reference's own OpenCode content was held back for a closing appendix instead
-(see appendix-opencode below). All six sub-pages are now built, most revised multiple times since
+(see appendix-opencode below). All seven sub-pages are now built, most revised multiple times since
 the initial build to add real screenshots, worked examples, and reference-level step-by-step detail:
+- **why-move-beyond-browser** — new page 1 (10 min), added 2026-08-21 ahead of the rest of the
+  module. Motivates why this course moves from browser-based chat to a local agent workspace: what
+  an agent needs a workspace for, graphical apps vs. terminal-based agents as the two common local
+  options, a cross-ecosystem table (Anthropic/OpenAI/Google/OpenCode graphical vs. terminal
+  products), and a table of terminal advantages (portability, transparency, flexibility, a clearer
+  work environment) — closing with this course's own choice (Claude Code inside VS Code, with the
+  Claude desktop app as a fallback). No reference-guide equivalent. Every other sub-page's sidebar,
+  eyebrow page count, and next-cta was renumbered from a 6-page to a 7-page sequence to fit it in.
 - **install-claude-code** — "Tool overview": an 8-row checklist (Xcode Command Line Tools,
   Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
   it's for / Mac (✓/✗) / Windows (✓/✗), plus prose on what each tool is and why it's needed,
@@ -234,9 +243,10 @@ the initial build to add real screenshots, worked examples, and reference-level 
 
 The planned **first-run** sub-page ("Your first agent run") was cut from the module rather than
 built — Module 3's smoke test already lives at the end of using-vscode, and a separate page for it
-was judged redundant. Module 3 is now a complete 6-page sequence (appendix-opencode renumbered from
-7 to 6 to fill the gap); every sidebar, index card, and next-cta across the module was updated to
-match.
+was judged redundant. Module 3 was a complete 6-page sequence (appendix-opencode renumbered from
+7 to 6 to fill the gap) until why-move-beyond-browser was added as a new page 1 on 2026-08-21,
+making it a 7-page sequence; every sidebar, index card, and next-cta across the module was updated
+to match both times.
 
 Both `install-claude-code.html` and `assets/styles.css` gained a `.callout.tip` variant (light blue,
 distinct from the cream code blocks) — reusable sitewide for future "did you check X" reminders,
@@ -246,7 +256,7 @@ current pattern.
 
 **Picking this up next:** install-windows still has no real Windows screenshots (the user said skip
 for now — a prioritized shot list exists in this session's history if revisited). Module 3 itself is
-now fully built and considered done as of 2026-08-18 — no open threads on it. Next build priorities
+fully built, now as a 7-page sequence as of 2026-08-21 — no open threads on it. Next build priorities
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
@@ -606,7 +616,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-20)
+## 9. Build status (as of 2026-08-21)
 
 | Section | Status |
 |---|---|
@@ -615,7 +625,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Course index `/course` | ✅ Complete |
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
-| Module 3 `/course/03-setup` | ✅ All 6 sub-pages built (`install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
+| Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `case-study-event-recap`, `case-study-model-automation`) |
 | Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
