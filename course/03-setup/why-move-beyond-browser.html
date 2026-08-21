@@ -53,7 +53,7 @@
         <span class="eyebrow">Module 3 · Page 1 of 7 · 10 minutes</span>
         <h1>Why move beyond the browser?</h1>
         <p class="lede">
-          A browser is a great place to talk with AI. But to let an agent work on a real project,
+          As we have seen do far, a browser is a great place to talk with AI. But to let an agent work on a real project,
           it often needs a workspace where it can inspect files, use tools, create outputs, and test its work.
         </p>
       </div>
@@ -77,49 +77,22 @@
         tools, and permissions it can use.
       </p>
 
-      <blockquote>
-        <strong>A browser gives you a conversation. A local agent gives the AI a place to work.</strong>
-      </blockquote>
-
       <h2>Two common ways to work locally</h2>
 
       <p>
         There are two common ways to put an AI agent closer to your files and tools:
-        use a <strong>graphical app</strong>, or use a <strong>terminal-based agent</strong>.
-      </p>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-eyebrow">Graphical interface</div>
-          <h3>Desktop or IDE-style app</h3>
-          <p>
-            You work through buttons, menus, file pickers, previews, and permission dialogs.
-            This usually feels more familiar when you are getting started.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-eyebrow">Terminal interface</div>
-          <h3>Agent in the terminal</h3>
-          <p>
-            You start the agent inside a project folder and interact through text.
-            More of what the agent is doing is visible directly in the workspace.
-          </p>
-        </div>
-      </div>
-
-      <h2>Similar agent capabilities, different interfaces</h2>
+        use a <strong>desktop app</strong>, or use a <strong>terminal-based agent</strong>.
+      </p
 
       <p>
-        Major AI ecosystems now offer several ways to work with agents. The exact products
-        will continue to change, but the basic pattern is useful:
+        Major AI ecosystems now offer several ways to work with agents:
       </p>
 
       <table>
         <thead>
           <tr>
             <th>Ecosystem</th>
-            <th>Graphical experience</th>
+            <th>App</th>
             <th>Terminal / local agent</th>
           </tr>
         </thead>
@@ -131,12 +104,12 @@
           </tr>
           <tr>
             <td><strong>OpenAI</strong></td>
-            <td>ChatGPT and Codex app experiences</td>
+            <td>ChatGPT and Codex app</td>
             <td>Codex CLI</td>
           </tr>
           <tr>
             <td><strong>Google</strong></td>
-            <td>Antigravity graphical experiences</td>
+            <td>Antigravity IDE</td>
             <td>Antigravity CLI</td>
           </tr>
           <tr>
@@ -162,7 +135,7 @@
       <h2>Why learn the terminal?</h2>
 
       <p>
-        Graphical apps are often easier to start with. They give you familiar buttons, menus,
+        Desktop apps are often easier to start with. They give you familiar buttons, menus,
         previews, and permission prompts. But terminal-based agents offer several important
         advantages once you know how to use them.
       </p>
@@ -177,7 +150,7 @@
         <tbody>
           <tr>
             <td><strong>More portability</strong></td>
-            <td>Once you are comfortable in the terminal, the skill transfers across tools such as Claude Code, Codex CLI, OpenCode, and other model providers. You are less tied to one company's interface or subscription.</td>
+            <td>Only a handful of major AI companies offer polished desktop agent apps. The terminal gives you access to a much broader ecosystem of models and providers. Once you learn the workflow, you can switch among Claude Code, Codex CLI, OpenCode, local models, and other providers without relearning a new app each time. You are less dependent on one company’s interface, subscription, or product decisions.</td>
           </tr>
           <tr>
             <td><strong>More transparency</strong></td>
@@ -185,32 +158,24 @@
           </tr>
           <tr>
             <td><strong>More flexibility</strong></td>
-            <td>Terminal tools usually expose more settings. Depending on the tool, you may be able to switch models, change providers, add tools, or change how the agent works without rebuilding your workflow.</td>
+            <td>Terminal agents expose more of the configuration directly: model choice, providers, tools, MCP servers, permissions, and other settings can often be changed without rebuilding your workflow.</td>
           </tr>
           <tr>
             <td><strong>A clearer work environment</strong></td>
-            <td>You can more easily inspect exactly which folder the agent is working in, what files it can access, what tools are available, and which instruction, memory, and configuration files are active. Graphical apps often deliberately hide or abstract more of this setup behind the interface&mdash;for example, permissions, connected folders, default tools, background state, or where execution is happening&mdash;making the system easier to use but less transparent.</td>
+            <td>You can more easily inspect exactly which folder the agent is working in, what files it can access, what tools are available, and which instruction, memory, and configuration files are active. Graphical apps often deliberately hide or abstract more of this setup behind the interface, making the system easier to use but less transparent.</td>
           </tr>
         </tbody>
       </table>
 
-      <p>
-        Graphical apps often do more work behind the scenes. They may provide default tools,
-        maintain extra state, or load instructions in ways that are convenient but less visible.
-        In the terminal, more of that setup is exposed, which makes it easier to understand and
-        control the agent's environment.
-      </p>
-
-      <blockquote>
-        <strong>The terminal is a transferable skill. App interfaces change, pricing changes,
-        and new models appear. A terminal-based workflow is easier to carry across tools.</strong>
-      </blockquote>
-
-      <p>
-        This does not mean terminal tools are always better. Graphical apps can be faster and
-        more comfortable for many tasks. The reason we teach the terminal is that it gives you
-        more visibility into how the agent works and a skill that transfers across systems.
-      </p>
+<div class="callout warn">
+  <span class="callout-label">Tip</span>
+  This does not mean terminal tools are always better. Depending on the task,
+  a desktop app &mdash; or even the browser &mdash; may be faster and more convenient.
+  If you are brainstorming, reviewing a document, working with a small number of files,
+  or doing a one-off task, the extra setup and visibility of the terminal may not add much.
+  The terminal becomes more valuable when the work is more complex, repeated, or tool-heavy,
+  and when you want more control over the agent's environment.
+</div>
 
       <h2>Setup for this course</h2>
 
