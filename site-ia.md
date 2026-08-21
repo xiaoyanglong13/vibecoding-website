@@ -392,23 +392,35 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   replacement. The closing "Exercise" (4-question verification plan) was
   removed 2026-08-20 — the page now ends right after that tip. Still
   ~25 min.
-- **memory** — "Build project memory" (renamed from "Memory across sessions"
-  on 2026-08-19). Don't-rely-on-the-conversation intro (reworded, same
-  point), 4-row "what should memory preserve" table, the three numbered
-  `.example`-illustrated sections (1. Prompt docs, 2. Rule docs, 3. Running
-  logs), "Let the agent maintain the memory." The old "There is no single
-  correct memory system" `<h2>` section (with its 4-row filename table) was
-  condensed into a `.callout.warn` tip. "A special case: CLAUDE.md and
-  AGENTS.md" is unchanged (still a full section, not a callout). The old
-  closing "Memory helps, but it isn't enforcement" section and "Putting it
-  together" Project-files→CLAUDE.md diagram were replaced by a new "From
-  memory files to a reusable system" section (a 4-item list: skills, split
-  rule files, summarized logs, retrieval tooling), which itself closes with
-  the "Memory helps, but it isn't enforcement" tip — recovered verbatim and
-  moved to a `.callout.warn` at the very end of the section, per the user's
-  explicit request, after it had briefly been dropped in an intermediate
-  edit. The page's closing Exercise section was removed entirely — the page
-  now ends right after that final tip. Still 20 min.
+- **memory** — "Carry context across sessions" (renamed from "Build project
+  memory" on 2026-08-21, itself renamed from "Memory across sessions" on
+  2026-08-19; filename stays `memory.html` and page-tree position across all
+  three names). The 2026-08-21 rename came with a full reframe, de-emphasizing
+  "memory" as the organizing word in favor of plain "carry context forward":
+  "Don't rely on the conversation" intro (trimmed — dropped the old paragraph
+  that introduced "memory" as this course's umbrella term for persistent
+  notes) → 4-row "what should you carry forward" table (renamed from "what
+  should memory preserve") → three numbered sections, each dropped its old
+  "Prompt docs:" / "Rule docs:" / "Running logs:" label prefix ("1. Save
+  repeatable workflows", "2. Preserve rules and corrections", "3. Keep a
+  running log") → "Let the agent keep these files up to date" (renamed from
+  "...maintain the memory") → its `.callout.warn` "no single correct way to
+  organize this information" tip, unchanged → "A special case: CLAUDE.md and
+  AGENTS.md" renamed "Project instruction files" → new "Some tools also
+  provide memory" section (Claude Code's auto-memory system explicitly framed
+  as separate from and less reliable than the deliberate project files above,
+  closing with a `.callout.warn` "Claude Code tip" pointing to `/memory` to
+  inspect active instructions/memory) → "From saved context to a reusable
+  system" (renamed from "From memory files..."; same 4-item list: skills,
+  split rule files, summarized logs, retrieval tooling), closing with the same
+  "Persistent context helps, but it is not enforcement" `.callout.warn` tip
+  (reworded from "Memory helps, but it isn't enforcement" to match the
+  de-emphasized framing). Still 20 min. The "Build project memory" wording was
+  also swapped sitewide — every Module 4 sidebar, verify-before-you-trust's
+  next-cta, the module index card (description also reworded off "Prompt
+  docs, rule docs..."), and the case-study chip links in
+  case-study-model-automation, cases/people/event-recap-generator, and
+  cases/finance/model-automation.
 - **helpful-tips** — inserted 2026-08-20 between memory and
   case-study-event-recap (pushing the two case studies from pages 6/7 to
   7/8 of 8; module total rose from ~175 to ~200 min). "Helpful tips for

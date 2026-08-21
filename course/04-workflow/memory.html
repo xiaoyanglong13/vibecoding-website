@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Build project memory · Module 4 · Vibecoding for Business School Students</title>
+  <title>Carry context across sessions · Module 4 · Vibecoding for Business School Students</title>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
         <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
         <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
         <li><a href="/course/04-workflow/verify-before-you-trust.html"><span class="module-num">4.</span>Verify before you trust</a></li>
-        <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Build project memory</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Carry context across sessions</a></li>
         <li><a href="/course/04-workflow/helpful-tips.html"><span class="module-num">6.</span>Helpful tips</a></li>
         <li><a href="/course/04-workflow/case-study-event-recap.html"><span class="module-num">7.</span>Case study: event recap</a></li>
         <li><a href="/course/04-workflow/case-study-model-automation.html"><span class="module-num">8.</span>Case study: model automation</a></li>
@@ -52,37 +52,32 @@
     <article>
       <div class="module-header">
         <span class="eyebrow">Module 4 · Page 5 of 8 · 20 minutes</span>
-        <h1>Build project memory</h1>
-        <p class="lede">A productive agent relationship shouldn't start
-        from zero every time. As you work, capture useful workflows,
-        rules, corrections, and progress in simple files so the agent
-        can pick up the right context in future sessions.</p>
+        <h1>Carry context across sessions</h1>
+        <p class="lede">A productive agent workflow should not start from zero every time.
+        As you work, preserve useful workflows, rules, corrections, and progress so the
+        next session can quickly recover the context it needs.</p>
       </div>
 
-      <h2>Don't rely on the conversation to remember everything</h2>
-      <p>During a long session, you and the agent may develop a great
-      deal of shared context. You clarify what you want, correct
-      mistakes, explain company rules, make decisions, and discover
-      better ways to complete the work.</p>
-      <p>But when you start a new session, the agent doesn't automatically
-      remember what happened in previous conversations. Sure, you can resume an earlier 
-      Claude Code conversation using claude --resume or /resume. However, long sessions can accumulate 
-      stale or unnecessary context, which degrades agent performance. If something
-      matters for future work &mdash; such as a rule, correction,
-      workflow, or decision &mdash; you should <strong>write it down in
-      the project</strong> so the agent can access it next time.</p>
-      <p>In this course, we'll use the word <strong>memory</strong>
-      broadly for these persistent notes and instructions. They're often
-      just Markdown (<code>.md</code>) files that live alongside the
-      rest of your project.</p>
+      <h2>Don't rely on the conversation</h2>
 
-      <h2>What should memory preserve?</h2>
-      <p>Different kinds of information are worth remembering for
-      different reasons.</p>
+      <p>During a session, you and the agent may build up a great deal of useful context.
+      You clarify what you want, correct mistakes, explain company rules, make decisions,
+      and discover better ways to complete the work.</p>
+
+      <p>But a new session does not automatically carry forward the entire conversation.
+      You can resume an earlier Claude Code session, but long conversations can accumulate
+      stale assumptions, failed approaches, and unnecessary context. If something matters
+      for future work, it is often better to <strong>capture it explicitly</strong> so the
+      next session can start with the right information.</p>
+
+      <h2>What should you carry forward?</h2>
+
+      <p>Different kinds of information are useful for different reasons.</p>
+
       <table>
         <thead>
           <tr>
-            <th>What you want to preserve</th>
+            <th>What to preserve</th>
             <th>Why it matters</th>
             <th>Example</th>
           </tr>
@@ -90,50 +85,45 @@
         <tbody>
           <tr>
             <td><strong>A repeatable workflow</strong></td>
-            <td>You want to perform the same task again without
-            redesigning the process.</td>
-            <td>Run the same monthly sales analysis when next month's
-            data arrives.</td>
+            <td>You want to perform the same task again without redesigning the process.</td>
+            <td>Run the same monthly sales analysis when next month's data arrives.</td>
           </tr>
           <tr>
             <td><strong>Rules and decisions</strong></td>
-            <td>Important requirements often emerge gradually as you
-            work.</td>
-            <td>Exclude test customers and use fiscal quarters rather
-            than calendar quarters.</td>
+            <td>Important requirements often emerge gradually as you work.</td>
+            <td>Exclude test customers and use fiscal quarters rather than calendar quarters.</td>
           </tr>
           <tr>
             <td><strong>Corrections</strong></td>
-            <td>You don't want the agent to repeat the same mistake
-            next time.</td>
-            <td>&ldquo;Revenue&rdquo; in this project means net revenue
-            after returns, not gross sales.</td>
+            <td>You do not want the agent to repeat the same mistake next time.</td>
+            <td>&ldquo;Revenue&rdquo; means net revenue after returns, not gross sales.</td>
           </tr>
           <tr>
             <td><strong>Current progress</strong></td>
-            <td>You want to stop work and resume later without
-            reconstructing what happened.</td>
-            <td>The data is cleaned and the next step is to investigate
-            regional differences.</td>
+            <td>You want to stop and resume later without reconstructing what happened.</td>
+            <td>The data is cleaned; next, investigate regional differences.</td>
           </tr>
         </tbody>
       </table>
-      <p>These notes turn useful context that emerged during one
-      session into context that can be reused in the next.</p>
 
-      <h2>1. Prompt docs: save a repeatable workflow</h2>
-      <p>Suppose you spent time with the agent developing a process for
-      analyzing a monthly sales file. The first time may require several
-      rounds of prompting, planning, and correction. If the same task
-      will happen again, save the finished workflow instead of
-      repeating that process every month.</p>
+      <p>The goal is simple: turn useful context from one session into information
+      the next session can quickly use.</p>
+
+      <h2>1. Save repeatable workflows</h2>
+
+      <p>Suppose you spent time developing a process for analyzing a monthly sales file.
+      The first run may require several rounds of prompting, planning, and correction.
+      If the same task will happen again, save the finished workflow instead of
+      reconstructing it every month.</p>
+
       <div class="example">
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize the workflow we used for this analysis so I can
-repeat the same process when next month's data comes in.
-</code></pre>
+repeat the same process when next month's data comes in.</code></pre>
       </div>
+
       <p>The resulting file might look something like this:</p>
+
       <pre><code># Monthly sales analysis
 
 1. Load the newest file from /data/monthly-sales/
@@ -143,23 +133,26 @@ repeat the same process when next month's data comes in.
 5. Flag changes greater than 10%
 6. Create the standard summary table and charts
 7. Check totals against the source file before finishing</code></pre>
-      <p>Next month, instead of reconstructing the process, you can
-      point the agent to this file and ask it to run the same workflow
-      on the new data.</p>
 
-      <h2>2. Rule docs: preserve what you learned</h2>
-      <p>Some of the most important context doesn't exist at the
-      beginning of a project. It emerges through back-and-forth work.</p>
-      <p>You may explain a business rule, reject one interpretation of
-      the data, or correct the agent's assumptions. If those lessons
-      will matter again, summarize them into a rule document.</p>
+      <p>Next month, you can point the agent to this file and ask it to follow
+      the same process on the new data.</p>
+
+      <h2>2. Preserve rules and corrections</h2>
+
+      <p>Some of the most important context does not exist at the beginning of a project.
+      It emerges through back-and-forth work. You may explain a business rule, reject one
+      interpretation of the data, or correct an assumption.</p>
+
+      <p>If those lessons will matter again, write them down.</p>
+
       <div class="example">
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize the important rules and corrections that emerged
-during this session so they can be applied next time.
-</code></pre>
+during this session so they can be applied next time.</code></pre>
       </div>
+
       <p>For example:</p>
+
       <pre><code># Analysis rules
 
 - Use net revenue, not gross sales, when reporting revenue.
@@ -168,20 +161,23 @@ during this session so they can be applied next time.
 - When a store has fewer than 30 survey responses, do not
   report its satisfaction score as a standalone comparison.
 - Never overwrite files in /data/raw.</code></pre>
-      <p>A correction that once existed only in conversation has now
-      become part of the project's reusable context.</p>
 
-      <h2>3. Running logs: remember where you left off</h2>
-      <p>Memory is also useful when a project spans many sessions. You
-      may not need a permanent rule; you simply need to remember what
-      has already been done and what should happen next.</p>
+      <p>A correction that once existed only in conversation is now part of the
+      project's reusable context.</p>
+
+      <h2>3. Keep a running log</h2>
+
+      <p>Sometimes you do not need a permanent rule; you simply need to record what
+      has already been done, what decisions were made, and what should happen next.</p>
+
       <div class="example">
         <p><strong>Ask the agent:</strong></p>
         <pre><code>Summarize what we accomplished today so I can resume the
-project in a future session.
-</code></pre>
+project in a future session.</code></pre>
       </div>
-      <p>A running log might contain entries such as:</p>
+
+      <p>A running log might contain:</p>
+
       <pre><code># Project log
 
 ## August 19
@@ -200,41 +196,42 @@ Still unresolved:
 
 Next:
 - Compare satisfaction changes with sales changes</code></pre>
-      <p>When you return, the agent can read the log and quickly
-      understand the current state of the work.</p>
 
-      <h2>Let the agent maintain the memory</h2>
-      <p>You don't need to write all of these documents yourself. A
-      useful practice is to have the agent draft and update them, while
-      you review important changes.</p>
-      <p>At the end of a work session, a simple instruction may be
-      enough:</p>
-      <pre><code>Before we finish, make the necessary updates to the project
-memory.</code></pre>
-      <p>This creates a useful habit: <strong>do the work, then preserve
-      what the next session needs to know.</strong> If nothing
-      meaningful changed, the memory files don't need to grow.</p>
+      <p>When you return, the agent can read the log and quickly understand the
+      current state of the work.</p>
+
+      <h2>Let the agent keep these files up to date</h2>
+
+      <p>You do not need to write all of these documents yourself. A useful practice
+      is to let the agent draft or update them while you review anything important.</p>
+
+      <pre><code>Before we finish, update the project files with anything
+the next session will need to know.</code></pre>
+
+      <p>This creates a useful habit: <strong>do the work, then preserve what the
+      next session needs.</strong> If nothing meaningful changed, the files do not
+      need to grow.</p>
 
       <div class="callout warn">
         <span class="callout-label">Tip</span>
-        There's no single correct memory system. One project might use
-        a single <code>project-guide.md</code>; another might keep
-        separate files for workflows, rules, and progress. The names
-        aren't important &mdash; what matters is that the information
-        is easy for both you and the agent to find and maintain.
+        There is no single correct way to organize this information. One project
+        might use a single <code>project-guide.md</code>; another might keep separate
+        files for workflows, rules, and progress. The names matter less than making
+        the information easy for both you and the agent to find.
       </div>
 
-      <h2>A special case: CLAUDE.md and AGENTS.md</h2>
-      <p>Some coding agents recognize a specially named instruction file
-      in a project. In Claude Code, the common file is
-      <code>CLAUDE.md</code>. In Codex and several other agent tools, a
-      common convention is <code>AGENTS.md</code>.</p>
-      <p>These files are useful because the agent looks for them
-      automatically when it begins work in a project. They're therefore
-      a good place for <strong>high-level instructions that should
+      <h2>Project instruction files</h2>
+
+      <p>Some agent tools recognize specially named files that they automatically
+      look for when they begin work in a project. Claude Code commonly uses
+      <code>CLAUDE.md</code>; Codex and several other tools use
+      <code>AGENTS.md</code>.</p>
+
+      <p>These files are a good place for <strong>high-level instructions that should
       apply across many tasks</strong>.</p>
+
       <div class="example">
-        <p><strong>For example, a CLAUDE.md or AGENTS.md might contain:</strong></p>
+        <p><strong>For example:</strong></p>
         <pre><code># Project instructions
 
 - Read project-guide.md before beginning a new analysis.
@@ -244,45 +241,57 @@ memory.</code></pre>
   /rules/fiscal-calendar.md.
 - Ask before deleting or replacing an existing output.</code></pre>
       </div>
-      <p>Think of this file as the agent's <strong>front door to the
-      project</strong>. Keep the most important, broadly applicable
-      guidance there, and point to more detailed documents when needed.
-      Trying to put every rule, workflow, and historical detail into
-      one giant instruction file can make the important guidance harder
-      to find.</p>
 
-      <h2>From memory files to a reusable system</h2>
-      <p>As a project grows, memory can become more structured. A few
-      Markdown files may be enough at first, but recurring work can
-      eventually become more reusable and easier for the agent to
-      navigate.</p>
+      <p>Think of this file as the agent's <strong>front door to the project</strong>.
+      Keep the most important, broadly applicable guidance there and point to more
+      detailed documents when needed. Putting every rule, workflow, and historical
+      detail into one giant file can make the important guidance harder to find.</p>
+
+      <h2>Some tools also provide memory</h2>
+
+      <p>In addition to project files you create deliberately, some agent tools can
+      also preserve selected information automatically. Claude Code, for example,
+      has an auto-memory system that can save useful learnings from past work for
+      future sessions.</p>
+
+      <p>This kind of memory can be convenient, but it is different from the project
+      files above. The agent decides what is worth remembering, so you should not
+      assume that every important rule or decision will be saved. For information
+      you definitely want carried forward, record it explicitly in the project.</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Claude Code tip</span>
+        You can use <code>/memory</code> to inspect the instructions and memory
+        Claude is using for the current project.
+      </div>
+
+      <h2>From saved context to a reusable system</h2>
+
+      <p>As a project grows, the information you carry forward can become more
+      structured. A few Markdown files may be enough at first, but recurring work
+      can eventually become easier for the agent to navigate and reuse.</p>
+
       <ul>
-        <li>A workflow you repeat often can become a
-        <strong>skill</strong>: a packaged set of instructions, tools,
-        and steps the agent can reuse. We'll cover skills in a later
-        module.</li>
-        <li>Project rules can be split into focused files instead of
-        growing into one very long instruction document.</li>
-        <li>Running logs can be summarized periodically so old details
-        don't fill the context window unnecessarily.</li>
-        <li>Larger projects may use tools that retrieve only the
-        memory relevant to the current task instead of loading
-        everything at once.</li>
+        <li>A workflow you repeat often can become a <strong>skill</strong>: a packaged
+        set of instructions, tools, and steps the agent can reuse. We'll cover skills
+        in a later module.</li>
+        <li>Project rules can be split into focused files instead of growing into one
+        very long instruction document.</li>
+        <li>Running logs can be summarized periodically so old details do not fill the
+        context window unnecessarily.</li>
+        <li>Larger projects may use tools that retrieve only the context relevant to
+        the current task instead of loading everything at once.</li>
       </ul>
-      <p>The goal isn't to make the memory system complicated. It's to
-      help the agent find the <strong>right context at the right
-      time</strong>.</p>
+
+      <p>The goal is not to build a complicated memory system. It is to help the
+      agent find the <strong>right context at the right time</strong>.</p>
 
       <div class="callout warn">
         <span class="callout-label">Tip</span>
-        Memory helps, but it isn't enforcement. An instruction written
-        in a memory file is still an instruction to an LLM &mdash; the
-        agent can misunderstand it, overlook it, or fail to follow it
-        perfectly. Use memory to make good behavior <strong>more
-        consistent</strong>, not to guarantee it; important
-        requirements should still be verified, and truly critical
-        safeguards shouldn't depend only on a sentence in a Markdown
-        file.
+        Persistent context helps, but it is not enforcement. An instruction in a
+        Markdown file can still be misunderstood, overlooked, or followed imperfectly.
+        Important requirements should still be verified, and critical safeguards
+        should not depend only on an instruction to an LLM.
       </div>
 
       <a class="next-cta" href="/course/04-workflow/helpful-tips.html">
