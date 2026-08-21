@@ -135,31 +135,14 @@
       versions of all three are linked below so you can follow along:</p>
       <ul>
         <li><a href="/cases/finance/trial_balance.csv" download><strong>trial_balance.csv</strong></a>
-        &mdash; April's data exported from NetSuite. About 100 rows,
-        single period. Each new month you re-export it.</li>
+        &mdash; April's trial balance exported from NetSuite. It contains roughly 100 GL accounts for a single month. Each month, you export a fresh version of this file and run the same update process again.</li>
         <li><a href="/cases/finance/account_mapping.csv" download><strong>account_mapping.csv</strong></a>
-        &mdash; maps each GL account number to a line on the model (e.g.
-        "Revenue", "COGS", "Accrued expenses") and a sign multiplier.
-        You maintain this file by hand as the chart of accounts grows
-        &mdash; and the workflow below is built around that fact.</li>
+        &mdash; a lookup table that tells the workflow where each GL account belongs in the model and whether its sign needs to be reversed. For example, an account might map to Revenue, COGS, or Accrued expenses. You maintain this file manually as new accounts are added to the chart of accounts.</li>
         <li><a href="/cases/finance/model_2026-03.xlsx" download><strong>model_2026-03.xlsx</strong></a>
-        &mdash; last month's three-statement model. The "Inputs" tab
-        holds each period's numbers, one column per month, already laid
-        out for the full year. January through March are frozen
-        historicals from prior monthly updates; the April column is
-        empty, ready for the script to fill. The IS, BS, and CF tabs
-        reference Inputs, so populating April lights up the whole
-        model. Next month you'll start from
-        <code>model_2026-04.xlsx</code> &mdash; the previous run's
-        output becomes the next run's input.</li>
+        &mdash; the March version of the three-statement financial model. Its Inputs tab contains one column per month. January through March are already populated, while April is blank. The income statement, balance sheet, and cash flow statement all pull from Inputs, so filling in April automatically updates the rest of the model. After the April run, the updated file becomes the starting point for May.
+ </li>
       </ul>
-      <p>The real-world messiness is in the mapping file. A few accounts
-      each month are <em>new</em> &mdash; a freshly opened legal entity,
-      a pilot product line, a brand-new lease &mdash; so the mapping is
-      always slightly behind. And sign convention is mixed: revenues are
-      negative in the GL but positive in the model. The script handles
-      the sign mechanically; you handle the new-account decisions, on
-      purpose.</p>
+      <p>The main complication is that the mapping file is never perfectly current. New GL accounts may appear when the company opens a new entity, launches a product line, or signs a new lease. Those accounts require judgment about where they belong in the model. Sign conventions also differ: for example, revenue may appear as negative in the GL but positive in the model. The workflow can handle those sign changes mechanically, but it should surface new or unmapped accounts for human review rather than guessing.</p>
       <p>A sample of the trial balance:</p>
       <pre><code>account_number, account_name, period, debit, credit
 40000, Product revenue - US, 2026-04, 0, 1898965.08
