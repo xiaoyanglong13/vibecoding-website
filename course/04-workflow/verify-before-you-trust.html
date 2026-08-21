@@ -218,6 +218,64 @@ What could break it?</code></pre>
         the same assumptions that produced the original work.
       </div>
 
+            <div class="example">
+              <h3>Example: turn business rules into test cases</h3>
+
+<p>
+  Suppose you are automating a tax-filing workflow for employees. You have two
+  useful sources of information:
+</p>
+
+<ul>
+  <li>a document listing the tax rules and filing requirements the workflow must follow, and</li>
+  <li>interviews with employees describing cases that are especially complicated or time-consuming.</li>
+</ul>
+
+<p>
+  Before trusting the automation, you can use those materials to create a set of
+  known test cases. Some should represent normal situations, while others should
+  capture the difficult cases employees encounter in practice.
+</p>
+
+<div class="example">
+  <p><strong>Example prompt</strong></p>
+
+  <pre><code>Read @tax-rules.md and @employee-interviews.md.
+
+Create a set of test cases for this tax-filing workflow.
+
+Include:
+- straightforward cases that test the main rules,
+- cases mentioned by employees as difficult or time-consuming,
+- combinations of rules that could be easy to mishandle.
+
+For each test case, specify:
+1. the input situation,
+2. the rule or requirement being tested,
+3. the correct expected outcome.
+
+Do not test the workflow yet. First give me the test-case list
+so I can review it.</code></pre>
+</div>
+
+<p>
+  After reviewing the list, you can use the same cases to test the workflow you built:
+</p>
+
+<div class="example">
+  <p><strong>Example prompt</strong></p>
+
+  <pre><code>Now run the approved test cases against the workflow.
+
+For each case, show:
+1. the expected result,
+2. the actual result,
+3. whether it passed or failed.
+
+For any failure, explain the discrepancy before changing the workflow.</code></pre>
+</div>
+            </div>
+
       <h2>Test the edges, not just the happy path</h2>
       <p>Agents often test the clean, normal case. You should also try
       inputs that are unusual or near important boundaries, such as
