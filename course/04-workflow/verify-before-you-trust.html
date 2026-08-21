@@ -300,16 +300,8 @@ For any failure, explain the discrepancy before changing the workflow.</code></p
 
         <p><strong>Example prompt</strong></p>
 
-        <pre><code>Test the sales-decline alert for important edge cases.
-
-Start with -9.9%, -10.0%, and -10.1% and verify whether each
-is flagged correctly under the rule "more than 10%."
-
-Then identify and test other important edge cases for this rule,
-such as missing values or unusual input formats.
-
-For each test, show the expected result, the actual result,
-and whether it passed.</code></pre>
+        <pre><code>Identify the most important edge cases for this sales-decline alert.
+Test them and report the expected result, actual result, and pass/fail.</code></pre>
       </div>
 
       <h2>Match the verification method to the output</h2>
