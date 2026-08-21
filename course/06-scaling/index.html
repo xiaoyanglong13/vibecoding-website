@@ -66,7 +66,7 @@
   ↓
 Keep track of changes
   ↓
-Make the workflow reusable
+Extend the agent with reusable capabilities
   ↓
 Put AI inside the solution when useful
   ↓
@@ -83,9 +83,10 @@ Share and deploy it</code></pre>
 
       <p>
         By the end of this module, you should be able to use Git and GitHub to keep
-        a history of your work, turn a repeated workflow into something reusable,
-        understand how an app can call an AI model through an API, and deploy a
-        simple solution so someone else can actually use it.
+        a history of your work, understand how reusable workflows can become more
+        explicit agent capabilities such as skills and hooks, understand how an app
+        can call an AI model through an API, and deploy a simple solution so someone
+        else can actually use it.
       </p>
 
       <h2>Planned sub-pages</h2>
@@ -102,12 +103,13 @@ Share and deploy it</code></pre>
         </div>
 
         <div class="card">
-          <h3>2. Make your workflow reusable</h3>
+          <h3>2. Extend the agent: skills and hooks</h3>
           <p>
-            Turn work you repeat into a reusable process. Package instructions,
-            rules, and steps so you&mdash;or someone else&mdash;can run the same workflow again
-            without rebuilding it from scratch. This is where we will introduce
-            ideas such as reusable skills.
+            You already know how to save and reuse a workflow. Here, we take the
+            next step: turning common workflows into more explicit agent capabilities.
+            Learn how <strong>skills</strong> package instructions and resources the
+            agent can invoke when needed, and how <strong>hooks</strong> automatically
+            trigger actions at specific points in the workflow.
           </p>
         </div>
 
@@ -133,14 +135,14 @@ Share and deploy it</code></pre>
         </div>
       </div>
 
-      <h2>What about subagents, hooks, and agent teams?</h2>
+      <h2>What about subagents and agent teams?</h2>
 
       <p>
-        These are useful extensions, but they are not the starting point for
-        scaling up. Subagents can divide a larger task, hooks can automate actions
-        around an agent workflow, and agent teams can coordinate several agents at
-        once. We will treat these as optional or advanced patterns after the core
-        ideas above.
+        Once the core ideas above are in place, you can also experiment with
+        <strong>subagents</strong> that take on specialized parts of a larger task,
+        or <strong>agent teams</strong> that coordinate several agents at once.
+        These are useful extensions, but they are not necessary for most of the
+        business projects in this course.
       </p>
 
       <blockquote>

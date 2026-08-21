@@ -584,18 +584,22 @@ it is Y" constructions were found in the source content.
 
 ### Module 6 — Scaling up (`/course/06-scaling`)
 Index written (renumbered from Module 7 on 2026-08-19); content revised
-2026-08-21 from a user-supplied draft. Reframed around "prototype → real
-solution" (a `<pre><code>` pipeline: build something that works → keep track
-of changes → make the workflow reusable → put AI inside the solution when
-useful → share and deploy it) instead of the earlier skills/subagents/hooks/
-agent-teams framing. Planned sub-pages, now in a `.card-grid` (4 cards):
-version control with Git/GitHub, making a repeated workflow reusable
-(introduces "skills"), putting AI inside your own solution (APIs, model
-calls, structured outputs, API keys, cost, safeguards), and sharing/deploying
-(hosting, environment variables, secrets, updates). Subagents, hooks, and
-agent teams are now explicitly framed as optional/advanced patterns in a
-closing "What about subagents, hooks, and agent teams?" section, not the
-sub-page structure itself. Closes with a plain `<blockquote>` pull statement.
+2026-08-21 from a user-supplied draft, then revised again the same day from a
+v2 draft. Reframed around "prototype → real solution" (a `<pre><code>`
+pipeline: build something that works → keep track of changes → extend the
+agent with reusable capabilities → put AI inside the solution when useful →
+share and deploy it) instead of the earlier skills/subagents/hooks/agent-teams
+framing. Planned sub-pages, now in a `.card-grid` (4 cards): version control
+with Git/GitHub, extending the agent with **skills and hooks** together (card
+2 — v2 folded hooks into this card instead of treating it as an advanced
+extension), putting AI inside your own solution (APIs, model calls,
+structured outputs, API keys, cost, safeguards), and sharing/deploying
+(hosting, environment variables, secrets, updates). Only subagents and agent
+teams are now framed as optional/advanced patterns in a closing "What about
+subagents and agent teams?" section (hooks moved out of that framing in v2,
+since it's now a planned sub-page topic). Closes with a plain `<blockquote>`
+pull statement (reworded from the drafts' "is not just about X. It is about
+Y" to an em-dash construction to satisfy CLAUDE.md).
 
 ### Module 7 — Business use cases (`/cases`)
 No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
@@ -678,8 +682,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 **Suggested next build priorities:**
 1. One additional case per function category to demonstrate breadth.
-2. Module 6 (Scaling up) sub-pages — version control (Git/GitHub), reusable
-   workflows/skills, putting AI inside your own solution (APIs), share &amp;
+2. Module 6 (Scaling up) sub-pages — version control (Git/GitHub), extending
+   the agent with skills and hooks, putting AI inside your own solution (APIs), share &amp;
    deploy.
 3. Fill in `/reference` glossary and cheat sheets.
 4. If academic integrity/attribution is still wanted somewhere, it needs a
