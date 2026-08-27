@@ -81,11 +81,11 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   │   model_2026-03.xlsx, summary_2026-04.xlsx sample data still lives here)
 │   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
 │   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
-│   ├── /cases/operations                                                                  ✅
+│   ├── /cases/operations            (3 of 4 case ideas replaced 2026-08-27 — see §4)  ✅
 │   │   ├── /cases/operations/demand-forecast-dashboard                                   ❌ coming soon
-│   │   ├── /cases/operations/process-automation                                          ❌ coming soon
-│   │   ├── /cases/operations/internal-tool                                               ❌ coming soon
-│   │   └── /cases/operations/data-cleanup                                                ❌ coming soon
+│   │   ├── /cases/operations/workforce-scheduler                                         ❌ coming soon
+│   │   ├── /cases/operations/manufacturing-bottleneck-simulator                          ❌ coming soon
+│   │   └── /cases/operations/quality-control-dashboard                                   ❌ coming soon
 │   ├── /cases/supply-chain         (new category, added 2026-08-27 — see §4/§9)  🚧 index only
 │   │   ├── /cases/supply-chain/supplier-scorecard                                        ❌ coming soon
 │   │   ├── /cases/supply-chain/inventory-reorder-dashboard                               ❌ coming soon
@@ -681,6 +681,19 @@ course syllabus as Module 7.
 > fold the two together. `cases/index.html`'s top-level grid was updated to
 > match (still 6 cards: Marketing & Sales, Finance, Operations, Supply
 > chain, Founder, People).
+
+> **2026-08-27, Operations case ideas sharpened:** The user found three of
+> `/cases/operations`'s four planned cases too generic ("Process
+> automation," "Internal tool," "Data cleanup") and asked for sharper,
+> more specific ones, naming a workforce scheduler and a
+> manufacturing-bottleneck simulation as the kind of specificity wanted.
+> "Demand forecast dashboard" was kept as-is; the other three were replaced
+> with **Workforce scheduler** (staff availability + shift-coverage rules →
+> a schedule), **Manufacturing bottleneck simulator** (per-station cycle
+> times + a production log → find and test fixing the real bottleneck),
+> and **Quality control dashboard** (defect rates across shifts/machines →
+> what's actually driving a spike). All four remain "coming soon"; none are
+> built. `cases/index.html`'s Operations card blurb was updated to match.
 
 ---
 
