@@ -67,11 +67,14 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   (Module 7 is the /cases library; no separate /course/07 directory)
 │
 ├── /cases                         Use case library ✅
-│   ├── /cases/marketing                                                                   ✅
+│   ├── /cases/marketing            (merged with Sales 2026-08-27 — see §4/§9)  ✅
 │   │   ├── segmentation-from-csv card links out to /course/01-talking-to-ai/use-case.html
 │   │   │   (no page of its own — see §5/§6; customers.csv sample data still lives here)
 │   │   ├── /cases/marketing/content-pipeline                                             ❌ coming soon
-│   │   └── /cases/marketing/campaign-dashboard                                           ❌ coming soon
+│   │   ├── /cases/marketing/campaign-dashboard                                           ❌ coming soon
+│   │   ├── /cases/marketing/crm-enrichment                                               ❌ coming soon (was /cases/sales)
+│   │   ├── /cases/marketing/outreach-personalization                                     ❌ coming soon (was /cases/sales)
+│   │   └── /cases/marketing/support-triage                                               ❌ coming soon (was /cases/sales)
 │   ├── /cases/finance                                                                     ✅
 │   │   ├── model-automation card links out to /course/04-workflow/use-case-model-automation.html
 │   │   │   (no page of its own — see §5/§6; trial_balance.csv, account_mapping.csv,
@@ -83,10 +86,12 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /cases/operations/process-automation                                          ❌ coming soon
 │   │   ├── /cases/operations/internal-tool                                               ❌ coming soon
 │   │   └── /cases/operations/data-cleanup                                                ❌ coming soon
-│   ├── /cases/sales                                                                       🚧 index only
-│   │   ├── /cases/sales/crm-enrichment                                                   ❌ coming soon
-│   │   ├── /cases/sales/outreach-personalization                                         ❌ coming soon
-│   │   └── /cases/sales/support-triage                                                   ❌ coming soon
+│   ├── /cases/supply-chain         (new category, added 2026-08-27 — see §4/§9)  🚧 index only
+│   │   ├── /cases/supply-chain/supplier-scorecard                                        ❌ coming soon
+│   │   ├── /cases/supply-chain/inventory-reorder-dashboard                               ❌ coming soon
+│   │   ├── /cases/supply-chain/logistics-exception-tracker                               ❌ coming soon
+│   │   ├── /cases/supply-chain/landed-cost-calculator                                    ❌ coming soon
+│   │   └── /cases/supply-chain/single-source-exposure-map                                ❌ coming soon
 │   ├── /cases/founder                                                                     🚧 index only
 │   │   ├── /cases/founder/landing-page-mvp                                               ❌ coming soon
 │   │   ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
@@ -659,6 +664,24 @@ course syllabus as Module 7.
 > home page. Modules 0–7 keep their existing numbers; nothing shifted down
 > to fill the slot.
 
+> **2026-08-27, Marketing+Sales merged; Supply Chain Management added:**
+> At the user's request, `/cases/marketing` and `/cases/sales` were merged
+> into one category at the `/cases/marketing` URL (kept because it held the
+> one real built-out case; Sales was index-only), retitled "Marketing &
+> Sales." Sales's three planned ideas (CRM enrichment, outreach
+> personalization, support triage) were converted from its old
+> `stub-banner` + bullet-list layout into three more "coming soon" cards in
+> Marketing's card-grid, matching the site's normal pattern. `/cases/sales`
+> was deleted. Separately, a **new** category was added — `/cases/supply-chain`,
+> "Supply chain management" — with five proposed "coming soon" cases
+> (supplier scorecard, inventory reorder dashboard, logistics exception
+> tracker, landed cost calculator, single-source exposure map), none built
+> yet. `/cases/operations` was **not** touched — it stays a separate
+> category from supply chain, per the user's explicit instruction not to
+> fold the two together. `cases/index.html`'s top-level grid was updated to
+> match (still 6 cards: Marketing & Sales, Finance, Operations, Supply
+> chain, Founder, People).
+
 ---
 
 ## 5. Dual-mode design — how the same content serves both audiences
@@ -740,11 +763,12 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Cases index `/cases` | ✅ Complete |
-| Marketing cases | 🚧 1 of 3 cards links out to a built course page (`/course/01-talking-to-ai/use-case.html`); no page of its own |
+| Marketing & Sales cases | 🚧 1 of 6 cards links out to a built course page (`/course/01-talking-to-ai/use-case.html`); the other 5 (merged in from the former Sales category) are "coming soon" |
 | Finance cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-model-automation.html`); no page of its own |
 | People cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-event-recap.html`); no page of its own |
 | Operations cases | 🚧 Index page only; individual cases not yet built |
-| Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
+| Supply chain cases | 🚧 New category (2026-08-27); index page only, all 5 proposed cases "coming soon" |
+| Founder cases | 🚧 Index page only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
 | Pitfalls `/pitfalls` | ✅ Live with 5 starter entries |
 | About `/about` | ✅ Complete |
