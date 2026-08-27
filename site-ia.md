@@ -12,7 +12,7 @@ Persistent header on every page:
 | Nav item | URL | Purpose |
 |---|---|---|
 | Start here | `/start` | The hook. Module 0 — why Business School Students should care. |
-| Course | `/course` | Linear curriculum, modules 1–9. |
+| Course | `/course` | Linear curriculum, modules 1–7. |
 | Use cases | `/cases` | Business cases organized by function. |
 | Reference | `/reference` | Glossary, cheat sheets, atomic how-tos. (Stub — content planned.) |
 | Pitfalls | `/pitfalls` | Common mistakes and how to fix them. |
@@ -64,9 +64,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/05-limits-and-ethics/control-agent-actions                            ✅
 │   │   ├── /course/05-limits-and-ethics/real-cost                                        ✅
 │   │   └── /course/05-limits-and-ethics/when-not-to-vibecode                             ✅
-│   ├── /course/06-scaling                                                                 🚧 index only
-│   │   (Module 7 is the /cases library; no separate /course/07 directory)
-│   └── /course/08-capstone                                                                🚧 index only
+│   └── /course/06-scaling                                                                 🚧 index only
+│       (Module 7 is the /cases library; no separate /course/07 directory)
 │
 ├── /cases                         Use case library ✅
 │   ├── /cases/marketing                                                                   ✅
@@ -677,9 +676,13 @@ No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
 The `/cases` library serves this purpose directly and is linked from the
 course syllabus as Module 7.
 
-### Module 8 — Capstone (`/course/08-capstone`)
-Index written (renumbered from Module 9 on 2026-08-19). Sub-pages (brief,
-rubric, peer-review) planned but not yet built.
+> **2026-08-27:** Module 8 (Capstone, `/course/08-capstone`) was dropped
+> entirely at the user's request — the site now ends at Module 7 (`/cases`).
+> Its stub `index.html` (brief/rubric/peer-review were only planned, never
+> built) was deleted, along with the "8." sidebar entry on every `/course/*`
+> page, the syllabus table row and module count/time on `/course` and the
+> home page. Modules 0–7 keep their existing numbers; nothing shifted down
+> to fill the slot.
 
 ---
 
@@ -741,7 +744,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-demand-forecast`) — all solution sections now written |
 | Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
-| Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
+| Module 6 `/course/06-scaling` | 🚧 Index page written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
