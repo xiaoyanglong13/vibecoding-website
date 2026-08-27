@@ -1,0 +1,13 @@
+sku,sku_name,category,launch_date,status,unit_cost,list_price
+BED-100,Linen duvet set,Bedding,2021-03-01,active,78.00,219.00
+BED-110,Brushed cotton sheets,Bedding,2020-09-14,active,41.00,99.00
+BED-120,Weighted blanket,Bedding,2021-10-04,discontinued,52.00,129.00
+KIT-200,Stoneware dinner set,Kitchen,2021-06-07,active,64.00,149.00
+KIT-210,Cast iron skillet,Kitchen,2020-04-06,active,33.00,79.00
+KIT-220,Glass storage set,Kitchen,2022-01-03,active,22.00,59.00
+BTH-300,Turkish towel set,Bath,2020-08-03,active,28.00,79.00
+BTH-310,Stone bath mat,Bath,2022-02-07,active,19.00,49.00
+BTH-320,Waffle weave robe,Bath,2021-11-01,active,36.00,89.00
+ACC-400,Scented candle trio,Add-ons,2021-05-03,active,14.00,42.00
+ACC-410,Ribbed ceramic vase,Add-ons,2022-04-04,active,17.00,45.00
+ACC-420,Throw pillow cover,Add-ons,2025-07-21,active,12.00,38.00

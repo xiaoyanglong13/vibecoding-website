@@ -57,7 +57,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/helpful-tips                                              ✅
 │   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
-│   │   └── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
+│   │   ├── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
+│   │   └── /course/04-workflow/use-case-demand-forecast     (Use case III)               ✅
 │   ├── /course/05-limits-and-ethics                                                       ✅ all 4 sub-pages built
 │   │   ├── /course/05-limits-and-ethics/protect-the-information                          ✅
 │   │   ├── /course/05-limits-and-ethics/control-agent-actions                            ✅
@@ -81,7 +82,12 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   │   └── summary_2026-04.xlsx  (sample data)
 │   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
 │   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
-│   ├── /cases/operations                                                                  🚧 index only
+│   ├── /cases/operations                                                                  ✅
+│   │   ├── /cases/operations/demand-forecast-dashboard  (task + worked solution)        ✅
+│   │   │   ├── demand-forecast-sample-solution.html  (the worked solution artifact)
+│   │   │   ├── sales_history.csv      (sample data)
+│   │   │   ├── product_catalog.csv    (sample data)
+│   │   │   └── marketing_calendar.csv (sample data)
 │   │   ├── /cases/operations/process-automation                                          ❌ coming soon
 │   │   ├── /cases/operations/internal-tool                                               ❌ coming soon
 │   │   └── /cases/operations/data-cleanup                                                ❌ coming soon
@@ -260,7 +266,14 @@ fully built, now as a 7-page sequence as of 2026-08-21 — no open threads on it
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, all 8 sub-pages (~200 min total — a
+Fully written and built 2026-08-19. A **ninth sub-page,
+use-case-demand-forecast, was added 2026-08-27** as Use case III, taking the
+module from 8 pages to 9 and from ~200 to ~320 min; every sidebar, eyebrow page
+count, and next-cta across the module was renumbered from "of 8" to "of 9" in
+the same pass, use-case-model-automation's closing CTA now points at page 9
+instead of Module 5, and `course/index.html`'s syllabus row (200 → 320 min), its
+"roughly twelve hours" lede (→ fourteen), and the home page's "~12 hours" card
+(→ ~14) were all updated to match. The original 8 sub-pages (~200 min total — a
 2026-08-21 planning.html/specifying-the-task.html experiment briefly moved an
 "explore before you plan" section between the two pages before the user
 rolled it all back the same day; see both bullets below), replacing
@@ -504,7 +517,62 @@ descriptions now reflect the 2026-08-20 end state, not the original build):
   changes, unexplained balanced model, unsupported explanations) instead
   of the longer checkpoint-specific pair. Sections 8-9 (Extensions, Skills
   used) unchanged. Still ends with the module's closing CTA to Module 5,
-  still ~45 min. Runs second as the longer, more procedural case.
+  still ~45 min. Runs second as the longer, more procedural case. Its closing
+  CTA was repointed from Module 5 to page 9 when Use case III was added.
+- **use-case-demand-forecast** — added 2026-08-27 as page 9 of 9 (90–120 min),
+  the module's first **analytics** case: a retail demand forecast plus a
+  dashboard. Rewritten the same day from a user-supplied revision
+  (`use-case-demand-forecast-revised.html`) that replaced the original
+  four-section shape with an **eight-section** one — 1. business task /
+  decision, 2. data available, 3. explore before you forecast, 4. plan your
+  approach, 5. build the forecast and dashboard, 6. verify the output,
+  7. improve the first version, 8. one possible solution. That revision is the
+  live version; don't restore the four-section draft. **The two copies have
+  since diverged on section count**: the user removed "improve the first
+  version" from the course page on 2026-08-27, so
+  `/course/04-workflow/use-case-demand-forecast` now runs **seven** sections
+  (solution at 7) while `/cases/operations/demand-forecast-dashboard` keeps all
+  **eight** (solution at 8). The course page's lede was trimmed to match. The
+  cases copy also still carries two passages the course page drops — the
+  "spend your time on the judgment" note in section 5, and the
+  "don't treat this checklist as patches" line plus the **Known totals**
+  reconciliation row in section 6. It shares its sample data
+  with `/cases/operations/demand-forecast-dashboard` the way the other two share
+  theirs with `/cases/people` and `/cases/finance`. Scenario: Harrow & Vale, a
+  DTC home-goods brand; the student forecasts 13 weeks of unit demand by
+  category for Q4 2025 off a weekly history that ends 2025-09-29, then builds a
+  self-contained HTML dashboard. The sample data carries deliberate defects that
+  the verification table is built around — stockout-suppressed weeks, an
+  "Accessories" → "Add-ons" category rename mid-history, a discontinued SKU, a
+  10-week-old SKU, a duplicated weekly export, three missing weeks, and two
+  price changes. Section 3 carries the requirements as two explicit lists
+  ("What the forecast has to do" / "What the dashboard has to do") and sits
+  under section 5; section 6 is a 15-row verification table. The revision added
+  four things the first draft lacked: an explicit **grain decision** (forecast
+  categories directly or forecast SKUs and aggregate — the student must choose
+  and justify), an **unknown Q4 2025 marketing plan** as a deliberate
+  information gap to be stated rather than quietly filled, a **simple-baseline
+  comparison** requirement (does the method beat same-period-last-year), and a
+  closing **improve-the-first-version** step (since removed from the course
+  copy, retained on the `/cases` copy — see above). Its three `.callout.warn` boxes
+  were converted from the bare blue `.callout` the draft used, per the site's
+  dominant pattern and the user's standing preference.
+  **The "One possible solution" section was written 2026-08-27** (section 7 on
+  the course page, section 8 on the `/cases` copy; both carry the same body at
+  different indentation). It links
+  `/cases/operations/demand-forecast-sample-solution.html`, a standalone
+  dashboard generated by a stdlib-only Python pipeline from the same three
+  CSVs, opened in a new tab so the section-6 verification table stays visible.
+  The artifact is the real deliverable plus a `.coursebar` banner linking back
+  to the case; regenerating it overwrites the file in place, so treat it as
+  generated output rather than hand-edited HTML. The section lists the six
+  decisions the solution made (grain, method, constrained weeks, catalog
+  changes, the marketing information gap, accuracy) and closes with a
+  `.callout.warn` stressing that alternatives are defensible when stated and
+  defended. Headline figures quoted in the prose — 104,869 units, +21.7&percnt;,
+  14.9&percnt; weekly holdout error against a 17.6&percnt; benchmark — come from
+  that pipeline; if it is rerun with different settings, update the prose to
+  match. This page also now carries the module's closing CTA to Module 5.
 
 Both mini-cases reuse existing `/cases` sample data rather than introducing
 new files — consistent with §6's note that Modules 1, 4, and 6 each close
@@ -661,7 +729,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-21)
+## 9. Build status (as of 2026-08-27)
 
 | Section | Status |
 |---|---|
@@ -671,24 +739,29 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`) |
+| Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-demand-forecast`) — all solution sections now written |
 | Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Modules 6, 8 | 🚧 Index pages written; sub-pages not yet built |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
 | People cases | 🚧 1 of 3 cases fully written (`event-recap-generator`) |
-| Operations, Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
+| Operations cases | 🚧 1 of 4 cases fully written (`demand-forecast-dashboard`, task + worked solution) |
+| Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
 | Pitfalls `/pitfalls` | ✅ Live with 5 starter entries |
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
-1. One additional case per function category to demonstrate breadth.
-2. Module 6 (Scaling up) sub-pages — version control (Git/GitHub), extending
+1. Add the demand-forecast case's Extensions and Skills-used sections, which
+   still don't exist on either copy (its "One possible solution" section was
+   written 2026-08-27).
+2. One additional case per function category to demonstrate breadth (Sales and
+   Founder are still index-only).
+3. Module 6 (Scaling up) sub-pages — version control (Git/GitHub), extending
    the agent with skills and hooks, putting AI inside your own solution (APIs), share &amp;
    deploy.
-3. Fill in `/reference` glossary and cheat sheets.
-4. If academic integrity/attribution is still wanted somewhere, it needs a
+4. Fill in `/reference` glossary and cheat sheets.
+5. If academic integrity/attribution is still wanted somewhere, it needs a
    new home — Module 5 dropped it when the user's own four pages replaced
    the originally planned outline (see Module 5's summary above).
