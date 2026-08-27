@@ -68,16 +68,14 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │
 ├── /cases                         Use case library ✅
 │   ├── /cases/marketing                                                                   ✅
-│   │   ├── /cases/marketing/segmentation-from-csv    (fully written)                     ✅
-│   │   │   └── customers.csv  (sample data)
+│   │   ├── segmentation-from-csv card links out to /course/01-talking-to-ai/use-case.html
+│   │   │   (no page of its own — see §5/§6; customers.csv sample data still lives here)
 │   │   ├── /cases/marketing/content-pipeline                                             ❌ coming soon
 │   │   └── /cases/marketing/campaign-dashboard                                           ❌ coming soon
 │   ├── /cases/finance                                                                     ✅
-│   │   ├── /cases/finance/model-automation           (fully written)                     ✅
-│   │   │   ├── trial_balance.csv  (sample data)
-│   │   │   ├── account_mapping.csv  (sample data)
-│   │   │   ├── model_2026-03.xlsx  (sample data)
-│   │   │   └── summary_2026-04.xlsx  (sample data)
+│   │   ├── model-automation card links out to /course/04-workflow/use-case-model-automation.html
+│   │   │   (no page of its own — see §5/§6; trial_balance.csv, account_mapping.csv,
+│   │   │   model_2026-03.xlsx, summary_2026-04.xlsx sample data still lives here)
 │   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
 │   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
 │   ├── /cases/operations                                                                  ✅
@@ -94,7 +92,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
 │   │   └── /cases/founder/prototype-app                                                  ❌ coming soon
 │   └── /cases/people                                                                      ✅
-│       └── /cases/people/event-recap-generator      (fully written)                      ✅
+│       └── event-recap-generator card links out to /course/04-workflow/use-case-event-recap.html
+│           (no page of its own — see §5/§6; sample docs/notes still live here)
 │
 ├── /reference                     Lookup content: glossary, cheat sheets, how-tos        🚧 stub
 ├── /pitfalls                      Common mistakes log (5 starter entries)                ✅
@@ -666,13 +665,32 @@ course syllabus as Module 7.
 
 **Linear course mode.** A persistent left rail on `/course/*` pages shows the syllabus with progress indicators (visited / in-progress / completed via localStorage). Every page ends with a single "Next" CTA. No decision fatigue.
 
-**Reference mode.** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. Cross-links are dense: a `/cases/finance/model-automation` page links back to the specific `/course/04-workflow/specifying-the-task` section it depends on.
+**Reference mode.** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. **A use case built inside a course module (Modules 1–6) is not duplicated into `/cases` — the `/cases/<function>` card links straight to the course page instead** (e.g. the Finance card for "Model automation" links to `/course/04-workflow/use-case-model-automation.html`, not to a `/cases/finance/model-automation.html` of its own). Sample data for that case still lives under `/cases/<function>/` even though the narrative page doesn't. This is a 2026-08-27 policy change — see the dated note in §6 for what it replaced and why.
 
 ---
 
 ## 6. Cross-cutting elements
 
-**Mini-cases threaded through the course.** Modules 1, 4, and 6 each end with a mini-case (a stripped-down version of a `/cases` page) so the application thread runs through the whole curriculum, not just the end.
+**Mini-cases threaded through the course.** Modules 1, 4, and 6 each end with a mini-case so the application thread runs through the whole curriculum, not just the end. The course page **is** the case — it is not duplicated into `/cases` (see the standing rule below).
+
+> **2026-08-27, standing rule — don't duplicate use cases into `/cases`:**
+> Three use cases used to exist as full duplicate pages in both places —
+> `course/01-talking-to-ai/use-case.html` / `cases/marketing/segmentation-from-csv.html`,
+> `course/04-workflow/use-case-model-automation.html` / `cases/finance/model-automation.html`,
+> and `course/04-workflow/use-case-event-recap.html` / `cases/people/event-recap-generator.html`.
+> The course versions had grown into the richer, actively-maintained ones
+> ("try it yourself" + verification); the `/cases` copies were older,
+> simpler walkthroughs that hadn't kept pace. At the user's request, all
+> three `/cases` duplicate pages were deleted and each category's card grid
+> now links its first card straight to the course page instead. Sample data
+> (`customers.csv`; `trial_balance.csv`, `account_mapping.csv`,
+> `model_2026-03.xlsx`, `summary_2026-04.xlsx`; the People `.docx`/notes
+> files) was **not** moved — it stays under `/cases/<function>/` since the
+> course pages already download it from those exact paths.
+> **Going forward, any new use case built inside Modules 1–6 follows this
+> same rule: build it once, in the course module, and link to it from the
+> matching `/cases/<function>` card — do not also write a full page under
+> `/cases`.**
 
 **"Skill chips" on every page.** Each page is tagged with the underlying skills it teaches or uses (e.g., `context-engineering`, `subagents`, `data-cleanup`). Clicking a chip lands on a filtered index of every page touching that skill — this is what makes reference mode actually work.
 
@@ -722,9 +740,9 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Cases index `/cases` | ✅ Complete |
-| Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
-| Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
-| People cases | 🚧 1 of 3 cases fully written (`event-recap-generator`) |
+| Marketing cases | 🚧 1 of 3 cards links out to a built course page (`/course/01-talking-to-ai/use-case.html`); no page of its own |
+| Finance cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-model-automation.html`); no page of its own |
+| People cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-event-recap.html`); no page of its own |
 | Operations cases | 🚧 Index page only; individual cases not yet built |
 | Sales, Founder cases | 🚧 Index pages only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
