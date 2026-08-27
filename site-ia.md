@@ -59,13 +59,13 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
 │   │   ├── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
 │   │   └── /course/04-workflow/use-case-demand-forecast     (Use case III)               ✅
-│   ├── /course/05-limits-and-ethics                                                       ✅ all 4 sub-pages built
-│   │   ├── /course/05-limits-and-ethics/protect-the-information                          ✅
-│   │   ├── /course/05-limits-and-ethics/control-agent-actions                            ✅
-│   │   ├── /course/05-limits-and-ethics/real-cost                                        ✅
-│   │   └── /course/05-limits-and-ethics/when-not-to-vibecode                             ✅
-│   └── /course/06-scaling                                                                 🚧 index only
-│       (Module 7 is the /cases library; no separate /course/07 directory)
+│   ├── /course/05-scaling                                                                 🚧 index only
+│   └── /course/06-limits-and-ethics                                                       ✅ all 4 sub-pages built
+│       ├── /course/06-limits-and-ethics/protect-the-information                          ✅
+│       ├── /course/06-limits-and-ethics/control-agent-actions                            ✅
+│       ├── /course/06-limits-and-ethics/real-cost                                        ✅
+│       └── /course/06-limits-and-ethics/when-not-to-vibecode                             ✅
+│   (Module 7 is the /cases library; no separate /course/07 directory)
 │
 ├── /cases                         Use case library ✅
 │   ├── /cases/marketing                                                                   ✅
@@ -586,27 +586,65 @@ specific new sub-pages (`planning.html`, `information-environment.html`,
 `specifying-the-task.html`, `memory.html`) as part of this build, and the
 course-page copies carry the same updated chips.
 
-### Module 5 — Limits, risks, and responsibility (`/course/05-limits-and-ethics`)
+> **2026-08-27 reorder:** Scaling up and Limits, risks, and responsibility
+> swapped places at the user's request. Scaling up is now Module 5
+> (`/course/05-scaling`) and Limits, risks, and responsibility is now Module 6
+> (`/course/06-limits-and-ethics`). Directories were renamed to match, and the
+> sidebar order, `course/index.html` syllabus table, and every next-cta chain
+> across `/course/*` (Module 4 → 5 → 6 → 7) were updated in the same pass.
+> Both modules keep their ~90-minute estimate, so total course time is
+> unaffected. The two build narratives below predate this swap and refer to
+> each other, and to themselves, using whatever module number and path was
+> current at the time they were written — read the numbers/paths inside them
+> as history, not as the current map (the section headers just below are
+> current).
+
+### Module 5 — Scaling up (`/course/05-scaling`)
+Index written (renumbered from Module 7 on 2026-08-19); content revised
+2026-08-21 from a user-supplied draft, then revised again the same day from a
+v2 draft. Reframed around "prototype → real solution" (a `<pre><code>`
+pipeline: build something that works → keep track of changes → extend the
+agent with reusable capabilities → put AI inside the solution when useful →
+share and deploy it) instead of the earlier skills/subagents/hooks/agent-teams
+framing. Planned sub-pages, now in a `.card-grid` (4 cards): version control
+with Git/GitHub, extending the agent with **skills and hooks** together (card
+2 — v2 folded hooks into this card instead of treating it as an advanced
+extension), putting AI inside your own solution (APIs, model calls,
+structured outputs, API keys, cost, safeguards), and sharing/deploying
+(hosting, environment variables, secrets, updates). Only subagents and agent
+teams are now framed as optional/advanced patterns in a closing "What about
+subagents and agent teams?" section (hooks moved out of that framing in v2,
+since it's now a planned sub-page topic). The closing `<blockquote>` pull
+statement from both drafts (reworded from "is not just about X. It is about
+Y" to an em-dash construction to satisfy CLAUDE.md) was removed by the user
+in a follow-up edit the same day — don't re-add it. The page now ends
+directly with the "What about subagents and agent teams?" section, then a
+next-cta that pointed straight to Module 7 until the 2026-08-27 reorder; it
+now points to Module 6 (Limits, risks, and responsibility), which follows it.
+
+### Module 6 — Limits, risks, and responsibility (`/course/06-limits-and-ethics`)
 Fully written and built 2026-08-19 (renumbered from Module 6 earlier the same
-day — see the renumbering note at the top of §4), all 4 sub-pages (~90 min
-total). Index page uses the card-grid pattern like Modules 1/2/4 and was
-rewritten again on 2026-08-19 from a second user-supplied draft (a "better
-intro") — adds a "four questions" preview table (what can it see / do / what
-happens if wrong / who's responsible) that foreshadows the framework
+day — see the renumbering note at the top of §4; then renumbered back to
+Module 6 on 2026-08-27 — see the reorder note just above), all 4 sub-pages
+(~90 min total). Index page uses the card-grid pattern like Modules 1/2/4 and
+was rewritten again on 2026-08-19 from a second user-supplied draft (a
+"better intro") — adds a "four questions" preview table (what can it see / do
+/ what happens if wrong / who's responsible) that foreshadows the framework
 `when-not-to-vibecode.html` uses later, and a closing "Your work is still
 your responsibility" section that bookends the module before the card grid
 hands off to page 1. That second draft also used stale pre-renumber numbering
 ("Module 6", `/course/06-limits-and-ethics/`, a hardcoded `class="active"`
 the site never uses elsewhere) and was translated the same way as everything
-else this session. Replaces the
+else this session — coincidentally, that stale numbering is exactly what the
+module was renamed back to on 2026-08-27. Replaces the
 originally planned outline (data-security, cost-awareness, academic-integrity,
 when-not-to-vibecode) with the user's own four pages — **academic integrity
 and attribution is no longer covered by this module**; if that topic is still
 wanted, it needs its own page later, not assumed to exist here. All four pages
-were supplied already using the module's *new* numbering (Module 5,
-`/course/05-limits-and-ethics/...`) and the current 8-module sidebar, so this
-build was mostly straight content-plus-style-conversion, not a renumbering
-job. Sub-pages, in order:
+were supplied already using the module's numbering at the time (Module 5,
+`/course/05-limits-and-ethics/...`) and the then-current 8-module sidebar, so
+this build was mostly straight content-plus-style-conversion, not a
+renumbering job. Sub-pages, in order:
 - **protect-the-information** (20 min) — access as a decision ("what does the
   agent need to see?"), minimum-necessary-information / least-privilege
   framing with an HR-data `.example`, a 4-question "before sharing data"
@@ -638,7 +676,9 @@ job. Sub-pages, in order:
   table, a 4-row "four-question framework" recap table (what can it see / do /
   what happens if wrong / who's responsible), personal responsibility, a
   blockquote rule of thumb, and a 5-row decision exercise. Closing next-cta
-  points to Module 6 (Scaling up) since it's the module's last page.
+  pointed to Module 6 (Scaling up) since it was the module's last page; after
+  the 2026-08-27 reorder it points to Module 7 (Business use cases) instead,
+  since Limits is the last module again.
 
 Style conversions applied uniformly across all four pages, matching Module 4's
 conventions: unicode em dashes (`—`) converted to `&mdash;`; formal "do not"/
@@ -648,28 +688,6 @@ CLAUDE.md-style file the way Module 4's information-environment/memory pages
 do); `.example` boxes and blockquote "useful rule" callouts already matched
 site convention as supplied, so those were kept as-is. No banned "it is not X,
 it is Y" constructions were found in the source content.
-
-### Module 6 — Scaling up (`/course/06-scaling`)
-Index written (renumbered from Module 7 on 2026-08-19); content revised
-2026-08-21 from a user-supplied draft, then revised again the same day from a
-v2 draft. Reframed around "prototype → real solution" (a `<pre><code>`
-pipeline: build something that works → keep track of changes → extend the
-agent with reusable capabilities → put AI inside the solution when useful →
-share and deploy it) instead of the earlier skills/subagents/hooks/agent-teams
-framing. Planned sub-pages, now in a `.card-grid` (4 cards): version control
-with Git/GitHub, extending the agent with **skills and hooks** together (card
-2 — v2 folded hooks into this card instead of treating it as an advanced
-extension), putting AI inside your own solution (APIs, model calls,
-structured outputs, API keys, cost, safeguards), and sharing/deploying
-(hosting, environment variables, secrets, updates). Only subagents and agent
-teams are now framed as optional/advanced patterns in a closing "What about
-subagents and agent teams?" section (hooks moved out of that framing in v2,
-since it's now a planned sub-page topic). The closing `<blockquote>` pull
-statement from both drafts (reworded from "is not just about X. It is about
-Y" to an em-dash construction to satisfy CLAUDE.md) was removed by the user
-in a follow-up edit the same day — don't re-add it. The page now ends
-directly with the "What about subagents and agent teams?" section, then the
-next-cta to Module 7.
 
 ### Module 7 — Business use cases (`/cases`)
 No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
@@ -710,7 +728,7 @@ course syllabus as Module 7.
 
 ## 7. URL conventions
 
-- **Lowercase, hyphenated** (`/course/06-scaling`, not `/course/Module6`).
+- **Lowercase, hyphenated** (`/course/05-scaling`, not `/course/Module5`).
 - **Numeric prefixes on course modules only** (preserves order in URLs and file systems). Use cases are not numbered — they're meant to be entered laterally.
 - **Stable slugs.** Once published, never rename. If a topic moves, redirect.
 - **No dates in URLs.** Content is meant to evolve in place.
@@ -743,8 +761,8 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-demand-forecast`) — all solution sections now written |
-| Module 5 `/course/05-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
-| Module 6 `/course/06-scaling` | 🚧 Index page written; sub-pages not yet built |
+| Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
+| Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Cases index `/cases` | ✅ Complete |
 | Marketing cases | 🚧 1 of 3 cases fully written (`segmentation-from-csv`) |
 | Finance cases | 🚧 1 of 3 cases fully written (`model-automation`) |
@@ -761,10 +779,10 @@ These are all worth adding in v2 once the content is proven. Building them in v1
    written 2026-08-27).
 2. One additional case per function category to demonstrate breadth (Sales and
    Founder are still index-only).
-3. Module 6 (Scaling up) sub-pages — version control (Git/GitHub), extending
+3. Module 5 (Scaling up) sub-pages — version control (Git/GitHub), extending
    the agent with skills and hooks, putting AI inside your own solution (APIs), share &amp;
    deploy.
 4. Fill in `/reference` glossary and cheat sheets.
 5. If academic integrity/attribution is still wanted somewhere, it needs a
-   new home — Module 5 dropped it when the user's own four pages replaced
-   the originally planned outline (see Module 5's summary above).
+   new home — Module 6 dropped it when the user's own four pages replaced
+   the originally planned outline (see Module 6's summary above).
