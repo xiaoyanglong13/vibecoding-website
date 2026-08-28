@@ -15,7 +15,6 @@ Persistent header on every page:
 | Course | `/course` | Linear curriculum, modules 1–7. |
 | Use cases | `/cases` | Business cases organized by function. |
 | Reference | `/reference` | Glossary, cheat sheets, atomic how-tos. (Stub — content planned.) |
-| Pitfalls | `/pitfalls` | Common mistakes and how to fix them. |
 | About | `/about` | Philosophy, how to use the site, contributing. |
 
 Persistent footer: version/last-updated, About link.
@@ -101,7 +100,6 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │           (no page of its own — see §5/§6; sample docs/notes still live here)
 │
 ├── /reference                     Lookup content: glossary, cheat sheets, how-tos        🚧 stub
-├── /pitfalls                      Common mistakes log (5 starter entries)                ✅
 └── /about                         Philosophy, how to use, contributing, build status      ✅
 ```
 
@@ -734,8 +732,6 @@ course syllabus as Module 7.
 
 **Downloadable artifacts.** Every use case page offers a downloadable starter pack (sample data + a `CLAUDE.md` + a README). Lower friction = more students actually try it.
 
-**Pitfalls log.** `/pitfalls` is a living page of common mistakes — each entry is short enough to scan in under a minute. Currently has 5 starter entries. Planned: individual sub-pages per pitfall with fuller examples.
-
 ---
 
 ## 7. URL conventions
@@ -783,7 +779,6 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Supply chain cases | 🚧 New category (2026-08-27); index page only, all 5 proposed cases "coming soon" |
 | Founder cases | 🚧 Index page only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
-| Pitfalls `/pitfalls` | ✅ Live with 5 starter entries |
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
