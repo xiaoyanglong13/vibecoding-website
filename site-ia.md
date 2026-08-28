@@ -88,7 +88,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   ├── /cases/supply-chain         (new category, added 2026-08-27 — see §4/§9)  🚧 index only
 │   │   ├── /cases/supply-chain/supplier-scorecard                                        ❌ coming soon
 │   │   ├── /cases/supply-chain/inventory-reorder-dashboard                               ❌ coming soon
-│   │   ├── /cases/supply-chain/logistics-exception-tracker                               ❌ coming soon
+│   │   ├── /cases/supply-chain/supplier-negotiation-chatbot                              ❌ coming soon
 │   │   ├── /cases/supply-chain/landed-cost-calculator                                    ❌ coming soon
 │   │   └── /cases/supply-chain/single-source-exposure-map                                ❌ coming soon
 │   ├── /cases/founder                                                                     🚧 index only
@@ -672,8 +672,8 @@ course syllabus as Module 7.
 > Marketing's card-grid, matching the site's normal pattern. `/cases/sales`
 > was deleted. Separately, a **new** category was added — `/cases/supply-chain`,
 > "Supply chain management" — with five proposed "coming soon" cases
-> (supplier scorecard, inventory reorder dashboard, logistics exception
-> tracker, landed cost calculator, single-source exposure map), none built
+> (supplier scorecard, inventory reorder dashboard, supplier negotiation
+> chatbot, landed cost calculator, single-source exposure map), none built
 > yet. `/cases/operations` was **not** touched — it stays a separate
 > category from supply chain, per the user's explicit instruction not to
 > fold the two together. `cases/index.html`'s top-level grid was updated to
