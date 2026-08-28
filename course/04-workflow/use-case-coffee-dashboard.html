@@ -232,29 +232,19 @@ Make it modern, useful, and easy to explore.</code></pre>
         top products, sales by location, and revenue over time.
       </p>
 
-      <div class="pitfalls-inline">
-        <h4>What went wrong</h4>
-        <ul>
-          <li>
-            <strong>The dashboard was driven mainly by the fields in the dataset.</strong>
-            The agent generated reasonable summaries such as revenue, transactions, top products, and sales by location,
-            but there was no clear reason these were the most useful things to show.
-          </li>
-          <li>
-            <strong>The agent effectively had to invent the dashboard's purpose.</strong>
-            Because the prompt did not specify what questions the dashboard should answer, the agent decided for itself
-            which metrics, comparisons, and visualizations mattered.
-          </li>
-          <li>
-            <strong>Some attractive visuals added little value.</strong>
-            A chart can be technically correct and visually polished without helping answer a meaningful business question.
-          </li>
-          <li>
-            <strong>The agent began coding before the task itself had been clearly specified.</strong>
-            By the time the dashboard existed, its assumptions about what mattered were already embedded in the implementation.
-          </li>
-        </ul>
-      </div>
+<div class="pitfalls-inline">
+  <h4>What went wrong</h4>
+  <ul>
+    <li>
+      <strong>The agent had to decide for itself what the dashboard should show.</strong>
+      Because the prompt did not specify the business questions, it generated reasonable metrics and charts based mainly on the available fields.
+    </li>
+    <li>
+      <strong>A polished dashboard is not necessarily a useful one.</strong>
+      Some visualizations were technically correct but did not help answer a meaningful business question.
+    </li>
+  </ul>
+</div>
 
       <p>
         Nothing about this workflow guarantees a bad result. The problem is that the instruction
