@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Use case III: coffee shop dashboard · Module 4 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/cases/">Use cases</a>
+        <a href="/reference/">Reference</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 4 · The vibecoding workflow</h4>
+      <ol>
+        <li><a href="/course/04-workflow/">Overview</a></li>
+        <li><a href="/course/04-workflow/planning.html"><span class="module-num">1.</span>Plan before you build</a></li>
+        <li><a href="/course/04-workflow/information-environment.html"><span class="module-num">2.</span>Information environment</a></li>
+        <li><a href="/course/04-workflow/specifying-the-task.html"><span class="module-num">3.</span>Specify the task</a></li>
+        <li><a href="/course/04-workflow/verify-before-you-trust.html"><span class="module-num">4.</span>Verify before you trust</a></li>
+        <li><a href="/course/04-workflow/memory.html"><span class="module-num">5.</span>Carry context across sessions</a></li>
+        <li><a href="/course/04-workflow/helpful-tips.html"><span class="module-num">6.</span>Helpful tips</a></li>
+        <li><a href="/course/04-workflow/use-case-event-recap.html"><span class="module-num">7.</span>Use case I: event recap</a></li>
+        <li><a href="/course/04-workflow/use-case-model-automation.html"><span class="module-num">8.</span>Use case II: model automation</a></li>
+        <li><a class="active" href="/course/04-workflow/use-case-coffee-dashboard.html"><span class="module-num">9.</span>Use case III: coffee shop dashboard</a></li>
+      </ol>
+
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+        <li><a href="/cases/"><span class="module-num">7.</span>Use cases</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 4 · Page 9 of 9 · 30 minutes</span>
+        <h1>Use case III: Coffee shop dashboard</h1>
+        <p class="lede">
+          An agent can turn a dataset into a polished dashboard very quickly. But if you do not specify what the dashboard
+          needs to help someone understand, it may simply generate whatever metrics and charts are easiest to produce.
+          In this case, you will build an interactive dashboard, test whether it answers the intended questions, and compare
+          two different workflows.
+        </p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Difficulty · Beginner</span>
+        <span class="chip">~30 minutes</span>
+        <span class="chip">Uses: Modules 1, 4</span>
+      </div>
+
+      <h2>1. The business task</h2>
+
+      <p>
+        A small campus coffee shop operates three locations. Management is trying to better understand when each location
+        gets busy and how demand changes throughout the day.
+      </p>
+
+      <p>The dashboard should help answer three questions:</p>
+
+      <ol>
+        <li><strong>When is each location busiest?</strong></li>
+        <li><strong>Which products drive demand at different times of day?</strong></li>
+        <li><strong>How do demand patterns differ between weekdays and weekends?</strong></li>
+      </ol>
+
+      <p>
+        Your task is to use the available transaction data to build a simple interactive dashboard that helps management
+        explore these questions.
+      </p>
+
+      <div class="callout">
+        <span class="callout-label">The important distinction</span>
+        The task is not simply to <em>make a dashboard from the data</em>. The dashboard is an output.
+        The actual task is to build something that helps answer the three questions above.
+      </div>
+
+      <h2>2. Data available</h2>
+
+      <ul>
+        <li><strong>inputs/transactions.csv</strong> — transaction-level coffee shop sales data.</li>
+      </ul>
+
+      <p>The file contains fields such as:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>transaction_id</code></td>
+            <td>Unique transaction identifier.</td>
+          </tr>
+          <tr>
+            <td><code>timestamp</code></td>
+            <td>Date and time of the transaction.</td>
+          </tr>
+          <tr>
+            <td><code>location</code></td>
+            <td>Coffee shop location.</td>
+          </tr>
+          <tr>
+            <td><code>product</code></td>
+            <td>Product purchased.</td>
+          </tr>
+          <tr>
+            <td><code>category</code></td>
+            <td>Product category, such as coffee, tea, food, or pastry.</td>
+          </tr>
+          <tr>
+            <td><code>quantity</code></td>
+            <td>Number of units purchased.</td>
+          </tr>
+          <tr>
+            <td><code>unit_price</code></td>
+            <td>Price per unit.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Notice that some of the information needed for the dashboard is not directly stored in the file.
+        For example, the agent may need to derive the hour of day, day of week, weekday/weekend status,
+        transaction totals, or other calculated fields.
+      </p>
+
+      <h2>3. Try it yourself</h2>
+
+      <p>
+        Start by exploring <code>transactions.csv</code> so you understand its structure, fields, and level of detail.
+      </p>
+
+      <p>
+        Then build the interactive dashboard using whatever workflow you are comfortable with.
+        The finished dashboard should help answer the three business questions above.
+        Feel free to iterate or try different approaches. Do the best job you can.
+      </p>
+
+      <p>
+        When you're finished, keep your dashboard. In the next step, you'll verify both the calculations
+        and the behavior of the application.
+      </p>
+
+      <h2>4. Verify the output</h2>
+
+      <p>
+        A dashboard can look polished and still be wrong or unhelpful. Test your dashboard using the checklist below.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Check</th>
+            <th>Questions to ask</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Business questions</strong></td>
+            <td>Can the dashboard actually help you identify busy periods, what sells at different times, and weekday/weekend differences?</td>
+          </tr>
+          <tr>
+            <td><strong>Metric definitions</strong></td>
+            <td>What does "busiest" mean in the dashboard: transactions, units sold, or revenue? Is that definition clear and consistent?</td>
+          </tr>
+          <tr>
+            <td><strong>Calculations</strong></td>
+            <td>Are transaction counts, quantities, revenue, and any other derived measures calculated correctly?</td>
+          </tr>
+          <tr>
+            <td><strong>Time transformations</strong></td>
+            <td>Are timestamps correctly converted into hour, day of week, and weekday/weekend?</td>
+          </tr>
+          <tr>
+            <td><strong>Aggregation</strong></td>
+            <td>Are line-item rows accidentally being counted as separate transactions? Are products and transactions aggregated at the intended level?</td>
+          </tr>
+          <tr>
+            <td><strong>Filters</strong></td>
+            <td>Do location, date, category, and other filters update all of the components they are supposed to update?</td>
+          </tr>
+          <tr>
+            <td><strong>Sorting</strong></td>
+            <td>Are hours and weekdays displayed in a sensible order rather than alphabetically?</td>
+          </tr>
+          <tr>
+            <td><strong>Edge cases</strong></td>
+            <td>What happens when a filter returns very little data or no data at all?</td>
+          </tr>
+          <tr>
+            <td><strong>Relevance</strong></td>
+            <td>Does each major metric or visualization help answer one of the stated questions, or is it simply showing something because the data made it easy to calculate?</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Does your dashboard pass all of the checks? Are there calculations, interactions, or design choices that you
+        would want to revise before someone relied on it?
+      </p>
+
+      <h2>5. Two ways to build the same dashboard</h2>
+
+      <p>
+        Now let us compare two different workflows. Both use the same dataset and the same general task,
+        but they differ in how much thought happens before the agent starts building.
+      </p>
+
+      <h3>Attempt 1 · Give the agent the data and ask for a dashboard</h3>
+
+      <p>
+        In the first attempt, I put <code>transactions.csv</code> in the project folder and gave the agent a simple instruction:
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt used</div>
+        <pre><code>Using transactions.csv, build me a polished interactive dashboard
+for the coffee shop.
+
+Make it modern, useful, and easy to explore.</code></pre>
+      </div>
+
+      <p>
+        The result looked impressive. The agent generated summary cards, filters, and several charts.
+        It included metrics such as total revenue, total transactions, average transaction value,
+        top products, sales by location, and revenue over time.
+      </p>
+
+      <div class="pitfalls-inline">
+        <h4>What went wrong</h4>
+        <ul>
+          <li>
+            <strong>The dashboard was driven mainly by the fields in the dataset.</strong>
+            The agent generated reasonable summaries such as revenue, transactions, top products, and sales by location,
+            but there was no clear reason these were the most useful things to show.
+          </li>
+          <li>
+            <strong>The agent effectively had to invent the dashboard's purpose.</strong>
+            Because the prompt did not specify what questions the dashboard should answer, the agent decided for itself
+            which metrics, comparisons, and visualizations mattered.
+          </li>
+          <li>
+            <strong>Some attractive visuals added little value.</strong>
+            A chart can be technically correct and visually polished without helping answer a meaningful business question.
+          </li>
+          <li>
+            <strong>The agent began coding before the task itself had been clearly specified.</strong>
+            By the time the dashboard existed, its assumptions about what mattered were already embedded in the implementation.
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Nothing about this workflow guarantees a bad result. The problem is that the instruction
+        <em>"build a dashboard"</em> leaves the agent to infer what the dashboard is for.
+        Because modern coding agents are good at producing plausible interfaces, those assumptions can be easy to miss.
+      </p>
+
+      <div class="callout warn">
+        <span class="callout-label">A useful habit</span>
+        Do not start with the artifact alone: <em>"Build me a dashboard."</em>
+        Start with what the artifact needs to accomplish: <em>"Build a dashboard that helps answer these questions."</em>
+      </div>
+
+      <h3>Attempt 2 · Start from the questions + Plan mode</h3>
+
+      <p>
+        In the second attempt, I kept the same project folder but switched to <strong>Plan mode</strong>.
+        This time, the prompt described the questions the dashboard needed to answer and asked the agent to inspect
+        the data before writing code.
+      </p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt used</div>
+        <pre><code>I need to build an interactive dashboard using transactions.csv.
+
+The dashboard should help management answer three questions:
+
+1. When is each location busiest?
+2. Which products drive demand at different times of day?
+3. How do demand patterns differ between weekdays and weekends?
+
+Before writing any code:
+
+- inspect the data and understand its structure;
+- identify any transformations or calculated fields that will be needed;
+- propose the metrics, filters, and visualizations you would use
+  to answer each question;
+- identify any ambiguous definitions or implementation choices;
+- ask me about those choices before finalizing the plan.
+
+Do not build the dashboard yet.</code></pre>
+      </div>
+
+      <p>
+        The agent inspected the file first and surfaced choices that were easy to overlook.
+        For example, it asked how <em>busiest</em> should be defined, whether product demand should be measured
+        using units or transactions, and how time periods should be grouped.
+      </p>
+
+      <p>
+        After those questions were resolved, the plan explicitly connected each business question to the data
+        and dashboard components needed to answer it.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Business question</th>
+            <th>Metric / transformation</th>
+            <th>Dashboard component</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>When is each location busiest?</td>
+            <td>Transaction count by location and hour</td>
+            <td>Hourly demand chart with location filter</td>
+          </tr>
+          <tr>
+            <td>Which products drive demand at different times?</td>
+            <td>Units sold by category/product and hour</td>
+            <td>Time-of-day product view</td>
+          </tr>
+          <tr>
+            <td>How do weekdays and weekends differ?</td>
+            <td>Hourly transaction count split by weekday/weekend</td>
+            <td>Comparative demand chart</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Once the plan was approved, I asked the agent to build the dashboard according to the agreed definitions
+        and then verify the result.
+      </p>
+
+      <div class="example">
+        <p><strong>For example, after the dashboard was built, I asked:</strong></p>
+        <pre><code>Verify the dashboard before we consider it finished.
+
+1. Independently recalculate the main metrics from transactions.csv.
+2. Check that the filters update every relevant chart.
+3. Check that hours and weekdays are ordered correctly.
+4. Test combinations of filters, including cases that return no data.
+5. Confirm that each major dashboard element helps answer one of the
+   three original business questions.
+
+Fix any issues you find.</code></pre>
+      </div>
+
+      <p>
+        This second workflow does not require a much longer initial prompt. The key difference is the sequence:
+        <strong>understand the question → inspect the data → resolve ambiguities → plan → build → verify.</strong>
+      </p>
+
+      <div class="callout">
+        <span class="callout-label">Why this matters</span>
+        When building an interactive application, there are more things to verify than whether the output simply
+        "looks right." You need to check the underlying calculations, the transformations that feed the interface,
+        and the way components behave when a user interacts with them.
+      </div>
+
+      <p>
+        The takeaway is not that you need to specify every chart before the agent begins. In fact, one advantage of
+        working with an agent is that it can inspect the data and propose an implementation. But the agent should be
+        proposing ways to answer the task you defined, rather than inventing the task from the data.
+      </p>
+
+      <p>
+        A good workflow keeps the human focused on the questions and important choices while letting the agent handle
+        much of the technical execution.
+      </p>
+
+      <a class="next-cta" href="/course/05-scaling/">
+        <div>
+          <div class="next-cta-label">Next · Module 5</div>
+          <div class="next-cta-title">Scaling up</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long · © 2026 Xiaoyang Long · All rights reserved · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

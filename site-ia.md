@@ -48,7 +48,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
 │   │   └── /course/03-setup/appendix-opencode                                            ✅
-│   ├── /course/04-workflow                                                                ✅ all 8 sub-pages built
+│   ├── /course/04-workflow                                                                ✅ all 9 sub-pages built
 │   │   ├── /course/04-workflow/planning                                                  ✅
 │   │   ├── /course/04-workflow/information-environment                                   ✅
 │   │   ├── /course/04-workflow/specifying-the-task                                       ✅
@@ -56,7 +56,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/memory                                                    ✅
 │   │   ├── /course/04-workflow/helpful-tips                                              ✅
 │   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
-│   │   └── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
+│   │   ├── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
+│   │   └── /course/04-workflow/use-case-coffee-dashboard    (Use case III)               ✅
 │   ├── /course/05-scaling                                                                 🚧 index only
 │   └── /course/06-limits-and-ethics                                                       ✅ all 4 sub-pages built
 │       ├── /course/06-limits-and-ethics/protect-the-information                          ✅
@@ -262,13 +263,14 @@ fully built, now as a 7-page sequence as of 2026-08-21 — no open threads on it
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
-Fully written and built 2026-08-19, as an 8-page sequence (~200 min total — a
-2026-08-21 planning.html/specifying-the-task.html experiment briefly moved an
-"explore before you plan" section between the two pages before the user
-rolled it all back the same day; see both bullets below), replacing
+Fully written and built 2026-08-19, originally as an 8-page sequence (~200 min
+total — a 2026-08-21 planning.html/specifying-the-task.html experiment briefly
+moved an "explore before you plan" section between the two pages before the
+user rolled it all back the same day; see both bullets below), replacing
 the earlier planned list (plan-vs-execute, information-environment,
 context-engineering, version-safety, iterating) — version-safety and iterating
-were dropped from the module entirely rather than deferred elsewhere.
+were dropped from the module entirely rather than deferred elsewhere. Now a
+9-page sequence (~230 min total) — see the 2026-08-28 note below.
 
 > **2026-08-27, added then removed the same day:** A ninth sub-page,
 > use-case-demand-forecast, was added as Use case III (taking the module to
@@ -282,6 +284,23 @@ were dropped from the module entirely rather than deferred elsewhere.
 > and the syllabus/home-page time figures were restored to ~10 hours total
 > (down from ~12, since removing this page also removes ~2 hours, not just
 > the ~2 it had added).
+
+> **2026-08-28, ninth sub-page added again — this time for real:**
+> use-case-coffee-dashboard was added as Use case III (user-supplied content,
+> pasted in verbatim with only the standard header/sidebar/footer shell
+> applied), taking the module back to 9 pages / ~230 min. Every module-4
+> sidebar (including the new page's own) now lists all nine pages, every
+> "of 8" pagination label was bumped to "of 9", and use-case-model-automation's
+> closing CTA now points at the new page instead of Module 5 (the new page's
+> own CTA points at Module 5). `course/04-workflow/index.html`'s card grid,
+> "Nine sub-pages" intro line, and module-header minute count (200→230) were
+> updated to match, as was the 200→230 figure in `course/index.html`'s module
+> table (the "roughly ten hours" total still holds at ~610 min, so that text
+> was left alone). Unlike the 2026-08-27
+> attempt, no `/cases` category card was added for this one — the user asked
+> only for the Module 4 sub-page, so no parallel `/cases/<function>/` copy or
+> sample-data folder exists for it. If one is wanted later, follow the
+> Finance/People precedent (case card links straight to the course page).
 
 Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list,
@@ -768,7 +787,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
-| Module 4 `/course/04-workflow` | ✅ All 8 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`) — all solution sections written |
+| Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
 | Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Cases index `/cases` | ✅ Complete |
