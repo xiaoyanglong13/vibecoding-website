@@ -83,7 +83,9 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
 │   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
 │   ├── /cases/operations            (3 of 4 case ideas replaced 2026-08-27 — see §4)  ✅
-│   │   ├── /cases/operations/demand-forecast-dashboard                                   ❌ coming soon
+│   │   ├── coffee-dashboard card links out to /course/04-workflow/use-case-coffee-dashboard.html
+│   │   │   (no page of its own — see §5/§6; transactions.csv sample data lives here;
+│   │   │   replaced the old "demand forecast dashboard" coming-soon idea 2026-08-28)
 │   │   ├── /cases/operations/workforce-scheduler                                         ❌ coming soon
 │   │   ├── /cases/operations/manufacturing-bottleneck-simulator                          ❌ coming soon
 │   │   └── /cases/operations/quality-control-dashboard                                   ❌ coming soon
@@ -298,10 +300,12 @@ were dropped from the module entirely rather than deferred elsewhere. Now a
 > updated to match, as was the 200→230 figure in `course/index.html`'s module
 > table (the "roughly ten hours" total still holds at ~610 min, so that text
 > was left alone). Unlike the 2026-08-27
-> attempt, no `/cases` category card was added for this one — the user asked
-> only for the Module 4 sub-page, so no parallel `/cases/<function>/` copy or
-> sample-data folder exists for it. If one is wanted later, follow the
-> Finance/People precedent (case card links straight to the course page).
+> attempt, no `/cases` category card was added in this initial pass — the
+> user asked only for the Module 4 sub-page at first, so no parallel
+> `/cases/<function>/` copy or sample-data folder existed for it yet. **This
+> changed later the same day** — see the Operations note in the Module 7
+> section below: a `/cases/operations` card was added, linking to this page,
+> once the user asked for it.
 
 Index page
 now uses the card-grid pattern (like Modules 1/2) instead of a stub bullet list,
@@ -713,6 +717,20 @@ course syllabus as Module 7.
 > what's actually driving a spike). All four remain "coming soon"; none are
 > built. `cases/index.html`'s Operations card blurb was updated to match.
 
+> **2026-08-28, Operations gets its first built case:** Module 4's new
+> Use case III (`use-case-coffee-dashboard.html`, added the same day — see
+> §4) now has a matching `/cases` card, following the standard
+> "course page has the case, `/cases` card links to it" rule (§5/§6). It
+> replaced the "Demand forecast dashboard" coming-soon placeholder — that
+> idea was true time-series forecasting from 3 years of sales data, a
+> different task than the coffee shop case (a descriptive dashboard over
+> transaction-level data), so rather than add a fifth card the placeholder
+> was retitled and relinked. `cases/operations/transactions.csv` (82,642
+> rows) is the case's sample data, moved here from `course/04-workflow/`
+> to match the standard sample-data location. Operations' and
+> `cases/index.html`'s "Demand forecasting..." blurbs were both reworded to
+> "Demand patterns..." since no card there does actual forecasting anymore.
+
 ---
 
 ## 5. Dual-mode design — how the same content serves both audiences
@@ -813,7 +831,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Marketing & Sales cases | 🚧 1 of 6 cards links out to a built course page (`/course/01-talking-to-ai/use-case.html`); the other 5 (merged in from the former Sales category) are "coming soon" |
 | Finance cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-model-automation.html`); no page of its own |
 | People cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-event-recap.html`); no page of its own |
-| Operations cases | 🚧 Index page only; individual cases not yet built |
+| Operations cases | 🚧 1 of 4 cards links out to a built course page (`/course/04-workflow/use-case-coffee-dashboard.html`); no page of its own |
 | Supply chain cases | 🚧 New category (2026-08-27); index page only, all 5 proposed cases "coming soon" |
 | Founder cases | 🚧 Index page only; individual cases not yet built |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
