@@ -17,7 +17,8 @@ Persistent header on every page:
 | Reference | `/reference` | Glossary, cheat sheets, atomic how-tos. (Stub — content planned.) |
 | About | `/about` | Philosophy, how to use the site, contributing. |
 
-Persistent footer: version/last-updated, About link.
+Persistent footer: site name, both authors (Xiaoyang Long and Jordan Tong),
+copyright + CC BY-NC-SA 4.0 license link, About link.
 
 ---
 
@@ -744,6 +745,24 @@ course syllabus as Module 7.
 > same rule: build it once, in the course module, and link to it from the
 > matching `/cases/<function>` card — do not also write a full page under
 > `/cases`.**
+
+> **2026-08-28, added Jordan Tong as co-developer, switched to CC BY-NC-SA
+> 4.0:** The site previously credited only Xiaoyang Long, under an "all
+> rights reserved — no reproduction without written permission" notice, in
+> two places: the sitewide footer (one byte-identical block repeated across
+> all 45 HTML files) and `about/index.html`'s "Credits & Use" section. Both
+> were updated, matching a sister site (GB210/SOLVE Framework, same
+> authors): the footer now reads "Developed by Xiaoyang Long and Jordan
+> Tong · © 2026 Xiaoyang Long and Jordan Tong ·
+> [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) ·
+> About this site" (still one line — the three-line layout the reference
+> site uses was **not** adopted). The About page's section was renamed
+> "Credits, use & permissions" and rewritten with a joint-authorship line,
+> a copyright + CC BY-NC-SA line, a "plain terms" paragraph explaining the
+> three conditions (credit us / noncommercial / share alike), and a
+> two-author contact line (`xiaoyang.long@wisc.edu`, `jordan.tong@wisc.edu`).
+> No reciprocal link to the GB210/SOLVE Framework site was added — this was
+> a credits/license update only, at the user's explicit instruction.
 
 **"Skill chips" on every page.** Each page is tagged with the underlying skills it teaches or uses (e.g., `context-engineering`, `subagents`, `data-cleanup`). Clicking a chip lands on a filtered index of every page touching that skill — this is what makes reference mode actually work.
 
