@@ -112,20 +112,23 @@ Don't run anything yet. Just the plan.
 
       <h3>Round 2 · Execute</h3>
       <p>Once the plan was approved:</p>
-      <pre><code>Now execute the plan. 
+      <pre><code>Now execute the plan.
 
 After running, show me the summary table and the first 3 rows
 of each output file.</code></pre>
 
-<p>Following its plan, the agent wrote Python code that:
-- Loads the CSV from ./customers.csv
-- Normalizes the messy fields (industry buckets, plan_tier
-  casing, handle null employee_count)
-- Applies the three segment definitions from the approved plan
-- Outputs three files: segment_growth.csv,
-  segment_atrisk.csv, segment_expansion.csv
-- Prints a summary table with count, avg MRR, and avg
-  tenure (months since signup) per segment</p>
+      <p>Following its plan, the agent wrote Python code that:</p>
+      <ul>
+        <li>Loads the CSV from ./customers.csv</li>
+        <li>Normalizes the messy fields (industry buckets, plan_tier
+        casing, handle null employee_count)</li>
+        <li>Applies the three segment definitions from the approved
+        plan</li>
+        <li>Outputs three files: segment_growth.csv,
+        segment_atrisk.csv, segment_expansion.csv</li>
+        <li>Prints a summary table with count, avg MRR, and avg
+        tenure (months since signup) per segment</li>
+      </ul>
 
       <h3>Round 3 · Verify and refine</h3>
       <p>The summary looked plausible but I noticed the "at risk" segment
