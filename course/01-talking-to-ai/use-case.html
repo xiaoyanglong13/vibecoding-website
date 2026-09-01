@@ -86,38 +86,38 @@ Pro, 1450, 2024-03-11, 4, 12, 2, "Sarah K."</code></pre>
       <h3>Round 1 · Plan before execute</h3>
       <p>I started by asking the agent to plan, not act:</p>
       <pre><code>You are a growth marketing analyst. I have a customer CSV
-(schema below) and need to produce three actionable segments
+and need to produce actionable segments
 for next quarter's campaign planning.
 
 Before writing any code, propose:
 1. A segmentation approach (which dimensions to use and why)
-2. Three plausible segment definitions, with the business
+2. Plausible segment definitions, with the business
    rationale for each
 3. The data quality issues you anticipate based on the schema
    and what to do about each
 
 Don't run anything yet. Just the plan.
-
-Schema:
-[paste the columns + 5 sample rows]</code></pre>
+</code></pre>
       <p>The plan it came back with was good but proposed five segments.
       I asked it to cut to three and prioritize segments where the
       campaign action would be most concrete. It did.</p>
 
       <h3>Round 2 · Execute</h3>
       <p>Once the plan was approved:</p>
-      <pre><code>Now execute the plan. Write Python that:
-- Loads the CSV from ./customers.csv
-- Normalizes the messy fields (industry buckets, plan_tier
-  casing, handle null employee_count)
-- Applies the three segment definitions from your plan
-- Outputs three files: segment_growth.csv,
-  segment_atrisk.csv, segment_expansion.csv
-- Prints a summary table with count, avg MRR, and avg
-  tenure (months since signup) per segment
+      <pre><code>Now execute the plan. 
 
 After running, show me the summary table and the first 3 rows
 of each output file.</code></pre>
+
+<p>Following its plan, the agent wrote Python code that:
+- Loads the CSV from ./customers.csv
+- Normalizes the messy fields (industry buckets, plan_tier
+  casing, handle null employee_count)
+- Applies the three segment definitions from the approved plan
+- Outputs three files: segment_growth.csv,
+  segment_atrisk.csv, segment_expansion.csv
+- Prints a summary table with count, avg MRR, and avg
+  tenure (months since signup) per segment</p>
 
       <h3>Round 3 · Verify and refine</h3>
       <p>The summary looked plausible but I noticed the "at risk" segment
