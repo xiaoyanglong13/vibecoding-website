@@ -565,9 +565,10 @@ course-page copies carry the same updated chips.
 **Current status (2026-11-10):** Overview and all four sub-pages
 are built. `keep-track-of-changes.html` (25 minutes) covers Git/GitHub,
 checkpoints, inspecting changes, careful recovery, and a save/change/break/recover
-exercise. `share-and-deploy.html` (page 2, 35 minutes) uses the supplied v2
+exercise. `share-and-deploy.html` (page 2, 35 minutes) uses the revised
 lesson: localhost versus public URLs, static hosting, GitHub Pages setup and
-updates, troubleshooting, public data and secrets, Vercel deployment, server-side
+updates, troubleshooting, public data and secrets, confidential dashboard access
+(approved summaries, authentication, and protected backends), Vercel deployment, server-side
 functions, and a publish/update exercise with optional Vercel extension.
 `skills-and-mcp.html` (35 minutes) is now page 4, an optional extension:
 reusable skills as SOPs, a weekly-sales-report skill and creation prompt, MCP

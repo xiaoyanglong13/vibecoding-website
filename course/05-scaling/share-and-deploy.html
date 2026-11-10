@@ -150,6 +150,28 @@ Do not change settings or files until we agree on a fix.</code></pre>
         Only publish a project that you are comfortable sharing publicly. GitHub Pages is a good learning platform for public demonstrations, not a substitute for access control when an application contains sensitive business information.
       </div>
 
+      <h2>What if your dashboard uses confidential company data?</h2>
+      <p>Suppose you build a sales dashboard for a company and want to share it with a client. The dashboard uses real transaction data, including sales figures, prices, and customer information.</p>
+      <p>You cannot simply publish the entire dataset on GitHub Pages. Even if the raw data is not visible on the screen, files included in the published website may still be accessible to visitors.</p>
+      <p><strong>What should you do?</strong> It depends on what information the client needs and who is allowed to see it.</p>
+      <table>
+        <thead><tr><th>Approach</th><th>When to use it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Publish only approved summaries</strong></td><td>If the client only needs aggregate results, such as sales trends or category totals, prepare those summaries internally and publish only the information approved for sharing. GitHub Pages may be sufficient.</td></tr>
+          <tr><td><strong>Require users to log in</strong></td><td>If the dashboard itself contains confidential information, use an application with authentication and access controls so only authorized clients can view it.</td></tr>
+          <tr><td><strong>Keep the data on a secure backend</strong></td><td>If clients need interactive access to confidential or frequently updated data, keep the underlying records in a protected database. The application retrieves and displays only the information each client is authorized to see.</td></tr>
+        </tbody>
+      </table>
+      <div class="example">
+        <p><strong>Example: A consulting firm serving several retailers</strong></p>
+        <p>Each retailer should be able to log in and explore its own sales performance, but should never see another retailer's data. The dashboard could be hosted on Vercel, with a backend that verifies users' permissions before retrieving and returning the appropriate data.</p>
+      </div>
+      <p><strong>Remember:</strong> A private GitHub repository does not automatically make a published GitHub Pages website private. Similarly, deploying on Vercel does not automatically make your application secure. Authentication, permissions, and data protection must be designed into the application.</p>
+      <div class="callout warn">
+        <span class="callout-label">Key principle</span>
+        <strong>Only send information to the user's browser that the user is authorized to see.</strong> If the underlying data is confidential, do not include it in publicly accessible website files.
+      </div>
+
       <h2>Going further: Deploy with Vercel</h2>
       <p>GitHub Pages is a good starting point, but you'll eventually want to build applications that do more than run code in a visitor's browser. For example, the next lesson will explore adding an AI feature that sends a request to a language model. That usually requires a <strong>server-side component</strong> so your API key isn't exposed to visitors.</p>
       <p><strong>Vercel</strong> is another hosting and deployment platform. Like GitHub Pages, it can publish a simple website. Unlike GitHub Pages, it also supports <strong>server-side functions</strong> that can communicate with APIs and other services. You can keep your code on GitHub and connect the same repository to Vercel. You do not need to abandon Git or GitHub.</p>
