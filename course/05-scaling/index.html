@@ -21,14 +21,14 @@
 
   <div class="course-layout">
     <aside class="course-sidebar">
-<h4>Module 5 · Scaling up</h4>
-<ol>
-<li><a href="/course/05-scaling/">Overview</a></li>
-<li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
-<li><span><span class="module-num">2.</span>Share and deploy <small>(coming soon)</small></span></li>
-<li><span><span class="module-num">3.</span>Put AI inside your solution <small>(coming soon)</small></span></li>
-<li><a href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">4.</span>Skills and MCP <small>(optional)</small></a></li>
-</ol>
+      <h4>Module 5 · Scaling up</h4>
+      <ol>
+        <li><a href="/course/05-scaling/">Overview</a></li>
+        <li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+        <li><span><span class="module-num">2.</span>Share and deploy <small>(coming soon)</small></span></li>
+        <li><span><span class="module-num">3.</span>Put AI inside your solution <small>(coming soon)</small></span></li>
+        <li><a href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">4.</span>Skills and MCP <small>(optional)</small></a></li>
+      </ol>
       <h4>All modules</h4>
       <ol>
         <li><a href="/course/">Syllabus</a></li>
@@ -43,113 +43,68 @@
 
     <article>
       <div class="stub-banner">
-        <strong>Module in progress.</strong> Pages 1 and 4 are available; Pages 2 and 3 are coming soon.
-        Page 4 is an optional extension.
+        <strong>Module in progress.</strong> The Git lesson and optional Skills and MCP extension are available. The deployment and AI API lessons are coming soon.
       </div>
 
       <div class="module-header">
-        <span class="eyebrow">Module 5 · 75 minutes core + optional extension</span>
+        <span class="eyebrow">Module 5 · About 75 minutes + optional extension</span>
         <h1>Scaling up</h1>
-        <p class="lede">
-          So far, you have focused on getting an agent to help you build something
-          that works. The next step is turning that prototype into a solution that
-          is safer to change, easier to share, and useful to other people.
-        </p>
+        <p class="lede">In Module 4, you learned to work with an AI agent to build and verify a solution. Now that you have something that works, how do you keep improving it safely and make it useful to other people?</p>
       </div>
 
-      <h2>From prototype to real solution</h2>
-
-      <p>
-        A project that works once on your laptop is a good start. But real business
-        solutions usually need more. You need to keep track of changes, preserve
-        workflows you will use again, connect AI directly to the product when it
-        adds value, and make the finished solution accessible to other people.
-      </p>
-
-      <pre><code>Build something that works
+      <h2>From a working prototype to a usable solution</h2>
+      <p>Imagine you have built a dashboard for a small business. It works on your computer, but you want to keep improving it and let someone else use it. Three practical questions come next:</p>
+      <ol>
+        <li><strong>What if a change breaks something?</strong> You need a way to track changes and recover a working version.</li>
+        <li><strong>How can someone else use it?</strong> You need to put the dashboard somewhere others can access it.</li>
+        <li><strong>What if the dashboard could do more?</strong> In some projects, you may want to add AI-powered features for the end user.</li>
+      </ol>
+      <p>These questions form the core path through this module:</p>
+      <pre><code>Build and verify a prototype (Module 4)
   ↓
-Keep track of changes
+Track changes and save working versions (Git)
   ↓
-Share and deploy it
+Share the application with others (deployment)
   ↓
-Put AI inside the solution when useful
-
-Optional: Extend your agent with skills and MCP</code></pre>
-
-      <p>
-        This module introduces those next steps. You do not need to become a
-        professional software engineer. The goal is to understand the basic ideas
-        well enough to build solutions that are safer to change and easier for
-        other people to use.
-      </p>
+Optional advanced capability: add AI features (APIs)</code></pre>
+      <p><strong>Not every project needs AI built into it.</strong> A dashboard, calculator, or interactive report can be useful on its own. And even if AI helps you build an application, that does not mean the application itself uses AI. The third lesson explains when and how to make that choice.</p>
 
       <h2>What you'll be able to do</h2>
+      <p>By the end of the core lessons, you should be able to use Git and GitHub to track changes and recover earlier versions; explain how to deploy a project so others can use it; and understand how an application can use an AI model through an API, including the basic implications for cost, privacy, and security.</p>
 
-      <p>
-        By the end of this module, you should be able to use Git and GitHub to keep
-        a history of your work, use skills to reuse procedures and MCP to connect
-        your agent to external tools and data, understand how an app
-        can call an AI model through an API, and deploy a simple solution so someone
-        else can actually use it.
-      </p>
-
-      <h2>In this module</h2>
-
+      <h2>Core lessons</h2>
       <div class="card-grid">
         <a class="card" href="/course/05-scaling/keep-track-of-changes.html">
           <div class="card-eyebrow">Page 1 · 25 minutes</div>
           <h3>1. Keep track of changes →</h3>
-          <p>
-            Learn the basic idea behind version control and use Git and GitHub to
-            save checkpoints, inspect what changed, recover an earlier version, and
-            collaborate without passing around files named
-            <code>final_v7_really-final.xlsx</code>.
-          </p>
+          <p>Your agent can edit many files quickly, and not every change will work. Learn how Git helps you inspect changes, save checkpoints, and recover an earlier working version. See how GitHub can help you store and share your project history.</p>
         </a>
 
         <div class="card">
-          <div class="card-eyebrow">Page 2 · Coming soon · Core</div>
+          <div class="card-eyebrow">Page 2 · Coming soon</div>
           <h3>2. Share and deploy what you build</h3>
-          <p>
-            Move from &ldquo;it works on my computer&rdquo; to something another person can
-            actually use. Learn the basic ideas behind hosting, deployment,
-            environment variables, secrets, updates, and maintaining a solution
-            after it goes live.
-          </p>
+          <p>A working project on your computer is not yet something others can use. Learn the basics of hosting and deployment, how to publish a simple application, and what to check before sharing it with real users.</p>
         </div>
 
         <div class="card">
-          <div class="card-eyebrow">Page 3 · Coming soon · Advanced core topic</div>
+          <div class="card-eyebrow">Page 3 · Coming soon · Advanced topic</div>
           <h3>3. Put AI inside your solution</h3>
-          <p>
-            So far, you have mostly used AI to <em>build</em> things. Now explore
-            when AI should become part of the thing you build&mdash;for example,
-            a website that sends a user's input to an LLM. Learn about APIs,
-            model calls, structured outputs, API keys, costs, and safeguards.
-          </p>
+          <p>So far, you have used AI to <em>build</em> applications. Here you will learn how an application can <em>use</em> AI&mdash;for example, to summarize customer feedback or answer questions. Explore APIs, model calls, API keys, usage costs, and safeguards.</p>
         </div>
+      </div>
 
+      <h2>Going further: Extend your agent</h2>
+      <p>The first three lessons focus on the <strong>solution you are building</strong>: protecting it, sharing it, and potentially adding AI features. There is another way to scale up: improving the <strong>agent that helps you build</strong>. This is useful for repeated tasks or projects that depend on external services, but it is not required for the core path.</p>
+
+      <div class="card-grid">
         <a class="card" href="/course/05-scaling/skills-and-mcp.html">
           <div class="card-eyebrow">Page 4 · Optional extension · 35 minutes</div>
           <h3>4. Extend your agent: Skills and MCP →</h3>
-          <p>
-            Go further with the agent that helps you build. Package recurring
-            procedures into reusable skills, and use MCP to connect the agent to
-            external tools and data. Useful for more complex workflows, but not
-            required to build and deploy an application.
-          </p>
+          <p>Package recurring workflows as reusable skills, and use MCP to connect your agent to external tools and information. Learn how these differ from the project instructions you used in Module 4.</p>
         </a>
       </div>
 
-      <h2>What about subagents and agent teams?</h2>
-
-      <p>
-        Beyond the optional skills and MCP page, you can also experiment with
-        <strong>subagents</strong> that take on specialized parts of a larger task,
-        or <strong>agent teams</strong> that coordinate several agents at once.
-        These are useful extensions, but they are not necessary for most of the
-        business projects in this course.
-      </p>
+      <p>Other extensions, such as subagents and agent teams, can help divide complex work among specialized agents. They are useful to explore later, but not necessary for most of the projects in this course.</p>
 
       <a class="next-cta" href="/course/05-scaling/keep-track-of-changes.html">
         <div>

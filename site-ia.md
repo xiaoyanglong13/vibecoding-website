@@ -571,7 +571,11 @@ connections to external tools/data, permissions, comparison with project
 instructions, and a comparison of ordinary workflow documents with skills (discovery, invocation,
 reuse, supporting files, and selective loading), and a required workflow-document-
 to-skill exercise with optional MCP extension.
-The 2026-11-10 revised overview is used as supplied. The sequence is now:
+The latest 2026-11-10 coherent overview is used as supplied. It introduces a
+dashboard example and three practical questions, groups pages 1–3 under Core
+lessons, and puts page 4 in a separate Going further section. It distinguishes
+using AI to build an application from adding AI features to that application.
+The sequence remains:
 1. Keep track of changes (25 minutes, built).
 2. Share and deploy (core, coming soon).
 3. Put AI inside your solution (advanced core, coming soon).
