@@ -8,3 +8,9 @@ The writing style is undergraduate economic textbook.
 page is added, removed, or renamed under `course/` or `cases/`, update the matching entries in
 `site-ia.md` (page tree in §2, module/case summary in §4, build-status table in §9) in the same
 change.
+
+After each completed change, run appropriate checks, commit the changes, and deploy
+through the existing GitHub main → Vercel workflow. The user has authorized this
+as the default; do not ask for confirmation again unless they explicitly request
+local-only work or a different workflow. Verify deployment success before reporting
+completion.

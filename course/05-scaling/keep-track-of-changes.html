@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Keep track of changes · Module 5 · Vibecoding for Business School Students</title>
+<link href="/assets/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+<nav class="site-nav">
+<a href="/start/">Start here</a>
+<a href="/course/">Course</a>
+<a href="/reference/">Reference</a>
+<a href="/about/">About</a>
+</nav>
+</div>
+</header>
+<div class="course-layout">
+<aside class="course-sidebar">
+<h4>Module 5 · Scaling up</h4>
+<ol>
+<li><a href="/course/05-scaling/">Overview</a></li>
+<li><a aria-current="page" href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+<li><span><span class="module-num">2.</span>Skills and hooks <small>(coming soon)</small></span></li>
+<li><span><span class="module-num">3.</span>Put AI inside your solution <small>(coming soon)</small></span></li>
+<li><span><span class="module-num">4.</span>Share and deploy <small>(coming soon)</small></span></li>
+</ol>
+<h4>All modules</h4>
+<ol>
+<li><a href="/course/">Syllabus</a></li>
+<li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+<li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+<li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+<li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+<li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+<li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+</ol></aside>
+<article>
+<div class="module-header">
+<span class="eyebrow">Module 5 · Page 1 of 4 · 25 minutes</span>
+<h1>Keep track of changes</h1>
+<p class="lede">AI agents can make many changes to your project in seconds. That is useful—until a change breaks something that used to work. Git helps you see what changed, save working versions, and recover from mistakes.</p>
+</div>
+<h2>When the agent breaks something</h2>
+<p>Imagine you have built a coffee shop dashboard. The charts look good, the calculations are correct, and you are ready to add one more feature: comparing sales across months.</p>
+<p>You ask your agent to build it. The agent edits a dozen files. The comparison works, but the original dashboard layout is now broken. You ask the agent to fix the layout, and another chart disappears. How do you get back to the version that worked?</p>
+<div class="example">
+<p>One approach is to make copies of your project as you work:</p>
+<pre><code>coffee-dashboard/
+coffee-dashboard-final/
+coffee-dashboard-final-v2/
+coffee-dashboard-final-v2-actually-final/</code></pre>
+<p>This becomes confusing quickly. Which version worked? What changed between them? And which one should you edit next?</p>
+</div>
+<p><strong>Version control</strong> is a better approach. It keeps a history of changes to a project, so you can inspect what happened and return to an earlier version when needed.</p>
+<h2>Git and GitHub: what is the difference?</h2>
+<p><strong>Git</strong> is a version control tool that tracks changes to files in a project. A project tracked by Git is called a <strong>repository</strong> (or <strong>repo</strong>).</p>
+<p><strong>GitHub</strong> is an online service where you can store Git repositories, share them, and collaborate with others. You can use Git on your own computer without GitHub.</p>
+<div class="example">
+<p>Think about the difference this way:</p>
+<ul>
+<li><strong>Git</strong> is the project's version history—similar in spirit to version history in Google Docs, but for an entire collection of files.</li>
+<li><strong>GitHub</strong> is an online home for that project and its history, where you can also work with other people.</li>
+</ul>
+</div>
+<h2>The basic workflow: inspect, save, recover</h2>
+<p>You do not need to memorize Git commands. Your coding agent can help perform them. But you should understand the following actions so you know what to ask for and what to check.</p>
+<h3 class="subhead-accent">1. Inspect what changed</h3>
+<p>Git can tell you which files were modified and show the differences between versions. This is especially important when an agent edits many files at once.</p>
+<h3 class="subhead-accent">2. Save a checkpoint (commit)</h3>
+<p>A <strong>commit</strong> is a named checkpoint in your project's history. It records changes to the files Git tracks. Good commit messages describe what changed, such as <em>Fix sales calculations</em> or <em>Add monthly comparison chart</em>.</p>
+<div class="example">
+<p>A simple project history might look like this (newest first):</p>
+<pre><code>● Add monthly comparison chart
+│
+● Fix sales calculations       ← verified working version
+│
+● Create initial dashboard</code></pre>
+<p>If the monthly comparison introduces a problem, you can use the earlier checkpoint to understand or recover what worked. You do not have to reconstruct it from memory.</p>
+</div>
+<h3 class="subhead-accent">3. Recover carefully</h3>
+<p>Git can help you restore a prior file or undo a problematic change. Before restoring anything, check whether you have newer work that you want to keep. Some recovery commands can discard uncommitted changes.</p>
+<div class="callout warn">
+<span class="callout-label">Remember</span>
+  A commit saves a version of your project; it does <strong>not</strong> prove that the version works. Follow the verification habits from Module 4 before calling a checkpoint a working version.
+</div>
+<h2>Let the agent handle the commands</h2>
+<p>Rather than starting with a long list of commands, start by telling the agent what you are trying to accomplish.</p>
+<h3 class="subhead-accent">Example 1: Before making a big change</h3>
+<div class="prompt-window">
+<div class="prompt-window-header">Prompt</div>
+<pre><code>I'm about to add a new feature to this project.
+
+Before changing anything:
+1. Check whether this folder is already tracked by Git.
+2. Show me any uncommitted changes.
+3. Help me save the current working version as a commit.
+4. Explain what will be included in the commit.
+
+Do not discard or overwrite any existing work.</code></pre>
+</div>
+<h3 class="subhead-accent">Example 2: After the agent makes changes</h3>
+<div class="prompt-window">
+<div class="prompt-window-header">Prompt</div>
+<pre><code>Summarize what you changed in this project.
+
+Tell me:
+1. Which files were added, modified, or deleted
+2. What changed in the main files
+3. Whether any changes seem unrelated to my request
+4. What I should test before saving a commit
+
+Don't commit yet. Let me review the changes first.</code></pre>
+</div>
+<h3 class="subhead-accent">Example 3: When something goes wrong</h3>
+<div class="prompt-window">
+<div class="prompt-window-header">Prompt</div>
+<pre><code>The dashboard worked before the latest changes,
+but now one of the charts is missing.
+
+Compare the current files with the last known working
+commit. Explain what likely caused the problem and
+suggest ways to recover.
+
+Do not reset, restore, or delete anything yet.
+Ask for my approval before making destructive changes.</code></pre>
+</div>
+<p>If you want to learn what the agent is doing, ask it to show you the Git commands it uses and explain them in plain language.</p>
+<h2>GitHub: keep a remote copy and collaborate</h2>
+<p>Your Git history can live entirely on your computer. Putting a repository on GitHub lets you keep a remote copy and share the project with teammates.</p>
+<ul>
+<li><strong>Push:</strong> send local commits to the remote repository.</li>
+<li><strong>Pull:</strong> bring remote changes into your local copy and integrate them.</li>
+<li><strong>Branch:</strong> work on a separate line of development, such as an experimental new feature, without immediately changing the main version.</li>
+</ul>
+<p>For example, you and a teammate could each work on different parts of the dashboard, then combine your changes. Git helps track the changes, although combining them sometimes requires resolving conflicts.</p>
+<div class="callout warn">
+<span class="callout-label">Important</span>
+  A Git commit is <strong>not automatically a cloud backup</strong>. Your local commits stay on your computer until you send them to a remote repository. Also, not every GitHub repository is private. Check your repository's visibility, and never commit passwords, API keys, or confidential information.
+</div>
+<h2>Exercise: save, break, recover</h2>
+<p>Use a small project you have already built (such as your coffee shop dashboard). Work with your coding agent to complete the following:</p>
+<ol>
+<li><strong>Save:</strong> Ask the agent to check the Git status. If Git is not set up, ask it to initialize the repository. Review what will be tracked, then save a commit of the working project.</li>
+<li><strong>Change:</strong> Ask the agent to make a visible change, such as updating the dashboard title or rearranging a chart. Inspect the changes, test that the dashboard still works, and commit.</li>
+<li><strong>Break:</strong> Ask the agent to make an intentionally undesirable change, such as removing a chart. Do not commit this change.</li>
+<li><strong>Recover:</strong> Ask the agent to show the difference from the last working commit and help you restore the missing chart without losing other work.</li>
+</ol>
+<p>Afterwards, consider: What would recovering have looked like without Git? How did you know which version was safe to return to?</p>
+<div class="callout warn">
+<span class="callout-label">Rule of thumb</span>
+<strong>Before a big change, save a checkpoint. After a successful change, verify it and save another.</strong> Ask the agent to explain changes before you approve them.
+</div>
+<a class="next-cta" href="/course/06-limits-and-ethics/">
+<div>
+<div class="next-cta-label">Next · Module 6</div>
+<div class="next-cta-title">Limits, risks, and responsibility</div>
+</div>
+<div class="next-cta-arrow">→</div>
+</a>
+</article>
+</div>
+<footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+</footer>
+<script src="/assets/script.js"></script>
+</body>
+</html>

@@ -64,7 +64,8 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
 │   │   ├── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
 │   │   └── /course/04-workflow/use-case-coffee-dashboard    (Use case III)               ✅
-│   ├── /course/05-scaling                                                                 🚧 index only
+│   ├── /course/05-scaling                                                                 🚧 1 of 4 sub-pages built
+│   │   └── /course/05-scaling/keep-track-of-changes                                      ✅
 │   └── /course/06-limits-and-ethics                                                       ✅ all 4 sub-pages built
 │       ├── /course/06-limits-and-ethics/protect-the-information                          ✅
 │       ├── /course/06-limits-and-ethics/control-agent-actions                            ✅
@@ -558,6 +559,19 @@ course-page copies carry the same updated chips.
 > current).
 
 ### Module 5 — Scaling up (`/course/05-scaling`)
+**Current status (2026-11-10):** Overview plus the first of four planned
+sub-pages are built. `keep-track-of-changes.html` (25 minutes) uses the supplied
+lesson: version control, Git vs. GitHub, inspecting changes, commits, careful
+recovery, three agent prompts, push/pull/branches, remote copies and visibility,
+and a save/change/break/recover exercise. The duplicate source doctype was
+removed; lesson content and shared styling are preserved. Both Module 5 pages
+have a local sidebar; unwritten lessons appear as coming-soon text without
+links. The overview's first card and next CTA open page 1. Until page 2 exists,
+page 1 continues to Module 6. The remaining lessons are skills/hooks, AI inside
+your solution, and sharing/deployment. The module retains its 90-minute estimate.
+
+The following overview build narrative is historical:
+
 Index written (renumbered from Module 7 on 2026-08-19); content revised
 2026-08-21 from a user-supplied draft, then revised again the same day from a
 v2 draft. Reframed around "prototype → real solution" (a `<pre><code>`
@@ -804,16 +818,15 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
-| Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
+| Module 5 `/course/05-scaling` | 🚧 Overview + page 1, `keep-track-of-changes` (25 min), built; remaining 3 sub-pages planned |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Chapter resources `/cases/*` | ✅ Downloadable files retained; standalone library and category pages removed for now |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
-1. Module 5 (Scaling up) sub-pages — version control (Git/GitHub), extending
-   the agent with skills and hooks, putting AI inside your own solution (APIs), share &amp;
-   deploy.
+1. Complete the remaining Module 5 (Scaling up) sub-pages — skills and hooks,
+   putting AI inside your own solution (APIs), and sharing/deployment.
 2. Fill in `/reference` glossary and cheat sheets.
 3. If academic integrity/attribution is still wanted somewhere, it needs a
    new home — Module 6 dropped it when the user's own four pages replaced
