@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extend your agent: Skills and MCP · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/reference/">Reference</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Scaling up</h4>
+      <ol>
+        <li><a href="/course/05-scaling/">Overview</a></li>
+        <li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+        <li><a aria-current="page" href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">2.</span>Skills and MCP</a></li>
+        <li><span><span class="module-num">3.</span>Put AI inside your solution <small>(coming soon)</small></span></li>
+        <li><span><span class="module-num">4.</span>Share and deploy <small>(coming soon)</small></span></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 2 of 4 · 30 minutes</span>
+        <h1>Extend your agent: Skills and MCP</h1>
+        <p class="lede">You have learned to give an AI agent instructions and organize the information it needs. Two more tools can make it useful across larger projects: <strong>skills</strong> help it follow reusable procedures, while <strong>MCP</strong> connects it to external tools and data.</p>
+      </div>
+
+      <h2>Two problems you may encounter</h2>
+      <p>Imagine you use an agent to prepare a sales report every Monday. You repeatedly explain what metrics to calculate, what to flag, and how to format the report. Even when the instructions are similar, the results sometimes look different.</p>
+      <p>Now imagine the sales data lives in an online system rather than in your project folder. You have to download the latest data and upload it to the agent every time.</p>
+      <div class="example">
+        <p>These are two different problems, with two different solutions:</p>
+        <ul>
+          <li><strong>Skills:</strong> Give the agent a reusable procedure for <em>how</em> to perform a task.</li>
+          <li><strong>MCP:</strong> Give the agent access to external tools and information it needs for the task.</li>
+        </ul>
+      </div>
+
+      <h2>Skills: Reuse a way of working</h2>
+      <p>A <strong>skill</strong> is a saved set of instructions for a particular kind of task. It can also include templates, reference files, or scripts. Think of it as a <strong>standard operating procedure</strong> (SOP) for your AI agent.</p>
+      <p>For example, a <code>weekly-sales-report</code> skill might tell the agent to inspect a dataset, calculate key metrics, identify important changes, flag questionable data, and produce a concise management report. The next week, you can reuse the procedure instead of explaining every step again.</p>
+
+      <h3 class="subhead-accent">Example 1: A weekly sales report skill</h3>
+      <div class="example">
+        <p>In Claude Code, a project-level skill can be stored like this:</p>
+        <pre><code>.claude/
+└── skills/
+    └── weekly-sales-report/
+        └── SKILL.md</code></pre>
+        <p>The <code>SKILL.md</code> file might contain:</p>
+        <pre><code>---
+name: weekly-sales-report
+description: Analyze sales data and prepare a concise weekly management report.
+---
+
+When preparing a weekly sales report:
+1. Inspect the data and explain any missing fields.
+2. Calculate total sales and relevant changes over time.
+3. Identify the three most important business insights.
+4. Flag missing values, anomalies, and uncertain conclusions.
+5. Produce a concise, clearly labeled management report.
+
+Do not invent missing numbers. Explain important assumptions.</code></pre>
+      </div>
+      <p>You do not need to memorize the file format. You can ask Claude Code to create and revise the skill for you. Once available, you can invoke it with <code>/weekly-sales-report</code>; depending on its configuration, Claude may also select it when the task is relevant.</p>
+
+      <h3 class="subhead-accent">Example 2: Ask the agent to create the skill</h3>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>Help me create a reusable Claude Code skill called
+weekly-sales-report.
+
+Whenever I use it, the agent should:
+1. Inspect the sales data and check for missing values.
+2. Calculate key sales metrics and changes over time.
+3. Identify three meaningful business insights.
+4. Flag questionable calculations or assumptions.
+5. Produce a concise management report.
+
+First show me the proposed workflow. Then create the
+skill and explain how to invoke and test it.</code></pre>
+      </div>
+      <p>Test the skill on a sample dataset. Check both the calculations and the quality of the recommendations. If something is wrong or unclear, revise the skill and test it again.</p>
+      <div class="callout warn">
+        <span class="callout-label">Remember</span>
+        A skill makes a procedure easier to reuse; it does <strong>not</strong> guarantee accurate results. Apply the verification habits from Module 4 each time you use it.
+      </div>
+
+      <h2>MCP: Connect the agent to other tools</h2>
+      <p>Your agent can already work with files in its project folder. But useful information often lives elsewhere: Google Drive, GitHub, Slack, Notion, or a company database.</p>
+      <p><strong>MCP</strong> stands for <strong>Model Context Protocol</strong>. It is an open standard for connecting AI applications to external tools and data sources. An <strong>MCP server</strong> makes specific capabilities available to the agent, such as searching documents, retrieving records, or creating an issue in a project tracker.</p>
+      <div class="example">
+        <p>Think of an MCP connection as providing access to a workplace system:</p>
+        <pre><code>AI agent
+   |
+   |  MCP connection
+   v
+External service (e.g., GitHub or Google Drive)
+   |
+   v
+Available actions: search, read, or update
+(depending on the connection and permissions)</code></pre>
+        <p>The agent does not automatically gain access to everything. The available actions depend on the MCP server, your account, and the permissions you grant.</p>
+      </div>
+
+      <h3 class="subhead-accent">Example 3: Preparing for a project meeting</h3>
+      <p>Suppose your team stores project documents in Google Drive and tracks work in GitHub. Without connections, you might download the documents, copy open issue descriptions, and paste everything into a chat.</p>
+      <p>With suitable connections, the agent can retrieve relevant information from those services directly.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>Review the latest project plan in Google Drive and
+open issues in our GitHub repository.
+
+Summarize the three most important unresolved problems
+for tomorrow's team meeting. For each problem, give
+the evidence and a link to its source.
+
+Do not modify any documents or GitHub issues.</code></pre>
+      </div>
+      <p>Other examples include retrieving customer feedback from a connected database, searching team discussions, or creating tasks in a project management tool. Whether a particular action is possible depends on the connection you have configured.</p>
+
+      <h2>Try an MCP connection</h2>
+      <p>In Claude Code, you can inspect configured MCP connections using <code>/mcp</code>. Setting up a new connection may involve choosing a trusted provider, authenticating with your account, and granting permissions.</p>
+      <p>You can ask your agent to help with the setup, rather than figuring out each technical step on your own.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I want to connect Claude Code to GitHub through MCP.
+
+Help me:
+1. Find an official or trusted connection option.
+2. Explain which actions and information it can access.
+3. Walk me through setup and authentication.
+4. Test it using a read-only task.
+
+Show me the configuration and permissions first.
+Do not install anything, change permissions, or modify
+GitHub content without my approval.</code></pre>
+      </div>
+      <div class="callout warn">
+        <span class="callout-label">Use care with connections</span>
+        Connect only trusted services. Review whether a connection can merely <strong>read</strong> information or also <strong>create, change, or delete</strong> it. Be careful with private data, and verify retrieved information before relying on it. External content can also contain misleading or malicious instructions.
+      </div>
+
+      <h2>What should you use?</h2>
+      <p>You have now seen three ways to help an agent work more effectively. They solve different problems.</p>
+      <div class="example">
+        <table>
+          <thead>
+            <tr><th>Tool</th><th>Main question</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Project instructions</strong> (Module 4)</td><td>What should the agent know?</td><td>Never modify raw data files.</td></tr>
+            <tr><td><strong>Skill</strong></td><td>How should it do this recurring task?</td><td>Prepare a weekly sales report using our format.</td></tr>
+            <tr><td><strong>MCP</strong></td><td>What external information or tools can it access?</td><td>Read the latest sales file from Google Drive.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These tools complement one another. For a weekly sales report, an <strong>MCP connection</strong> might retrieve the latest data, a <strong>skill</strong> might specify the analysis and report format, and <strong>project instructions</strong> might supply company-specific rules.</p>
+      <p>Note that a connection alone does not schedule the report to run every Monday. Scheduling requires a separate automation mechanism.</p>
+
+      <h2>Exercise</h2>
+      <p><strong>Required: Create your own skill.</strong> Choose a task you might perform more than once, such as summarizing meeting notes, cleaning survey data, evaluating suppliers, or creating a management report.</p>
+      <ol>
+        <li>Describe the task, desired output, and any important rules to your agent.</li>
+        <li>Ask it to create a reusable skill. Review the proposed instructions before saving.</li>
+        <li>Invoke the skill on a sample task and inspect the result.</li>
+        <li>Identify one weakness. Revise the skill and test it again.</li>
+      </ol>
+      <p><strong>Optional extension:</strong> Explore an MCP connection to a service you already use. Ask the agent what it would be allowed to do, review the permissions, and (if appropriate) test a read-only request.</p>
+      <p>Reflect: How is your new skill different from saving a prompt? What can MCP enable that a skill alone cannot? Which parts of the work still require your judgment?</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Takeaway</span>
+        <strong>Skills provide a repeatable method. MCP provides access to external systems.</strong> Both expand what an agent can do, but neither replaces careful oversight and verification.
+      </div>
+
+      <p>For setup details, see the official <a href="https://code.claude.com/docs/en/skills">Claude Code skills guide</a> and <a href="https://code.claude.com/docs/en/mcp">MCP guide</a>.</p>
+
+      <a class="next-cta" href="/course/06-limits-and-ethics/">
+        <div>
+          <div class="next-cta-label">Next · Module 6</div>
+          <div class="next-cta-title">Limits, risks, and responsibility</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
