@@ -571,9 +571,10 @@ connections to external tools/data, permissions, comparison with project
 instructions, and a comparison of ordinary workflow documents with skills (discovery, invocation,
 reuse, supporting files, and selective loading), and a required workflow-document-
 to-skill exercise with optional MCP extension.
-The latest 2026-11-10 coherent overview is used as supplied. It introduces a
-dashboard example and three practical questions, groups pages 1–3 under Core
-lessons, and puts page 4 in a separate Going further section. It distinguishes
+The latest 2026-11-10 coherent overview introduces a dashboard example and
+three practical questions. Per the follow-up layout change, all four cards now
+share one grid under In this module; page 4 retains its optional label, and
+the separate Going further section is removed. The overview distinguishes
 using AI to build an application from adding AI features to that application.
 The sequence remains:
 1. Keep track of changes (25 minutes, built).
