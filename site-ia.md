@@ -3,6 +3,12 @@
 > A draft IA for the course website. Designed for **two audiences in one site**:
 > a *linear learner* taking the course end-to-end, and a *returning reference user* looking up a specific concept or recipe.
 
+> **2026-11-10 — Textbook structure:** The standalone business use-case library
+> and its six category index pages have been removed for now. The textbook
+> contains Modules 1–6, preceded by the Module 0 introduction. Worked examples
+> stay within Modules 1 and 4. Files under `cases/` remain as downloadable
+> chapter resources. Older dated build narratives below are historical.
+
 ---
 
 ## 1. Top-level navigation
@@ -12,8 +18,7 @@ Persistent header on every page:
 | Nav item | URL | Purpose |
 |---|---|---|
 | Start here | `/start` | The hook. Module 0 — why Business School Students should care. |
-| Course | `/course` | Linear curriculum, modules 1–7. |
-| Use cases | `/cases` | Business cases organized by function. |
+| Course | `/course` | Linear curriculum, modules 1–6. |
 | Reference | `/reference` | Glossary, cheat sheets, atomic how-tos. (Stub — content planned.) |
 | About | `/about` | Philosophy, how to use the site, contributing. |
 
@@ -27,7 +32,7 @@ copyright + CC BY-NC-SA 4.0 license link, About link.
 Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or placeholders. Pages marked ❌ are planned but not yet created.
 
 ```
-/                                  Home (hero + three doors: Start, Course, Use cases) ✅
+/                                  Home (hero + Start and Course entry points) ✅
 ├── /start                         Module 0 — Why this matters for Business School Students ✅
 │
 ├── /course                        Course landing (syllabus, prerequisites, time estimates) ✅
@@ -65,43 +70,12 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │       ├── /course/06-limits-and-ethics/control-agent-actions                            ✅
 │       ├── /course/06-limits-and-ethics/real-cost                                        ✅
 │       └── /course/06-limits-and-ethics/when-not-to-vibecode                             ✅
-│   (Module 7 is the /cases library; no separate /course/07 directory)
 │
-├── /cases                         Use case library ✅
-│   ├── /cases/marketing            (merged with Sales 2026-08-27 — see §4/§9)  ✅
-│   │   ├── segmentation-from-csv card links out to /course/01-talking-to-ai/use-case.html
-│   │   │   (no page of its own — see §5/§6; customers.csv sample data still lives here)
-│   │   ├── /cases/marketing/content-pipeline                                             ❌ coming soon
-│   │   ├── /cases/marketing/campaign-dashboard                                           ❌ coming soon
-│   │   ├── /cases/marketing/crm-enrichment                                               ❌ coming soon (was /cases/sales)
-│   │   ├── /cases/marketing/outreach-personalization                                     ❌ coming soon (was /cases/sales)
-│   │   └── /cases/marketing/support-triage                                               ❌ coming soon (was /cases/sales)
-│   ├── /cases/finance                                                                     ✅
-│   │   ├── model-automation card links out to /course/04-workflow/use-case-model-automation.html
-│   │   │   (no page of its own — see §5/§6; trial_balance.csv, account_mapping.csv,
-│   │   │   model_2026-03.xlsx, summary_2026-04.xlsx sample data still lives here)
-│   │   ├── /cases/finance/document-analysis-10k                                          ❌ coming soon
-│   │   └── /cases/finance/scenario-tool                                                  ❌ coming soon
-│   ├── /cases/operations            (3 of 4 case ideas replaced 2026-08-27 — see §4)  ✅
-│   │   ├── coffee-dashboard card links out to /course/04-workflow/use-case-coffee-dashboard.html
-│   │   │   (no page of its own — see §5/§6; transactions.csv sample data lives here;
-│   │   │   replaced the old "demand forecast dashboard" coming-soon idea 2026-08-28)
-│   │   ├── /cases/operations/workforce-scheduler                                         ❌ coming soon
-│   │   ├── /cases/operations/manufacturing-bottleneck-simulator                          ❌ coming soon
-│   │   └── /cases/operations/quality-control-dashboard                                   ❌ coming soon
-│   ├── /cases/supply-chain         (new category, added 2026-08-27 — see §4/§9)  🚧 index only
-│   │   ├── /cases/supply-chain/supplier-scorecard                                        ❌ coming soon
-│   │   ├── /cases/supply-chain/inventory-reorder-dashboard                               ❌ coming soon
-│   │   ├── /cases/supply-chain/supplier-negotiation-chatbot                              ❌ coming soon
-│   │   ├── /cases/supply-chain/landed-cost-calculator                                    ❌ coming soon
-│   │   └── /cases/supply-chain/single-source-exposure-map                                ❌ coming soon
-│   ├── /cases/founder                                                                     🚧 index only
-│   │   ├── /cases/founder/landing-page-mvp                                               ❌ coming soon
-│   │   ├── /cases/founder/customer-interview-synthesis                                   ❌ coming soon
-│   │   └── /cases/founder/prototype-app                                                  ❌ coming soon
-│   └── /cases/people                                                                      ✅
-│       └── event-recap-generator card links out to /course/04-workflow/use-case-event-recap.html
-│           (no page of its own — see §5/§6; sample docs/notes still live here)
+├── /cases                         Chapter resource files only; no standalone HTML pages
+│   ├── /cases/marketing            customers.csv for Module 1
+│   ├── /cases/finance              CSVs, spreadsheets, workflow, and images for Module 4
+│   ├── /cases/operations           transactions.csv for Module 4
+│   └── /cases/people               Source documents, sample outputs, notes, and CLAUDE.md for Module 4
 │
 ├── /reference                     Lookup content: glossary, cheat sheets, how-tos        🚧 stub
 └── /about                         Philosophy, how to use, contributing, build status      ✅
@@ -673,10 +647,15 @@ do); `.example` boxes and blockquote "useful rule" callouts already matched
 site convention as supplied, so those were kept as-is. No banned "it is not X,
 it is Y" constructions were found in the source content.
 
-### Module 7 — Business use cases (`/cases`)
-No separate `/course/07` directory (renumbered from Module 8 on 2026-08-19).
-The `/cases` library serves this purpose directly and is linked from the
-course syllabus as Module 7.
+### Business use-case library — removed for now (2026-11-10)
+The standalone `/cases` index and all six category index pages were removed.
+Module 7 was removed from the syllabus, all chapter sidebars, and the final
+chapter's next link. The final chapter now returns to the syllabus. The home,
+Start, and About pages no longer direct readers to the library. Worked examples
+in Modules 1 and 4 and their downloadable resources are retained. Future
+examples should be integrated into chapters; standalone category pages are deferred.
+
+The dated notes below record the former library's history.
 
 > **2026-08-27:** Module 8 (Capstone, `/course/08-capstone`) was dropped
 > entirely at the user's request — the site now ends at Module 7 (`/cases`).
@@ -737,13 +716,13 @@ course syllabus as Module 7.
 
 **Linear course mode.** A persistent left rail on `/course/*` pages shows the syllabus with progress indicators (visited / in-progress / completed via localStorage). Every page ends with a single "Next" CTA. No decision fatigue.
 
-**Reference mode.** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. **A use case built inside a course module (Modules 1–6) is not duplicated into `/cases` — the `/cases/<function>` card links straight to the course page instead** (e.g. the Finance card for "Model automation" links to `/course/04-workflow/use-case-model-automation.html`, not to a `/cases/finance/model-automation.html` of its own). Sample data for that case still lives under `/cases/<function>/` even though the narrative page doesn't. This is a 2026-08-27 policy change — see the dated note in §6 for what it replaced and why.
+**Reference mode (planned; standalone case library deferred).** Top-level search bar (powered by something simple — Pagefind or Algolia). Every page carries metadata tags (`topic:`, `skill-level:`, `tool:`) that drive a filtered index under `/cases`. **A use case built inside a course module (Modules 1–6) is not duplicated into `/cases` — the `/cases/<function>` card links straight to the course page instead** (e.g. the Finance card for "Model automation" links to `/course/04-workflow/use-case-model-automation.html`, not to a `/cases/finance/model-automation.html` of its own). Sample data for that case still lives under `/cases/<function>/` even though the narrative page doesn't. This is a 2026-08-27 policy change — see the dated note in §6 for what it replaced and why.
 
 ---
 
 ## 6. Cross-cutting elements
 
-**Mini-cases threaded through the course.** Modules 1, 4, and 6 each end with a mini-case so the application thread runs through the whole curriculum, not just the end. The course page **is** the case — it is not duplicated into `/cases` (see the standing rule below).
+**Worked examples threaded through the textbook.** Modules 1 and 4 contain worked business examples. Their narrative pages stay in the chapters; downloadable resources remain under `/cases/<function>/`. Standalone library pages and category cards are deferred as of 2026-11-10. The dated rule below records the earlier card-linking approach.
 
 > **2026-08-27, standing rule — don't duplicate use cases into `/cases`:**
 > Three use cases used to exist as full duplicate pages in both places —
@@ -814,7 +793,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 
 ---
 
-## 9. Build status (as of 2026-08-27)
+## 9. Build status (as of 2026-11-10)
 
 | Section | Status |
 |---|---|
@@ -827,23 +806,15 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
 | Module 5 `/course/05-scaling` | 🚧 Index page written; sub-pages not yet built |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
-| Cases index `/cases` | ✅ Complete |
-| Marketing & Sales cases | 🚧 1 of 6 cards links out to a built course page (`/course/01-talking-to-ai/use-case.html`); the other 5 (merged in from the former Sales category) are "coming soon" |
-| Finance cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-model-automation.html`); no page of its own |
-| People cases | 🚧 1 of 3 cards links out to a built course page (`/course/04-workflow/use-case-event-recap.html`); no page of its own |
-| Operations cases | 🚧 1 of 4 cards links out to a built course page (`/course/04-workflow/use-case-coffee-dashboard.html`); no page of its own |
-| Supply chain cases | 🚧 New category (2026-08-27); index page only, all 5 proposed cases "coming soon" |
-| Founder cases | 🚧 Index page only; individual cases not yet built |
+| Chapter resources `/cases/*` | ✅ Downloadable files retained; standalone library and category pages removed for now |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
 | About `/about` | ✅ Complete |
 
 **Suggested next build priorities:**
-1. One additional case per function category to demonstrate breadth (Operations,
-   Sales, and Founder are all still index-only).
-2. Module 5 (Scaling up) sub-pages — version control (Git/GitHub), extending
+1. Module 5 (Scaling up) sub-pages — version control (Git/GitHub), extending
    the agent with skills and hooks, putting AI inside your own solution (APIs), share &amp;
    deploy.
-3. Fill in `/reference` glossary and cheat sheets.
-4. If academic integrity/attribution is still wanted somewhere, it needs a
+2. Fill in `/reference` glossary and cheat sheets.
+3. If academic integrity/attribution is still wanted somewhere, it needs a
    new home — Module 6 dropped it when the user's own four pages replaced
    the originally planned outline (see Module 6's summary above).
