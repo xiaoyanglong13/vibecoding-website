@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Put AI inside your solution · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/reference/">Reference</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Scaling up</h4>
+      <ol>
+        <li><a href="/course/05-scaling/">Overview</a></li>
+        <li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+        <li><a href="/course/05-scaling/share-and-deploy.html"><span class="module-num">2.</span>Share and deploy</a></li>
+        <li><a href="/course/05-scaling/put-ai-inside-your-solution.html" aria-current="page"><span class="module-num">3.</span>Put AI inside your solution</a></li>
+        <li><a href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">4.</span>Skills and MCP <small>(optional)</small></a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 3 of 4 · 35 minutes · Advanced topic</span>
+        <h1>Put AI inside your solution</h1>
+        <p class="lede">So far, you've used AI to help you build applications. But the applications themselves don't necessarily use AI. What if your dashboard could explain trends or your survey tool could summarize feedback? In this lesson, you'll learn how an application connects to an AI model, and what to consider before giving that feature to users.</p>
+      </div>
+
+      <h2>Using AI to build vs. building something that uses AI</h2>
+      <p>Recall the coffee shop dashboard from Module 4. An AI coding agent helped you build charts, filters, and calculations. Once the dashboard is finished, those features can work without calling an AI model.</p>
+      <p>Now imagine adding a button labeled <strong>Generate AI insights</strong>. When the manager clicks it, the dashboard sends selected sales metrics to an AI model and displays a short written interpretation. The <em>application itself</em> now uses AI.</p>
+      <div class="example">
+        <p><strong>Built with AI:</strong> Claude Code helps you create a dashboard. Users explore charts and metrics calculated by ordinary code.</p>
+        <p><strong>AI inside the product:</strong> The dashboard offers a feature that contacts an AI model to generate explanations for its users.</p>
+      </div>
+      <p>Adding AI is a choice, not an automatic improvement. If a feature can be handled more accurately and cheaply with a simple formula or rule, use that instead.</p>
+
+      <h2>What is an API?</h2>
+      <p>An <strong>API</strong> (application programming interface) is a way for one software application to request information or services from another. For example, a weather app might use an API to retrieve a forecast. Your dashboard can use an AI provider's API to request a written summary.</p>
+      <pre><code>Manager clicks “Generate AI insights”
+                  ↓
+Your application sends sales metrics + instructions
+                  ↓
+          AI provider's API
+                  ↓
+        AI generates a response
+                  ↓
+Your application displays the summary</code></pre>
+      <p>Four terms are useful to know:</p>
+      <div class="example">
+        <p><strong>API:</strong> The interface through which software systems communicate.</p>
+        <p><strong>Request:</strong> The data and instructions your application sends.</p>
+        <p><strong>Response:</strong> The information or output the service returns.</p>
+        <p><strong>API key:</strong> A secret credential used to authenticate requests to a service.</p>
+      </div>
+      <div class="callout warn">
+        <span class="callout-label">Cost</span>
+        Using an AI model through an API may require separate billing, even if you already subscribe to a consumer AI chatbot. Check the provider's current pricing and set a small budget before experimenting.
+      </div>
+
+      <h2>How does an AI-powered website work?</h2>
+      <p>In the previous lesson, you published a website through GitHub Pages and explored Vercel. GitHub Pages works well for websites that run entirely in the browser. But a website that calls a paid AI API usually needs a <strong>server-side component</strong>.</p>
+      <p>Why not just put the AI provider's API key into the website's JavaScript? Because code delivered to a visitor's browser can be inspected. Someone could copy the key and use it at your expense.</p>
+      <pre><code>User's browser (frontend)
+  Clicks “Generate AI insights”
+                ↓
+Your server-side function (backend, on Vercel)
+  Validates the request; accesses a secret API key
+                ↓
+AI provider's API
+  Generates a summary
+                ↓
+Your server-side function
+                ↓
+User's browser displays the summary</code></pre>
+      <p>A <strong>frontend</strong> is what users see and interact with in their browsers. A <strong>backend</strong> handles tasks on the server, including securely calling outside services. Vercel can run <strong>server-side functions</strong> without requiring you to manage a conventional server yourself.</p>
+      <p>An <strong>environment variable</strong> can supply a secret, such as <code>OPENAI_API_KEY</code>, to server-side code. The key must never be included in client-side code, a public configuration variable, or a Git commit.</p>
+      <div class="callout warn">
+        <span class="callout-label">Important</span>
+        A hidden API key is necessary but not sufficient. If anyone can freely call your backend endpoint, they may still generate charges through it. Public AI features also need suitable access restrictions, request limits, and other safeguards.
+      </div>
+
+      <h2>Example: Add AI insights to a sales dashboard</h2>
+      <p>Let's add one narrowly defined feature to the coffee shop dashboard. When the user clicks <strong>Generate AI insights</strong>, the app sends a few <em>already-calculated</em> metrics and asks for a concise interpretation.</p>
+      <div class="example">
+        <p><strong>Illustrative dashboard metrics</strong></p>
+        <pre><code>This week's revenue: $8,450
+Change from last week: -8%
+Number of orders: 632</code></pre>
+        <p><strong>Example response:</strong> “Revenue declined 8% from last week. This could reflect fewer orders or a lower average order value, but the current figures do not establish which. Compare order counts and average transaction values across the two weeks before deciding on an intervention.”</p>
+        <p>The numbers and response above are hypothetical, not a live AI result.</p>
+      </div>
+      <p>Notice the division of labor: <strong>ordinary code calculates the metrics</strong>, while the AI model helps explain them. The model should distinguish facts supported by the data from hypotheses that need further investigation.</p>
+
+      <h3 class="subhead-accent">Ask your coding agent to plan the feature</h3>
+      <p>You don't need to write the API integration yourself. Your job is to specify the expected behavior and review the agent's implementation plan.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I have a coffee shop sales dashboard deployed on Vercel.
+I want to add a button called “Generate AI insights.”
+
+When clicked, it should send selected, pre-calculated
+sales metrics to an AI model and display a concise
+management summary.
+
+Before coding:
+1. Inspect the project and propose the simplest design.
+2. Explain exactly what data will leave the application.
+3. Explain the frontend, backend, and API request flow.
+4. Explain how you'll protect the API key and restrict
+   usage to avoid unexpected costs.
+5. Identify likely errors and how the UI should handle them.
+
+Keep numerical calculations in ordinary code. Ask the
+model to distinguish observations from possible causes.
+Do not expose secrets, commit credentials, or deploy
+changes without my approval.</code></pre>
+      </div>
+      <h3 class="subhead-accent">Then implement and test</h3>
+      <p>After reviewing the plan, ask the agent to implement the feature. Depending on the project, it may use an official provider SDK or a library that supports multiple providers. You don't need to memorize the implementation syntax, but you should understand the basic architecture.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Follow-up prompt</div>
+        <pre><code>Implement the approved plan, using a server-side function.
+Do not put the API key in frontend code or in Git.
+
+Then help me verify:
+- The summary reflects the actual dashboard metrics.
+- Missing or unusual data is handled appropriately.
+- The interface handles slow or failed requests clearly.
+- Access and request limits work as intended.
+- The deployed feature works, not just the local version.
+
+Show me what changed before committing or deploying.</code></pre>
+      </div>
+      <p>For this exercise, use synthetic or otherwise shareable data. If an API key or account setup is unavailable, you can still ask the agent to implement the interface using a <strong>clearly labeled mock response</strong> and verify the flow without making real model calls.</p>
+
+      <h2>What changes when other people use your AI feature?</h2>
+      <p>An AI feature introduces a different set of responsibilities from a chart or calculator. Before publishing, ask:</p>
+      <div class="example">
+        <p><strong>Accuracy:</strong> Does the response match the numbers? Does it invent explanations not supported by the data?</p>
+        <p><strong>Privacy:</strong> What information is sent to the model provider? Is it appropriate to share?</p>
+        <p><strong>Cost:</strong> Could repeated or automated requests create unexpected charges?</p>
+        <p><strong>Security:</strong> Are credentials protected? Can the endpoint be abused?</p>
+        <p><strong>User experience:</strong> What happens if the request fails, is slow, or returns an unhelpful response?</p>
+      </div>
+      <p>For the sales dashboard, a good design sends only the summarized metrics necessary for the task. It avoids unnecessary customer-level data. You can also limit who can use the AI feature, restrict request frequency, and show a clear error message when the API is unavailable.</p>
+      <p>Remember the verification principle from Module 4: <strong>working code does not imply a trustworthy answer.</strong> Test both the software and the quality of the AI-generated content.</p>
+
+      <h2>Exercise: Add one AI-powered feature</h2>
+      <p>Start with a simple application, ideally one already deployed to Vercel. Choose <strong>one narrow feature</strong> rather than building a general-purpose chatbot.</p>
+      <ol>
+        <li><strong>Choose a use case.</strong> For example, summarize dashboard trends, categorize customer feedback, or generate a study plan from tasks and deadlines.</li>
+        <li><strong>Plan.</strong> Ask the agent what data the feature needs, what it will send to the model, and how the server-side connection will work.</li>
+        <li><strong>Review safeguards.</strong> Check how the API key, privacy, access, and potential costs will be handled.</li>
+        <li><strong>Build and verify.</strong> Implement the feature (or a clearly labeled mock version), then test at least three cases: normal input, missing data, and unusual input.</li>
+        <li><strong>Deploy and check.</strong> If using a real API, deploy the approved version and verify the live feature. Do not publish an unrestricted, billable endpoint.</li>
+      </ol>
+      <p><strong>Reflection:</strong> What does AI contribute that a simpler rule-based feature would not? Which parts of the AI-generated output must be verified before users rely on them?</p>
+      <div class="callout warn">
+        <span class="callout-label">Takeaway</span>
+        AI can help you <strong>build</strong> an application, and an application can also <strong>use</strong> AI. The second requires an API connection, careful deployment, and ongoing attention to accuracy, privacy, security, and cost. Add AI when it solves a real user problem—not simply because you can.
+      </div>
+
+      <a class="next-cta" href="/course/05-scaling/skills-and-mcp.html">
+        <div>
+          <div class="next-cta-label">Next · Optional extension · Page 4 of 4</div>
+          <div class="next-cta-title">Extend your agent: Skills and MCP</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
