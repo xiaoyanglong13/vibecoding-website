@@ -43,7 +43,7 @@
 
     <article>
       <div class="module-header">
-        <span class="eyebrow">Module 5 · Page 2 of 4 · 30 minutes</span>
+        <span class="eyebrow">Module 5 · Page 2 of 4 · 35 minutes</span>
         <h1>Extend your agent: Skills and MCP</h1>
         <p class="lede">You have learned to give an AI agent instructions and organize the information it needs. Two more tools can make it useful across larger projects: <strong>skills</strong> help it follow reusable procedures, while <strong>MCP</strong> connects it to external tools and data.</p>
       </div>
@@ -107,6 +107,51 @@ skill and explain how to invoke and test it.</code></pre>
       <div class="callout warn">
         <span class="callout-label">Remember</span>
         A skill makes a procedure easier to reuse; it does <strong>not</strong> guarantee accurate results. Apply the verification habits from Module 4 each time you use it.
+      </div>
+
+      <h2>Why not just save the instructions in a document?</h2>
+      <p>In Module 4, you learned to keep useful instructions and project information in files that your agent can read. So why create a skill instead of simply saving a workflow in <code>weekly-report.md</code>?</p>
+      <p><strong>Both approaches can work.</strong> A skill is not inherently smarter than a well-written instruction document. The main advantage is that skills use a standard structure that compatible agents can <strong>discover and invoke</strong> more easily.</p>
+
+      <h3 class="subhead-accent">The same workflow, two approaches</h3>
+      <div class="example">
+        <p><strong>Approach A: An ordinary instruction document</strong></p>
+        <pre><code>my-project/
+├── data/
+└── weekly-report.md</code></pre>
+        <p>You tell the agent: <em>“Read <code>weekly-report.md</code> and follow its instructions to prepare this week's report.”</em> This is a perfectly valid way to reuse a workflow.</p>
+        <p><strong>Approach B: A skill</strong></p>
+        <pre><code>my-project/
+├── data/
+└── .claude/
+    └── skills/
+        └── weekly-report/
+            └── SKILL.md</code></pre>
+        <p>Claude Code can discover the skill in its recognized location. You can invoke it by name with <code>/weekly-report</code>, or Claude may select it for a relevant request based on its description and configuration.</p>
+      </div>
+
+      <h3 class="subhead-accent">What changes in practice?</h3>
+      <div class="example">
+        <table>
+          <thead>
+            <tr><th></th><th>Ordinary workflow document</th><th>Skill</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Instructions</strong></td><td>Can contain a complete procedure</td><td>Can contain the same procedure</td></tr>
+            <tr><td><strong>Finding it</strong></td><td>Usually tell the agent which file to read</td><td>Discovered in a recognized skills directory</td></tr>
+            <tr><td><strong>Using it</strong></td><td>Ask the agent to follow the document</td><td>Invoke by name; may also activate for relevant tasks</td></tr>
+            <tr><td><strong>Reuse</strong></td><td>Copy or reference the file as needed</td><td>Can be installed at the project or user level</td></tr>
+            <tr><td><strong>Supporting files</strong></td><td>Can reference templates and scripts</td><td>Can package templates and scripts with the skill</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can also get close to skill-like behavior with an ordinary document by adding a rule to your <code>CLAUDE.md</code> file:</p>
+      <pre><code>When preparing a weekly sales report, read and follow
+weekly-report.md.</code></pre>
+      <p>That tells Claude Code where to look when the task comes up. A skill mainly makes this arrangement more standardized and convenient. It also allows the agent to see a skill's name and description without loading all of its detailed instructions at the start.</p>
+      <div class="callout warn">
+        <span class="callout-label">When is a skill worth it?</span>
+        For a one-off task or a workflow specific to one project, an ordinary document may be enough. Consider a <strong>skill</strong> when you want to invoke a repeatable process by name, make it easy for the agent to discover, or reuse it across projects.
       </div>
 
       <h2>MCP: Connect the agent to other tools</h2>
@@ -182,15 +227,15 @@ GitHub content without my approval.</code></pre>
       <p>Note that a connection alone does not schedule the report to run every Monday. Scheduling requires a separate automation mechanism.</p>
 
       <h2>Exercise</h2>
-      <p><strong>Required: Create your own skill.</strong> Choose a task you might perform more than once, such as summarizing meeting notes, cleaning survey data, evaluating suppliers, or creating a management report.</p>
+      <p><strong>Required: Turn a workflow document into a skill.</strong> Choose a task you might perform more than once, such as summarizing meeting notes, cleaning survey data, evaluating suppliers, or creating a management report.</p>
       <ol>
-        <li>Describe the task, desired output, and any important rules to your agent.</li>
-        <li>Ask it to create a reusable skill. Review the proposed instructions before saving.</li>
-        <li>Invoke the skill on a sample task and inspect the result.</li>
-        <li>Identify one weakness. Revise the skill and test it again.</li>
+        <li>Write a short <code>workflow.md</code> describing the steps, expected output, and important rules. (You can ask the agent to draft it.)</li>
+        <li>Ask the agent to follow <code>workflow.md</code> on a sample task. Inspect the result.</li>
+        <li>Ask the agent to turn the document into a skill. Review the resulting <code>SKILL.md</code>.</li>
+        <li>Invoke the skill on a similar task. Compare the experience: what changed, and what stayed the same?</li>
       </ol>
       <p><strong>Optional extension:</strong> Explore an MCP connection to a service you already use. Ask the agent what it would be allowed to do, review the permissions, and (if appropriate) test a read-only request.</p>
-      <p>Reflect: How is your new skill different from saving a prompt? What can MCP enable that a skill alone cannot? Which parts of the work still require your judgment?</p>
+      <p>Reflect: What did packaging the workflow as a skill add beyond the original document? What can MCP enable that a skill alone cannot? Which parts of the work still require your judgment?</p>
 
       <div class="callout warn">
         <span class="callout-label">Takeaway</span>

@@ -563,10 +563,12 @@ course-page copies carry the same updated chips.
 **Current status (2026-11-10):** Overview plus two of four planned sub-pages
 are built. `keep-track-of-changes.html` (25 minutes) covers Git/GitHub,
 checkpoints, inspecting changes, careful recovery, and a save/change/break/recover
-exercise. `skills-and-mcp.html` (30 minutes) uses the supplied second lesson:
+exercise. `skills-and-mcp.html` (35 minutes) uses the supplied second lesson:
 reusable skills as SOPs, a weekly-sales-report skill and creation prompt, MCP
 connections to external tools/data, permissions, comparison with project
-instructions, and a required skill exercise with optional MCP extension.
+instructions, and a comparison of ordinary workflow documents with skills (discovery, invocation,
+reuse, supporting files, and selective loading), and a required workflow-document-
+to-skill exercise with optional MCP extension.
 The supplied lesson content is preserved. Page 2 replaces the planned skills
 and hooks topic with skills and MCP; its overview card, learning objective,
 syllabus description, and all Module 5 sidebars reflect this. The overview
@@ -823,7 +825,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
-| Module 5 `/course/05-scaling` | 🚧 Overview + `keep-track-of-changes` (25 min) and `skills-and-mcp` (30 min) built; remaining 2 sub-pages planned |
+| Module 5 `/course/05-scaling` | 🚧 Overview + `keep-track-of-changes` (25 min) and `skills-and-mcp` (35 min) built; remaining 2 sub-pages planned |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Chapter resources `/cases/*` | ✅ Downloadable files retained; standalone library and category pages removed for now |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
