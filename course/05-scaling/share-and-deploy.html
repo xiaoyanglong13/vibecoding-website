@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share and deploy what you build · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/reference/">Reference</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Scaling up</h4>
+      <ol>
+        <li><a href="/course/05-scaling/">Overview</a></li>
+        <li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+        <li><a href="/course/05-scaling/share-and-deploy.html" aria-current="page"><span class="module-num">2.</span>Share and deploy</a></li>
+        <li><span><span class="module-num">3.</span>Put AI inside your solution <small>(coming soon)</small></span></li>
+        <li><a href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">4.</span>Skills and MCP <small>(optional)</small></a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 2 of 4 · 35 minutes</span>
+        <h1>Share and deploy what you build</h1>
+        <p class="lede">You've built an application that works on your computer. But how can someone else use it? In this lesson, you'll publish a website with GitHub Pages, learn how to update it safely, and explore Vercel as a way to prepare for applications with AI features.</p>
+      </div>
+
+      <h2>It works on your computer. Now what?</h2>
+      <p>Think back to the coffee shop dashboard from Module 4. You can open it in your browser, explore charts, and change filters. The coffee shop owner asks you to send a link so they can try it.</p>
+      <p>You send <code>http://localhost:3000</code>. They click it, but nothing appears. <strong>Why?</strong> <code>localhost</code> refers to the computer where a program is running. It isn't a public address for your dashboard.</p>
+      <p><strong>Deployment</strong> means making a version of your project available in an environment where other people can access it. <strong>Hosting</strong> is the service that makes the website available; a <strong>URL</strong> is its web address.</p>
+      <div class="example">
+        <p><strong>Before:</strong> your dashboard runs only on your computer, perhaps at <code>http://localhost:3000</code>.</p>
+        <p><strong>After:</strong> you can share a website address such as <code>https://yourname.github.io/coffee-dashboard/</code>. Others can open it in their browsers.</p>
+        <p>These addresses are examples. Your actual URL depends on your GitHub username and repository name.</p>
+      </div>
+
+      <h2>GitHub can host your website, too</h2>
+      <p>In the previous lesson, you learned that <strong>Git</strong> tracks changes and <strong>GitHub</strong> stores your repository online. GitHub also has a website-hosting service called <strong>GitHub Pages</strong>. For a simple website, you may not need another platform.</p>
+      <pre><code>Build and test locally
+        ↓
+Commit and push to GitHub
+        ↓
+Publish with GitHub Pages
+        ↓
+Share your website URL</code></pre>
+      <p>GitHub Pages is well suited to <strong>static websites</strong>: websites made from HTML, CSS, JavaScript, images, and other files delivered to visitors' browsers. Static doesn't mean uninteractive. A dashboard with filters, charts, or a calculator can still be a static website if its functionality runs in the browser.</p>
+      <div class="callout warn">
+        <span class="callout-label">Important distinction</span>
+        GitHub Pages does <strong>not</strong> run a persistent application server or your own server-side Python, PHP, or Node.js code. A project requiring a backend, private database access, user authentication logic, or securely stored API credentials usually needs additional services. We return to this when discussing AI APIs in the next lesson.
+      </div>
+
+      <h2>Deploy a simple website with GitHub Pages</h2>
+      <p>Let's use a small HTML/CSS/JavaScript project. You can use a simple dashboard, portfolio, or calculator, as long as it has no confidential data or backend requirements.</p>
+      <h3 class="subhead-accent">Step 1: Ask your agent to check the project</h3>
+      <p>Before publishing, check what kind of project you have. A plain HTML site is the easiest place to start; frameworks may need an extra build step.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I want to publish this project using GitHub Pages.
+
+Before changing anything:
+1. Inspect how this project runs.
+2. Tell me whether it can work as a static website.
+3. Identify its entry point (such as index.html),
+   assets, and any build steps.
+4. Check for private data, passwords, and API keys.
+5. Propose the simplest safe deployment plan.
+
+Do not make the repository public or publish anything
+without my approval.</code></pre>
+      </div>
+      <h3 class="subhead-accent">Step 2: Put the website on GitHub</h3>
+      <p>Use what you learned on Page 1 to commit the verified project and push it to a GitHub repository. For the simplest example, put <code>index.html</code> in the repository's root folder, alongside any necessary CSS, JavaScript, and assets. A basic project might look like this:</p>
+      <div class="example">
+        <pre><code>coffee-dashboard/
+├── index.html
+├── styles.css
+├── script.js
+└── data/
+    └── sample-sales.csv</code></pre>
+        <p>Notice that the data file will be part of the published website if the page uses it. Use only data that is safe to make public.</p>
+      </div>
+      <h3 class="subhead-accent">Step 3: Turn on GitHub Pages</h3>
+      <ol>
+        <li>Open the repository on GitHub and select <strong>Settings</strong>.</li>
+        <li>In the sidebar, open <strong>Pages</strong>.</li>
+        <li>Under <strong>Build and deployment</strong>, choose <strong>Deploy from a branch</strong>.</li>
+        <li>Select the branch containing your website (often <code>main</code>) and the <code>/(root)</code> folder; then click <strong>Save</strong>.</li>
+        <li>When publishing finishes, open the site URL shown in Pages settings.</li>
+      </ol>
+      <p>For a project site, the default address is usually <code>https://USERNAME.github.io/REPOSITORY/</code>. Publishing can take a few minutes. See the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">official GitHub Pages instructions</a> if the interface changes.</p>
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        If your site uses React, Vite, or another framework that requires a build, ask your agent whether you need a <strong>GitHub Actions</strong> deployment workflow. Publishing the source files directly may not work. Also check links and asset paths: a project site lives under <code>/REPOSITORY/</code>, not necessarily at the domain root.
+      </div>
+
+      <h2>Update a website after it's published</h2>
+      <p>Now the coffee shop owner asks for a weekday-sales chart. You make the change locally with your agent, test the dashboard, and push the verified changes to the published branch. GitHub Pages can then publish the updated website automatically.</p>
+      <pre><code>Edit locally → Verify → Commit → Push → Check live site</code></pre>
+      <p>This is why the previous lesson mattered. Your commits record what changed, and the published site reflects a version of that project. A successful push doesn't guarantee the live website works correctly: <strong>open the public URL and test it again.</strong></p>
+      <h3 class="subhead-accent">If publishing doesn't work</h3>
+      <p>Don't ask the agent to randomly change settings. Check the repository's <strong>Actions</strong> tab and the Pages settings for build or deployment errors. If the page loads but its styles or data are missing, inspect relative file paths and browser errors.</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>My GitHub Pages site is not working as expected.
+
+Help me diagnose it systematically.
+1. Ask me for the site URL and any relevant error logs.
+2. Compare the published site with the local project.
+3. Check the entry point, build output, and asset paths.
+4. Explain the most likely cause and propose a fix.
+
+Do not change settings or files until we agree on a fix.</code></pre>
+      </div>
+
+      <h2>Before you share: Check what others can see</h2>
+      <p>Publishing is not just a technical step. Once others can open your application, you have to think about its data, functionality, and audience.</p>
+      <ul>
+        <li><strong>Data:</strong> Remove confidential information and use anonymized or sample data. Files served by a public site can generally be downloaded by visitors.</li>
+        <li><strong>Secrets:</strong> Never publish API keys, passwords, or private credentials in website files. Moving a key into browser-side JavaScript or a frontend environment variable does not make it secret.</li>
+        <li><strong>Access:</strong> A GitHub Pages website is generally publicly accessible. A private repository does not automatically make the published site private.</li>
+        <li><strong>Functionality:</strong> Test the actual URL in another browser or on another device. Check charts, links, mobile layout, and data loading.</li>
+        <li><strong>Maintenance:</strong> Know which repository and branch power the live site, and be aware of hosting limits and any costs associated with additional services.</li>
+      </ul>
+      <div class="callout warn">
+        <span class="callout-label">Remember</span>
+        Only publish a project that you are comfortable sharing publicly. GitHub Pages is a good learning platform for public demonstrations, not a substitute for access control when an application contains sensitive business information.
+      </div>
+
+      <h2>Going further: Deploy with Vercel</h2>
+      <p>GitHub Pages is a good starting point, but you'll eventually want to build applications that do more than run code in a visitor's browser. For example, the next lesson will explore adding an AI feature that sends a request to a language model. That usually requires a <strong>server-side component</strong> so your API key isn't exposed to visitors.</p>
+      <p><strong>Vercel</strong> is another hosting and deployment platform. Like GitHub Pages, it can publish a simple website. Unlike GitHub Pages, it also supports <strong>server-side functions</strong> that can communicate with APIs and other services. You can keep your code on GitHub and connect the same repository to Vercel. You do not need to abandon Git or GitHub.</p>
+      <div class="example">
+        <p><strong>Two ways to publish the same project:</strong></p>
+        <pre><code>Local project
+    ↓
+GitHub repository
+    ├──→ GitHub Pages  → Static website
+    └──→ Vercel        → Website + optional server-side functions</code></pre>
+        <p>For now, both can serve your simple dashboard. Later, Vercel can also run a backend function that makes an AI API call without placing the API key in the website's browser code.</p>
+      </div>
+
+      <h3 class="subhead-accent">Try deploying your GitHub project on Vercel</h3>
+      <p>You can use the <strong>same repository</strong> from the GitHub Pages exercise. The steps below are a first introduction, not a requirement to build a backend today.</p>
+      <ol>
+        <li>Go to <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">vercel.com</a> and create an account or sign in.</li>
+        <li>From the Vercel dashboard, choose to create a <strong>New Project</strong> and connect GitHub when prompted.</li>
+        <li>Import the repository containing your website. Review the <strong>root directory</strong>, framework, and build settings. Simple static projects may need little configuration; some frameworks require a build command and output directory.</li>
+        <li>Click <strong>Deploy</strong>. When the deployment succeeds, open its <code>*.vercel.app</code> URL and test your website.</li>
+        <li>Make a small verified change and push it to GitHub. Observe how Vercel deploys the updated version. With a Git-connected project, branches can also generate preview deployments.</li>
+      </ol>
+      <p>See Vercel's <a href="https://vercel.com/docs/git" target="_blank" rel="noopener noreferrer">Git deployment guide</a> for the current interface and configuration steps.</p>
+
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>I deployed this website with GitHub Pages. Now I want
+also to deploy it on Vercel, using the same GitHub repo.
+
+1. Inspect the project and tell me if it is Vercel-ready.
+2. Identify the framework, root folder, build command,
+   and output directory, if any are needed.
+3. Explain which Vercel settings I should choose.
+4. Check for files or data that must not be published.
+5. Help me test the deployed URL once it's live.
+
+Do not create accounts, change permissions, or deploy
+anything without my approval.</code></pre>
+      </div>
+
+      <h3 class="subhead-accent">Why Vercel matters for the next lesson</h3>
+      <p>Suppose you add a button to your coffee shop dashboard labeled <em>Summarize this month's sales with AI</em>. The browser needs to send the request somewhere. In a common architecture, a server-side function receives the request, calls the AI provider using a secret API key, and sends the result back to the browser.</p>
+      <pre><code>User's browser → Your Vercel function → AI API
+       ↑                                    │
+       └──────── AI-generated summary ──────┘</code></pre>
+      <p>Vercel lets you configure <strong>environment variables</strong> for server-side code, rather than putting secrets directly in browser JavaScript. But remember: environment variables included in client-side builds are <strong>not secret</strong>, and a secure design also needs appropriate authorization, input limits, and cost controls.</p>
+      <div class="callout warn">
+        <span class="callout-label">For now</span>
+        You don't need to set up an AI API or add a server-side function on this page. The goal is to see how GitHub and Vercel fit together, deploy a familiar project, and understand why you'll use Vercel when you add AI to your application in the next lesson.
+      </div>
+
+      <h2>Exercise: Publish and update a website</h2>
+      <p>Choose a simple static project—perhaps a dashboard or calculator built earlier in the course. Work through the following steps:</p>
+      <ol>
+        <li>Ask your agent to inspect the project and confirm that it can be deployed through GitHub Pages.</li>
+        <li>Check for private data and secrets. Commit and push the verified website to GitHub.</li>
+        <li>Enable GitHub Pages and open the published site.</li>
+        <li>Visit the link from another browser or device and verify that the key features work.</li>
+        <li>Make one small visible change (such as editing a heading), test it locally, push it, and confirm the live site updates.</li>
+      </ol>
+      <p><strong>Optional extension:</strong> Import the same GitHub repository into Vercel, open its new URL, and compare what the two deployment platforms do. You do not need to add AI functionality yet.</p>
+      <p><strong>Reflection:</strong> What changed when your project moved from your computer to a public URL? Why might you choose Vercel instead of GitHub Pages for an application with an AI feature? What responsibilities do you have now that other people can use it?</p>
+
+      <a class="next-cta" href="/course/05-scaling/skills-and-mcp.html">
+        <div>
+          <div class="next-cta-label">Optional extension · Page 4 of 4</div>
+          <div class="next-cta-title">Extend your agent: Skills and MCP</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>
