@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Useful skills for working with AI · Module 5 · Vibecoding for Business School Students</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+      <nav class="site-nav">
+        <a href="/start/">Start here</a>
+        <a href="/course/">Course</a>
+        <a href="/reference/">Reference</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="course-layout">
+    <aside class="course-sidebar">
+      <h4>Module 5 · Scaling up</h4>
+      <ol>
+        <li><a href="/course/05-scaling/">Overview</a></li>
+        <li><a href="/course/05-scaling/keep-track-of-changes.html"><span class="module-num">1.</span>Keep track of changes</a></li>
+        <li><a href="/course/05-scaling/share-and-deploy.html"><span class="module-num">2.</span>Share and deploy</a></li>
+        <li><a href="/course/05-scaling/put-ai-inside-your-solution.html"><span class="module-num">3.</span>Put AI inside your solution</a></li>
+        <li><a href="/course/05-scaling/skills-and-mcp.html"><span class="module-num">4.</span>Skills and MCP <small>(optional)</small></a></li>
+        <li><a href="/course/05-scaling/useful-skills.html" aria-current="page"><span class="module-num">5.</span>Useful skills <small>(optional)</small></a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+      </ol>
+    </aside>
+
+    <article>
+      <div class="module-header">
+        <span class="eyebrow">Module 5 · Page 5 of 5 · Optional extension</span>
+        <h1>Useful skills for working with AI</h1>
+        <p class="lede">You don't have to create every skill yourself. Others have developed reusable skills that can help AI agents explore ideas, plan work, investigate problems, and test results. Let's look closely at one skill that can make an agent a more thoughtful collaborator: <strong>Brainstorming</strong>.</p>
+      </div>
+
+      <h2>Why use someone else's skill?</h2>
+      <p>In the previous optional lesson, you learned that a skill packages instructions into a reusable workflow. You can write your own, but you can also install skills created by other people. A directory such as <a href="https://skills.sh/">Skills.sh</a> can help you discover them.</p>
+      <p>Remember that a skill is not a new AI model. It gives your agent a particular procedure to follow. You could often achieve something similar with a carefully written prompt; the advantage is that the procedure is packaged for repeated use.</p>
+
+      <h2>Featured skill: Brainstorming</h2>
+      <p>The <a href="https://skills.sh/obra/superpowers/brainstorming">Brainstorming skill</a> from the <a href="https://github.com/obra/superpowers">Superpowers</a> collection is designed to help an agent understand what you actually want before it begins building. It emphasizes clarifying the goal, considering approaches and trade-offs, describing a proposed design, and obtaining your approval before implementation.</p>
+      <p>This is different from asking the agent to produce a long list of creative ideas. Brainstorming is a <strong>structured design conversation</strong> that helps turn an initial request into a well-defined plan.</p>
+      <div class="example">
+        <p><strong>Recall the workflow from Module 4:</strong></p>
+        <pre><code>Explore → Plan → Execute → Verify</code></pre>
+        <p>Brainstorming is particularly useful in the <strong>Explore</strong> stage and when moving into <strong>Plan</strong>. It encourages you to resolve important questions before the agent starts implementing a solution.</p>
+      </div>
+
+      <h2>Example: Revisit the coffee shop dashboard</h2>
+      <p>Recall the <a href="/course/04-workflow/use-case-coffee-dashboard.html">coffee shop dashboard</a> from Module 4. Suppose you start with this request:</p>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Initial request</div>
+        <pre><code>Build a dashboard for a coffee shop owner.</code></pre>
+      </div>
+      <p>Without further discussion, an agent might pick a set of common charts and start building. The dashboard could look polished without helping the owner make meaningful decisions.</p>
+
+      <h3 class="subhead-accent">With Brainstorming: Understand the problem first</h3>
+      <div class="example">
+        <p>The agent could ask questions like these (illustrative examples, not a fixed script):</p>
+        <ul>
+          <li>What decisions should the owner be able to make using this dashboard?</li>
+          <li>Is the priority understanding sales, improving profitability, or planning staffing?</li>
+          <li>What data is available, and what important information is missing?</li>
+        </ul>
+        <p>Based on the answers, the agent can compare possible designs and their trade-offs. For example, a sales-focused dashboard may emphasize revenue, order frequency, and average order size; a profitability-focused dashboard would need cost or margin information as well.</p>
+      </div>
+      <p>The agent then proposes a design for you to review. You can revise it before implementation begins. <strong>The goal isn't to ask more questions for their own sake; it's to avoid building the wrong thing.</strong></p>
+
+      <h2>Install and try Brainstorming</h2>
+      <p>If you're using Claude Code, first review the <a href="https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md">skill's instructions</a>. One installation method listed on Skills.sh is:</p>
+      <pre><code>npx skills add https://github.com/obra/superpowers --skill brainstorming</code></pre>
+      <p>Run the command in a terminal only after reviewing the source and installation prompts. The installer may ask you to select an agent or installation scope. Follow the current instructions rather than assuming every setup looks the same.</p>
+      <p>Once installed, ask Claude Code to use the <strong>brainstorming</strong> skill explicitly for this exercise. You can also check which skills Claude Code recognizes. Skills may be selected automatically when their descriptions match the task, but automatic invocation is not guaranteed; explicit invocation is more predictable while you're learning.</p>
+
+      <h3 class="subhead-accent">Exercise: Redesign the coffee shop dashboard</h3>
+      <div class="prompt-window">
+        <div class="prompt-window-header">Prompt</div>
+        <pre><code>Use the brainstorming skill to help me design a
+coffee shop dashboard.
+
+The dashboard should help the owner make better
+business decisions. I haven't decided which
+metrics or charts it needs.
+
+Work with me to clarify the goals, explore
+possible approaches, and propose a design.
+Do not start building the dashboard yet.</code></pre>
+      </div>
+      <ol>
+        <li>Install and review the Brainstorming skill (or have your instructor demonstrate it).</li>
+        <li>Use the prompt above. Answer the agent's questions as if you were designing the dashboard for a real coffee shop owner.</li>
+        <li>Ask the agent to compare possible dashboard designs and explain the trade-offs.</li>
+        <li>Stop when you have a proposed design. You do not need to implement it.</li>
+        <li>Compare your design with the dashboard example from Module 4. What would you change, and why?</li>
+      </ol>
+      <p><strong>Reflect:</strong> What did the skill help you notice that you might otherwise have missed? Could you have achieved the same result by asking an ordinary chatbot to clarify requirements before building?</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Tip</span>
+        <strong>Use structured brainstorming selectively.</strong> It can be valuable for open-ended projects, but unnecessary for a small, well-specified change. If you already know exactly what you want, a long design discussion may just add friction.
+      </div>
+
+      <h2>Other skills worth exploring</h2>
+      <p>Brainstorming is only one example. These other published skills can help at different points in your workflow:</p>
+      <table>
+        <thead>
+          <tr><th>Skill</th><th>What it helps with</th><th>Example from this course</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://skills.sh/mattpocock/skills/grill-me">Grill Me</a></td>
+            <td>Challenge assumptions and uncover missing requirements</td>
+            <td>Question a financial-model automation plan before implementing it</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/anthropics/skills/tree/main/skills/webapp-testing">Web App Testing</a></td>
+            <td>Use browser automation to check how a web app behaves</td>
+            <td>Test dashboard filters, buttons, and charts</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/obra/superpowers/tree/main/skills/systematic-debugging">Systematic Debugging</a></td>
+            <td>Investigate the cause of a failure before attempting fixes</td>
+            <td>Diagnose why a dashboard or deployment stopped working</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/obra/superpowers/tree/main/skills/verification-before-completion">Verification Before Completion</a></td>
+            <td>Require evidence before claiming work is finished</td>
+            <td>Check whether an agent actually ran relevant tests</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/obra/superpowers/tree/main/skills/writing-plans">Writing Plans</a></td>
+            <td>Turn an approved design into implementation steps</td>
+            <td>Plan a more complex application or automation project</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Not every skill is appropriate for every project. In particular, Web App Testing is built for browser-based applications; it does not replace spreadsheet reconciliation or a careful review of a written report.</p>
+
+      <div class="callout warn">
+        <span class="callout-label">Before you install</span>
+        Skills from public repositories are third-party instructions. Some also include scripts or other executable resources. Review what a skill does, where it comes from, and what permissions it needs. Installing more skills also adds some discovery overhead, and invoking long skills uses additional context and tokens. Start with a few that address genuine needs.
+      </div>
+
+      <h2>Takeaway</h2>
+      <p>A useful skill can make an AI agent a more disciplined collaborator, not just a faster producer of output. Brainstorming helps you think through <strong>what to build and why</strong> before asking the agent to build it. Other skills can help you challenge plans, diagnose failures, and test results. The important skill on your part is knowing <strong>when</strong> each procedure is worth using.</p>
+
+      <a class="next-cta" href="/course/06-limits-and-ethics/">
+        <div>
+          <div class="next-cta-label">Continue · Module 6</div>
+          <div class="next-cta-title">Limits &amp; ethics</div>
+        </div>
+        <div class="next-cta-arrow">→</div>
+      </a>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+  </footer>
+  <script src="/assets/script.js"></script>
+</body>
+</html>

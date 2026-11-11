@@ -66,12 +66,13 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/04-workflow/use-case-event-recap        (Use case I)                  ✅
 │   │   ├── /course/04-workflow/use-case-model-automation    (Use case II)                ✅
 │   │   └── /course/04-workflow/use-case-coffee-dashboard    (Use case III)               ✅
-│   ├── /course/05-scaling                                                                 ✅ all 4 sub-pages built
+│   ├── /course/05-scaling                                                                 ✅ all 5 sub-pages built
 │   │   ├── /course/05-scaling/keep-track-of-changes        (page 1)                       ✅
 │   │   ├── /course/05-scaling/share-and-deploy            (page 2, core)                 ✅
 │   │   ├── /course/05-scaling/put-ai-inside-your-solution (page 3, advanced core)        ✅
-│   │   └── /course/05-scaling/skills-and-mcp               (page 4, optional)             ✅
-│   └── /course/06-limits-and-ethics                                                       ✅ all 4 sub-pages built
+│   │   ├── /course/05-scaling/skills-and-mcp               (page 4, optional)             ✅
+│   │   └── /course/05-scaling/useful-skills               (page 5, optional)             ✅
+│   └── /course/06-limits-and-ethics                                                       ✅ all 5 sub-pages built
 │       ├── /course/06-limits-and-ethics/protect-the-information                          ✅
 │       ├── /course/06-limits-and-ethics/control-agent-actions                            ✅
 │       ├── /course/06-limits-and-ethics/real-cost                                        ✅
@@ -564,7 +565,7 @@ course-page copies carry the same updated chips.
 > current).
 
 ### Module 5 — Scaling up (`/course/05-scaling`)
-**Current status (2026-11-10):** Overview and all four sub-pages
+**Current status (2026-11-10):** Overview and all five sub-pages
 are built. `keep-track-of-changes.html` (25 minutes) covers Git/GitHub,
 checkpoints, inspecting changes, careful recovery, and a save/change/break/recover
 exercise. `share-and-deploy.html` (page 2, 35 minutes) uses the revised
@@ -579,7 +580,7 @@ instructions, and a comparison of ordinary workflow documents with skills (disco
 reuse, supporting files, and selective loading), and a required workflow-document-
 to-skill exercise with optional MCP extension.
 The latest 2026-11-10 coherent overview introduces a dashboard example and
-three practical questions. Per the follow-up layout change, all four cards now
+three practical questions. Per the follow-up layout change, all five cards now
 share one grid under In this module; page 4 retains its optional label, and
 the separate Going further section is removed. The overview distinguishes
 using AI to build an application from adding AI features to that application.
@@ -587,11 +588,14 @@ The sequence remains:
 1. Keep track of changes (25 minutes, built).
 2. Share and deploy (core, 35 minutes, built).
 3. Put AI inside your solution (advanced core, 35 minutes, built). The lesson covers APIs, server-side model calls, and a dashboard insights exercise with a mock response option.
-4. Skills and MCP (optional extension, 35 minutes, built).
+4. Skills and MCP (optional extension, built).
+5. Useful skills (optional extension, built).
 
 All Module 5 sidebars, card order, and page labels reflect this sequence. Existing
-The lesson links follow pages 1 through 4, then Module 6. The core lessons
-total 95 minutes, plus 35 minutes for the optional extension.
+The lesson links follow pages 1 through 5, then Module 6. Page 5, useful-skills.html,
+is an optional lesson using the supplied content on published skills, a Brainstorming
+exercise, and skills for planning, debugging, and verification. Learning-time
+estimates are omitted, including the estimate in the supplied page.
 
 The following overview build narrative is historical:
 
@@ -841,7 +845,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
-| Module 5 `/course/05-scaling` | ✅ Overview and all 4 sub-pages built. 95 min core + optional 35 min |
+| Module 5 `/course/05-scaling` | ✅ Overview and all 5 sub-pages built. 95 min core + optional 35 min |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
 | Chapter resources `/cases/*` | ✅ Downloadable files retained; standalone library and category pages removed for now |
 | Reference `/reference` | 🚧 Stub with planned sections listed |
