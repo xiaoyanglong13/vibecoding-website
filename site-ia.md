@@ -1,3 +1,5 @@
+> Learning-time estimates are no longer displayed sitewide. Keep module/page numbers and topic labels. Historical timing notes below describe earlier versions.
+
 # Vibecoding for Business School Students — Site Information Architecture
 
 > A draft IA for the course website. Designed for **two audiences in one site**:
