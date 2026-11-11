@@ -112,29 +112,9 @@ without my approval.</code></pre>
         <li>When publishing finishes, open the site URL shown in Pages settings.</li>
       </ol>
       <p>For a project site, the default address is usually <code>https://USERNAME.github.io/REPOSITORY/</code>. Publishing can take a few minutes. See the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">official GitHub Pages instructions</a> if the interface changes.</p>
-      <div class="callout warn">
-        <span class="callout-label">Tip</span>
-        If your site uses React, Vite, or another framework that requires a build, ask your agent whether you need a <strong>GitHub Actions</strong> deployment workflow. Publishing the source files directly may not work. Also check links and asset paths: a project site lives under <code>/REPOSITORY/</code>, not necessarily at the domain root.
-      </div>
 
-      <h2>Update a website after it's published</h2>
-      <p>Now the coffee shop owner asks for a weekday-sales chart. You make the change locally with your agent, test the dashboard, and push the verified changes to the published branch. GitHub Pages can then publish the updated website automatically.</p>
-      <pre><code>Edit locally → Verify → Commit → Push → Check live site</code></pre>
-      <p>This is why the previous lesson mattered. Your commits record what changed, and the published site reflects a version of that project. A successful push doesn't guarantee the live website works correctly: <strong>open the public URL and test it again.</strong></p>
-      <h3 class="subhead-accent">If publishing doesn't work</h3>
-      <p>Don't ask the agent to randomly change settings. Check the repository's <strong>Actions</strong> tab and the Pages settings for build or deployment errors. If the page loads but its styles or data are missing, inspect relative file paths and browser errors.</p>
-      <div class="prompt-window">
-        <div class="prompt-window-header">Prompt</div>
-        <pre><code>My GitHub Pages site is not working as expected.
 
-Help me diagnose it systematically.
-1. Ask me for the site URL and any relevant error logs.
-2. Compare the published site with the local project.
-3. Check the entry point, build output, and asset paths.
-4. Explain the most likely cause and propose a fix.
-
-Do not change settings or files until we agree on a fix.</code></pre>
-      </div>
+      
 
       <h2>Before you share: Check what others can see</h2>
       <p>Publishing is not just a technical step. Once others can open your application, you have to think about its data, functionality, and audience.</p>
@@ -167,10 +147,7 @@ Do not change settings or files until we agree on a fix.</code></pre>
         <p>Each retailer should be able to log in and explore its own sales performance, but should never see another retailer's data. The dashboard could be hosted on Vercel, with a backend that verifies users' permissions before retrieving and returning the appropriate data.</p>
       </div>
       <p><strong>Remember:</strong> A private GitHub repository does not automatically make a published GitHub Pages website private. Similarly, deploying on Vercel does not automatically make your application secure. Authentication, permissions, and data protection must be designed into the application.</p>
-      <div class="callout warn">
-        <span class="callout-label">Key principle</span>
-        <strong>Only send information to the user's browser that the user is authorized to see.</strong> If the underlying data is confidential, do not include it in publicly accessible website files.
-      </div>
+
 
       <h2>Going further: Deploy with Vercel</h2>
       <p>GitHub Pages is a good starting point, but you'll eventually want to build applications that do more than run code in a visitor's browser. For example, the next lesson will explore adding an AI feature that sends a request to a language model. That usually requires a <strong>server-side component</strong> so your API key isn't exposed to visitors.</p>
@@ -185,32 +162,6 @@ GitHub repository
         <p>For now, both can serve your simple dashboard. Later, Vercel can also run a backend function that makes an AI API call without placing the API key in the website's browser code.</p>
       </div>
 
-      <h3 class="subhead-accent">Try deploying your GitHub project on Vercel</h3>
-      <p>You can use the <strong>same repository</strong> from the GitHub Pages exercise. The steps below are a first introduction, not a requirement to build a backend today.</p>
-      <ol>
-        <li>Go to <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">vercel.com</a> and create an account or sign in.</li>
-        <li>From the Vercel dashboard, choose to create a <strong>New Project</strong> and connect GitHub when prompted.</li>
-        <li>Import the repository containing your website. Review the <strong>root directory</strong>, framework, and build settings. Simple static projects may need little configuration; some frameworks require a build command and output directory.</li>
-        <li>Click <strong>Deploy</strong>. When the deployment succeeds, open its <code>*.vercel.app</code> URL and test your website.</li>
-        <li>Make a small verified change and push it to GitHub. Observe how Vercel deploys the updated version. With a Git-connected project, branches can also generate preview deployments.</li>
-      </ol>
-      <p>See Vercel's <a href="https://vercel.com/docs/git" target="_blank" rel="noopener noreferrer">Git deployment guide</a> for the current interface and configuration steps.</p>
-
-      <div class="prompt-window">
-        <div class="prompt-window-header">Prompt</div>
-        <pre><code>I deployed this website with GitHub Pages. Now I want
-also to deploy it on Vercel, using the same GitHub repo.
-
-1. Inspect the project and tell me if it is Vercel-ready.
-2. Identify the framework, root folder, build command,
-   and output directory, if any are needed.
-3. Explain which Vercel settings I should choose.
-4. Check for files or data that must not be published.
-5. Help me test the deployed URL once it's live.
-
-Do not create accounts, change permissions, or deploy
-anything without my approval.</code></pre>
-      </div>
 
       <h3 class="subhead-accent">Why Vercel matters for the next lesson</h3>
       <p>Suppose you add a button to your coffee shop dashboard labeled <em>Summarize this month's sales with AI</em>. The browser needs to send the request somewhere. In a common architecture, a server-side function receives the request, calls the AI provider using a secret API key, and sends the result back to the browser.</p>
@@ -218,10 +169,7 @@ anything without my approval.</code></pre>
        ↑                                    │
        └──────── AI-generated summary ──────┘</code></pre>
       <p>Vercel lets you configure <strong>environment variables</strong> for server-side code, rather than putting secrets directly in browser JavaScript. But remember: environment variables included in client-side builds are <strong>not secret</strong>, and a secure design also needs appropriate authorization, input limits, and cost controls.</p>
-      <div class="callout warn">
-        <span class="callout-label">For now</span>
-        You don't need to set up an AI API or add a server-side function on this page. The goal is to see how GitHub and Vercel fit together, deploy a familiar project, and understand why you'll use Vercel when you add AI to your application in the next lesson.
-      </div>
+ 
 
       <h2>Exercise: Publish and update a website</h2>
       <p>Choose a simple static project—perhaps a dashboard or calculator built earlier in the course. Work through the following steps:</p>
