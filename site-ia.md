@@ -41,8 +41,7 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   ├── /course/01-talking-to-ai                                                           ✅
 │   │   ├── /course/01-talking-to-ai/what-is-an-llm                                       ✅
 │   │   ├── /course/01-talking-to-ai/working-with-ai                                      ✅
-│   │   ├── /course/01-talking-to-ai/modes-of-collaboration                               ✅
-│   │   └── /course/01-talking-to-ai/use-case                                             ✅
+│   │   └── /course/01-talking-to-ai/modes-of-collaboration                               ✅
 │   │
 │   ├── /course/02-chat-to-agent                                                           ✅
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
@@ -142,7 +141,7 @@ Every **use case page** follows a parallel structure so students can compare acr
 Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned but not yet built.
 
 ### Module 1 — Talking to AI (`/course/01-talking-to-ai`)
-Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, use-case (renamed from case-study 2026-08-21). Ends with a small artifact exercise (clean and summarize a messy CSV).
+Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration. The use-case sub-page (customer segmentation from a messy CSV; renamed from case-study 2026-08-21) was removed 2026-11-18 "for now"; it is recoverable from git history (`git show ea6e393:course/01-talking-to-ai/use-case.html`). modes-of-collaboration now links on to Module 2.
 working-with-ai no longer has a closing exercise (removed 2026-11-18).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
@@ -842,7 +841,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Home `/` | ✅ Complete |
 | Start `/start` | ✅ Index written; demo and vignette sub-pages not yet built |
 | Course index `/course` | ✅ Complete |
-| Module 1 `/course/01-talking-to-ai` | ✅ Fully written (4 sub-pages + index) |
+| Module 1 `/course/01-talking-to-ai` | ✅ Fully written (3 sub-pages + index; use-case removed 2026-11-18) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
 | Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
