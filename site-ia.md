@@ -143,6 +143,7 @@ Landing page with brief pitch. Sub-pages (demo reel, case vignettes) are planned
 
 ### Module 1 — Talking to AI (`/course/01-talking-to-ai`)
 Fully written. Sub-pages: what-is-an-llm, working-with-ai, modes-of-collaboration, use-case (renamed from case-study 2026-08-21). Ends with a small artifact exercise (clean and summarize a messy CSV).
+working-with-ai no longer has a closing exercise (removed 2026-11-18).
 
 ### Module 2 — From chat to agent (`/course/02-chat-to-agent`)
 Fully written. Sub-pages: agent-mental-model, what-agents-unlock, agent-harness.
