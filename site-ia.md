@@ -176,28 +176,26 @@ the initial build to add real screenshots, worked examples, and reference-level 
   work environment) — closing with this course's own choice (Claude Code inside VS Code, with the
   Claude desktop app as a fallback). No reference-guide equivalent. Every other sub-page's sidebar,
   eyebrow page count, and next-cta was renumbered from a 6-page to a 7-page sequence to fit it in.
-- **install-claude-code** — "Setup overview": an 8-row checklist (Xcode Command Line Tools,
-  Homebrew, Node.js + npm, Git, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
+- **install-claude-code** — "Setup overview": a 7-row checklist (Xcode Command Line Tools,
+  Homebrew, Node.js + npm, Miniconda, Pandoc, VS Code, Claude Code) with columns Tool / What
   it's for / Mac (✓/✗) / Windows (✓/✗), plus prose on what each tool is and why it's needed,
-  OS-agnostic. Ends with two cards forking to the OS-specific walkthroughs. Git and Miniconda in
-  particular are installed ahead of when they're used (Module 4's version-safety page; the finance
-  case's pandas/openpyxl script) so nothing requires a mid-course install later.
-- **install-macos** — Mac-only, numbered Step 1–9 walkthrough: what a Terminal is (with a real
+  OS-agnostic. Ends with two cards forking to the OS-specific walkthroughs. Miniconda is installed ahead of when it is used (the finance
+  case's pandas/openpyxl script) so nothing requires a mid-course install later. Git is not part
+  of setup; it is introduced in later chapters.
+- **install-macos** — Mac-only, numbered Step 1–7 walkthrough: what a Terminal is (with a real
   screenshot) → operations table → Xcode CLT (exact size figures) → Homebrew (real
   `echo`/`source` PATH commands, a screenshot of brew.sh, a "which chip do I have" tip, `brew
-  doctor`) → the combined `brew install` line for the rest → Claude Code → Git config (placeholder
-  + a concrete Jamie Chen example + a "use your school email" tip for later GitHub linking) →
+  doctor`) → the combined `brew install` line for the rest → Claude Code →
   Miniconda init → a trimmed final version-check list → an explicit Q&A-style FAQ (4 items,
   matching the reference's own troubleshooting section; the reference's Tsinghua-mirror workaround
   is deliberately dropped as China-specific and not relevant to this audience).
-- **install-windows** — Windows-only, numbered Step 1–9 walkthrough, brought to parity with the
+- **install-windows** — Windows-only, numbered Step 1–8 walkthrough, brought to parity with the
   macOS page's depth and reference 3.3's own granularity: what PowerShell is, shown in a mock
   `.prompt-window` box (no real Windows screenshot exists yet — deliberately not fabricated;
   candidates were listed for the user to capture later if wanted) → operations table (reference's
   own 4-row version) → a "Windows 10 vs. 11 terminal" tip → execution policy as explicit numbered
-  sub-steps → each tool (Git, Node.js, Claude Code, VS Code, Miniconda, Pandoc) gets a "what it is
-  and why" paragraph before its own numbered install steps → the same Git config example + tip as
-  macOS → a 5-item Q&A FAQ (adds case-sensitivity and admin-rights items the macOS FAQ doesn't
+  sub-steps → each tool (Node.js, Claude Code, VS Code, Miniconda, Pandoc) gets a "what it is
+  and why" paragraph before its own numbered install steps → a 5-item Q&A FAQ (adds case-sensitivity and admin-rights items the macOS FAQ doesn't
   need).
 - **login** — new page, no reference equivalent. Two options: Claude account login (a real
   screenshot of a successful `/login`; explicitly notes Claude Code requires at least a Pro plan —
@@ -206,8 +204,7 @@ the initial build to add real screenshots, worked examples, and reference-level 
   create a key, what an environment variable is, a session-only version, and a permanent version
   for both Mac (`~/.zshrc`, explained plainly, with a copy-pasteable `echo >>` command) and Windows
   (`SetEnvironmentVariable`), each with its own verify step.
-- **using-vscode** — orientation to VS Code's interface, two recommended extensions (Office Viewer,
-  Git Graph), opening a project folder, opening the integrated terminal, and launching Claude Code
+- **using-vscode** — orientation to VS Code's interface, one recommended extension (Office Viewer), opening a project folder, opening the integrated terminal, and launching Claude Code
   there as the module's real smoke test. Revised since the initial build: a screenshot of the
   integrated terminal open and ready was added before the final step, and Steps 4/6 got small
   wording tweaks. Its closing CTA now points forward to appendix-opencode instead of back to the
