@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Terminal basics: Working with Claude Code · Module 3 · Vibecoding for Business School Students</title>
+<link href="/assets/styles.css" rel="stylesheet"/>
+<style>
+    /* Scoped: cheatsheet treatment for this reference-style page — accent
+       headings and tighter spacing than the essay-style lesson pages, plus
+       keyboard-key badges for literal shortcuts. */
+    h2, h3 {
+      color: var(--color-accent);
+    }
+    h2 {
+      margin-top: 1.4em;
+      padding-top: 0;
+      border-top: none;
+    }
+    h3 {
+      margin-top: 1.2em;
+    }
+    .kbd {
+      display: inline-block;
+      padding: 1px 7px;
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      color: var(--color-text);
+      background: var(--color-bg);
+      border: 1px solid var(--color-border-strong);
+      border-bottom-width: 2px;
+      border-radius: 4px;
+    }
+  
+    .activity-block { margin: 1.5em 0; }
+    .activity-block ol { margin: 0.6em 0; padding-left: 1.5em; }
+    .activity-block li { margin-bottom: 0.6em; }
+    .activity-block .prompt-window { margin: 1em 0; }
+    .faq details { border-bottom: 1px solid var(--color-border); padding: 12px 0; }
+    .faq summary { font-weight: 650; cursor: pointer; }
+    .faq details p { margin: 8px 0; }
+    table .kbd { white-space: nowrap; }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-brand" href="/">Vibecoding <span>for Business School Students</span></a>
+<nav class="site-nav">
+<a href="/start/">Start here</a>
+<a href="/course/">Course</a>
+<a href="/reference/">Reference</a>
+<a href="/about/">About</a>
+</nav>
+</div>
+</header>
+<div class="course-layout">
+<aside class="course-sidebar">
+      <h4>Module 3 · Setting up your workspace</h4>
+      <ol>
+        <li><a href="/course/03-setup/">Overview</a></li>
+        <li><a href="/course/03-setup/why-move-beyond-browser.html"><span class="module-num">1.</span>Why move beyond the browser?</a></li>
+        <li><a href="/course/03-setup/install-claude-code.html"><span class="module-num">2.</span>Setup overview</a></li>
+        <li><a href="/course/03-setup/install-macos.html"><span class="module-num">3.</span>Install on macOS</a></li>
+        <li><a href="/course/03-setup/install-windows.html"><span class="module-num">4.</span>Install on Windows</a></li>
+        <li><a href="/course/03-setup/login.html"><span class="module-num">5.</span>Log in to Claude Code</a></li>
+        <li><a href="/course/03-setup/using-vscode.html"><span class="module-num">6.</span>Using Claude Code in VS Code</a></li>
+        <li><a class="active" href="/course/03-setup/terminal-basics.html"><span class="module-num">7.</span>Terminal basics: Working with Claude Code</a></li>
+        <li><a href="/course/03-setup/appendix-opencode.html"><span class="module-num">8.</span>Appendix: OpenCode</a></li>
+      </ol>
+      <h4>All modules</h4>
+      <ol>
+        <li><a href="/course/">Syllabus</a></li>
+        <li><a href="/course/01-talking-to-ai/"><span class="module-num">1.</span>Talking to AI</a></li>
+        <li><a href="/course/02-chat-to-agent/"><span class="module-num">2.</span>Prompt to agent</a></li>
+        <li><a href="/course/03-setup/"><span class="module-num">3.</span>Setup</a></li>
+        <li><a href="/course/04-workflow/"><span class="module-num">4.</span>Workflow</a></li>
+        <li><a href="/course/05-scaling/"><span class="module-num">5.</span>Scaling up</a></li>
+        <li><a href="/course/06-limits-and-ethics/"><span class="module-num">6.</span>Limits &amp; ethics</a></li>
+      </ol>
+    </aside>
+<article><div class="module-header"><span class="eyebrow">Module 3 · Page 7 of 8</span><h1>Terminal basics: Working with Claude Code</h1><p class="lede">You have launched Claude Code inside VS Code. Now let's get comfortable talking to it. A few keyboard shortcuts will make writing longer prompts, fixing mistakes, and stopping an unwanted response much easier.</p></div><blockquote><strong>What you'll be able to do</strong>Write and edit multiline prompts, navigate your prompt history, interrupt Claude, and recognize when you are talking to Claude versus entering a command for your computer.</blockquote><p>You do <strong>not</strong> need to master the command line for this course. This page covers a few practical skills you'll use immediately.</p><h2 id="prompting">1. Write and edit prompts</h2><p>Unlike ChatGPT in your browser, the <span class="kbd">Enter</span> key in Claude Code normally <strong>sends</strong> your prompt. To write a longer prompt with paragraphs, use a different shortcut.</p><table><thead><tr><th>I want to…</th><th>What to press</th></tr></thead><tbody><tr><td><strong>Send my prompt</strong></td><td><span class="kbd">Enter</span></td></tr><tr><td><strong>Start a new line</strong> without sending</td><td><span class="kbd">Ctrl</span> + <span class="kbd">J</span> (works in any terminal); or <span class="kbd">Shift</span> + <span class="kbd">Enter</span> when supported/configured</td></tr><tr><td>Move back or forward in a line</td><td><span class="kbd">←</span> / <span class="kbd">→</span></td></tr><tr><td>Go to the start / end of the <em>current line</em></td><td><span class="kbd">Ctrl</span> + <span class="kbd">A</span> / <span class="kbd">Ctrl</span> + <span class="kbd">E</span></td></tr><tr><td>Delete the text back to the previous space</td><td><span class="kbd">Ctrl</span> + <span class="kbd">W</span></td></tr><tr><td>Delete from the cursor to the <em>start</em> of the line</td><td><span class="kbd">Ctrl</span> + <span class="kbd">U</span></td></tr><tr><td>Delete from the cursor to the <em>end</em> of the line</td><td><span class="kbd">Ctrl</span> + <span class="kbd">K</span></td></tr><tr><td>Restore text removed by those delete shortcuts</td><td><span class="kbd">Ctrl</span> + <span class="kbd">Y</span></td></tr><tr><td>Undo my last editing action</td><td><span class="kbd">Ctrl</span> + <span class="kbd">_</span> (or <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">-</span>)</td></tr><tr><td>Bring back an earlier prompt</td><td><span class="kbd">↑</span> when the cursor is at the top of the input</td></tr></tbody></table><div class="callout warn"><span class="callout-label">Tip</span>If <span class="kbd">Shift</span> + <span class="kbd">Enter</span> sends your prompt, try <span class="kbd">Ctrl</span> + <span class="kbd">J</span> instead. Claude Code also supports <code>\</code> followed by <span class="kbd">Enter</span> to insert a new line. Multiline shortcuts can vary across terminals.</div><h3>Example: A prompt with paragraphs</h3><p>Suppose you want to give Claude some background, a task, and a constraint. Write each part on its own line:</p><div class="prompt-window"><div class="prompt-window-header">Claude Code · prompt input (illustrative) ↵ new lines</div><pre><code>❯ I'm a business student working on a marketing project.
+
+  Suggest three ways I could segment a customer dataset.
+
+  Use plain language and give one example per segment.</code></pre></div><p>Use <span class="kbd">Ctrl</span> + <span class="kbd">J</span> to start each new line. Press <span class="kbd">Enter</span> only when your prompt is ready.</p><h2 id="control">2. Control Claude Code</h2><p>Sometimes you'll change your mind while Claude is working, want to revise an earlier request, or need to switch how Claude operates.</p><table><thead><tr><th>Situation</th><th>What to do</th></tr></thead><tbody><tr><td>Claude is responding and I want it to stop</td><td><span class="kbd">Esc</span> interrupts the current response or tool call</td></tr><tr><td>I want to clear what I'm typing</td><td><span class="kbd">Ctrl</span> + <span class="kbd">C</span> clears an idle input (and interrupts a running operation)</td></tr><tr><td>I want to revise a previous prompt</td><td><span class="kbd">↑</span> to recall it, edit, then <span class="kbd">Enter</span></td></tr><tr><td>I want to switch to Plan Mode</td><td><span class="kbd">Shift</span> + <span class="kbd">Tab</span> cycles permission modes; stop when <strong>Plan</strong> is shown</td></tr><tr><td>I want to mention a file</td><td>Type <code>@</code> and select a suggested file</td></tr><tr><td>I want to see built-in commands</td><td>Type <code>/</code> at the beginning of the prompt</td></tr><tr><td>I want to exit Claude Code</td><td>Type <code>/exit</code></td></tr></tbody></table><div class="callout warn"><span class="callout-label">Important</span>Stopping Claude does not undo work it already completed. If it edited a file before you pressed <span class="kbd">Esc</span>, that edit may still be there. Check the files before continuing.</div><h2 id="context">3. Know where you're typing</h2><p>The terminal can show two different kinds of prompts. They are not interchangeable.</p><h3>Before Claude Code starts: the computer's terminal</h3><div class="prompt-window"><div class="prompt-window-header">VS Code terminal · shell</div><pre><code>student@laptop project % claude
+# The command above launches Claude Code.</code></pre></div><h3>After Claude Code starts: the AI conversation</h3><div class="prompt-window"><div class="prompt-window-header">Claude Code · interactive session</div><pre><code>❯ What files are in this folder?
+# This is a request to the AI, not a shell command.</code></pre></div><p>You may also see a <strong>permission request</strong> when Claude wants to run a command or change files. Read it before approving. The commands listed below belong in the regular terminal, <em>outside</em> a Claude Code chat (or in Claude Code's explicit shell mode).</p><h2 id="commands">4. A few useful terminal commands</h2><p>You'll rarely need to memorize commands in this course, but it's useful to recognize these when you see them.</p><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>pwd</code></td><td>Shows the current folder (Mac/Linux; also works in PowerShell)</td></tr><tr><td><code>ls</code> (Mac) / <code>dir</code> (Windows)</td><td>Lists the files in the current folder</td></tr><tr><td><code>cd foldername</code></td><td>Moves into a folder named <code>foldername</code></td></tr><tr><td><code>cd ..</code></td><td>Moves up one folder</td></tr><tr><td><code>clear</code> (Mac) / <code>cls</code> (Windows)</td><td>Clears the terminal display</td></tr></tbody></table><p class="mini" style="color: var(--color-text-muted); font-size: 14px;">Windows examples assume PowerShell, the common default terminal in VS Code. Some commands and shortcuts differ between shells.</p><h2 id="practice">5. Try it yourself</h2><section class="callout activity-block"><span class="callout-label">Activity · about 5 minutes</span><h3>Practice editing a prompt</h3><ol><li>Open the project folder you used on the previous page in VS Code. Launch Claude Code in its integrated terminal using <code>claude</code>.</li><li>Type the prompt below, using <span class="kbd">Ctrl</span> + <span class="kbd">J</span> to insert blank lines. <strong>Do not submit it yet.</strong></li></ol><div class="prompt-window"><pre id="samplePrompt"><code>I am a business undergraduate learning to use Claude Code.
+
+Explain three ways it could help me with a class project.
+
+Keep the explanation under 150 words.</code></pre></div><ol start="3"><li>Use <span class="kbd">Ctrl</span> + <span class="kbd">A</span>, <span class="kbd">Ctrl</span> + <span class="kbd">E</span>, and arrow keys to move around the text.</li><li>Change “three ways” to “five ways” without retyping the entire prompt.</li><li>Try <span class="kbd">Ctrl</span> + <span class="kbd">W</span> or <span class="kbd">Ctrl</span> + <span class="kbd">K</span> to delete text, then <span class="kbd">Ctrl</span> + <span class="kbd">Y</span> to restore it.</li><li>Press <span class="kbd">Enter</span> to submit. While Claude is answering, try <span class="kbd">Esc</span> to interrupt it. (If it finishes too quickly, ask a longer follow-up first.)</li><li>Use <span class="kbd">↑</span> to recall a previous prompt. Revise it and submit again.</li></ol><p><strong>Checkpoint:</strong> You should be able to write a multiline prompt, edit it, and reuse an earlier prompt without starting from scratch.</p></section><h2 id="help">6. Common questions</h2><div class="faq"><details><summary>I accidentally pressed Enter. What now?</summary><p>If Claude received your unfinished message, send a follow-up with the missing detail. You can also retrieve an earlier prompt using <span class="kbd">↑</span>, revise it, and resend.</p></details><details><summary>Why does the up arrow sometimes move the cursor instead of recalling a prompt?</summary><p>In a multiline prompt, the arrow first navigates your text. Move to the top row of the prompt and press <span class="kbd">↑</span> again to browse earlier prompts.</p></details><details><summary>Can I write a long prompt somewhere else and paste it?</summary><p>Yes. You can draft in a text editor or in a Markdown file in VS Code, then copy and paste the text into Claude Code. This is often easier for long or carefully structured prompts.</p></details><details><summary>How do I select or copy text with my mouse?</summary><p>Text selection and copying in the VS Code terminal are controlled by VS Code and your operating system, rather than Claude Code's input shortcuts. If mouse selection is awkward, draft or edit longer instructions in a text file instead.</p></details><details><summary>Claude seems stuck. What should I check?</summary><p>Look to see whether it is still working, asking for permission, or waiting for your next input. If you want to stop a response or tool call, use <span class="kbd">Esc</span>. If the screen looks garbled, <span class="kbd">Ctrl</span> + <span class="kbd">L</span> can redraw it.</p></details></div><div class="callout warn"><span class="callout-label">Tip</span><strong>Keep this handy:</strong> The four shortcuts worth remembering first are <span class="kbd">Ctrl</span> + <span class="kbd">J</span> (new line), <span class="kbd">Ctrl</span> + <span class="kbd">W</span> (delete backward), <span class="kbd">↑</span> (previous prompt), and <span class="kbd">Esc</span> (stop Claude).</div><p class="mini" style="color: var(--color-text-muted); font-size: 14px;">Shortcuts checked against <a href="https://code.claude.com/docs/en/interactive-mode" rel="noopener noreferrer" target="_blank">Claude Code's interactive-mode documentation</a>. Key combinations can vary by terminal, operating system, and Claude Code version.</p><a class="next-cta" href="/course/03-setup/appendix-opencode.html"><div><div class="next-cta-label">Next · Page 8 of 8</div><div class="next-cta-title">Appendix: OpenCode</div></div><div class="next-cta-arrow">→</div></a></article>
+</div>
+<footer class="site-footer">
+    Vibecoding for Business School Students · Developed by Xiaoyang Long and Jordan Tong · © 2026 Xiaoyang Long and Jordan Tong · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · <a href="/about/">About this site</a>
+</footer>
+<script src="/assets/script.js"></script>
+</body>
+</html>

@@ -47,13 +47,14 @@ Pages marked ✅ are built and have content. Pages marked 🚧 are stubs or plac
 │   │   ├── /course/02-chat-to-agent/agent-mental-model                                    ✅
 │   │   ├── /course/02-chat-to-agent/what-agents-unlock                                    ✅
 │   │   └── /course/02-chat-to-agent/agent-harness                                         ✅
-│   ├── /course/03-setup                                                                   ✅ all 7 sub-pages built
+│   ├── /course/03-setup                                                                   ✅ all 8 sub-pages built
 │   │   ├── /course/03-setup/why-move-beyond-browser                                       ✅
 │   │   ├── /course/03-setup/install-claude-code   (setup overview)                       ✅
 │   │   ├── /course/03-setup/install-macos                                                ✅
 │   │   ├── /course/03-setup/install-windows                                              ✅
 │   │   ├── /course/03-setup/login                                                        ✅
 │   │   ├── /course/03-setup/using-vscode                                                 ✅
+│   │   ├── /course/03-setup/terminal-basics                                              ✅
 │   │   └── /course/03-setup/appendix-opencode                                            ✅
 │   ├── /course/04-workflow                                                                ✅ all 9 sub-pages built
 │   │   ├── /course/04-workflow/planning                                                  ✅
@@ -166,7 +167,7 @@ Index written, ~100 minutes total. Restructured to mirror the page-by-page forma
 reference guide (a Chinese-language textbook, `ai.lingnan.top` chapter 3 — Mac and Windows install
 guides split into separate pages rather than combined), with the main walkthrough adapted to Claude
 Code only; the reference's own OpenCode content was held back for a closing appendix instead
-(see appendix-opencode below). All seven sub-pages are now built, most revised multiple times since
+(see appendix-opencode below). All eight sub-pages are now built, most revised multiple times since
 the initial build to add real screenshots, worked examples, and reference-level step-by-step detail:
 - **why-move-beyond-browser** — new page 1 (10 min), added 2026-08-21 ahead of the rest of the
   module. Motivates why this course moves from browser-based chat to a local agent workspace: what
@@ -209,6 +210,16 @@ the initial build to add real screenshots, worked examples, and reference-level 
   integrated terminal open and ready was added before the final step, and Steps 4/6 got small
   wording tweaks. Its closing CTA now points forward to appendix-opencode instead of back to the
   module overview, since it's no longer the last page.
+- **terminal-basics** — "Terminal basics: Working with Claude Code", new page 7, added after
+  using-vscode (supplied by the user as a finished HTML draft). A cheatsheet-style page: keyboard
+  shortcuts for writing and editing multiline prompts (Ctrl+J for a new line, Ctrl+A/E/W/U/K/Y,
+  up-arrow history), controls for interrupting or steering Claude (Esc, Shift+Tab for Plan mode,
+  `@` file mentions, `/` commands), how to tell the computer's shell from the Claude Code chat, a
+  short table of terminal commands (`pwd`, `ls`/`dir`, `cd`, `clear`/`cls`), a 5-minute
+  prompt-editing activity, and a collapsible FAQ. Uses a scoped `<style>` block (accent-colored
+  headings, `.kbd` key badges). Tip callouts use `callout warn` per site preference. Appendix-opencode
+  was renumbered from 7 to 8, and every sidebar, eyebrow page count, index card, and next-cta in the
+  module was updated from a 7-page to an 8-page sequence.
 - **appendix-opencode** — optional closing page (10 min), no reference equivalent (drafted using
   `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs,
   then trimmed and revised by the user through several rounds of hands-on testing). Frames OpenCode
@@ -240,7 +251,7 @@ current pattern.
 
 **Picking this up next:** install-windows still has no real Windows screenshots (the user said skip
 for now — a prioritized shot list exists in this session's history if revisited). Module 3 itself is
-fully built, now as a 7-page sequence as of 2026-08-21 — no open threads on it. Next build priorities
+fully built, now as an 8-page sequence (terminal-basics added as page 7 on 2026-11-21) — no open threads on it. Next build priorities
 are listed in §9.
 
 ### Module 4 — The vibecoding workflow (`/course/04-workflow`)
@@ -840,7 +851,7 @@ These are all worth adding in v2 once the content is proven. Building them in v1
 | Course index `/course` | ✅ Complete |
 | Module 1 `/course/01-talking-to-ai` | ✅ Fully written (3 sub-pages + index; use-case removed 2026-11-18) |
 | Module 2 `/course/02-chat-to-agent` | ✅ Fully written (3 sub-pages + index) |
-| Module 3 `/course/03-setup` | ✅ All 7 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `appendix-opencode`) |
+| Module 3 `/course/03-setup` | ✅ All 8 sub-pages built (`why-move-beyond-browser`, `install-claude-code`, `install-macos`, `install-windows`, `login`, `using-vscode`, `terminal-basics`, `appendix-opencode`) |
 | Module 4 `/course/04-workflow` | ✅ All 9 sub-pages built (`planning`, `information-environment`, `specifying-the-task`, `verify-before-you-trust`, `memory`, `helpful-tips`, `use-case-event-recap`, `use-case-model-automation`, `use-case-coffee-dashboard`) — all solution sections written |
 | Module 5 `/course/05-scaling` | ✅ Overview and all 5 sub-pages built. 95 min core + optional 35 min |
 | Module 6 `/course/06-limits-and-ethics` | ✅ All 4 sub-pages built (`protect-the-information`, `control-agent-actions`, `real-cost`, `when-not-to-vibecode`) |
