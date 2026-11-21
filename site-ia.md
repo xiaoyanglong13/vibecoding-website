@@ -221,14 +221,16 @@ the initial build to add real screenshots, worked examples, and reference-level 
   headings, `.kbd` key badges). Tip callouts use `callout warn` per site preference. Appendix-opencode
   was renumbered from 7 to 8, and every sidebar, eyebrow page count, index card, and next-cta in the
   module was updated from a 7-page to an 8-page sequence.
-- **use-case-segmentation** — new page 8, restored 2026-11-21 from the Module 1 `use-case` page
-  removed on 2026-11-18 (commit b985286). Customer segmentation from an 800-row CSV
-  (`/cases/marketing/customers.csv`): the business decision, the data and its quirks, a three-round
-  build (plan, execute, verify and refine), the final Python script, a three-row one-pager
-  deliverable, and a "Watch for" list. Adapted for Module 3: the "preview of what's possible"
-  banner was dropped, the eyebrow and next-cta were updated, and one "not the script, it was" sentence was
-  rewritten to follow the style rule. Appendix-opencode was renumbered from 8 to 9, and every
-  sidebar, eyebrow count, index card, and next-cta in the module moved from an 8-page to a 9-page sequence.
+- **use-case-segmentation** — page 8, an open-ended activity (replaced 2026-11-21 with a
+  user-supplied version; an earlier version restored from the removed Module 1 `use-case` page
+  was swapped out because its scripted solution and "problems" were judged unrealistic). Students
+  download `/cases/marketing/customers.csv` into a `customer-segmentation` folder, write their own
+  prompt in Claude Code, and ask for three customer segments, two prioritized campaigns, and an
+  interactive `dashboard.html`. Then they explore the result against a checklist, compare with a
+  classmate, ask Claude Code to revise, and answer reflection questions. No model prompt or
+  solution is provided. Its h1 reads "From customer CSV to dashboard" while the sidebar and index
+  label remain "Use case: Segmentation from a CSV". Appendix-opencode is page 9, so the module is
+  a 9-page sequence.
 - **appendix-opencode** — optional closing page (10 min), no reference equivalent (drafted using
   `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs,
   then trimmed and revised by the user through several rounds of hands-on testing). Frames OpenCode
