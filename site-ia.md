@@ -228,8 +228,7 @@ the initial build to add real screenshots, worked examples, and reference-level 
   prompt in Claude Code, and ask for three customer segments, two prioritized campaigns, and an
   interactive `dashboard.html`. Then they explore the result against a checklist, compare with a
   classmate, ask Claude Code to revise, and answer reflection questions. No model prompt or
-  solution is provided. Its h1 reads "From customer CSV to dashboard" while the sidebar and index
-  label remain "Use case: Segmentation from a CSV". Appendix-opencode is page 9, so the module is
+  solution is provided. Its h1 reads "Customer segmentation and campaign recommendations" (the dashboard is framed as the communication vehicle, with the analysis as the goal) while the sidebar and index label remain "Use case: Segmentation from a CSV". Appendix-opencode is page 9, so the module is
   a 9-page sequence.
 - **appendix-opencode** — optional closing page (10 min), no reference equivalent (drafted using
   `ai.lingnan.top` chapter 3, sections 3.1/3.5/3.6, cross-checked against opencode.ai's own docs,

@@ -50,14 +50,14 @@
 
       <div class="module-header">
         <span class="eyebrow">Module 3 · Page 8 of 9</span>
-        <h1>Use case: From customer CSV to dashboard</h1>
-        <p class="lede">Can you turn a messy customer spreadsheet into a useful marketing dashboard without writing code yourself? Give Claude Code a business goal, then explore what it builds.</p>
+        <h1>Use case: Customer segmentation and campaign recommendations</h1>
+        <p class="lede">Can you turn a customer dataset into actionable segments and targeted marketing recommendations? Use Claude Code to analyze the data and create an HTML dashboard to communicate your findings.</p>
       </div>
 
       <div class="chips">
         <span class="chip">Difficulty · Beginner</span>
         <span class="chip">Uses: Claude Code in VS Code</span>
-        <span class="chip">Output: Interactive HTML dashboard</span>
+        <span class="chip">Deliverable: Segments &amp; campaign recommendations</span>
       </div>
 
       <h2>1. The business challenge</h2>
@@ -69,7 +69,7 @@
         <li>What marketing message might resonate with them</li>
         <li>Which outreach channel you recommend, and why</li>
       </ul>
-      <p>She also wants something more engaging than a spreadsheet: a <strong>clear, visually appealing HTML dashboard</strong> that shows the data, the segments, and your recommendations. It should open directly in a web browser.</p>
+      <p>Present your analysis and recommendations in a <strong>clear, visually appealing HTML dashboard</strong> that the marketing director can open in a web browser. The dashboard communicates your findings to the director, who will act on the analysis and recommendations behind it.</p>
 
       <h2>2. Your starting data</h2>
       <p><a href="/cases/marketing/customers.csv" download>Download the sample dataset (800 rows)</a> and save it as <code>customers.csv</code> in a new folder named <code>customer-segmentation</code>.</p>
@@ -88,15 +88,15 @@ features_used_30d, support_tickets_90d, csm_assigned</code></pre>
       </ol>
       <p>Try starting with a single prompt that describes the whole task. You can always follow up if you want to clarify or change something.</p>
 
-      <h2>4. Explore your dashboard</h2>
-      <p>Your dashboard should help a nontechnical marketing director understand the analysis and decide what to do next. Explore what Claude Code built rather than assuming it matches what you pictured.</p>
+      <h2>4. Review your analysis and recommendations</h2>
+      <p>Use your dashboard to review the segments and campaign recommendations. Would the marketing director have enough information to decide which two campaigns to run?</p>
       <ul>
         <li><strong>Data:</strong> Can you see useful patterns in the customer base, including the ones behind the final segment names?</li>
         <li><strong>Segments:</strong> Are the three segments clearly described, with counts and meaningful comparisons?</li>
         <li><strong>Recommendations:</strong> Does the dashboard explain the two campaigns it would prioritize and the rationale for each?</li>
         <li><strong>Presentation:</strong> Are the charts readable? Can a manager navigate the dashboard without knowing the code?</li>
       </ul>
-      <p>There is no single correct dashboard design. Different prompts may lead to different charts, segmentation logic, layouts, and recommendations.</p>
+      <p>There is no single correct segmentation or campaign strategy. Different prompts may lead to different analytical choices and recommendations; dashboard design should help make those choices clear.</p>
 
       <h2>5. Share, compare, and improve</h2>
       <p>Pair up with a classmate. <strong>Share your dashboards</strong> and explain the customer segments you identified, the two campaigns you recommend, and why.</p>
@@ -106,7 +106,7 @@ features_used_30d, support_tickets_90d, csm_assigned</code></pre>
         <li><strong>Differences:</strong> How do your segment definitions, charts, campaign priorities, or recommendations differ?</li>
         <li><strong>Improvements:</strong> What did you learn from your classmate's approach? What would you change about your own dashboard or recommendations?</li>
       </ul>
-      <p>Use what you learned to ask Claude Code to <strong>revise your dashboard</strong>. Open the updated HTML file in your browser and review the changes.</p>
+      <p>Use what you learned to ask Claude Code to <strong>improve your segmentation, recommendations, or their presentation</strong>. Open the updated HTML file and review the changes.</p>
 
       <h2>6. Reflect</h2>
       <p>Before moving on, think about these questions:</p>
@@ -119,7 +119,7 @@ features_used_30d, support_tickets_90d, csm_assigned</code></pre>
 
       <div class="pitfalls-inline">
         <h4>Takeaway</h4>
-        <p>You didn't need to write the data-cleaning script, the charts, or the HTML by hand. You described a business objective, and an AI coding agent worked with local files to produce a usable artifact that you could open and revise. In later modules, we'll look more closely at how to verify the analysis and guide larger projects.</p>
+        <p>You didn't need to write the data-cleaning script, the charts, or the HTML by hand. You described a business objective, and an AI coding agent worked with local files to develop marketing recommendations and present them in a dashboard you could open and revise. In later modules, we'll look more closely at how to verify the analysis and guide larger projects.</p>
       </div>
 
       <a class="next-cta" href="/course/03-setup/appendix-opencode.html">
