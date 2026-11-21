@@ -51,7 +51,7 @@
       <div class="module-header">
         <span class="eyebrow">Module 3 · Page 8 of 9</span>
         <h1>Use case: Customer segmentation and campaign recommendations</h1>
-        <p class="lede">Can you turn a customer dataset into actionable segments and targeted marketing recommendations? Use Claude Code to analyze the data and create an HTML dashboard to communicate your findings.</p>
+        <p class="lede">Can you use data on 800 existing customer accounts to identify opportunities for retention, engagement, and revenue growth? Use Claude Code to develop targeted campaign recommendations and present your findings in an HTML dashboard.</p>
       </div>
 
       <div class="chips">
@@ -61,7 +61,7 @@
       </div>
 
       <h2>1. The business challenge</h2>
-      <p>You're a growth marketer at a B2B SaaS company. The head of marketing wants to replace a generic campaign with more targeted outreach. You have a customer dataset, but no existing customer segments.</p>
+      <p>You're a growth marketer at a B2B SaaS company with <strong>800 existing customer accounts</strong>. The data contains no prospective customers or sales leads. Your marketing director wants to move beyond generic customer communications and launch targeted campaigns to improve <strong>customer retention, engagement, or revenue</strong>. You have customer account and usage data, but no existing customer segments.</p>
       <p>For tomorrow's planning meeting, she wants you to <strong>identify three actionable customer segments</strong> and recommend <strong>two campaigns to prioritize</strong>. For each segment, she wants to understand:</p>
       <ul>
         <li>Who belongs in it and how many customers it includes</li>
@@ -73,11 +73,12 @@
 
       <h2>2. Your starting data</h2>
       <p><a href="/cases/marketing/customers.csv" download>Download the sample dataset (800 rows)</a> and save it as <code>customers.csv</code> in a new folder named <code>customer-segmentation</code>.</p>
-      <p>The dataset contains the following fields:</p>
+      <p>Each row represents an <strong>existing customer account</strong>. The data includes customer characteristics, current subscription revenue, recent product activity, support history, and assigned customer success managers. Its fields are:</p>
       <pre><code>customer_id, company_name, industry, employee_count,
 plan_tier, mrr_usd, signup_date, last_login_days_ago,
 features_used_30d, support_tickets_90d, csm_assigned</code></pre>
       <p>As in real business data, not everything is perfectly clean. For example, industry labels vary, plan names are inconsistently capitalized, and some employee counts are missing. You don't need to clean the file manually.</p>
+      <p><strong>Keep the data's limits in mind:</strong> It provides a snapshot of customers and their activity, but not historical campaign results or confirmed churn outcomes. You can identify promising targets for upselling, re-engagement, or retention, but should not claim to know which campaign will perform best without further evidence.</p>
 
       <h2>3. Build it with Claude Code</h2>
       <ol>
